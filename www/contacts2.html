@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <title>Social Motives</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <link rel="stylesheet" id ="extra2" type="text/css" href="css/socialmotives.css"/>
+    <link rel="stylesheet" href="css/ratchet.css">
+    <link rel="stylesheet" href="css/pageslider.css">
+    <link rel="stylesheet" href="css/styles.css">
+ <script type="text/javascript">
+
+ $(document).ready(function() {
+
+    $("#display").click(function() {                
+
+      $.ajax({    //create an ajax request to load_page.php
+        type: "GET",
+        url: "display.php",             
+        dataType: "html",   //expect html to be returned                
+        success: function(response){                    
+            $("#responsecontainer").html(response); 
+            //alert(response);
+        }
+
+    });
+});
+});
+
+</script>
+</head>
+
+
+    
+<style>
+td {
+    padding: 20px;
+}
+</style>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../js/vendor/modernizr-2.7.1.min.js"></script>
+        <link rel="stylesheet" href="../css/iThing.css" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!--         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> -->
+ 
+       
+ 
+   
+   
+
+
+
+<body style="background-color: black;">
+
+<div id="fb-root"></div>
+
+<div id="container">
+
+
+
+<div id="pagebg" class="pagewidth"></div>
+
+<div id="page">
+ 
+    
+	<div id="home">
+			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><div id="hdr_title">CPR</div></div>
+
+<!-- 		<div id="nav_hdr"><!~~ <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> ~~><div id="hdr_title">Home</div></div> -->
+		<!-- 	<center><table style="align:middle;border-spacing: 30px; border-collapse: separate;"><tr><td><a href="index.html"><img src="add.png" width="25px"></a><td><a href="contacts.html"><img src="contacts.png" width="25px"></a></td><td><a href="vehicle.html"><img src="addcar.gif" width="25px"></a></td><td><a href="vehicles.html"><img src="viewcar.png" width="25px"></a></td><td><a href="match.html"><img src="results.ico" width="25px"></a></td></tr></table></center><br> -->
+
+		<div id="tabs" class="font_PNbold">
+			<ul id="top_menu">
+				<li id="tm_map"  onclick="changePage('index');">Add Contact</li>
+				<li id="tm_pro" class="active"  onclick="changePage('contacts');">View Contacts</li>
+				<li id="tm_fri" onclick="changePage('vehicle');" class="friends_list">Add Vehicle</li>
+				<li id="tm_home"  onclick="changePage('vehicles');">View Vehicles</li>
+				<li id="tm_mtch"  onclick="changePage('match');">Match</li>
+			</ul>
+		</div>
+		
+		<div class="cnt_clr">
+			<table class="home_top">
+				<tr><td class="full"><div class="h1px"></div></td></tr>
+
+				<tr>
+	
+	<h1 align="center">Contacts</h1>
+<table border="1" align="center">
+   <tr>
+       <td> <input type="button" id="display" value="Display All Data" /> </td>
+   </tr>
+</table>
+<div id="responsecontainer" align="center">
+
+</div>
+<br>
+</div>
+
+</body>
+
+
+<script src="lib/fastclick.js"></script>
+<script src="lib/pageslider.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone-min.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="js/utils.js"></script>
+<!-- <script src="js/app.js"></script> -->
+<script src="js/views.js"></script>
+<script src="js/facebook.js"></script>
+<script src="swipe/src/swipeview.js"></script>
+
+<script src="js/jquery.blockUI.js"></script>
+<script src="js/jquery.touchwipe.1.1.1.js" charset="utf-8"></script>
+
+<script src="js/jquery.form.js"></script>
+<script src="js/sm-sample.js"></script>
+<script src="js/sm.js"></script>
+
+
+<script>
+
+localStorage.setItem("lp", localStorage.getItem('tp'));
+localStorage.setItem("tp", "index");
+var id= localStorage.getItem('id');
+var password = localStorage.getItem('password');
+
+	function checkFormInput(field)
+	{
+		// Check for all fields filled
+		if ( $("#login :input[name='" + field + "']").val().length === 0 )
+		{	
+			errorMsg("All fields are required.", 3000);
+			return false;
+		}
+		return true;
+	}
+	function processLogin()
+	{
+		if(!checkFormInput("email")) return false;
+		if(!checkFormInput("password")) return false;
+     
+		// Display Please Wait...
+		$.blockUI({ css: { 
+					border: 'none', 
+					padding: '15px', 
+					backgroundColor: '#000', 
+					'-webkit-border-radius': '10px', 
+					'-moz-border-radius': '10px', 
+					color: '#fff' 
+				} }); 
+
+// 		var serializedData = $("#loginForm").serialize();
+		
+		// Call register action, which checks for unique email and SM ID (on success: load home screen, fail: display msg)
+	// 	var request = $.ajax({
+// 				url: "http://54.186.32.195/actions.php?task=log&id="+id,
+// 				type: "get",
+// 				data: serializedData
+// 			});
+// 
+// 		// callback handler that will be called on success
+// 		request.done(function (response, textStatus, jqXHR)
+// 		{
+// 		
+// 		if(response == "DELETED")
+// 			{
+// 				errorMsg("This account has been deleted. Please contact info@social-motives.com to see about restoring this account.", 6000);
+// 				return false;
+// 				
+// 			}
+			// response == 0 - Successful
+			// if(response != "NOTHING")
+// 			{
+				$.unblockUI();
+				//  to homepage
+				// response = response.split('|');
+// 				localStorage.setItem("id", response[0]);
+// 				localStorage.setItem("password", response[1]);
+// 				
+				
+				 
+				
+     //  $.ajax({
+//                      url:'home.html',
+//                     
+//                      cache:false
+//                      }).done(function(html){
+//                       $('body').empty();
+//                      
+//                      					 $('body').fadeIn(1000);
+//                                         $("body").append(html);
+//                                        
+//                                      });
+                                     
+                                     
+                                     
+//                     localStorage.setItem("id",response);
+// changePage('home');
+fb.slider.removeCurrentPage();
+
+//             fb.router.navigate("menu", {trigger: true});
+// fb.slider.slidePageFrom(new fb.views.Post({template: fb.templateLoader.get("menu")}).$el, "left");
+ fb.slider.slidePage(new fb.views.Post({template: fb.templateLoader.get("post")}).$el);
+//        fb.slider.slidePageFrom(new fb.views.Post({template: fb.templateLoader.get("post")}).$el, "left");
+                        
+				//window.open('home.html','_self','transitionstyle=crossdissolve');
+				//$.mobile.changePage( "home.html", { transition: "slideup"}); 
+
+		}		
+			
+</script>
+ <script type="text/javascript">
+//             app.initialize();
+        </script>
+         <script>
+
+   $("#testForm").submit(function(e)
+{
+
+// 
+// elem.value = basicvalues.min;
+// elem2.value = basicvalues.max;
+// console.log(basicValues.min + " " + basicValues.max);
+    var postData = $(this).serializeArray();
+    var formURL = $(this).attr("action");
+    $.ajax(
+    {
+        url : formURL,
+        type: "POST",
+        data : postData,
+        success:function(data, textStatus, jqXHR) 
+        {
+            //data: return data from server
+            alert('Contact Added');
+        },
+        error: function(jqXHR, textStatus, errorThrown) 
+        {
+            //if fails  
+             alert('Problem Adding Contact');    
+        }
+    });
+    e.preventDefault(); //STOP default action
+    e.unbind(); //unbind. to stop multiple form submit.
+});
+ 
+// $("#testForm").submit(); //Submit  the FORM
+        </script>
+
+</html>

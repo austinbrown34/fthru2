@@ -1,0 +1,34 @@
+* {
+    -webkit-user-select: none;
+}
+
+input, textarea {
+    -webkit-user-select: auto !important;
+}
+
+a {
+    -webkit-touch-callout: none;
+}
+
+
+.content {
+/*     background-color: #EAEAEA; */
+height:100%;
+	position:fixed;
+	background-image:url(../images/bg_app.jpg);
+	background-position:left top;
+	background-repeat:no-repeat;
+	background-size:cover;
+	z-index:-1;
+}
+}
+
+img.avatar {
+    width: 150px;
+    height: 150px;
+}
+
+
+
+
+

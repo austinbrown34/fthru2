@@ -1,0 +1,873 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <title>Social Motives</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <link rel="stylesheet" id ="extra2" type="text/css" href="css/socialmotives.css"/>
+    <link rel="stylesheet" href="css/ratchet.css">
+    <link rel="stylesheet" href="css/pageslider.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+    
+<style>
+td {
+    padding: 20px;
+}
+</style>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="../js/vendor/modernizr-2.7.1.min.js"></script>
+        <link rel="stylesheet" href="../css/iThing.css" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script>
+        const EDMUNDS_API_KEY = '6gkv78s45kfx5cbgcf4mq5ae';
+        function get_makes(year) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#makes').empty();
+                    $('#makes').append("<option>Select Make</option>");
+                    $.each(data.makeHolder, function(i, val) {
+                        $('#makes').append("<option value='" + data.makeHolder[i].niceName + "'>" + data.makeHolder[i].name + "</option>");
+                    });
+                    $('#makes').removeAttr('disabled');
+                    console.log('Step 2: Makes select was populated and enabled');
+                }
+            });
+        }
+        function get_models(make, year) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/modelrepository/findmodelsbymakeandyear?make=' + make + '&year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#models').empty();
+                    $('#models').append("<option>Select Model</option>");
+                    $.each(data.modelHolder, function(i, val) {
+                        $('#models').append("<option value='" + data.modelHolder[i].niceName + "'>" + data.modelHolder[i].name + "</option>");
+                    });
+                    $('#models').removeAttr('disabled');
+                    console.log('Step 4: Models select was populated and enabled');
+                }
+            });
+        }
+        function get_styles(make, model, year) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/stylerepository/findstylesbymakemodelyear?make=' + make + '&model=' + model + '&year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                timeout: 20000,
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#styles').empty();
+                    $('#styles').append("<option>Select Trim</option>");
+                    $.each(data.styleHolder, function(i, val) {
+                        console.log(data.styleHolder[i]);
+                        $('#styles').append("<option value='" + data.styleHolder[i].id + "'>" + data.styleHolder[i].name + "</option>");
+                    });
+                    $('#styles').removeAttr('disabled');
+                    console.log('Step 6: Styles(trim) select was populated and enabled');
+                }
+            });
+        }
+        function get_style_details(style_id) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/stylerepository/findbyid?id=' + style_id + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#details').html(JSON.stringify(data.styleHolder[0]));
+                    console.log('Step 8: Collecting Style/trim data');
+                }
+            });
+        }
+        $(document).ready(function() {   
+            $('#years').change(function() {
+                console.log('Step 1: Year ' + $(this).val() + ' was selected');
+                get_makes($(this).val());
+            });
+            
+            $('#makes').change(function() {
+                console.log('Step 3: Make ' + $(this).val() + ' was selected');
+                get_models($(this).val(), $('#years').val());
+            });
+            $('#models').change(function() {
+                console.log('Step 5: Model ' + $(this).val() + ' was selected');
+                get_styles($('#makes').val(), $(this).val(), $('#years').val());
+            });
+            $('#styles').change(function() {
+                console.log('Step 7: Style ' + $(this).val() + ' was selected');
+                get_style_details($(this).val());
+            });
+        });
+    </script>
+       
+  <script>
+        const EDMUNDS_API_KEY = '6gkv78s45kfx5cbgcf4mq5ae';
+        function get_makes1(year) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#makes1').empty();
+                    $('#makes1').append("<option>Select Make</option>");
+                    $.each(data.makeHolder, function(i, val) {
+                        $('#makes1').append("<option value='" + data.makeHolder[i].niceName + "'>" + data.makeHolder[i].name + "</option>");
+                    });
+                    $('#makes1').removeAttr('disabled');
+                    console.log('Step 2: Makes select was populated and enabled');
+                }
+            });
+        }
+        function get_models1(make, year) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/modelrepository/findmodelsbymakeandyear?make=' + make + '&year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#models1').empty();
+                    $('#models1').append("<option>Select Model</option>");
+                    $.each(data.modelHolder, function(i, val) {
+                        $('#models1').append("<option value='" + data.modelHolder[i].niceName + "'>" + data.modelHolder[i].name + "</option>");
+                    });
+                    $('#models1').removeAttr('disabled');
+                    console.log('Step 4: Models select was populated and enabled');
+                }
+            });
+        }
+        function get_styles1(make, model, year) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/stylerepository/findstylesbymakemodelyear?make=' + make + '&model=' + model + '&year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                timeout: 20000,
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#styles1').empty();
+                    $('#styles1').append("<option>Select Trim</option>");
+                    $.each(data.styleHolder, function(i, val) {
+                        console.log(data.styleHolder[i]);
+                        $('#styles1').append("<option value='" + data.styleHolder[i].id + "'>" + data.styleHolder[i].name + "</option>");
+                    });
+                    $('#styles1').removeAttr('disabled');
+                    console.log('Step 6: Styles(trim) select was populated and enabled');
+                }
+            });
+        }
+        function get_style_details1(style_id) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/stylerepository/findbyid?id=' + style_id + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#details1').html(JSON.stringify(data.styleHolder[0]));
+                    console.log('Step 8: Collecting Style/trim data');
+                }
+            });
+        }
+        $(document).ready(function() {   
+            $('#years1').change(function() {
+                console.log('Step 1: Year ' + $(this).val() + ' was selected');
+                get_makes1($(this).val());
+            });
+            
+            $('#makes1').change(function() {
+                console.log('Step 3: Make ' + $(this).val() + ' was selected');
+                get_models1($(this).val(), $('#years1').val());
+            });
+            $('#models1').change(function() {
+                console.log('Step 5: Model ' + $(this).val() + ' was selected');
+                get_styles1($('#makes1').val(), $(this).val(), $('#years1').val());
+            });
+            $('#styles1').change(function() {
+                console.log('Step 7: Style ' + $(this).val() + ' was selected');
+                get_style_details1($(this).val());
+            });
+        });
+    </script>
+   
+   
+<script type="text/javascript">
+
+ $(document).ready(function() {
+
+    $("#tm_pro").click(function() {                
+
+      $.ajax({    //create an ajax request to load_page.php
+        type: "GET",
+        url: "http://cogni.design/cpr/www/display.php",             
+        dataType: "html",   //expect html to be returned                
+        success: function(response){                    
+            $("#responsecontaineruser").html(response); 
+            //alert(response);
+        }
+
+    });
+});
+  $("#displaymatch").click(function() {                
+
+      $.ajax({    //create an ajax request to load_page.php
+        type: "GET",
+        url: "http://cogni.design/cpr/www/match.php",             
+        dataType: "html",   //expect html to be returned                
+        success: function(response){                    
+            $("#responsecontainermatch").html(response); 
+            //alert(response);
+        }
+
+    });
+});
+  $("#tm_home").click(function() {                
+
+      $.ajax({    //create an ajax request to load_page.php
+        type: "GET",
+        url: "http://cogni.design/cpr/www/display2.php",             
+        dataType: "html",   //expect html to be returned                
+        success: function(response){                    
+            $("#responsecontainercar").html(response); 
+            //alert(response);
+        }
+
+    });
+});
+ $.ajax({    //create an ajax request to load_page.php
+        type: "GET",
+        url: "http://cogni.design/cpr/www/display2.php",             
+        dataType: "html",   //expect html to be returned                
+        success: function(response){                    
+            $("#responsecontainercar").html(response); 
+            //alert(response);
+        }
+
+    });
+          $.ajax({    //create an ajax request to load_page.php
+        type: "GET",
+        url: "http://cogni.design/cpr/www/display.php",             
+        dataType: "html",   //expect html to be returned                
+        success: function(response){                    
+            $("#responsecontaineruser").html(response); 
+            //alert(response);
+        }
+
+    });
+});
+
+</script>
+
+
+<body>
+
+<div id="fb-root"></div>
+
+<div id="container">
+
+
+
+<div id="pagebg" class="pagewidth"></div>
+
+<div id="page">
+ 
+    
+	<div id="home">
+			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
+
+
+		<div id="tabs" class="font_PNbold" style="zoom: .8;">
+			<ul id="top_menu">
+				<li id="tm_map" class="active" ><img src="add_user.png" style="width:50px;"></li>
+				<li id="tm_pro" class="profile_private" onclick="document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"><img src="viewuser.png" style="width:50px;" onclick="document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
+				<li id="tm_fri" onclick="document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';" class="friends_list"><img src="addcar.png" style="height:80px;" onclick="document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
+				<li id="tm_home"  onclick="document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
+				<li id="tm_mtch"  onclick="document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"></li>
+			</ul>
+		</div>
+		
+		<div class="cnt_clr">
+			<table class="home_top">
+				<tr><td colspan = "3" class="full"><div class="h1px"></div></td></tr>
+
+				<tr>
+		<td colspan="3">
+		<div style="padding: 2px 4px 3px 4px;">
+		<form id="testForm" action="../insert.php" method="post">
+	
+<p style="color:black;">First name:</p>
+<input type="text" name="firstname"  style="zoom:1.5;"></td></tr><tr><td colspan="3">
+
+<p style="color:black;">Last name:</p>
+<input type="text" name="lastname"  style="zoom:1.5;"></td></tr><tr><td colspan="3">
+
+<p style="color:black;">Phone:</p>
+<input type="text" name="phone"  style="zoom:1.5;"><br></td></tr><tr><td colspan="3">
+
+
+
+     <select id="years" name="years">
+        <option>Select Year</option>
+        <option>1990</option>
+        <option>1991</option>
+        <option>1992</option>
+        <option>1993</option>
+        <option>1994</option>
+        <option>1995</option>
+        <option>1996</option>
+        <option>1997</option>
+        <option>1998</option>
+        <option>1999</option>
+        <option>2000</option>
+        <option>2001</option>
+        <option>2002</option>
+        <option>2003</option>
+        <option>2004</option>
+        <option>2005</option>
+        <option>2007</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option>2010</option>
+        <option>2011</option>
+        <option>2012</option>
+         <option>2013</option>
+          <option>2014</option>
+           <option>2015</option>
+    </select></td></tr><tr><td colspan="3"><br>
+    <select id="makes" name="makes" disabled="disabled">
+        <option>Select Make</option>
+    </select></td></tr><tr><td colspan="3"><br>
+    <select id="models" name="models" disabled="disabled">
+        <option>Select Model</option>
+    </select></td></tr><tr><td colspan="3"><br>
+
+<input type="hidden" id ="pricelow" name="pricelow">
+
+<input type="hidden" id="pricehigh" name="pricehigh">
+
+ <div id="slider" style="zoom:2;"></div>
+ 
+   <script src="../jQRangeSlider-min.js"></script>
+   <script>
+
+   $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
+        var value = Math.round(val * 5) / 5,
+          decimal = value - Math.round(val);
+          // elem.value = basicvalues.min;
+// 			elem2.value = basicvalues.max;
+
+        return "$" + value.toString();
+// 		return value;
+      }, step: 500});
+             var elem = document.getElementById("pricelow");
+var elem2 = document.getElementById("pricehigh");
+elem.value=5000;
+elem2.value=10000;
+var basicvalues = $("#slider").rangeSlider("values");
+$("#slider").bind("valuesChanged", function(e, data){
+  console.log("Values just changed. min: " + data.values.min + " max: " + data.values.max);
+  elem.value=data.values.min;
+elem2.value=data.values.max;
+});
+
+   </script>
+  
+   </td></tr><tr><td colspan="3"><br>
+<center><input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;"></center>
+</form>
+	
+<!-- 	<center><table style="align:middle;border-spacing: 30px; border-collapse: separate;"><tr><td><a href="index.html"><img src="add.png" width="25px"></a><td><a href="contacts.html"><img src="contacts.png" width="25px"></a></td><td><a href="vehicle.html"><img src="addcar.gif" width="25px"></a></td><td><a href="vehicles.html"><img src="viewcar.png" width="25px"></a></td><td><a href="match.html"><img src="results.ico" width="25px"></a></td></tr></table></center><br> -->
+</td></tr></table>
+</div>
+
+
+        <!-- Add your site or application content here -->
+
+        <script src="../js/vendor/jquery-2.1.0.min.js"></script>
+        <script src="../js/helper.js"></script>
+        <script src="../js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+       <!-- 
+ <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+ -->
+
+
+
+		</div>
+		<div id="match" style="display:none;">
+			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
+
+
+		
+		<div id="tabs" class="font_PNbold" style="zoom: .8;">
+			<ul id="top_menu">
+				<li id="tm_map"  onclick="document.getElementById('match').style.display = 'none';document.getElementById('home').style.display = '';"><img src="add_user.png" style="width:50px;" onclick="document.getElementById('match').style.display = 'none';document.getElementById('home').style.display = '';"></li>
+				<li id="tm_pro" class="profile_private" onclick="document.getElementById('match').style.display = 'none';document.getElementById('viewuser').style.display = '';"><img src="viewuser.png" style="width:50px;" onclick="document.getElementById('match').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
+				<li id="tm_fri" onclick="document.getElementById('match').style.display = 'none';document.getElementById('addcar').style.display = '';" class="friends_list"><img src="addcar.png" style="height:80px;" onclick="document.getElementById('match').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
+				<li id="tm_home"  onclick="document.getElementById('match').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="document.getElementById('match').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
+				<li id="tm_mtch" class="active" ><img src="match.png" style="width:50px !important;padding-top: 5px;" ></li>
+			</ul>
+		</div>
+		
+		<div class="cnt_clr"><center>
+			<table border="1" align="center">
+   <tr>
+       <td> <input type="button" id="displaymatch" value="Display All Data" /> </td>
+   </tr>
+</table>
+<div id="responsecontainermatch" align="center">
+
+</div>
+</center>
+</div>
+
+
+        <!-- Add your site or application content here -->
+
+    
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+       <!-- 
+ <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+ -->
+
+
+
+		</div>
+<div id="addcar" style="display:none;">
+			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
+
+
+		<div id="tabs" class="font_PNbold" style="zoom: .8;">
+			<ul id="top_menu">
+				<li id="tm_map"  onclick="document.getElementById('addcar').style.display = 'none';document.getElementById('home').style.display = '';"><img src="add_user.png" style="width:50px;" onclick="document.getElementById('addcar').style.display = 'none';document.getElementById('home').style.display = '';"></li>
+				<li id="tm_pro" class="profile_private" onclick="document.getElementById('addcar').style.display = 'none';document.getElementById('viewuser').style.display = '';"><img src="viewuser.png" style="width:50px;" onclick="document.getElementById('addcar').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
+				<li id="tm_fri" class="active" ><img src="addcar.png" style="height:80px;" ></li>
+				<li id="tm_home"  onclick="document.getElementById('addcar').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="document.getElementById('addcar').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
+				<li id="tm_mtch" onclick="document.getElementById('addcar').style.display = 'none';document.getElementById('match').style.display = '';" ><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="document.getElementById('addcar').style.display = 'none';document.getElementById('match').style.display = '';"></li>
+			</ul>
+		</div>
+		
+		<div class="cnt_clr">
+				<div style="padding: 2px 4px 3px 4px;">
+		<form id="testForm2" action="insert2.php" method="post" enctype="multipart/form-data">
+
+<!-- 
+Make:<br>
+<input type="text" name="make">
+<br><br>
+Model:<br>
+<input type="text" name="model">
+ -->
+   <select id="years1" name="years">
+        <option>Select Year</option>
+       <option>1990</option>
+        <option>1991</option>
+        <option>1992</option>
+        <option>1993</option>
+        <option>1994</option>
+        <option>1995</option>
+        <option>1996</option>
+        <option>1997</option>
+        <option>1998</option>
+        <option>1999</option>
+        <option>2000</option>
+        <option>2001</option>
+        <option>2002</option>
+        <option>2003</option>
+        <option>2004</option>
+        <option>2005</option>
+        <option>2007</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option>2010</option>
+        <option>2011</option>
+        <option>2012</option>
+         <option>2013</option>
+          <option>2014</option>
+           <option>2015</option>
+    </select><br><br>
+    <select id="makes1" name="makes" disabled="disabled">
+        <option>Select Make</option>
+    </select><br><br>
+    <select id="models1" name="models" disabled="disabled">
+        <option>Select Model</option>
+    </select>
+<br><br>
+<p style="color:black;">Price:</p>
+<input type="text" name="price">
+<br><br>
+  <p style="color:black;">Select image to upload:</p>
+    <input type="file" name="fileToUpload" id="fileToUpload" style="zoom:1.3;">
+    <!-- <input type="submit" value="Upload Image" name="submit"> --><br><br>
+    <center>
+<input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;"></center>
+</form>
+</div>
+
+
+        <!-- Add your site or application content here -->
+
+    
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+       <!-- 
+ <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+ -->
+
+</div>
+
+		</div>
+<div id="viewuser" style="display:none;">
+			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
+
+
+		<div id="tabs" class="font_PNbold" style="zoom: .8;">
+			<ul id="top_menu">
+				<li id="tm_map"  onclick="document.getElementById('viewuser').style.display = 'none';document.getElementById('home').style.display = '';"><img src="add_user.png" style="width:50px;" onclick="document.getElementById('viewuser').style.display = 'none';document.getElementById('home').style.display = '';"></li>
+				<li id="tm_pro" class="active profile_private"><img src="viewuser.png" style="width:50px;"></li>
+				<li id="tm_fri" onclick="document.getElementById('viewuser').style.display = 'none';document.getElementById('addcar').style.display = '';" ><img src="addcar.png" style="height:80px;" onclick="document.getElementById('viewuser').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
+				<li id="tm_home"  onclick="document.getElementById('viewuser').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="document.getElementById('viewuser').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
+				<li id="tm_mtch" onclick="document.getElementById('viewuser').style.display = 'none';document.getElementById('match').style.display = '';" ><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="document.getElementById('viewuser').style.display = 'none';document.getElementById('match').style.display = '';"></li>
+			</ul>
+		</div>
+		
+		<div class="cnt_clr"><center>
+	<!-- 
+	<table border="1" align="center">
+   <tr>
+       <td> <input type="button" id="displayuser" value="Display All Data" /> </td>
+   </tr>
+</table>
+ -->
+<div id="responsecontaineruser" align="center">
+
+</div>
+</center>
+</div>
+
+
+        <!-- Add your site or application content here -->
+
+    
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+       <!-- 
+ <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+ -->
+
+
+
+		</div>
+
+<div id="viewcar" style="display:none;">
+			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
+
+
+		<div id="tabs" class="font_PNbold" style="zoom: .8;">
+			<ul id="top_menu">
+				<li id="tm_map"  onclick="document.getElementById('viewcar').style.display = 'none';document.getElementById('home').style.display = '';"><img src="add_user.png" style="width:50px;" onclick="document.getElementById('viewcar').style.display = 'none';document.getElementById('home').style.display = '';"></li>
+				<li id="tm_pro" onclick="document.getElementById('viewcar').style.display = 'none';document.getElementById('viewuser').style.display = '';" class="profile_private"><img src="viewuser.png" style="width:50px;" onclick="document.getElementById('viewcar').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
+				<li id="tm_fri" onclick="document.getElementById('viewcar').style.display = 'none';document.getElementById('addcar').style.display = '';" ><img src="addcar.png" style="height:80px;" onclick="document.getElementById('viewcar').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
+				<li id="tm_home" class="active" ><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" ></li>
+				<li id="tm_mtch" onclick="document.getElementById('viewcar').style.display = 'none';document.getElementById('match').style.display = '';" ><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="document.getElementById('viewcar').style.display = 'none';document.getElementById('match').style.display = '';"></li>
+			</ul>
+		</div>
+		
+		<div class="cnt_clr"><center>
+			<!-- 
+<table border="1" align="center">
+   <tr>
+       <td> <input type="button" id="displaycar" value="Display All Data" /> </td>
+   </tr>
+</table>
+ -->
+<div id="responsecontainercar" align="center">
+
+</div>
+</center>
+</div>
+
+
+        <!-- Add your site or application content here -->
+
+    
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+       <!-- 
+ <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+ -->
+
+
+
+		</div>
+
+	</div><!-- end panel -->
+
+</div><!-- end page -->
+<script type='text/javascript'>
+
+
+$(document).ready(function(){
+var page;
+function onTouchStart(e) {
+ //page = this.Target.className;
+//e.currentTarget.title=page;
+page=this.id;
+  var item = e.currentTarget;
+  if(isTouching) return;
+  e.currentTarget.moved = false;
+  console.log("Start: " + e.currentTarget.innerHTML);
+  isTouching = true;
+  
+  //iOS and Android do not redraw the view while they are scrolling.
+  //This introduces a problem if the user very quickly swiped his/her finger to scroll.
+  //The element would have been given the "active" class (being highlighted) and it would have
+  //stayed highlighted even while scrolling (despite not having the active class anymore).
+  //To get around that, we create our own very slight delay. Not perfect, nor ideal, but it generally does the job.
+  setTimeout(function(){
+    if(item.moved===false) { //Make sure the property exists and is false
+      item.className = "active";
+      
+    }
+  },50);
+}
+/**
+ * Fired when the user moves his/her finger.
+ * If we detect a move, we're not interested in the "tap" anymore
+ */
+ 
+function onTouchMove(e) {
+	
+  console.log("Move: " + $(e.currentTarget.innerText));
+  e.currentTarget.moved = true;
+  e.currentTarget.className = "";
+}
+/**
+ * Fired when the touch has ended.
+ * If e.currentTarget.moved is true, then the user moved his/her finger while
+ * touching this item so we "cancel" the tap.
+ */
+function onTouchEnd(e) {
+  var item = e.currentTarget;
+  
+  console.log("Stop: " + item.innerHTML);
+  isTouching = false;
+  
+//alert(sample);
+  if(!item.moved) { //Show the
+    item.className = "selected";
+  }
+ 
+
+
+	
+  setTimeout(changePage(page),2000);
+	page="";
+  delete item.moved; //Don't need our flag anymore
+}
+
+
+var links = document.querySelectorAll("#tabs li"), //All the links on this page
+
+// links = links + document.querySelectorAll(".home_btn"),
+i, //iterator
+isTouching = false; //Flag for whether or not the user is currently touching the screen
+
+//Iterate through the links
+for(i=0; i<links.length; ++i) {
+
+  links[i].addEventListener("touchstart", onTouchStart); //Listen for the user to start touching
+  
+  links[i].addEventListener("touchmove", onTouchMove); //Listen for movement
+  links[i].addEventListener("touchend", onTouchEnd); //Listen for the user to stop touching
+}
+
+
+
+
+});
+
+
+	function changeit(page){
+window.open(page+".html",'_self');
+
+}
+</script>
+ 
+  <!--   <script src="js/zepto.min.js"></script> -->
+<!--     <script src="js/index.js"></script> -->
+   <!-- 
+ <script>
+        app.initialize();
+
+    </script>
+ -->
+ 
+
+<!-- </body> -->
+
+</div>
+
+</body>
+
+
+<!-- 
+<script src="lib/fastclick.js"></script>
+<script src="lib/pageslider.js"></script>
+ -->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<!-- 
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone-min.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="js/utils.js"></script>
+ -->
+<!-- <script src="js/app.js"></script> -->
+<!-- <script src="js/views.js"></script> -->
+<!-- 
+<script src="js/facebook.js"></script>
+<script src="swipe/src/swipeview.js"></script>
+ -->
+
+<script src="js/jquery.blockUI.js"></script>
+<!-- <script src="js/jquery.touchwipe.1.1.1.js" charset="utf-8"></script> -->
+
+<script src="js/jquery.form.js"></script>
+<script src="js/sm-sample.js"></script>
+<script src="js/sm.js"></script>
+
+
+
+ <script type="text/javascript">
+//             app.initialize();
+        </script>
+         <script>
+
+   $("#testForm").submit(function(e)
+{
+
+// 
+// elem.value = basicvalues.min;
+// elem2.value = basicvalues.max;
+// console.log(basicValues.min + " " + basicValues.max);
+    var postData = $(this).serializeArray();
+    var formURL = $(this).attr("action");
+    $.ajax(
+    {
+        url : formURL,
+        type: "POST",
+        data : postData,
+        success:function(data, textStatus, jqXHR) 
+        {
+            //data: return data from server
+            alert('Contact Added');
+            $("#testForm")[0].reset();
+        },
+        error: function(jqXHR, textStatus, errorThrown) 
+        {
+            //if fails  
+             alert('Problem Adding Contact');   
+             $("#testForm")[0].reset();
+        }
+    });
+    e.preventDefault(); //STOP default action
+    e.unbind(); //unbind. to stop multiple form submit.
+});
+ 
+// $("#testForm").submit(); //Submit  the FORM
+        </script>
+ <script>
+   $("#testForm2").submit(function(e)
+{
+   // var postData = $(this).serializeArray();
+   var postData = new FormData($(this)[0]);
+    var formURL = $(this).attr("action");
+    $.ajax(
+    {
+        url : formURL,
+        type: "POST",
+        data : postData,
+        async: false,
+        success:function(data, textStatus, jqXHR) 
+        {
+            //data: return data from server
+            alert('Vehicle Added');
+            $("#testForm2")[0].reset();
+        },
+        cache: false,
+        contentType: false,
+        processData: false,
+        error: function(jqXHR, textStatus, errorThrown) 
+        {
+            //if fails  
+             alert('Problem Adding Vehicle');  
+             $("#testForm2")[0].reset();
+        }
+    });
+    e.preventDefault(); //STOP default action
+    e.unbind(); //unbind. to stop multiple form submit.
+});
+ 
+// $("#testForm").submit(); //Submit  the FORM
+        </script>
+</html>

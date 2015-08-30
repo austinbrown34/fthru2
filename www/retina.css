@@ -1,0 +1,154 @@
+/* icons for retina */
+@media (-webkit-min-device-pixel-ratio: 2) {
+
+	.fmenu .start{
+		background-image: url('../images/fmenu-icon-start-sprite@2x.png');   
+		background-size: 40px;
+	}
+	.fmenu .news{
+		background-image: url('../images/fmenu-icon-news-sprite@2x.png');
+		background-size: 40px;
+	}
+	.fmenu .services{
+		background-image: url('../images/fmenu-icon-services-sprite@2x.png');
+		background-size: 40px;
+	}
+	.fmenu .locate{
+		background-image: url('../images/fmenu-icon-locator-sprite@2x.png');
+		background-size: 40px;
+	}
+	.services-list .serv-item{
+		background-image: url('../images/s-list-ar@2x.png');
+		background-size: 15px;
+	}
+	.s-icon.technical {
+		background-image: url('../images/main-icon-service@2x.png');
+		background-size: 48px;
+	}
+	.s-icon.accessories{
+		 background-image: url('../images/main-icon-accesories@2x.png');
+		 background-size: 48px;
+	}
+	.s-icon.purchase{
+		 background-image: url('../images/main-icon-purchase@2x.png');
+		 background-size: 48px;
+	}
+	.s-icon.testdrive {
+		background-image: url('../images/service-icon-testdrive@2x.png');
+		background-size: 48px;
+	}
+	.s-icon.consult {
+		background-image: url('../images/icon-consult@2x.png');
+		background-size: 48px;
+	}
+	.s-icon.evacuator {
+		background-image: url('../images/icon-evacuator@2x.png');
+		background-size: 48px;
+	}
+	.s-icon.repair {
+		background-image: url('../images/icon-repair@2x.png');
+		background-size: 48px;
+	}
+	.s-icon.dealer{
+		background-image: url('../images/inner-icon-dealer@2x.png');
+        background-size: 48px;
+	}
+    .s-icon.googlemaps{
+        background-image: url('../images/icon_google_maps@2x.png');
+        background-size: 48px;
+    }
+    .s-icon.yandexmaps{
+        background-image: url('../images/icon_yandex_maps@2x.png');
+        background-size: 48px;
+    }
+	.services-list a.serv-item.prch{
+		/*background: url('../images/icon-phone@2x.png') center right no-repeat;*/
+	}
+	.pu-filter .p-arr-r{
+		background: url('../images/popup-arrow-red@2x.png') no-repeat center;
+		background-size: 21px;
+	}
+	.p-arr, .p-arr-r{
+		background: url('../images/popup-arrow.png') no-repeat center;
+		background-size: 21px;
+	}
+	.header .profile a {
+		background: url('../images/icon-top-prof@2x.png') center no-repeat;
+		background-size: 30px;
+	}
+	.header .message a {
+		background: url('../images/icon-top-mess@2x.png') center no-repeat;
+		background-size: 30px;
+	}
+	.header .refresh-list a {
+		background: url('../images/icon-refresh@2x.png') center no-repeat;
+		background-size: 39px;
+	}
+	.filter-action{
+		background-image: url('../images/filter-btn-sprite@2x.png');
+		background-size: 37px;
+	}
+	/* carbody images */
+	.body-type li a{
+		background-size: 35px;		
+	}
+	.body-type li a.type-1{
+		background-image: url('../images/car-body/body-1-sprite@2x.png');
+	}
+	.body-type li a.type-2{
+		background-image: url('../images/car-body/body-2-sprite@2x.png');
+	}
+	.body-type li a.type-3{
+		background-image: url('../images/car-body/body-3-sprite@2x.png');
+	}
+	.body-type li a.type-4{
+		background-image: url('../images/car-body/body-4-sprite@2x.png');
+	}
+	.body-type li a.type-5{
+		background-image: url('../images/car-body/body-5-sprite@2x.png');
+	}
+	.body-type li a.type-6{
+		background-image: url('../images/car-body/body-6-sprite@2x.png');
+	}
+	.body-type li a.type-7{
+		background-image: url('../images/car-body/body-7-sprite@2x.png');
+	}
+	.body-type li a.type-8{
+		background-image: url('../images/car-body/body-8-sprite@2x.png');
+	}
+	.body-type li a.type-9{
+		background-image: url('../images/car-body/body-9-sprite@2x.png');
+	}
+	.body-type li a.type-10{
+		background-image: url('../images/car-body/body-10-sprite@2x.png');
+	}
+	/* car brands images */
+	.br-item .br{
+		background-size: 52px;
+	}	
+	.br-item .br.fst{
+		background-image: url('../images/icon-toyota-sprite@2x.png');   		
+	}
+	.br-item .br.scnd{
+		background-image: url('../images/icon-lexus-sprite@2x.png');
+	}
+	.br-item .br.thr{
+		background-image: url('../images/icon-audi-sprite@2x.png');
+	}
+	.br-item .br.fth{
+		background-image: url('../images/icon-mazda-sprite@2x.png');
+	}
+	.news-list .s-icon {
+		background-image: none;
+		margin: 0;
+	}
+	.banner-nav ul li{
+		background: url('../images/nav-point@2x.png') center no-repeat;
+		background-size: 7px;
+	}
+	.banner-nav ul li.active-nav-point{
+		background: url('../images/act-nav-point@2x.png') center no-repeat;
+		background-size: 7px;
+	}
+}
+/* END icons for retina*/
