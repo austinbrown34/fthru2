@@ -242,33 +242,6 @@ td {
 
     });
 });
-
-
-
- $("#tm_map").click(function() {
- $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
-        var value = Math.round(val * 5) / 5,
-          decimal = value - Math.round(val);
-          // elem.value = basicvalues.min;
-// 			elem2.value = basicvalues.max;
-
-        return "$" + value.toString();
-// 		return value;
-      }, step: 500});
-             var elem = document.getElementById("pricelow");
-var elem2 = document.getElementById("pricehigh");
-elem.value=5000;
-elem2.value=10000;
-var basicvalues = $("#slider").rangeSlider("values");
-$("#slider").bind("valuesChanged", function(e, data){
-  console.log("Values just changed. min: " + data.values.min + " max: " + data.values.max);
-  elem.value=data.values.min;
-elem2.value=data.values.max;
-});
-});
-
-
-
  $.ajax({    //create an ajax request to load_page.php
         type: "GET",
         url: "http://cogni.design/cpr/www/display2.php",             
@@ -389,7 +362,7 @@ elem2.value=data.values.max;
  
    <script src="jQRangeSlider-min.js"></script>
    <script>
- 
+
    $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
         var value = Math.round(val * 5) / 5,
           decimal = value - Math.round(val);
@@ -399,7 +372,6 @@ elem2.value=data.values.max;
         return "$" + value.toString();
 // 		return value;
       }, step: 500});
-     
              var elem = document.getElementById("pricelow");
 var elem2 = document.getElementById("pricehigh");
 elem.value=5000;
@@ -867,30 +839,29 @@ window.open(page+".html",'_self');
         type: "POST",
         data : postData,
         async: false,
-        cache: false,
-        contentType: false,
-        processData: false,
         success:function(data, textStatus, jqXHR) 
         {
             //data: return data from server
             alert('Vehicle Added');
             $("#testForm2")[0].reset();
-             $("#slider").rangeSlider("resize");
+           
         },
-        
+        cache: false,
+        contentType: false,
+        processData: false,
         error: function(jqXHR, textStatus, errorThrown) 
         {
             //if fails  
              alert('Problem Adding Vehicle');  
              $("#testForm2")[0].reset();
-              $("#slider").rangeSlider("resize");
+             
         }
     });
+     $("#slider").rangeSlider("resize");
     e.preventDefault(); //STOP default action
     e.unbind(); //unbind. to stop multiple form submit.
- return false;
 });
  
-
+// $("#testForm").submit(); //Submit  the FORM
         </script>
 </html>
