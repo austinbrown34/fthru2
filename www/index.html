@@ -399,7 +399,7 @@ elem2.value=data.values.max;
         return "$" + value.toString();
 // 		return value;
       }, step: 500});
-      $("#slider").rangeSlider("resize");
+     
              var elem = document.getElementById("pricelow");
 var elem2 = document.getElementById("pricehigh");
 elem.value=5000;
@@ -875,6 +875,7 @@ window.open(page+".html",'_self');
             //data: return data from server
             alert('Vehicle Added');
             $("#testForm2")[0].reset();
+             $("#slider").rangeSlider("resize");
         },
         
         error: function(jqXHR, textStatus, errorThrown) 
@@ -882,6 +883,7 @@ window.open(page+".html",'_self');
             //if fails  
              alert('Problem Adding Vehicle');  
              $("#testForm2")[0].reset();
+              $("#slider").rangeSlider("resize");
         }
     });
     e.preventDefault(); //STOP default action
