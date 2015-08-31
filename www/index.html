@@ -1,5 +1,5 @@
-<!DOCTYPE html>  
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
@@ -116,23 +116,6 @@ td {
             $('#styles').change(function() {
                 console.log('Step 7: Style ' + $(this).val() + ' was selected');
                 get_style_details($(this).val());
-                  $('#years1').change(function() {
-                console.log('Step 1: Year ' + $(this).val() + ' was selected');
-                get_makes1($(this).val());
-            });
-            
-            $('#makes1').change(function() {
-                console.log('Step 3: Make ' + $(this).val() + ' was selected');
-                get_models1($(this).val(), $('#years1').val());
-            });
-            $('#models1').change(function() {
-                console.log('Step 5: Model ' + $(this).val() + ' was selected');
-                get_styles1($('#makes1').val(), $(this).val(), $('#years1').val());
-            });
-            $('#styles1').change(function() {
-                console.log('Step 7: Style ' + $(this).val() + ' was selected');
-                get_style_details1($(this).val());
-            });
             });
         });
     </script>
@@ -208,25 +191,25 @@ td {
                 }
             });
         }
-       //  $(document).ready(function() {   
-//             $('#years1').change(function() {
-//                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
-//                 get_makes1($(this).val());
-//             });
-//             
-//             $('#makes1').change(function() {
-//                 console.log('Step 3: Make ' + $(this).val() + ' was selected');
-//                 get_models1($(this).val(), $('#years1').val());
-//             });
-//             $('#models1').change(function() {
-//                 console.log('Step 5: Model ' + $(this).val() + ' was selected');
-//                 get_styles1($('#makes1').val(), $(this).val(), $('#years1').val());
-//             });
-//             $('#styles1').change(function() {
-//                 console.log('Step 7: Style ' + $(this).val() + ' was selected');
-//                 get_style_details1($(this).val());
-//             });
-//         });
+        $(document).ready(function() {   
+            $('#years1').change(function() {
+                console.log('Step 1: Year ' + $(this).val() + ' was selected');
+                get_makes1($(this).val());
+            });
+            
+            $('#makes1').change(function() {
+                console.log('Step 3: Make ' + $(this).val() + ' was selected');
+                get_models1($(this).val(), $('#years1').val());
+            });
+            $('#models1').change(function() {
+                console.log('Step 5: Model ' + $(this).val() + ' was selected');
+                get_styles1($('#makes1').val(), $(this).val(), $('#years1').val());
+            });
+            $('#styles1').change(function() {
+                console.log('Step 7: Style ' + $(this).val() + ' was selected');
+                get_style_details1($(this).val());
+            });
+        });
     </script>
    
    
