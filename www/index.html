@@ -389,7 +389,7 @@ elem2.value=data.values.max;
  
    <script src="jQRangeSlider-min.js"></script>
    <script>
-
+ $("#slider").rangeSlider("resize");
    $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
         var value = Math.round(val * 5) / 5,
           decimal = value - Math.round(val);
