@@ -99,30 +99,7 @@ td {
                 }
             });
         }
-        $(document).ready(function() {   
-            $('#years').change(function() {
-                console.log('Step 1: Year ' + $(this).val() + ' was selected');
-                get_makes($(this).val());
-            });
-            
-            $('#makes').change(function() {
-                console.log('Step 3: Make ' + $(this).val() + ' was selected');
-                get_models($(this).val(), $('#years').val());
-            });
-            $('#models').change(function() {
-                console.log('Step 5: Model ' + $(this).val() + ' was selected');
-                get_styles($('#makes').val(), $(this).val(), $('#years').val());
-            });
-            $('#styles').change(function() {
-                console.log('Step 7: Style ' + $(this).val() + ' was selected');
-                get_style_details($(this).val());
-            });
-        });
-    </script>
-       
-  <script>
-        const EDMUNDS_API_KEY = '6gkv78s45kfx5cbgcf4mq5ae';
-        function get_makes1(year) {
+         function get_makes1(year) {
             url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
             $.ajax({
                 type: "POST",
@@ -192,7 +169,24 @@ td {
             });
         }
         $(document).ready(function() {   
-            $('#years1').change(function() {
+            $('#years').change(function() {
+                console.log('Step 1: Year ' + $(this).val() + ' was selected');
+                get_makes($(this).val());
+            });
+            
+            $('#makes').change(function() {
+                console.log('Step 3: Make ' + $(this).val() + ' was selected');
+                get_models($(this).val(), $('#years').val());
+            });
+            $('#models').change(function() {
+                console.log('Step 5: Model ' + $(this).val() + ' was selected');
+                get_styles($('#makes').val(), $(this).val(), $('#years').val());
+            });
+            $('#styles').change(function() {
+                console.log('Step 7: Style ' + $(this).val() + ' was selected');
+                get_style_details($(this).val());
+            });
+               $('#years1').change(function() {
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes1($(this).val());
             });
@@ -211,6 +205,30 @@ td {
             });
         });
     </script>
+       
+
+       // const EDMUNDS_API_KEY = '6gkv78s45kfx5cbgcf4mq5ae';
+       
+      //   $(document).ready(function() {   
+//             $('#years1').change(function() {
+//                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
+//                 get_makes1($(this).val());
+//             });
+//             
+//             $('#makes1').change(function() {
+//                 console.log('Step 3: Make ' + $(this).val() + ' was selected');
+//                 get_models1($(this).val(), $('#years1').val());
+//             });
+//             $('#models1').change(function() {
+//                 console.log('Step 5: Model ' + $(this).val() + ' was selected');
+//                 get_styles1($('#makes1').val(), $(this).val(), $('#years1').val());
+//             });
+//             $('#styles1').change(function() {
+//                 console.log('Step 7: Style ' + $(this).val() + ' was selected');
+//                 get_style_details1($(this).val());
+//             });
+//         });
+  
    
    
 <script type="text/javascript">
