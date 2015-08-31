@@ -16,6 +16,7 @@
     <author href="http://cogni.design" email="austinbrown34@gmail.com">
         Austin Brown
     </author>
+    
 <access origin="*" /> 
  <preference name="orientation" value="portrait" />
  <preference name="ios-statusbarstyle"         value="false" /> 
@@ -23,13 +24,6 @@
  <preference name="webviewbounce" value="false" />
  <preference name="prerendered-icon" value="true" />
  <icon src="icon.png" />
-<gap:splash src="images/320X480.png" gap:platform="ios" />
-<gap:splash src="images/640X960.png" gap:platform="ios" />
-<gap:splash src="images/640X1136.png" gap:platform="ios" />
-<gap:splash src="images/768X1024.png" gap:platform="ios" />
-<gap:splash src="images/1024X768.png" gap:platform="ios" />
-<gap:splash src="images/1536X2048.png" gap:platform="ios" />
-<gap:splash src="images/2048X1536.png" gap:platform="ios" />
   <gap:splash src="splash.png" gap:platform="android" width="320" height="480" />
  <gap:splash src="splash.png" gap:platform="android" width="1536" height="2008" />
  <gap:splash src="splash.png" gap:platform="android" gap:density="ldpi" />
