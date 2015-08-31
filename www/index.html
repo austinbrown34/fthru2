@@ -230,10 +230,6 @@ td {
     });
 });
 
-$("#tm_map").click(function() {                
-
-     $("#slider").rangeSlider("resize");
-});
 
 
  
@@ -380,6 +376,7 @@ $("#tm_map").click(function() {
         return "$" + value.toString();
 // 		return value;
       }, step: 500});
+      $("#slider").rangeSlider("resize");
              var elem = document.getElementById("pricelow");
 var elem2 = document.getElementById("pricehigh");
 elem.value=5000;
