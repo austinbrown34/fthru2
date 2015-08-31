@@ -389,7 +389,7 @@ elem2.value=data.values.max;
  
    <script src="jQRangeSlider-min.js"></script>
    <script>
- $("#slider").rangeSlider("resize");
+ 
    $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
         var value = Math.round(val * 5) / 5,
           decimal = value - Math.round(val);
@@ -399,6 +399,7 @@ elem2.value=data.values.max;
         return "$" + value.toString();
 // 		return value;
       }, step: 500});
+      $("#slider").rangeSlider("resize");
              var elem = document.getElementById("pricelow");
 var elem2 = document.getElementById("pricehigh");
 elem.value=5000;
