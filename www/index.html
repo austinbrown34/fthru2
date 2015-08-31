@@ -229,6 +229,14 @@ td {
 
     });
 });
+
+$("#tm_map").click(function() {                
+
+     $("#slider").rangeSlider("resize");
+});
+
+
+ 
   $("#tm_home").click(function() {                
 
       $.ajax({    //create an ajax request to load_page.php
@@ -857,7 +865,7 @@ window.open(page+".html",'_self');
              
         }
     });
-     $("#slider").rangeSlider("resize");
+    
     e.preventDefault(); //STOP default action
     e.unbind(); //unbind. to stop multiple form submit.
 });
