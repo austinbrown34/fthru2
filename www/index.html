@@ -838,13 +838,17 @@ window.open(page+".html",'_self');
         url : formURL,
         type: "POST",
         data : postData,
+        async: false,
+        cache: false,
+        contentType: false,
+        processData: false,
         success:function(data, textStatus, jqXHR) 
         {
             //data: return data from server
             alert('Vehicle Added');
             $("#testForm2")[0].reset();
         },
-     
+        
         error: function(jqXHR, textStatus, errorThrown) 
         {
             //if fails  
@@ -852,7 +856,7 @@ window.open(page+".html",'_self');
              $("#testForm2")[0].reset();
         }
     });
-
+ return false;
 });
  
 
