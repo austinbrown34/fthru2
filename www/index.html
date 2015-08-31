@@ -838,16 +838,13 @@ window.open(page+".html",'_self');
         url : formURL,
         type: "POST",
         data : postData,
-        async: false,
         success:function(data, textStatus, jqXHR) 
         {
             //data: return data from server
             alert('Vehicle Added');
             $("#testForm2")[0].reset();
         },
-        cache: false,
-        contentType: false,
-        processData: false,
+     
         error: function(jqXHR, textStatus, errorThrown) 
         {
             //if fails  
@@ -855,10 +852,9 @@ window.open(page+".html",'_self');
              $("#testForm2")[0].reset();
         }
     });
-    e.preventDefault(); //STOP default action
-    e.unbind(); //unbind. to stop multiple form submit.
+
 });
  
-// $("#testForm").submit(); //Submit  the FORM
+
         </script>
 </html>
