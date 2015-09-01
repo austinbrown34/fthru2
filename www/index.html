@@ -376,16 +376,16 @@ td {
         return "$" + value.toString();
 // 		return value;
       }, step: 500});
-   $("#slider").rangeSlider("destroy");
-      $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
-        var value = Math.round(val * 5) / 5,
-          decimal = value - Math.round(val);
-          // elem.value = basicvalues.min;
-// 			elem2.value = basicvalues.max;
-
-        return "$" + value.toString();
-// 		return value;
-      }, step: 500});
+ //   $("#slider").rangeSlider("destroy");
+//       $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
+//         var value = Math.round(val * 5) / 5,
+//           decimal = value - Math.round(val);
+//           // elem.value = basicvalues.min;
+// // 			elem2.value = basicvalues.max;
+// 
+//         return "$" + value.toString();
+// // 		return value;
+//       }, step: 500});
              var elem = document.getElementById("pricelow");
 var elem2 = document.getElementById("pricehigh");
 elem.value=5000;
@@ -779,8 +779,10 @@ window.open(page+".html",'_self');
 <script src="lib/fastclick.js"></script>
 <script src="lib/pageslider.js"></script>
  -->
+<!-- 
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+ -->
 <!-- 
 <script src="lib/underscore-min.js"></script>
 <script src="lib/backbone-min.js"></script>
