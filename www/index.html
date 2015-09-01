@@ -362,16 +362,11 @@ td {
 
 <input type="hidden" id="pricehigh" name="pricehigh">
 
-
-  
-   </td></tr><tr><td colspan="3"><br>
-<center><input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;"></center>
-</form>
  <div id="slider" style="zoom:2;"></div>
  
    <script src="jQRangeSlider-min.js"></script>
    <script>
-
+   
    $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
         var value = Math.round(val * 5) / 5,
           decimal = value - Math.round(val);
@@ -381,7 +376,16 @@ td {
         return "$" + value.toString();
 // 		return value;
       }, step: 500});
-      $("#slider").rangeSlider("resize");
+   $("#slider").rangeSlider("destroy");
+      $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
+        var value = Math.round(val * 5) / 5,
+          decimal = value - Math.round(val);
+          // elem.value = basicvalues.min;
+// 			elem2.value = basicvalues.max;
+
+        return "$" + value.toString();
+// 		return value;
+      }, step: 500});
              var elem = document.getElementById("pricelow");
 var elem2 = document.getElementById("pricehigh");
 elem.value=5000;
@@ -393,7 +397,12 @@ $("#slider").bind("valuesChanged", function(e, data){
 elem2.value=data.values.max;
 });
 
-   </script>	
+   </script>
+  
+   </td></tr><tr><td colspan="3"><br>
+<center><input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;"></center>
+</form>
+	
 <!-- 	<center><table style="align:middle;border-spacing: 30px; border-collapse: separate;"><tr><td><a href="index.html"><img src="add.png" width="25px"></a><td><a href="contacts.html"><img src="contacts.png" width="25px"></a></td><td><a href="vehicle.html"><img src="addcar.gif" width="25px"></a></td><td><a href="vehicles.html"><img src="viewcar.png" width="25px"></a></td><td><a href="match.html"><img src="results.ico" width="25px"></a></td></tr></table></center><br> -->
 </td></tr></table>
 </div>
@@ -799,6 +808,7 @@ window.open(page+".html",'_self');
         </script>
          <script>
 
+ 
    $("#testForm").submit(function(e)
 {
 
@@ -848,6 +858,7 @@ window.open(page+".html",'_self');
         {
             //data: return data from server
             alert('Vehicle Added');
+            
             $("#testForm2")[0].reset();
            
         },
