@@ -348,7 +348,7 @@ var password = localStorage.getItem('password');
 
       $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display.php",             
+        url: "http://cogni.design/cpr/www/display.php?id="+id,             
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#responsecontaineruser").html(response); 
@@ -361,7 +361,7 @@ var password = localStorage.getItem('password');
 
       $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/match.php",             
+        url: "http://cogni.design/cpr/www/match.php?id="+id,             
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#responsecontainermatch").html(response); 
@@ -378,7 +378,7 @@ var password = localStorage.getItem('password');
 
       $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display2.php",             
+        url: "http://cogni.design/cpr/www/display2.php?id="+id,             
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#responsecontainercar").html(response); 
@@ -979,7 +979,7 @@ elem2.value=data.values.max;
     var formURL = $(this).attr("action");
     $.ajax(
     {
-        url : formURL,
+        url : formURL+"?id="+id,
         type: "POST",
         data : postData,
         success:function(data, textStatus, jqXHR) 
@@ -1009,7 +1009,7 @@ elem2.value=data.values.max;
     var formURL = $(this).attr("action");
     $.ajax(
     {
-        url : formURL,
+        url : formURL+"?id="+id,
         type: "POST",
         data : postData,
         async: false,
