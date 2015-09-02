@@ -29,7 +29,142 @@ td {
     <link rel="stylesheet" href="jquery-ui.css">
 <script src="jquery-ui.min.js"></script>
  <script src="jQRangeSlider-min.js"></script>
+ <script src="js/jquery.blockUI.js"></script>
     <script>
+   function errorMsg(msg, timeout)
+{
+	// Display Please Wait...
+	$.blockUI({ message: msg, css: { 
+				border: 'none', 
+				padding: '15px', 
+				backgroundColor: '#880000', 
+				'-webkit-border-radius': '10px', 
+				'-moz-border-radius': '10px', 
+				color: '#fff' 
+			} }); 
+
+	if(timeout>0)
+		setTimeout($.unblockUI, timeout); 
+};
+
+function okMsg(msg, timeout, callback)
+{
+	// Display Please Wait...
+	$.blockUI({ message: msg, css: { 
+				border: 'none', 
+				padding: '15px', 
+				backgroundColor: '#000', 
+				'-webkit-border-radius': '10px', 
+				'-moz-border-radius': '10px', 
+				color: '#fff' 
+			} }); 
+
+	if(timeout>0)
+	{
+		setTimeout(function() 
+		{ 
+            $.unblockUI(
+			{ 
+                onUnblock: callback
+			});
+		},			
+        timeout);
+	}
+}; 
+    var id= localStorage.getItem('id');
+var password = localStorage.getItem('password');
+
+	function checkFormInput(field)
+	{
+		// Check for all fields filled
+		if ( $("#login :input[name='" + field + "']").val().length === 0 )
+		{	
+			errorMsg("All fields are required.", 3000);
+			return false;
+		}
+		return true;
+	}
+	function processLogin()
+	{
+		if(!checkFormInput("email")) return false;
+		if(!checkFormInput("password")) return false;
+     
+		// Display Please Wait...
+		$.blockUI({ css: { 
+					border: 'none', 
+					padding: '15px', 
+					backgroundColor: '#000', 
+					'-webkit-border-radius': '10px', 
+					'-moz-border-radius': '10px', 
+					color: '#fff' 
+				} }); 
+
+		var serializedData = $("#loginForm").serialize();
+		
+		var request = $.ajax({
+				url: "http://cogni.design/cpr/www/login.php?id="+id,
+				type: "get",
+				data: serializedData
+			});
+
+		// callback handler that will be called on success
+		request.done(function (response, textStatus, jqXHR)
+		{
+		
+		if(response == "DELETED")
+			{
+				errorMsg("This account has been deleted. Please contact Admin to see about restoring this account.", 6000);
+				return false;
+				
+			}
+			// response == 0 - Successful
+			if(response != "NOTHING")
+			{
+				$.unblockUI();
+				//  to homepage
+				response = response.split('|');
+				localStorage.setItem("id", response[0]);
+				localStorage.setItem("password", response[1]);
+				
+				
+				 
+				
+   document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
+   $('#slider').rangeSlider('resize');
+			
+				return false;
+			}
+		
+			
+			if(response == "NOTHING")
+			{
+				errorMsg("Failed to log in. Try again.", 3000);
+				return false;
+			}
+			
+			// Unknown response
+			errorMsg("Unknown Response. Try again later.", 3000);
+			return false;
+		});
+
+		// callback handler that will be called on failure
+		request.fail(function (jqXHR, textStatus, errorThrown)
+		{
+			// log the error to the console
+			console.error(
+				"The following error occured: "+
+				textStatus, errorThrown
+			);
+						
+			errorMsg("Problem with logging in. Try again later.", 3000);
+			return false;
+		});		
+		
+		return false;		
+	};
+    
+    
+    
         const EDMUNDS_API_KEY = '6gkv78s45kfx5cbgcf4mq5ae';
         function get_makes(year) {
             url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
@@ -289,8 +424,33 @@ td {
 
 <div id="page">
  
-    
-	<div id="home">
+    <div id="start">
+
+			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
+
+        <div id="login" style="padding-top: 50px;">
+
+	
+		<form id="loginForm" onsubmit="return processLogin();">
+			<div class="fldstyle"><input id="email" type="text" name="email" placeholder="Email Address" autocapitalize="off"/></div><br />
+			<div class="fldstyle"><input type="password" name="password" placeholder="Password"/></div>
+			<button class="bluebtn" type="submit">Log In to your account »</button>
+		</form>
+       <!-- 
+ <br>
+        <div class="button"><a href="#" onclick="changePage('forgot');">Forgot Password?</a></div>
+<!~~ 		<div class="midline_box txtalnL"><div class="pad50pcntleft"><a class="menu_pill"><div class="menu_pill_text">NEW HERE?</div></a></div><hr class="hr_line"></div> ~~>
+<hr class="hr_line">
+
+		<!~~<a href="#" onclick="changePage('register');"><div class="clicksignup">Sign up for a free account »</div></a>~~>
+       <center> <a href="#" onclick="changePage('register');"><div class="bluebtn">get a free account »</div></a></center>
+
+        <br />
+ -->
+	</div>
+</div>
+
+	<div id="home" style="display:none;">
 			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
 
 
