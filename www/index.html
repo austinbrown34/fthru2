@@ -306,7 +306,7 @@ var password = localStorage.getItem('password');
         }
         $(document).ready(function() {   
         
-        if (id != ''){
+        if (id !== null){
         document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
    $('#slider').rangeSlider('resize');
         }
