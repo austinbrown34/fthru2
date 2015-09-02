@@ -305,6 +305,11 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {   
+        
+        if (id != ''){
+        document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
+   $('#slider').rangeSlider('resize');
+        }
             $('#years').change(function() {
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes($(this).val());
