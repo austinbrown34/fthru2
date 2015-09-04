@@ -84,6 +84,28 @@ var password = localStorage.getItem('password');
 		}
 		return true;
 	}
+	
+	function checkContactFormInput(field)
+	{
+		// Check for all fields filled
+		if ( $("#testForm :input[name='" + field + "']").val().length === 0 )
+		{	
+			errorMsg("All fields are required.", 3000);
+			return false;
+		}
+		return true;
+	}
+	
+	function checkVehicleFormInput(field)
+	{
+		// Check for all fields filled
+		if ( $("#testForm2 :input[name='" + field + "']").val().length === 0 )
+		{	
+			errorMsg("All fields are required.", 3000);
+			return false;
+		}
+		return true;
+	}
 	function processLogin()
 	{
 		if(!checkFormInput("email")) return false;
@@ -975,6 +997,14 @@ elem2.value=data.values.max;
 // elem.value = basicvalues.min;
 // elem2.value = basicvalues.max;
 // console.log(basicValues.min + " " + basicValues.max);
+
+if(!checkContactFormInput("firstname")) return false;
+if(!checkContactFormInput("lastname")) return false;
+if(!checkContactFormInput("phone")) return false;
+if(!checkContactFormInput("makes")) return false;
+if(!checkContactFormInput("models")) return false;
+if(!checkContactFormInput("years")) return false;
+
     var postData = $(this).serializeArray();
     var formURL = $(this).attr("action");
     $.ajax(
@@ -1004,6 +1034,12 @@ elem2.value=data.values.max;
  <script>
    $("#testForm2").submit(function(e)
 {
+
+if(!checkVehicleFormInput("price")) return false;
+if(!checkVehicleFormInput("makes")) return false;
+if(!checkVehicleFormInput("models")) return false;
+if(!checkVehicleFormInput("years")) return false;
+
    // var postData = $(this).serializeArray();
    var postData = new FormData($(this)[0]);
     var formURL = $(this).attr("action");
