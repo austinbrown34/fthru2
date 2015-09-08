@@ -33,7 +33,7 @@ td {
  	<script src="jquery.mockjax.js"></script>
  <script src="jquery.validate.js"></script>
  	<script src="jquery.maskedinput.js"></script>
-	<script src="mktSignup.js"></script>
+<!-- 	<script src="mktSignup.js"></script> -->
     <script>
    function errorMsg(msg, timeout)
 {
@@ -76,6 +76,7 @@ function okMsg(msg, timeout, callback)
 	}
 }; 
     var id= localStorage.getItem('id');
+     var userid= localStorage.getItem('id');
 var password = localStorage.getItem('password');
 
 	function checkFormInput(field)
@@ -331,7 +332,7 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {   
-        
+        $("input.phone").mask("(999) 999-9999");
         if (id !== null){
         document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
    $('#slider').rangeSlider('resize');
@@ -1012,18 +1013,20 @@ elem2.value=data.values.max;
 // elem2.value = basicvalues.max;
 // console.log(basicValues.min + " " + basicValues.max);
 
-if(!checkContactFormInput("firstname")) return false;
-if(!checkContactFormInput("lastname")) return false;
-if(!checkContactFormInput("phone")) return false;
-if(!checkContactFormInput("makes")) return false;
-if(!checkContactFormInput("models")) return false;
-if(!checkContactFormInput("years")) return false;
+// if(!checkContactFormInput("firstname")) return false;
+// if(!checkContactFormInput("lastname")) return false;
+// if(!checkContactFormInput("phone")) return false;
+// if(!checkContactFormInput("makes")) return false;
+// if(!checkContactFormInput("models")) return false;
+// if(!checkContactFormInput("years")) return false;
 
     var postData = $(this).serializeArray();
     var formURL = $(this).attr("action");
+    
+    console.log(formURL+"?id="+userid);
     $.ajax(
     {
-        url : formURL+"?id="+id,
+        url : formURL+"?id="+userid,
         type: "POST",
         data : postData,
         success:function(data, textStatus, jqXHR) 
