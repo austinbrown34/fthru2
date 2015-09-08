@@ -30,6 +30,10 @@ td {
 <script src="jquery-ui.min.js"></script>
  <script src="jQRangeSlider-min.js"></script>
  <script src="js/jquery.blockUI.js"></script>
+ 	<script src="jquery.mockjax.js"></script>
+ <script src="jquery.validate.js"></script>
+ 	<script src="jquery.maskedinput.js"></script>
+	<script src="mktSignup.js"></script>
     <script>
    function errorMsg(msg, timeout)
 {
@@ -501,15 +505,21 @@ var password = localStorage.getItem('password');
 		<form id="testForm" action="http://cogni.design/cpr/www/insert.php" method="post">
 	
 <p style="color:black;">First name:</p>
-<input type="text" name="firstname"  style="zoom:1.5;"></td></tr><tr><td colspan="3">
+<!-- <input type="text" name="firstname"  style="zoom:1.5;"> -->
+<input id="first_name" class="required" maxlength="40" name="firstname" size="20" type="text" tabindex="3" value="" style="zoom:1.5;">
+</td></tr><tr><td colspan="3">
 
 <p style="color:black;">Last name:</p>
-<input type="text" name="lastname"  style="zoom:1.5;"></td></tr><tr><td colspan="3">
+<!-- <input type="text" name="lastname"  style="zoom:1.5;"> -->
+<input id="last_name" class="required" maxlength="40" name="lastname" size="20" type="text" tabindex="4" value="" style="zoom:1.5;">
+
+</td></tr><tr><td colspan="3">
 
 <p style="color:black;">Phone:</p>
-<input type="text" name="phone"  style="zoom:1.5;"><br></td></tr><tr><td colspan="3">
+<!-- <input type="text" name="phone"  style="zoom:1.5;"> -->
 
 
+<input id="phone" maxlength="14" name="phone" type="text" class="required phone" tabindex="10" value="" style="zoom:1.5;"><br></td></tr><tr><td colspan="3">
 
      <select id="years" name="years">
         <option>Select Year</option>
