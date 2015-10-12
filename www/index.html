@@ -730,6 +730,17 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
 <!-- 	<center><table style="align:middle;border-spacing: 30px; border-collapse: separate;"><tr><td><a href="index.html"><img src="add.png" width="25px"></a><td><a href="contacts.html"><img src="contacts.png" width="25px"></a></td><td><a href="vehicle.html"><img src="addcar.gif" width="25px"></a></td><td><a href="vehicles.html"><img src="viewcar.png" width="25px"></a></td><td><a href="match.html"><img src="results.ico" width="25px"></a></td></tr></table></center><br> -->
 </td></tr></table>
 </form>
+ <div class="app">
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <div class="event received">
+                  <p>Device is Ready</p>
+                </div>
+
+                <button onclick="app.takePicture();">Take Picture</button>
+            </div>
+        </div>
 	<!-- 
 <form class="cmxform" id="commentForm" method="get" action="">
 		<fieldset>
@@ -1123,7 +1134,10 @@ window.open(page+".html",'_self');
 <!-- </body> -->
 
 </div>
-
+ <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
 </body>
 
 

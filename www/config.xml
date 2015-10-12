@@ -32,4 +32,5 @@
 <gap:splash src="splash.png" gap:platform="android" gap:density="xhdpi" />
 <gap:plugin name="com.phonegap.plugins.pushplugin" />
 <gap:plugin name="nl.x-services.plugins.socialsharing" />
+ <gap:plugin name="org.apache.cordova.core.camera" />
 </widget>
