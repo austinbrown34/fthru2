@@ -1020,20 +1020,20 @@ Model:<br>
 <br><br>
 
 
-        <input id="serverUrl" type="text" value="http://cogni.design/cpr/area51/testground/uploader.php" />
+        <input id="serverUrl" type="hidden" value="http://cogni.design/cpr/area51/testground/uploader.php" />
  
 
 	<!-- Camera -->
 	<div>
-		<h3>Camera:</h3>
+<!-- 		<h3>Camera:</h3> -->
 		<b>Status:</b> <span id="camera_status"></span><br>
         <b>Image:</b> <img style="width:120px;visibility:hidden;display:none;" id="camera_image" src="" />
 	</div>
         
     <!-- Actions -->
     <div>
-        <input type="button" onclick="takePicture();" value="Take Picture" /><br/>
-        <input type="button" onclick="selectPicture();" value="Select Picture from Library" /><br/>
+        <input type="button" onclick="takePicture();" value="Take Picture" />
+        <input type="button" onclick="selectPicture();" value="Select Picture from Library" />
         <input type="button" onclick="uploadPicture();" value="Upload Picture" />
     </div>
    
