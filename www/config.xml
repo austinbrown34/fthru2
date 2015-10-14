@@ -33,5 +33,5 @@
 <gap:plugin name="com.phonegap.plugins.pushplugin" />
 <gap:plugin name="nl.x-services.plugins.socialsharing" />
  <gap:plugin name="org.apache.cordova.core.camera" />
- <gap:plugin name="org.apache.cordova.file-transfer" />
+<gap:plugin name="com.chanthu.evri.gcs-file-transfer" version="1.0.0" />
 </widget>
