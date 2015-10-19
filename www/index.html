@@ -605,7 +605,8 @@ submitHandler: function(form) {
                 img.style.visibility = "visible";
                 img.style.display = "block";
                 img.src = uri;
-                document.getElementById("fileToUpload").value = uri;
+                var filename = uri.substr(uri.lastIndexOf("/")+1);
+                document.getElementById("fileToUpload").value = filename;
                 document.getElementById('camera_status').innerHTML = "Success";
             },
             function(e) {
@@ -624,7 +625,8 @@ submitHandler: function(form) {
                 img.style.visibility = "visible";
                 img.style.display = "block";
                 img.src = uri;
-                document.getElementById("fileToUpload").value = uri;
+                 var filename = uri.substr(uri.lastIndexOf("/")+1);
+                document.getElementById("fileToUpload").value = filename;
                 document.getElementById('camera_status').innerHTML = "Success";
             },
             function(e) {
