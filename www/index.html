@@ -17,6 +17,19 @@ td {
 .error{
 color:#6a7894;
 }
+
+
+
+#box {
+    width: 300px;
+    height: 200px;
+    background: #eef;
+    margin: 30px auto;
+}
+#box h1 {
+    padding-top: 80px;
+}  
+
 </style>
 
 
@@ -728,6 +741,9 @@ submitHandler: function(form) {
 
 <div id="page">
  
+ 
+
+
     <div id="start">
 
 			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
@@ -753,7 +769,7 @@ submitHandler: function(form) {
  -->
 	</div>
 </div>
-  <div id="demo">
+
 	<div id="home" style="display:none;">
 			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
 
@@ -1174,7 +1190,7 @@ Model:<br>
 
 
 		</div>
-</div>
+
 	</div><!-- end panel -->
 
 </div><!-- end page -->
@@ -1289,6 +1305,53 @@ window.open(page+".html",'_self');
             app.initialize();
         </script>
  -->
+   <script>
+   var maxTime = 1000,
+    // allow movement if < 1000 ms (1 sec)
+    maxDistance = 50,
+    // swipe movement of 50 pixels triggers the swipe
+    target = $('#page'),
+    startX = 0,
+    startTime = 0,
+    touch = "ontouchend" in document,
+    startEvent = (touch) ? 'touchstart' : 'mousedown',
+    moveEvent = (touch) ? 'touchmove' : 'mousemove',
+    endEvent = (touch) ? 'touchend' : 'mouseup';
+
+target.bind(startEvent, function(e) {
+    // prevent image drag (Firefox)
+    e.preventDefault();
+    startTime = e.timeStamp;
+    startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+}).bind(endEvent, function(e) {
+    startTime = 0;
+    startX = 0;
+}).bind(moveEvent, function(e) {
+    e.preventDefault();
+    var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+        currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
+        // allow if movement < 1 sec
+        currentTime = e.timeStamp;
+    if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
+        if (currentX < startX) {
+            // swipe left code here
+            target.find('h1').html('Swipe Left').fadeIn();
+            setTimeout(function() {
+                target.find('h1').fadeOut();
+            }, 1000);
+        }
+        if (currentX > startX) {
+            // swipe right code here
+            target.find('h1').html('Swipe Right').fadeIn();
+            setTimeout(function() {
+                target.find('h1').fadeOut();
+            }, 1000);
+        }
+        startTime = 0;
+        startX = 0;
+    }
+});
+  </script>
 </body>
 
 
@@ -1369,21 +1432,4 @@ function formcheck() {
  
 // $("#testForm").submit(); //Submit  the FORM
         </script>
-          <script type="text/javascript" src="dragend.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var container = document.getElementById("demo");
-      dragend = new Dragend(container, {
-        afterInitialize: function() {
-          container.style.visibility = "visible";
-        }
-      });
-    }, false)
-
-    // document.body.addEventListener('mousemove', function(){
-    //   console.log('bodymousemove')
-    // })
-  </script>
-
 </html>
