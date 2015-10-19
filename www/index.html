@@ -601,6 +601,7 @@ submitHandler: function(form) {
     function takePicture() {
         navigator.camera.getPicture(
             function(uri) {
+            
                 var img = document.getElementById('camera_image');
                 img.style.visibility = "visible";
                 img.style.display = "block";
@@ -613,7 +614,7 @@ submitHandler: function(form) {
                 console.log("Error getting picture: " + e);
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
-            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI});
+            { quality: 50, encodingType: Camera.EncodingType.JPEG, destinationType: navigator.camera.DestinationType.FILE_URI});
     };
     /**
      * Select picture from library
