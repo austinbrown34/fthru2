@@ -793,7 +793,7 @@ submitHandler: function(form) {
 				<tr>
 		<td colspan="3">
 		<div style="padding: 2px 4px 3px 4px;">
-	
+	<div id="box"><h1></h1></div>
 <p style="color:black;">First name:</p>
 <input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required></td></tr><tr><td colspan="3">
 
@@ -1310,7 +1310,7 @@ window.open(page+".html",'_self');
     // allow movement if < 1000 ms (1 sec)
     maxDistance = 50,
     // swipe movement of 50 pixels triggers the swipe
-    target = $('#home'),
+    target = $('#box'),
     startX = 0,
     startTime = 0,
     touch = "ontouchend" in document,
