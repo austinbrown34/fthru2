@@ -40,6 +40,7 @@ color:#6a7894;
  -->
   <script src="jquery.validate.js"></script>
  	<script src="jquery.maskedinput.js"></script>
+<!--  	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> -->
  	
 <!-- 	<script src="mktSignup.js"></script> -->
     <script>
@@ -752,7 +753,7 @@ submitHandler: function(form) {
  -->
 	</div>
 </div>
-
+  <div id="demo">
 	<div id="home" style="display:none;">
 			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
 
@@ -1173,7 +1174,7 @@ Model:<br>
 
 
 		</div>
-
+</div>
 	</div><!-- end panel -->
 
 </div><!-- end page -->
@@ -1368,4 +1369,21 @@ function formcheck() {
  
 // $("#testForm").submit(); //Submit  the FORM
         </script>
+          <script type="text/javascript" src="dragend.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var container = document.getElementById("demo");
+      dragend = new Dragend(container, {
+        afterInitialize: function() {
+          container.style.visibility = "visible";
+        }
+      });
+    }, false)
+
+    // document.body.addEventListener('mousemove', function(){
+    //   console.log('bodymousemove')
+    // })
+  </script>
+
 </html>
