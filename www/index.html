@@ -1336,6 +1336,8 @@ target.bind(startEvent, function(e) {
         if (currentX < startX) {
             // swipe left code here
             target.find('h1').html('Swipe Left').fadeIn();
+            $("#home").hide();
+            $("match").show();
             setTimeout(function() {
                 target.find('h1').fadeOut();
             }, 1000);
@@ -1343,6 +1345,8 @@ target.bind(startEvent, function(e) {
         if (currentX > startX) {
             // swipe right code here
             target.find('h1').html('Swipe Right').fadeIn();
+              $("#home").hide();
+            $("viewuser").show();
             setTimeout(function() {
                 target.find('h1').fadeOut();
             }, 1000);
