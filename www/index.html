@@ -605,6 +605,7 @@ submitHandler: function(form) {
                 img.style.visibility = "visible";
                 img.style.display = "block";
                 img.src = uri;
+                document.getElementById("fileToUpload").value = uri;
                 document.getElementById('camera_status').innerHTML = "Success";
             },
             function(e) {
@@ -623,6 +624,7 @@ submitHandler: function(form) {
                 img.style.visibility = "visible";
                 img.style.display = "block";
                 img.src = uri;
+                document.getElementById("fileToUpload").value = uri;
                 document.getElementById('camera_status').innerHTML = "Success";
             },
             function(e) {
@@ -1041,6 +1043,7 @@ Model:<br>
        
     </div>
     </center>
+    <input type="hidden" name="fileToUpload" id="fileToUpload" value="">
 <!--   <p style="color:black;">Select image to upload:</p> -->
 <!--     <input type="file" name="fileToUpload" id="fileToUpload" style="zoom:1.3;" accept="image/*" capture="camera" required /> -->
     <!-- <input type="submit" value="Upload Image" name="submit"> --><br><br>
