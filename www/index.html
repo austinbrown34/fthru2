@@ -854,7 +854,7 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
     <select id="models" name="models" required  class="ss-item-required">
         <option value="">Select Model</option>
     </select></td></tr><tr><td colspan="3">
-    <div style="z-index:10;">
+    <div class="slider">
     <br>
 
 <input type="hidden" id ="pricelow" name="pricelow">
@@ -1319,7 +1319,7 @@ window.open(page+".html",'_self');
     // allow movement if < 1000 ms (1 sec)
     maxDistance = 50,
     // swipe movement of 50 pixels triggers the swipe
-    target = $('.slidehome'),
+    target = $('.slidehome :not(.slider)'),
     startX = 0,
     startTime = 0,
     touch = "ontouchend" in document,
