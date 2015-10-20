@@ -1322,6 +1322,10 @@ window.open(page+".html",'_self');
     maxDistance = 50,
     // swipe movement of 50 pixels triggers the swipe
     target = $('#home'),
+    target2 = $('#viewuser'),
+    target3 = $('#addcar'),
+    target4 = $('#viewcar'),
+    target5 = $('#match'),
     startX = 0,
     startTime = 0,
     touch = "ontouchend" in document,
@@ -1358,7 +1362,163 @@ document.getElementById('viewuser').style.display = '';
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
               $("#home").hide();
+            document.getElementById('match').style.display = '';
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
+        }
+        startTime = 0;
+        startX = 0;
+    }
+});
+
+target2.bind(startEvent, function(e) {
+    // prevent image drag (Firefox)
+    
+//     e.preventDefault();
+    startTime = e.timeStamp;
+    startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+}).bind(endEvent, function(e) {
+    startTime = 0;
+    startX = 0;
+}).bind(moveEvent, function(e) {
+//     e.preventDefault();
+    var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+        currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
+        // allow if movement < 1 sec
+        currentTime = e.timeStamp;
+    if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
+        if (currentX < startX) {
+            // swipe left code here
+//             target.find('h1').html('Swipe Left').fadeIn();
+            $("#viewuser").hide();
+document.getElementById('home').style.display = '';
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
+        }
+        if (currentX > startX) {
+            // swipe right code here
+//             target.find('h1').html('Swipe Right').fadeIn();
+              $("#viewuser").hide();
             document.getElementById('viewuser').style.display = '';
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
+        }
+        startTime = 0;
+        startX = 0;
+    }
+});
+
+target3.bind(startEvent, function(e) {
+    // prevent image drag (Firefox)
+    
+//     e.preventDefault();
+    startTime = e.timeStamp;
+    startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+}).bind(endEvent, function(e) {
+    startTime = 0;
+    startX = 0;
+}).bind(moveEvent, function(e) {
+//     e.preventDefault();
+    var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+        currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
+        // allow if movement < 1 sec
+        currentTime = e.timeStamp;
+    if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
+        if (currentX < startX) {
+            // swipe left code here
+//             target.find('h1').html('Swipe Left').fadeIn();
+            $("#addcar").hide();
+document.getElementById('#viewuser').style.display = '';
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
+        }
+        if (currentX > startX) {
+            // swipe right code here
+//             target.find('h1').html('Swipe Right').fadeIn();
+              $("#addcar").hide();
+            document.getElementById('viewcar').style.display = '';
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
+        }
+        startTime = 0;
+        startX = 0;
+    }
+});
+
+target4.bind(startEvent, function(e) {
+    // prevent image drag (Firefox)
+    
+//     e.preventDefault();
+    startTime = e.timeStamp;
+    startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+}).bind(endEvent, function(e) {
+    startTime = 0;
+    startX = 0;
+}).bind(moveEvent, function(e) {
+//     e.preventDefault();
+    var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+        currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
+        // allow if movement < 1 sec
+        currentTime = e.timeStamp;
+    if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
+        if (currentX < startX) {
+            // swipe left code here
+//             target.find('h1').html('Swipe Left').fadeIn();
+            $("#viewcar").hide();
+document.getElementById('addcar').style.display = '';
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
+        }
+        if (currentX > startX) {
+            // swipe right code here
+//             target.find('h1').html('Swipe Right').fadeIn();
+              $("#viewcar").hide();
+            document.getElementById('match').style.display = '';
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
+        }
+        startTime = 0;
+        startX = 0;
+    }
+});
+
+target5.bind(startEvent, function(e) {
+    // prevent image drag (Firefox)
+    
+//     e.preventDefault();
+    startTime = e.timeStamp;
+    startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+}).bind(endEvent, function(e) {
+    startTime = 0;
+    startX = 0;
+}).bind(moveEvent, function(e) {
+//     e.preventDefault();
+    var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+        currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
+        // allow if movement < 1 sec
+        currentTime = e.timeStamp;
+    if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
+        if (currentX < startX) {
+            // swipe left code here
+//             target.find('h1').html('Swipe Left').fadeIn();
+            $("#match").hide();
+document.getElementById('viewcar').style.display = '';
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
+        }
+        if (currentX > startX) {
+            // swipe right code here
+//             target.find('h1').html('Swipe Right').fadeIn();
+              $("#match").hide();
+            document.getElementById('home').style.display = '';
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
