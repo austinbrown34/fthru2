@@ -769,7 +769,7 @@ submitHandler: function(form) {
  -->
 	</div>
 </div>
-
+<div id="slidehome">
 	<div id="home" style="display:none;">
 			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
 
@@ -929,6 +929,7 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
 
 
 
+		</div>
 		</div>
 		<div id="match" style="display:none;">
 			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
@@ -1310,7 +1311,7 @@ window.open(page+".html",'_self');
     // allow movement if < 1000 ms (1 sec)
     maxDistance = 50,
     // swipe movement of 50 pixels triggers the swipe
-    target = $('#home'),
+    target = $('#slidehome'),
     startX = 0,
     startTime = 0,
     touch = "ontouchend" in document,
