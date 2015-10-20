@@ -1322,14 +1322,14 @@ window.open(page+".html",'_self');
 
 target.bind(startEvent, function(e) {
     // prevent image drag (Firefox)
-    e.preventDefault();
+//     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 }).bind(endEvent, function(e) {
     startTime = 0;
     startX = 0;
 }).bind(moveEvent, function(e) {
-    e.preventDefault();
+//     e.preventDefault();
     var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
         currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
         // allow if movement < 1 sec
