@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <title>followTHRU</title>
-    <meta name="viewport" content="width=device-width">
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" /> -->
+    
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
         <link rel="stylesheet" id ="extra2" type="text/css" href="css/socialmotives.css"/>
     <link rel="stylesheet" href="css/ratchet.css">
     <link rel="stylesheet" href="css/pageslider.css">
@@ -1337,21 +1337,21 @@ target.bind(startEvent, function(e) {
     if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
         if (currentX < startX) {
             // swipe left code here
-            target.find('h1').html('Swipe Left').fadeIn();
+//             target.find('h1').html('Swipe Left').fadeIn();
             $("#home").hide();
 document.getElementById('viewuser').style.display = '';
-            setTimeout(function() {
-                target.find('h1').fadeOut();
-            }, 1000);
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
         }
         if (currentX > startX) {
             // swipe right code here
-            target.find('h1').html('Swipe Right').fadeIn();
+//             target.find('h1').html('Swipe Right').fadeIn();
               $("#home").hide();
             document.getElementById('viewuser').style.display = '';
-            setTimeout(function() {
-                target.find('h1').fadeOut();
-            }, 1000);
+            // setTimeout(function() {
+//                 target.find('h1').fadeOut();
+//             }, 1000);
         }
         startTime = 0;
         startX = 0;
