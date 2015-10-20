@@ -775,7 +775,7 @@ submitHandler: function(form) {
 	
 			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
 
-
+<div class="slidehome" style="z-index:3;">
 		<div id="tabs" class="font_PNbold" style="zoom: .8;">
 			<ul id="top_menu">
 				<li id="tm_map" class="active" ><img src="add_user.png" style="width:50px;"></li>
@@ -796,7 +796,7 @@ submitHandler: function(form) {
 		<td colspan="3">
 		
 		<div style="padding: 2px 4px 3px 4px;">
-		<div class="slidehome">
+		
 	<!-- <div id="box"><h1></h1></div> -->
 <p style="color:black;">First name:</p>
 <input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required></td></tr><tr><td colspan="3">
@@ -853,7 +853,9 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
     </select></td></tr><tr><td colspan="3"><br>
     <select id="models" name="models" required  class="ss-item-required">
         <option value="">Select Model</option>
-    </select></div></td></tr><tr><td colspan="3"><br>
+    </select></td></tr><tr><td colspan="3">
+    <div style="z-index:10;">
+    <br>
 
 <input type="hidden" id ="pricelow" name="pricelow">
 
@@ -862,7 +864,7 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
  <div id="slider" style="zoom:2;"></div>
  
 
-
+</div>
   
    </td></tr><tr><td colspan="3"><br>
 <center><input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;"></center>
@@ -871,6 +873,7 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
 <!-- 	<center><table style="align:middle;border-spacing: 30px; border-collapse: separate;"><tr><td><a href="index.html"><img src="add.png" width="25px"></a><td><a href="contacts.html"><img src="contacts.png" width="25px"></a></td><td><a href="vehicle.html"><img src="addcar.gif" width="25px"></a></td><td><a href="vehicles.html"><img src="viewcar.png" width="25px"></a></td><td><a href="match.html"><img src="results.ico" width="25px"></a></td></tr></table></center><br> -->
 </td></tr></table>
 </form>
+</div>
  <!-- 
 <div class="app">
             <h1>PhoneGap</h1>
