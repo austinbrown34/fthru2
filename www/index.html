@@ -854,17 +854,16 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
     <select id="models" name="models" required  class="ss-item-required">
         <option value="">Select Model</option>
     </select></td></tr><tr><td colspan="3">
-    <div class="slider" style="height: 200px !important; border:1px solid red !important;">
+<!--     <div class="slider" style="height: 200px !important; border:1px solid red !important;"> -->
     <br>
+<input id="pricelow" class="" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " />
+<input id="pricehigh" class="" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " />
 
-<input type="hidden" id ="pricelow" name="pricelow">
 
-<input type="hidden" id="pricehigh" name="pricehigh">
-
- <div id="slider" style="zoom:2;"></div>
+<!--  <div id="slider" style="zoom:2;"></div> -->
  
 
-</div>
+<!-- </div> -->
   
    </td></tr><tr><td colspan="3"><br>
 <center><input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;"></center>
@@ -1319,16 +1318,14 @@ window.open(page+".html",'_self');
     // allow movement if < 1000 ms (1 sec)
     maxDistance = 50,
     // swipe movement of 50 pixels triggers the swipe
-    target = $('#home :not(.slider)'),
+    target = $('#home'),
     startX = 0,
     startTime = 0,
     touch = "ontouchend" in document,
     startEvent = (touch) ? 'touchstart' : 'mousedown',
     moveEvent = (touch) ? 'touchmove' : 'mousemove',
     endEvent = (touch) ? 'touchend' : 'mouseup';
-$('.slider').on(startEvent, function(e) {
-    e.stopPropagation();
-});
+
 target.bind(startEvent, function(e) {
     // prevent image drag (Firefox)
     
