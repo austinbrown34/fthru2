@@ -857,10 +857,16 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
 <!--     <div class="slider" style="height: 200px !important; border:1px solid red !important;"> -->
     <br>
     <center>
+    <table>
+    <tr>
+    <td>
   <p style="color:black;">  Low Price:</p>
 <input id="pricelow" class="" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="width:50%;zoom:1.5;" class="ss-item-required" required />
+  </td><td>
   <p style="color:black;">  High Price:</p>
 <input id="pricehigh" class="" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="width:50%;zoom:1.5;" class="ss-item-required" required />
+</td></tr>
+</table>
 </center>
 
 <!--  <div id="slider" style="zoom:2;"></div> -->
@@ -1431,7 +1437,7 @@ target3.bind(startEvent, function(e) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
             $("#addcar").hide();
-document.getElementById('#viewcar').style.display = '';
+document.getElementById('viewcar').style.display = '';
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
