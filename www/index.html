@@ -826,11 +826,11 @@ box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1)
 box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
 
 <p style="color:black;">Type of Vehicle:</p>
-                        <input type="checkbox" name="type" value="Cars" style="zoom:1.5;" />Cars <br />
-                        <input type="checkbox" name="type" value="Trucks" style="zoom:1.5;" />Trucks<br />
-                        <input type="checkbox" name="type" value="SUVS" style="zoom:1.5;" />SUVS<br />
-                        <input type="checkbox" name="type" value="Crossovers" style="zoom:1.5;" />Crossovers<br />
-                        <input type="checkbox" name="type" value="Specific" class="specific" style="zoom:1.5;" />Specific<br />
+                        <input type="checkbox" name="type" value="Cars" class="others" style="zoom:2.5;" /><p style="color:black;">Cars</p> <br />
+                        <input type="checkbox" name="type" value="Trucks" class="others" style="zoom:2.5;" /><p style="color:black;">Trucks</p><br />
+                        <input type="checkbox" name="type" value="SUVS" class="others" style="zoom:2.5;" /><p style="color:black;">SUVS</p><br />
+                        <input type="checkbox" name="type" value="Crossovers" class="others" style="zoom:2.5;" /><p style="color:black;">Crossovers</p><br />
+                        <input type="checkbox" name="type" value="Specific" class="specific" style="zoom:2.5;" /><p style="color:black;">Specific</p><br />
 
 
                 
@@ -1239,11 +1239,13 @@ Model:<br>
 
 $(".specific").change(function() {
     if(this.checked) {
+    document.getElementsByClassName("others").disabled = true;
          document.getElementById('specific1').style.display = '';
          document.getElementById('specific2').style.display = '';
          document.getElementById('specific3').style.display = '';
     }
     else{
+    document.getElementsByClassName("others").disabled = false;
     $("#specific1").hide();
      $("#specific2").hide();
       $("#specific3").hide();
