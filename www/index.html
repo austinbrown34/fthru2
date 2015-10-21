@@ -1244,10 +1244,10 @@ Model:<br>
 
 $(".specific").change(function() {
     if(this.checked) {
-    document.getElementsById("cars").disabled = true;
-        document.getElementsById("trucks").disabled = true;
-    document.getElementsById("suvs").disabled = true;
-    document.getElementsById("crossovers").disabled = true;
+    document.getElementById("cars").disabled = true;
+        document.getElementById("trucks").disabled = true;
+    document.getElementById("suvs").disabled = true;
+    document.getElementById("crossovers").disabled = true;
 
 
          document.getElementById('specific1').style.display = '';
@@ -1255,10 +1255,10 @@ $(".specific").change(function() {
          document.getElementById('specific3').style.display = '';
     }
     else{
-    document.getElementsById("cars").disabled = false;
-        document.getElementsById("trucks").disabled = false;
-    document.getElementsById("suvs").disabled = false;
-    document.getElementsById("crossovers").disabled = false;
+    document.getElementById("cars").disabled = false;
+        document.getElementById("trucks").disabled = false;
+    document.getElementById("suvs").disabled = false;
+    document.getElementById("crossovers").disabled = false;
     $("#specific1").hide();
      $("#specific2").hide();
       $("#specific3").hide();
