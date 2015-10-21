@@ -835,7 +835,7 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
 
                 
 
-<div id="specific" style="display:none;">
+<div id="specific1" style="display:none;">
      <select id="years" name="years" class="ss-item-required" required>
      
         <option value="">Select Year</option>
@@ -864,10 +864,14 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
          <option>2013</option>
           <option>2014</option>
            <option>2015</option>
-    </select></td></tr><tr><td colspan="3"><br>
+    </select></div></td></tr><tr><td colspan="3">
+    <div id="specific2" style="display:none;">
+    <br>
     <select id="makes" name="makes" required  class="ss-item-required">
         <option value="">Select Make</option>
-    </select></td></tr><tr><td colspan="3"><br>
+    </select></div></td></tr><tr><td colspan="3">
+    <div id="specific3" style="display:none;">
+    <br>
     <select id="models" name="models" required  class="ss-item-required">
         <option value="">Select Model</option>
     </select>
@@ -1235,7 +1239,14 @@ Model:<br>
 
 $(".specific").change(function() {
     if(this.checked) {
-         document.getElementById('specific').style.display = '';
+         document.getElementById('specific1').style.display = '';
+         document.getElementById('specific2').style.display = '';
+         document.getElementById('specific3').style.display = '';
+    }
+    else{
+    $("#specific1").hide();
+     $("#specific2").hide();
+      $("#specific3").hide();
     }
 });
 $(document).ready(function(){
