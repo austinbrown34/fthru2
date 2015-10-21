@@ -825,18 +825,17 @@ box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1)
 -webkit-appearance: none;
 box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
 
-<fieldset>
-                <legend>Type of Vehicle:</legend>
-                        <input type="checkbox" name="type" value="Cars" />Cars <br />
-                        <input type="checkbox" name="type" value="Trucks" />Trucks<br />
-                        <input type="checkbox" name="type" value="SUVS" />SUVS<br />
-                        <input type="checkbox" name="type" value="Crossovers" />Crossovers<br />
-                        <input type="checkbox" name="type" value="Specific" />Specific<br />
+<p style="color:black;">Type of Vehicle:</p>
+                        <input type="checkbox" name="type" value="Cars" style="zoom:1.5;" />Cars <br />
+                        <input type="checkbox" name="type" value="Trucks" style="zoom:1.5;" />Trucks<br />
+                        <input type="checkbox" name="type" value="SUVS" style="zoom:1.5;" />SUVS<br />
+                        <input type="checkbox" name="type" value="Crossovers" style="zoom:1.5;" />Crossovers<br />
+                        <input type="checkbox" name="type" value="Specific" class="specific" style="zoom:1.5;" />Specific<br />
 
 
                 
-        </fieldset>
 
+<div id="specific" style="display:none;">
      <select id="years" name="years" class="ss-item-required" required>
      
         <option value="">Select Year</option>
@@ -871,7 +870,10 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
     </select></td></tr><tr><td colspan="3"><br>
     <select id="models" name="models" required  class="ss-item-required">
         <option value="">Select Model</option>
-    </select></td></tr><tr><td colspan="3">
+    </select>
+    
+    </div>
+    </td></tr><tr><td colspan="3">
 <!--     <div class="slider" style="height: 200px !important; border:1px solid red !important;"> -->
     <br>
     <center>
@@ -1231,7 +1233,11 @@ Model:<br>
 </div><!-- end page -->
 <script type='text/javascript'>
 
-
+$(".specific").change(function() {
+    if(this.checked) {
+         document.getElementById('specific').style.display = '';
+    }
+});
 $(document).ready(function(){
 
 var page;
