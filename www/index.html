@@ -825,12 +825,17 @@ box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1)
 -webkit-appearance: none;
 box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
 
-<p style="color:black;">Type of Vehicle:</p>
-                        <input type="checkbox" name="type" value="Cars" class="others" style="zoom:2.5;" /><p style="color:black;">Cars</p> <br />
-                        <input type="checkbox" name="type" value="Trucks" class="others" style="zoom:2.5;" /><p style="color:black;">Trucks</p><br />
-                        <input type="checkbox" name="type" value="SUVS" class="others" style="zoom:2.5;" /><p style="color:black;">SUVS</p><br />
-                        <input type="checkbox" name="type" value="Crossovers" class="others" style="zoom:2.5;" /><p style="color:black;">Crossovers</p><br />
-                        <input type="checkbox" name="type" value="Specific" class="specific" style="zoom:2.5;" /><p style="color:black;">Specific</p><br />
+<p style="color:black;">Type of Vehicle:</p><br>
+<center>
+<table>
+<tr>
+<td>
+                        <input type="checkbox" name="type" value="Cars" id="cars" class="others" style="zoom:2.5;" /><p style="color:black;">Cars</p> </td><td>
+                        <input type="checkbox" name="type" value="Trucks" id="trucks" class="others" style="zoom:2.5;" /><p style="color:black;">Trucks</p></td><td>
+                        <input type="checkbox" name="type" value="SUVS" id="suvs" class="others" style="zoom:2.5;" /><p style="color:black;">SUVS</p></td><td>
+                        <input type="checkbox" name="type" value="Crossovers" id="crossovers" class="others" style="zoom:2.5;" /><p style="color:black;">Crossovers</p></td><td>
+                        <input type="checkbox" name="type" value="Specific" class="specific" style="zoom:2.5;" /><p style="color:black;">Specific</p></td>
+                        </tr></table></center>
 
 
                 
@@ -1239,13 +1244,21 @@ Model:<br>
 
 $(".specific").change(function() {
     if(this.checked) {
-    document.getElementsByClassName("others").disabled = true;
+    document.getElementsById("cars").disabled = true;
+        document.getElementsById("trucks").disabled = true;
+    document.getElementsById("suvs").disabled = true;
+    document.getElementsById("crossovers").disabled = true;
+
+
          document.getElementById('specific1').style.display = '';
          document.getElementById('specific2').style.display = '';
          document.getElementById('specific3').style.display = '';
     }
     else{
-    document.getElementsByClassName("others").disabled = false;
+    document.getElementsById("cars").disabled = false;
+        document.getElementsById("trucks").disabled = false;
+    document.getElementsById("suvs").disabled = false;
+    document.getElementsById("crossovers").disabled = false;
     $("#specific1").hide();
      $("#specific2").hide();
       $("#specific3").hide();
