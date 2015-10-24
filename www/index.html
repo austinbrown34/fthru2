@@ -354,7 +354,17 @@ var password = localStorage.getItem('password');
                 }
             });
         }
-        $(document).ready(function() {   
+        $(document).ready(function() {  
+        var timer = null; 
+        $("hdr_title").bind('touchstart',function() {
+         timer = setTimeout( doStuff, 500 );
+        });
+        $("hdr_title").bind('touchend',function() {
+        clearTimeout( timer );
+        });
+        function doStuff() {
+  alert('hello, you just holded the mousebutton for half a second. Is everything ok?')
+}
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
         document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
