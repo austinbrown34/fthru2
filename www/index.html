@@ -369,18 +369,18 @@ var password = localStorage.getItem('password');
 var startTime, endTime;
 var gbMove = false;
 
-window.addEventListener('touchstart',function(event) {
+$( "#contactitem" ).bind('touchstart',function(event) {
     startTime = new Date().getTime(); 
     gbMove = false;        
 },false);
 
-window.addEventListener('touchmove',function(event) {
+$( "#contactitem" ).bind('touchmove',function(event) {
   gbMove = true;
 },false);
 
-window.addEventListener('touchend',function(event) {
+$( "#contactitem" ).bind('touchend',function(event) {
     endTime = new Date().getTime();
-    if(!gbMove && (endTime-startTime)/1000 > 2)
+    if(!gbMove && (endTime-startTime)/1000 > .5)
         alert('tap hold event');      
 },false);
         $("input.phone").mask("(999) 999-9999");
