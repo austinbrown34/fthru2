@@ -356,10 +356,10 @@ var password = localStorage.getItem('password');
         }
         $(document).ready(function() {  
         var timer = null; 
-        $("hdr_title").bind('touchstart',function() {
+        $("#hdr_title").bind('touchstart',function() {
          timer = setTimeout( doStuff, 500 );
         });
-        $("hdr_title").bind('touchend',function() {
+        $("#hdr_title").bind('touchend',function() {
         clearTimeout( timer );
         });
         function doStuff() {
