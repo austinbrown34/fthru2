@@ -369,16 +369,16 @@ var password = localStorage.getItem('password');
 var startTime, endTime;
 var gbMove = false;
 
-$( "#contactitem" ).bind('touchstart',function(event) {
+$( "#home" ).bind('touchstart',function(event) {
     startTime = new Date().getTime(); 
     gbMove = false;        
 },false);
 
-$( "#contactitem" ).bind('touchmove',function(event) {
+$( "#home" ).bind('touchmove',function(event) {
   gbMove = true;
 },false);
 
-$( "#contactitem" ).bind('touchend',function(event) {
+$( "#home" ).bind('touchend',function(event) {
     endTime = new Date().getTime();
     if(!gbMove && (endTime-startTime)/1000 > .5)
         alert('tap hold event');      
