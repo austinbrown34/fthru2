@@ -355,16 +355,34 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {  
-        var timer = null; 
-        $("#hdr_title").bind('touchstart',function() {
-         timer = setTimeout( doStuff, 500 );
-        });
-        $("#hdr_title").bind('touchend',function() {
-        clearTimeout( timer );
-        });
-        function doStuff() {
-  alert('hello, you just holded the mousebutton for half a second. Is everything ok?')
-}
+      //   var timer = null; 
+//         $("#hdr_title").bind('touchstart',function() {
+//          timer = setTimeout( doStuff, 500 );
+//         });
+//         $("#hdr_title").bind('touchend',function() {
+//         clearTimeout( timer );
+//         });
+//         function doStuff() {
+//   alert('hello, you just holded the mousebutton for half a second. Is everything ok?')
+// }
+
+var startTime, endTime;
+var gbMove = false;
+
+window.addEventListener('touchstart',function(event) {
+    startTime = new Date().getTime(); 
+    gbMove = false;        
+},false);
+
+window.addEventListener('touchmove',function(event) {
+  gbMove = true;
+},false);
+
+window.addEventListener('touchend',function(event) {
+    endTime = new Date().getTime();
+    if(!gbMove && (endTime-startTime)/1000 > 2)
+        alert('tap hold event');      
+},false);
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
         document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
