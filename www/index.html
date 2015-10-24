@@ -366,23 +366,23 @@ var password = localStorage.getItem('password');
 //   alert('hello, you just holded the mousebutton for half a second. Is everything ok?')
 // }
 
-var startTime, endTime;
-var gbMove = false;
-
-$( "#home" ).bind('touchstart',function(event) {
-    startTime = new Date().getTime(); 
-    gbMove = false;        
-},false);
-
-$( "#home" ).bind('touchmove',function(event) {
-  gbMove = true;
-},false);
-
-$( "#home" ).bind('touchend',function(event) {
-    endTime = new Date().getTime();
-    if(!gbMove && (endTime-startTime)/1000 > 2)
-        alert('tap hold event');      
-},false);
+// var startTime, endTime;
+// var gbMove = false;
+// 
+// $( "#home" ).bind('touchstart',function(event) {
+//     startTime = new Date().getTime(); 
+//     gbMove = false;        
+// },false);
+// 
+// $( "#home" ).bind('touchmove',function(event) {
+//   gbMove = true;
+// },false);
+// 
+// $( "#home" ).bind('touchend',function(event) {
+//     endTime = new Date().getTime();
+//     if(!gbMove && (endTime-startTime)/1000 > 2)
+//         alert('tap hold event');      
+// },false);
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
         document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
