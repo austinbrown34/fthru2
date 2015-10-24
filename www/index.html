@@ -31,6 +31,54 @@ color:#6a7894;
     padding-top: 80px;
 }  
 
+
+.events div {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        float: left;
+        padding: 10px;
+        font-weight: bold;
+    }
+    .events #one {
+        background: #f00;
+    }
+    .events #two {
+        background: #0f0;
+    }
+    .events #three {
+        background: #000;
+        color: #fff;
+    }
+    .events #four {
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+    .events #five {
+        background: #dcda07;
+        color: #000;
+    }
+    .events #six {
+        background: #f10fff;
+        color: #000;
+    }
+    .events #seven {
+        background: #3cc9f4;
+        color: #000;
+    }
+    .events #debug {
+        clear: both;
+        background: #000;
+        color: #fff;
+        width: 100%;
+        display: block;
+        margin-top: 2em;
+        min-height: 100px;
+        padding-bottom: 1em;
+        font-family: monospace;
+    }
+
 </style>
 
 
@@ -54,10 +102,12 @@ color:#6a7894;
  -->
   <script src="jquery.validate.js"></script>
  	<script src="jquery.maskedinput.js"></script>
+ 	 <script src="js/taphold.js" type="text/javascript"></script>
 <!--  	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> -->
  	
 <!-- 	<script src="mktSignup.js"></script> -->
     <script>
+    
    function errorMsg(msg, timeout)
 {
 	// Display Please Wait...
@@ -355,34 +405,13 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {  
-      //   var timer = null; 
-//         $("#hdr_title").bind('touchstart',function() {
-//          timer = setTimeout( doStuff, 500 );
-//         });
-//         $("#hdr_title").bind('touchend',function() {
-//         clearTimeout( timer );
-//         });
-//         function doStuff() {
-//   alert('hello, you just holded the mousebutton for half a second. Is everything ok?')
-// }
 
-// var startTime, endTime;
-// var gbMove = false;
-// 
-// $( "#home" ).bind('touchstart',function(event) {
-//     startTime = new Date().getTime(); 
-//     gbMove = false;        
-// },false);
-// 
-// $( "#home" ).bind('touchmove',function(event) {
-//   gbMove = true;
-// },false);
-// 
-// $( "#home" ).bind('touchend',function(event) {
-//     endTime = new Date().getTime();
-//     if(!gbMove && (endTime-startTime)/1000 > 2)
-//         alert('tap hold event');      
-// },false);
+
+$("#home").bind("taphold", function()
+{
+  alert("long click");
+});        
+ 
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
         document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
