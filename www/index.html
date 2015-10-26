@@ -585,6 +585,87 @@ submitHandler: function(form) {
 		}
 });
 
+	$("#editForm").validate({
+		rules: {
+    phone: {
+        minlength:10
+      
+    },
+    pricelow: {
+    number: true
+    },
+    pricehigh: {
+    number: true
+    }
+},
+submitHandler: function(form) {
+			
+
+
+// 
+// elem.value = basicvalues.min;
+// elem2.value = basicvalues.max;
+// console.log(basicValues.min + " " + basicValues.max);
+
+// if(!checkContactFormInput("firstname")) return false;
+// if(!checkContactFormInput("lastname")) return false;
+// if(!checkContactFormInput("phone")) return false;
+// if(!checkContactFormInput("makes")) return false;
+// if(!checkContactFormInput("models")) return false;
+// if(!checkContactFormInput("years")) return false;
+
+    var postData = $(form).serializeArray();
+    var formURL = $(form).attr("action");
+    
+    console.log(formURL+"?id="+userid);
+    $.ajax(
+    {
+        url : formURL+"?id="+userid,
+        type: "POST",
+        data : postData,
+        success:function(data, textStatus, jqXHR) 
+        {
+            //data: return data from server
+            alert('Contact Updated');
+            $("#editForm")[0].reset();
+              $.ajax({    //create an ajax request to load_page.php
+        type: "GET",
+        url: "http://cogni.design/cpr/www/display.php?id="+id,             
+        dataType: "html",   //expect html to be returned                
+        success: function(response){                    
+            $("#responsecontaineruser").html(response); 
+            document.getElementById('edit').style.display = 'none';
+ document.getElementById('viewuser').style.display = '';
+            //alert(response);
+        }
+
+    });
+        },
+        error: function(jqXHR, textStatus, errorThrown) 
+        {
+            //if fails  
+             alert('Problem Updating Contact');   
+             $("#editForm")[0].reset();
+               $.ajax({    //create an ajax request to load_page.php
+        type: "GET",
+        url: "http://cogni.design/cpr/www/display.php?id="+id,             
+        dataType: "html",   //expect html to be returned                
+        success: function(response){                    
+            $("#responsecontaineruser").html(response); 
+            document.getElementById('edit').style.display = 'none';
+ document.getElementById('viewuser').style.display = '';
+            //alert(response);
+        }
+
+    });
+        }
+    });
+//     e.preventDefault(); //STOP default action
+//     e.unbind(); //unbind. to stop multiple form submit.
+
+		}
+});
+
 		// validate signup form on keyup and submit
 		$("#testForm2").validate({
 		rules: {
@@ -1946,6 +2027,14 @@ elem2.value=data.values.max;
  
  
  }
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
 //             app.initialize();
         </script>
          <script>
