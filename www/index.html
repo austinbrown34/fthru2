@@ -490,20 +490,7 @@ var password = localStorage.getItem('password');
 
 
 
-function resetfields(){
 
-
- $.ajax({    //create an ajax request to load_page.php
-        type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
-            $("#responsecontaineruser").html(response); 
-           document.getElementById('edit').style.display = 'none';document.getElementById('viewuser').style.display = '';
-        }
-
-    });
-}
 
 
  $.ajax({    //create an ajax request to load_page.php
