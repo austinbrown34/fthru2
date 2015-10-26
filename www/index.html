@@ -407,10 +407,7 @@ var password = localStorage.getItem('password');
         $(document).ready(function() {  
 
 
-$("#contactitem").bind("taphold", function()
-{
-  alert("long click");
-});        
+  
  
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
@@ -880,7 +877,7 @@ border: 1px solid rgba(0, 0, 0, .2);
 border-radius: 3px;
 box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
 -webkit-appearance: none;
-box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
+box-sizing: border-box;" required><br></td></tr><tr><td colspan="3">
 
 <p style="color:black;">Type of Vehicle:</p><br>
 <center>
@@ -1032,6 +1029,220 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3"><br>
 
 
 		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+		<div id="edit" style="display:none;">
+	
+			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
+
+<div class="slidehome" style="z-index:3;">
+		<div id="tabs" class="font_PNbold" style="zoom: .8;">
+			<ul id="top_menu">
+				<li id="tm_map" class="active" ><img src="add_user.png" style="width:50px;"></li>
+				<li id="tm_pro" class="" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"><img src="viewuser.png" style="width:50px;" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
+				<li id="tm_fri" class="" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';" class="friends_list"><img src="addcar.png" style="height:80px;" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
+				<li id="tm_home"  class="" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
+				<li id="tm_mtch" class="" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"></li>
+			</ul>
+		</div>
+		
+		<div class="cnt_clr">
+				<form id="testForm" action="http://cogni.design/cpr/www/insert.php" method="post">
+
+			<table class="home_top">
+				<tr><td colspan = "3" class="full"><div class="h1px"></div></td></tr>
+
+				<tr>
+		<td colspan="3">
+		
+		<div style="padding: 2px 4px 3px 4px;">
+		
+	<!-- <div id="box"><h1></h1></div> -->
+<p style="color:black;">First name:</p>
+<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required></td></tr><tr><td colspan="3">
+
+<p style="color:black;">Last name:</p>
+<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required" required></td></tr><tr><td colspan="3">
+
+<p style="color:black;">Phone:</p>
+<!-- <input type="text" name="phone"  style="zoom:1.5;"> -->
+
+
+<input id="phone"  name="phone" type="tel" class="required phone ss-item-required" tabindex="10" value="" style="zoom:1.5; width: 100%;
+height: 40px;
+padding: 10px;
+margin-bottom: 10px;
+background: #fff;
+border: 1px solid rgba(0, 0, 0, .2);
+border-radius: 3px;
+box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
+-webkit-appearance: none;
+box-sizing: border-box;" required><br></td></tr><tr><td colspan="3">
+
+<p style="color:black;">Type of Vehicle:</p><br>
+<center>
+<table style="width:100%;">
+<tr>
+<td style="width:25%;">
+                        <center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:2.5;" /><br><b>Cars</b> </center></td><td style="width:25%;">
+                        <center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:2.5;" /><br><b>Trucks</b></center></td><td style="width:25%;">
+                        <center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:2.5;" /><br><b>SUVS</b></center></td><td style="width:25%;">
+                        <center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:2.5;" /><br><b>Crossovers</b></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
+                        <center><input type="checkbox" name="type[]" value="Specific" class="specific" style="zoom:2.5;" /><br><b>Specific</b></center></td>
+                        </tr></table></center>
+
+
+                
+
+<div id="specific1" style="display:none;">
+     <select id="years" name="years" class="ss-item-required" required>
+     
+        <option value="">Select Year</option>
+        <option>1990</option>
+        <option>1991</option>
+        <option>1992</option>
+        <option>1993</option>
+        <option>1994</option>
+        <option>1995</option>
+        <option>1996</option>
+        <option>1997</option>
+        <option>1998</option>
+        <option>1999</option>
+        <option>2000</option>
+        <option>2001</option>
+        <option>2002</option>
+        <option>2003</option>
+        <option>2004</option>
+        <option>2005</option>
+        <option>2007</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option>2010</option>
+        <option>2011</option>
+        <option>2012</option>
+         <option>2013</option>
+          <option>2014</option>
+           <option>2015</option>
+    </select></div></td></tr><tr><td colspan="3">
+    <div id="specific2" style="display:none;">
+    <br>
+    <select id="makes" name="makes" required  class="ss-item-required">
+        <option value="">Select Make</option>
+    </select></div></td></tr><tr><td colspan="3">
+    <div id="specific3" style="display:none;">
+    <br>
+    <select id="models" name="models" required  class="ss-item-required">
+        <option value="">Select Model</option>
+    </select>
+    
+    </div>
+    </td></tr><tr><td colspan="3">
+<!--     <div class="slider" style="height: 200px !important; border:1px solid red !important;"> -->
+    <br>
+    <center>
+    <table>
+    <tr>
+    <td style="width:50%;">
+  <p style="color:black;">  Low Price:</p>
+<input id="pricelow" class="" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+  </td><td style="width:50%;">
+  <p style="color:black;">  High Price:</p>
+<input id="pricehigh" class="" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+</td></tr>
+</table>
+</center>
+
+<!--  <div id="slider" style="zoom:2;"></div> -->
+ 
+
+<!-- </div> -->
+  
+   </td></tr><tr><td colspan="3"><br>
+<center><input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;"></center>
+
+	
+<!-- 	<center><table style="align:middle;border-spacing: 30px; border-collapse: separate;"><tr><td><a href="index.html"><img src="add.png" width="25px"></a><td><a href="contacts.html"><img src="contacts.png" width="25px"></a></td><td><a href="vehicle.html"><img src="addcar.gif" width="25px"></a></td><td><a href="vehicles.html"><img src="viewcar.png" width="25px"></a></td><td><a href="match.html"><img src="results.ico" width="25px"></a></td></tr></table></center><br> -->
+</td></tr></table>
+</form>
+</div>
+ <!-- 
+<div class="app">
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <div class="event received">
+                  <p>Device is Ready</p>
+                </div>
+
+                <button onclick="app.takePicture();">Take Picture</button>
+            </div>
+        </div>
+ -->
+	<!-- 
+<form class="cmxform" id="commentForm" method="get" action="">
+		<fieldset>
+			<legend>Please provide your name, email address (won't be published) and a comment</legend>
+			<p>
+				<label for="cname">Name (required, at least 2 characters)</label>
+				<input id="cname" name="name" minlength="2" type="text" required>
+			</p>
+			<p>
+				<label for="cemail">E-Mail (required)</label>
+				<input id="cemail" type="email" name="email" required>
+			</p>
+			<p>
+				<label for="curl">URL (optional)</label>
+				<input id="curl" type="url" name="url">
+			</p>
+			<p>
+				<label for="ccomment">Your comment (required)</label>
+				<textarea id="ccomment" name="comment" required></textarea>
+			</p>
+			<p>
+				<input class="submit" type="submit" value="Submit">
+			</p>
+		</fieldset>
+	</form>
+ -->
+
+</div>
+
+
+        <!-- Add your site or application content here -->
+
+<!--         <script src="js2/vendor/jquery-2.1.0.min.js"></script> -->
+<!--         <script src="js2/helper.js"></script> -->
+<!--         <script src="js2/main.js"></script> -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+       <!-- 
+ <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+ -->
+
+
+
+		</div>
+	
+	
+	
+	
+	
+	
+	
+	
 	
 		<div id="match" style="display:none;">
 			<div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px;"><img src="logo.png" height="110px"></div></center></div>
