@@ -705,6 +705,8 @@ submitHandler: function(form) {
 
     });
             $("#testForm2")[0].reset();
+            $("#camera_status").text('');
+            $("#camera_image").attr("src","");
            
         },
         cache: false,
@@ -715,6 +717,8 @@ submitHandler: function(form) {
             //if fails  
              alert('Problem Adding Vehicle');  
              $("#testForm2")[0].reset();
+               $("#camera_status").text('');
+            $("#camera_image").attr("src","");
              
         }
     });
@@ -1340,7 +1344,7 @@ box-sizing: border-box;" required><br></td></tr><tr><td colspan="3">
 		<div class="cnt_clr"><center>
 			<table border="1" align="center">
    <tr>
-       <td> <input type="button" id="displaymatch" value="Display All Data" /> </td>
+       <td> <input type="button" id="displaymatch" value="Display New Matches" /> </td>
    </tr>
 </table>
 <div id="responsecontainermatch" align="center">
