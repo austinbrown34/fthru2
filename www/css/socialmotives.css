@@ -1130,7 +1130,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', end
 	background:url(../images/search_item_arrow.gif) no-repeat right center;
 }
 
-.sr_title { color:#333333; font-weight:bold; font-size:28px; line-height:32px; }
+.sr_title { color:#333333; font-size:20px; line-height:32px; }
 
 .sr_item figure {
 	width:95px; 
