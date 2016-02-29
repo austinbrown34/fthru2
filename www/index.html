@@ -1346,7 +1346,7 @@ box-sizing: border-box;" required><br></td></tr><tr><td>
 		<div class="cnt_clr"><center>
 			<table border="1" align="center">
    <tr>
-       <td> <input "class="bluebtn" type="button" id="displaymatch" value="Display New Matches" /> </td>
+       <td> <input class="bluebtn" type="button" id="displaymatch" value="Display New Matches" /> </td>
    </tr>
 </table>
 <div id="responsecontainermatch" align="center">
@@ -1459,8 +1459,15 @@ Model:<br>
     <!-- Actions -->
     <center>
     <div>
-        <input class="bluebtn" type="button" style="zoom:1.3;" onclick="takePicture();" value="Take Picture" />
-        <input class="bluebtn" type="button" style="zoom:1.3;" onclick="selectPicture();" value="Select Picture" /><br>
+	<table style="width:100%;">
+	<tr>
+	<td style="width:50%;">
+        <input class="bluebtn" type="button" style="zoom:1.3;" onclick="takePicture();" value="Camera" /></td>
+			<td style="width:50%;">
+        <input class="bluebtn" type="button" style="zoom:1.3;" onclick="selectPicture();" value="Gallery" /></td>
+		</tr>
+		</table>
+		<br>
        	<div>
        	<br>
 <!-- 		<h3>Camera:</h3> -->
