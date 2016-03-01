@@ -1102,6 +1102,21 @@ background: linear-gradient(to bottom,  rgb(8,111,182) 0%,rgb(0,79,149) 100%); /
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#086fb6', endColorstr='#004f95',GradientType=0 ); /* IE6-9 */
 	
 }
+
+.bluebtn2 {
+		border-top:1px solid #5297cd;
+	box-shadow:0px 6px 0px #00002b;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+	
+}
+
+
 .prplbtn {
 	border-top:1px solid #5297cd;
 	box-shadow:0px 6px 0px #00002b;
