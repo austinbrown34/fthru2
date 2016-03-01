@@ -23,7 +23,7 @@
  <preference name="exit-on-suspend"            value="false" />  
  <preference name="webviewbounce" value="false" />
  <preference name="prerendered-icon" value="true" />
-
+<preference name="DisallowOverscroll" value="true" />
 
  <icon src="icon.png" />
  <splash src="splash.png" />
