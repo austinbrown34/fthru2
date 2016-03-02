@@ -75,6 +75,7 @@ a { text-decoration:none; }
 .ui-page {
     -webkit-backface-visibility: hidden;
 }
+<<<<<<< HEAD
 #appheader{
 	position: fixed;
 	width:100%;
@@ -87,6 +88,9 @@ a { text-decoration:none; }
 	
 }
 #container{z-index:100; width: 100%;}
+=======
+#container{overflow-y: auto; -webkit-overflow-scrolling: touch;}
+>>>>>>> parent of 2325a5b... add appheader and hopefully made it fixed with scrollable content behind it
 html{  
 /* background-image:url(../images/bg_app.jpg); */
 	background-position:left top;
