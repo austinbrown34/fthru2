@@ -86,7 +86,7 @@ a { text-decoration:none; }
     padding: 0;
 	
 }
-#container{z-index:100; width: 100%;height: auto !important;}
+#container{z-index:100; width: 100%;min-height: 100%; height: 100% !important;}
 #container{overflow-y: auto; -webkit-overflow-scrolling: touch;}
 
 html{  
