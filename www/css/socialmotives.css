@@ -75,7 +75,6 @@ a { text-decoration:none; }
 .ui-page {
     -webkit-backface-visibility: hidden;
 }
-<<<<<<< HEAD
 #appheader{
 	position: fixed;
 	width:100%;
@@ -88,9 +87,8 @@ a { text-decoration:none; }
 	
 }
 #container{z-index:100; width: 100%;}
-=======
 #container{overflow-y: auto; -webkit-overflow-scrolling: touch;}
->>>>>>> parent of 2325a5b... add appheader and hopefully made it fixed with scrollable content behind it
+
 html{  
 /* background-image:url(../images/bg_app.jpg); */
 	background-position:left top;
@@ -100,7 +98,7 @@ html{
 #page{
 	top:165px !important;
 }
-#page,#home,#viewuser,#addcar,#viewcar,#match { top: 0; z-index: 100; width: 100%; -webkit-overflow-scrolling:touch; overflow: auto !important; zoom: .88; /*  -webkit-overflow-scrolling: touch;  */ -webkit-touch-callout: none !important; }
+html,body,#page,#home,#viewuser,#addcar,#viewcar,#match { top: 0; z-index: 100; width: 100%; -webkit-overflow-scrolling:touch; overflow: auto !important; zoom: .88; /*  -webkit-overflow-scrolling: touch;  */ -webkit-touch-callout: none !important; }
 #home { position:relative;    -webkit-transform: translate3d(0, 0, 0);  }
 #home2 { position:relative;   -webkit-transform: translate3d(0, 0, 0);  }
 #map_canvas {
