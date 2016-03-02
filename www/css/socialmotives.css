@@ -81,7 +81,7 @@ a { text-decoration:none; }
 	z-index:2000;
 	
 }
-#container{overflow-y:scroll !important; -webkit-overflow-scrolling: touch; margin-top:165px !important;}
+#container{overflow-y:scroll !important; -webkit-overflow-scrolling: touch; position:absolute; top:165px !important; bottom:0 !important;}
 html{  
 /* background-image:url(../images/bg_app.jpg); */
 	background-position:left top;

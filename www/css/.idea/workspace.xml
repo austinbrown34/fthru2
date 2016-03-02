@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="socialmotives.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="socialmotives.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/socialmotives.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="119" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="22933">
+            <state line="83" column="137" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.4403153" vertical-offset="1020" max-vertical-offset="22933">
               <folding />
             </state>
           </provider>
@@ -38,15 +38,16 @@
             <state line="24" column="32" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1513">
               <folding>
                 <element signature="tag#description#0;tag#widget#0" expanded="true" />
+                <marker date="1456889600885" expanded="false" signature="514:549" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="7" selection-start="705" selection-end="705" vertical-scroll-proportion="-0.5634286" vertical-offset="714" max-vertical-offset="2805">
+            <state line="13" column="7" selection-start="705" selection-end="705" vertical-scroll-proportion="18.961538" vertical-offset="714" max-vertical-offset="2805">
               <folding>
                 <element signature="tag#head#0;tag#html#0" expanded="true" />
               </folding>
@@ -64,8 +65,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/socialmotives.css" />
         <option value="$PROJECT_DIR$/../config.xml" />
+        <option value="$PROJECT_DIR$/socialmotives.css" />
       </list>
     </option>
   </component>
@@ -170,28 +171,29 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/socialmotives.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="119" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="22933">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="32" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1513">
           <folding>
             <element signature="tag#description#0;tag#widget#0" expanded="true" />
+            <marker date="1456889600885" expanded="false" signature="514:549" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="7" selection-start="705" selection-end="705" vertical-scroll-proportion="-0.5634286" vertical-offset="714" max-vertical-offset="2805">
+        <state line="13" column="7" selection-start="705" selection-end="705" vertical-scroll-proportion="18.961538" vertical-offset="714" max-vertical-offset="2805">
           <folding>
             <element signature="tag#head#0;tag#html#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socialmotives.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="137" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.4403153" vertical-offset="1020" max-vertical-offset="22933">
+          <folding />
         </state>
       </provider>
     </entry>
