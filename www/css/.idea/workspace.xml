@@ -26,12 +26,17 @@
       <file leaf-file-name="socialmotives.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/socialmotives.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="85" column="14" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.5168919" vertical-offset="986" max-vertical-offset="23018">
+=======
+            <state line="91" column="119" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.5934685" vertical-offset="1020" max-vertical-offset="22933">
+>>>>>>> parent of 48d7190... bounce
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../config.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -57,6 +62,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> parent of 48d7190... bounce
     </leaf>
   </component>
   <component name="FindManager">
@@ -67,8 +74,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/../config.xml" />
         <option value="$PROJECT_DIR$/../index.html" />
+=======
+>>>>>>> parent of 48d7190... bounce
         <option value="$PROJECT_DIR$/socialmotives.css" />
       </list>
     </option>
@@ -120,7 +130,6 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../index.html" />
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -174,6 +183,7 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/../config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="32" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1513">
@@ -198,6 +208,11 @@
     <entry file="file://$PROJECT_DIR$/socialmotives.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="14" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.5168919" vertical-offset="986" max-vertical-offset="23018">
+=======
+    <entry file="file://$PROJECT_DIR$/socialmotives.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="119" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.5934685" vertical-offset="1020" max-vertical-offset="22933">
+>>>>>>> parent of 48d7190... bounce
           <folding />
         </state>
       </provider>
