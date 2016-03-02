@@ -86,7 +86,7 @@ a { text-decoration:none; }
     padding: 0;
 	
 }
-#container{z-index:100; width: 100%; top:165px !important;}
+#container{z-index:100; width: 100%; top:165px !important;overflow: auto !important;}
 /* #container{overflow-y: auto; -webkit-overflow-scrolling: touch;} */
 
 html{  
@@ -97,8 +97,9 @@ html{
 	
 #page{
 	top:165px !important;
+	overflow: auto !important;
 }
-html,body,#page{
+html,body{
 min-height:100%; height:100%;  z-index: 100; width: 100%;zoom: .88;
 }
 #page,#home,#viewuser,#addcar,#viewcar,#match {min-height:100%; height:auto; top: 0;  z-index: 100; width: 100%; -webkit-overflow-scrolling:touch; overflow: auto !important; zoom: .88; /*  -webkit-overflow-scrolling: touch; -webkit-touch-callout: none !important; */  }
