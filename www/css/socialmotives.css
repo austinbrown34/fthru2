@@ -91,7 +91,8 @@ html{
 #page{
 	overflow-y:auto !important;
 }
-body,html,#page,#home,#viewuser,#addcar,#viewcar,#match { min-height:100%; height:120%; zoom: .88; overflow-y: auto; /*  -webkit-overflow-scrolling: touch;  */ -webkit-touch-callout: none !important; }
+html{ min-height:100%; height:100%; zoom: .88; overflow: hidden !important; /*  -webkit-overflow-scrolling: touch;  */ -webkit-touch-callout: none !important; }
+body,#page,#home,#viewuser,#addcar,#viewcar,#match { min-height:100%; height:100%; zoom: .88; overflow-y: scroll !important; /*  -webkit-overflow-scrolling: touch;  */ -webkit-touch-callout: none !important; }
 #home { position:relative;    -webkit-transform: translate3d(0, 0, 0);  }
 #home2 { position:relative;   -webkit-transform: translate3d(0, 0, 0);  }
 #map_canvas {
