@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <title>followTHRU</title>
     
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
         <link rel="stylesheet" id ="extra2" type="text/css" href="css/socialmotives.css"/>
     <link rel="stylesheet" href="css/ratchet.css">
     <link rel="stylesheet" href="css/pageslider.css">
@@ -883,20 +882,14 @@ submitHandler: function(form) {
 
 <body onload="init();">
 
-<<<<<<< HEAD
-<div id="appheader">
+
+	<div id="container">
+
+
 		<div style="position: absolute;
 		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .8;"  class="hdr_back" onclick="javascript:document.getElementById('home').style.display = 'none';document.getElementById('start').style.display = '';localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
-=======
 
-<div id="container">
-
-
-<div style="position: absolute;
-top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .8;"  class="hdr_back" onclick="javascript:document.getElementById('home').style.display = 'none';document.getElementById('start').style.display = '';localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
->>>>>>> parent of d1c8bb0... bunch of coding formatting
-
-<div id="tabs" class="font_PNbold" style="zoom: .8;">
+		<div id="tabs" class="font_PNbold" style="zoom: .8;">
 			<ul id="top_menu">
 				<li id="tm_map" class="" ><img src="add_user.png" style="width:50px;"></li>
 				<li id="tm_pro" class="" ><img src="viewuser.png" style="width:50px;"></li>
@@ -906,19 +899,13 @@ top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="l
 			</ul>
 		</div>
 
-</div>
-	<div id="container">
 
-
-
-
-
-<div id="page">
+		<div id="page">
  
  
 
 
-    <div id="start">
+			<div id="start">
 
 
         <div id="login" style="padding-top: 50px;">
@@ -943,346 +930,383 @@ top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="l
 	</div>
 </div>
 
-	<div id="home" style="display:none;">
-	
+			<div id="home" style="display:none;">
+			
 
-		<div class="slidehome" style="z-index:3;">
-		<!-- <div id="tabs" class="font_PNbold" style="zoom: .8;">
-			<ul id="top_menu">
-				<li id="tm_map" class="active" ><img src="add_user.png" style="width:50px;"></li>
-				<li id="tm_pro" class="" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"><img src="viewuser.png" style="width:50px;" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
-				<li id="tm_fri" class="" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';" class="friends_list"><img src="addcar.png" style="height:80px;" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
-				<li id="tm_home"  class="" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
-				<li id="tm_mtch" class="" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"></li>
-			</ul>
-		</div> -->
-		
-			<div class="cnt_clr">
-				<form id="testForm" action="http://cogni.design/cpr/www/insert.php" method="post">
+				<div class="slidehome" style="z-index:3;">
+				<!-- <div id="tabs" class="font_PNbold" style="zoom: .8;">
+					<ul id="top_menu">
+						<li id="tm_map" class="active" ><img src="add_user.png" style="width:50px;"></li>
+						<li id="tm_pro" class="" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"><img src="viewuser.png" style="width:50px;" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
+						<li id="tm_fri" class="" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';" class="friends_list"><img src="addcar.png" style="height:80px;" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
+						<li id="tm_home"  class="" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
+						<li id="tm_mtch" class="" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"></li>
+					</ul>
+				</div> -->
+				
+					<div class="cnt_clr">
+						<form id="testForm" action="http://cogni.design/cpr/www/insert.php" method="post">
 
-					<table class="home_top">
-						<tr><td class="full"><div class="h1px"></div></td></tr>
+							<table class="home_top">
+								<tr>
+									<td class="full"><div class="h1px"></div></td>
+								</tr>
 
-						<tr>
-							<td>
-		
-								<div style="padding: 2px 4px 3px 4px;">
-		
-	<!-- <div id="box"><h1></h1></div> -->
-									<p style="color:black;">First name:</p>
-									<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required></td></tr><tr><td>
+								<tr>
+									<td>
+				
+										<div style="padding: 2px 4px 3px 4px;">
+				
 
-									<p style="color:black;">Last name:</p>
-									<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required" required></td></tr><tr><td>
+											<p style="color:black;">First name:</p>
+											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required>
+									</td>
+								</tr>
+								<tr>
+									<td>
 
-									<p style="color:black;">Phone:</p>
-<!-- <input type="text" name="phone"  style="zoom:1.5;"> -->
+										<p style="color:black;">Last name:</p>
+										<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required" required>
+									</td>
+								</tr>
+								<tr>
+									<td>
 
-
-									<input id="phone"  name="phone" type="tel" class="required phone ss-item-required" tabindex="10" value="" style="zoom:1.5; width: 100%;
-									height: 40px;
-									padding: 10px;
-									margin-bottom: 10px;
-									background: #fff;
-									border: 1px solid rgba(0, 0, 0, .2);
-									border-radius: 3px;
-									box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
-									-webkit-appearance: none;
-									box-sizing: border-box;" required><br></td></tr><tr><td>
-									<center>
-									<p style="color:black;">Type of Vehicle:</p><br>
-
-									<table style="width:100%;">
-<tr>
-<td style="width:25%;">
-                        <center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:2.5;" /><br><span style="color:black;">Cars</span> </center></td><td style="width:25%;">
-                        <center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:2.5;" /><br><span style="color:black;">Trucks</span></center></td><td style="width:25%;">
-                        <center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:2.5;" /><br><span style="color:black;">SUVs</span></center></td><td style="width:25%;">
-                        <center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:2.5;" /><br><span style="color:black;">Crossovers</span></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
-                        <center><input type="checkbox" name="type[]" value="Specific" class="specific" style="zoom:2.5;" /><br><span style="color:black;">Specific</span></center></td>
-                        </tr></table></center>
+										<p style="color:black;">Phone:</p>
 
 
-                
 
-<div id="specific1" style="display:none;">
-     <select id="years" name="years" class="ss-item-required" required>
-     
-        <option value="">Select Year</option>
-        <option>1990</option>
-        <option>1991</option>
-        <option>1992</option>
-        <option>1993</option>
-        <option>1994</option>
-        <option>1995</option>
-        <option>1996</option>
-        <option>1997</option>
-        <option>1998</option>
-        <option>1999</option>
-        <option>2000</option>
-        <option>2001</option>
-        <option>2002</option>
-        <option>2003</option>
-        <option>2004</option>
-        <option>2005</option>
-        <option>2007</option>
-        <option>2008</option>
-        <option>2009</option>
-        <option>2010</option>
-        <option>2011</option>
-        <option>2012</option>
-         <option>2013</option>
-          <option>2014</option>
-           <option>2015</option>
-    </select></div></td></tr><tr><td>
-    <div id="specific2" style="display:none;">
-    <br>
-    <select id="makes" name="makes" required  class="ss-item-required">
-        <option value="">Select Make</option>
-    </select></div></td></tr><tr><td>
-    <div id="specific3" style="display:none;">
-    <br>
-    <select id="models" name="models" required  class="ss-item-required">
-        <option value="">Select Model</option>
-    </select>
-    
-    </div>
-    </td></tr><tr><td>
-<!--     <div class="slider" style="height: 200px !important; border:1px solid red !important;"> -->
-    <br>
-    <center>
-    <table>
-    <tr>
-    <td style="width:50%;">
-  <p style="color:black;">  Low Price:</p>
-<input id="pricelow" class="" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
-  </td><td style="width:50%;">
-  <p style="color:black;">  High Price:</p>
-<input id="pricehigh" class="" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
-</td></tr>
-</table>
-</center>
+										<input id="phone"  name="phone" type="tel" class="required phone ss-item-required" tabindex="10" value="" style="zoom:1.5; width: 100%;
+										height: 40px;
+										padding: 10px;
+										margin-bottom: 10px;
+										background: #fff;
+										border: 1px solid rgba(0, 0, 0, .2);
+										border-radius: 3px;
+										box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
+										-webkit-appearance: none;
+										box-sizing: border-box;" required><br>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<center>
+											<p style="color:black;">Type of Vehicle:</p><br>
 
-<!--  <div id="slider" style="zoom:2;"></div> -->
- 
+											<table style="width:100%;">
+												<tr>
+													<td style="width:25%;">
+														<center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:2.5;" /><br><span style="color:black;">Cars</span> </center>
+													</td>
+													<td style="width:25%;">
+														<center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:2.5;" /><br><span style="color:black;">Trucks</span></center>
+													</td>
+													<td style="width:25%;">
+														<center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:2.5;" /><br><span style="color:black;">SUVs</span></center>
+													</td>
+													<td style="width:25%;">
+														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:2.5;" /><br><span style="color:black;">Crossovers</span></center>
+													</td>
+												</tr>
+												<tr>
+													<td colspan=4 style="width:100%;"><center><hr>OR<hr></center>
+													<td>
+												</tr>
+												<tr>
+													<td colspan=4 style="width:100%;">
+														<center><input type="checkbox" name="type[]" value="Specific" class="specific" style="zoom:2.5;" /><br><span style="color:black;">Specific</span></center>
+													</td>
+												</tr>
+											</table>
+										</center>
 
-<!-- </div> -->
-  
-   </td></tr><tr><td><br>
-<center><input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;"></center>
 
-	
-<!-- 	<center><table style="align:middle;border-spacing: 30px; border-collapse: separate;"><tr><td><a href="index.html"><img src="add.png" width="25px"></a><td><a href="contacts.html"><img src="contacts.png" width="25px"></a></td><td><a href="vehicle.html"><img src="addcar.gif" width="25px"></a></td><td><a href="vehicles.html"><img src="viewcar.png" width="25px"></a></td><td><a href="match.html"><img src="results.ico" width="25px"></a></td></tr></table></center><br> -->
-</td></tr></table>
-				</form>
-								</div>
- 
+						
+
+										<div id="specific1" style="display:none;">
+											 <select id="years" name="years" class="ss-item-required" required>
+											 
+												<option value="">Select Year</option>
+												<option>1990</option>
+												<option>1991</option>
+												<option>1992</option>
+												<option>1993</option>
+												<option>1994</option>
+												<option>1995</option>
+												<option>1996</option>
+												<option>1997</option>
+												<option>1998</option>
+												<option>1999</option>
+												<option>2000</option>
+												<option>2001</option>
+												<option>2002</option>
+												<option>2003</option>
+												<option>2004</option>
+												<option>2005</option>
+												<option>2007</option>
+												<option>2008</option>
+												<option>2009</option>
+												<option>2010</option>
+												<option>2011</option>
+												<option>2012</option>
+												<option>2013</option>
+												<option>2014</option>
+												<option>2015</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div id="specific2" style="display:none;">
+											<br>
+											<select id="makes" name="makes" required  class="ss-item-required">
+												<option value="">Select Make</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div id="specific3" style="display:none;">
+											<br>
+											<select id="models" name="models" required  class="ss-item-required">
+												<option value="">Select Model</option>
+											</select>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<br>
+										<center>
+											<table>
+												<tr>
+													<td style="width:50%;">
+														<p style="color:black;">  Low Price:</p>
+														<input id="pricelow" class="" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+													</td>
+													<td style="width:50%;">
+														<p style="color:black;">  High Price:</p>
+														<input id="pricehigh" class="" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+													</td>
+												</tr>
+											</table>
+										</center>
+
+		  
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<br>
+										<center>
+											<input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;">
+										</center>
+
+											
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+		 
+
+				</div>
+
+
+			 
+
 
 			</div>
+	
+	
+	
 
-
-     
-
-
-		</div>
-	
-	
-	
-	</div>
 	
 	
 	
 	
-		<div id="edit" style="display:none;">
+			<div id="edit" style="display:none;">
 	
 
 
-<div class="slidehome" style="z-index:3;">
+				<div class="slidehome" style="z-index:3;">
 
 		
-		<div class="cnt_clr">
-				<form id="editForm" action="http://cogni.design/cpr/www/updater.php" method="post">
-<br>
-			<table class="home_top">
-				<tr><td class="full"><div class="h1px"></div></td></tr>
+					<div class="cnt_clr">
+						<form id="editForm" action="http://cogni.design/cpr/www/updater.php" method="post">
+							<br>
+							<table class="home_top">
+								<tr>
+									<td class="full"><div class="h1px"></div>
+									</td>
+								</tr>
 
-				<tr>
-		<td colspan="3">
+								<tr>
+									<td colspan="3">
 		
-		<div style="padding: 2px 4px 3px 4px;">
+										<div style="padding: 2px 4px 3px 4px;">
 		
-	<!-- <div id="box"><h1></h1></div> -->
-<p style="color:black;">First name:</p>
-<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required></td></tr><tr><td>
+											<p style="color:black;">First name:</p>
+											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required>
+									</td>
+								</tr>
+								<tr>
+									<td>
 
-<p style="color:black;">Last name:</p>
-<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required" required></td></tr><tr><td>
+										<p style="color:black;">Last name:</p>
+										<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required" required>
+									</td>
+								</tr>
+								<tr>
+									<td>
 
-<p style="color:black;">Phone:</p>
-<!-- <input type="text" name="phone"  style="zoom:1.5;"> -->
+										<p style="color:black;">Phone:</p>
 
-<input id="contactid" name="contactid" type="hidden">
-<input id="phone"  name="phone" type="tel" class="required phone ss-item-required" tabindex="10" value="" style="zoom:1.5; width: 100%;
-height: 40px;
-padding: 10px;
-margin-bottom: 10px;
-background: #fff;
-border: 1px solid rgba(0, 0, 0, .2);
-border-radius: 3px;
-box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
--webkit-appearance: none;
-box-sizing: border-box;" required><br></td></tr><tr><td>
-<center>
-<p style="color:black;">Type of Vehicle:</p><br>
+										<input id="contactid" name="contactid" type="hidden">
+										<input id="phone"  name="phone" type="tel" class="required phone ss-item-required" tabindex="10" value="" style="zoom:1.5; width: 100%;
+										height: 40px;
+										padding: 10px;
+										margin-bottom: 10px;
+										background: #fff;
+										border: 1px solid rgba(0, 0, 0, .2);
+										border-radius: 3px;
+										box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
+										-webkit-appearance: none;
+										box-sizing: border-box;" required><br>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<center>
+											<p style="color:black;">Type of Vehicle:</p><br>
 
-<table style="width:100%;">
-<tr>
-<td style="width:25%;">
-                        <center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:2.5;" /><br><span style="color:black;">Cars</span> </center></td><td style="width:25%;">
-                        <center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:2.5;" /><br><span style="color:black;">Trucks</span></center></td><td style="width:25%;">
-                        <center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:2.5;" /><br><span style="color:black;">SUVS</span></center></td><td style="width:25%;">
-                        <center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:2.5;" /><br><span style="color:black;">Crossovers</span></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
-                        <center><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific" style="zoom:2.5;" /><br><span style="color:black;">Specific</span></center></td>
-                        </tr></table></center>
+											<table style="width:100%;">
+												<tr>
+													<td style="width:25%;">
+														<center>
+															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:2.5;" /><br><span style="color:black;">Cars</span> 
+														</center>
+													</td>
+													<td style="width:25%;">
+														<center>
+															<input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:2.5;" /><br><span style="color:black;">Trucks</span>
+														</center>
+													</td>
+													<td style="width:25%;">
+														<center>
+															<input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:2.5;" /><br><span style="color:black;">SUVS</span>
+														</center>
+													</td>
+													<td style="width:25%;">
+														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:2.5;" /><br><span style="color:black;">Crossovers</span></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
+														<center><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific" style="zoom:2.5;" /><br><span style="color:black;">Specific</span></center></td>
+												</tr>
+											</table>
+										</center>
 
 
                 
 
-<div id="specific1" style="display:none;">
-     <select id="years" name="years" class="ss-item-required" required>
+										<div id="specific1" style="display:none;">
+											<select id="years" name="years" class="ss-item-required" required>
      
-        <option value="">Select Year</option>
-        <option>1990</option>
-        <option>1991</option>
-        <option>1992</option>
-        <option>1993</option>
-        <option>1994</option>
-        <option>1995</option>
-        <option>1996</option>
-        <option>1997</option>
-        <option>1998</option>
-        <option>1999</option>
-        <option>2000</option>
-        <option>2001</option>
-        <option>2002</option>
-        <option>2003</option>
-        <option>2004</option>
-        <option>2005</option>
-        <option>2007</option>
-        <option>2008</option>
-        <option>2009</option>
-        <option>2010</option>
-        <option>2011</option>
-        <option>2012</option>
-         <option>2013</option>
-          <option>2014</option>
-           <option>2015</option>
-    </select></div></td></tr><tr><td>
-    <div id="specific2" style="display:none;">
-    <br>
-    <select id="makes" name="makes" required  class="ss-item-required">
-        <option value="">Select Make</option>
-    </select></div></td></tr><tr><td>
-    <div id="specific3" style="display:none;">
-    <br>
-    <select id="models" name="models" required  class="ss-item-required">
-        <option value="">Select Model</option>
-    </select>
-    
-    </div>
-    </td></tr><tr><td>
-<!--     <div class="slider" style="height: 200px !important; border:1px solid red !important;"> -->
-    <br>
-    <center>
-    <table>
-    <tr>
-    <td style="width:50%;">
-  <p style="color:black;">  Low Price:</p>
-<input id="pricelow" class="" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
-  </td><td style="width:50%;">
-  <p style="color:black;">  High Price:</p>
-<input id="pricehigh" class="" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
-</td></tr>
-</table>
-</center>
+												<option value="">Select Year</option>
+												<option>1990</option>
+												<option>1991</option>
+												<option>1992</option>
+												<option>1993</option>
+												<option>1994</option>
+												<option>1995</option>
+												<option>1996</option>
+												<option>1997</option>
+												<option>1998</option>
+												<option>1999</option>
+												<option>2000</option>
+												<option>2001</option>
+												<option>2002</option>
+												<option>2003</option>
+												<option>2004</option>
+												<option>2005</option>
+												<option>2007</option>
+												<option>2008</option>
+												<option>2009</option>
+												<option>2010</option>
+												<option>2011</option>
+												<option>2012</option>
+												<option>2013</option>
+												<option>2014</option>
+												<option>2015</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div id="specific2" style="display:none;">
+											<br>
+											<select id="makes" name="makes" required  class="ss-item-required">
+												<option value="">Select Make</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div id="specific3" style="display:none;">
+											<br>
+											<select id="models" name="models" required  class="ss-item-required">
+												<option value="">Select Model</option>
+											</select>
+										
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<br>
+										<center>
+											<table>
+												<tr>
+													<td style="width:50%;">
+														<p style="color:black;">  Low Price:</p>
+														<input id="pricelow" class="" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+													</td>
+													<td style="width:50%;">
+														<p style="color:black;">  High Price:</p>
+														<input id="pricehigh" class="" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+													</td>
+												</tr>
+											</table>
+										</center>
 
-<!--  <div id="slider" style="zoom:2;"></div> -->
- 
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<br>
+										<center>
+											<table style="width:100%;">
+												<tr>
+													<td style="width:50%;">
+														<input type="submit" value="Update" class="bluebtn" style="width:100%;">
+													</td>
+													<td style="width:50%;">
+														<input type="button" value="Cancel" class="redbtn" onclick="javascript:reloadcontacts();" style="width:100%;">
+													</td>
+												</tr>
+											</table>
+										</center>
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
 
-<!-- </div> -->
-  
-   </td></tr><tr><td><br>
-<center><table style="width:100%;"><tr><td style="width:50%;"><input type="submit" value="Update" class="bluebtn" style="width:100%;"></td><td style="width:50%;"><input type="button" value="Cancel" class="redbtn" onclick="javascript:reloadcontacts();" style="width:100%;"></td></tr></table></center>
-
-	
-<!-- 	<center><table style="align:middle;border-spacing: 30px; border-collapse: separate;"><tr><td><a href="index.html"><img src="add.png" width="25px"></a><td><a href="contacts.html"><img src="contacts.png" width="25px"></a></td><td><a href="vehicle.html"><img src="addcar.gif" width="25px"></a></td><td><a href="vehicles.html"><img src="viewcar.png" width="25px"></a></td><td><a href="match.html"><img src="results.ico" width="25px"></a></td></tr></table></center><br> -->
-</td></tr></table>
-</form>
-</div>
- <!-- 
-<div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <div class="event received">
-                  <p>Device is Ready</p>
-                </div>
-
-                <button onclick="app.takePicture();">Take Picture</button>
-            </div>
-        </div>
- -->
-	<!-- 
-<form class="cmxform" id="commentForm" method="get" action="">
-		<fieldset>
-			<legend>Please provide your name, email address (won't be published) and a comment</legend>
-			<p>
-				<label for="cname">Name (required, at least 2 characters)</label>
-				<input id="cname" name="name" minlength="2" type="text" required>
-			</p>
-			<p>
-				<label for="cemail">E-Mail (required)</label>
-				<input id="cemail" type="email" name="email" required>
-			</p>
-			<p>
-				<label for="curl">URL (optional)</label>
-				<input id="curl" type="url" name="url">
-			</p>
-			<p>
-				<label for="ccomment">Your comment (required)</label>
-				<textarea id="ccomment" name="comment" required></textarea>
-			</p>
-			<p>
-				<input class="submit" type="submit" value="Submit">
-			</p>
-		</fieldset>
-	</form>
- -->
-
-</div>
-
-
-        <!-- Add your site or application content here -->
-
-<!--         <script src="js2/vendor/jquery-2.1.0.min.js"></script> -->
-<!--         <script src="js2/helper.js"></script> -->
-<!--         <script src="js2/main.js"></script> -->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-       <!-- 
- <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
- -->
-
-
-
-		</div>
+			</div>
 	
 	
 	
@@ -1292,283 +1316,204 @@ box-sizing: border-box;" required><br></td></tr><tr><td>
 	
 	
 	
-		<div id="match" style="display:none;">
+			<div id="match" style="display:none;">
 
 
 		
-		<!-- <div id="tabs" class="font_PNbold" style="zoom: .8;">
-			<ul id="top_menu">
-				<li id="tm_map" class="" onclick="$('li').removeClass('active');$('#home #tm_map').addClass('active');document.getElementById('match').style.display = 'none';document.getElementById('home').style.display = '';$('#slider').rangeSlider('resize');"><img src="add_user.png" style="width:50px;" onclick="$('li').removeClass('active');$('#home #tm_map').addClass('active');document.getElementById('match').style.display = 'none';document.getElementById('home').style.display = '';$('#slider').rangeSlider('resize');"></li>
-				<li id="tm_pro" class="" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('match').style.display = 'none';document.getElementById('viewuser').style.display = '';"><img src="viewuser.png" style="width:50px;" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('match').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
-				<li id="tm_fri" class="" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('match').style.display = 'none';document.getElementById('addcar').style.display = '';" class="friends_list"><img src="addcar.png" style="height:80px;" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('match').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
-				<li id="tm_home" class=""  onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('match').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('match').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
-				<li id="tm_mtch" class="active" ><img src="match.png" style="width:50px !important;padding-top: 5px;" ></li>
-			</ul>
-		</div> -->
+				<div class="cnt_clr">
+					<center>
+						<table border="1" align="center">
+							<tr>
+								<td> 
+									<input class="bluebtn" type="button" id="displaymatch" value="Display New Matches" /> 
+								</td>
+							</tr>
+						</table>
+						<div id="responsecontainermatch" align="center">
+
+						</div>
+					</center>
+				</div>
+			</div>
+			<div id="addcar" style="display:none; overflow-x: hidden;">
+
 		
-		<div class="cnt_clr"><center>
-			<table border="1" align="center">
-   <tr>
-       <td> <input class="bluebtn" type="button" id="displaymatch" value="Display New Matches" /> </td>
-   </tr>
-</table>
-<div id="responsecontainermatch" align="center">
+				<div class="cnt_clr">
+					<div style="padding: 2px 4px 3px 4px;">
+						<form id="testForm2" action="http://cogni.design/cpr/www/insert2.php" method="post" enctype="multipart/form-data">
 
-</div>
-</center>
-</div>
+							<select id="years1" name="years" required>
+								<option value="">Select Year</option>
+							    <option>1990</option>
+								<option>1991</option>
+								<option>1992</option>
+								<option>1993</option>
+								<option>1994</option>
+								<option>1995</option>
+								<option>1996</option>
+								<option>1997</option>
+								<option>1998</option>
+								<option>1999</option>
+								<option>2000</option>
+								<option>2001</option>
+								<option>2002</option>
+								<option>2003</option>
+								<option>2004</option>
+								<option>2005</option>
+								<option>2007</option>
+								<option>2008</option>
+								<option>2009</option>
+								<option>2010</option>
+								<option>2011</option>
+								<option>2012</option>
+								<option>2013</option>
+								<option>2014</option>
+								<option>2015</option>
+							</select>
+							<br><br>
+							<select id="makes1" name="makes" required>
+								<option value="">Select Make</option>
+							</select>
+							<br><br>
+							<select id="models1" name="models" required>
+								<option value="">Select Model</option>
+							</select>
+							<br><br>
+							<center>
 
-
-        <!-- Add your site or application content here -->
-
-    
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-       <!-- 
- <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
- -->
-
-
-
-		</div>
-<div id="addcar" style="display:none; overflow-x: hidden;">
-
-
-		<!-- <div id="tabs" class="font_PNbold" style="zoom: .8;">
-			<ul id="top_menu">
-				<li id="tm_map" class="" onclick="$('li').removeClass('active');$('#home #tm_map').addClass('active');document.getElementById('addcar').style.display = 'none';document.getElementById('home').style.display = ''; $('#slider').rangeSlider('resize');"><img src="add_user.png" style="width:50px;" onclick="$('li').removeClass('active');$('#home #tm_map').addClass('active');document.getElementById('addcar').style.display = 'none';document.getElementById('home').style.display = ''; $('#slider').rangeSlider('resize');"></li>
-				<li id="tm_pro" class="" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('addcar').style.display = 'none';document.getElementById('viewuser').style.display = '';"><img src="viewuser.png" style="width:50px;" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('addcar').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
-				<li id="tm_fri" class="active" ><img src="addcar.png" style="height:80px;" ></li>
-				<li id="tm_home" class="" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('addcar').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('addcar').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
-				<li id="tm_mtch" class="" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('addcar').style.display = 'none';document.getElementById('match').style.display = '';" ><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('addcar').style.display = 'none';document.getElementById('match').style.display = '';"></li>
-			</ul>
-		</div> -->
-		
-		<div class="cnt_clr">
-				<div style="padding: 2px 4px 3px 4px;">
-		<form id="testForm2" action="http://cogni.design/cpr/www/insert2.php" method="post" enctype="multipart/form-data">
-
-<!-- 
-Make:<br>
-<input type="text" name="make">
-<br><br>
-Model:<br>
-<input type="text" name="model">
- -->
-   <select id="years1" name="years" required>
-        <option value="">Select Year</option>
-       <option>1990</option>
-        <option>1991</option>
-        <option>1992</option>
-        <option>1993</option>
-        <option>1994</option>
-        <option>1995</option>
-        <option>1996</option>
-        <option>1997</option>
-        <option>1998</option>
-        <option>1999</option>
-        <option>2000</option>
-        <option>2001</option>
-        <option>2002</option>
-        <option>2003</option>
-        <option>2004</option>
-        <option>2005</option>
-        <option>2007</option>
-        <option>2008</option>
-        <option>2009</option>
-        <option>2010</option>
-        <option>2011</option>
-        <option>2012</option>
-         <option>2013</option>
-          <option>2014</option>
-           <option>2015</option>
-    </select><br><br>
-    <select id="makes1" name="makes" required>
-        <option value="">Select Make</option>
-    </select><br><br>
-    <select id="models1" name="models" required>
-        <option value="">Select Model</option>
-    </select>
-<br><br><center>
-
-<p style="color:black;">Type of Vehicle:</p><br>
-<table style="width:100%;">
-<tr>
-<td style="width:25%;">
-                        <center><input type="radio" name="type[]" value="Cars" class="others" style="zoom:2.5;" checked="checked"/><br><span style="color:black;">Car</span> </center></td><td style="width:25%;">
-                        <center><input type="radio" name="type[]" value="Trucks"  class="others" style="zoom:2.5;" /><br><span style="color:black;">Truck</span></center></td><td style="width:25%;">
-                        <center><input type="radio" name="type[]" value="SUVs"  class="others" style="zoom:2.5;" /><br><span style="color:black;">SUV</span></center></td><td style="width:25%;">
-                        <center><input type="radio" name="type[]" value="Crossovers"  class="others" style="zoom:2.5;" /><br><span style="color:black;">Crossover</span></center></td></tr></table></center>
-<br>
-<p style="color:black;">Price:</p>
-<input type="text" name="price" style="zoom:1.5;" required>
-<br><br>
+								<p style="color:black;">Type of Vehicle:</p><br>
+								<table style="width:100%;">
+									<tr>
+										<td style="width:25%;">
+											<center>
+												<input type="radio" name="type[]" value="Cars" class="others" style="zoom:2.5;" checked="checked"/><br><span style="color:black;">Car</span>
+											</center>
+										</td>
+										<td style="width:25%;">
+											<center>
+												<input type="radio" name="type[]" value="Trucks"  class="others" style="zoom:2.5;" /><br><span style="color:black;">Truck</span>
+											</center>
+										</td>
+										<td style="width:25%;">
+											<center>
+												<input type="radio" name="type[]" value="SUVs"  class="others" style="zoom:2.5;" /><br><span style="color:black;">SUV</span>
+											</center>
+										</td>
+										<td style="width:25%;">
+											<center>
+												<input type="radio" name="type[]" value="Crossovers"  class="others" style="zoom:2.5;" /><br><span style="color:black;">Crossover</span>
+											</center>
+										</td>
+									</tr>
+								</table>
+							</center>
+							<br>
+							<p style="color:black;">Price:</p>
+							<input type="text" name="price" style="zoom:1.5;" required>
+							<br><br>
 
 
-        <input id="serverUrl" type="hidden" value="http://cogni.design/cpr/area51/testground/uploader.php" />
+							<input id="serverUrl" type="hidden" value="http://cogni.design/cpr/area51/testground/uploader.php" />
  
 
 	<!-- Camera -->
 
         
     <!-- Actions -->
-    <center>
-    <div>
-	<table style="width:100%;">
-	<tr>
-	<td style="width:50%;"><center>
-        <input class="bluebtn2" type="button" style="zoom:1.3;" onclick="takePicture();" value="Camera" /></center></td>
-			<td style="width:50%;">
-       <center> <input class="bluebtn2" type="button" style="zoom:1.3;" onclick="selectPicture();" value="Gallery" /></center></td>
-		</tr>
-		</table>
-		<br>
-       	<div>
-       	<br>
-<!-- 		<h3>Camera:</h3> -->
+							<center>
+								<div>
+									<table style="width:100%;">
+										<tr>
+											<td style="width:50%;">
+												<center>
+													<input class="bluebtn2" type="button" style="zoom:1.3;" onclick="takePicture();" value="Camera" />
+												</center>
+											</td>
+											<td style="width:50%;">
+												<center> 
+													<input class="bluebtn2" type="button" style="zoom:1.3;" onclick="selectPicture();" value="Gallery" />
+												</center>
+											</td>
+										</tr>
+									</table>
+									<br>
+									<div>
+										<br>
+						<!-- 		<h3>Camera:</h3> -->
+								
+										<img style="width:300px;visibility:hidden;display:none;" id="camera_image" src="" />
+									</div>
+									<br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span><br>
+									<input class="bluebtn2" type="button" style="zoom:1.3;" onclick="uploadPicture();" value="Upload Picture" />
+							   
+								</div>
+							</center>
+							<input type="hidden" name="fileToUpload" id="fileToUpload" value="">
+						<!--   <p style="color:black;">Select image to upload:</p> -->
+						<!--     <input type="file" name="fileToUpload" id="fileToUpload" style="zoom:1.3;" accept="image/*" capture="camera" required /> -->
+							<!-- <input type="submit" value="Upload Image" name="submit"> --><br>
+							<center>
+								<input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;">
+							</center>
+						</form>
+					</div>
+
+
+								<!-- Add your site or application content here -->
+
+							
+
+								<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+							   <!-- 
+						 <script>
+									(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+									function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+									e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+									e.src='//www.google-analytics.com/analytics.js';
+									r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+									ga('create','UA-XXXXX-X');ga('send','pageview');
+								</script>
+						 -->
+
+				</div>
+
+			</div>
+			<div id="viewuser" style="display:none;">
+
+				<div class="cnt_clr">
+					<center>
+	
+						<div id="responsecontaineruser" align="center">
+
+						</div>
+					</center>
+				</div>
+
+
+     
+			</div>
+
+			<div id="viewcar" style="display:none;">
+
+
+	
 		
-       <img style="width:300px;visibility:hidden;display:none;" id="camera_image" src="" />
-	</div>
-        <br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span><br>
-        <input class="bluebtn2" type="button" style="zoom:1.3;" onclick="uploadPicture();" value="Upload Picture" />
-       
-    </div>
-    </center>
-    <input type="hidden" name="fileToUpload" id="fileToUpload" value="">
-<!--   <p style="color:black;">Select image to upload:</p> -->
-<!--     <input type="file" name="fileToUpload" id="fileToUpload" style="zoom:1.3;" accept="image/*" capture="camera" required /> -->
-    <!-- <input type="submit" value="Upload Image" name="submit"> --><br>
-    <center>
-<input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;"></center>
-</form>
-</div>
+				<div class="cnt_clr">
+					<center>
+			
+						<div id="responsecontainercar" align="center">
+
+						</div>
+					</center>
+				</div>
 
 
-        <!-- Add your site or application content here -->
+      
+			</div>
 
-    
+		</div><!-- end panel -->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-       <!-- 
- <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
- -->
-
-</div>
-
-		</div>
-<div id="viewuser" style="display:none;">
-
-
-		<!-- <div id="tabs" class="font_PNbold" style="zoom: .8;">
-			<ul id="top_menu">
-				<li id="tm_map" class="" onclick="$('li').removeClass('active');$('#home #tm_map').addClass('active');document.getElementById('viewuser').style.display = 'none';document.getElementById('home').style.display = '';$('#slider').rangeSlider('resize');"><img src="add_user.png" style="width:50px;" onclick="$('li').removeClass('active');$('#home #tm_map').addClass('active');document.getElementById('viewuser').style.display = 'none';document.getElementById('home').style.display = '';$('#slider').rangeSlider('resize');"></li>
-				<li id="tm_pro" class="active"><img src="viewuser.png" style="width:50px;"></li>
-				<li id="tm_fri" class="" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('viewuser').style.display = 'none';document.getElementById('addcar').style.display = '';" ><img src="addcar.png" style="height:80px;" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('viewuser').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
-				<li id="tm_home" class="" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('viewuser').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('viewuser').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
-				<li id="tm_mtch" class="" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('viewuser').style.display = 'none';document.getElementById('match').style.display = '';" ><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('viewuser').style.display = 'none';document.getElementById('match').style.display = '';"></li>
-			</ul>
-		</div>
-		 -->
-		<div class="cnt_clr"><center>
-	<!-- 
-	<table border="1" align="center">
-   <tr>
-       <td> <input type="button" id="displayuser" value="Display All Data" /> </td>
-   </tr>
-</table>
- -->
-<div id="responsecontaineruser" align="center">
-
-</div>
-</center>
-</div>
-
-
-        <!-- Add your site or application content here -->
-
-    
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-       <!-- 
- <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
- -->
-
-
-
-		</div>
-
-<div id="viewcar" style="display:none;">
-
-
-	<!-- 	<div id="tabs" class="font_PNbold" style="zoom: .8;">
-			<ul id="top_menu">
-				<li id="tm_map"  class="" onclick="$('li').removeClass('active');$('#home #tm_map').addClass('active');document.getElementById('viewcar').style.display = 'none';document.getElementById('home').style.display = '';$('#slider').rangeSlider('resize');"><img src="add_user.png" style="width:50px;" onclick="$('li').removeClass('active');$('#home #tm_map').addClass('active');document.getElementById('viewcar').style.display = 'none';document.getElementById('home').style.display = '';$('#slider').rangeSlider('resize');"></li>
-				<li id="tm_pro"  class="" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('viewcar').style.display = 'none';document.getElementById('viewuser').style.display = '';" class="profile_private"><img src="viewuser.png" style="width:50px;" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('viewcar').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
-				<li id="tm_fri" class="" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('viewcar').style.display = 'none';document.getElementById('addcar').style.display = '';" ><img src="addcar.png" style="height:80px;" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('viewcar').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
-				<li id="tm_home"  class="active" ><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" ></li>
-				<li id="tm_mtch"  class="" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('viewcar').style.display = 'none';document.getElementById('match').style.display = '';" ><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('viewcar').style.display = 'none';document.getElementById('match').style.display = '';"></li>
-			</ul>
-		</div> -->
-		
-		<div class="cnt_clr"><center>
-			<!-- 
-<table border="1" align="center">
-   <tr>
-       <td> <input type="button" id="displaycar" value="Display All Data" /> </td>
-   </tr>
-</table>
- -->
-<div id="responsecontainercar" align="center">
-
-</div>
-</center>
-</div>
-
-
-        <!-- Add your site or application content here -->
-
-    
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-       <!-- 
- <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
- -->
-
-
-
-		</div>
-
-	</div><!-- end panel -->
-
-</div><!-- end page -->
+	</div><!-- end page -->
 <script type='text/javascript'>
 
 $(".specific").change(function() {
@@ -2031,4 +1976,5 @@ function formcheck() {
  
 // $("#testForm").submit(); //Submit  the FORM
         </script>
+		</body>
 </html>
