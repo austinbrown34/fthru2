@@ -84,7 +84,7 @@ a { text-decoration:none; }
     width: 100%;
     height:165px;
     padding: 0;
-	
+	zoom: .88;
 }
 #container{z-index:100; width: 100%; top:165px !important;overflow: auto !important;}
 /* #container{overflow-y: auto; -webkit-overflow-scrolling: touch;} */
