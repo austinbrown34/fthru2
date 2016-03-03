@@ -1717,17 +1717,19 @@ $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
 
             var pagetarget = $("#page");
             pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow' : 'hidden'});
-                alert("made it here first and changed webkit overflow scrolling to auto and changed overflow to hidden");
+                alert(pagetarget.scrollTop()+"made it here first and changed webkit overflow scrolling to auto and changed overflow to hidden");
 //            pagetarget.animate({scrollTop : 0},300,"swing",function(){
 
 //            });
             $('li').removeClass('active');$('#tabs #tm_mtch').addClass('active');
             document.getElementById('match').style.display = '';
+            alert(pagetarget.scrollTop()+"just loaded page");
             pagetarget.scrollTop(0);
+            alert(pagetarget.scrollTop()+"just scrolltopped the loaded page");
             pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow' : 'auto'});
-            alert("made it here second and changed webkit overflow scrolling to touch and changed overflow to auto");
-
-            alert("and finally made it here");
+            alert(pagetarget.scrollTop()+"made it here second and changed webkit overflow scrolling to touch and changed overflow to auto");
+            pagetarget.scrollTop(0);
+            alert(pagetarget.scrollTop()+"and finally made it here after updating scroll once more");
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
