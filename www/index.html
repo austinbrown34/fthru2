@@ -1549,8 +1549,7 @@ $(".specific").change(function() {
     }
 });
 $(document).ready(function(){
-var pagetarget;
-    pagetarget = $("#page");
+
 var page;
 function onTouchStart(e) {
  //page = this.Target.className;
@@ -1716,15 +1715,18 @@ $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
               $("#home").hide();
             $('#page').scrollTop(0);
 
-            
+            var pagetarget = $("#page");
             pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow' : 'hidden'});
-
+                alert("made it here first and changed webkit overflow scrolling to auto and changed overflow to hidden");
             pagetarget.animate({scrollTop : 0},300,"swing",function(){
-                                                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow' : 'auto'});
+            pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow' : 'auto'});
+                alert("made it here second and changed webkit overflow scrolling to touch and changed overflow to auto");
+
             });
             $('li').removeClass('active');$('#tabs #tm_mtch').addClass('active');
             document.getElementById('match').style.display = '';
             $('#page').scrollTop(0);
+            alert("and finally made it here");
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
