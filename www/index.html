@@ -227,7 +227,7 @@ var password = localStorage.getItem('password');
 				localStorage.setItem("id", response[0]);
 				localStorage.setItem("password", response[1]);
 
-
+                var pagetarget = $("#page");
 
                 setTimeout(function(){
                     $('#page').scrollTop(0);
@@ -437,6 +437,7 @@ var password = localStorage.getItem('password');
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
 
+            var pagetarget = $("#page");
 
             setTimeout(function(){
                 $('#page').scrollTop(0);
@@ -688,6 +689,8 @@ submitHandler: function(form) {
 
 
 
+            var pagetarget = $("#page");
+
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -734,6 +737,8 @@ submitHandler: function(form) {
         success: function(response){                    
             $("#responsecontaineruser").html(response);
 
+
+            var pagetarget = $("#page");
 
             setTimeout(function(){
                 $('#page').scrollTop(0);
@@ -993,6 +998,7 @@ submitHandler: function(form) {
 <div style="position: absolute;
 		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .8;"  class="hdr_back" onclick="javascript:
 
+  var pagetarget = $('#page');
 
 		  setTimeout(function(){
                 $('#page').scrollTop(0);
@@ -1682,7 +1688,7 @@ $(".specific").change(function() {
     }
 });
 $(document).ready(function(){
-    var pagetarget = $("#page");
+
 var page;
 function onTouchStart(e) {
  //page = this.Target.className;
@@ -1832,7 +1838,7 @@ target.bind(startEvent, function(e) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
 
-
+            var pagetarget = $("#page");
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -1871,6 +1877,8 @@ target.bind(startEvent, function(e) {
 
 
 //            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"before home hides");
+
+            var pagetarget = $("#page");
 
              setTimeout(function(){
                  $('#page').scrollTop(0);
@@ -1943,7 +1951,7 @@ target2.bind(startEvent, function(e) {
 //             target.find('h1').html('Swipe Left').fadeIn();
 
 
-
+            var pagetarget = $("#page");
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -1982,7 +1990,7 @@ target2.bind(startEvent, function(e) {
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
 
-
+            var pagetarget = $("#page");
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -2042,7 +2050,7 @@ target3.bind(startEvent, function(e) {
         if (currentX < startX) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
-
+            var pagetarget = $("#page");
 
             setTimeout(function(){
                 $('#page').scrollTop(0);
@@ -2080,7 +2088,7 @@ target3.bind(startEvent, function(e) {
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
 
-
+            var pagetarget = $("#page");
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -2137,7 +2145,7 @@ target4.bind(startEvent, function(e) {
         if (currentX < startX) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
-
+            var pagetarget = $("#page");
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -2178,7 +2186,7 @@ target4.bind(startEvent, function(e) {
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
 
-
+            var pagetarget = $("#page");
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -2236,7 +2244,7 @@ target5.bind(startEvent, function(e) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
 
-
+            var pagetarget = $("#page");
 
             setTimeout(function(){
                 $('#page').scrollTop(0);
@@ -2276,7 +2284,7 @@ target5.bind(startEvent, function(e) {
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
 
-
+            var pagetarget = $("#page");
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -2381,7 +2389,7 @@ elem2.value=data.values.max;
         success: function(response){                    
             $("#responsecontaineruser").html(response);
 
-
+            var pagetarget = $("#page");
 
             setTimeout(function(){
                 $('#page').scrollTop(0);
