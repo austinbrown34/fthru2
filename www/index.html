@@ -1549,7 +1549,8 @@ $(".specific").change(function() {
     }
 });
 $(document).ready(function(){
-
+var pagetarget;
+    pagetarget = $("#page");
 var page;
 function onTouchStart(e) {
  //page = this.Target.className;
@@ -1714,11 +1715,16 @@ $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
             $('#page').scrollTop(0);
               $("#home").hide();
             $('#page').scrollTop(0);
+
+            
+            pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow' : 'hidden'});
+
+            pagetarget.animate({scrollTop : 0},300,"swing",function(){
+                                                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow' : 'auto'});
+            });
             $('li').removeClass('active');$('#tabs #tm_mtch').addClass('active');
-            $('#tabs #tm_map').trigger('touchstart');
             document.getElementById('match').style.display = '';
             $('#page').scrollTop(0);
-            $('#tabs #tm_map').trigger('touchstart');
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
