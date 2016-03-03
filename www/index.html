@@ -226,12 +226,36 @@ var password = localStorage.getItem('password');
 				response = response.split('|');
 				localStorage.setItem("id", response[0]);
 				localStorage.setItem("password", response[1]);
-				
-				
+
+
+
+                setTimeout(function(){
+                    $('#page').scrollTop(0);
+                    setTimeout(function(){
+                        document.getElementById('start').style.display = 'none';
+                        setTimeout(function(){
+                            pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                            setTimeout(function(){
+                                $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
+                                setTimeout(function(){
+                                    document.getElementById('home').style.display = '';
+                                    setTimeout(function(){
+                                        pagetarget.scrollTop(0);
+                                        setTimeout(function(){
+                                            pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                            $('#slider').rangeSlider('resize');
+                                        },0);
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+
+                    },0);
+                },0);
 				 
 				
-   document.getElementById('start').style.display = 'none';$('#page').scrollTop(0);document.getElementById('home').style.display = '';
-   $('#slider').rangeSlider('resize');
+
+
 			
 				return false;
 			}
@@ -412,8 +436,34 @@ var password = localStorage.getItem('password');
  
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
-        document.getElementById('start').style.display = 'none';$('#page').scrollTop(0);document.getElementById('home').style.display = '';
-   $('#slider').rangeSlider('resize');
+
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    document.getElementById('start').style.display = 'none';
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('home').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                        $('#slider').rangeSlider('resize');
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
         }
             $('#years').change(function() {
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
@@ -635,10 +685,38 @@ submitHandler: function(form) {
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#responsecontaineruser").html(response);
-            $('#page').scrollTop(0);
-            document.getElementById('edit').style.display = 'none';
 
- document.getElementById('viewuser').style.display = '';
+
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    document.getElementById('edit').style.display = 'none';
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('viewuser').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
             //alert(response);
         }
 
@@ -655,10 +733,35 @@ submitHandler: function(form) {
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#responsecontaineruser").html(response);
-            $('#page').scrollTop(0);
-            document.getElementById('edit').style.display = 'none';
 
- document.getElementById('viewuser').style.display = '';
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    document.getElementById('edit').style.display = 'none';
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('viewuser').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
             //alert(response);
         }
 
@@ -888,7 +991,37 @@ submitHandler: function(form) {
 <body onload="init();">
 <div id="appheader">
 <div style="position: absolute;
-		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .8;"  class="hdr_back" onclick="javascript:$('#page').scrollTop(0);document.getElementById('home').style.display = 'none';document.getElementById('start').style.display = '';localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
+		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .8;"  class="hdr_back" onclick="javascript:
+
+
+		  setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+document.getElementById('home').style.display = 'none';
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');
+                            setTimeout(function(){
+		document.getElementById('start').style.display = '';
+		                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
 
 		<div id="tabs" class="font_PNbold" style="zoom: .8;">
 			<ul id="top_menu">
@@ -1549,7 +1682,7 @@ $(".specific").change(function() {
     }
 });
 $(document).ready(function(){
-
+    var pagetarget = $("#page");
 var page;
 function onTouchStart(e) {
  //page = this.Target.className;
@@ -1699,11 +1832,34 @@ target.bind(startEvent, function(e) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
 
-            $('#page').scrollTop(0);
-            $("#home").hide();
 
-document.getElementById('viewuser').style.display = '';
-$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#home").hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('viewuser').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
@@ -1712,7 +1868,7 @@ $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
 //            $('#page').scrollTop(0);
-            var pagetarget = $("#page");
+
 
 //            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"before home hides");
 
@@ -1785,11 +1941,39 @@ target2.bind(startEvent, function(e) {
         if (currentX < startX) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
-            $('#page').scrollTop(0);
-            $("#viewuser").hide();
 
-document.getElementById('addcar').style.display = '';
-$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');
+
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#viewuser").hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_fri').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('addcar').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
+
+
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
@@ -1797,11 +1981,39 @@ $('li').removeClass('active');$('#addcar #tm_fri').addClass('active');
         if (currentX > startX) {
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
-            $('#page').scrollTop(0);
-              $("#viewuser").hide();
 
-            document.getElementById('home').style.display = '';
-            $('li').removeClass('active');$('#home #tm_map').addClass('active');
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#viewuser").hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('home').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
+
+
+
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
@@ -1830,11 +2042,36 @@ target3.bind(startEvent, function(e) {
         if (currentX < startX) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
-            $('#page').scrollTop(0);
-            $("#addcar").hide();
 
-document.getElementById('viewcar').style.display = '';
-$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#addcar").hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_home').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('viewcar').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
@@ -1842,11 +2079,36 @@ $('li').removeClass('active');$('#viewcar #tm_home').addClass('active');
         if (currentX > startX) {
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
-            $('#page').scrollTop(0);
-              $("#addcar").hide();
 
-            document.getElementById('viewuser').style.display = '';
-            $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#addcar").hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('viewuser').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
@@ -1875,11 +2137,39 @@ target4.bind(startEvent, function(e) {
         if (currentX < startX) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
-            $('#page').scrollTop(0);
-            $("#viewcar").hide();
 
-document.getElementById('match').style.display = '';
-$('li').removeClass('active');$('#match #tm_mtch').addClass('active');
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#viewcar").hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_mtch').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('match').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
+
+
+
+
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
@@ -1887,11 +2177,36 @@ $('li').removeClass('active');$('#match #tm_mtch').addClass('active');
         if (currentX > startX) {
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
-            $('#page').scrollTop(0);
-              $("#viewcar").hide();
 
-            document.getElementById('addcar').style.display = '';
-            $('li').removeClass('active');$('#addcar #tm_fri').addClass('active');
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#viewcar").hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_fri').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('addcar').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
@@ -1920,11 +2235,39 @@ target5.bind(startEvent, function(e) {
         if (currentX < startX) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
-            $('#page').scrollTop(0);
-            $("#match").hide();
 
-document.getElementById('home').style.display = '';
-$('li').removeClass('active');$('#home #tm_map').addClass('active');
+
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#match").hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('home').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
+
+
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
@@ -1932,11 +2275,37 @@ $('li').removeClass('active');$('#home #tm_map').addClass('active');
         if (currentX > startX) {
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
-            $('#page').scrollTop(0);
-              $("#match").hide();
 
-            document.getElementById('viewcar').style.display = '';
-            $('li').removeClass('active');$('#viewcar #tm_home').addClass('active');
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#match").hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_home').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('viewcar').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
+
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
@@ -2011,10 +2380,38 @@ elem2.value=data.values.max;
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#responsecontaineruser").html(response);
-            $('#page').scrollTop(0);
-            document.getElementById('edit').style.display = 'none';
 
- document.getElementById('viewuser').style.display = '';
+
+
+            setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    document.getElementById('edit').style.display = 'none';
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
+                            setTimeout(function(){
+                                document.getElementById('viewuser').style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
+
+                },0);
+            },0);
+
+
+
+
+
+
+
             //alert(response);
         }
 
