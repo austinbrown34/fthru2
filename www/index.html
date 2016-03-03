@@ -230,7 +230,7 @@ var password = localStorage.getItem('password');
 				
 				 
 				
-   document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
+   document.getElementById('start').style.display = 'none';$('#page').scrollTop(0);document.getElementById('home').style.display = '';
    $('#slider').rangeSlider('resize');
 			
 				return false;
@@ -412,7 +412,7 @@ var password = localStorage.getItem('password');
  
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
-        document.getElementById('start').style.display = 'none';document.getElementById('home').style.display = '';
+        document.getElementById('start').style.display = 'none';$('#page').scrollTop(0);document.getElementById('home').style.display = '';
    $('#slider').rangeSlider('resize');
         }
             $('#years').change(function() {
@@ -636,6 +636,7 @@ submitHandler: function(form) {
         success: function(response){                    
             $("#responsecontaineruser").html(response); 
             document.getElementById('edit').style.display = 'none';
+            $('#page').scrollTop(0);
  document.getElementById('viewuser').style.display = '';
             //alert(response);
         }
@@ -654,6 +655,7 @@ submitHandler: function(form) {
         success: function(response){                    
             $("#responsecontaineruser").html(response); 
             document.getElementById('edit').style.display = 'none';
+            $('#page').scrollTop(0);
  document.getElementById('viewuser').style.display = '';
             //alert(response);
         }
@@ -884,7 +886,7 @@ submitHandler: function(form) {
 <body onload="init();">
 <div id="appheader">
 <div style="position: absolute;
-		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .8;"  class="hdr_back" onclick="javascript:document.getElementById('home').style.display = 'none';document.getElementById('start').style.display = '';localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
+		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .8;"  class="hdr_back" onclick="javascript:document.getElementById('home').style.display = 'none';$('#page').scrollTop(0);document.getElementById('start').style.display = '';localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
 
 		<div id="tabs" class="font_PNbold" style="zoom: .8;">
 			<ul id="top_menu">
@@ -1689,6 +1691,7 @@ target.bind(startEvent, function(e) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
             $("#home").hide();
+            $('#page').scrollTop(0);
 document.getElementById('viewuser').style.display = '';
 $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
             // setTimeout(function() {
@@ -1699,6 +1702,7 @@ $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
               $("#home").hide();
+            $('#page').scrollTop(0);
             document.getElementById('match').style.display = '';
             $('li').removeClass('active');$('#match #tm_mtch').addClass('active');
             // setTimeout(function() {
@@ -1730,6 +1734,7 @@ target2.bind(startEvent, function(e) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
             $("#viewuser").hide();
+            $('#page').scrollTop(0);
 document.getElementById('addcar').style.display = '';
 $('li').removeClass('active');$('#addcar #tm_fri').addClass('active');
             // setTimeout(function() {
@@ -1740,6 +1745,7 @@ $('li').removeClass('active');$('#addcar #tm_fri').addClass('active');
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
               $("#viewuser").hide();
+            $('#page').scrollTop(0);
             document.getElementById('home').style.display = '';
             $('li').removeClass('active');$('#home #tm_map').addClass('active');
             // setTimeout(function() {
@@ -1771,6 +1777,7 @@ target3.bind(startEvent, function(e) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
             $("#addcar").hide();
+            $('#page').scrollTop(0);
 document.getElementById('viewcar').style.display = '';
 $('li').removeClass('active');$('#viewcar #tm_home').addClass('active');
             // setTimeout(function() {
@@ -1781,6 +1788,7 @@ $('li').removeClass('active');$('#viewcar #tm_home').addClass('active');
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
               $("#addcar").hide();
+            $('#page').scrollTop(0);
             document.getElementById('viewuser').style.display = '';
             $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
             // setTimeout(function() {
@@ -1812,6 +1820,7 @@ target4.bind(startEvent, function(e) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
             $("#viewcar").hide();
+            $('#page').scrollTop(0);
 document.getElementById('match').style.display = '';
 $('li').removeClass('active');$('#match #tm_mtch').addClass('active');
             // setTimeout(function() {
@@ -1822,6 +1831,7 @@ $('li').removeClass('active');$('#match #tm_mtch').addClass('active');
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
               $("#viewcar").hide();
+            $('#page').scrollTop(0);
             document.getElementById('addcar').style.display = '';
             $('li').removeClass('active');$('#addcar #tm_fri').addClass('active');
             // setTimeout(function() {
@@ -1853,6 +1863,7 @@ target5.bind(startEvent, function(e) {
             // swipe left code here
 //             target.find('h1').html('Swipe Left').fadeIn();
             $("#match").hide();
+            $('#page').scrollTop(0);
 document.getElementById('home').style.display = '';
 $('li').removeClass('active');$('#home #tm_map').addClass('active');
             // setTimeout(function() {
@@ -1863,6 +1874,7 @@ $('li').removeClass('active');$('#home #tm_map').addClass('active');
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
               $("#match").hide();
+            $('#page').scrollTop(0);
             document.getElementById('viewcar').style.display = '';
             $('li').removeClass('active');$('#viewcar #tm_home').addClass('active');
             // setTimeout(function() {
@@ -1940,6 +1952,7 @@ elem2.value=data.values.max;
         success: function(response){                    
             $("#responsecontaineruser").html(response); 
             document.getElementById('edit').style.display = 'none';
+            $('#page').scrollTop(0);
  document.getElementById('viewuser').style.display = '';
             //alert(response);
         }
