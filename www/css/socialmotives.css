@@ -96,13 +96,13 @@ html{
 	background-size:cover;}
 	
 #page{
-	min-height:100%; height:100%; top: 0;  z-index: 100; width: 100%; -webkit-overflow-scrolling:touch; overflow: auto !important; zoom: .88; /*  -webkit-overflow-scrolling: touch; -webkit-touch-callout: none !important; */ 
+	min-height:100%; height:100%; margin-top:180px !important;  z-index: 100; width: 100%; -webkit-overflow-scrolling:touch; overflow: auto !important; zoom: .88; /*  -webkit-overflow-scrolling: touch; -webkit-touch-callout: none !important; */
 
 }
 html,body{
 min-height:100%; height:100%;  z-index: 100; width: 100%;zoom: .88;
 }
-#home,#viewuser,#addcar,#viewcar,#match {position:relative;min-height:100%; margin-top:170px !important;height:100%;  z-index: 100; width: 100%; -webkit-overflow-scrolling:touch; overflow: visible !important; zoom: .88; /*  -webkit-overflow-scrolling: touch; -webkit-touch-callout: none !important; */  }
+#home,#viewuser,#addcar,#viewcar,#match {position:relative;min-height:100%;height:100%;  z-index: 100; width: 100%; -webkit-overflow-scrolling:touch; overflow: visible !important; zoom: .88; /*  -webkit-overflow-scrolling: touch; -webkit-touch-callout: none !important; */  }
 #home { position:relative;    -webkit-transform: translate3d(0, 0, 0);  }
 #home2 { position:relative;   -webkit-transform: translate3d(0, 0, 0);  }
 #map_canvas {
