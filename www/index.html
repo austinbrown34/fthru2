@@ -996,14 +996,14 @@ submitHandler: function(form) {
 <body onload="init();">
 <div id="appheader">
 <div style="position: absolute;
-		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .8;"  class="hdr_back" onclick="javascript:
+		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .6; margin-top:30px;"  class="hdr_back" onclick="javascript:
 
   var pagetarget = $('#page');
 
 		  setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
-document.getElementById('home').style.display = 'none';
+                    $('.appscreen').hide();
                     setTimeout(function(){
                         pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
                         setTimeout(function(){
@@ -1027,7 +1027,7 @@ document.getElementById('home').style.display = 'none';
 
 
 
-localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: -10px; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
+localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
 
 		<div id="tabs" class="font_PNbold" style="zoom: .8;">
 			<ul id="top_menu">
@@ -1051,7 +1051,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
  
 
 
-			<div id="start">
+			<div id="start" class="appscreen">
 
 
         <div id="login" style="padding-top: 50px;">
@@ -1076,7 +1076,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 	</div>
 </div>
 
-			<div id="home" style="display:none;">
+			<div id="home" class="appscreen" style="display:none;">
 			
 
 				<div class="slidehome" style="z-index:3;">
@@ -1274,7 +1274,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 	
 	
 	
-			<div id="edit" style="display:none;">
+			<div id="edit" class="appscreen" style="display:none;">
 	
 
 
@@ -1462,7 +1462,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 	
 	
 	
-			<div id="match" style="display:none;">
+			<div id="match" class ="appscreen" style="display:none;">
 
 
 		
@@ -1481,7 +1481,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 					</center>
 				</div>
 			</div>
-			<div id="addcar" style="display:none; overflow-x: hidden;">
+			<div id="addcar" class ="appscreen" style="display:none; overflow-x: hidden;">
 
 		
 				<div class="cnt_clr">
@@ -1624,7 +1624,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 				</div>
 
 			</div>
-			<div id="viewuser" style="display:none;">
+			<div id="viewuser" class ="appscreen" style="display:none;">
 
 				<div class="cnt_clr">
 					<center>
@@ -1639,7 +1639,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
      
 			</div>
 
-			<div id="viewcar" style="display:none;">
+			<div id="viewcar" class ="appscreen" style="display:none;">
 
 
 	
