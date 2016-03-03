@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="socialmotives.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="socialmotives.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/socialmotives.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="32" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.6891892" vertical-offset="1122" max-vertical-offset="23205">
+            <state line="102" column="32" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="23205">
               <folding />
             </state>
           </provider>
@@ -63,15 +63,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="230" column="17" selection-start="5442" selection-end="5442" vertical-scroll-proportion="-4.6923075" vertical-offset="2748" max-vertical-offset="19584">
+            <state line="1717" column="42" selection-start="57137" selection-end="57137" vertical-scroll-proportion="0.84090906" vertical-offset="15158" max-vertical-offset="19720">
               <folding>
                 <element signature="tag#head#0;tag#html#0" expanded="true" />
+                <element signature="tag#head#1;tag#html#0" expanded="true" />
                 <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
+                <element signature="tag#script#7;tag#head#1;tag#html#0" expanded="true" />
                 <element signature="e#2778#3074#0" expanded="true" />
                 <element signature="e#3116#3508#0" expanded="true" />
+                <element signature="e#4381#6230#0" expanded="true" />
+                <element signature="e#5011#5869#0" expanded="true" />
                 <element signature="e#13230#17359#0" expanded="true" />
                 <element signature="e#15186#15600#0" expanded="true" />
                 <element signature="e#15218#15596#0" expanded="true" />
@@ -104,7 +108,6 @@
                 <element signature="e#25838#27076#0" expanded="true" />
                 <element signature="e#27173#28142#0" expanded="true" />
                 <element signature="e#27525#28040#0" expanded="true" />
-                <element signature="tag#body#0;tag#html#0" expanded="true" />
                 <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="true" />
                 <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="true" />
                 <element signature="tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
@@ -161,16 +164,14 @@
                 <element signature="e#52151#54387#0" expanded="true" />
                 <element signature="e#52189#53048#0" expanded="true" />
                 <element signature="e#53512#53804#0" expanded="true" />
-                <element signature="tag#script#1;tag#body#0;tag#html#0" expanded="true" />
-                <element signature="e#55723#57061#0" expanded="true" />
-                <element signature="e#57382#58721#0" expanded="true" />
-                <element signature="e#59042#60388#0" expanded="true" />
-                <element signature="e#60709#62049#0" expanded="true" />
-                <element signature="e#62370#63706#0" expanded="true" />
+                <element signature="e#57714#59053#0" expanded="true" />
+                <element signature="e#59374#60720#0" expanded="true" />
+                <element signature="e#61041#62381#0" expanded="true" />
+                <element signature="e#62702#64038#0" expanded="true" />
                 <element signature="tag#script#1;tag#html#0" expanded="true" />
-                <element signature="e#65493#66055#0" expanded="true" />
-                <element signature="e#65506#66046#0" expanded="true" />
-                <element signature="e#65758#66039#0" expanded="true" />
+                <element signature="e#65825#66387#0" expanded="true" />
+                <element signature="e#65838#66378#0" expanded="true" />
+                <element signature="e#66090#66371#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -188,8 +189,8 @@
       <list>
         <option value="$PROJECT_DIR$/../config.xml" />
         <option value="$PROJECT_DIR$/../../../fthruphp/display.php" />
-        <option value="$PROJECT_DIR$/../index.html" />
         <option value="$PROJECT_DIR$/socialmotives.css" />
+        <option value="$PROJECT_DIR$/../index.html" />
       </list>
     </option>
   </component>
@@ -324,14 +325,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/socialmotives.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="32" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="23205">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="17" selection-start="5442" selection-end="5442" vertical-scroll-proportion="-4.6923075" vertical-offset="2748" max-vertical-offset="19584">
+        <state line="1717" column="42" selection-start="57137" selection-end="57137" vertical-scroll-proportion="0.84090906" vertical-offset="15158" max-vertical-offset="19720">
           <folding>
             <element signature="tag#head#0;tag#html#0" expanded="true" />
+            <element signature="tag#head#1;tag#html#0" expanded="true" />
             <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
+            <element signature="tag#script#7;tag#head#1;tag#html#0" expanded="true" />
             <element signature="e#2778#3074#0" expanded="true" />
             <element signature="e#3116#3508#0" expanded="true" />
+            <element signature="e#4381#6230#0" expanded="true" />
+            <element signature="e#5011#5869#0" expanded="true" />
             <element signature="e#13230#17359#0" expanded="true" />
             <element signature="e#15186#15600#0" expanded="true" />
             <element signature="e#15218#15596#0" expanded="true" />
@@ -364,7 +376,6 @@
             <element signature="e#25838#27076#0" expanded="true" />
             <element signature="e#27173#28142#0" expanded="true" />
             <element signature="e#27525#28040#0" expanded="true" />
-            <element signature="tag#body#0;tag#html#0" expanded="true" />
             <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="true" />
             <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="true" />
             <element signature="tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
@@ -421,24 +432,15 @@
             <element signature="e#52151#54387#0" expanded="true" />
             <element signature="e#52189#53048#0" expanded="true" />
             <element signature="e#53512#53804#0" expanded="true" />
-            <element signature="tag#script#1;tag#body#0;tag#html#0" expanded="true" />
-            <element signature="e#55723#57061#0" expanded="true" />
-            <element signature="e#57382#58721#0" expanded="true" />
-            <element signature="e#59042#60388#0" expanded="true" />
-            <element signature="e#60709#62049#0" expanded="true" />
-            <element signature="e#62370#63706#0" expanded="true" />
+            <element signature="e#57714#59053#0" expanded="true" />
+            <element signature="e#59374#60720#0" expanded="true" />
+            <element signature="e#61041#62381#0" expanded="true" />
+            <element signature="e#62702#64038#0" expanded="true" />
             <element signature="tag#script#1;tag#html#0" expanded="true" />
-            <element signature="e#65493#66055#0" expanded="true" />
-            <element signature="e#65506#66046#0" expanded="true" />
-            <element signature="e#65758#66039#0" expanded="true" />
+            <element signature="e#65825#66387#0" expanded="true" />
+            <element signature="e#65838#66378#0" expanded="true" />
+            <element signature="e#66090#66371#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socialmotives.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="32" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.6891892" vertical-offset="1122" max-vertical-offset="23205">
-          <folding />
         </state>
       </provider>
     </entry>
