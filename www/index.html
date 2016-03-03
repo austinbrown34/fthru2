@@ -1715,9 +1715,10 @@ $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
               $("#home").hide();
             $('#page').scrollTop(0);
             $('li').removeClass('active');$('#tabs #tm_mtch').addClass('active');
-
+            $('#tabs #tm_map').trigger('touchstart');
             document.getElementById('match').style.display = '';
             $('#page').scrollTop(0);
+            $('#tabs #tm_map').trigger('touchstart');
             // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
