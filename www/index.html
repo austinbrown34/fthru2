@@ -1712,10 +1712,12 @@ $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
             // swipe right code here
 //             target.find('h1').html('Swipe Right').fadeIn();
 //            $('#page').scrollTop(0);
+            var pagetarget = $("#page");
+            alert(pagetarget.scrollTop()+"before home hides");
               $("#home").hide();
 //            $('#page').scrollTop(0);
 
-            var pagetarget = $("#page");
+
             pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow' : 'hidden'});
                 alert(pagetarget.scrollTop()+"made it here first and changed webkit overflow scrolling to auto and changed overflow to hidden");
 //            pagetarget.animate({scrollTop : 0},300,"swing",function(){
