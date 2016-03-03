@@ -99,10 +99,13 @@ html{
 	min-height:100%; height:100%; position:absolute;  z-index: 100; width: 100%; -webkit-overflow-scrolling:touch; overflow: auto !important; zoom: .88; /*  -webkit-overflow-scrolling: touch; -webkit-touch-callout: none !important; */
 
 }
+body{
+    position: static !important;
+}
 html,body{
 min-height:100%; height:100%;  z-index: 100; width: 100%;zoom: .88;
 }
-#home,#viewuser,#addcar,#viewcar,#match,#edit {position:absolute;min-height:78%; top:20%; z-index: 100; width: 100%; -webkit-overflow-scrolling:touch; overflow: scroll !important; zoom: .88; /*  -webkit-overflow-scrolling: touch; -webkit-touch-callout: none !important; */  }
+#home,#viewuser,#addcar,#viewcar,#match,#edit {position:absolute;min-height:78%; top:20%; z-index: 100; width: 100%; overflow: hidden !important; zoom: .88; /*  -webkit-overflow-scrolling: touch; -webkit-touch-callout: none !important; */  }
 #home {   -webkit-transform: translate3d(0, 0, 0);  }
 #home2 {  -webkit-transform: translate3d(0, 0, 0);  }
 #map_canvas {
