@@ -1722,6 +1722,7 @@ $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
               $("#home").hide();
 //            $('#page').scrollTop(0);
 
+            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+" after home hides and nothing else happens");
 
             pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow' : 'hidden'});
                 alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"made it here first and changed webkit overflow scrolling to auto and changed overflow to hidden");
