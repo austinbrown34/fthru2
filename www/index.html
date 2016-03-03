@@ -1718,27 +1718,50 @@ $('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');
             var containertarget = $('#container');
             var bodytarget = $('body');
             var htmltarget = $('html');
-            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"before home hides");
-              $("#home").hide();
+//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"before home hides");
+
+             setTimeout(function(){
+                 $('#page').scrollTop(0);
+                 setTimeout(function(){
+                     $("#home").hide();
+                     setTimeout(function(){
+                         pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                         setTimeout(function(){
+                             $('li').removeClass('active');$('#tabs #tm_mtch').addClass('active');
+                             setTimeout(function(){
+                                 document.getElementById('match').style.display = '';
+                                 setTimeout(function(){
+                                     pagetarget.scrollTop(0);
+                                     setTimeout(function(){
+                                         pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                     },0);
+                                 },0);
+                             },0);
+                         },0);
+                     },0);
+
+                 },0);
+             },0);
+
 //            $('#page').scrollTop(0);
 
-            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+" after home hides and nothing else happens");
+//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+" after home hides and nothing else happens");
 
-            pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow' : 'hidden'});
-                alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"made it here first and changed webkit overflow scrolling to auto and changed overflow to hidden");
+
+//                alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"made it here first and changed webkit overflow scrolling to auto and changed overflow to hidden");
 //            pagetarget.animate({scrollTop : 0},300,"swing",function(){
 
 //            });
-            $('li').removeClass('active');$('#tabs #tm_mtch').addClass('active');
-            document.getElementById('match').style.display = '';
-            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"just loaded page");
-            pagetarget.scrollTop(0);
-            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"just scrolltopped the loaded page");
-            pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow' : 'auto'});
-            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"made it here second and changed webkit overflow scrolling to touch and changed overflow to auto");
-            pagetarget.scrollTop(0);
-            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"and finally made it here after updating scroll once more");
-            // setTimeout(function() {
+
+
+//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"just loaded page");
+//            pagetarget.scrollTop(0);
+//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"just scrolltopped the loaded page");
+//            pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow' : 'auto'});
+//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"made it here second and changed webkit overflow scrolling to touch and changed overflow to auto");
+//            pagetarget.scrollTop(0);
+//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"and finally made it here after updating scroll once more");
+//            // setTimeout(function() {
 //                 target.find('h1').fadeOut();
 //             }, 1000);
         }
