@@ -1766,7 +1766,7 @@ function onTouchStart(e) {
 //e.currentTarget.title=page;
 page=this.id;
   var item = e.currentTarget;
-
+var thepage = item.id;
   if(isTouching) return;
   e.currentTarget.moved = false;
   console.log("Start: " + e.currentTarget.innerHTML);
@@ -1815,7 +1815,7 @@ function onTouchEnd(e) {
 
 
 
-      switch (item.id) {
+      switch (thepage) {
           case "tm_map":
               newdivId="home";
               break;
@@ -1834,7 +1834,7 @@ function onTouchEnd(e) {
 
       }
 
-      alert("this nav is to "+item.id+" and we are currently on this page: "+divId+" going to the page: "+newdivId);
+      alert("this nav is to "+thepage+" and we are currently on this page: "+divId+" going to the page: "+newdivId);
 
 
 //      var pagetarget = $("#page");
