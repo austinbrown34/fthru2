@@ -121,7 +121,7 @@ color:#6a7894;
 					'dataType': 'json',
 					'success': function (data) {
 						for (i in data['list_items']) {
-							$('ul#list_example').append('<li>' + data['list_items'][i] + '</li>');
+							$('ul#list_example').append('<li>' + JSON.stringify(data['list_items'][i]) + '</li>');
 						}
 						qs.cache();
 					}
