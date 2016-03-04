@@ -1810,7 +1810,7 @@ function onTouchEnd(e) {
     item.className = "selected";
 
       var divId = $("div.appscreen").not(":hidden").prop("id");
-      var newdivId;
+      var newdivId="";
 
 
 
@@ -1862,7 +1862,8 @@ function onTouchEnd(e) {
 //      },0);
 
 
-
+      page="";
+      delete item.moved;
 
 
   }
