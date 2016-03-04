@@ -1761,12 +1761,13 @@ $(".specific").change(function() {
 $(document).ready(function(){
 
 var page;
+    var thepage;
 function onTouchStart(e) {
  //page = this.Target.className;
 //e.currentTarget.title=page;
 page=this.id;
   var item = e.currentTarget;
-var thepage = item.id;
+thepage = item.id;
   if(isTouching) return;
   e.currentTarget.moved = false;
   console.log("Start: " + e.currentTarget.innerHTML);
