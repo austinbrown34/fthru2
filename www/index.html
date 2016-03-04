@@ -1766,6 +1766,8 @@ function onTouchStart(e) {
 //e.currentTarget.title=page;
 page=this.id;
   var item = e.currentTarget;
+    alert(item);
+    alert(item.id);
   if(isTouching) return;
   e.currentTarget.moved = false;
   console.log("Start: " + e.currentTarget.innerHTML);
