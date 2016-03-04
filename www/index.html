@@ -1812,22 +1812,26 @@ function onTouchEnd(e) {
       var divId = $("div.appscreen").not(":hidden").prop("id");
       var newdivId;
 
-      if (page=="tm_map"){
-          newdivId="home";
-      }
-      else if (page=="tm_pro"){
-          newdivId="viewuser";
-      }
-     else if (page=="tm_map"){
-          newdivId="addcar";
-      }
-      else if (page=="tm_map"){
-          newdivId="viewcar";
-      }
-     else if (page=="tm_map"){
-          newdivId="match";
-      }
+     
 
+      switch (page) {
+          case "tm_map":
+              newdivId="home";
+              break;
+          case "tm_pro":
+              newdivId="viewuser";
+              break;
+          case "tm_fri:"
+              newdivId="addcar";
+              break;
+          case "tm_home":
+              newdivId="viewcar";
+              break;
+          case "tm_mtch:
+              newdivId="match";
+              break;
+
+      }
 
       alert("this nav is to "+page+" and we are currently on this page: "+divId+" going to the page: "+newdivId);
 
