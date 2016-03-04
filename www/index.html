@@ -1810,7 +1810,7 @@ function onTouchEnd(e) {
     item.className = "selected";
 
       var divId = $("div.appscreen").not(":hidden").prop("id");
-      var newdivId="";
+      var newdivId;
 
 
 
@@ -1834,12 +1834,6 @@ function onTouchEnd(e) {
       }
 
       alert("this nav is to "+page+" and we are currently on this page: "+divId+" going to the page: "+newdivId);
-      $('li').removeClass('active');
-
-      page="";
-      delete item.moved;
-
-  }
 
 
 //      var pagetarget = $("#page");
@@ -1871,6 +1865,10 @@ function onTouchEnd(e) {
 
 
 
+  }
+
+
+
 
 
 
@@ -1878,9 +1876,9 @@ function onTouchEnd(e) {
 
 	
 //  setTimeout(changePage(page),2000);
-//	page="";
-//  delete item.moved; //Don't need our flag anymore
-//}
+	page="";
+  delete item.moved; //Don't need our flag anymore
+}
 
 
 var links = document.querySelectorAll("#tabs li"), //All the links on this page
