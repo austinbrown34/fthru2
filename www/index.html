@@ -866,6 +866,8 @@ submitHandler: function(form) {
                 $("#testForm2")[0].reset();
                 $("#camera_status").text('');
                 $("#camera_image").attr("src","");
+				var img = document.getElementById('camera_image');
+                img.style.visibility = "hidden";
 				 $('#page').scrollTop(0);
             }
 
@@ -898,7 +900,9 @@ submitHandler: function(form) {
             function alertDismissed() {
                 $("#testForm2")[0].reset();
                 $("#camera_status").text('');
-                $("#camera_image").attr("src","");
+				$("#camera_image").attr("src","");
+                var img = document.getElementById('camera_image');
+                img.style.visibility = "hidden";
 				 $('#page').scrollTop(0);
             }
 
