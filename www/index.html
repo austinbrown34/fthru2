@@ -1835,34 +1835,36 @@ function onTouchEnd(e) {
 
       }
 
-      alert("this nav is to "+thepage+" and we are currently on this page: "+divId+" going to the page: "+newdivId);
+	     var pagetarget = $("#page");
+	  
+	    setTimeout(function(){
+                $('#page').scrollTop(0);
+                setTimeout(function(){
+                    $("#"+divId).hide();
+                    setTimeout(function(){
+                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                        setTimeout(function(){
+                            $('li').removeClass('active');$('#tabs #'+thepage).addClass('active');
+                            setTimeout(function(){
+                                document.getElementById(newdivId).style.display = '';
+                                setTimeout(function(){
+                                    pagetarget.scrollTop(0);
+                                    setTimeout(function(){
+                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+										page="";
+										delete item.moved;
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+                    },0);
 
-
-//      var pagetarget = $("#page");
-//      setTimeout(function(){
-//          $('#page').scrollTop(0);
-//          setTimeout(function(){
-//              $("#home").hide();
-//              setTimeout(function(){
-//                  pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
-//                  setTimeout(function(){
-//                      $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
-//                      setTimeout(function(){
-//                          document.getElementById('viewuser').style.display = '';
-//                          setTimeout(function(){
-//                              pagetarget.scrollTop(0);
-//                              setTimeout(function(){
-//                                  pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-//
-//                              },0);
-//                          },0);
-//                      },0);
-//                  },0);
-//              },0);
-//
-//          },0);
-//      },0);
-
+                },0);
+            },0);
+	  
+	  
+	  
+   
 
 
 
