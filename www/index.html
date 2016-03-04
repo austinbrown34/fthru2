@@ -104,11 +104,34 @@ color:#6a7894;
   <script src="jquery.validate.js"></script>
  	<script src="jquery.maskedinput.js"></script>
  	 <script src="js/taphold.js" type="text/javascript"></script>
+	 <script type="text/javascript" src="js/jquery.quicksearch.js"></script>
 <!--  	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> -->
  	
 <!-- 	<script src="mktSignup.js"></script> -->
     <script>
     
+	
+		$(function () {
+				
+				var qs = $('input#id_search_list').quicksearch('ul#list_example li');
+				
+				$.ajax({
+					'url': 'http://cogni.design/cpr/www/example.json',
+					'type': 'GET',
+					'dataType': 'json',
+					'success': function (data) {
+						for (i in data['list_items']) {
+							$('ul#list_example').append('<li>' + data['list_items'][i] + '</li>');
+						}
+						qs.cache();
+					}
+				});
+				
+				
+				
+			});
+	
+	
    function errorMsg(msg, timeout)
 {
 	// Display Please Wait...
@@ -1556,6 +1579,14 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 								</td>
 							</tr>
 						</table>
+						<form action="#">
+			<fieldset>
+				<input type="text" name="search" value="" id="id_search_list" />
+			</fieldset>
+		</form>
+			<ul id="list_example">
+	
+		</ul>
 						<div id="responsecontainermatch" align="center">
 
 						</div>
