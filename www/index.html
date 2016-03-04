@@ -1809,8 +1809,27 @@ function onTouchEnd(e) {
   if(!item.moved) { //Show the
     item.className = "selected";
 
+      var divId = $("div.appscreen").not(":hidden").prop("id");
+      var newdivID;
 
-      alert("class name is: "+item.className+" and id is: "+page);
+      if (page=="tm_map"){
+          newdivId="home";
+      }
+      if (page=="tm_pro"){
+          newdivId="viewuser";
+      }
+      if (page=="tm_map"){
+          newdivId="addcar";
+      }
+      if (page=="tm_map"){
+          newdivId="viewcar";
+      }
+      if (page=="tm_map"){
+          newdivId="match";
+      }
+
+
+      alert("this nav is to "+page+" and we are currently on this page: "+divId+" going to the page: "+newdivId);
 
 
 //      var pagetarget = $("#page");
