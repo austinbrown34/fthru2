@@ -65,7 +65,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1623" column="25" selection-start="55347" selection-end="55347" vertical-scroll-proportion="0.5619632" vertical-offset="16423" max-vertical-offset="32011">
+            <state line="1631" column="34" selection-start="55621" selection-end="55621" vertical-scroll-proportion="0.60368097" vertical-offset="16525" max-vertical-offset="32011">
               <folding>
                 <element signature="tag#head#0;tag#html#0" expanded="true" />
                 <element signature="tag#head#1;tag#html#0" expanded="true" />
@@ -214,14 +214,13 @@
                 <element signature="tag#tr#0;tag#table#0;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
                 <element signature="tag#td#0;tag#tr#0;tag#table#0;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
                 <element signature="n#style#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="tag#thead#0;tag#table#1;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
+                <element signature="tag#tr#0;tag#thead#0;tag#table#1;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
                 <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="tag#tfoot#0;tag#table#1;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
-                <element signature="tag#tr#0;tag#tfoot#0;tag#table#1;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
                 <element signature="n#style#0;n#th#0;n#tr#0;n#tfoot#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#1;n#tr#0;n#tfoot#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#tfoot#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="tag#div#4;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
                 <element signature="tag#div#0;tag#div#4;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
@@ -692,7 +691,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1623" column="25" selection-start="55347" selection-end="55347" vertical-scroll-proportion="0.5619632" vertical-offset="16423" max-vertical-offset="32011">
+        <state line="1631" column="34" selection-start="55621" selection-end="55621" vertical-scroll-proportion="0.60368097" vertical-offset="16525" max-vertical-offset="32011">
           <folding>
             <element signature="tag#head#0;tag#html#0" expanded="true" />
             <element signature="tag#head#1;tag#html#0" expanded="true" />
@@ -841,14 +840,13 @@
             <element signature="tag#tr#0;tag#table#0;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
             <element signature="tag#td#0;tag#tr#0;tag#table#0;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
             <element signature="n#style#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="tag#thead#0;tag#table#1;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
+            <element signature="tag#tr#0;tag#thead#0;tag#table#1;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="tag#tfoot#0;tag#table#1;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
-            <element signature="tag#tr#0;tag#tfoot#0;tag#table#1;tag#center#0;tag#div#0;tag#div#3;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#tfoot#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#tfoot#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#tfoot#0;n#table#1;n#center#0;n#div#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="tag#div#4;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
             <element signature="tag#div#0;tag#div#4;tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="true" />
