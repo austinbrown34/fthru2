@@ -486,6 +486,15 @@ var password = localStorage.getItem('password');
 
                 ],
                 "processing": true,
+                "columnDefs": [
+                    {
+                        "render": function (data,type,row){
+                            return data +' '+row[3];
+                        },
+                        "targets": 0
+                    },
+                    { "visible": false, "targets": [3]}
+                ],
                 "serverSide":true,
                 "ajax":{
                     "url":"http://cogni.design/cpr/www/server_processing.php",
@@ -1622,6 +1631,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                 <th style="width:26% !important;">Name</th>
                 <th style="width:36% !important;">Phone</th>
                 <th style="width:38% !important;">Wants</th>
+                <th style="width:0% !important;">Last</th>
               
             </tr>
         </thead>
@@ -1630,6 +1640,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                 <th style="width:26% !important;">Name</th>
                 <th style="width:36% !important;">Phone</th>
                 <th style="width:38% !important;">Wants</th>
+                <th style="width:38% !important;">Last</th>
             </tr>
         </tfoot>
 
