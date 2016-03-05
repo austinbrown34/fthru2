@@ -9,6 +9,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 		<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+		<link rel="stylesheet" type="text/css" href="DataTables/Buttons-1.1.2/css/buttons.dataTables.min.css"/>
 
         <link rel="stylesheet" id ="extra2" type="text/css" href="css/socialmotives.css"/>
     <link rel="stylesheet" href="css/ratchet.css">
@@ -142,8 +143,14 @@ color:#6a7894;
   <script src="jquery.validate.js"></script>
  	<script src="jquery.maskedinput.js"></script>
  	 <script src="js/taphold.js" type="text/javascript"></script>
-	 <script type="text/javascript" src="js/jquery.quicksearch.js"></script>
 	 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/dataTables.buttons.min.js"></script>
+	 	 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+	 	 <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/pdfmake.min.js"></script>
+	 	 <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
+	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.html5.min.js"></script>
+	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.print.min.js"></script>
+
 <!--  	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> -->
  	
 <!-- 	<script src="mktSignup.js"></script> -->
@@ -478,6 +485,10 @@ var password = localStorage.getItem('password');
 
 
             $('#exampledt').DataTable({
+				dom: 'Bfrtip',
+				buttons: [
+					'copy','csv','pdf'
+				],
                 "bLengthChange": false,
 
                 "processing": true,
