@@ -509,13 +509,14 @@ var password = localStorage.getItem('password');
 	
 	alert("url: "+url+" target:"+" options:"+options);
          systemOpen(url,options);
+		 
      
     };
 
     // Handle html links like <a href="url" target="_blank">
     // See https://issues.apache.org/jira/browse/CB-6747
     $(document).on('click', 'a', function(event) {
-	alert(event);
+	alert(JSON.stringify(event));
         event.preventDefault();
         systemOpen($(this).attr('href'));
 		alert($(this).attr('href'));
