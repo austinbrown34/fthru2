@@ -487,6 +487,8 @@ var password = localStorage.getItem('password');
             $('#exampledt').DataTable({
 				dom: 'Bfrtip',
 				buttons: [
+					extend: 'pdfHtml5',
+					download: 'open',
 					'copy','csv','pdf'
 				],
                 "bLengthChange": false,
