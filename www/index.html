@@ -504,17 +504,17 @@ function openAllLinksWithBlankTargetInSystemBrowser() {
 
     // Handle direct calls like window.open("url","_blank")
     window.open = function(url,target,options) {
-        if ( target == "_blank" ) systemOpen(url,options);
-        else windowOpen(url,target,options);
+         systemOpen(url,options);
+     
     };
 
     // Handle html links like <a href="url" target="_blank">
     // See https://issues.apache.org/jira/browse/CB-6747
-    $(document).on('click', 'a[target=_blank]', function(event) {
+    $(document).on('click', 'a', function(event) {
         event.preventDefault();
         systemOpen($(this).attr('href'));
     });
-}	
+
 		
 
 $('#exampledt').DataTable({
