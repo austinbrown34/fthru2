@@ -467,7 +467,13 @@ var password = localStorage.getItem('password');
 
     $('#exampledt').DataTable({
 
-	"bLengthChange": false
+	"bLengthChange": false,
+        "columns": [
+            { "width": "20%" },
+            { "width": "40%" },
+            { "width": "40%" }
+
+        ]
 	});
 
  
