@@ -482,7 +482,7 @@ var password = localStorage.getItem('password');
         }
         $(document).ready(function() {
 
-function openAllLinksWithBlankTargetInSystemBrowser() {
+
     if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
         throw new Error("You are trying to run this code for a non-cordova project, " +
                 "or did not install the cordova InAppBrowser plugin");
@@ -520,7 +520,7 @@ function openAllLinksWithBlankTargetInSystemBrowser() {
         systemOpen($(this).attr('href'));
 		alert($(this).attr('href'));
     });
-}	
+
 		
 
 $('#exampledt').DataTable({
