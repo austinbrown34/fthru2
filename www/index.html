@@ -485,7 +485,7 @@ var password = localStorage.getItem('password');
 
 $('a').on('click',function(e){
 e.preventDefault();
-window.open($(this).attr('href'),'_system');
+window.open($(this).attr('href'),'_system','location=no');
 return false;
 });
 
