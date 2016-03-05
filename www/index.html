@@ -490,11 +490,16 @@ var password = localStorage.getItem('password');
                     },
                     {
                         "render": function (data,type,row){
-                            return data +'<br>$'+row[4]+' - $'+row[5];
+                            if(row[2] == "Specific"){
+                                return row[6]+' '+row[7] +'<br>$'+row[4]+' - $'+row[5];
+                            }
+                            else{
+                                return data +'<br>$'+row[4]+' - $'+row[5];
+                            }
                         },
                         "targets": 2
                     },
-                    { "visible": false, "targets": [3,4,5]}
+                    { "visible": false, "targets": [3,4,5,6,7]}
                 ],
                 "serverSide":true,
                 "ajax":{
@@ -1635,6 +1640,8 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                 <th style="width:0% !important;">Last</th>
                 <th style="width:0% !important;">Price Low</th>
                 <th style="width:0% !important;">Price High</th>
+                <th style="width:0% !important;">Make</th>
+                <th style="width:0% !important;">Model</th>
               
             </tr>
         </thead>
@@ -1646,6 +1653,8 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                 <th style="width:38% !important;">Last</th>
                 <th style="width:0% !important;">Price Low</th>
                 <th style="width:0% !important;">Price High</th>
+                <th style="width:0% !important;">Make</th>
+                <th style="width:0% !important;">Model</th>
             </tr>
         </tfoot>
 
