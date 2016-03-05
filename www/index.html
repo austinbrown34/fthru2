@@ -496,9 +496,12 @@ return false;
 $('#exampledt').DataTable({
 				dom: 'Bfrtip',
 				buttons: [
-				
+				{
+					extend: 'pdfHtml5',
+					download: 'open'
+					},
 					
-					 'copy', 'csv','pdf'
+					 'copy', 'csv'
 					
 				],
                 "bLengthChange": false,
