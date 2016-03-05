@@ -19,7 +19,7 @@
 
 <style>
 input[type="search"]{
-zoom:.88 !important;
+    zoom:1.5 !important;
 width:100% !important;
     height: 40px !important;
     padding: 10px !important;
@@ -464,7 +464,9 @@ var password = localStorage.getItem('password');
 
 
 
-    $('#exampledt').DataTable({
+    $('#exampledt').DataTable({"columnDefs": [
+        { "width": "30%", "targets": 1 }
+    ],
 	"bLengthChange": false
 	});
 
