@@ -17,7 +17,7 @@
         Austin Brown
     </author>
     
-<access origin="*" /> 
+<access origin="*" browserOnly="true" />
  <preference name="orientation" value="portrait" />
  <preference name="ios-statusbarstyle"         value="false" /> 
  <preference name="exit-on-suspend"            value="false" />  

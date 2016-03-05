@@ -496,6 +496,8 @@ function openAllLinksWithBlankTargetInSystemBrowser() {
 
     // Note it does not take a target!
     var systemOpen = function(url, options) {
+	
+	alert("url: "+url+" options:"+options);
         // Do not use window.open becaus the InAppBrowser open will not proxy window.open
         // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
         cordova.InAppBrowser.open(url,"_system",options);
@@ -504,6 +506,8 @@ function openAllLinksWithBlankTargetInSystemBrowser() {
 
     // Handle direct calls like window.open("url","_blank")
     window.open = function(url,target,options) {
+	
+	alert("url: "+url+" target:"+" options:"+options);
          systemOpen(url,options);
      
     };
@@ -511,8 +515,10 @@ function openAllLinksWithBlankTargetInSystemBrowser() {
     // Handle html links like <a href="url" target="_blank">
     // See https://issues.apache.org/jira/browse/CB-6747
     $(document).on('click', 'a', function(event) {
+	alert(event);
         event.preventDefault();
         systemOpen($(this).attr('href'));
+		alert($(this).attr('href'));
     });
 }	
 		
