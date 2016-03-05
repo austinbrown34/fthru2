@@ -487,6 +487,8 @@ var password = localStorage.getItem('password');
                             return data +' '+row[3];
                         },
                         "targets": 0,
+                    },
+                    {
                         "render": function (data,type,row){
                             return data +'<br>$'+row[4]+' - $'+row[5];
                         },
