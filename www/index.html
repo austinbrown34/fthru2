@@ -479,21 +479,20 @@ var password = localStorage.getItem('password');
 
             $('#exampledt').DataTable({
                 "bLengthChange": false,
-                "columns": [
-                    { "width": "20%" },
-                    { "width": "40%" },
-                    { "width": "40%" }
 
-                ],
                 "processing": true,
                 "columnDefs": [
                     {
                         "render": function (data,type,row){
                             return data +' '+row[3];
                         },
-                        "targets": 0
+                        "targets": 0,
+                        "render": function (data,type,row){
+                            return data +'<br>$'+row[4]+' - $'+row[5];
+                        },
+                        "targets": 2
                     },
-                    { "visible": false, "targets": [3]}
+                    { "visible": false, "targets": [3,4,5]}
                 ],
                 "serverSide":true,
                 "ajax":{
@@ -1632,6 +1631,8 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                 <th style="width:36% !important;">Phone</th>
                 <th style="width:38% !important;">Wants</th>
                 <th style="width:0% !important;">Last</th>
+                <th style="width:0% !important;">Price Low</th>
+                <th style="width:0% !important;">Price High</th>
               
             </tr>
         </thead>
@@ -1641,6 +1642,8 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                 <th style="width:36% !important;">Phone</th>
                 <th style="width:38% !important;">Wants</th>
                 <th style="width:38% !important;">Last</th>
+                <th style="width:0% !important;">Price Low</th>
+                <th style="width:0% !important;">Price High</th>
             </tr>
         </tfoot>
 
