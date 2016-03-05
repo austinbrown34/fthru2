@@ -473,7 +473,13 @@ var password = localStorage.getItem('password');
             { "width": "40%" },
             { "width": "40%" }
 
-        ]
+        ],
+        "processing": true,
+        "serverSide":true,
+        "ajax":{
+            "url": "http://cogni.design/cpr/www/makejson.php",
+            "dataType": "jsonp"
+        }
 	});
 
  
@@ -1615,15 +1621,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                 <th>Wants</th>
             </tr>
         </tfoot>
-        <tbody>
-            <tr>
-                <td>Austin Brown</td>
-                <td>406-598-7345</td>
-                <td>Cars/Trucks/SUVs <br> $5000 - $7000</td>
-             
-            </tr>
-         
-        </tbody>
+
     </table>
 						<div id="responsecontainermatch" align="center">
 
