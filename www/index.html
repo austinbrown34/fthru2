@@ -461,23 +461,25 @@ var password = localStorage.getItem('password');
                 }
             });
         }
-        $(document).ready(function() {  
+        $(document).ready(function() {
 
 
 
-    $('#exampledt').DataTable({
+            $('#exampledt').DataTable({
+                "bLengthChange": false,
+                "columns": [
+                    { "width": "20%" },
+                    { "width": "40%" },
+                    { "width": "40%" }
 
-	"bLengthChange": false,
-        "columns": [
-            { "width": "20%" },
-            { "width": "40%" },
-            { "width": "40%" }
-
-        ],
-        "processing": true,
-        "serverSide":true,
-        "ajax":"http://cogni.design/cpr/www/server_processing.php"
-	});
+                ],
+                "processing": true,
+                "serverSide":true,
+                "ajax":{
+                    "url":"http://cogni.design/cpr/www/server_processing.php",
+                    "dataType":"jsonp"
+                }
+            });
 
  
         $("input.phone").mask("(999) 999-9999");
