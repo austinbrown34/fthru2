@@ -466,13 +466,7 @@ var password = localStorage.getItem('password');
 
 
     $('#exampledt').DataTable({
-        "columns": [
-            { "width": "20%" },
-            { "width": "40%" },
-            { "width": "40%" },
-            {"className":"dt[-head|-body]-center"}
 
-        ],
 	"bLengthChange": false
 	});
 
@@ -1599,7 +1593,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 								</td>
 							</tr>
 						</table>
-					<table id="exampledt" class="display" style="color:black;" cellspacing="0" width="100%">
+					<table id="exampledt" class="display dt-center" style="color:black;" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Name</th>
