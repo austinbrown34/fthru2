@@ -486,6 +486,25 @@ var password = localStorage.getItem('password');
 
 
 
+        $(document).ready(function() {
+
+
+
+//            window.open("http://www.google.com", '_system');
+
+
+//            cordova.InAppBrowser.open("http://www.google.com","_system");
+
+
+    // Currently (for retrocompatibility reasons) the plugin automagically wrap window.open
+    // We don't want the plugin to always be run: we want to call it explicitly when needed
+    // See https://issues.apache.org/jira/browse/CB-9573
+
+
+    // Handle html links like <a href="url" target="_blank">
+    // See https://issues.apache.org/jira/browse/CB-6747
+
+
 		
 
 $('#exampledt').DataTable({
