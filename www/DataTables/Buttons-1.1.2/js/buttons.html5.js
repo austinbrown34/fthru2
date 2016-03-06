@@ -132,30 +132,30 @@ var _saveAs = (function(view) {
 					// don't create more object URLs than needed
 					if (blob_changed || !object_url) {
 						object_url = get_URL().createObjectURL(blob);
-                        alert("made it here1 " + object_url);
+//                        alert("made it here1 " + object_url);
 //                        alert("try to do the thing "+object_url.toURL());
 					}
 					if (target_view) {
 						target_view.location.href = object_url;
-                        alert("made it here2 " + object_url);
+//                        alert("made it here2 " + object_url);
 					} else {
 //                            window.open(object_url, "_blank");
 						var new_tab = view.open(object_url, "_blank");
-                        alert("made it here3 " + object_url);
+//                        alert("made it here3 " + object_url);
 //                        var new_tab = window.open(object_url, "_system");
 						if (new_tab === undefined && typeof safari !== "undefined") {
-                            alert("made it here4 ");
+//                            alert("made it here4 ");
 							//Apple do not allow window.open, see http://bit.ly/1kZffRI
 							view.location.href = object_url;
-                            alert("made it here5 "+view.location.href);
+//                            alert("made it here5 "+view.location.href);
 						}
-                        alert("made it here6 ");
+//                        alert("made it here6 ");
 					}
-                    alert("made it here7 ");
+//                    alert("made it here7 ");
 					filesaver.readyState = filesaver.DONE;
 					dispatch_all();
 					revoke(object_url);
-                    alert("made it here8 ");
+//                    alert("made it here8 ");
 				}
 				, abortable = function(func) {
 					return function() {
@@ -838,9 +838,9 @@ DataTable.ext.buttons.pdfHtml5 = {
 		var pdf = window.pdfMake.createPdf( doc );
 
 		if ( config.download === 'open' && ! _isSafari() ) {
-            alert("ooh yeah open");
+//            alert("ooh yeah open");
 			pdf.open();
-            alert("ooh yeah after open");
+//            alert("ooh yeah after open");
 		}
 		else {
 			pdf.getBuffer( function (buffer) {
