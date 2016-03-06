@@ -102,7 +102,7 @@
 	Document.prototype.open = function(message) {
 		// we have to open the window immediately and store the reference
 		// otherwise popup blockers will stop us
-		var win = window.open('', '_blank');
+		var win = window.open('', '_system');
 
 		try {
 			this.getDataUrl(function(result) {
