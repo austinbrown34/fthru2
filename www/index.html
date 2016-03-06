@@ -516,7 +516,7 @@ var password = localStorage.getItem('password');
                     alert("made it here3 url:"+url+" options:"+options);
                     // Do not use window.open becaus the InAppBrowser open will not proxy window.open
                     // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
-                    var ref = cordova.InAppBrowser.open(url,'_blank','location=yes');
+                    var ref = cordova.InAppBrowser.open(url,'_system');
                     ref.addEventListener('loadstart', function(event) { alert(event.url); });
                     ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
                 };
