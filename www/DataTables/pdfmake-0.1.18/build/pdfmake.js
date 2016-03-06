@@ -102,7 +102,7 @@
 	Document.prototype.open = function(message) {
 		// we have to open the window immediately and store the reference
 		// otherwise popup blockers will stop us
-		var win = window.open('', '_blank');
+		var win = window.open('', '_system');
 
 		try {
 			this.getDataUrl(function(result) {
@@ -657,7 +657,7 @@
 						if (target_view) {
 							target_view.location.href = object_url;
 						} else {
-							var new_tab = view.open(object_url, "_blank");
+							var new_tab = view.open(object_url, "_system");
 							if (new_tab == undefined && typeof safari !== "undefined") {
 								//Apple do not allow window.open, see http://bit.ly/1kZffRI
 								view.location.href = object_url
