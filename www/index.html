@@ -495,7 +495,9 @@ var password = localStorage.getItem('password');
 
             // Note it does not take a target!
             var systemOpen = function(url, options) {
+                alert("made it to systemOpen | url | options: "+url+" | "+options);
                 cordova.InAppBrowser.open(url,"_system","location=yes");
+                
             };
 
 
