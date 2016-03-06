@@ -493,7 +493,11 @@ var password = localStorage.getItem('password');
 
 
 //            cordova.InAppBrowser.open("http://www.google.com","_system");
+            document.addEventListener("deviceready", onDeviceReady, false);
 
+            // device APIs are available
+            //
+            function onDeviceReady() {
 
             function openAllLinksWithBlankTargetInSystemBrowser() {
                 if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
@@ -537,6 +541,7 @@ var password = localStorage.getItem('password');
 
 
             openAllLinksWithBlankTargetInSystemBrowser();
+            }
 		
 
 $('#exampledt').DataTable({
