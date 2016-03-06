@@ -483,6 +483,46 @@ var password = localStorage.getItem('password');
         $(document).ready(function() {
 
 
+
+            window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, gotFS, fail);
+
+            function fail(error) {
+                console.log(error)
+            }
+
+            function gotFS(fileSystem) {
+                fileSystem.root.getDirectory("data", {create: true, exclusive: false}, gotDir, fail);
+            }
+
+            function gotDir(dirEntry) {
+                dirEntry.getFile("unixtoolbox.pdf", {create: true, exclusive: false}, gotFile, fail);
+            }
+
+            function gotFile(fileEntry) {
+                // Start FileTransfer here...
+                var fileTransfer = new FileTransfer();
+                var uri = encodeURI("http://cb.vu/unixtoolbox.pdf");
+
+                fileTransfer.download(
+                        uri,
+                        fileEntry.fullPath,
+                        function(entry) {
+                            //window.plugins.webintent.startActivity({
+                            //    action: WebIntent.ACTION_VIEW,
+                            //    url: encodeURI(entry.fullPath),
+                            //}, function () {}, function (error) {
+                            //   console.log(error);
+                            //});
+                            window.open(encodeURI(entry.fullPath),"_blank","location=no,enableViewportScale=yes")
+                            console.log("download complete: " + entry.fullPath);
+                        },
+                        function(error) {
+                            console.log("download error source " + error.source);
+                            console.log("download error target " + error.target);
+                            console.log("upload error code" + error.code);
+                        }
+                );
+            }
   
 
     // Currently (for retrocompatibility reasons) the plugin automagically wrap window.open
