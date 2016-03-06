@@ -487,7 +487,57 @@ var password = localStorage.getItem('password');
         }
         $(document).ready(function() {
 
+            document.addEventListener("deviceready", function() {deviceReady = true;}, false);
+            window.setTimeout(function() {
+                if (!deviceReady) {
+                    alert("Error: PhoneGap did not initialize.  Please restart the app.");
+                }
+                else{
+                    document.addEventListener("deviceready", onDeviceReady, false);
 
+                    // device APIs are available
+                    //
+
+                    if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
+                        throw new Error("You are trying to run this code for a non-cordova project, " +
+                                "or did not install the cordova InAppBrowser plugin");
+                    }
+
+                    // Currently (for retrocompatibility reasons) the plugin automagically wrap window.open
+                    // We don't want the plugin to always be run: we want to call it explicitly when needed
+                    // See https://issues.apache.org/jira/browse/CB-9573
+                    delete window.open; // scary, but it just sets back to the default window.open behavior
+                    var windowOpen = window.open; // Yes it is not deleted !
+
+                    // Note it does not take a target!
+                    var systemOpen = function(url, options) {
+                        alert("made it here3 url:"+url+" options:"+options);
+                        // Do not use window.open becaus the InAppBrowser open will not proxy window.open
+                        // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
+                        var ref = cordova.InAppBrowser.open(url,'_system');
+                        ref.addEventListener('loadstart', function(event) { alert(event.url); });
+                        ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
+                    };
+
+
+                    // Handle direct calls like window.open("url","_blank")
+                    window.open = function(url,target,options) {
+                        alert("made it here1 url:"+url+" target:"+target+" options:"+options);
+
+                        if ( target == "_blank" ) systemOpen(url,options);
+                        else windowOpen(url,target,options);
+                    };
+
+                    // Handle html links like <a href="url" target="_blank">
+                    // See https://issues.apache.org/jira/browse/CB-6747
+                    $(document).on('click', 'a[target=_blank]', function(event) {
+                        alert("made it here2");
+                        event.preventDefault();
+                        systemOpen($(this).attr('href'));
+                    });
+
+                }
+            },2000);
 
 //            window.open("http://www.google.com", '_system');
 
@@ -1176,57 +1226,7 @@ submitHandler: function(form) {
      * Function called when page has finished loading.
      */
     function init() {
-        document.addEventListener("deviceready", function() {deviceReady = true;}, false);
-        window.setTimeout(function() {
-            if (!deviceReady) {
-                alert("Error: PhoneGap did not initialize.  Please restart the app.");
-            }
-            else{
-                document.addEventListener("deviceready", onDeviceReady, false);
 
-                // device APIs are available
-                //
-
-                        if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
-                            throw new Error("You are trying to run this code for a non-cordova project, " +
-                                    "or did not install the cordova InAppBrowser plugin");
-                        }
-
-                        // Currently (for retrocompatibility reasons) the plugin automagically wrap window.open
-                        // We don't want the plugin to always be run: we want to call it explicitly when needed
-                        // See https://issues.apache.org/jira/browse/CB-9573
-                        delete window.open; // scary, but it just sets back to the default window.open behavior
-                        var windowOpen = window.open; // Yes it is not deleted !
-
-                        // Note it does not take a target!
-                        var systemOpen = function(url, options) {
-                            alert("made it here3 url:"+url+" options:"+options);
-                            // Do not use window.open becaus the InAppBrowser open will not proxy window.open
-                            // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
-                            var ref = cordova.InAppBrowser.open(url,'_system');
-                            ref.addEventListener('loadstart', function(event) { alert(event.url); });
-                            ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
-                        };
-
-
-                        // Handle direct calls like window.open("url","_blank")
-                        window.open = function(url,target,options) {
-                            alert("made it here1 url:"+url+" target:"+target+" options:"+options);
-
-                            if ( target == "_blank" ) systemOpen(url,options);
-                            else windowOpen(url,target,options);
-                        };
-
-                        // Handle html links like <a href="url" target="_blank">
-                        // See https://issues.apache.org/jira/browse/CB-6747
-                        $(document).on('click', 'a[target=_blank]', function(event) {
-                            alert("made it here2");
-                            event.preventDefault();
-                            systemOpen($(this).attr('href'));
-                        });
-                 
-            }
-        },2000);
     }
     </script>
 
