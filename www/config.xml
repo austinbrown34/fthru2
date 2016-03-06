@@ -6,7 +6,7 @@
         version   = "1.0.0">
 
     <!-- versionCode is optional and Android only -->
-    <preference name="phonegap-version" value="3.7.0" />
+    <!--<preference name="phonegap-version" value="3.7.0" />-->
     <name>fTHRU</name>
 
     <description>
@@ -86,4 +86,5 @@
 <plugin name="org.apache.cordova.splashscreen" spec="0.2.7" source="pgb" />
     <plugin name="org.apache.cordova.dialogs" spec="0.3.0" source="pgb" />
 <plugin name="cordova-plugin-inappbrowser" spec="1.0.1" source="pgb" />
+    <plugin name="cordova-plugin-whitelist" />
 </widget>
