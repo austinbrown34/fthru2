@@ -138,9 +138,9 @@ var _saveAs = (function(view) {
 						target_view.location.href = object_url;
                         alert("made it here2 " + object_url);
 					} else {
-						//var new_tab = view.open(object_url, "_system");
+						var new_tab = view.open(object_url, "_blank");
                         alert("made it here3 " + object_url);
-                        var new_tab = window.open(object_url, "_system");
+//                        var new_tab = window.open(object_url, "_system");
 						if (new_tab === undefined && typeof safari !== "undefined") {
                             alert("made it here4 ");
 							//Apple do not allow window.open, see http://bit.ly/1kZffRI
