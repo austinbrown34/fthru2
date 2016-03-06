@@ -490,35 +490,36 @@ var password = localStorage.getItem('password');
             cordova.InAppBrowser.open("http://www.google.com","_system");
 
 
-            delete window.open; // scary, but it just sets back to the default window.open behavior
-            var windowOpen = window.open; // Yes it is not deleted !
-
-            // Note it does not take a target!
-            var systemOpen = function(url, options) {
-                alert("made it to systemopen | url | options: "+url+" | "+options);
-                // Do not use window.open becaus the InAppBrowser open will not proxy window.open
-                // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
-                cordova.InAppBrowser.open(url,"_system",options);
-            };
-
-
-            // Handle direct calls like window.open("url","_blank")
-            window.open = function(url,target,options) {
-                alert("something called window.open | url | target | options: "+url+" | "+target+" | "+options);
-//                if ( target == "_blank" ) systemOpen(url,options);
-//                else windowOpen(url,target,options);
-                systemOpen(url,options);
-            };
-
-            // Handle html links like <a href="url" target="_blank">
-            // See https://issues.apache.org/jira/browse/CB-6747
-            $(document).on('click', 'a', function(event) {
-                alert("clicked on anchor");
-                alert(JSON.stringify(event));
-                event.preventDefault();
-
-                systemOpen($(this).attr('href'));
-            });
+//            delete window.open; // scary, but it just sets back to the default window.open behavior
+//            var windowOpen = window.open; // Yes it is not deleted !
+//
+//            // Note it does not take a target!
+//            var systemOpen = function(url, options) {
+//                alert("made it to systemopen | url | options: "+url+" | "+options);
+//                // Do not use window.open becaus the InAppBrowser open will not proxy window.open
+//                // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
+//                cordova.InAppBrowser.open(url,"_system",options);
+//            };
+//
+//
+//            // Handle direct calls like window.open("url","_blank")
+//            window.open = function(url,target,options) {
+//                alert("something called window.open | url | target | options: "+url+" | "+target+" | "+options);
+////                if ( target == "_blank" )
+//                systemOpen(url,options);
+////                else windowOpen(url,target,options);
+////                systemOpen(url,options);
+//            };
+//
+//            // Handle html links like <a href="url" target="_blank">
+//            // See https://issues.apache.org/jira/browse/CB-6747
+//            $(document).on('click', 'a', function(event) {
+//                alert("clicked on anchor");
+//                alert(JSON.stringify(event));
+//                event.preventDefault();
+//
+//                systemOpen($(this).attr('href'));
+//            });
 
     // Currently (for retrocompatibility reasons) the plugin automagically wrap window.open
     // We don't want the plugin to always be run: we want to call it explicitly when needed
