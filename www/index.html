@@ -490,6 +490,10 @@ var password = localStorage.getItem('password');
 //            cordova.InAppBrowser.open("http://www.google.com","_system");
 
 
+            document.addEventListener("deviceready", OnDeviceReady, false);
+
+
+            function onDeviceReady(){
             delete window.open; // scary, but it just sets back to the default window.open behavior
             var windowOpen = window.open; // Yes it is not deleted !
 
@@ -498,11 +502,13 @@ var password = localStorage.getItem('password');
                 alert("made it to systemOpen | url | options: "+url+" | "+options);
 
 
-                cordova.InAppBrowser.open('"'+url+'"',"_system","location=yes");
+                var ref= cordova.InAppBrowser.open(url,'_system','location=yes');
+                ref.addEventListener('loadstart', function(event){ alert('start: ' + event.url);});
+                ref.addEventListener('loadstop', function(event){ alert('stop: ' + event.url);});
+                ref.addEventListener('loaderror', function(event){ alert('error: ' + event.message);});
+                ref.addEventListener('exit', function(event){ alert(event.type);});
 
-                setTimeout(function(){
-                    windowOpen(url,'_system');
-                },3000);
+
             };
 
 
@@ -523,7 +529,7 @@ var password = localStorage.getItem('password');
 
                 systemOpen($(this).attr('href'));
             });
-
+            }
     // Currently (for retrocompatibility reasons) the plugin automagically wrap window.open
     // We don't want the plugin to always be run: we want to call it explicitly when needed
     // See https://issues.apache.org/jira/browse/CB-9573
