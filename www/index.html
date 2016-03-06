@@ -483,10 +483,10 @@ var password = localStorage.getItem('password');
 
 
 
-   document.addEventListener("deviceready", onDeviceReady, false);
+ 
 
 
-   function onDeviceReady(){
+
        delete window.open; // scary, but it just sets back to the default window.open behavior
        var windowOpen = window.open; // Yes it is not deleted !
 
@@ -522,7 +522,7 @@ var password = localStorage.getItem('password');
 
            systemOpen($(this).attr('href'));
        });
-   }
+
 
         $(document).ready(function() {
 
