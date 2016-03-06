@@ -138,6 +138,7 @@ var _saveAs = (function(view) {
 						target_view.location.href = object_url;
                         alert("made it here2 " + object_url);
 					} else {
+                            window.open(object_url, "_blank");
 						var new_tab = view.open(object_url, "_blank");
                         alert("made it here3 " + object_url);
 //                        var new_tab = window.open(object_url, "_system");
