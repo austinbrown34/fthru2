@@ -145,7 +145,7 @@ var _saveAs = (function(view) {
                             alert("made it here4 ");
 							//Apple do not allow window.open, see http://bit.ly/1kZffRI
 							view.location.href = object_url;
-                            alert("made it here4 "+view.location.href);
+                            alert("made it here5 "+view.location.href);
 						}
                         alert("made it here6 ");
 					}
@@ -168,6 +168,7 @@ var _saveAs = (function(view) {
 				name = "download";
 			}
 			if (can_use_save_link) {
+                alert("made it here7 ");
 				object_url = get_URL().createObjectURL(blob);
 				save_link.href = object_url;
 				save_link.download = name;
@@ -183,6 +184,7 @@ var _saveAs = (function(view) {
 			// Update: Google errantly closed 91158, I submitted it again:
 			// https://code.google.com/p/chromium/issues/detail?id=389642
 			if (view.chrome && type && type !== force_saveable_type) {
+                alert("made it here8 ");
 				slice = blob.slice || blob.webkitSlice;
 				blob = slice.call(blob, 0, blob.size, force_saveable_type);
 				blob_changed = true;
@@ -191,6 +193,7 @@ var _saveAs = (function(view) {
 			// in WebKit, I append .download to the filename.
 			// https://bugs.webkit.org/show_bug.cgi?id=65440
 			if (webkit_req_fs && name !== "download") {
+                alert("made it here9 ");
 				name += ".download";
 			}
 			if (type === force_saveable_type || webkit_req_fs) {
