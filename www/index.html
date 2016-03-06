@@ -144,12 +144,13 @@ color:#6a7894;
  	<script src="jquery.maskedinput.js"></script>
  	 <script src="js/taphold.js" type="text/javascript"></script>
 	 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/jquery.dataTables.min.js"></script>
 	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/dataTables.buttons.min.js"></script>
 	 	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
 	 	 <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/pdfmake.min.js"></script>
 	 	 <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
 	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.html5.min.js"></script>
-	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.print.min.js"></script>
+
 
 <!--  	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> -->
  	
@@ -482,41 +483,7 @@ var password = localStorage.getItem('password');
         }
         $(document).ready(function() {
 
-            function openAllLinksWithBlankTargetInSystemBrowser() {
-                if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
-                    throw new Error("You are trying to run this code for a non-cordova project, " +
-                            "or did not install the cordova InAppBrowser plugin");
-                }
 
-                // Currently (for retrocompatibility reasons) the plugin automagically wrap window.open
-                // We don't want the plugin to always be run: we want to call it explicitly when needed
-                // See https://issues.apache.org/jira/browse/CB-9573
-                delete window.open; // scary, but it just sets back to the default window.open behavior
-                var windowOpen = window.open; // Yes it is not deleted !
-
-                // Note it does not take a target!
-                var systemOpen = function(url, options) {
-                    // Do not use window.open becaus the InAppBrowser open will not proxy window.open
-                    // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
-                    cordova.InAppBrowser.open(url,"_system",options);
-                };
-
-
-                // Handle direct calls like window.open("url","_blank")
-                window.open = function(url,target,options) {
-                    if ( target == "_blank" ) systemOpen(url,options);
-                    else windowOpen(url,target,options);
-                };
-
-                // Handle html links like <a href="url" target="_blank">
-                // See https://issues.apache.org/jira/browse/CB-6747
-                $(document).on('click', 'a[target=_blank]', function(event) {
-                    event.preventDefault();
-                    systemOpen($(this).attr('href'));
-                });
-            }
-
-            openAllLinksWithBlankTargetInSystemBrowser();
 
 //            window.open("http://www.google.com", '_system');
 
@@ -531,9 +498,12 @@ var password = localStorage.getItem('password');
 $('#exampledt').DataTable({
 				dom: 'Bfrtip',
 				buttons: [
-				
-					
-					 'copy', 'csv','pdf'
+
+
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
 					
 				],
                 "bLengthChange": false,
