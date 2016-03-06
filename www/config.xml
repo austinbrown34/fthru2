@@ -18,6 +18,7 @@
     </author>
     
 <access origin="*" />
+    <allow-intent href="*" />
     <allow-navigation href="*" />
     <allow-navigation href="blob:*" />
  <preference name="orientation" value="portrait" />
