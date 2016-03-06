@@ -534,7 +534,7 @@ var password = localStorage.getItem('password');
             }
 
 
-
+            openAllLinksWithBlankTargetInSystemBrowser();
 		
 
 $('#exampledt').DataTable({
@@ -1217,7 +1217,7 @@ submitHandler: function(form) {
      * Function called when page has finished loading.
      */
     function init() {
-        document.addEventListener("deviceready", function() {deviceReady = true;openAllLinksWithBlankTargetInSystemBrowser();}, false);
+        document.addEventListener("deviceready", function() {deviceReady = true;}, false);
         window.setTimeout(function() {
             if (!deviceReady) {
                 alert("Error: PhoneGap did not initialize.  Please restart the app.");
