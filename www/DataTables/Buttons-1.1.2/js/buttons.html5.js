@@ -836,7 +836,9 @@ DataTable.ext.buttons.pdfHtml5 = {
 		var pdf = window.pdfMake.createPdf( doc );
 
 		if ( config.download === 'open' && ! _isSafari() ) {
+            alert("ooh yeah open");
 			pdf.open();
+            alert("ooh yeah after open");
 		}
 		else {
 			pdf.getBuffer( function (buffer) {
