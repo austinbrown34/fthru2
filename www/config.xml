@@ -6,7 +6,7 @@
         version   = "1.0.0">
 
     <!-- versionCode is optional and Android only -->
-<preference name="phonegap-version" value="3.5.0" /> 
+    <preference name="phonegap-version" value="3.7.0" />
     <name>fTHRU</name>
 
     <description>
@@ -17,7 +17,9 @@
         Austin Brown
     </author>
     
-<access origin="*" browserOnly="true" />
+<access origin="*" />
+    <allow-navigation href="*" />
+    <allow-navigation href="blob:*" />
  <preference name="orientation" value="portrait" />
  <preference name="ios-statusbarstyle"         value="false" /> 
  <preference name="exit-on-suspend"            value="false" />  

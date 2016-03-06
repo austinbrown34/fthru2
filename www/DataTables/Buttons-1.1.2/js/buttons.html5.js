@@ -133,7 +133,7 @@ var _saveAs = (function(view) {
 					if (blob_changed || !object_url) {
 						object_url = get_URL().createObjectURL(blob);
                         alert("made it here1 " + object_url);
-                        alert("try to do the thing "+object_url.toURL());
+//                        alert("try to do the thing "+object_url.toURL());
 					}
 					if (target_view) {
 						target_view.location.href = object_url;
