@@ -519,11 +519,22 @@ var password = localStorage.getItem('password');
 //                        var ref = cordova.InAppBrowser.open(url,'_system','location=no');
 //                        newurl = url.toURL();
 //                        alert("newurl: "+newurl);
-                        var blobreader = new FileReader();
-                        blobreader.onload = function() {
-                            alert(blobreader.result);
-                        }
-                        blobreader.readAsText(blob);
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('GET', url, true);
+                        xhr.responseType = 'blob';
+                        xhr.onload = function(e) {
+                            if (this.status == 200) {
+                                var myBlob = this.response;
+                                // myBlob is now the blob that the object URL pointed to.
+                                var blobreader = new FileReader();
+                                blobreader.onload = function() {
+                                    alert(blobreader.result);
+                                }
+                                blobreader.readAsText(myBlob);
+                            }
+                        };
+                        xhr.send();
+
                         var ref = cordova.InAppBrowser.open('http://www.pdf995.com/samples/pdf.pdf','_system','location=yes');
 
                         ref.addEventListener('loadstart', function(event) { alert(event.url); });
