@@ -590,11 +590,70 @@ var password = localStorage.getItem('password');
 
 
 
-$('#exampledt').DataTable({
+//$('#exampledt').DataTable({
+	//			dom: 'Bfrtip',
+		//		buttons: [
+
+
+           //        {
+          //    extend: 'pdfHtml5',
+           //     exportOptions: {
+             //       columns: [ 0, 3, 1, 2 ]
+               // }
+           // },
+			 //{
+               // extend: 'csvHtml5',
+               // exportOptions: {
+                 //  columns: [ 0, 3, 1, 2 ]
+               // }
+           // }
+
+			//	],
+              //  "bLengthChange": false,
+
+                //"processing": true,
+                //"columnDefs": [
+                  //  {
+                    //    "render": function (data,type,row){
+                      //      return data +' '+row[3];
+                       // },
+                        //"targets": 0
+                    //},
+
+                    //{
+                      //  "render": function (data,type,row){
+                        //    return '<a href="tel:'+data+'">'+data+'</a>';
+                        //},
+                        //"targets": 1
+                    //},
+                    //{
+                      //  "render": function (data,type,row){
+                        //    if(row[2] == "Specific"){
+                          //      return row[6]+' '+row[7] +'<br>$'+row[4]+' - $'+row[5];
+                           // }
+                            //else{
+                              //  return data +'<br>$'+row[4]+' - $'+row[5];
+                            //}
+                        //},
+                        //"targets": 2
+                    //},
+                   // { "visible": false, "targets": [3,4,5,6,7,8,9]}
+                //],
+                //"serverSide":true,
+                //"ajax":{
+                  //  "url":"http://cogni.design/cpr/www/server_processing.php?id="+id,
+                    //"dataType":"jsonp"
+                //},
+                //language: {
+                  //  search: "_INPUT_",
+                    //searchPlaceholder: "Search..."
+                //}
+            //});
+
+
+			$('#exampledt').DataTable({
 				dom: 'Bfrtip',
 				buttons: [
-
-
                    {
                 extend: 'pdfHtml5',
                 exportOptions: {
@@ -607,19 +666,22 @@ $('#exampledt').DataTable({
                    columns: [ 0, 3, 1, 2 ]
                 }
             }
-
 				],
                 "bLengthChange": false,
-
                 "processing": true,
                 "columnDefs": [
                     {
                         "render": function (data,type,row){
-                            return data +' '+row[3];
+                            return data;
                         },
                         "targets": 0
                     },
-
+					 {
+                        "render": function (data,type,row){
+                            return data;
+                        },
+                        "targets": 3
+                    },
                     {
                         "render": function (data,type,row){
                             return '<a href="tel:'+data+'">'+data+'</a>';
@@ -629,15 +691,21 @@ $('#exampledt').DataTable({
                     {
                         "render": function (data,type,row){
                             if(row[2] == "Specific"){
-                                return row[6]+' '+row[7] +'<br>$'+row[4]+' - $'+row[5];
+                                return row[6]+' '+row[7];
                             }
                             else{
-                                return data +'<br>$'+row[4]+' - $'+row[5];
+                                return data;
                             }
                         },
                         "targets": 2
                     },
-                    { "visible": false, "targets": [3,4,5,6,7,8,9]}
+					{
+                        "render": function (data,type,row){
+                           '$'+row[4]+' - $'+row[5];
+                        },
+                        "targets": 4
+                    },
+                    { "visible": false, "targets": [5,6,7,8,9]}
                 ],
                 "serverSide":true,
                 "ajax":{
@@ -649,8 +717,10 @@ $('#exampledt').DataTable({
                     searchPlaceholder: "Search..."
                 }
             });
-
-
+			
+			
+			
+			
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
 
