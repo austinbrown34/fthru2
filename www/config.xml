@@ -18,10 +18,7 @@
     </author>
 
 <access origin="*" />
-    <allow-intent href="*" />
-    <allow-navigation href="*" />
-    <allow-navigation href="data:*" />
-    <allow-navigation href="blob:*" />
+
  <preference name="orientation" value="portrait" />
  <preference name="ios-statusbarstyle"         value="false" />
  <preference name="exit-on-suspend"            value="false" />
