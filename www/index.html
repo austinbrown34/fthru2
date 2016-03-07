@@ -534,12 +534,13 @@ var password = localStorage.getItem('password');
                                 var fd = new FormData();
                                 fd.append('fname','test.pdf');
                                 fd.append('data',myBlob)
+                                alert("fd: "+fd);
                                 var request = $.ajax({
                                     type: 'POST',
                                     url: 'http://cogni.design/cpr/www/uploadpdf.php',
                                     data: fd,
                                     processData: false,
-                                    contentType: false
+                                    // contentType: false
 
                                 });
                                 request.done(function( msg ) {
@@ -547,7 +548,7 @@ var password = localStorage.getItem('password');
                                 });
 
                                 request.fail(function( jqXHR, textStatus ) {
-                                    alert( "Request failed: " + jqXHR.status);
+                                    alert( "Request failed: " + jqXHR);
                                 });
 
                             }
