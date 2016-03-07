@@ -531,11 +531,24 @@ var password = localStorage.getItem('password');
                                     alert(blobreader.result);
                                 }
                                 blobreader.readAsText(myBlob);
+                                var fd = new FormData();
+                                fd.append('fname','test.pdf');
+                                fd.append('data',myBlob)
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'http://cogni.design/cpr/www/uploadpdf.php',
+                                    data: fd,
+                                    processData: false,
+                                    contentType: false
+
+                                }).done(function(data){
+                                            alert("sent to php");
+                                        });
                             }
                         };
                         xhr.send();
 
-                        var ref = cordova.InAppBrowser.open('http://www.pdf995.com/samples/pdf.pdf','_system','location=yes');
+                        var ref = cordova.InAppBrowser.open('http://cogni.design/cpr/www/test.pdf','_system','location=yes');
 
                         ref.addEventListener('loadstart', function(event) { alert(event.url); });
                         ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
