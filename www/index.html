@@ -519,7 +519,11 @@ var password = localStorage.getItem('password');
 //                        var ref = cordova.InAppBrowser.open(url,'_system','location=no');
 //                        newurl = url.toURL();
 //                        alert("newurl: "+newurl);
-                        alert(blob);
+                        var blobreader = new FileReader();
+                        blobreader.onload = function() {
+                            alert(blobreader.result);
+                        }
+                        blobreader.readAsText(blob);
                         var ref = cordova.InAppBrowser.open('http://www.pdf995.com/samples/pdf.pdf','_system','location=yes');
 
                         ref.addEventListener('loadstart', function(event) { alert(event.url); });
