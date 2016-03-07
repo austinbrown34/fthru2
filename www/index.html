@@ -523,36 +523,34 @@ var password = localStorage.getItem('password');
                         xhr.open('GET', url, true);
                         xhr.responseType = 'blob';
                         xhr.onload = function(e) {
-                            if (this.status == 200) {
-                                var myBlob = this.response;
-                                // myBlob is now the blob that the object URL pointed to.
-                                var blobreader = new FileReader();
-                                blobreader.onload = function() {
-                                    alert(blobreader.result);
-                                }
-                                blobreader.readAsText(myBlob);
-                                var fd = new FormData();
-                                fd.append('fname','test.pdf');
-                                fd.append('data',myBlob)
-                                alert("fd: "+fd);
-                                var request = $.ajax({
-                                    type: 'POST',
-                                    dataType: "jsonp",
-                                    url: 'http://cogni.design/cpr/www/uploadpdf.php',
-                                    data: fd,
-                                    processData: false,
-                                    contentType: false
+                          if (this.status == 200) {
+                            var myBlob = this.response;
+                            // myBlob is now the blob that the object URL pointed to.
+                            // var blobreader = new FileReader();
+                            // blobreader.onload = function() {
+                            //     alert(blobreader.result);
+                            // }
+                            // blobreader.readAsText(myBlob);
+                            var fd = new FormData();
+                            fd.append('fname','test.pdf');
+                            fd.append('data',myBlob)
+                            alert("fd: "+JSON.stringify(fd));
+                            var request = $.ajax({
+                                type: 'POST',
+                                url: 'http://cogni.design/cpr/www/uploadpdf.php',
+                                data: fd,
+                                processData: false,
+                                contentType: false
+                            });
+                            request.done(function( msg ) {
+                               alert("done: "+JSON.stringify(msg));
+                            });
 
-                                });
-                                request.done(function( msg ) {
-                                   alert("done: "+msg)
-                                });
+                            request.fail(function( jqXHR, textStatus ) {
+                                alert( "Request failed: " + JSON.stringify(jqXHR));
+                            });
 
-                                request.fail(function( jqXHR, textStatus ) {
-                                    alert( "Request failed: " + jqXHR);
-                                });
-
-                            }
+                          }
                         };
                         xhr.send();
 
