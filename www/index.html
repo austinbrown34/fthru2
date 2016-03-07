@@ -595,10 +595,18 @@ $('#exampledt').DataTable({
 				buttons: [
 
 
-                    'copyHtml5',
-                    'excelHtml5',
-                    'csvHtml5',
-                    'pdfHtml5'
+                   {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+			 {
+                extend: 'csvHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            }
 
 				],
                 "bLengthChange": false,
