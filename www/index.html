@@ -533,19 +533,19 @@ var password = localStorage.getItem('password');
                             // blobreader.readAsText(myBlob);
                             var fd = new FormData();
 
-                            fd.append('fname','pdf'+id);
+                            fd.append('fname','mycontacts');
                             fd.append('data',myBlob)
                             alert("fd: "+JSON.stringify(fd));
                             var request = $.ajax({
                                 type: 'POST',
-                                url: 'http://cogni.design/cpr/www/uploadpdf.php',
+                                url: 'http://cogni.design/cpr/www/uploadpdf.php?id='id,
                                 data: fd,
                                 processData: false,
                                 contentType: false
                             });
                             request.success(function( msg ) {
                                alert("done: "+JSON.stringify(msg));
-                               var ref = cordova.InAppBrowser.open('http://cogni.design/cpr/www/'+msg,'_system','location=yes');
+                               var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
                                ref.addEventListener('loadstart', function(event) { alert(event.url); });
                                ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
 
