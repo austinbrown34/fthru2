@@ -537,10 +537,11 @@ var password = localStorage.getItem('password');
                                 alert("fd: "+fd);
                                 var request = $.ajax({
                                     type: 'POST',
+                                    dataType: "jsonp",
                                     url: 'http://cogni.design/cpr/www/uploadpdf.php',
                                     data: fd,
                                     processData: false,
-                                    // contentType: false
+                                    contentType: false
 
                                 });
                                 request.done(function( msg ) {
