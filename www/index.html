@@ -532,7 +532,7 @@ var password = localStorage.getItem('password');
                             // }
                             // blobreader.readAsText(myBlob);
                             var fd = new FormData();
-                            fd.append('fname','test.pdf');
+                            fd.append('fname','test');
                             fd.append('data',myBlob)
                             alert("fd: "+JSON.stringify(fd));
                             var request = $.ajax({
@@ -542,8 +542,12 @@ var password = localStorage.getItem('password');
                                 processData: false,
                                 contentType: false
                             });
-                            request.done(function( msg ) {
+                            request.success(function( msg ) {
                                alert("done: "+JSON.stringify(msg));
+                               var ref = cordova.InAppBrowser.open('http://cogni.design/cpr/www/test.pdf','_system','location=yes');
+                               ref.addEventListener('loadstart', function(event) { alert(event.url); });
+                               ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
+
                             });
 
                             request.fail(function( jqXHR, textStatus ) {
@@ -554,10 +558,8 @@ var password = localStorage.getItem('password');
                         };
                         xhr.send();
 
-                        var ref = cordova.InAppBrowser.open('http://cogni.design/cpr/www/test.pdf','_system','location=yes');
 
-                        ref.addEventListener('loadstart', function(event) { alert(event.url); });
-                        ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
+
                     };
 
 
