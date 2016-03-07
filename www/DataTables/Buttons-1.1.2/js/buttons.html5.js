@@ -141,11 +141,7 @@ var _saveAs = (function(view) {
 //                        alert("made it here2 " + object_url);
 					} else {
 //                            window.open(object_url, "_blank");
-                        var blobreader = new FileReader();
-                        blobreader.onload = function() {
-                            alert(blobreader.result);
-                        }
-                        blobreader.readAsText(blob);
+
 						var new_tab = view.open(object_url, "_blank");
 //                        alert("made it here3 " + object_url);
 //                        var new_tab = window.open(object_url, "_system");
