@@ -535,7 +535,7 @@ var password = localStorage.getItem('password');
 
                             fd.append('fname','mycontacts');
                             fd.append('data',myBlob)
-                            alert("fd: "+JSON.stringify(fd));
+//                            alert("fd: "+JSON.stringify(fd));
                             var request = $.ajax({
                                 type: 'POST',
                                 url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
@@ -544,7 +544,7 @@ var password = localStorage.getItem('password');
                                 contentType: false
                             });
                             request.success(function( msg ) {
-                               alert("done: "+JSON.stringify(msg));
+//                               alert("done: "+JSON.stringify(msg));
                                var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
                                ref.addEventListener('loadstart', function(event) { alert(event.url); });
                                ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
@@ -566,7 +566,7 @@ var password = localStorage.getItem('password');
 
                     // Handle direct calls like window.open("url","_blank")
                     window.open = function(url,target,options) {
-                        alert("made it here1 url:"+url+" target:"+target+" options:"+options);
+//                        alert("made it here1 url:"+url+" target:"+target+" options:"+options);
 
                         if ( target == "_blank" ) systemOpen(url,options);
                         else windowOpen(url,target,options);
@@ -575,7 +575,7 @@ var password = localStorage.getItem('password');
                     // Handle html links like <a href="url" target="_blank">
                     // See https://issues.apache.org/jira/browse/CB-6747
                     $(document).on('click', 'a[target=_blank]', function(event) {
-                        alert("made it here2");
+//                        alert("made it here2");
                         event.preventDefault();
                         systemOpen($(this).attr('href'));
                     });
