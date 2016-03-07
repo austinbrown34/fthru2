@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <title>followTHRU</title>
-    
+
  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 		<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="css/ratchet.css">
     <link rel="stylesheet" href="css/pageslider.css">
     <link rel="stylesheet" href="css/styles.css">
-	
- 
+
+
 
 <style>
     .dataTables_processing {
@@ -75,7 +75,7 @@ color:#6a7894;
 }
 #box h1 {
     padding-top: 80px;
-}  
+}
 
 
 .events div {
@@ -130,11 +130,11 @@ color:#6a7894;
 
 
 
-    
+
 
         <link rel="stylesheet" href="css2/normalize.css">
         <link rel="stylesheet" href="css2/main.css">
-          
+
 <!--         <script src="js2/vendor/modernizr-2.7.1.min.js"></script> -->
         <link rel="stylesheet" href="css2/iThing.css" type="text/css" />
     <script src="jquery.min.js"></script>
@@ -142,7 +142,7 @@ color:#6a7894;
 <script src="jquery-ui.min.js"></script>
  <script src="jQRangeSlider-min.js"></script>
  <script src="js/jquery.blockUI.js"></script>
-<!-- 
+<!--
  	<script src="jquery.mockjax.js"></script>
 
  -->
@@ -159,54 +159,54 @@ color:#6a7894;
 
 
 <!--  	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> -->
- 	
+
 <!-- 	<script src="mktSignup.js"></script> -->
     <script>
 
 
-		
-	
-	
+
+
+
    function errorMsg(msg, timeout)
 {
 	// Display Please Wait...
-	$.blockUI({ message: msg, css: { 
-				border: 'none', 
-				padding: '15px', 
-				backgroundColor: '#880000', 
-				'-webkit-border-radius': '10px', 
-				'-moz-border-radius': '10px', 
-				color: '#fff' 
-			} }); 
+	$.blockUI({ message: msg, css: {
+				border: 'none',
+				padding: '15px',
+				backgroundColor: '#880000',
+				'-webkit-border-radius': '10px',
+				'-moz-border-radius': '10px',
+				color: '#fff'
+			} });
 
 	if(timeout>0)
-		setTimeout($.unblockUI, timeout); 
+		setTimeout($.unblockUI, timeout);
 };
 
 function okMsg(msg, timeout, callback)
 {
 	// Display Please Wait...
-	$.blockUI({ message: msg, css: { 
-				border: 'none', 
-				padding: '15px', 
-				backgroundColor: '#000', 
-				'-webkit-border-radius': '10px', 
-				'-moz-border-radius': '10px', 
-				color: '#fff' 
-			} }); 
+	$.blockUI({ message: msg, css: {
+				border: 'none',
+				padding: '15px',
+				backgroundColor: '#000',
+				'-webkit-border-radius': '10px',
+				'-moz-border-radius': '10px',
+				color: '#fff'
+			} });
 
 	if(timeout>0)
 	{
-		setTimeout(function() 
-		{ 
+		setTimeout(function()
+		{
             $.unblockUI(
-			{ 
+			{
                 onUnblock: callback
 			});
-		},			
+		},
         timeout);
 	}
-}; 
+};
     var id= localStorage.getItem('id');
      var userid= localStorage.getItem('id');
 var password = localStorage.getItem('password');
@@ -215,29 +215,29 @@ var password = localStorage.getItem('password');
 	{
 		// Check for all fields filled
 		if ( $("#login :input[name='" + field + "']").val().length === 0 )
-		{	
+		{
 			errorMsg("All fields are required.", 3000);
 			return false;
 		}
 		return true;
 	}
-	
+
 	function checkContactFormInput(field)
 	{
 		// Check for all fields filled
 		if ( $("#testForm :input[name='" + field + "']").val().length === 0 )
-		{	
+		{
 			errorMsg("All fields are required.", 3000);
 			return false;
 		}
 		return true;
 	}
-	
+
 	function checkVehicleFormInput(field)
 	{
 		// Check for all fields filled
 		if ( $("#testForm2 :input[name='" + field + "']").val().length === 0 )
-		{	
+		{
 			errorMsg("All fields are required.", 3000);
 			return false;
 		}
@@ -247,19 +247,19 @@ var password = localStorage.getItem('password');
 	{
 		if(!checkFormInput("email")) return false;
 		if(!checkFormInput("password")) return false;
-     
+
 		// Display Please Wait...
-		$.blockUI({ css: { 
-					border: 'none', 
-					padding: '15px', 
-					backgroundColor: '#000', 
-					'-webkit-border-radius': '10px', 
-					'-moz-border-radius': '10px', 
-					color: '#fff' 
-				} }); 
+		$.blockUI({ css: {
+					border: 'none',
+					padding: '15px',
+					backgroundColor: '#000',
+					'-webkit-border-radius': '10px',
+					'-moz-border-radius': '10px',
+					color: '#fff'
+				} });
 
 		var serializedData = $("#loginForm").serialize();
-		
+
 		var request = $.ajax({
 				url: "http://cogni.design/cpr/www/login.php?id="+id,
 				type: "get",
@@ -269,12 +269,12 @@ var password = localStorage.getItem('password');
 		// callback handler that will be called on success
 		request.done(function (response, textStatus, jqXHR)
 		{
-		
+
 		if(response == "DELETED")
 			{
 				errorMsg("This account has been deleted. Please contact Admin to see about restoring this account.", 6000);
 				return false;
-				
+
 			}
 			// response == 0 - Successful
 			if(response != "NOTHING")
@@ -310,21 +310,21 @@ var password = localStorage.getItem('password');
 
                     },0);
                 },0);
-				 
-				
 
 
-			
+
+
+
 				return false;
 			}
-		
-			
+
+
 			if(response == "NOTHING")
 			{
 				errorMsg("Failed to log in. Try again.", 3000);
 				return false;
 			}
-			
+
 			// Unknown response
 			errorMsg("Unknown Response. Try again later.", 3000);
 			return false;
@@ -338,16 +338,16 @@ var password = localStorage.getItem('password');
 				"The following error occured: "+
 				textStatus, errorThrown
 			);
-						
+
 			errorMsg("Problem with logging in. Try again later.", 3000);
 			return false;
-		});		
-		
-		return false;		
+		});
+
+		return false;
 	};
-    
-    
-    
+
+
+
         const EDMUNDS_API_KEY = '6gkv78s45kfx5cbgcf4mq5ae';
         function get_makes(year) {
             url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
@@ -538,7 +538,6 @@ var password = localStorage.getItem('password');
                                     type: 'POST',
                                     url: 'http://cogni.design/cpr/www/uploadpdf.php',
                                     data: fd,
-                                    dataType: 'jsonp',
                                     processData: false,
                                     contentType: false
 
@@ -586,7 +585,7 @@ var password = localStorage.getItem('password');
 
 //            cordova.InAppBrowser.open("http://www.google.com","_system");
 
-		
+
 
 $('#exampledt').DataTable({
 				dom: 'Bfrtip',
@@ -597,7 +596,7 @@ $('#exampledt').DataTable({
                     'excelHtml5',
                     'csvHtml5',
                     'pdfHtml5'
-					
+
 				],
                 "bLengthChange": false,
 
@@ -640,7 +639,7 @@ $('#exampledt').DataTable({
                 }
             });
 
- 
+
         $("input.phone").mask("(999) 999-9999");
         if (id !== null){
 
@@ -677,7 +676,7 @@ $('#exampledt').DataTable({
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes($(this).val());
             });
-            
+
             $('#makes').change(function() {
                 console.log('Step 3: Make ' + $(this).val() + ' was selected');
                 get_models($(this).val(), $('#years').val());
@@ -694,7 +693,7 @@ $('#exampledt').DataTable({
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes1($(this).val());
             });
-            
+
             $('#makes1').change(function() {
                 console.log('Step 3: Make ' + $(this).val() + ' was selected');
                 get_models1($(this).val(), $('#years1').val());
@@ -707,40 +706,40 @@ $('#exampledt').DataTable({
                 console.log('Step 7: Style ' + $(this).val() + ' was selected');
                 get_style_details1($(this).val());
             });
-             $("#tm_pro").click(function() {                
+             $("#tm_pro").click(function() {
 
       $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
-            $("#responsecontaineruser").html(response); 
+        url: "http://cogni.design/cpr/www/display.php?id="+id,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
+            $("#responsecontaineruser").html(response);
             //alert(response);
         }
 
     });
 });
-  $("#tm_home").click(function() {                
+  $("#tm_home").click(function() {
 
       $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display2.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
-            $("#responsecontainercar").html(response); 
+        url: "http://cogni.design/cpr/www/display2.php?id="+id,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
+            $("#responsecontainercar").html(response);
             //alert(response);
         }
 
     });
 });
-  $("#displaymatch").click(function() {                
+  $("#displaymatch").click(function() {
 
       $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/match.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
-            $("#responsecontainermatch").html(response); 
+        url: "http://cogni.design/cpr/www/match.php?id="+id,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
+            $("#responsecontainermatch").html(response);
             //alert(response);
         }
 
@@ -767,30 +766,30 @@ function resetfields(){
 
  $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display2.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
-            $("#responsecontainercar").html(response); 
+        url: "http://cogni.design/cpr/www/display2.php?id="+id,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
+            $("#responsecontainercar").html(response);
             //alert(response);
         }
 
     });
           $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
-            $("#responsecontaineruser").html(response); 
+        url: "http://cogni.design/cpr/www/display.php?id="+id,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
+            $("#responsecontaineruser").html(response);
             //alert(response);
         }
 
     });
         });
     </script>
-       
- 
 
-   
+
+
+
    	<script>
 
 
@@ -800,7 +799,7 @@ function resetfields(){
 		rules: {
     phone: {
         minlength:10
-      
+
     },
     pricelow: {
     number: true
@@ -810,10 +809,10 @@ function resetfields(){
     }
 },
 submitHandler: function(form) {
-			
 
 
-// 
+
+//
 // elem.value = basicvalues.min;
 // elem2.value = basicvalues.max;
 // console.log(basicValues.min + " " + basicValues.max);
@@ -827,14 +826,14 @@ submitHandler: function(form) {
 
     var postData = $(form).serializeArray();
     var formURL = $(form).attr("action");
-    
+
     console.log(formURL+"?id="+userid);
     $.ajax(
     {
         url : formURL+"?id="+userid,
         type: "POST",
         data : postData,
-        success:function(data, textStatus, jqXHR) 
+        success:function(data, textStatus, jqXHR)
         {
             //data: return data from server
             function alertDismissed() {
@@ -853,9 +852,9 @@ submitHandler: function(form) {
 //            alert('Contact Added');
 
         },
-        error: function(jqXHR, textStatus, errorThrown) 
+        error: function(jqXHR, textStatus, errorThrown)
         {
-            //if fails  
+            //if fails
             function alertDismissed() {
                 $("#testForm")[0].reset();
 				 $('#page').scrollTop(0);
@@ -879,7 +878,7 @@ submitHandler: function(form) {
 		rules: {
     phone: {
         minlength:10
-      
+
     },
     pricelow: {
     number: true
@@ -889,10 +888,10 @@ submitHandler: function(form) {
     }
 },
 submitHandler: function(form) {
-			
 
 
-// 
+
+//
 // elem.value = basicvalues.min;
 // elem2.value = basicvalues.max;
 // console.log(basicValues.min + " " + basicValues.max);
@@ -906,14 +905,14 @@ submitHandler: function(form) {
 
     var postData = $(form).serializeArray();
     var formURL = $(form).attr("action");
-    
+
     console.log(formURL+"?id="+userid);
     $.ajax(
     {
         url : formURL+"?id="+userid,
         type: "POST",
         data : postData,
-        success:function(data, textStatus, jqXHR) 
+        success:function(data, textStatus, jqXHR)
         {
             //data: return data from server
             function alertDismissed() {
@@ -930,9 +929,9 @@ submitHandler: function(form) {
 
               $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
+        url: "http://cogni.design/cpr/www/display.php?id="+id,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
             $("#responsecontaineruser").html(response);
 
 
@@ -973,7 +972,7 @@ submitHandler: function(form) {
 
     });
         },
-        error: function(jqXHR, textStatus, errorThrown) 
+        error: function(jqXHR, textStatus, errorThrown)
         {
             //if fails
 
@@ -992,9 +991,9 @@ submitHandler: function(form) {
 
                $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
+        url: "http://cogni.design/cpr/www/display.php?id="+id,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
             $("#responsecontaineruser").html(response);
 
 
@@ -1045,9 +1044,9 @@ submitHandler: function(form) {
 		 price: {
       number: true
     }},
-		submitHandler: function(form) 
+		submitHandler: function(form)
 		{
-		
+
 
 // if(!checkVehicleFormInput("price")) return false;
 // if(!checkVehicleFormInput("makes")) return false;
@@ -1063,7 +1062,7 @@ submitHandler: function(form) {
         type: "POST",
         data : postData,
         async: false,
-        success:function(data, textStatus, jqXHR) 
+        success:function(data, textStatus, jqXHR)
         {
             //data: return data from server
 
@@ -1086,21 +1085,21 @@ submitHandler: function(form) {
             );
               $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display2.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
-            $("#responsecontainercar").html(response); 
+        url: "http://cogni.design/cpr/www/display2.php?id="+id,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
+            $("#responsecontainercar").html(response);
             //alert(response);
         }
 
     });
 
-           
+
         },
         cache: false,
         contentType: false,
         processData: false,
-        error: function(jqXHR, textStatus, errorThrown) 
+        error: function(jqXHR, textStatus, errorThrown)
         {
             //if fails
 
@@ -1120,17 +1119,17 @@ submitHandler: function(form) {
                     'OK'                  // buttonName
             );
 
-             
+
         }
     });
-    
+
 //     e.preventDefault(); //STOP default action
 //     e.unbind(); //unbind. to stop multiple form submit.
 
 		}
 
 		// propose username by combining first- and lastname
-		
+
 	});
 	});
 	</script>
@@ -1160,7 +1159,7 @@ submitHandler: function(form) {
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
-      
+
     var deviceReady = false;
     /**
      * Take picture with camera
@@ -1168,7 +1167,7 @@ submitHandler: function(form) {
     function takePicture() {
         navigator.camera.getPicture(
             function(uri) {
-            
+
                 var img = document.getElementById('camera_image');
                 img.style.visibility = "visible";
                 img.style.display = "block";
@@ -1203,12 +1202,12 @@ submitHandler: function(form) {
             },
             { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY});
     };
-    
+
     /**
      * Upload current picture
      */
     function uploadPicture() {
-    	
+
     	// Get URI of picture to upload
         var img = document.getElementById('camera_image');
         var imageURI = img.src;
@@ -1216,11 +1215,11 @@ submitHandler: function(form) {
             document.getElementById('camera_status').innerHTML = "Take picture or select picture from library first.";
             return;
         }
-        
+
         // Verify server has been entered
         server = document.getElementById('serverUrl').value;
         if (server) {
-        	
+
             // Specify transfer options
             var options = new FileUploadOptions();
             options.fileKey="file";
@@ -1230,9 +1229,9 @@ submitHandler: function(form) {
             // Transfer picture to server
             var ft = new FileTransfer();
             ft.upload(imageURI, server, function(r) {
-                document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";            	
+                document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
             }, function(error) {
-                document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;            	
+                document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
             }, options);
         }
     }
@@ -1240,12 +1239,12 @@ submitHandler: function(form) {
      * View pictures uploaded to the server
      */
     function viewUploadedPictures() {
-    	
+
     	// Get server URL
         server = document.getElementById('serverUrl').value;
         if (server) {
-        	
-            // Get HTML that lists all pictures on server using XHR	
+
+            // Get HTML that lists all pictures on server using XHR
             var xmlhttp = new XMLHttpRequest();
             // Callback function when XMLHttpRequest is ready
             xmlhttp.onreadystatechange=function(){
@@ -1261,10 +1260,10 @@ submitHandler: function(form) {
                 }
             };
             xmlhttp.open("GET", server , true);
-            xmlhttp.send();       	
-        }	
+            xmlhttp.send();
+        }
     }
-    
+
     /**
      * Function called when page has finished loading.
      */
@@ -1327,12 +1326,12 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 	<div id="container">
 
 
-		
+
 
 
 		<div id="page">
- 
- 
+
+
 
 
 			<div id="start" class="appscreen">
@@ -1340,13 +1339,13 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
         <div id="login" style="padding-top: 50px;">
 <br>
-	
+
 		<form id="loginForm" onsubmit="return processLogin();">
 			<div class="fldstyle"><input id="email" type="text" name="email" placeholder="Email Address" autocapitalize="off"/></div><br />
 			<div class="fldstyle"><input type="password" name="password" placeholder="Password"/></div>
 			<button class="bluebtn" type="submit">Log In »</button>
 		</form><br><hr>
-       <!-- 
+       <!--
  <br>
         <div class="button"><a href="#" onclick="changePage('forgot');">Forgot Password?</a></div>
 <!~~ 		<div class="midline_box txtalnL"><div class="pad50pcntleft"><a class="menu_pill"><div class="menu_pill_text">NEW HERE?</div></a></div><hr class="hr_line"></div> ~~>
@@ -1361,7 +1360,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 </div>
 
 			<div id="home" class="appscreen" style="display:none;">
-			
+
 
 				<div class="slidehome" style="z-index:3;">
 				<!-- <div id="tabs" class="font_PNbold" style="zoom: .8;">
@@ -1373,7 +1372,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 						<li id="tm_mtch" class="" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"></li>
 					</ul>
 				</div> -->
-				
+
 					<div class="cnt_clr">
 						<form id="testForm" action="http://cogni.design/cpr/www/insert.php" method="post">
 
@@ -1384,9 +1383,9 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 								<tr>
 									<td>
-				
+
 										<div style="padding: 2px 4px 3px 4px;">
-				
+
 
 											<p style="color:black;">First name:</p>
 											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required>
@@ -1451,11 +1450,11 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 										</center>
 
 
-						
+
 
 										<div id="specific1" style="display:none;">
 											 <select id="years" name="years" class="ss-item-required" required>
-											 
+
 												<option value="">Select Year</option>
 												<option>1990</option>
 												<option>1991</option>
@@ -1503,7 +1502,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 											<select id="models" name="models" required  class="ss-item-required">
 												<option value="">Select Model</option>
 											</select>
-											
+
 										</div>
 									</td>
 								</tr>
@@ -1525,7 +1524,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 											</table>
 										</center>
 
-		  
+
 									</td>
 								</tr>
 								<tr>
@@ -1535,36 +1534,36 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 											<input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;">
 										</center>
 
-											
+
 									</td>
 								</tr>
 							</table>
 						</form>
 					</div>
-		 
+
 
 				</div>
 
 
-			 
+
 
 
 			</div>
-	
-	
-	
 
-	
-	
-	
-	
+
+
+
+
+
+
+
 			<div id="edit" class="appscreen" style="display:none;">
-	
+
 
 
 				<div class="slidehome" style="z-index:3;">
 
-		
+
 					<div class="cnt_clr">
 						<form id="editForm" action="http://cogni.design/cpr/www/updater.php" method="post">
 							<br>
@@ -1576,9 +1575,9 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 								<tr>
 									<td colspan="3">
-		
+
 										<div style="padding: 2px 4px 3px 4px;">
-		
+
 											<p style="color:black;">First name:</p>
 											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required>
 									</td>
@@ -1617,7 +1616,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 												<tr>
 													<td style="width:25%;">
 														<center>
-															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:2.5;" /><br><span style="color:black;">Cars</span> 
+															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:2.5;" /><br><span style="color:black;">Cars</span>
 														</center>
 													</td>
 													<td style="width:25%;">
@@ -1638,11 +1637,11 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 										</center>
 
 
-                
+
 
 										<div id="specific1" style="display:none;">
 											<select id="years" name="years" class="ss-item-required" required>
-     
+
 												<option value="">Select Year</option>
 												<option>1990</option>
 												<option>1991</option>
@@ -1690,7 +1689,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 											<select id="models" name="models" required  class="ss-item-required">
 												<option value="">Select Model</option>
 											</select>
-										
+
 										</div>
 									</td>
 								</tr>
@@ -1737,25 +1736,25 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 				</div>
 
 			</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 			<div id="match" class ="appscreen" style="display:none;">
 
 
-		
+
 				<div class="cnt_clr">
 					<center>
 						<table border="1" align="center">
 							<tr>
-								<td> 
-									<input class="bluebtn" type="button" id="displaymatch" value="Display New Matches" /> 
+								<td>
+									<input class="bluebtn" type="button" id="displaymatch" value="Display New Matches" />
 								</td>
 							</tr>
 						</table>
@@ -1768,7 +1767,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 			</div>
 			<div id="addcar" class ="appscreen" style="display:none; overflow-x: hidden;">
 
-		
+
 				<div class="cnt_clr">
 					<div style="padding: 2px 4px 3px 4px;">
 						<form id="testForm2" action="http://cogni.design/cpr/www/insert2.php" method="post" enctype="multipart/form-data">
@@ -1845,11 +1844,11 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 
 							<input id="serverUrl" type="hidden" value="http://cogni.design/cpr/area51/testground/uploader.php" />
- 
+
 
 	<!-- Camera -->
 
-        
+
     <!-- Actions -->
 							<center>
 								<div>
@@ -1861,7 +1860,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 												</center>
 											</td>
 											<td style="width:50%;">
-												<center> 
+												<center>
 													<input class="bluebtn2" type="button" style="zoom:1.3;" onclick="selectPicture();" value="Gallery" />
 												</center>
 											</td>
@@ -1871,12 +1870,12 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 									<div>
 										<br>
 						<!-- 		<h3>Camera:</h3> -->
-								
+
 										<img style="width:300px;visibility:hidden;display:none;" id="camera_image" src="" />
 									</div>
 									<br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span><br>
 									<input class="bluebtn2" type="button" style="zoom:1.3;" onclick="uploadPicture();" value="Upload Picture" />
-							   
+
 								</div>
 							</center>
 							<input type="hidden" name="fileToUpload" id="fileToUpload" value="">
@@ -1892,10 +1891,10 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 								<!-- Add your site or application content here -->
 
-							
+
 
 								<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-							   <!-- 
+							   <!--
 						 <script>
 									(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 									function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -1952,17 +1951,17 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 				</div>
 
 
-     
+
 			</div>
 
 			<div id="viewcar" class ="appscreen" style="display:none;">
 
 
-	
-		
+
+
 				<div class="cnt_clr">
 					<center>
-			
+
 						<div id="responsecontainercar" align="center">
 
 						</div>
@@ -1970,7 +1969,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 				</div>
 
 
-      
+
 			</div>
 
 		</div><!-- end panel -->
@@ -2017,7 +2016,7 @@ thepage = item.id;
   e.currentTarget.moved = false;
   console.log("Start: " + e.currentTarget.innerHTML);
   isTouching = true;
-  
+
   //iOS and Android do not redraw the view while they are scrolling.
   //This introduces a problem if the user very quickly swiped his/her finger to scroll.
   //The element would have been given the "active" class (being highlighted) and it would have
@@ -2026,7 +2025,7 @@ thepage = item.id;
   setTimeout(function(){
     if(item.moved===false) { //Make sure the property exists and is false
       item.className = "active";
-      
+
     }
   },50);
 }
@@ -2034,9 +2033,9 @@ thepage = item.id;
  * Fired when the user moves his/her finger.
  * If we detect a move, we're not interested in the "tap" anymore
  */
- 
+
 function onTouchMove(e) {
-	
+
   console.log("Move: " + $(e.currentTarget.innerText));
   e.currentTarget.moved = true;
   e.currentTarget.className = "";
@@ -2048,10 +2047,10 @@ function onTouchMove(e) {
  */
 function onTouchEnd(e) {
   var item = e.currentTarget;
-  
+
   console.log("Stop: " + item.innerHTML);
   isTouching = false;
-  
+
 //alert(sample);
   if(!item.moved) { //Show the
     item.className = "selected";
@@ -2081,7 +2080,7 @@ function onTouchEnd(e) {
       }
 
 	     var pagetarget = $("#page");
-	  
+
 	    setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -2106,10 +2105,10 @@ function onTouchEnd(e) {
 
                 },0);
             },0);
-	  
-	  
-	  
-   
+
+
+
+
 
 
 
@@ -2123,7 +2122,7 @@ function onTouchEnd(e) {
 
 
 
-	
+
 //  setTimeout(changePage(page),2000);
 	page="";
   delete item.moved; //Don't need our flag anymore
@@ -2140,7 +2139,7 @@ isTouching = false; //Flag for whether or not the user is currently touching the
 for(i=0; i<links.length; ++i) {
 
   links[i].addEventListener("touchstart", onTouchStart); //Listen for the user to start touching
-  
+
   links[i].addEventListener("touchmove", onTouchMove); //Listen for movement
   links[i].addEventListener("touchend", onTouchEnd); //Listen for the user to stop touching
 }
@@ -2162,21 +2161,21 @@ window.open(page+".html",'_self');
 
 }
 </script>
- 
+
   <!--   <script src="js/zepto.min.js"></script> -->
 <!--     <script src="js/index.js"></script> -->
-   <!-- 
+   <!--
  <script>
         app.initialize();
 
     </script>
  -->
- 
+
 
 <!-- </body> -->
 
 </div>
-<!-- 
+<!--
   <script type="text/javascript" src="phonegap.js"></script>
  <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
@@ -2202,7 +2201,7 @@ window.open(page+".html",'_self');
 
 target.bind(startEvent, function(e) {
     // prevent image drag (Firefox)
-    
+
 //     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
@@ -2314,7 +2313,7 @@ target.bind(startEvent, function(e) {
 
 target2.bind(startEvent, function(e) {
     // prevent image drag (Firefox)
-    
+
 //     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
@@ -2415,7 +2414,7 @@ target2.bind(startEvent, function(e) {
 
 target3.bind(startEvent, function(e) {
     // prevent image drag (Firefox)
-    
+
 //     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
@@ -2510,7 +2509,7 @@ target3.bind(startEvent, function(e) {
 
 target4.bind(startEvent, function(e) {
     // prevent image drag (Firefox)
-    
+
 //     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
@@ -2608,7 +2607,7 @@ target4.bind(startEvent, function(e) {
 
 target5.bind(startEvent, function(e) {
     // prevent image drag (Firefox)
-    
+
 //     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
@@ -2708,15 +2707,15 @@ target5.bind(startEvent, function(e) {
 </body>
 
 
-<!-- 
+<!--
 <script src="lib/fastclick.js"></script>
 <script src="lib/pageslider.js"></script>
  -->
-<!-- 
+<!--
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
  -->
-<!-- 
+<!--
 <script src="lib/underscore-min.js"></script>
 <script src="lib/backbone-min.js"></script>
 <script src="lib/handlebars.js"></script>
@@ -2724,7 +2723,7 @@ target5.bind(startEvent, function(e) {
  -->
 <!-- <script src="js/app.js"></script> -->
 <!-- <script src="js/views.js"></script> -->
-<!-- 
+<!--
 <script src="js/facebook.js"></script>
 <script src="swipe/src/swipeview.js"></script>
  -->
@@ -2737,7 +2736,7 @@ target5.bind(startEvent, function(e) {
 <!-- <script src="js/sm.js"></script> -->
 
   <script>
-   
+
    $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
         var value = Math.round(val * 5) / 5,
           decimal = value - Math.round(val);
@@ -2763,12 +2762,12 @@ elem2.value=data.values.max;
 
  <script type="text/javascript">
  function reloadcontacts() {
- 
+
   $.ajax({    //create an ajax request to load_page.php
         type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
+        url: "http://cogni.design/cpr/www/display.php?id="+id,
+        dataType: "html",   //expect html to be returned
+        success: function(response){
             $("#responsecontaineruser").html(response);
 
             var pagetarget = $("#page");
@@ -2806,24 +2805,24 @@ elem2.value=data.values.max;
         }
 
     });
- 
- 
- }
- 
- 
 
- 
- 
- 
- 
- 
+
+ }
+
+
+
+
+
+
+
+
 //             app.initialize();
         </script>
          <script>
 function formcheck() {
   var fields = $(".ss-item-required")
         .find("select, textarea, input").serializeArray();
-  
+
   $.each(fields, function(i, field) {
     if (!field.value)
 
@@ -2839,17 +2838,17 @@ function formcheck() {
               'OK'                  // buttonName
       );
 
-   }); 
+   });
   console.log(fields);
 }
- 
- 
- 
+
+
+
 // $("#testForm").submit(); //Submit  the FORM
         </script>
  <script>
- 
- 
+
+
 // $("#testForm").submit(); //Submit  the FORM
         </script>
 		</body>
