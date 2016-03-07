@@ -598,13 +598,13 @@ $('#exampledt').DataTable({
                    {
                 extend: 'pdfHtml5',
                 exportOptions: {
-                    columns: ':visible'
+                    columns: [ 0, 3, 1, 2 ]
                 }
             },
 			 {
                 extend: 'csvHtml5',
                 exportOptions: {
-                    columns: ':visible'
+                   columns: [ 0, 3, 1, 2 ]
                 }
             }
 
