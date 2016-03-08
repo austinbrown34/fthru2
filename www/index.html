@@ -597,13 +597,11 @@ var password = localStorage.getItem('password');
 
 $.fn.dataTable.ext.errMode = 'none';
  
-$('#exampledt')
-    .on( 'error.dt', function ( e, settings, techNote, message ) {
-        console.log( 'An error has been reported by DataTables: ', message );
-    } )
-    .DataTable();
 
-$('#exampledt').DataTable({
+
+$('#exampledt').on( 'error.dt', function ( e, settings, techNote, message ) {
+        console.log( 'An error has been reported by DataTables: ', message );
+    } ).DataTable({
 				dom: 'Bfrtip',
 				buttons: [
 
