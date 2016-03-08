@@ -18,7 +18,7 @@
     </author>
 
 <access origin="*" />
-<allow-navigation href="http://*/*" />
+<allow-navigation href="*" />
 <allow-intent href="*" />
  <preference name="orientation" value="portrait" />
  <preference name="ios-statusbarstyle"         value="false" />
