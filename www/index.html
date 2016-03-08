@@ -595,7 +595,13 @@ var password = localStorage.getItem('password');
 
 //            cordova.InAppBrowser.open("http://www.google.com","_system");
 
-
+$.fn.dataTable.ext.errMode = 'none';
+ 
+$('#exampledt')
+    .on( 'error.dt', function ( e, settings, techNote, message ) {
+        console.log( 'An error has been reported by DataTables: ', message );
+    } )
+    .DataTable();
 
 $('#exampledt').DataTable({
 				dom: 'Bfrtip',
