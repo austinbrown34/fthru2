@@ -655,6 +655,7 @@ $('#exampledt').on( 'error.dt', function ( e, settings, techNote, message ) {
                 "ajax":{
                     "url":"http://cogni.design/cpr/www/server_processing.php?id="+id,
                     "dataType":"jsonp",
+					"async":"false",
 					error: function (xhr, error, thrown) {
 alert( 'error' );
 alert(error);
