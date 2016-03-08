@@ -18,7 +18,7 @@
     </author>
 
 <access origin="*" />
-<allow-navigation href="*" />
+<allow-navigation href="http://*/*" />
 <allow-intent href="*" />
  <preference name="orientation" value="portrait" />
  <preference name="ios-statusbarstyle"         value="false" />
@@ -26,6 +26,7 @@
  <preference name="webviewbounce" value="false" />
  <preference name="prerendered-icon" value="true" />
 <preference name="DisallowOverscroll" value="true" />
+<preference name="loadUrlTimeoutValue" value="700000" />
 
  <icon src="icon.png" />
  <splash src="splash.png" />
