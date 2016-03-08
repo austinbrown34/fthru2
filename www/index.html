@@ -655,7 +655,7 @@ $('#exampledt').on( 'error.dt', function ( e, settings, techNote, message ) {
                 "ajax":{
                     "url":"http://cogni.design/cpr/www/server_processing.php?id="+id,
                     "dataType":"jsonp",
-					"async":"false",
+					
 					error: function (xhr, error, thrown) {
 alert( 'error' );
 alert(error);
@@ -665,7 +665,11 @@ alert(thrown);
 success: function(data) {
 alert("made it");
 alert(data);
-}
+},
+complete: function (data) {
+      alert("completed");
+		alert(data);
+     }
                 },
                 language: {
                     search: "_INPUT_",
