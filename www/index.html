@@ -495,6 +495,7 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {
+		window.onerror = function(error){console.log(error);};
 
             document.addEventListener("deviceready", function() {deviceReady = true;}, false);
             window.setTimeout(function() {
