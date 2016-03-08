@@ -18,6 +18,7 @@
     </author>
 
 <access origin="*" />
+<allow-navigation href="*://*.cogni.design/*" />
 
  <preference name="orientation" value="portrait" />
  <preference name="ios-statusbarstyle"         value="false" />
