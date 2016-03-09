@@ -20,9 +20,13 @@
 <!-- <access origin="*" />
 <allow-navigation href="*" />
 <allow-intent href="*" /> -->
-<allow-navigation href="*://*.cogni.design/*" />
-<allow-intent href="*://*.cogni.design/*" />
-<access origin="*://*.cogni.design/*" />
+<!--<allow-navigation href="*://*.cogni.design/*" />-->
+<!--<allow-intent href="*://*.cogni.design/*" />-->
+<!--<access origin="*://*.cogni.design/*" />-->
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <access origin="*" /> <!-- Required for iOS9 -->
+
 
  <preference name="orientation" value="portrait" />
  <preference name="ios-statusbarstyle"         value="false" />
