@@ -528,7 +528,7 @@ var password = localStorage.getItem('password');
 
                     // Note it does not take a target!
                     var systemOpen = function(url, options) {
-//                        alert("made it here3 url:"+url+" options:"+options);
+                       alert("made it here3 url:"+url+" options:"+options);
                         // Do not use window.open becaus the InAppBrowser open will not proxy window.open
                         // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
 //                        var ref = cordova.InAppBrowser.open(url,'_system','location=no');
@@ -583,8 +583,8 @@ var password = localStorage.getItem('password');
 
                     // Handle direct calls like window.open("url","_blank")
                     window.open = function(url,target,options) {
-//                        alert("made it here1 url:"+url+" target:"+target+" options:"+options);
-                        alert("made it here 1st");
+                        alert("made it here 1st url:"+url+" target:"+target+" options:"+options);
+                       // alert("made it here 1st");
                         //if ( target == "_blank" ) 
 						systemOpen(url,options);
                         //else windowOpen(url,target,options);
