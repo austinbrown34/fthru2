@@ -117,6 +117,7 @@ var _saveAs = (function(view) {
 			return blob;
 		}
 		, FileSaver = function(blob, name) {
+			alert("made it to filesaver passing blob and name: "+blob+" "+name);
 			blob = auto_bom(blob);
 			// First try a.download, then web filesystem, then object URLs
 			var
@@ -175,7 +176,7 @@ var _saveAs = (function(view) {
 				name = "download";
 			}
 			if (can_use_save_link) {
-
+				alert("can use save link");
 				object_url = get_URL().createObjectURL(blob);
 				save_link.href = object_url;
 				save_link.download = name;
@@ -191,7 +192,7 @@ var _saveAs = (function(view) {
 			// Update: Google errantly closed 91158, I submitted it again:
 			// https://code.google.com/p/chromium/issues/detail?id=389642
 			if (view.chrome && type && type !== force_saveable_type) {
-
+				alert("view chrome");
 				slice = blob.slice || blob.webkitSlice;
 				blob = slice.call(blob, 0, blob.size, force_saveable_type);
 				blob_changed = true;
@@ -200,20 +201,24 @@ var _saveAs = (function(view) {
 			// in WebKit, I append .download to the filename.
 			// https://bugs.webkit.org/show_bug.cgi?id=65440
 			if (webkit_req_fs && name !== "download") {
-
+			alert("webkit_req_fs and name is not download");
 				name += ".download";
 			}
 			if (type === force_saveable_type || webkit_req_fs) {
+				alert("type is force_saveable_type or webkit_req_fs");
 				target_view = view;
 			}
 			if (!req_fs) {
+				alert("not req_fs");
 				fs_error();
 				return;
 			}
 			fs_min_size += blob.size;
 			req_fs(view.TEMPORARY, fs_min_size, abortable(function(fs) {
+				alert("called req_fs function");
 				fs.root.getDirectory("saved", create_if_not_found, abortable(function(dir) {
 					var save = function() {
+						alert("req_fs save called");
 						dir.getFile(name, create_if_not_found, abortable(function(file) {
 							file.createWriter(abortable(function(writer) {
 								writer.onwriteend = function(event) {
@@ -256,6 +261,7 @@ var _saveAs = (function(view) {
 		}
 		, FS_proto = FileSaver.prototype
 		, saveAs = function(blob, name) {
+			alert("made it to saveas inside saveas");
 			return new FileSaver(blob, name);
 		}
 	;
