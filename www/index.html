@@ -607,8 +607,8 @@ $('#exampledt')
   .DataTable({
     dom: 'Bfrtip',
     buttons: [
-      { extend: 'pdfHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } },
-      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } }
+      { extend: 'pdfHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] },download: 'open' },
+      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] },download: 'open' }
     ],
     "bLengthChange": false,
     "processing": true,
