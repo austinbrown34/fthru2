@@ -538,11 +538,11 @@ var password = localStorage.getItem('password');
 						xhr.addEventListener("error", xhrFailed);
                         xhr.open('GET', url, true);
                         xhr.responseType = 'blob';
-                        xhr.onload = function(e) {
-						alert("made it to xhr onload");
-						alert(this.status);
-                          if (this.status == 200) {
-                            var myBlob = this.response;
+                        xhr.onreadystatechange = function() {
+						alert("made it to xhr onreadystatechange");
+						alert(xhr.status);
+                          if (xhr.status == 200) {
+                            var myBlob = xhr.response;
                             // myBlob is now the blob that the object URL pointed to.
                             // var blobreader = new FileReader();
                             // blobreader.onload = function() {
