@@ -585,8 +585,9 @@ var password = localStorage.getItem('password');
                     window.open = function(url,target,options) {
 //                        alert("made it here1 url:"+url+" target:"+target+" options:"+options);
                         alert("made it here 1st");
-                        if ( target == "_blank" ) systemOpen(url,options);
-                        else windowOpen(url,target,options);
+                        //if ( target == "_blank" ) 
+						systemOpen(url,options);
+                        //else windowOpen(url,target,options);
                     };
 
                     // Handle html links like <a href="url" target="_blank">
