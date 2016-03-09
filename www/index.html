@@ -539,6 +539,8 @@ var password = localStorage.getItem('password');
                         xhr.open('GET', url, true);
                         xhr.responseType = 'blob';
                         xhr.onload = function(e) {
+						alert("made it to xhr onload");
+						alert(this.status);
                           if (this.status == 200) {
                             var myBlob = this.response;
                             // myBlob is now the blob that the object URL pointed to.
