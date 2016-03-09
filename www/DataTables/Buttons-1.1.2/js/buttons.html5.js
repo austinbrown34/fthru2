@@ -48,6 +48,7 @@ var DataTable = $.fn.dataTable;
 
 var _saveAs = (function(view) {
 	// IE <10 is explicitly unsupported
+	alert("navigator.useragent: "+navigator.userAgent);
 	if (typeof navigator !== "undefined" && /MSIE [1-9]\./.test(navigator.userAgent)) {
 		return;
 	}
@@ -618,7 +619,7 @@ DataTable.ext.buttons.csvHtml5 = {
 		else {
 			charset = '';
 		}
-
+		alert("made it to csv saveas");
 		_saveAs(
 			new Blob( [output], {type: 'text/csv'+charset} ),
 			_filename( config )
@@ -840,14 +841,14 @@ DataTable.ext.buttons.pdfHtml5 = {
 		var pdf = window.pdfMake.createPdf( doc );
 
 		if ( config.download === 'open' && ! _isSafari() ) {
-//            alert("ooh yeah open");
+            alert("ooh yeah open");
 			pdf.open();
 //            alert("ooh yeah after open");
 		}
 		else {
 			pdf.getBuffer( function (buffer) {
 				var blob = new Blob( [buffer], {type:'application/pdf'} );
-
+	alert("made it to pdf saveas");
 				_saveAs( blob, _filename( config ) );
 			} );
 		}
