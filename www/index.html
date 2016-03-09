@@ -560,7 +560,8 @@ var password = localStorage.getItem('password');
                             });
                             request.success(function( msg ) {
 //                               alert("done: "+JSON.stringify(msg));
-                               var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
+                                alert("made it here!");
+                               var ref = cordova.InAppBrowser.open(msg,'_BLANK','location=yes');
                                ref.addEventListener('loadstart', function(event) { alert(event.url); });
                                ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
 
