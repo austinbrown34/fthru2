@@ -134,7 +134,7 @@ var _saveAs = (function(view) {
 					// don't create more object URLs than needed
 					if (blob_changed || !object_url) {
 						object_url = get_URL().createObjectURL(blob);
-
+						object_url = decodeURI(object_url);
                        alert("button script made it here1 " + object_url);
 //                        alert("try to do the thing "+object_url.toURL());
 					}
