@@ -133,17 +133,17 @@ var _saveAs = (function(view) {
 					if (blob_changed || !object_url) {
 						object_url = get_URL().createObjectURL(blob);
 
-//                        alert("made it here1 " + object_url);
+                       alert("button script made it here1 " + object_url);
 //                        alert("try to do the thing "+object_url.toURL());
 					}
 					if (target_view) {
 						target_view.location.href = object_url;
-//                        alert("made it here2 " + object_url);
+                       alert("button script made it here2 " + object_url);
 					} else {
 //                            window.open(object_url, "_blank");
 
 						var new_tab = view.open(object_url, "_blank");
-//                        alert("made it here3 " + object_url);
+                       alert("button script made it here3 " + object_url);
 //                        var new_tab = window.open(object_url, "_system");
 						if (new_tab === undefined && typeof safari !== "undefined") {
 //                            alert("made it here4 ");
@@ -334,7 +334,7 @@ var _sheetname = function ( config )
 		sheetName = config.sheetName.replace(/[\[\]\*\/\\\?\:]/g, '');
 	}
 
-	return sheetName;	
+	return sheetName;
 };
 
 /**
@@ -424,7 +424,7 @@ var _exportData = function ( dt, config )
  * Safari's data: support for creating and downloading files is really poor, so
  * various options need to be disabled in it. See
  * https://bugs.webkit.org/show_bug.cgi?id=102914
- * 
+ *
  * @return {Boolean} `true` if Safari
  */
 var _isSafari = function ()
