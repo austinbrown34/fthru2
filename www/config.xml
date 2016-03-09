@@ -20,6 +20,10 @@
 <!-- <access origin="*" />
 <allow-navigation href="*" />
 <allow-intent href="*" /> -->
+<allow-navigation href="*://*.cogni.design/*" />
+<allow-intent href="*://*.cogni.design/*" />
+<access origin="*://*.cogni.design/*" />
+
  <preference name="orientation" value="portrait" />
  <preference name="ios-statusbarstyle"         value="false" />
  <preference name="exit-on-suspend"            value="false" />
