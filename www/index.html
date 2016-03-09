@@ -583,20 +583,19 @@ var password = localStorage.getItem('password');
 
                     // Handle direct calls like window.open("url","_blank")
                     window.open = function(url,target,options) {
-                        alert("made it here1 url:"+url+" target:"+target+" options:"+options);
-                        //alert("made it here 1st and ");
-                       // if ( target == "_blank" )
-						systemOpen(url,options);
-                       // else windowOpen(url,target,options);
+//                        alert("made it here1 url:"+url+" target:"+target+" options:"+options);
+                        alert("made it here 1st");
+                        if ( target == "_blank" ) systemOpen(url,options);
+                        else windowOpen(url,target,options);
                     };
 
                     // Handle html links like <a href="url" target="_blank">
                     // See https://issues.apache.org/jira/browse/CB-6747
-                   // $(document).on('click', 'a[target=_blank]', function(event) {
+                    $(document).on('click', 'a[target=_blank]', function(event) {
 //                      alert("made it here2");
-                     //   event.preventDefault();
-                       // systemOpen($(this).attr('href'));
-                   // });
+                        event.preventDefault();
+                        systemOpen($(this).attr('href'));
+                    });
 $.fn.dataTable.ext.errMode = 'none';
 
 
@@ -608,8 +607,8 @@ $('#exampledt')
   .DataTable({
     dom: 'Bfrtip',
     buttons: [
-      { extend: 'pdfHtml5', download: 'open', exportOptions: { columns: [ 0, 3, 1, 2 ] } },
-      { extend: 'csvHtml5',download: 'open', exportOptions: { columns: [ 0, 3, 1, 2 ] } }
+      { extend: 'pdfHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } },
+      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } }
     ],
     "bLengthChange": false,
     "processing": true,
