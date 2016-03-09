@@ -535,6 +535,7 @@ var password = localStorage.getItem('password');
 //                        newurl = url.toURL();
 //                        alert("newurl: "+newurl);
                         var xhr = new XMLHttpRequest();
+						xhr.addEventListener("error", xhrFailed);
                         xhr.open('GET', url, true);
                         xhr.responseType = 'blob';
                         xhr.onload = function(e) {
@@ -580,7 +581,10 @@ var password = localStorage.getItem('password');
 
                     };
 
-
+					function xhrFailed(evt) {
+					alert("An error occurred while transferring the blob.");
+					alert(evt);
+						}
                     // Handle direct calls like window.open("url","_blank")
                     window.open = function(url,target,options) {
                         alert("made it here 1st url:"+url+" target:"+target+" options:"+options);
