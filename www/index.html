@@ -546,6 +546,7 @@ var password = localStorage.getItem('password');
                             //     alert(blobreader.result);
                             // }
                             // blobreader.readAsText(myBlob);
+                            alert("made it here");
                             var fd = new FormData();
 
                             fd.append('fname','mycontacts');
@@ -560,8 +561,8 @@ var password = localStorage.getItem('password');
                             });
                             request.success(function( msg ) {
 //                               alert("done: "+JSON.stringify(msg));
-                                alert("made it here!");
-                               var ref = cordova.InAppBrowser.open(msg,'_BLANK','location=yes');
+
+                               var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
                                ref.addEventListener('loadstart', function(event) { alert(event.url); });
                                ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
 
@@ -583,7 +584,7 @@ var password = localStorage.getItem('password');
                     // Handle direct calls like window.open("url","_blank")
                     window.open = function(url,target,options) {
 //                        alert("made it here1 url:"+url+" target:"+target+" options:"+options);
-
+                        alert("made it here 1st");
                         if ( target == "_blank" ) systemOpen(url,options);
                         else windowOpen(url,target,options);
                     };
