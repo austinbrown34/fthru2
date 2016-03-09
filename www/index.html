@@ -496,7 +496,7 @@ var password = localStorage.getItem('password');
         }
         $(document).ready(function() {
 		$(document).ajaxError(function(e, jqxhr, settings, exception) {
-            alert(exception);
+            alert(exception);});
 		window.onerror = function(error){console.log(error);};
 
             document.addEventListener("deviceready", function() {deviceReady = true;}, false);
