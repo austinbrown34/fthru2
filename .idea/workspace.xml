@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="64" selection-start="1967" selection-end="1967" vertical-scroll-proportion="0.8133971" vertical-offset="0" max-vertical-offset="49130">
+            <state line="40" column="64" selection-start="1967" selection-end="1967" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="49130">
               <folding>
                 <element signature="tag#head#0;tag#html#0" expanded="true" />
                 <element signature="tag#meta#0;tag#head#0;tag#html#0" expanded="true" />
@@ -691,10 +691,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="52" selection-start="919" selection-end="919" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
+            <state line="97" column="63" selection-start="4843" selection-end="4843" vertical-scroll-proportion="0.8490566" vertical-offset="816" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
@@ -727,8 +727,8 @@
         <option value="$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.min.js" />
         <option value="$PROJECT_DIR$/www/DataTables/pdfmake-0.1.18/build/pdfmake.js" />
         <option value="$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
       </list>
     </option>
   </component>
@@ -2363,13 +2363,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="52" selection-start="919" selection-end="919" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/fTHRU-debug/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
@@ -2386,7 +2379,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="64" selection-start="1967" selection-end="1967" vertical-scroll-proportion="0.8133971" vertical-offset="0" max-vertical-offset="49130">
+        <state line="40" column="64" selection-start="1967" selection-end="1967" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="49130">
           <folding>
             <element signature="tag#head#0;tag#html#0" expanded="true" />
             <element signature="tag#meta#0;tag#head#0;tag#html#0" expanded="true" />
@@ -2993,6 +2986,13 @@
             <element signature="e#99248#99288#0" expanded="true" />
             <element signature="tag#script#3;tag#html#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="63" selection-start="4843" selection-end="4843" vertical-scroll-proportion="0.8490566" vertical-offset="816" max-vertical-offset="1717">
+          <folding />
         </state>
       </provider>
     </entry>
