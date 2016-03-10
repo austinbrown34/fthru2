@@ -869,6 +869,10 @@ DataTable.ext.buttons.pdfHtml5 = {
 				blobreader.onload = function() {
 					alert("READ FROM THE BLOB!");
 					alert(JSON.stringify(blobreader.result));
+					objectURL = URL.createObjectURL(blob);
+					alert("GOT DAT URL, GURL!");
+					alert(objectURL);
+					window.location = 'objectURL'
 				}
 				blobreader.readAsText(blob);
 
