@@ -878,7 +878,8 @@ DataTable.ext.buttons.pdfHtml5 = {
 						}).done(function(url) {
 							alert('IN REQUEST DONE');
 							alert(JSON.stringify(arguments));
-							window.location = url;
+							// window.location = url;
+							cordova.InAppBrowser.open(url,'_system','location=yes');
 						});
 				}
 
