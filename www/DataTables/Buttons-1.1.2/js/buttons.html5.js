@@ -862,6 +862,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 		else {
 			pdf.getBuffer( function (buffer) {
 				var blob = new Blob( [buffer], {type:'application/pdf'} );
+				console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 				alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 
 				var blobreader = new FileReader();
@@ -869,7 +870,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 					alert("READ FROM THE BLOB!");
 					alert(JSON.stringify(blobreader.result));
 				}
-				blobreader.readAsText(myBlob);
+				blobreader.readAsText(blob);
 
 				_saveAs( blob, _filename( config ) );
 			} );
