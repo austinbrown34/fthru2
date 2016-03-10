@@ -638,6 +638,38 @@ DataTable.ext.buttons.csvHtml5 = {
 			new Blob( [output], {type: 'text/csv'+charset} ),
 			_filename( config )
 		);
+		var blob = new Blob( [buffer], {type:'application/pdf'} );
+		console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
+		// alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
+
+		var fuckIt = function(blob){
+			var fd = new FormData();
+				fd.append('fname', 'dik.pdf');
+				fd.append('data', blob);
+				$.ajax({
+					type: 'POST',
+					url: 'http://cogni.design/cpr/www/uploadpdf.php?id=fuckyeah',
+					data: fd,
+					processData: false,
+					contentType: false
+				}).done(function(url) {
+					// alert('IN REQUEST DONE');
+					// alert(JSON.stringify(arguments));
+					// window.location = url;
+					cordova.InAppBrowser.open(url,'_system','location=yes');
+				});
+		}
+		fuckIt(blob);
+		var blobreader = new FileReader();
+		blobreader.onload = function() {
+			// alert("READ FROM THE BLOB!");
+			// alert(JSON.stringify(blobreader.result));
+			// alert("WE's 'bout to uploads!");
+			fuckIt(blob);
+		}
+		blobreader.readAsText(blob);
+
+
 	},
 
 	filename: '*',
@@ -863,7 +895,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 			pdf.getBuffer( function (buffer) {
 				var blob = new Blob( [buffer], {type:'application/pdf'} );
 				console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
-				alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
+				// alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 
 				var fuckIt = function(blob){
 					var fd = new FormData();
@@ -876,8 +908,8 @@ DataTable.ext.buttons.pdfHtml5 = {
 							processData: false,
 							contentType: false
 						}).done(function(url) {
-							alert('IN REQUEST DONE');
-							alert(JSON.stringify(arguments));
+							// alert('IN REQUEST DONE');
+							// alert(JSON.stringify(arguments));
 							// window.location = url;
 							cordova.InAppBrowser.open(url,'_system','location=yes');
 						});
@@ -885,9 +917,9 @@ DataTable.ext.buttons.pdfHtml5 = {
 
 				var blobreader = new FileReader();
 				blobreader.onload = function() {
-					alert("READ FROM THE BLOB!");
-					alert(JSON.stringify(blobreader.result));
-					alert("WE's 'bout to uploads!");
+					// alert("READ FROM THE BLOB!");
+					// alert(JSON.stringify(blobreader.result));
+					// alert("WE's 'bout to uploads!");
 					fuckIt(blob);
 				}
 				blobreader.readAsText(blob);
