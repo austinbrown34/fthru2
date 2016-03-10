@@ -559,7 +559,9 @@ var password = localStorage.getItem('password');
                             //     alert(blobreader.result);
                             // }
                             // blobreader.readAsText(myBlob);
+
                             alert("made it here");
+                            var ref = cordova.InAppBrowser.open('http://cogni.design/cpr/www/uploads/1/mycontacts.pdf','_system','location=yes');
                             var fd = new FormData();
 
                             fd.append('fname','mycontacts');
