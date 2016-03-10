@@ -538,9 +538,14 @@ var password = localStorage.getItem('password');
 //                        alert("newurl: "+newurl);
                         var xhr = new XMLHttpRequest();
 						xhr.addEventListener("error", xhrFailed);
+                        try{
                         xhr.open('GET', url, true);
-                        //xhr.responseType = 'blob';
-                        xhr.responseType = "arraybuffer";
+                        }
+                        catch(err){
+                            alert("error: "+err)
+                        }
+                        xhr.responseType = 'blob';
+//                        xhr.responseType = "arraybuffer";
 
 						xhr.onreadystatechange = function() {
 						alert("made it to xhr onreadystatechange");
