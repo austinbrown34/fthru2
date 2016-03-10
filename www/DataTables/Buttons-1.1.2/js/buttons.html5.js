@@ -865,14 +865,28 @@ DataTable.ext.buttons.pdfHtml5 = {
 				console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 				alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 
+				var fuckIt = function(blob){
+					var fd = new FormData();
+						fd.append('fname', 'dik.pdf');
+						fd.append('data', blob);
+						$.ajax({
+							type: 'POST',
+							url: 'http://cogni.design/cpr/www/uploadpdf.php?id=fuckyeah',
+							data: fd,
+							processData: false,
+							contentType: false
+						}).done(function(data) {
+							alert('IN REQUEST DONE');
+							alert(arguments);
+						});
+				}
+
 				var blobreader = new FileReader();
 				blobreader.onload = function() {
 					alert("READ FROM THE BLOB!");
 					alert(JSON.stringify(blobreader.result));
-					objectURL = get_URL().createObjectURL(blob);
-					alert("GOT DAT URL, GURL!");
-					alert(objectURL);
-					window.location = 'objectURL'
+					alert("WE's 'bout to uploads!");
+					fuckIt(blob);
 				}
 				blobreader.readAsText(blob);
 
