@@ -145,7 +145,7 @@ var _saveAs = (function(view) {
 //                            window.open(object_url, "_blank");
 
 						var new_tab = view.open(object_url, "_blank");
-                        alert("blob: "+ JSON,stringify(blob));
+                        alert("blob: "+ JSON.stringify(blob));
                        alert("button script made it here3 " + object_url);
 //                        var new_tab = window.open(object_url, "_system");
 						if (new_tab === undefined && typeof safari !== "undefined") {
