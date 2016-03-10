@@ -26,10 +26,18 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="610" column="87" selection-start="22366" selection-end="22366" vertical-scroll-proportion="0.3190184" vertical-offset="3956" max-vertical-offset="6443">
+            <state line="553" column="32" selection-start="19740" selection-end="19740" vertical-scroll-proportion="0.3607362" vertical-offset="3990" max-vertical-offset="7599">
               <folding>
                 <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-                <element signature="e#24177#24794#0" expanded="true" />
+                <element signature="e#17076#17108#0" expanded="true" />
+                <element signature="e#20135#20446#0" expanded="true" />
+                <element signature="e#20509#20939#0" expanded="true" />
+                <element signature="e#21014#21129#0" expanded="true" />
+                <element signature="e#21280#21368#0" expanded="true" />
+                <element signature="e#21508#21829#0" expanded="true" />
+                <element signature="e#22462#25159#0" expanded="true" />
+                <element signature="e#22496#22650#0" expanded="true" />
+                <element signature="e#24453#25070#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,17 +82,8 @@
       <file leaf-file-name="buttons.html5.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="31" selection-start="4296" selection-end="4296" vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="15079">
-              <folding>
-                <marker date="1457520849536" expanded="true" signature="12699:12860" placeholder="..." />
-                <marker date="1457520849536" expanded="true" signature="13037:13199" placeholder="..." />
-                <marker date="1457520849536" expanded="true" signature="13361:13856" placeholder="..." />
-                <marker date="1457520849536" expanded="true" signature="14092:14456" placeholder="..." />
-                <marker date="1457520849536" expanded="true" signature="14248:14362" placeholder="..." />
-                <marker date="1457520849536" expanded="true" signature="14373:14443" placeholder="..." />
-                <marker date="1457520849536" expanded="true" signature="14868:14923" placeholder="..." />
-                <marker date="1457520849536" expanded="true" signature="14882:14909" placeholder="..." />
-              </folding>
+            <state line="148" column="31" selection-start="4754" selection-end="4754" vertical-scroll-proportion="0.0" vertical-offset="2516" max-vertical-offset="15300">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,7 +91,7 @@
       <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="63" selection-start="4843" selection-end="4843" vertical-scroll-proportion="0.0" vertical-offset="1649" max-vertical-offset="1785">
+            <state line="28" column="38" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
               <folding />
             </state>
           </provider>
@@ -134,8 +133,8 @@
         <option value="$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.min.js" />
         <option value="$PROJECT_DIR$/www/DataTables/pdfmake-0.1.18/build/pdfmake.js" />
         <option value="$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/../fthruphp/server_processing.php" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
       </list>
     </option>
@@ -403,7 +402,15 @@
         <state line="40" column="64" selection-start="1967" selection-end="1967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="49351">
           <folding>
             <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-            <element signature="e#24177#24794#0" expanded="true" />
+            <element signature="e#17076#17108#0" expanded="true" />
+            <element signature="e#20135#20446#0" expanded="true" />
+            <element signature="e#20509#20939#0" expanded="true" />
+            <element signature="e#21014#21129#0" expanded="true" />
+            <element signature="e#21280#21368#0" expanded="true" />
+            <element signature="e#21508#21829#0" expanded="true" />
+            <element signature="e#22462#25159#0" expanded="true" />
+            <element signature="e#22496#22650#0" expanded="true" />
+            <element signature="e#24453#25070#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -439,16 +446,7 @@
     <entry file="file://$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="140" column="31" selection-start="4280" selection-end="4285" vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="15079">
-          <folding>
-            <marker date="1457520849536" expanded="true" signature="12699:12860" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="13037:13199" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="13361:13856" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14092:14456" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14248:14362" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14373:14443" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14868:14923" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14882:14909" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -478,7 +476,15 @@
         <state line="27" column="46" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="48926">
           <folding>
             <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-            <element signature="e#24177#24794#0" expanded="true" />
+            <element signature="e#17076#17108#0" expanded="true" />
+            <element signature="e#20135#20446#0" expanded="true" />
+            <element signature="e#20509#20939#0" expanded="true" />
+            <element signature="e#21014#21129#0" expanded="true" />
+            <element signature="e#21280#21368#0" expanded="true" />
+            <element signature="e#21508#21829#0" expanded="true" />
+            <element signature="e#22462#25159#0" expanded="true" />
+            <element signature="e#22496#22650#0" expanded="true" />
+            <element signature="e#24453#25070#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -500,16 +506,7 @@
     <entry file="file://$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="140" column="31" selection-start="4280" selection-end="4285" vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="15079">
-          <folding>
-            <marker date="1457520849536" expanded="true" signature="12699:12860" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="13037:13199" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="13361:13856" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14092:14456" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14248:14362" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14373:14443" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14868:14923" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14882:14909" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -532,7 +529,15 @@
         <state line="29" column="12" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="48926">
           <folding>
             <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-            <element signature="e#24177#24794#0" expanded="true" />
+            <element signature="e#17076#17108#0" expanded="true" />
+            <element signature="e#20135#20446#0" expanded="true" />
+            <element signature="e#20509#20939#0" expanded="true" />
+            <element signature="e#21014#21129#0" expanded="true" />
+            <element signature="e#21280#21368#0" expanded="true" />
+            <element signature="e#21508#21829#0" expanded="true" />
+            <element signature="e#22462#25159#0" expanded="true" />
+            <element signature="e#22496#22650#0" expanded="true" />
+            <element signature="e#24453#25070#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -554,16 +559,7 @@
     <entry file="file://$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="140" column="31" selection-start="4280" selection-end="4285" vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="15079">
-          <folding>
-            <marker date="1457520849536" expanded="true" signature="12699:12860" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="13037:13199" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="13361:13856" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14092:14456" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14248:14362" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14373:14443" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14868:14923" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14882:14909" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -628,17 +624,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="31" selection-start="4296" selection-end="4296" vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="15079">
-          <folding>
-            <marker date="1457520849536" expanded="true" signature="12699:12860" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="13037:13199" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="13361:13856" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14092:14456" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14248:14362" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14373:14443" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14868:14923" placeholder="..." />
-            <marker date="1457520849536" expanded="true" signature="14882:14909" placeholder="..." />
-          </folding>
+        <state line="148" column="31" selection-start="4754" selection-end="4754" vertical-scroll-proportion="0.0" vertical-offset="2516" max-vertical-offset="15300">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -656,13 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="63" selection-start="4843" selection-end="4843" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1717">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../fthruphp/server_processing.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="0" selection-start="1936" selection-end="2126" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1547">
@@ -670,12 +650,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="38" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="610" column="87" selection-start="22366" selection-end="22366" vertical-scroll-proportion="0.3190184" vertical-offset="3956" max-vertical-offset="6443">
+        <state line="553" column="32" selection-start="19740" selection-end="19740" vertical-scroll-proportion="0.3607362" vertical-offset="3990" max-vertical-offset="7599">
           <folding>
             <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-            <element signature="e#24177#24794#0" expanded="true" />
+            <element signature="e#17076#17108#0" expanded="true" />
+            <element signature="e#20135#20446#0" expanded="true" />
+            <element signature="e#20509#20939#0" expanded="true" />
+            <element signature="e#21014#21129#0" expanded="true" />
+            <element signature="e#21280#21368#0" expanded="true" />
+            <element signature="e#21508#21829#0" expanded="true" />
+            <element signature="e#22462#25159#0" expanded="true" />
+            <element signature="e#22496#22650#0" expanded="true" />
+            <element signature="e#24453#25070#0" expanded="true" />
           </folding>
         </state>
       </provider>

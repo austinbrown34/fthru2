@@ -540,7 +540,7 @@ var password = localStorage.getItem('password');
 						xhr.addEventListener("error", xhrFailed);
                         xhr.open('GET', url, true);
                         //xhr.responseType = 'blob';
-                        request.responseType = "arraybuffer";
+                        xhr.responseType = "arraybuffer";
 
 						xhr.onreadystatechange = function() {
 						alert("made it to xhr onreadystatechange");
