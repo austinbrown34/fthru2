@@ -533,81 +533,58 @@ var password = localStorage.getItem('password');
                        alert("made it here3 url:"+url+" options:"+options);
                         // Do not use window.open becaus the InAppBrowser open will not proxy window.open
                         // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
-//                        var ref = cordova.InAppBrowser.open(url,'_system','location=no');
-//                        newurl = url.toURL();
-//                        alert("newurl: "+newurl);
-                        var xhr = new XMLHttpRequest();
-						xhr.addEventListener("error", xhrFailed);
-                        try{
-                        xhr.open('GET', url, true);
-                        }
-                        catch(err){
-                            alert("error: "+err)
-                        }
-                        xhr.responseType = 'blob';
-//                        xhr.responseType = "arraybuffer";
+                        var xhr = $.ajax({
+                            url: url
+                            type: 'GET',
+                            dataType: "binary",
+                            processData: false,
+                            contentType: false,
+                            responseType: 'blob',
+                            success: function(result){
+                              var myBlob = xhr.response;
+                              var fd = new FormData();
 
-						xhr.onreadystatechange = function() {
-						alert("made it to xhr onreadystatechange");
-						alert(xhr.status);
-                          if (xhr.status == 200 || xhr.status == 404) {
-                            var myBlob = xhr.response;
-
-                            // myBlob is now the blob that the object URL pointed to.
-                            var blobreader = new FileReader();
-                            blobreader.onload = function() {
-                                alert(blobreader.result);
+                              fd.append('fname','mycontacts');
+                              fd.append('data',myBlob);
+                              posttoserver(fd);
                             }
-                            blobreader.readAsText(myBlob);
-                            alert(myBlob);
-                            alert("made it here");
+                        });
 
-                            var fd = new FormData();
 
-                            fd.append('fname','mycontacts');
-                            fd.append('data',myBlob)
-                           alert("fd: "+JSON.stringify(fd));
-                           try{
-                            var request = $.ajax({
-                                type: 'POST',
-                                url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
-                                data: fd,
-                                processData: false,
-                                contentType: false
-                            });
-                          }
-                          catch(err){
-                            alert("error: "+err);
-                          }
-                            request.success(function( msg ) {
-                              alert("done: "+JSON.stringify(msg));
-                              try{
-                               var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
-                             }
-                             catch(err){
-                               alert("error: "+err);
-                             }
-                               ref.addEventListener('loadstart', function(event) { alert(event.url); });
-                               ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
 
-                            });
+                        function posttoserver(fd){
 
-                            request.fail(function( jqXHR, textStatus ) {
-                                alert( "Request failed: " + JSON.stringify(jqXHR));
-                            });
+                          var request = $.ajax({
+                              type: 'POST',
+                              url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
+                              data: fd,
+                              processData: false,
+                              contentType: false
+                          });
+                          request.success(function( msg ) {
+                            alert("done: "+JSON.stringify(msg));
+                            try{
+                             var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
+                            }
+                            catch(err){
+                             alert("error: "+err);
+                            }
+                            ref.addEventListener('loadstart', function(event) { alert(event.url); });
+                            ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
+                          });
 
-                          }
-                        };
-                        xhr.send();
+                          request.fail(function( jqXHR, textStatus ) {
+                            alert( "Request failed: " + JSON.stringify(jqXHR));
+                          });
+                        }
+
+
+
 
 
 
                     };
-
-					function xhrFailed(evt) {
-					alert("An error occurred while transferring the blob.");
-					alert(evt);
-						}
+                      
                     // Handle direct calls like window.open("url","_blank")
                     window.open = function(url,target,options) {
                         alert("made it here 1st url:"+url+" target:"+target+" options:"+options);
