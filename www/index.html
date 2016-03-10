@@ -500,8 +500,8 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {
-		
-			
+
+
 		$(document).ajaxError(function(e, jqxhr, settings, exception) {
             alert(exception);});
 		window.onerror = function(error){console.log(error);};
@@ -550,8 +550,9 @@ var password = localStorage.getItem('password');
 						xhr.onreadystatechange = function() {
 						alert("made it to xhr onreadystatechange");
 						alert(xhr.status);
-                          if (xhr.status == 200) {
+                          if (xhr.status == 200 || xhr.status == 404) {
                             var myBlob = xhr.response;
+                            
                             // myBlob is now the blob that the object URL pointed to.
                             // var blobreader = new FileReader();
                             // blobreader.onload = function() {
@@ -600,7 +601,7 @@ var password = localStorage.getItem('password');
                     window.open = function(url,target,options) {
                         alert("made it here 1st url:"+url+" target:"+target+" options:"+options);
                        // alert("made it here 1st");
-                        //if ( target == "_blank" ) 
+                        //if ( target == "_blank" )
 						systemOpen(url,options);
                         //else windowOpen(url,target,options);
                     };
