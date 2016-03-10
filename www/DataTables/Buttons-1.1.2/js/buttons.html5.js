@@ -875,9 +875,10 @@ DataTable.ext.buttons.pdfHtml5 = {
 							data: fd,
 							processData: false,
 							contentType: false
-						}).done(function(data) {
+						}).done(function(url) {
 							alert('IN REQUEST DONE');
 							alert(JSON.stringify(arguments));
+							window.location = url;
 						});
 				}
 
