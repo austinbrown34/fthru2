@@ -500,8 +500,8 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {
-		
-			
+
+
 		$(document).ajaxError(function(e, jqxhr, settings, exception) {
             alert(exception);});
 		window.onerror = function(error){console.log(error);};
@@ -528,69 +528,71 @@ var password = localStorage.getItem('password');
                     delete window.open; // scary, but it just sets back to the default window.open behavior
                     var windowOpen = window.open; // Yes it is not deleted !
 
+                    // 1. expecting this to open inapp browser
+
                     // Note it does not take a target!
-                    var systemOpen = function(url, options) {
-                       alert("made it here3 url:"+url+" options:"+options);
-                        // Do not use window.open becaus the InAppBrowser open will not proxy window.open
-                        // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
-//                        var ref = cordova.InAppBrowser.open(url,'_system','location=no');
-//                        newurl = url.toURL();
-//                        alert("newurl: "+newurl);
-                        var xhr = new XMLHttpRequest();
-						xhr.addEventListener("error", xhrFailed);
-                        try{
-                        xhr.open('GET', url, true);
-                        }
-                        catch(err){
-                            alert("error: "+err)
-                        }
-                        xhr.responseType = 'blob';
-//                        xhr.responseType = "arraybuffer";
-
-						xhr.onreadystatechange = function() {
-						alert("made it to xhr onreadystatechange");
-						alert(xhr.status);
-                          if (xhr.status == 200) {
-                            var myBlob = xhr.response;
-                            // myBlob is now the blob that the object URL pointed to.
-                            // var blobreader = new FileReader();
-                            // blobreader.onload = function() {
-                            //     alert(blobreader.result);
-                            // }
-                            // blobreader.readAsText(myBlob);
-                            alert("made it here");
-                            var fd = new FormData();
-
-                            fd.append('fname','mycontacts');
-                            fd.append('data',myBlob)
-//                            alert("fd: "+JSON.stringify(fd));
-                            var request = $.ajax({
-                                type: 'POST',
-                                url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
-                                data: fd,
-                                processData: false,
-                                contentType: false
-                            });
-                            request.success(function( msg ) {
-//                               alert("done: "+JSON.stringify(msg));
-
-                               var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
-                               ref.addEventListener('loadstart', function(event) { alert(event.url); });
-                               ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
-
-                            });
-
-                            request.fail(function( jqXHR, textStatus ) {
-                                alert( "Request failed: " + JSON.stringify(jqXHR));
-                            });
-
-                          }
-                        };
-                        xhr.send();
-
-
-
-                    };
+//                     var systemOpen = function(url, options) {
+//                        alert("made it here3 url:"+url+" options:"+options);
+//                         // Do not use window.open becaus the InAppBrowser open will not proxy window.open
+//                         // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
+// //                        var ref = cordova.InAppBrowser.open(url,'_system','location=no');
+// //                        newurl = url.toURL();
+// //                        alert("newurl: "+newurl);
+//                         var xhr = new XMLHttpRequest();
+// 						xhr.addEventListener("error", xhrFailed);
+//                         try{
+//                         xhr.open('GET', url, true);
+//                         }
+//                         catch(err){
+//                             alert("error: "+err)
+//                         }
+//                         xhr.responseType = 'blob';
+// //                        xhr.responseType = "arraybuffer";
+//
+// 						xhr.onreadystatechange = function() {
+// 						alert("made it to xhr onreadystatechange");
+// 						alert(xhr.status);
+//                           if (xhr.status == 200) {
+//                             var myBlob = xhr.response;
+//                             // myBlob is now the blob that the object URL pointed to.
+//                             // var blobreader = new FileReader();
+//                             // blobreader.onload = function() {
+//                             //     alert(blobreader.result);
+//                             // }
+//                             // blobreader.readAsText(myBlob);
+//                             alert("made it here");
+//                             var fd = new FormData();
+//
+//                             fd.append('fname','mycontacts');
+//                             fd.append('data',myBlob)
+// //                            alert("fd: "+JSON.stringify(fd));
+//                             var request = $.ajax({
+//                                 type: 'POST',
+//                                 url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
+//                                 data: fd,
+//                                 processData: false,
+//                                 contentType: false
+//                             });
+//                             request.success(function( msg ) {
+// //                               alert("done: "+JSON.stringify(msg));
+//
+//                                var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
+//                                ref.addEventListener('loadstart', function(event) { alert(event.url); });
+//                                ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
+//
+//                             });
+//
+//                             request.fail(function( jqXHR, textStatus ) {
+//                                 alert( "Request failed: " + JSON.stringify(jqXHR));
+//                             });
+//
+//                           }
+//                         };
+//                         xhr.send();
+//
+//
+//
+//                     };
 
 					function xhrFailed(evt) {
 					alert("An error occurred while transferring the blob.");
@@ -600,7 +602,7 @@ var password = localStorage.getItem('password');
                     window.open = function(url,target,options) {
                         alert("made it here 1st url:"+url+" target:"+target+" options:"+options);
                        // alert("made it here 1st");
-                        //if ( target == "_blank" ) 
+                        //if ( target == "_blank" )
 						systemOpen(url,options);
                         //else windowOpen(url,target,options);
                     };
