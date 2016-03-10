@@ -877,7 +877,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 							contentType: false
 						}).done(function(data) {
 							alert('IN REQUEST DONE');
-							alert(arguments);
+							alert(JSON.stringify(arguments));
 						});
 				}
 
