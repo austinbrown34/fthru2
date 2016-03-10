@@ -48,6 +48,7 @@ var DataTable = $.fn.dataTable;
 
 var _saveAs = (function(view) {
 	// IE <10 is explicitly unsupported
+	alert("navigator.useragent: "+navigator.userAgent);
 	if (typeof navigator !== "undefined" && /MSIE [1-9]\./.test(navigator.userAgent)) {
 		return;
 	}
@@ -116,6 +117,7 @@ var _saveAs = (function(view) {
 			return blob;
 		}
 		, FileSaver = function(blob, name) {
+			alert("made it to filesaver passing blob and name: "+blob+" "+name);
 			blob = auto_bom(blob);
 			// First try a.download, then web filesystem, then object URLs
 			var
@@ -132,7 +134,7 @@ var _saveAs = (function(view) {
 					// don't create more object URLs than needed
 					if (blob_changed || !object_url) {
 						object_url = get_URL().createObjectURL(blob);
-
+						object_url = object_url.replace("%3A", ":");
                        alert("button script made it here1 " + object_url);
 //                        alert("try to do the thing "+object_url.toURL());
 					}
@@ -143,6 +145,7 @@ var _saveAs = (function(view) {
 //                            window.open(object_url, "_blank");
 
 						var new_tab = view.open(object_url, "_blank");
+                        alert("blob: "+ JSON.stringify(blob));
                        alert("button script made it here3 " + object_url);
 //                        var new_tab = window.open(object_url, "_system");
 						if (new_tab === undefined && typeof safari !== "undefined") {
@@ -173,24 +176,30 @@ var _saveAs = (function(view) {
 			if (!name) {
 				name = "download";
 			}
-			if (can_use_save_link) {
 
-				object_url = get_URL().createObjectURL(blob);
-				save_link.href = object_url;
-				save_link.download = name;
-				click(save_link);
-				filesaver.readyState = filesaver.DONE;
-				dispatch_all();
-				revoke(object_url);
-				return;
-			}
+
+
+	//		if (can_use_save_link) {
+	//			alert("can use save link");
+	//			object_url = get_URL().createObjectURL(blob);
+	//			save_link.href = object_url;
+	//			save_link.download = name;
+	//			click(save_link);
+	//			filesaver.readyState = filesaver.DONE;
+	//			dispatch_all();
+	//			revoke(object_url);
+	//			return;
+	//		}
+
+
+
 			// Object and web filesystem URLs have a problem saving in Google Chrome when
 			// viewed in a tab, so I force save with application/octet-stream
 			// http://code.google.com/p/chromium/issues/detail?id=91158
 			// Update: Google errantly closed 91158, I submitted it again:
 			// https://code.google.com/p/chromium/issues/detail?id=389642
 			if (view.chrome && type && type !== force_saveable_type) {
-
+				alert("view chrome");
 				slice = blob.slice || blob.webkitSlice;
 				blob = slice.call(blob, 0, blob.size, force_saveable_type);
 				blob_changed = true;
@@ -199,20 +208,24 @@ var _saveAs = (function(view) {
 			// in WebKit, I append .download to the filename.
 			// https://bugs.webkit.org/show_bug.cgi?id=65440
 			if (webkit_req_fs && name !== "download") {
-
+			alert("webkit_req_fs and name is not download");
 				name += ".download";
 			}
 			if (type === force_saveable_type || webkit_req_fs) {
+				alert("type is force_saveable_type or webkit_req_fs");
 				target_view = view;
 			}
 			if (!req_fs) {
+				alert("not req_fs");
 				fs_error();
 				return;
 			}
 			fs_min_size += blob.size;
 			req_fs(view.TEMPORARY, fs_min_size, abortable(function(fs) {
+				alert("called req_fs function");
 				fs.root.getDirectory("saved", create_if_not_found, abortable(function(dir) {
 					var save = function() {
+						alert("req_fs save called");
 						dir.getFile(name, create_if_not_found, abortable(function(file) {
 							file.createWriter(abortable(function(writer) {
 								writer.onwriteend = function(event) {
@@ -255,6 +268,7 @@ var _saveAs = (function(view) {
 		}
 		, FS_proto = FileSaver.prototype
 		, saveAs = function(blob, name) {
+			alert("made it to saveas inside saveas");
 			return new FileSaver(blob, name);
 		}
 	;
@@ -618,7 +632,7 @@ DataTable.ext.buttons.csvHtml5 = {
 		else {
 			charset = '';
 		}
-
+		alert("made it to csv saveas");
 		_saveAs(
 			new Blob( [output], {type: 'text/csv'+charset} ),
 			_filename( config )
@@ -840,14 +854,14 @@ DataTable.ext.buttons.pdfHtml5 = {
 		var pdf = window.pdfMake.createPdf( doc );
 
 		if ( config.download === 'open' && ! _isSafari() ) {
-//            alert("ooh yeah open");
+            alert("ooh yeah open");
 			pdf.open();
 //            alert("ooh yeah after open");
 		}
 		else {
 			pdf.getBuffer( function (buffer) {
 				var blob = new Blob( [buffer], {type:'application/pdf'} );
-
+	alert("made it to pdf saveas");
 				_saveAs( blob, _filename( config ) );
 			} );
 		}

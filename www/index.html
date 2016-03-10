@@ -9,7 +9,7 @@
 <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;" />-->
 
     <meta http-equiv="Content-Security-Policy"
-          content="default-src * data: gap: https://ssl.gstatic.com;
+          content="default-src * data: gap: https://ssl.gstatic.com blob:;
                   style-src * 'self' 'unsafe-inline' 'unsafe-eval';
                   script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -500,11 +500,9 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {
-		$(document).ajaxError(function(e, jqxhr, settings, exception) {
-            alert(exception);});
-		window.onerror = function(error){console.log(error);};
-
-            document.addEventListener("deviceready", function() {deviceReady = true;}, false);
+          $(document).ajaxError(function(e, jqxhr, settings, exception) { alert(exception); });
+          window.onerror = function(error){console.log(error);};
+          document.addEventListener("deviceready", function() {deviceReady = true;}, false);
             window.setTimeout(function() {
                 if (!deviceReady) {
                     alert("Error: PhoneGap did not initialize.  Please restart the app.");
@@ -528,65 +526,69 @@ var password = localStorage.getItem('password');
 
                     // Note it does not take a target!
                     var systemOpen = function(url, options) {
-//                        alert("made it here3 url:"+url+" options:"+options);
+                      alert("systemOpen");
+                      alert(JSON.stringify(arguments));
                         // Do not use window.open becaus the InAppBrowser open will not proxy window.open
                         // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
-//                        var ref = cordova.InAppBrowser.open(url,'_system','location=no');
-//                        newurl = url.toURL();
-//                        alert("newurl: "+newurl);
-                        var xhr = new XMLHttpRequest();
-                        xhr.open('GET', url, true);
-                        xhr.responseType = 'blob';
-                        xhr.onload = function(e) {
-                          if (this.status == 200) {
-                            var myBlob = this.response;
-                            // myBlob is now the blob that the object URL pointed to.
-                            // var blobreader = new FileReader();
-                            // blobreader.onload = function() {
-                            //     alert(blobreader.result);
-                            // }
-                            // blobreader.readAsText(myBlob);
-                            alert("made it here");
-                            var fd = new FormData();
+                        // var xhr = $.ajax({
+                        //     url: url
+                        //     type: 'GET',
+                        //     dataType: "binary",
+                        //     processData: false,
+                        //     contentType: false,
+                        //     responseType: 'blob',
+                        //     success: function(result){
+                        //       var myBlob = xhr.response;
+                        //       var fd = new FormData();
+                        //
+                        //       fd.append('fname','mycontacts');
+                        //       fd.append('data',myBlob);
+                        //       posttoserver(fd);
+                        //     }
+                        // });
 
-                            fd.append('fname','mycontacts');
-                            fd.append('data',myBlob)
-//                            alert("fd: "+JSON.stringify(fd));
-                            var request = $.ajax({
-                                type: 'POST',
-                                url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
-                                data: fd,
-                                processData: false,
-                                contentType: false
-                            });
-                            request.success(function( msg ) {
-//                               alert("done: "+JSON.stringify(msg));
 
-                               var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
-                               ref.addEventListener('loadstart', function(event) { alert(event.url); });
-                               ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
+                        //
+                        // function posttoserver(fd){
+                        //
+                        //   var request = $.ajax({
+                        //       type: 'POST',
+                        //       url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
+                        //       data: fd,
+                        //       processData: false,
+                        //       contentType: false
+                        //   });
+                        //   request.success(function( msg ) {
+                        //     alert("done: "+JSON.stringify(msg));
+                        //     try{
+                        //      var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
+                        //     }
+                        //     catch(err){
+                        //      alert("error: "+err);
+                        //     }
+                        //     ref.addEventListener('loadstart', function(event) { alert(event.url); });
+                        //     ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
+                        //   });
+                        //
+                        //   request.fail(function( jqXHR, textStatus ) {
+                        //     alert( "Request failed: " + JSON.stringify(jqXHR));
+                        //   });
+                        // }
 
-                            });
 
-                            request.fail(function( jqXHR, textStatus ) {
-                                alert( "Request failed: " + JSON.stringify(jqXHR));
-                            });
 
-                          }
-                        };
-                        xhr.send();
 
 
 
                     };
 
-
                     // Handle direct calls like window.open("url","_blank")
                     window.open = function(url,target,options) {
-//                        alert("made it here1 url:"+url+" target:"+target+" options:"+options);
-                        alert("made it here 1st");
-                        if ( target == "_blank" ) systemOpen(url,options);
-                        else windowOpen(url,target,options);
+                        alert("made it here 1st url:"+url+" target:"+target+" options:"+options);
+                       // alert("made it here 1st");
+                        //if ( target == "_blank" )
+						systemOpen(url,options);
+                        //else windowOpen(url,target,options);
                     };
 
                     // Handle html links like <a href="url" target="_blank">
