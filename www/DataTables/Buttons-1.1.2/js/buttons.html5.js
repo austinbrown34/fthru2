@@ -876,7 +876,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 				}
 				blobreader.readAsText(blob);
 
-				_saveAs( blob, _filename( config ) );
+				// _saveAs( blob, _filename( config ) );
 			} );
 		}
 	},
