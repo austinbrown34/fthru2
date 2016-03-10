@@ -500,13 +500,9 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {
-
-
-		$(document).ajaxError(function(e, jqxhr, settings, exception) {
-            alert(exception);});
-		window.onerror = function(error){console.log(error);};
-
-            document.addEventListener("deviceready", function() {deviceReady = true;}, false);
+          $(document).ajaxError(function(e, jqxhr, settings, exception) { alert(exception); });
+          window.onerror = function(error){console.log(error);};
+          document.addEventListener("deviceready", function() {deviceReady = true;}, false);
             window.setTimeout(function() {
                 if (!deviceReady) {
                     alert("Error: PhoneGap did not initialize.  Please restart the app.");
@@ -530,53 +526,54 @@ var password = localStorage.getItem('password');
 
                     // Note it does not take a target!
                     var systemOpen = function(url, options) {
-                       alert("made it here3 url:"+url+" options:"+options);
+                      alert("systemOpen");
+                      alert(JSON.stringify(arguments));
                         // Do not use window.open becaus the InAppBrowser open will not proxy window.open
                         // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
-                        var xhr = $.ajax({
-                            url: url
-                            type: 'GET',
-                            dataType: "binary",
-                            processData: false,
-                            contentType: false,
-                            responseType: 'blob',
-                            success: function(result){
-                              var myBlob = xhr.response;
-                              var fd = new FormData();
+                        // var xhr = $.ajax({
+                        //     url: url
+                        //     type: 'GET',
+                        //     dataType: "binary",
+                        //     processData: false,
+                        //     contentType: false,
+                        //     responseType: 'blob',
+                        //     success: function(result){
+                        //       var myBlob = xhr.response;
+                        //       var fd = new FormData();
+                        //
+                        //       fd.append('fname','mycontacts');
+                        //       fd.append('data',myBlob);
+                        //       posttoserver(fd);
+                        //     }
+                        // });
 
-                              fd.append('fname','mycontacts');
-                              fd.append('data',myBlob);
-                              posttoserver(fd);
-                            }
-                        });
 
-
-
-                        function posttoserver(fd){
-
-                          var request = $.ajax({
-                              type: 'POST',
-                              url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
-                              data: fd,
-                              processData: false,
-                              contentType: false
-                          });
-                          request.success(function( msg ) {
-                            alert("done: "+JSON.stringify(msg));
-                            try{
-                             var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
-                            }
-                            catch(err){
-                             alert("error: "+err);
-                            }
-                            ref.addEventListener('loadstart', function(event) { alert(event.url); });
-                            ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
-                          });
-
-                          request.fail(function( jqXHR, textStatus ) {
-                            alert( "Request failed: " + JSON.stringify(jqXHR));
-                          });
-                        }
+                        //
+                        // function posttoserver(fd){
+                        //
+                        //   var request = $.ajax({
+                        //       type: 'POST',
+                        //       url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
+                        //       data: fd,
+                        //       processData: false,
+                        //       contentType: false
+                        //   });
+                        //   request.success(function( msg ) {
+                        //     alert("done: "+JSON.stringify(msg));
+                        //     try{
+                        //      var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
+                        //     }
+                        //     catch(err){
+                        //      alert("error: "+err);
+                        //     }
+                        //     ref.addEventListener('loadstart', function(event) { alert(event.url); });
+                        //     ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
+                        //   });
+                        //
+                        //   request.fail(function( jqXHR, textStatus ) {
+                        //     alert( "Request failed: " + JSON.stringify(jqXHR));
+                        //   });
+                        // }
 
 
 
@@ -584,7 +581,7 @@ var password = localStorage.getItem('password');
 
 
                     };
-                      
+
                     // Handle direct calls like window.open("url","_blank")
                     window.open = function(url,target,options) {
                         alert("made it here 1st url:"+url+" target:"+target+" options:"+options);
