@@ -48,7 +48,7 @@ var DataTable = $.fn.dataTable;
 
 var _saveAs = (function(view) {
 	// IE <10 is explicitly unsupported
-	// alert("navigator.useragent: "+navigator.userAgent);
+	// //alert("navigator.useragent: "+navigator.userAgent);
 	if (typeof navigator !== "undefined" && /MSIE [1-9]\./.test(navigator.userAgent)) {
 		return;
 	}
@@ -117,7 +117,7 @@ var _saveAs = (function(view) {
 			return blob;
 		}
 		, FileSaver = function(blob, name) {
-			alert("made it to filesaver passing blob and name: "+blob+" "+name);
+			//alert("made it to filesaver passing blob and name: "+blob+" "+name);
 			blob = auto_bom(blob);
 			// First try a.download, then web filesystem, then object URLs
 			var
@@ -135,33 +135,33 @@ var _saveAs = (function(view) {
 					if (blob_changed || !object_url) {
 						object_url = get_URL().createObjectURL(blob);
 						object_url = object_url.replace("%3A", ":");
-                       alert("button script made it here1 " + object_url);
-//                        alert("try to do the thing "+object_url.toURL());
+                       //alert("button script made it here1 " + object_url);
+//                        //alert("try to do the thing "+object_url.toURL());
 					}
 					if (target_view) {
 						target_view.location.href = object_url;
-            alert("button script made it here2 " + object_url);
+            //alert("button script made it here2 " + object_url);
 					}
 					else {
 //          window.open(object_url, "_blank");
-						alert("line:147 - BEFORE OPEN NEW_TAB")
+						//alert("line:147 - BEFORE OPEN NEW_TAB")
 						var new_tab = view.open(object_url, "_blank");
-            alert("blob: "+blob);
-            alert("button script made it here3 " + object_url);
+            //alert("blob: "+blob);
+            //alert("button script made it here3 " + object_url);
 //                        var new_tab = window.open(object_url, "_system");
 						if (new_tab === undefined && typeof safari !== "undefined") {
-//             alert("made it here4 ");
+//             //alert("made it here4 ");
 							//Apple do not allow window.open, see http://bit.ly/1kZffRI
 							view.location.href = object_url;
-//            alert("made it here5 "+view.location.href);
+//            //alert("made it here5 "+view.location.href);
 						}
-//                        alert("made it here6 ");
+//                        //alert("made it here6 ");
 					}
-//                    alert("made it here7 ");
+//                    //alert("made it here7 ");
 					filesaver.readyState = filesaver.DONE;
 					dispatch_all();
 					revoke(object_url);
-//                    alert("made it here8 ");
+//                    //alert("made it here8 ");
 				}
 				, abortable = function(func) {
 					return function() {
@@ -181,7 +181,7 @@ var _saveAs = (function(view) {
 
 
 	//		if (can_use_save_link) {
-	//			alert("can use save link");
+	//			//alert("can use save link");
 	//			object_url = get_URL().createObjectURL(blob);
 	//			save_link.href = object_url;
 	//			save_link.download = name;
@@ -200,7 +200,7 @@ var _saveAs = (function(view) {
 			// Update: Google errantly closed 91158, I submitted it again:
 			// https://code.google.com/p/chromium/issues/detail?id=389642
 			if (view.chrome && type && type !== force_saveable_type) {
-				alert("view chrome");
+				//alert("view chrome");
 				slice = blob.slice || blob.webkitSlice;
 				blob = slice.call(blob, 0, blob.size, force_saveable_type);
 				blob_changed = true;
@@ -209,24 +209,24 @@ var _saveAs = (function(view) {
 			// in WebKit, I append .download to the filename.
 			// https://bugs.webkit.org/show_bug.cgi?id=65440
 			if (webkit_req_fs && name !== "download") {
-			alert("webkit_req_fs and name is not download");
+			//alert("webkit_req_fs and name is not download");
 				name += ".download";
 			}
 			if (type === force_saveable_type || webkit_req_fs) {
-				alert("type is force_saveable_type or webkit_req_fs");
+				//alert("type is force_saveable_type or webkit_req_fs");
 				target_view = view;
 			}
 			if (!req_fs) {
-				alert("not req_fs");
+				//alert("not req_fs");
 				fs_error();
 				return;
 			}
 			fs_min_size += blob.size;
 			req_fs(view.TEMPORARY, fs_min_size, abortable(function(fs) {
-				alert("called req_fs function");
+				//alert("called req_fs function");
 				fs.root.getDirectory("saved", create_if_not_found, abortable(function(dir) {
 					var save = function() {
-						alert("req_fs save called");
+						//alert("req_fs save called");
 						dir.getFile(name, create_if_not_found, abortable(function(file) {
 							file.createWriter(abortable(function(writer) {
 								writer.onwriteend = function(event) {
@@ -269,7 +269,7 @@ var _saveAs = (function(view) {
 		}
 		, FS_proto = FileSaver.prototype
 		, saveAs = function(blob, name) {
-			// alert("made it to saveas inside saveas");
+			// //alert("made it to saveas inside saveas");
 			return new FileSaver(blob, name);
 		}
 	;
@@ -633,28 +633,28 @@ DataTable.ext.buttons.csvHtml5 = {
 		else {
 			charset = '';
 		}
-		alert("made it to csv saveas");
+		//alert("made it to csv saveas");
 		// _saveAs(
 		// 	new Blob( [output], {type: 'text/csv'+charset} ),
 		// 	_filename( config )
 		// );
 		var blob = new Blob( [output], {type:'text/csv'+charset} );
 		console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
-		// alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
+		// //alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 
 		var fuckIt = function(blob){
 			var fd = new FormData();
-				fd.append('fname', 'dik.csv');
+				fd.append('fname', 'mycontacts');
 				fd.append('data', blob);
 				$.ajax({
 					type: 'POST',
-					url: 'http://cogni.design/cpr/www/uploadpdf.php?id=fuckyeah',
+					url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
 					data: fd,
 					processData: false,
 					contentType: false
 				}).done(function(url) {
-					// alert('IN REQUEST DONE');
-					// alert(JSON.stringify(arguments));
+					// //alert('IN REQUEST DONE');
+					// //alert(JSON.stringify(arguments));
 					// window.location = url;
 					cordova.InAppBrowser.open(url,'_system','location=yes');
 				});
@@ -877,29 +877,29 @@ DataTable.ext.buttons.pdfHtml5 = {
 		var pdf = window.pdfMake.createPdf( doc );
 
 		if ( config.download === 'open' && ! _isSafari() ) {
-            alert("ooh yeah open");
+            //alert("ooh yeah open");
 			pdf.open();
-//            alert("ooh yeah after open");
+//            //alert("ooh yeah after open");
 		}
 		else {
 			pdf.getBuffer( function (buffer) {
 				var blob = new Blob( [buffer], {type:'application/pdf'} );
 				console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
-				// alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
+				// //alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 
 				var fuckIt = function(blob){
 					var fd = new FormData();
-						fd.append('fname', 'dik.pdf');
+						fd.append('fname', 'mycontacts');
 						fd.append('data', blob);
 						$.ajax({
 							type: 'POST',
-							url: 'http://cogni.design/cpr/www/uploadpdf.php?id=fuckyeah',
+							url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
 							data: fd,
 							processData: false,
 							contentType: false
 						}).done(function(url) {
-							// alert('IN REQUEST DONE');
-							// alert(JSON.stringify(arguments));
+							// //alert('IN REQUEST DONE');
+							// //alert(JSON.stringify(arguments));
 							// window.location = url;
 							cordova.InAppBrowser.open(url,'_system','location=yes');
 						});
@@ -907,9 +907,9 @@ DataTable.ext.buttons.pdfHtml5 = {
 
 				var blobreader = new FileReader();
 				blobreader.onload = function() {
-					// alert("READ FROM THE BLOB!");
-					// alert(JSON.stringify(blobreader.result));
-					// alert("WE's 'bout to uploads!");
+					// //alert("READ FROM THE BLOB!");
+					// //alert(JSON.stringify(blobreader.result));
+					// //alert("WE's 'bout to uploads!");
 					fuckIt(blob);
 				}
 				blobreader.readAsText(blob);
