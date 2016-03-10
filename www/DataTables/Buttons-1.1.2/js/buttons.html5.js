@@ -638,7 +638,7 @@ DataTable.ext.buttons.csvHtml5 = {
 		// 	new Blob( [output], {type: 'text/csv'+charset} ),
 		// 	_filename( config )
 		// );
-		var blob = new Blob( [output], {type:"text/csv'+charset"} );
+		var blob = new Blob( [output], {type:'text/csv'+charset} );
 		console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 		// alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 
