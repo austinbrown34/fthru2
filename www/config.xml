@@ -26,6 +26,7 @@
     <access origin="*" /> <!-- Required for iOS9 -->
 <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <allow-navigation href="*" />
+	<allow-navigation href="blob:*" />
     <allow-intent href="*" />
 
 
