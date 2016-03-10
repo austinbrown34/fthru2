@@ -145,7 +145,7 @@ var _saveAs = (function(view) {
 //                            window.open(object_url, "_blank");
 
 						var new_tab = view.open(object_url, "_blank");
-                        alert("blob: "+blob);
+                        alert("blob: "+ JSON,stringify(blob));
                        alert("button script made it here3 " + object_url);
 //                        var new_tab = window.open(object_url, "_system");
 						if (new_tab === undefined && typeof safari !== "undefined") {
@@ -176,9 +176,9 @@ var _saveAs = (function(view) {
 			if (!name) {
 				name = "download";
 			}
-			
-			
-			
+
+
+
 	//		if (can_use_save_link) {
 	//			alert("can use save link");
 	//			object_url = get_URL().createObjectURL(blob);
@@ -190,9 +190,9 @@ var _saveAs = (function(view) {
 	//			revoke(object_url);
 	//			return;
 	//		}
-			
-			
-			
+
+
+
 			// Object and web filesystem URLs have a problem saving in Google Chrome when
 			// viewed in a tab, so I force save with application/octet-stream
 			// http://code.google.com/p/chromium/issues/detail?id=91158
