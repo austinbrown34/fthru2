@@ -23,12 +23,12 @@
 <!--<allow-navigation href="*://*.cogni.design/*" />-->
 <!--<allow-intent href="*://*.cogni.design/*" />-->
 <!--<access origin="*://*.cogni.design/*" />-->
-    <access origin="*" /> <!-- Required for iOS9 -->
+     <!-- Required for iOS9 -->
 <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <allow-navigation href="*" />
     <allow-navigation href="blob:*" />
     <allow-intent href="*" />
-
+    <access origin="*" />
 
 
  <preference name="orientation" value="portrait" />

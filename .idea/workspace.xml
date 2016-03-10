@@ -23,22 +23,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="544" column="47" selection-start="19232" selection-end="19232" vertical-scroll-proportion="0.2981595" vertical-offset="3888" max-vertical-offset="7684">
+            <state line="11" column="73" selection-start="824" selection-end="824" vertical-scroll-proportion="-3.5961537" vertical-offset="0" max-vertical-offset="7888">
               <folding>
+                <element signature="tag#head#1;tag#html#0" expanded="true" />
                 <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-                <element signature="e#17076#17108#0" expanded="true" />
-                <element signature="e#19414#21352#0" expanded="true" />
-                <element signature="e#20301#20612#0" expanded="true" />
-                <element signature="e#20675#21105#0" expanded="true" />
-                <element signature="e#21180#21295#0" expanded="true" />
-                <element signature="e#21446#21534#0" expanded="true" />
-                <element signature="e#21674#21995#0" expanded="true" />
-                <element signature="e#22628#25325#0" expanded="true" />
-                <element signature="e#22662#22816#0" expanded="true" />
-                <element signature="e#24619#25236#0" expanded="true" />
+                <element signature="tag#script#13;tag#head#1;tag#html#0" expanded="true" />
+                <element signature="e#17009#30662#0" expanded="true" />
+                <element signature="e#17082#17114#0" expanded="true" />
+                <element signature="e#17311#25416#0" expanded="true" />
+                <element signature="e#18444#21420#0" expanded="true" />
+                <element signature="e#19420#21358#0" expanded="true" />
+                <element signature="e#20307#20618#0" expanded="true" />
+                <element signature="e#20681#21111#0" expanded="true" />
+                <element signature="e#21186#21301#0" expanded="true" />
+                <element signature="e#21452#21540#0" expanded="true" />
+                <element signature="e#21680#22001#0" expanded="true" />
+                <element signature="e#22634#25331#0" expanded="true" />
+                <element signature="e#22668#22822#0" expanded="true" />
+                <element signature="e#24625#25242#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,10 +94,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="38" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
+            <state line="30" column="25" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.5022727" vertical-offset="0" max-vertical-offset="1768">
               <folding />
             </state>
           </provider>
@@ -135,8 +140,8 @@
         <option value="$PROJECT_DIR$/www/DataTables/pdfmake-0.1.18/build/pdfmake.js" />
         <option value="$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js" />
         <option value="$PROJECT_DIR$/../fthruphp/server_processing.php" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
       </list>
     </option>
   </component>
@@ -402,17 +407,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="64" selection-start="1967" selection-end="1967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="49351">
           <folding>
+            <element signature="tag#head#1;tag#html#0" expanded="true" />
             <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-            <element signature="e#17076#17108#0" expanded="true" />
-            <element signature="e#19414#21352#0" expanded="true" />
-            <element signature="e#20301#20612#0" expanded="true" />
-            <element signature="e#20675#21105#0" expanded="true" />
-            <element signature="e#21180#21295#0" expanded="true" />
-            <element signature="e#21446#21534#0" expanded="true" />
-            <element signature="e#21674#21995#0" expanded="true" />
-            <element signature="e#22628#25325#0" expanded="true" />
-            <element signature="e#22662#22816#0" expanded="true" />
-            <element signature="e#24619#25236#0" expanded="true" />
+            <element signature="tag#script#13;tag#head#1;tag#html#0" expanded="true" />
+            <element signature="e#17009#30662#0" expanded="true" />
+            <element signature="e#17082#17114#0" expanded="true" />
+            <element signature="e#17311#25416#0" expanded="true" />
+            <element signature="e#18444#21420#0" expanded="true" />
+            <element signature="e#19420#21358#0" expanded="true" />
+            <element signature="e#20307#20618#0" expanded="true" />
+            <element signature="e#20681#21111#0" expanded="true" />
+            <element signature="e#21186#21301#0" expanded="true" />
+            <element signature="e#21452#21540#0" expanded="true" />
+            <element signature="e#21680#22001#0" expanded="true" />
+            <element signature="e#22634#25331#0" expanded="true" />
+            <element signature="e#22668#22822#0" expanded="true" />
+            <element signature="e#24625#25242#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -477,17 +487,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="46" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="48926">
           <folding>
+            <element signature="tag#head#1;tag#html#0" expanded="true" />
             <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-            <element signature="e#17076#17108#0" expanded="true" />
-            <element signature="e#19414#21352#0" expanded="true" />
-            <element signature="e#20301#20612#0" expanded="true" />
-            <element signature="e#20675#21105#0" expanded="true" />
-            <element signature="e#21180#21295#0" expanded="true" />
-            <element signature="e#21446#21534#0" expanded="true" />
-            <element signature="e#21674#21995#0" expanded="true" />
-            <element signature="e#22628#25325#0" expanded="true" />
-            <element signature="e#22662#22816#0" expanded="true" />
-            <element signature="e#24619#25236#0" expanded="true" />
+            <element signature="tag#script#13;tag#head#1;tag#html#0" expanded="true" />
+            <element signature="e#17009#30662#0" expanded="true" />
+            <element signature="e#17082#17114#0" expanded="true" />
+            <element signature="e#17311#25416#0" expanded="true" />
+            <element signature="e#18444#21420#0" expanded="true" />
+            <element signature="e#19420#21358#0" expanded="true" />
+            <element signature="e#20307#20618#0" expanded="true" />
+            <element signature="e#20681#21111#0" expanded="true" />
+            <element signature="e#21186#21301#0" expanded="true" />
+            <element signature="e#21452#21540#0" expanded="true" />
+            <element signature="e#21680#22001#0" expanded="true" />
+            <element signature="e#22634#25331#0" expanded="true" />
+            <element signature="e#22668#22822#0" expanded="true" />
+            <element signature="e#24625#25242#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -531,17 +546,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="12" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="48926">
           <folding>
+            <element signature="tag#head#1;tag#html#0" expanded="true" />
             <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-            <element signature="e#17076#17108#0" expanded="true" />
-            <element signature="e#19414#21352#0" expanded="true" />
-            <element signature="e#20301#20612#0" expanded="true" />
-            <element signature="e#20675#21105#0" expanded="true" />
-            <element signature="e#21180#21295#0" expanded="true" />
-            <element signature="e#21446#21534#0" expanded="true" />
-            <element signature="e#21674#21995#0" expanded="true" />
-            <element signature="e#22628#25325#0" expanded="true" />
-            <element signature="e#22662#22816#0" expanded="true" />
-            <element signature="e#24619#25236#0" expanded="true" />
+            <element signature="tag#script#13;tag#head#1;tag#html#0" expanded="true" />
+            <element signature="e#17009#30662#0" expanded="true" />
+            <element signature="e#17082#17114#0" expanded="true" />
+            <element signature="e#17311#25416#0" expanded="true" />
+            <element signature="e#18444#21420#0" expanded="true" />
+            <element signature="e#19420#21358#0" expanded="true" />
+            <element signature="e#20307#20618#0" expanded="true" />
+            <element signature="e#20681#21111#0" expanded="true" />
+            <element signature="e#21186#21301#0" expanded="true" />
+            <element signature="e#21452#21540#0" expanded="true" />
+            <element signature="e#21680#22001#0" expanded="true" />
+            <element signature="e#22634#25331#0" expanded="true" />
+            <element signature="e#22668#22822#0" expanded="true" />
+            <element signature="e#24625#25242#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -654,29 +674,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.xml">
+    <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="38" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
-          <folding />
+        <state line="11" column="73" selection-start="824" selection-end="824" vertical-scroll-proportion="-3.5961537" vertical-offset="0" max-vertical-offset="7888">
+          <folding>
+            <element signature="tag#head#1;tag#html#0" expanded="true" />
+            <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
+            <element signature="tag#script#13;tag#head#1;tag#html#0" expanded="true" />
+            <element signature="e#17009#30662#0" expanded="true" />
+            <element signature="e#17082#17114#0" expanded="true" />
+            <element signature="e#17311#25416#0" expanded="true" />
+            <element signature="e#18444#21420#0" expanded="true" />
+            <element signature="e#19420#21358#0" expanded="true" />
+            <element signature="e#20307#20618#0" expanded="true" />
+            <element signature="e#20681#21111#0" expanded="true" />
+            <element signature="e#21186#21301#0" expanded="true" />
+            <element signature="e#21452#21540#0" expanded="true" />
+            <element signature="e#21680#22001#0" expanded="true" />
+            <element signature="e#22634#25331#0" expanded="true" />
+            <element signature="e#22668#22822#0" expanded="true" />
+            <element signature="e#24625#25242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="544" column="47" selection-start="19232" selection-end="19232" vertical-scroll-proportion="0.2981595" vertical-offset="3888" max-vertical-offset="7684">
-          <folding>
-            <element signature="tag#style#0;tag#head#1;tag#html#0" expanded="true" />
-            <element signature="e#17076#17108#0" expanded="true" />
-            <element signature="e#19414#21352#0" expanded="true" />
-            <element signature="e#20301#20612#0" expanded="true" />
-            <element signature="e#20675#21105#0" expanded="true" />
-            <element signature="e#21180#21295#0" expanded="true" />
-            <element signature="e#21446#21534#0" expanded="true" />
-            <element signature="e#21674#21995#0" expanded="true" />
-            <element signature="e#22628#25325#0" expanded="true" />
-            <element signature="e#22662#22816#0" expanded="true" />
-            <element signature="e#24619#25236#0" expanded="true" />
-          </folding>
+        <state line="30" column="25" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.5022727" vertical-offset="0" max-vertical-offset="1768">
+          <folding />
         </state>
       </provider>
     </entry>
