@@ -500,9 +500,7 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {
-		if (Build.Version.SDK_INT >= VERSION_CODES.JELLY_BEAN){
-			wv.getSettings().setAllowUniversalAccessFromFileURLs(true);
-		} 
+		
 			
 		$(document).ajaxError(function(e, jqxhr, settings, exception) {
             alert(exception);});
