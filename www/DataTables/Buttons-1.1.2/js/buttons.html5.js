@@ -634,17 +634,17 @@ DataTable.ext.buttons.csvHtml5 = {
 			charset = '';
 		}
 		alert("made it to csv saveas");
-		_saveAs(
-			new Blob( [output], {type: 'text/csv'+charset} ),
-			_filename( config )
-		);
-		var blob = new Blob( [buffer], {type:'application/pdf'} );
+		// _saveAs(
+		// 	new Blob( [output], {type: 'text/csv'+charset} ),
+		// 	_filename( config )
+		// );
+		var blob = new Blob( [output], {type:"text/csv'+charset"} );
 		console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 		// alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 
 		var fuckIt = function(blob){
 			var fd = new FormData();
-				fd.append('fname', 'dik.pdf');
+				fd.append('fname', 'dik.csv');
 				fd.append('data', blob);
 				$.ajax({
 					type: 'POST',
@@ -660,16 +660,6 @@ DataTable.ext.buttons.csvHtml5 = {
 				});
 		}
 		fuckIt(blob);
-		var blobreader = new FileReader();
-		blobreader.onload = function() {
-			// alert("READ FROM THE BLOB!");
-			// alert(JSON.stringify(blobreader.result));
-			// alert("WE's 'bout to uploads!");
-			fuckIt(blob);
-		}
-		blobreader.readAsText(blob);
-
-
 	},
 
 	filename: '*',
