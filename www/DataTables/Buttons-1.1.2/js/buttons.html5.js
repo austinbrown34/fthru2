@@ -140,19 +140,20 @@ var _saveAs = (function(view) {
 					}
 					if (target_view) {
 						target_view.location.href = object_url;
-                       alert("button script made it here2 " + object_url);
-					} else {
-//                            window.open(object_url, "_blank");
-
+            alert("button script made it here2 " + object_url);
+					}
+					else {
+//          window.open(object_url, "_blank");
+						alert("line:147 - BEFORE OPEN NEW_TAB")
 						var new_tab = view.open(object_url, "_blank");
-                        alert("blob: "+blob);
-                       alert("button script made it here3 " + object_url);
+            alert("blob: "+blob);
+            alert("button script made it here3 " + object_url);
 //                        var new_tab = window.open(object_url, "_system");
 						if (new_tab === undefined && typeof safari !== "undefined") {
-//                            alert("made it here4 ");
+//             alert("made it here4 ");
 							//Apple do not allow window.open, see http://bit.ly/1kZffRI
 							view.location.href = object_url;
-//                            alert("made it here5 "+view.location.href);
+//            alert("made it here5 "+view.location.href);
 						}
 //                        alert("made it here6 ");
 					}
@@ -176,9 +177,9 @@ var _saveAs = (function(view) {
 			if (!name) {
 				name = "download";
 			}
-			
-			
-			
+
+
+
 	//		if (can_use_save_link) {
 	//			alert("can use save link");
 	//			object_url = get_URL().createObjectURL(blob);
@@ -190,9 +191,9 @@ var _saveAs = (function(view) {
 	//			revoke(object_url);
 	//			return;
 	//		}
-			
-			
-			
+
+
+
 			// Object and web filesystem URLs have a problem saving in Google Chrome when
 			// viewed in a tab, so I force save with application/octet-stream
 			// http://code.google.com/p/chromium/issues/detail?id=91158
