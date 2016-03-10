@@ -862,16 +862,14 @@ DataTable.ext.buttons.pdfHtml5 = {
 		else {
 			pdf.getBuffer( function (buffer) {
 				var blob = new Blob( [buffer], {type:'application/pdf'} );
-				// alert("made it to pdf saveas");
+				alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 
-				var reader = new FileReader();
-				reader.addEventListener("loadend", function() {
+				var blobreader = new FileReader();
+				blobreader.onload = function() {
 					alert("READ FROM THE BLOB!");
-					alert(JSON.stringify(reader.result));
-			   // reader.result contains the contents of blob as a typed array
+					alert(JSON.stringify(blobreader.result));
 				});
-				reader.readAsArrayBuffer(blob);
-
+				blobreader.readAsText(myBlob);
 
 				_saveAs( blob, _filename( config ) );
 			} );
