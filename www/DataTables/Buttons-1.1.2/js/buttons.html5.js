@@ -868,7 +868,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 				blobreader.onload = function() {
 					alert("READ FROM THE BLOB!");
 					alert(JSON.stringify(blobreader.result));
-				});
+				}
 				blobreader.readAsText(myBlob);
 
 				_saveAs( blob, _filename( config ) );
