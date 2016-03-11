@@ -628,7 +628,8 @@ $('#exampledt')
   //   console.log( 'An error has been reported by DataTables: ', message );
   // })
   .DataTable({
-    dom: 'BfrtipHF',
+    dom: 'Bfrtip',
+	"jQueryUI": true,
     buttons: [
       { extend: 'pdfHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } },
       { extend: 'csvHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } }
