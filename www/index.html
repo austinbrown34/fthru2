@@ -22,7 +22,7 @@
 		<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
 		<link rel="stylesheet" type="text/css" href="DataTables/Buttons-1.1.2/css/buttons.dataTables.min.css"/>
 
-		
+
 		<link rel="stylesheet" type="text/css" href="DataTables/DataTables-1.10.11/css/dataTables.jqueryui.min.css"/>
 		<link rel="stylesheet" type="text/css" href="DataTables/smooth.css"/>
 
@@ -40,6 +40,8 @@
         position: absolute;
         right: 0px;
         zoom: 1;
+        height: 100%;
+overflow-y: auto;
     }
 button.dt-button, div.dt-button, a.dt-button {
 float: left;
@@ -713,9 +715,9 @@ $('#exampledt2')
       },
       {
         "render": function (data,type,row){
-       
+
             return data;
-         
+
         },
         "targets": 2
       },
@@ -767,7 +769,7 @@ $('#exampledt2')
     }
   });
 
-  
+
   $('#exampledt')
   // .on('error.dt', function ( e, settings, techNote, message) {
   //   console.log( 'An error has been reported by DataTables: ', message );
@@ -836,7 +838,7 @@ $('#exampledt2')
       searchPlaceholder: "Search..."
     }
   });
-  
+
 
         $("input.phone").mask("(999) 999-9999");
                 }
@@ -2185,7 +2187,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                                 <th style="width:0% !important;">Price</th>
 								  <th style="width:0% !important;">Status</th>
                                 <th style="width:0% !important;">ID</th>
-                            
+
 
                             </tr>
                             </thead>
@@ -2199,7 +2201,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 																  <th style="width:0% !important;">Status</th>
                                 <th style="width:0% !important;">ID</th>
 
-                            
+
                             </tr>
                             </tfoot>
 
