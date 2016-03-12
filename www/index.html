@@ -728,11 +728,11 @@ $('#exampledt2')
                     //  thisrow = thischunk.replace(/[^0-9]/g, '');
                     //  alert(thisrow);
                       thisrow = thischunk;
-                      alert(thisrow);
+                     // alert(thisrow);
                       try{
-                        alert("time to delete");
+                       // alert("time to delete");
                         delete doc.content[1].table.body[i][0].text;
-                        alert("delete worked... now trying the image shiz");
+                        // alert("delete worked... now trying the image shiz");
                         doc.content[1].table.body[i][0].image = my64Images[thisrow];
                         alert(my64Images[thisrow]);
                       }
@@ -767,6 +767,7 @@ $('#exampledt2')
     
     convertFunction(imageUrl, function(base64Img){
 	my64Images[myrow] = base64Img;
+	alert(my64Images[myrow]);
         
     });
 //            alert(my64Images[myrow]);
