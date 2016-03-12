@@ -681,7 +681,7 @@ $('#exampledt2')
     "columnDefs": [
       {
         "render": function (data,type,row){
-                myrow = data[6];
+                myrow = row[6];
 //            myImages[row] = new Image();
 //            myImages[row].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/myglyph.png';
 //            myImages[row].width = '200px';
@@ -700,7 +700,7 @@ $('#exampledt2')
       {
         "render": function (data,type,row){
        
-            return data+" "+data[3]+" "+data[4]+" | <br>$"+data[5];
+            return data+" "+row[3]+" "+row[4]+" | <br>$"+row[5];
          
         },
         "targets": 2
