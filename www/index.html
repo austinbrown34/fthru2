@@ -690,11 +690,11 @@ $('#exampledt2')
                      thischunk = thischunk.split("<span style='display:none;'>");
                      thischunk = thischunk[1].split("</span>");
                      thischuck = thischunk[0];
-                     thisrow = thischunk;
-                     alert(thisrow);
+                     thisrow = thischunk.replace(/\D/g,'');
+                    //  alert(thisrow);
                       // thisrow = '138';
-                      // delete doc.content[1].table.body[i][0].text;
-                      // doc.content[1].table.body[i][0].image = my64Images[thisrow];
+                      delete doc.content[1].table.body[i][0].text;
+                      doc.content[1].table.body[i][0].image = my64Images[thisrow];
                   }
               }
           },
