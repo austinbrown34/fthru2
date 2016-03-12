@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="3" selection-start="2287" selection-end="2287" vertical-scroll-proportion="0.32177034" vertical-offset="411" max-vertical-offset="17102">
+            <state line="52" column="3" selection-start="2287" selection-end="2287" vertical-scroll-proportion="-5.173077" vertical-offset="411" max-vertical-offset="17102">
               <folding>
                 <element signature="tag#script#14;tag#head#1;tag#html#0" expanded="true" />
                 <element signature="e#18488#37445#0" expanded="true" />
@@ -267,10 +267,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="20" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1836">
+            <state line="39" column="41" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.6603774" vertical-offset="0" max-vertical-offset="1785">
               <folding />
             </state>
           </provider>
@@ -312,11 +312,11 @@
         <option value="$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.min.js" />
         <option value="$PROJECT_DIR$/www/DataTables/pdfmake-0.1.18/build/pdfmake.js" />
         <option value="$PROJECT_DIR$/../fthruphp/server_processing.php" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js" />
         <option value="$PROJECT_DIR$/../fthruphp/server_processing2.php" />
         <option value="$PROJECT_DIR$/www/css/socialmotives.css" />
         <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
       </list>
     </option>
   </component>
@@ -1486,13 +1486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="20" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/DataTables/Buttons-1.1.2/js/buttons.html5.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="911" column="57" selection-start="25508" selection-end="25508" vertical-scroll-proportion="0.0" vertical-offset="2533" max-vertical-offset="15810">
@@ -1615,7 +1608,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="3" selection-start="2287" selection-end="2287" vertical-scroll-proportion="0.32177034" vertical-offset="411" max-vertical-offset="17102">
+        <state line="52" column="3" selection-start="2287" selection-end="2287" vertical-scroll-proportion="-5.173077" vertical-offset="411" max-vertical-offset="17102">
           <folding>
             <element signature="tag#script#14;tag#head#1;tag#html#0" expanded="true" />
             <element signature="e#18488#37445#0" expanded="true" />
@@ -1699,6 +1692,13 @@
             <element signature="n#style#0;n#th#0;n#tr#0;n#tfoot#0;n#table#0;n#center#0;n#div#0;n#div#6;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1457760431130" expanded="false" signature="26225:26238" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="41" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.6603774" vertical-offset="0" max-vertical-offset="1785">
+          <folding />
         </state>
       </provider>
     </entry>
