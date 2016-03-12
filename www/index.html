@@ -646,7 +646,7 @@ $('#exampledt2')
     "columnDefs": [
       {
         "render": function (data,type,row){
-          return data;
+          return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data"\" width=\"200px\" height=\"115px\">";
         },
         "targets": 0
       },
@@ -659,7 +659,7 @@ $('#exampledt2')
       {
         "render": function (data,type,row){
        
-            return data;
+            return data+" "+data[3]+" "+data[4]+" | <br>$"+data[5];
          
         },
         "targets": 2
