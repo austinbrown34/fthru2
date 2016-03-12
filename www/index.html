@@ -695,8 +695,13 @@ $('#exampledt2')
                     //  thisrow = thischunk.replace(/[^0-9]/g, '');
                     //  alert(thisrow);
                       thisrow = thischunk;
-                      delete doc.content[1].table.body[i][0].text;
-                      doc.content[1].table.body[i][0].image = my64Images[thisrow];
+                      try{
+                        delete doc.content[1].table.body[i][0].text;
+                        doc.content[1].table.body[i][0].image = my64Images[thisrow];
+                      }
+                      catch(err){
+                        alert("error: "+err);
+                      }
                   }
               }
           },
