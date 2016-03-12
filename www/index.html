@@ -548,7 +548,22 @@ var password = localStorage.getItem('password');
                   return canvas.toDataURL("image/png");
               }
 
-
+function convertImgToDataURLviaCanvas(url, callback, outputFormat){
+    var img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = function(){
+        var canvas = document.createElement('CANVAS');
+        var ctx = canvas.getContext('2d');
+        var dataURL;
+        canvas.height = this.height;
+        canvas.width = this.width;
+        ctx.drawImage(this, 0, 0);
+        dataURL = canvas.toDataURL(outputFormat);
+        callback(dataURL);
+        canvas = null;
+    };
+    img.src = url;
+}
 if(navigator.userAgent.match(/Android/i)){
   // alert("android");
   $('#appheader').css("zoom",".74");
@@ -735,6 +750,7 @@ $('#exampledt2')
             myImages[myrow].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data;
             myImages[myrow].width = '200px';
             myImages[myrow].height = '115px';
+            alert(myImages[myrow]);
             my64Images[myrow] = getBase64Image(myImages[myrow]);
             alert(my64Images[myrow]);
           return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+myrow+"</span>";
