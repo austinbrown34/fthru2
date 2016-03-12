@@ -626,9 +626,19 @@ var password = localStorage.getItem('password');
 //                         event.preventDefault();
 //                         systemOpen($(this).attr('href'));
 //                     });
+
+                    function getBase64Image(img) {
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0);
+                        return canvas.toDataURL("image/png");
+                    }
+
 $.fn.dataTable.ext.errMode = 'none';
-
-
+var myImages;
+var my64Images;
 
 $('#exampledt2')
   // .on('error.dt', function ( e, settings, techNote, message) {
@@ -638,15 +648,44 @@ $('#exampledt2')
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
-      { extend: 'pdfHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } },
-      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } }
+      { extend: 'pdfHtml5',
+          customize: function(doc) {
+
+              //ensure doc.images exists
+              doc.images = doc.images || {};
+
+              //build dictionary
+//              doc.images['myGlyph'] = getBase64Image(myGlyph);
+              //..add more images[xyz]=anotherDataUrl here
+
+              //when the content is <img src="myglyph.png">
+              //remove the text node and insert an image node
+              for (var i=1;i<doc.content[1].table.body.length;i++) {
+                  if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
+                      thisrow = $('this span').text();
+                      delete doc.content[1].table.body[i][0].text;
+                      doc.content[1].table.body[i][0].image = my64Images[thisrow];
+                  }
+              }
+          },
+
+
+
+
+          exportOptions: { stripHtml: false, columns: [ 0, 1, 2 ] } },
+      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 1, 2 ] } }
     ],
     "bLengthChange": false,
     "processing": true,
     "columnDefs": [
       {
         "render": function (data,type,row){
-          return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data+"\" width=\"200px\" height=\"115px\">";
+            myImages[row] = new Image();
+            myImages[row].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/myglyph.png';
+            myImages[row].width = '200px';
+            myImages[row].height = '115px';
+            my64Images[row] = getBase64Image(myImages[row]);
+          return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+row+"</span>";
         },
         "targets": 0
       },
@@ -705,8 +744,8 @@ $('#exampledt2')
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
-      { extend: 'pdfHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } },
-      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } }
+      { extend: 'pdfHtml5', exportOptions: { columns: [ 0, 1, 2 ] } },
+      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 1, 2 ] } }
     ],
     "bLengthChange": false,
     "processing": true,
