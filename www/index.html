@@ -663,7 +663,8 @@ $('#exampledt2')
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
 //                      alert(doc.content[1].table.body[i][0].text);
-                      thisrow = $('this span').text();
+//                      thisrow = $('this span').text();
+                      thisrow = '138';
                       delete doc.content[1].table.body[i][0].text;
                       doc.content[1].table.body[i][0].image = my64Images[thisrow];
                   }
