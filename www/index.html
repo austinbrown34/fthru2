@@ -681,22 +681,31 @@ $.fn.dataTable.ext.errMode = 'none';
 
 
 $('#exampledt2')
-  // .on('error.dt', function ( e, settings, techNote, message) {
-  //   console.log( 'An error has been reported by DataTables: ', message );
-  // })
   .DataTable({
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
       { extend: 'pdfHtml5',
           customize: function(doc) {
-
-   
+              doc.images = doc.images || {};
+              for (var i=1;i<doc.content[1].table.body.length;i++) {
+                  if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
+                     thischunk = doc.content[1].table.body[i][0].text;
+                     thischunk = thischunk.split("<span style='display:none;'>");
+                     thischunk = thischunk[1].split("</span>");
+                     thischunk = thischunk[0];
+                      thisrow = thischunk;
+                      try{
+                        delete doc.content[1].table.body[i][0].text;
+                        doc.content[1].table.body[i][0].image = my64Images[thisrow];
+                       alert(my64Images[thisrow]);
+                      }
+                      catch(err){
+                        alert("error: "+err);
+                      }
+                  }
+              }
           },
-
-
-
-
           exportOptions: { stripHtml: false, columns: [ 0, 1, 2 ] } },
       { extend: 'csvHtml5', exportOptions: { columns: [ 0, 1, 2 ] } }
     ],
@@ -706,24 +715,8 @@ $('#exampledt2')
       {
         "render": function (data,type,row){
                 myrow = row[6];
-//            myImages[myrow] = new Image();
-//            myImages[myrow].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data;
-//            myImages[myrow].width = '200px';
-//            myImages[myrow].height = '115px';
-////            alert(myImages[myrow]);
-           // my64Images[myrow] = getBase64Image('http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data);
-			
-			// var imageUrl = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data;
-    //var convertFunction = convertImgToDataURLviaCanvas;
-    
-    //convertFunction(imageUrl, function(base64Img){
-	//alert(base64Img);
-	//my64Images[myrow] = base64Img;
-	//alert(my64Images[myrow]);
-        
-  
-//            alert(my64Images[myrow]);
-          return "<img src=\""+data+"\" width=\"200px\" height=\"115px\">";
+	my64Images[myrow] = data;
+          return "<img src=\""+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+myrow+"</span>";
         },
         "targets": 0
       },
@@ -735,25 +728,19 @@ $('#exampledt2')
       },
       {
         "render": function (data,type,row){
-
             return data;
-
         },
         "targets": 2
       },
         {
             "render": function (data,type,row){
-
                 return data;
-
             },
             "targets": 3
         },
         {
             "render": function (data,type,row){
-
                 return "$"+data;
-
             },
             "targets": 4
         },
