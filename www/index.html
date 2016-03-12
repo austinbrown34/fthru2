@@ -628,14 +628,7 @@ var password = localStorage.getItem('password');
 //                         systemOpen($(this).attr('href'));
 //                     });
 
-                    function getBase64Image(img) {
-                        var canvas = document.createElement("canvas");
-                        canvas.width = img.width;
-                        canvas.height = img.height;
-                        var ctx = canvas.getContext("2d");
-                        ctx.drawImage(img, 0, 0);
-                        return canvas.toDataURL("image/png");
-                    }
+
 
 $.fn.dataTable.ext.errMode = 'none';
 
@@ -833,7 +826,14 @@ $('#exampledt2')
 
 
 //            cordova.InAppBrowser.open("http://www.google.com","_system");
-
+            function getBase64Image(img) {
+                var canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0);
+                return canvas.toDataURL("image/png");
+            }
 
         if (id !== null){
 
