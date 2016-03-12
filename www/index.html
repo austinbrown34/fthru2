@@ -539,36 +539,46 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {
-              function getBase64Image(img) {
-                  img.crossOrigin = 'Anonymous';
-                  img.onload = function(){
-                  var canvas = document.createElement("canvas");
-                      var ctx = canvas.getContext('2d');
-                      var dataURL;
-                  canvas.width = img.width;
-                  canvas.height = img.height;
-                  var ctx = canvas.getContext("2d");
-                  ctx.drawImage(img, 0, 0);
-                  return canvas.toDataURL("image/png");
-                  }
-              }
+//              function getBase64Image(img) {
+//                  img.crossOrigin = 'Anonymous';
+//                  img.onload = function(){
+//                  var canvas = document.createElement("canvas");
+//                      var ctx = canvas.getContext('2d');
+//                      var dataURL;
+//                  canvas.width = img.width;
+//                  canvas.height = img.height;
+//                  var ctx = canvas.getContext("2d");
+//                  ctx.drawImage(img, 0, 0);
+//                  return canvas.toDataURL("image/png");
+//                  }
+//              }
 
-function convertImgToDataURLviaCanvas(url, callback, outputFormat){
-    var img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = function(){
-        var canvas = document.createElement('CANVAS');
-        var ctx = canvas.getContext('2d');
-        var dataURL;
-        canvas.height = this.height;
-        canvas.width = this.width;
-        ctx.drawImage(this, 0, 0);
-        dataURL = canvas.toDataURL(outputFormat);
-        callback(dataURL);
-        canvas = null;
-    };
-    img.src = url;
-}
+            function getBase64Image(url) {
+                var data, canvas, ctx;
+                var img = new Image();
+                img.onload = function(){
+                    // Create the canvas element.
+                    canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    // Get '2d' context and draw the image.
+                    ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0);
+                    // Get canvas data URL
+                    try{
+                        data = canvas.toDataURL();
+                        return {image:img, data:data};
+                    }catch(e){
+                        alert(e);
+                    }
+                }
+                // Load image URL.
+                try{
+                    img.src = url;
+                }catch(e){
+                    alert(e);
+                }
+            }
 if(navigator.userAgent.match(/Android/i)){
   // alert("android");
   $('#appheader').css("zoom",".74");
@@ -751,13 +761,13 @@ $('#exampledt2')
       {
         "render": function (data,type,row){
                 myrow = row[6];
-            myImages[myrow] = new Image();
-            myImages[myrow].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data;
-            myImages[myrow].width = '200px';
-            myImages[myrow].height = '115px';
-            alert(myImages[myrow]);
-            my64Images[myrow] = getBase64Image(myImages[myrow]);
-            alert(my64Images[myrow]);
+//            myImages[myrow] = new Image();
+//            myImages[myrow].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data;
+//            myImages[myrow].width = '200px';
+//            myImages[myrow].height = '115px';
+////            alert(myImages[myrow]);
+            my64Images[myrow] = getBase64Image('http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data);
+//            alert(my64Images[myrow]);
           return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+myrow+"</span>";
         },
         "targets": 0
