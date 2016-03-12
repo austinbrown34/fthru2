@@ -697,9 +697,7 @@ $.fn.dataTable.ext.errMode = 'none';
 
 
 $('#exampledt2')
-  // .on('error.dt', function ( e, settings, techNote, message) {
-  //   console.log( 'An error has been reported by DataTables: ', message );
-  // })
+
   .DataTable({
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
@@ -707,32 +705,18 @@ $('#exampledt2')
       { extend: 'pdfHtml5',
           customize: function(doc) {
 
-              //ensure doc.images exists
+
               doc.images = doc.images || {};
 
-              //build dictionary
-//              doc.images['myGlyph'] = getBase64Image(myGlyph);
-              //..add more images[xyz]=anotherDataUrl here
-
-              //when the content is <img src="myglyph.png">
-              //remove the text node and insert an image node
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
-                    //  alert(doc.content[1].table.body[i][0].text);
                      thischunk = doc.content[1].table.body[i][0].text;
                      thischunk = thischunk.split("<span style='display:none;'>");
                      thischunk = thischunk[1].split("</span>");
                      thischunk = thischunk[0];
-                    //  alert(thischunk);
-
-                    //  thisrow = thischunk.replace(/[^0-9]/g, '');
-                    //  alert(thisrow);
                       thisrow = thischunk;
-                     // alert(thisrow);
                       try{
-                       // alert("time to delete");
                         delete doc.content[1].table.body[i][0].text;
-                        // alert("delete worked... now trying the image shiz");
                         doc.content[1].table.body[i][0].image = my64Images[thisrow];
                        alert(my64Images[thisrow]);
                       }
@@ -755,23 +739,9 @@ $('#exampledt2')
       {
         "render": function (data,type,row){
                 myrow = row[6];
-//            myImages[myrow] = new Image();
-//            myImages[myrow].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data;
-//            myImages[myrow].width = '200px';
-//            myImages[myrow].height = '115px';
-////            alert(myImages[myrow]);
-           // my64Images[myrow] = getBase64Image('http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data);
-			
-			// var imageUrl = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data;
-    //var convertFunction = convertImgToDataURLviaCanvas;
-    
-    //convertFunction(imageUrl, function(base64Img){
-	//alert(base64Img);
+
 	my64Images[myrow] = data;
-	//alert(my64Images[myrow]);
-        
-  
-//            alert(my64Images[myrow]);
+
           return "<img src=\""+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+myrow+"</span>";
         },
         "targets": 0
