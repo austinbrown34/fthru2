@@ -684,10 +684,10 @@ $('#exampledt2')
         "render": function (data,type,row){
                 myrow = row[6];
             myImages[myrow] = new Image();
-            myImages[myrow].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/myglyph.png';
+            myImages[myrow].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/'+data;
             myImages[myrow].width = '200px';
             myImages[myrow].height = '115px';
-            my64Images[myrow] = getBase64Image(myImages[row]);
+            my64Images[myrow] = getBase64Image(myImages[myrow]);
           return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+myrow+"</span>";
         },
         "targets": 0
