@@ -662,10 +662,10 @@ $('#exampledt2')
               //remove the text node and insert an image node
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
-                      alert(doc.content[1].table.body[i][0].text);
-//                      thisrow = $('this span').text();
-//                      delete doc.content[1].table.body[i][0].text;
-//                      doc.content[1].table.body[i][0].image = my64Images[thisrow];
+//                      alert(doc.content[1].table.body[i][0].text);
+                      thisrow = $('this span').text();
+                      delete doc.content[1].table.body[i][0].text;
+                      doc.content[1].table.body[i][0].image = my64Images[thisrow];
                   }
               }
           },
@@ -682,11 +682,11 @@ $('#exampledt2')
       {
         "render": function (data,type,row){
                 myrow = row[6];
-//            myImages[row] = new Image();
-//            myImages[row].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/myglyph.png';
-//            myImages[row].width = '200px';
-//            myImages[row].height = '115px';
-//            my64Images[row] = getBase64Image(myImages[row]);
+            myImages[myrow] = new Image();
+            myImages[myrow].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/myglyph.png';
+            myImages[myrow].width = '200px';
+            myImages[myrow].height = '115px';
+            my64Images[myrow] = getBase64Image(myImages[row]);
           return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+myrow+"</span>";
         },
         "targets": 0
@@ -700,14 +700,30 @@ $('#exampledt2')
       {
         "render": function (data,type,row){
        
-            return data+" "+row[3]+" "+row[4]+" | <br>$"+row[5];
+            return data;
          
         },
         "targets": 2
       },
+        {
+            "render": function (data,type,row){
+
+                return data;
+
+            },
+            "targets": 3
+        },
+        {
+            "render": function (data,type,row){
+
+                return "$"+data;
+
+            },
+            "targets": 4
+        },
       {
         "visible": false,
-        "targets": [3,4,5,6]
+        "targets": [5,6]
       }],
     "serverSide":true,
     // "data": '[ [ "Arenie", "(406) 861-3601", "Trucks", "Sticka", "5000", "10000", "", "", "1", "" ], [ "Austin", "(406) 598-7345", "Cars", "Brown", "5000", "15000", "Select Make", "Select Model", "1", "" ], [ "Billy", "(406) 444-4442", "Crossovers,SUVS,Trucks", "Bobby", "50000", "100000", "", "", "1", "" ], [ "Bo", "(333) 333-3333", "Trucks", "Bo", "50000", "100000", "", "", "1", "" ], [ "Carl", "(404) 444-3399", "Specific", "Marx", "50000", "100000", "cadillac", "seville", "1", "" ], [ "George", "(666) 666-6666", "Specific", "Might ", "50000", "100000", "chrysler", "townandcountry", "1", "" ], [ "Georgio", "(666) 666-6666", "Crossovers,SUVS,Trucks,Cars", "Horez", "50000", "100000", "", "", "1", "" ], [ "Howard", "(406) 598-1467", "Crossovers,SUVS,Trucks", "Skidmore", "5000", "10000", "Select Make", "Select Model", "1", "" ], [ "Jjj", "(333) 333-3333", "Crossovers", "Jjj", "50000", "100000", "", "", "1", "" ], [ "Jo", "(555) 555-5555", "Crossovers,SUVS", "Blo", "5000", "10000", "Select Make", "Select Model", "1", "" ] ]',
