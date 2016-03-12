@@ -540,12 +540,17 @@ var password = localStorage.getItem('password');
         }
         $(document).ready(function() {
               function getBase64Image(img) {
+                  img.crossOrigin = 'Anonymous';
+                  img.onload = function(){
                   var canvas = document.createElement("canvas");
+                      var ctx = canvas.getContext('2d');
+                      var dataURL;
                   canvas.width = img.width;
                   canvas.height = img.height;
                   var ctx = canvas.getContext("2d");
                   ctx.drawImage(img, 0, 0);
                   return canvas.toDataURL("image/png");
+                  }
               }
 
 function convertImgToDataURLviaCanvas(url, callback, outputFormat){
