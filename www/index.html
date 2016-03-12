@@ -553,7 +553,7 @@ var password = localStorage.getItem('password');
 //                  }
 //              }
 
-            function getBase64Image(url) {
+            function getBase64Image (url) {
                 var data, canvas, ctx;
                 var img = new Image();
                 img.onload = function(){
@@ -567,6 +567,7 @@ var password = localStorage.getItem('password');
                     // Get canvas data URL
                     try{
                         data = canvas.toDataURL();
+                        alert(data);
                         return {image:img, data:data};
                     }catch(e){
                         alert(e);
