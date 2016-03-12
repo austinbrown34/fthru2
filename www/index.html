@@ -237,7 +237,8 @@ function okMsg(msg, timeout, callback)
     var id= localStorage.getItem('id');
      var userid= localStorage.getItem('id');
 var password = localStorage.getItem('password');
-
+   var myImages;
+   var my64Images;
 	function checkFormInput(field)
 	{
 		// Check for all fields filled
@@ -637,8 +638,7 @@ var password = localStorage.getItem('password');
                     }
 
 $.fn.dataTable.ext.errMode = 'none';
-var myImages;
-var my64Images;
+
 
 $('#exampledt2')
   // .on('error.dt', function ( e, settings, techNote, message) {
@@ -681,6 +681,7 @@ $('#exampledt2')
     "columnDefs": [
       {
         "render": function (data,type,row){
+
             myImages[row] = new Image();
             myImages[row].src = 'http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/myglyph.png';
             myImages[row].width = '200px';
