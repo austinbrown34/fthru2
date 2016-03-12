@@ -261,12 +261,7 @@ function okMsg(msg, timeout, callback)
 var password = localStorage.getItem('password');
    var myImages=[];
    var my64Images=[];
-   if(navigator.userAgent.match(/Android/i)){
-     $('#appheader').css("zoom",".74");
-   }
-   if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
-     $('#appheader').css("zoom",".88");
-   }
+
 	function checkFormInput(field)
 	{
 		// Check for all fields filled
@@ -545,7 +540,14 @@ var password = localStorage.getItem('password');
         }
         $(document).ready(function() {
 
-
+if(navigator.userAgent.match(/Android/i)){
+  alert("android");
+  $('#appheader').css("zoom",".74");
+}
+if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
+  alert("iphone");
+  $('#appheader').css("zoom",".88");
+}
 		$(document).ajaxError(function(e, jqxhr, settings, exception) {
             alert(exception);});
 		window.onerror = function(error){console.log(error);};
@@ -683,8 +685,13 @@ $('#exampledt2')
               //remove the text node and insert an image node
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
-                     alert(doc.content[1].table.body[i][0].text);
-//                      thisrow = $('this span').text();
+                    //  alert(doc.content[1].table.body[i][0].text);
+                     thischunk = doc.content[1].table.body[i][0].text;
+                     thischunk = thischunk.split("<span style='display:none;'>");
+                     thischunk = thischunk[1].split("</span>");
+                     thischuck = thischunk[0];
+                     thisrow = thischunk;
+                     alert(thisrow);
                       // thisrow = '138';
                       // delete doc.content[1].table.body[i][0].text;
                       // doc.content[1].table.body[i][0].image = my64Images[thisrow];
