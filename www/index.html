@@ -539,6 +539,15 @@ var password = localStorage.getItem('password');
             });
         }
         $(document).ready(function() {
+              function getBase64Image(img) {
+                  var canvas = document.createElement("canvas");
+                  canvas.width = img.width;
+                  canvas.height = img.height;
+                  var ctx = canvas.getContext("2d");
+                  ctx.drawImage(img, 0, 0);
+                  return canvas.toDataURL("image/png");
+              }
+
 
 if(navigator.userAgent.match(/Android/i)){
   // alert("android");
@@ -727,6 +736,7 @@ $('#exampledt2')
             myImages[myrow].width = '200px';
             myImages[myrow].height = '115px';
             my64Images[myrow] = getBase64Image(myImages[myrow]);
+            alert(my64Images[myrow]);
           return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+myrow+"</span>";
         },
         "targets": 0
@@ -872,14 +882,6 @@ $('#exampledt2')
 
 
 //            cordova.InAppBrowser.open("http://www.google.com","_system");
-            function getBase64Image(img) {
-                var canvas = document.createElement("canvas");
-                canvas.width = img.width;
-                canvas.height = img.height;
-                var ctx = canvas.getContext("2d");
-                ctx.drawImage(img, 0, 0);
-                return canvas.toDataURL("image/png");
-            }
 
         if (id !== null){
 
