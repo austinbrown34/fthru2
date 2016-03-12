@@ -698,12 +698,17 @@ $('#exampledt2')
                       try{
                         delete doc.content[1].table.body[i][0].text;
                         doc.content[1].table.body[i][0].image = my64Images[thisrow];
-                       alert(my64Images[thisrow]);
+						doc.content[1].table.body[i][0].image.height = 115;
+						doc.content[1].table.body[i][0].image.width = 200;
+                     //  alert(my64Images[thisrow]);
                       }
                       catch(err){
                         alert("error: "+err);
                       }
                   }
+				  else{
+				  $(doc.content[1].table.body[i][0].text).text();
+				  }
               }
           },
           exportOptions: { stripHtml: false, columns: [ 0, 1, 2 ] } },
