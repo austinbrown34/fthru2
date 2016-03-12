@@ -766,6 +766,7 @@ $('#exampledt2')
     var convertFunction = convertImgToDataURLviaCanvas;
     
     convertFunction(imageUrl, function(base64Img){
+	alert(base64Img);
 	my64Images[myrow] = base64Img;
 	alert(my64Images[myrow]);
         
