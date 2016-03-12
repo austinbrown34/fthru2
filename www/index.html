@@ -261,6 +261,12 @@ function okMsg(msg, timeout, callback)
 var password = localStorage.getItem('password');
    var myImages=[];
    var my64Images=[];
+   if(navigator.userAgent.match(/Android/i)){
+     $('#appheader').css("zoom",".74");
+   }
+   if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
+     $('#appheader').css("zoom",".88");
+   }
 	function checkFormInput(field)
 	{
 		// Check for all fields filled
@@ -2183,8 +2189,8 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                                 <th style="width:26% !important;">Image</th>
                                 <th style="width:10% !important;">Year</th>
                                 <th style="width:20% !important;">Make</th>
-                                <th style="width:29% !important;">Model</th>
-                                <th style="width:15% !important;">Price</th>
+                                <th style="width:27% !important;">Model</th>
+                                <th style="width:17% !important;">Price</th>
 								  <th style="width:0% !important;">Status</th>
                                 <th style="width:0% !important;">ID</th>
 
@@ -2196,8 +2202,8 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                                  <th style="width:26% !important;">Image</th>
                                 <th style="width:10% !important;">Year</th>
                                 <th style="width:20% !important;">Make</th>
-                                <th style="width:29% !important;">Model</th>
-                                <th style="width:15% !important;">Price</th>
+                                <th style="width:27% !important;">Model</th>
+                                <th style="width:17% !important;">Price</th>
 																  <th style="width:0% !important;">Status</th>
                                 <th style="width:0% !important;">ID</th>
 
