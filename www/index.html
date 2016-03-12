@@ -662,9 +662,10 @@ $('#exampledt2')
               //remove the text node and insert an image node
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
-                      thisrow = $('this span').text();
-                      delete doc.content[1].table.body[i][0].text;
-                      doc.content[1].table.body[i][0].image = my64Images[thisrow];
+                      alert(doc.content[1].table.body[i][0].text);
+//                      thisrow = $('this span').text();
+//                      delete doc.content[1].table.body[i][0].text;
+//                      doc.content[1].table.body[i][0].image = my64Images[thisrow];
                   }
               }
           },
