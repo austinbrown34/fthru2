@@ -687,7 +687,7 @@ $('#exampledt2')
 //            myImages[row].width = '200px';
 //            myImages[row].height = '115px';
 //            my64Images[row] = getBase64Image(myImages[row]);
-          return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+row+"</span>";
+          return "<img src=\"http://cogni.design/cpr/area51/testground/tmp/phonegap/uploads/"+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+row.index()+"</span>";
         },
         "targets": 0
       },
