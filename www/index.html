@@ -707,40 +707,7 @@ $('#exampledt2')
       { extend: 'pdfHtml5',
           customize: function(doc) {
 
-              //ensure doc.images exists
-              doc.images = doc.images || {};
-
-              //build dictionary
-//              doc.images['myGlyph'] = getBase64Image(myGlyph);
-              //..add more images[xyz]=anotherDataUrl here
-
-              //when the content is <img src="myglyph.png">
-              //remove the text node and insert an image node
-              for (var i=1;i<doc.content[1].table.body.length;i++) {
-                  if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
-                    //  alert(doc.content[1].table.body[i][0].text);
-                     thischunk = doc.content[1].table.body[i][0].text;
-                     thischunk = thischunk.split("<span style='display:none;'>");
-                     thischunk = thischunk[1].split("</span>");
-                     thischunk = thischunk[0];
-                    //  alert(thischunk);
-
-                    //  thisrow = thischunk.replace(/[^0-9]/g, '');
-                    //  alert(thisrow);
-                      thisrow = thischunk;
-                     // alert(thisrow);
-                      try{
-                       // alert("time to delete");
-                        delete doc.content[1].table.body[i][0].text;
-                        // alert("delete worked... now trying the image shiz");
-                        doc.content[1].table.body[i][0].image = my64Images[thisrow];
-                       // alert(my64Images[thisrow]);
-                      }
-                      catch(err){
-                        alert("error: "+err);
-                      }
-                  }
-              }
+   
           },
 
 
@@ -767,12 +734,12 @@ $('#exampledt2')
     
     //convertFunction(imageUrl, function(base64Img){
 	//alert(base64Img);
-	my64Images[myrow] = data;
+	//my64Images[myrow] = base64Img;
 	//alert(my64Images[myrow]);
         
   
 //            alert(my64Images[myrow]);
-          return "<img src=\""+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+myrow+"</span>";
+          return "<img src=\""+data+"\" width=\"200px\" height=\"115px\">";
         },
         "targets": 0
       },
