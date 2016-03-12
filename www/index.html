@@ -630,7 +630,74 @@ $.fn.dataTable.ext.errMode = 'none';
 
 
 
-$('#exampledt')
+$('#exampledt2')
+  // .on('error.dt', function ( e, settings, techNote, message) {
+  //   console.log( 'An error has been reported by DataTables: ', message );
+  // })
+  .DataTable({
+    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
+	"jQueryUI": true,
+    buttons: [
+      { extend: 'pdfHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } },
+      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 3, 1, 2 ] } }
+    ],
+    "bLengthChange": false,
+    "processing": true,
+    "columnDefs": [
+      {
+        "render": function (data,type,row){
+          return data;
+        },
+        "targets": 0
+      },
+      {
+        "render": function (data,type,row){
+          return data;
+        },
+        "targets": 1
+      },
+      {
+        "render": function (data,type,row){
+       
+            return data;
+         
+        },
+        "targets": 2
+      },
+      {
+        "visible": false,
+        "targets": [3,4,5]
+      }],
+    "serverSide":true,
+    // "data": '[ [ "Arenie", "(406) 861-3601", "Trucks", "Sticka", "5000", "10000", "", "", "1", "" ], [ "Austin", "(406) 598-7345", "Cars", "Brown", "5000", "15000", "Select Make", "Select Model", "1", "" ], [ "Billy", "(406) 444-4442", "Crossovers,SUVS,Trucks", "Bobby", "50000", "100000", "", "", "1", "" ], [ "Bo", "(333) 333-3333", "Trucks", "Bo", "50000", "100000", "", "", "1", "" ], [ "Carl", "(404) 444-3399", "Specific", "Marx", "50000", "100000", "cadillac", "seville", "1", "" ], [ "George", "(666) 666-6666", "Specific", "Might ", "50000", "100000", "chrysler", "townandcountry", "1", "" ], [ "Georgio", "(666) 666-6666", "Crossovers,SUVS,Trucks,Cars", "Horez", "50000", "100000", "", "", "1", "" ], [ "Howard", "(406) 598-1467", "Crossovers,SUVS,Trucks", "Skidmore", "5000", "10000", "Select Make", "Select Model", "1", "" ], [ "Jjj", "(333) 333-3333", "Crossovers", "Jjj", "50000", "100000", "", "", "1", "" ], [ "Jo", "(555) 555-5555", "Crossovers,SUVS", "Blo", "5000", "10000", "Select Make", "Select Model", "1", "" ] ]',
+    "ajax":{
+      url: "http://cogni.design/cpr/www/server_processing2.php?id="+id//,
+      // beforeSend: function(){
+      //   alert('beforeSend');
+      //   alert(JSON.stringify(arguments));
+      // },
+      // // "dataType":"jsonp",
+      // error: function (xhr, error, thrown) {
+      //   alert('error');
+      //   alert(JSON.stringify(arguments));
+      // },
+      // // success: function(){
+      // //   alert('success');
+      // //   alert(JSON.stringify(arguments));
+      // // },
+      // complete: function (data) {
+      //   alert("complete");
+      //   alert(JSON.stringify(arguments));
+      // }
+    },
+    language: {
+      search: "_INPUT_",
+      searchPlaceholder: "Search..."
+    }
+  });
+
+  
+  $('#exampledt')
   // .on('error.dt', function ( e, settings, techNote, message) {
   //   console.log( 'An error has been reported by DataTables: ', message );
   // })
@@ -698,7 +765,7 @@ $('#exampledt')
       searchPlaceholder: "Search..."
     }
   });
-
+  
 
         $("input.phone").mask("(999) 999-9999");
                 }
@@ -2030,8 +2097,34 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 				<div class="cnt_clr">
 					<center>
+ <table id="exampledt2" class="display dt-center" style="color:black;" cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th style="width:26% !important;">Image</th>
+                                <th style="width:36% !important;">Year</th>
+                                <th style="width:38% !important;">Make</th>
+                                <th style="width:0% !important;">Model</th>
+                                <th style="width:0% !important;">Price</th>
+								  <th style="width:0% !important;">Status</th>
+                            
 
-						<div id="responsecontainercar" align="center">
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                 <th style="width:26% !important;">Image</th>
+                                <th style="width:36% !important;">Year</th>
+                                <th style="width:38% !important;">Make</th>
+                                <th style="width:0% !important;">Model</th>
+                                <th style="width:0% !important;">Price</th>
+																  <th style="width:0% !important;">Status</th>
+
+                            
+                            </tr>
+                            </tfoot>
+
+                        </table>
+						<div id="responsecontainercar" align="center" style="display:none;">
 
 						</div>
 					</center>
