@@ -473,12 +473,12 @@ var password = localStorage.getItem('password');
                $('#home [name="years"]').val(year);
 
                $(function(){
-                   get_makes(year).done(function(){
+                   get_makes(year).then(function(){
                        $('#home [name="makes"]').val(make);
                        // function1 is done, we can now call function2
 //                       console.log('function1 is done!');
 
-                       get_models(make,year).done(function(){
+                       get_models(make,year).then(function(){
                            $('#home [name="models"]').val(model);
                            //function2 is done
                           // console.log('function2 is done!');
