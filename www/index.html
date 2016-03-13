@@ -455,18 +455,33 @@ var password = localStorage.getItem('password');
                model = data.model.niceName;
                $('#home [name="years"]').val(year);
 
-               setTimeout(function(){
-                   get_makes(year);
-                   setTimeout(function(){
+               $(function(){
+                   get_makes(year).done(function(){
                        $('#home [name="makes"]').val(make);
-                       setTimeout(function(){
-                           get_models(make,year);
-                           setTimeout(function(){
-                               $('#home [name="models"]').val(model);
-                           },0);
-                       },0);
-                   },0);
-               },0);
+                       // function1 is done, we can now call function2
+//                       console.log('function1 is done!');
+
+                       get_models(make,year).done(function(){
+                           $('#home [name="models"]').val(model);
+                           //function2 is done
+                          // console.log('function2 is done!');
+                       });
+                   });
+               });
+
+
+//               setTimeout(function(){
+//                   get_makes(year);
+//                   setTimeout(function(){
+//                       $('#home [name="makes"]').val(make);
+//                       setTimeout(function(){
+//                           get_models(make,year);
+//                           setTimeout(function(){
+//                               $('#home [name="models"]').val(model);
+//                           },0);
+//                       },0);
+//                   },0);
+//               },0);
 
 
 
