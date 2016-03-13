@@ -691,7 +691,7 @@ $('#exampledt2')
               doc.images = doc.images || {};
 //			  $(doc.document.body).find( 'th' ).html() = $(doc.document.body).find( 'th' ).text();
 //			 alert(doc.content[1].table.th.text());
-              for(var i=1;i<doc.content[1].table.body[0].length;i++){
+              for(var i=0;i<doc.content[1].table.body[0].length;i++){
                   var theshiz = doc.content[1].table.body[0][i].text;
                   doc.content[1].table.body[0][i].text = $(theshiz).text();
               }
