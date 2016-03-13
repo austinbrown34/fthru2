@@ -305,6 +305,7 @@ var password = localStorage.getItem('password');
 
        cordova.plugins.barcodeScanner.scan(
                function (result) {
+                   alert(JSON.stringify(result));
                    var s = "Result: " + result.text + "<br/>" +
                            "Format: " + result.format + "<br/>" +
                            "Cancelled: " + result.cancelled;
