@@ -448,14 +448,28 @@ var password = localStorage.getItem('password');
            data: '',
            dataType: 'jsonp',
            success: function(data) {
-               alert("about to stringify data");
-               alert(JSON.stringify(data));
+//               alert("about to stringify data");
+//               alert(JSON.stringify(data));
                 year = data.years[0].year;
                make = data.make.niceName;
                model = data.model.niceName;
                $('#home [name="years"]').val(year);
-               $('#home [name="makes"]').val(make);
-               $('#home [name="models"]').val(model);
+
+               setTimeout(function(){
+                   get_makes(year);
+                   setTimeout(function(){
+                       $('#home [name="makes"]').val(make);
+                       setTimeout(function(){
+                           get_models(make,year);
+                           setTimeout(function(){
+                               $('#home [name="models"]').val(model);
+                           },0);
+                       },0);
+                   },0);
+               },0);
+
+
+
 //               alert(data);
            }
        });
