@@ -707,11 +707,13 @@ $('#exampledt2')
                       }
                   }
 				  else{
-				  $(doc.content[1].table.body[i][0].text).text();
+				  var thecontent = doc.content[1].table.body[i][0].text;
+				  var newcontent = $(thecontent).text();
+				  doc.content[1].table.body[i][0].text = newcontent;
 				  }
               }
           },
-          exportOptions: { stripHtml: true, columns: [ 0, 1, 2 ] } },
+          exportOptions: { stripHtml: false, columns: [ 0, 1, 2 ] } },
       { extend: 'csvHtml5', exportOptions: { columns: [ 0, 1, 2 ] } }
     ],
     "bLengthChange": false,
