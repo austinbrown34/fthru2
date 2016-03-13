@@ -260,27 +260,27 @@ function okMsg(msg, timeout, callback)
    var pdfdoc;
 
 
-   window.sdkAsyncInit = function() {
+//   window.sdkAsyncInit = function() {
        // Instantiate the SDK
        var res = new EDMUNDSAPI('6gkv78s45kfx5cbgcf4mq5ae');
        // Optional parameters
-       var options = {
+       var edoptions = {
            "manufacturerCode": "3548"
        };
        // Callback function to be called when the API response is returned
-       function success(res) {
+       function edsuccess(res) {
 //           var body = document.getElementById('results-body');
 //           body.innerHTML = "The car make is: " + res.styleHolder[0].makeName;
            alert("The car make is: " + res.styleHolder[0].makeName);
        }
        // Oops, Houston we have a problem!
-       function fail(data) {
+       function edfail(data) {
            console.log(data);
        }
        // Fire the API call
-       res.api('/api/vehicle/v2/vins/4T1BK1EB6DU056165', options, success, fail);
+       res.api('/api/vehicle/v2/vins/4T1BK1EB6DU056165', edoptions, edsuccess, edfail);
        // Additional initialization code such as adding Event Listeners goes here
-   };
+//   };
    // Load the SDK asynchronously
    (function(d, s, id){
        var js, sdkjs = d.getElementsByTagName(s)[0];
