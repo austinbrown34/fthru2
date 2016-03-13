@@ -448,7 +448,8 @@ var password = localStorage.getItem('password');
            data: '',
            dataType: 'jsonp',
            success: function(data) {
-               alert(data);
+               alert("about to stringify data");
+               alert(JSON.stringify(data));
                 year = data.years.year;
                make = data.make.niceName;
                model = data.model.niceName;
