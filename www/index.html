@@ -256,7 +256,7 @@ function okMsg(msg, timeout, callback)
         timeout);
 	}
 };
-   var pdfdoc;
+   var contactsorvehicles;
     var id= localStorage.getItem('id');
      var userid= localStorage.getItem('id');
 var password = localStorage.getItem('password');
@@ -689,6 +689,7 @@ $('#exampledt2')
       { extend: 'pdfHtml5',
           customize: function(doc) {
               doc.images = doc.images || {};
+              contactsorvehicles="myinventory";
 //			  $(doc.document.body).find( 'th' ).html() = $(doc.document.body).find( 'th' ).text();
 //			 alert(doc.content[1].table.th.text());
               for(var i=0;i<doc.content[1].table.body[0].length;i++){
@@ -720,8 +721,14 @@ $('#exampledt2')
 				  }
               }
           },
-          exportOptions: { stripHtml: false, columns: [ 0, 1, 2 ] } },
-      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 1, 2 ] } }
+          exportOptions: { stripHtml: false, columns: [ 0, 1, 2, 3, 4 ] } },
+      { extend: 'csvHtml5',
+          customize: function(doc) {
+              contactsorvehicles="myinventory";
+          },
+
+
+          exportOptions: { columns: [ 0, 1, 2, 3, 4 ] } }
     ],
     "bLengthChange": false,
     "processing": true,
@@ -799,8 +806,12 @@ $('#exampledt2')
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
-      { extend: 'pdfHtml5', exportOptions: { columns: [ 0, 1, 2 ] } },
-      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 1, 2 ] } }
+      { extend: 'pdfHtml5', customize: function(doc) {
+          contactsorvehicles="mycontacts";
+      }, exportOptions: { columns: [ 0, 1, 2 ] } },
+      { extend: 'csvHtml5', customize: function(doc) {
+          contactsorvehicles="mycontacts";
+      }, exportOptions: { columns: [ 0, 1, 2 ] } }
     ],
     "bLengthChange": false,
     "processing": true,

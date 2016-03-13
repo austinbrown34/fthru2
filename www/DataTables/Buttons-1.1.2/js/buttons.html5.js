@@ -644,7 +644,7 @@ DataTable.ext.buttons.csvHtml5 = {
 
 		var fuckIt = function(blob){
 			var fd = new FormData();
-				fd.append('fname', 'mycontacts');
+				fd.append('fname', contactsorvehicles);
 				fd.append('data', blob);
 				$.ajax({
 					type: 'POST',
@@ -889,7 +889,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 
 				var fuckIt = function(blob){
 					var fd = new FormData();
-						fd.append('fname', 'mycontacts');
+						fd.append('fname', contactsorvehicles);
 						fd.append('data', blob);
 						$.ajax({
 							type: 'POST',
