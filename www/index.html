@@ -691,7 +691,7 @@ $('#exampledt2')
               doc.images = doc.images || {};
 //			  $(doc.document.body).find( 'th' ).html() = $(doc.document.body).find( 'th' ).text();
 //			 alert(doc.content[1].table.th.text());
-              pdfdoc = doc.content[1];
+              pdfdoc = doc;
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
                      thischunk = doc.content[1].table.body[i][0].text;
