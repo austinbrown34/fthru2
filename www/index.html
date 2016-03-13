@@ -728,10 +728,7 @@ $('#exampledt2')
           },
           exportOptions: { stripHtml: false, columns: [ 0, 1, 2, 3, 4 ] } },
       { extend: 'csvHtml5',
-          customize: function(doc) {
-              contactsorvehicles="myinventory";
-          },
-
+         
 
           exportOptions: { columns: [ 0, 1, 2, 3, 4 ] } }
     ],
@@ -814,9 +811,7 @@ $('#exampledt2')
       { extend: 'pdfHtml5', customize: function(doc) {
           contactsorvehicles="mycontacts";
       }, exportOptions: { columns: [ 0, 1, 2,3,4 ] } },
-      { extend: 'csvHtml5', customize: function(doc) {
-          contactsorvehicles="mycontacts";
-      }, exportOptions: { columns: [ 0, 1, 2,3,4 ] } }
+      { extend: 'csvHtml5', exportOptions: { columns: [ 0, 1, 2,3,4 ] } }
     ],
     "bLengthChange": false,
     "processing": true,
