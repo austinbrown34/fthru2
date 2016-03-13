@@ -691,7 +691,10 @@ $('#exampledt2')
               doc.images = doc.images || {};
 //			  $(doc.document.body).find( 'th' ).html() = $(doc.document.body).find( 'th' ).text();
 //			 alert(doc.content[1].table.th.text());
-              pdfdoc = doc;
+              for(var i=1;i<doc.content[1].table.body[0].length;i++){
+                  var theshiz = doc.content[1].table.body[0][i].text;
+                  doc.content[1].table.body[0][i].text = $(theshiz).text();
+              }
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
                      thischunk = doc.content[1].table.body[i][0].text;
