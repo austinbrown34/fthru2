@@ -450,7 +450,7 @@ var password = localStorage.getItem('password');
            success: function(data) {
                alert("about to stringify data");
                alert(JSON.stringify(data));
-                year = data.years.year;
+                year = data.years[0].year;
                make = data.make.niceName;
                model = data.model.niceName;
                $('#home [name="years"]').val(year);
