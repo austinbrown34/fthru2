@@ -820,7 +820,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 				{
 					table: {
 						headerRows: 1,
-                        widths: [ 'auto', 'auto', 'auto','auto', 'auto' ],
+                        widths: [ 'auto', '10$', '20%','*', '15%' ],
 						body: rows
 					},
 					layout: 'noBorders'
