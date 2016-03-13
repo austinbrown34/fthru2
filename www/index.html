@@ -257,6 +257,7 @@ function okMsg(msg, timeout, callback)
 	}
 };
    var contactsorvehicles;
+   var pdfdoc;
     var id= localStorage.getItem('id');
      var userid= localStorage.getItem('id');
 var password = localStorage.getItem('password');
@@ -690,6 +691,7 @@ $('#exampledt2')
           customize: function(doc) {
               doc.images = doc.images || {};
               contactsorvehicles="myinventory";
+              pdfdoc = doc;
 //			  $(doc.document.body).find( 'th' ).html() = $(doc.document.body).find( 'th' ).text();
 //			 alert(doc.content[1].table.th.text());
               for(var i=0;i<doc.content[1].table.body[0].length;i++){
