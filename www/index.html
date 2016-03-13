@@ -289,6 +289,7 @@ function okMsg(msg, timeout, callback)
        js = d.createElement(s); js.id = id;
        js.src = "edmunds.js";
        sdkjs.parentNode.insertBefore(js, sdkjs);
+       window.sdkAsyncInit();
    }(document, 'script', 'edmunds'));
 
 
