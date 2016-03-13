@@ -688,8 +688,8 @@ $('#exampledt2')
       { extend: 'pdfHtml5',
           customize: function(doc) {
               doc.images = doc.images || {};
-			  var thstrip = doc.content[1].table.th.text;
-			  doc.content[1].table.th.text = $(thstrip).text();
+			  $(doc.document.body).find( 'th' ).html() = $(doc.document.body).find( 'th' ).text();
+			 
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
                      thischunk = doc.content[1].table.body[i][0].text;
