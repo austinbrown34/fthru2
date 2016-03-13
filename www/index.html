@@ -289,7 +289,7 @@ function okMsg(msg, timeout, callback)
        js = d.createElement(s); js.id = id;
        js.src = "edmunds.js";
        sdkjs.parentNode.insertBefore(js, sdkjs);
-       window.sdkAsyncInit();
+//       window.sdkAsyncInit();
    }(document, 'script', 'edmunds'));
 
 
@@ -438,6 +438,22 @@ var password = localStorage.getItem('password');
 
 
         const EDMUNDS_API_KEY = '6gkv78s45kfx5cbgcf4mq5ae';
+
+   function get_make(vin) {
+       url = 'https://api.edmunds.com/api/vehicle/v2/vins/'+vin+'?fmt=json&api_key='+EDMUNDS_API_KEY;
+//       url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+       $.ajax({
+           type: "POST",
+           url: url,
+           data: '',
+           dataType: 'jsonp',
+           success: function(data) {
+               alert(data);
+           }
+       });
+   }
+
+
         function get_makes(year) {
             url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
             $.ajax({
@@ -713,7 +729,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                         systemOpen($(this).attr('href'));
 //                     });
 
-
+                    get_make('4T1BK1EB6DU056165');
 
 $.fn.dataTable.ext.errMode = 'none';
 
