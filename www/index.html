@@ -439,7 +439,7 @@ var password = localStorage.getItem('password');
 
         const EDMUNDS_API_KEY = '6gkv78s45kfx5cbgcf4mq5ae';
 
-   function get_make(vin) {
+   function get_vin_data(vin) {
        url = 'https://api.edmunds.com/api/vehicle/v2/vins/'+vin+'?fmt=json&api_key='+EDMUNDS_API_KEY;
 //       url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
        $.ajax({
@@ -448,7 +448,13 @@ var password = localStorage.getItem('password');
            data: '',
            dataType: 'jsonp',
            success: function(data) {
-               alert(data);
+                year = data.years.year;
+               make = data.make.niceName;
+               model = data.model.niceName;
+               $('#edit [name="years"]').val(year);
+               $('#edit [name="makes"]').val(make);
+               $('#edit [name="models"]').val(model);
+//               alert(data);
            }
        });
    }
@@ -729,7 +735,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                         systemOpen($(this).attr('href'));
 //                     });
 
-                    get_make('4T1BK1EB6DU056165');
+                    get_vin_data('4T1BK1EB6DU056165');
 
 $.fn.dataTable.ext.errMode = 'none';
 
