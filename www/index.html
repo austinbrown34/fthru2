@@ -695,6 +695,7 @@ $('#exampledt2')
               for(var i=0;i<doc.content[1].table.body[0].length;i++){
                   var theshiz = doc.content[1].table.body[0][i].text;
                   doc.content[1].table.body[0][i].text = $(theshiz).text();
+                  doc.content[1].table.body[0][i].width = '*';
               }
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
