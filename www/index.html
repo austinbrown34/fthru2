@@ -692,6 +692,8 @@ $('#exampledt2')
               doc.images = doc.images || {};
               contactsorvehicles="myinventory";
               pdfdoc = doc;
+              doc.content[1].table.widths[0]._maxWidth=300;
+              doc.content[1].table.widths[0].width=300;
 //              doc.content[1].table.widths[4].width = '300';
 //			  $(doc.document.body).find( 'th' ).html() = $(doc.document.body).find( 'th' ).text();
 //			 alert(doc.content[1].table.th.text());
