@@ -259,7 +259,8 @@ function okMsg(msg, timeout, callback)
    var contactsorvehicles;
    var pdfdoc;
 
-
+    var contacttable;
+   var inventorytable;
 
 
 
@@ -737,12 +738,12 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                         systemOpen($(this).attr('href'));
 //                     });
 
-               
+
 
 $.fn.dataTable.ext.errMode = 'none';
 
 
-$('#exampledt2')
+contacttable = $('#exampledt2')
   .DataTable({
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
@@ -860,7 +861,7 @@ $('#exampledt2')
   });
 
 
-  $('#exampledt')
+inventorytable = $('#exampledt')
   // .on('error.dt', function ( e, settings, techNote, message) {
   //   console.log( 'An error has been reported by DataTables: ', message );
   // })
@@ -1008,29 +1009,11 @@ $('#exampledt2')
             });
              $("#tm_pro").click(function() {
 
-      $.ajax({    //create an ajax request to load_page.php
-        type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#responsecontaineruser").html(response);
-            //alert(response);
-        }
-
-    });
+                 contacttable.ajax.reload();
 });
   $("#tm_home").click(function() {
 
-      $.ajax({    //create an ajax request to load_page.php
-        type: "GET",
-        url: "http://cogni.design/cpr/www/display2.php?id="+id,
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#responsecontainercar").html(response);
-            //alert(response);
-        }
-
-    });
+      inventorytable.ajax.reload();
 });
   $("#displaymatch").click(function() {
 
@@ -1064,26 +1047,26 @@ function resetfields(){
 }
 
 
- $.ajax({    //create an ajax request to load_page.php
-        type: "GET",
-        url: "http://cogni.design/cpr/www/display2.php?id="+id,
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#responsecontainercar").html(response);
-            //alert(response);
-        }
-
-    });
-          $.ajax({    //create an ajax request to load_page.php
-        type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#responsecontaineruser").html(response);
-            //alert(response);
-        }
-
-    });
+// $.ajax({    //create an ajax request to load_page.php
+//        type: "GET",
+//        url: "http://cogni.design/cpr/www/display2.php?id="+id,
+//        dataType: "html",   //expect html to be returned
+//        success: function(response){
+//            $("#responsecontainercar").html(response);
+//            //alert(response);
+//        }
+//
+//    });
+//          $.ajax({    //create an ajax request to load_page.php
+//        type: "GET",
+//        url: "http://cogni.design/cpr/www/display.php?id="+id,
+//        dataType: "html",   //expect html to be returned
+//        success: function(response){
+//            $("#responsecontaineruser").html(response);
+//            //alert(response);
+//        }
+//
+//    });
         });
     </script>
 
@@ -1137,6 +1120,7 @@ submitHandler: function(form) {
         {
             //data: return data from server
             function alertDismissed() {
+                contacttable.ajax.reload();
                 $("#testForm")[0].reset();
 				 $('#page').scrollTop(0);
             }
@@ -1216,6 +1200,7 @@ submitHandler: function(form) {
         {
             //data: return data from server
             function alertDismissed() {
+                contacttable.ajax.reload();
                 $("#editForm")[0].reset();
 				 $('#page').scrollTop(0);
             }
@@ -1226,14 +1211,6 @@ submitHandler: function(form) {
                     'fTHRU',            // title
                     'OK'                  // buttonName
             );
-
-              $.ajax({    //create an ajax request to load_page.php
-        type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#responsecontaineruser").html(response);
-
 
 
             var pagetarget = $("#page");
@@ -1268,9 +1245,7 @@ submitHandler: function(form) {
 
 
             //alert(response);
-        }
 
-    });
         },
         error: function(jqXHR, textStatus, errorThrown)
         {
@@ -1289,12 +1264,6 @@ submitHandler: function(form) {
                     'OK'                  // buttonName
             );
 
-               $.ajax({    //create an ajax request to load_page.php
-        type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#responsecontaineruser").html(response);
 
 
             var pagetarget = $("#page");
@@ -1327,9 +1296,7 @@ submitHandler: function(form) {
 
 
             //alert(response);
-        }
 
-    });
         }
     });
 //     e.preventDefault(); //STOP default action
@@ -1368,7 +1335,7 @@ submitHandler: function(form) {
 
 
             function alertDismissed() {
-
+                inventorytable.ajax.reload();
                 $("#testForm2")[0].reset();
                 $("#camera_status").text('');
                 $("#camera_image").attr("src","");
@@ -1383,16 +1350,7 @@ submitHandler: function(form) {
                     'fTHRU',            // title
                     'OK'                  // buttonName
             );
-              $.ajax({    //create an ajax request to load_page.php
-        type: "GET",
-        url: "http://cogni.design/cpr/www/display2.php?id="+id,
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#responsecontainercar").html(response);
-            //alert(response);
-        }
 
-    });
 
 
         },
@@ -1480,7 +1438,7 @@ submitHandler: function(form) {
                 console.log("Error getting picture: " + e);
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
-            { quality: 50, targetWidth:200,targetHeight:115, correctOrientation: true, encodingType: Camera.EncodingType.JPEG, destinationType: navigator.camera.DestinationType.FILE_URI});
+            { quality: 70, targetWidth:800,targetHeight:600, correctOrientation: true, encodingType: Camera.EncodingType.JPEG, destinationType: navigator.camera.DestinationType.FILE_URI});
     };
     /**
      * Select picture from library
@@ -1500,7 +1458,7 @@ submitHandler: function(form) {
                 console.log("Error getting picture: " + e);
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
-            { quality: 50, targetWidth:200,targetHeight:115, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY});
+            { quality: 70, targetWidth:800,targetHeight:600, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY});
     };
 
     /**
@@ -1569,8 +1527,8 @@ submitHandler: function(form) {
      * Function called when page has finished loading.
      */
     function init() {
-        document.querySelector("#startScan").addEventListener("touchend", startScan, false);
-        resultDiv = document.querySelector("#results");
+//        document.querySelector("#startScan").addEventListener("touchend", startScan, false);
+//        resultDiv = document.querySelector("#results");
     }
     </script>
 
@@ -1640,7 +1598,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 
         <div id="login" style="padding-top: 50px;">
-<br>
+<br><br><br>
 
 		<form id="loginForm" onsubmit="return processLogin();">
 			<div class="fldstyle"><input id="email" type="text" name="email" placeholder="Email Address" autocapitalize="off"/></div><br />
@@ -1677,7 +1635,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 					<div class="cnt_clr">
 						<form id="testForm" action="http://cogni.design/cpr/www/insert.php" method="post">
-
+<br><br>
 							<table class="home_top">
 								<tr>
 									<td class="full"><div class="h1px"></div></td>
@@ -2052,6 +2010,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 
 				<div class="cnt_clr">
+                    <br><br>
 					<center>
 						<table border="1" align="center">
 							<tr>
@@ -2071,6 +2030,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 
 				<div class="cnt_clr">
+                    <br><br>
 					<div style="padding: 2px 4px 3px 4px;">
 						<form id="testForm2" action="http://cogni.design/cpr/www/insert2.php" method="post" enctype="multipart/form-data">
 
@@ -3094,12 +3054,7 @@ elem2.value=data.values.max;
  <script type="text/javascript">
  function reloadcontacts() {
 
-  $.ajax({    //create an ajax request to load_page.php
-        type: "GET",
-        url: "http://cogni.design/cpr/www/display.php?id="+id,
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#responsecontaineruser").html(response);
+     contacttable.ajax.reload();
 
             var pagetarget = $("#page");
 
@@ -3133,9 +3088,6 @@ elem2.value=data.values.max;
 
 
             //alert(response);
-        }
-
-    });
 
 
  }
