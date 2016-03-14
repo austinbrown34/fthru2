@@ -259,9 +259,10 @@ function okMsg(msg, timeout, callback)
    var contactsorvehicles;
    var pdfdoc;
 
-    var contacttable;
-   var inventorytable;
-
+   function redraw(){
+contacttable.draw();
+inventorytable.draw();
+}
 
 
     var id= localStorage.getItem('id');
@@ -931,10 +932,7 @@ inventorytable = $('#exampledt')
     }
   });
 
-function redraw(){
-contacttable.draw();
-inventorytable.draw();
-}
+
         $("input.phone").mask("(999) 999-9999");
                 }
             },2000);
