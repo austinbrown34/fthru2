@@ -259,8 +259,8 @@ function okMsg(msg, timeout, callback)
    var contactsorvehicles;
    var pdfdoc;
 
-//    var contacttable;
-//   var inventorytable;
+    var contacttable=[];
+   var inventorytable=[];
 
 
 
@@ -743,7 +743,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 $.fn.dataTable.ext.errMode = 'none';
 
 
-var contacttable = $('#exampledt2')
+contacttable = $('#exampledt2')
   .DataTable({
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
@@ -860,8 +860,7 @@ var contacttable = $('#exampledt2')
     }
   });
 
-
-var inventorytable = $('#exampledt')
+inventorytable = $('#exampledt')
   // .on('error.dt', function ( e, settings, techNote, message) {
   //   console.log( 'An error has been reported by DataTables: ', message );
   // })
