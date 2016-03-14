@@ -264,7 +264,34 @@ contacttable.draw();
 inventorytable.draw();
 }
 
+contacttable.on( 'select', function ( e, dt, type, indexes ) {
+    if ( type === 'rows' ) {
+        alert("hello");
+ 
+        // do something with the ID of the selected items
+    }
+} );
 
+    $("inventorytable tbody tr").bind("taphold", {duration: 500}, function(event)
+            {
+				alert("taphold");
+                if ( $( this ).hasClass( "selectednow" ) ) {
+                    $(this).css("border","none");
+                    $(this).find(".editdelete").hide();
+                    $(this).removeClass("selectednow");
+                }
+                else{
+                    <!--
+                    $(".contactitem").css("border","none");
+                    $(".editdelete").hide();
+                     -->
+                    $(this).addClass("selectednow");
+                    $(this).css("border","blue dashed 1px");
+                    $(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
+
+
+                }
+            });
     var id= localStorage.getItem('id');
      var userid= localStorage.getItem('id');
 var password = localStorage.getItem('password');
@@ -2274,34 +2301,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 	</div><!-- end page -->
 <script type='text/javascript'>
 
-contacttable.on( 'select', function ( e, dt, type, indexes ) {
-    if ( type === 'rows' ) {
-        alert("hello");
- 
-        // do something with the ID of the selected items
-    }
-} );
 
-    $("inventorytable tbody tr").bind("taphold", {duration: 500}, function(event)
-            {
-				alert("taphold");
-                if ( $( this ).hasClass( "selectednow" ) ) {
-                    $(this).css("border","none");
-                    $(this).find(".editdelete").hide();
-                    $(this).removeClass("selectednow");
-                }
-                else{
-                    <!--
-                    $(".contactitem").css("border","none");
-                    $(".editdelete").hide();
-                     -->
-                    $(this).addClass("selectednow");
-                    $(this).css("border","blue dashed 1px");
-                    $(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
-
-
-                }
-            });
 
 
 $(".specific").change(function() {
