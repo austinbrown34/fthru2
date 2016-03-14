@@ -659,47 +659,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     //
 
 					
-					   function onChangeDevicePosition() {
-
-                var newDevicePosition = CanvasCamera.CameraPosition.BACK;
-                if (document.getElementById("deviceposition_back").checked)
-                {
-                    newDevicePosition = CanvasCamera.CameraPosition.BACK;
-                }
-                else if (document.getElementById("deviceposition_front").checked)
-                {
-                    newDevicePosition = CanvasCamera.CameraPosition.FRONT;
-                }
-                //
-                CanvasCamera.setCameraPosition(newDevicePosition);
-            }
-
-            function onChangeFlashMode() {
-
-                var newFlashMode = CanvasCamera.FlashMode.OFF;
-                if (document.getElementById("flashmode_off").checked)
-                {
-                    newFlashMode = CanvasCamera.FlashMode.OFF;
-                }
-                else if (document.getElementById("flashmode_on").checked)
-                {
-                    newFlashMode = CanvasCamera.FlashMode.ON;
-                }
-                else if (document.getElementById("flashmode_auto").checked)
-                {
-                    newFlashMode = CanvasCamera.FlashMode.AUTO;
-                }
-
-                CanvasCamera.setFlashMode(newFlashMode);
-            }
-
-            function onTakePicture() {
-                CanvasCamera.takePicture(onTakeSuccess);
-            }
-
-            function onTakeSuccess(data) {
-                //
-            }
+				
 					
 					
 					
@@ -1515,6 +1475,50 @@ submitHandler: function(form) {
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 	  <!-- <script type="text/javascript" src="js/index.js"></script> -->
     <script type="text/javascript" charset="utf-8">
+	
+	
+	
+		   function onChangeDevicePosition() {
+
+                var newDevicePosition = CanvasCamera.CameraPosition.BACK;
+                if (document.getElementById("deviceposition_back").checked)
+                {
+                    newDevicePosition = CanvasCamera.CameraPosition.BACK;
+                }
+                else if (document.getElementById("deviceposition_front").checked)
+                {
+                    newDevicePosition = CanvasCamera.CameraPosition.FRONT;
+                }
+                //
+                CanvasCamera.setCameraPosition(newDevicePosition);
+            }
+
+            function onChangeFlashMode() {
+
+                var newFlashMode = CanvasCamera.FlashMode.OFF;
+                if (document.getElementById("flashmode_off").checked)
+                {
+                    newFlashMode = CanvasCamera.FlashMode.OFF;
+                }
+                else if (document.getElementById("flashmode_on").checked)
+                {
+                    newFlashMode = CanvasCamera.FlashMode.ON;
+                }
+                else if (document.getElementById("flashmode_auto").checked)
+                {
+                    newFlashMode = CanvasCamera.FlashMode.AUTO;
+                }
+
+                CanvasCamera.setFlashMode(newFlashMode);
+            }
+
+            function onTakePicture() {
+                CanvasCamera.takePicture(onTakeSuccess);
+            }
+
+            function onTakeSuccess(data) {
+                //
+            }
 
     var deviceReady = false;
     /**
