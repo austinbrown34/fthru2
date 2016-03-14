@@ -744,7 +744,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 $.fn.dataTable.ext.errMode = 'none';
 
 
-contacttable = $('#exampledt2')
+inventorytable = $('#exampledt2')
   .DataTable({
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
@@ -861,7 +861,7 @@ contacttable = $('#exampledt2')
     }
   });
 
-inventorytable = $('#exampledt')
+contacttable = $('#exampledt')
   // .on('error.dt', function ( e, settings, techNote, message) {
   //   console.log( 'An error has been reported by DataTables: ', message );
   // })
@@ -932,6 +932,34 @@ inventorytable = $('#exampledt')
     }
   });
 
+  
+  $('#exampledt tbody').on('click','tr',function(){
+  
+  alert("hello");
+  });
+
+  //  $("contacttable tbody").bind("taphold", {duration: 500}, function(event)
+    //        {
+		//		alert("taphold");
+          //      if ( $( this ).hasClass( "selectednow" ) ) {
+            //        $(this).css("border","none");
+              //      $(this).find(".editdelete").hide();
+                //    $(this).removeClass("selectednow");
+//                }
+  //              else{
+                    <!--
+    //                $(".contactitem").css("border","none");
+      //              $(".editdelete").hide();
+                     -->
+        //            $(this).addClass("selectednow");
+          //          $(this).css("border","blue dashed 1px");
+            //        $(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
+
+
+ //               }
+   //         });
+  
+  
 
         $("input.phone").mask("(999) 999-9999");
                 }
@@ -3039,34 +3067,7 @@ target5.bind(startEvent, function(e) {
 <!-- <script src="js/sm.js"></script> -->
 
   <script>
-contacttable.on( 'select', function ( e, dt, type, indexes ) {
-    if ( type === 'rows' ) {
-        alert("hello");
- 
-        // do something with the ID of the selected items
-    }
-} );
 
-    $("inventorytable tbody tr").bind("taphold", {duration: 500}, function(event)
-            {
-				alert("taphold");
-                if ( $( this ).hasClass( "selectednow" ) ) {
-                    $(this).css("border","none");
-                    $(this).find(".editdelete").hide();
-                    $(this).removeClass("selectednow");
-                }
-                else{
-                    <!--
-                    $(".contactitem").css("border","none");
-                    $(".editdelete").hide();
-                     -->
-                    $(this).addClass("selectednow");
-                    $(this).css("border","blue dashed 1px");
-                    $(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
-
-
-                }
-            });
    $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
         var value = Math.round(val * 5) / 5,
           decimal = value - Math.round(val);
