@@ -2274,7 +2274,15 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 	</div><!-- end page -->
 <script type='text/javascript'>
 
-    $("#exampletd tbody tr").bind("taphold", {duration: 500}, function(event)
+contacttable.on( 'select', function ( e, dt, type, indexes ) {
+    if ( type === 'rows' ) {
+        alert("hello");
+ 
+        // do something with the ID of the selected items
+    }
+} );
+
+    $("inventorytable tbody tr").bind("taphold", {duration: 500}, function(event)
             {
 				alert("taphold");
                 if ( $( this ).hasClass( "selectednow" ) ) {
