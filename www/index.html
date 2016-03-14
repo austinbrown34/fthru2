@@ -934,8 +934,13 @@ contacttable = $('#exampledt')
 
   
   $('#exampledt tbody').on('click','tr',function(){
-  
-  alert("hello");
+if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            table.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
   });
 
   //  $("contacttable tbody").bind("taphold", {duration: 500}, function(event)
