@@ -945,6 +945,7 @@ inventorytable = $('#exampledt')
 
             $("#exampletd tbody tr").bind("taphold", {duration: 500}, function(event)
             {
+				alert("taphold");
                 if ( $( this ).hasClass( "selectednow" ) ) {
                     $(this).css("border","none");
                     $(this).find(".editdelete").hide();
