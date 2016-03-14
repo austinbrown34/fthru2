@@ -1513,7 +1513,11 @@ submitHandler: function(form) {
             }
 
             function onTakePicture() {
-                CanvasCamera.takePicture(onTakeSuccess);
+               // CanvasCamera.takePicture(onTakeSuccess);
+			   
+			   var canvas = document.getElementById("canvas");
+var dataURL = canvas.toDataURL();
+alert(dataURL);
             }
 
             function onTakeSuccess(data) {
