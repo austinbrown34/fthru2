@@ -1478,10 +1478,12 @@ submitHandler: function(form) {
         server = document.getElementById('serverUrl').value;
         if (server) {
 
+            var newimageid = new Date().getTime() + Math.random();
             // Specify transfer options
             var options = new FileUploadOptions();
+            var newimagename = newimageid+imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.fileName=newimageid+imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
             options.chunkedMode = false;
 			
@@ -1489,6 +1491,7 @@ submitHandler: function(form) {
             var ft = new FileTransfer();
             ft.upload(imageURI, server, function(r) {
                 document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
+                document.getElementById("fileToUpload").value = newimagename;
             }, function(error) {
                 document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
             }, options);
@@ -1501,6 +1504,7 @@ submitHandler: function(form) {
 
     	// Get server URL
         server = document.getElementById('serverUrl').value;
+        server = server+"?id="+id;
         if (server) {
 
             // Get HTML that lists all pictures on server using XHR
