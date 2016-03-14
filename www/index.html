@@ -260,37 +260,6 @@ function okMsg(msg, timeout, callback)
    var pdfdoc;
 
 
-   window.sdkAsyncInit = function() {
-       // Instantiate the SDK
-       var res = new EDMUNDSAPI('6gkv78s45kfx5cbgcf4mq5ae');
-       // Optional parameters
-       var options = {
-           "manufacturerCode": "3548"
-       };
-       // Callback function to be called when the API response is returned
-       function success(res) {
-//           var body = document.getElementById('results-body');
-//           body.innerHTML = "The car make is: " + res.styleHolder[0].makeName;
-           alert("The car make is: " + res.styleHolder[0].makeName);
-       }
-       // Oops, Houston we have a problem!
-       function fail(data) {
-           alert("error: "+data);
-           console.log(data);
-       }
-       // Fire the API call
-       res.api('/api/vehicle/v2/vins/4T1BK1EB6DU056165', options, success, fail);
-       // Additional initialization code such as adding Event Listeners goes here
-   };
-   // Load the SDK asynchronously
-   (function(d, s, id){
-       var js, sdkjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "edmunds.js";
-       sdkjs.parentNode.insertBefore(js, sdkjs);
-//       window.sdkAsyncInit();
-   }(document, 'script', 'edmunds'));
 
 
 
@@ -301,22 +270,6 @@ var password = localStorage.getItem('password');
    var my64Images=[];
 
 
-   function startScan() {
-
-       cordova.plugins.barcodeScanner.scan(
-               function (result) {
-                   alert(JSON.stringify(result));
-                   var s = "Result: " + result.text + "<br/>" +
-                           "Format: " + result.format + "<br/>" +
-                           "Cancelled: " + result.cancelled;
-                   resultDiv.innerHTML = s;
-               },
-               function (error) {
-                   alert("Scanning failed: " + error);
-               }
-       );
-
-   }
 
 	function checkFormInput(field)
 	{
@@ -784,7 +737,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                         systemOpen($(this).attr('href'));
 //                     });
 
-                    get_vin_data('4T1BK1EB6DU056165');
+               
 
 $.fn.dataTable.ext.errMode = 'none';
 
@@ -2120,84 +2073,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 				<div class="cnt_clr">
 					<div style="padding: 2px 4px 3px 4px;">
 						<form id="testForm2" action="http://cogni.design/cpr/www/insert2.php" method="post" enctype="multipart/form-data">
-                            <p>
-                                <button id="startScan">Start Scan</button>
-                            </p>
 
-                            <div id="results"></div>
-
-                            <div class="controls">
-                                <fieldset class="input-group">
-                                    <input type="file" capture/>
-                                    <button>Rerun</button>
-                                </fieldset>
-                                <fieldset class="reader-config-group">
-                                    <label>
-                                        <span>Barcode-Type</span>
-                                        <select name="decoder_readers">
-                                            <option value="code_128" selected="selected">Code 128</option>
-                                            <option value="code_39">Code 39</option>
-                                            <option value="code_39_vin">Code 39 VIN</option>
-                                            <option value="ean">EAN</option>
-                                            <option value="ean_8">EAN-8</option>
-                                            <option value="upc">UPC</option>
-                                            <option value="upc_e">UPC-E</option>
-                                            <option value="codabar">Codabar</option>
-                                            <option value="i2of5">ITF</option>
-                                        </select>
-                                    </label>
-                                    <label>
-                                        <span>Resolution (long side)</span>
-                                        <select name="input-stream_size">
-                                            <option value="320">320px</option>
-                                            <option selected="selected" value="640">640px</option>
-                                            <option value="800">800px</option>
-                                            <option value="1280">1280px</option>
-                                            <option value="1600">1600px</option>
-                                            <option value="1920">1920px</option>
-                                        </select>
-                                    </label>
-                                    <label>
-                                        <span>Patch-Size</span>
-                                        <select name="locator_patch-size">
-                                            <option value="x-small">x-small</option>
-                                            <option value="small">small</option>
-                                            <option value="medium">medium</option>
-                                            <option selected="selected" value="large">large</option>
-                                            <option value="x-large">x-large</option>
-                                        </select>
-                                    </label>
-                                    <label>
-                                        <span>Half-Sample</span>
-                                        <input type="checkbox" name="locator_half-sample" />
-                                    </label>
-                                    <label>
-                                        <span>Single Channel</span>
-                                        <input type="checkbox" name="input-stream_single-channel" />
-                                    </label>
-                                    <label>
-                                        <span>Workers</span>
-                                        <select name="numOfWorkers">
-                                            <option value="0">0</option>
-                                            <option selected="selected" value="1">1</option>
-                                        </select>
-                                    </label>
-                                </fieldset>
-                            </div>
-                            <div id="result_strip">
-                                <ul class="thumbnails"></ul>
-                            </div>
-                            <div id="interactive" class="viewport"></div>
-                            <div id="debug" class="detection"></div>
-                            </section>
-                            <footer>
-                                <p>
-                                    &copy; Copyright by Christoph Oberhofer
-                                </p>
-                            </footer>
-                            <script src="scanner/example/vendor/jquery-1.9.0.min.js" type="text/javascript"></script>
-                            <script src="scanner/dist/quagga.js" type="text/javascript"></script>
-                            <script src="scanner/example/file_input.js" type="text/javascript"></script>
 
 							<select id="years1" name="years" required>
 								<option value="">Select Year</option>
