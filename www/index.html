@@ -2171,8 +2171,9 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
         <canvas id="camera" width="352" height="288" style="border:2px"></canvas>
                         <canvas id="videoCanvas" width="320" height="240">
                         </canvas>
-                        <button id="decode" style="position:absolute;top:225px;left:330px" onclick="Decode()">Start decoding</button>
-                        <button id="stopDecode" style="position:absolute;top:225px;left:450px" onclick="StopDecode()">Stop decoding</button>
+                        <br>
+                        <button id="decode"  onclick="Decode()">Start decoding</button>
+                        <button id="stopDecode"  onclick="StopDecode()">Stop decoding</button>
                         <p id="Result" style="position:absolute;top:275px;"></p>
 
 
@@ -2241,6 +2242,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                                         }
                                 );
                             } else {
+                                alert("Problem");
                                 console.log("getUserMedia not supported");
                             }
                             function Decode() {
