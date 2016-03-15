@@ -1516,9 +1516,9 @@ submitHandler: function(form) {
                // CanvasCamera.takePicture(onTakeSuccess);
 			   
 			   var canvas2 = document.getElementById("camera");
-var dataURL = canvas2.toDataURL();
+var dataURL2 = canvas2.toDataURL();
 alert("img data");
-alert(dataURL);
+alert(JSON.stringify(dataURL2));
             }
 
             function onTakeSuccess(data) {
@@ -2136,30 +2136,30 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 						
 						
 						<div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+            <!--<h1>Apache Cordova</h1>-->
+            <!--<div id="deviceready" class="blink">-->
+                <!--<p class="event listening">Connecting to Device</p>-->
+                <!--<p class="event received">Device is Ready</p>-->
+            <!--</div>-->
 
-            <h2> Camera Position </h2>
-            <input type="radio" name="deviceposition" id="deviceposition_back" value="Back" onclick="onChangeDevicePosition();"/>
-            <label for="deviceposition_back">Back</label>
-            <br/>
-            <input type="radio" name="deviceposition" id="deviceposition_front" value="Front" onclick="onChangeDevicePosition();"/>
-            <label for="deviceposition_front">Front</label>
+            <!--<h2> Camera Position </h2>-->
+            <!--<input type="radio" name="deviceposition" id="deviceposition_back" value="Back" onclick="onChangeDevicePosition();"/>-->
+            <!--<label for="deviceposition_back">Back</label>-->
+            <!--<br/>-->
+            <!--<input type="radio" name="deviceposition" id="deviceposition_front" value="Front" onclick="onChangeDevicePosition();"/>-->
+            <!--<label for="deviceposition_front">Front</label>-->
 
 
-            <h2> Flash Mode </h2>
-            <input type="radio" name="flashmode" id="flashmode_off" value="Off" onclick="onChangeFlashMode();"/>
-            <label for="flashmode_off">Off</label>
-            <br/>
-            <input type="radio" name="flashmode" id="flashmode_on" value="On" onclick="onChangeFlashMode();"/>
-            <label for="flashmode_on">On</label>
-            <br/>
-            <input type="radio" name="flashmode" id="flashmode_auto" value="Auto" onclick="onChangeFlashMode();"/>
-            <label for="flashmode_auto">Auto</label>
-            <br/>
+            <!--<h2> Flash Mode </h2>-->
+            <!--<input type="radio" name="flashmode" id="flashmode_off" value="Off" onclick="onChangeFlashMode();"/>-->
+            <!--<label for="flashmode_off">Off</label>-->
+            <!--<br/>-->
+            <!--<input type="radio" name="flashmode" id="flashmode_on" value="On" onclick="onChangeFlashMode();"/>-->
+            <!--<label for="flashmode_on">On</label>-->
+            <!--<br/>-->
+            <!--<input type="radio" name="flashmode" id="flashmode_auto" value="Auto" onclick="onChangeFlashMode();"/>-->
+            <!--<label for="flashmode_auto">Auto</label>-->
+            <!--<br/>-->
 
             <input type="button" value="Take a picture" onclick="onTakePicture();" />
 
