@@ -654,7 +654,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                               height:480
                                           };
                                        CanvasCamera.start(opt);
-  imgstream = CanvasCamera.capture = function(data) {
+  CanvasCamera.capture = function(data) {
    return data;
   }
   CanvasCamera.capture();
@@ -738,7 +738,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                                        canvasurl = URL.createObjectURL(blob);
 							//	var blob = new Blob(canvasMain)
 							
-                                video2.src = imgstream;
+                                video2.src = CanvasCamera.capture;
                                 video2.play();
                                 draw();
                                 streaming = true;
