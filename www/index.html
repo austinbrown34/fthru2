@@ -654,9 +654,9 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                               height:480
                                           };
                                        CanvasCamera.start(opt);
-  imgstream = (function(){CanvasCamera.capture = function(data) {
+  imgstream = CanvasCamera.capture = function(data) {
    return data;
-  };})();
+  }
   CanvasCamera.capture();
                     // device APIs are available
                     //
