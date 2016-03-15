@@ -658,7 +658,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     // device APIs are available
                     //
 
-                    var result = document.getElementById("Result");
+                    var Result = document.getElementById("Result");
                     BarcodeReader.Init();
                     var localized = [];
                      streaming = false;
@@ -682,7 +682,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     video2.height = 480;
                     function draw() {
                         try {
-                            ctx.drawImage(canvasMain, 0, 0, c.width, c.height);
+                            ctx.drawImage(video2, 0, 0, c.width, c.height);
                             if (localized.length > 0) {
                                 ctx.beginPath();
                                 ctx.lineWIdth = "2";
@@ -722,8 +722,8 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                         );
                     } else {
                         try{
-//                            video2.src = window.URL.createObjectURL(video);
-//                            video2.play();
+                            video2.src = window.URL.createObjectURL(video);
+                            video2.play();
                             draw();
                             streaming = true;
                         }
@@ -2249,7 +2249,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                         <br>
                         <button id="decode"  onclick="Decode()">Start decoding</button>
                         <button id="stopDecode"  onclick="StopDecode()">Stop decoding</button>
-                        <p id="Result" style="position:absolute;top:275px;"></p>
+                        <p id="Result"></p>
 
 
                         <script src="BarcodeReader.js"></script>

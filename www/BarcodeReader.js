@@ -3977,6 +3977,7 @@ var BarcodeReader = {
   // Starts the decoding of a stream, the stream is a video not a blob i.e it's an element.
   DecodeStream: function(stream) {
     BarcodeReader.Stream = stream;
+
     BarcodeReader.DecodeStreamActive = true;
     BarcodeReader.DecoderWorker.onmessage = BarcodeReader.BarcodeReaderStreamCallback;
     BarcodeReader.ScanContext.drawImage(stream, 0, 0, BarcodeReader.ScanCanvas.width, BarcodeReader.ScanCanvas.height);
