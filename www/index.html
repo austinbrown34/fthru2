@@ -682,7 +682,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     video2.height = 480;
                     function draw() {
                         try {
-                            ctx.drawImage(video2, 0, 0, c.width, c.height);
+                            ctx.drawImage(video, 0, 0, c.width, c.height);
                             if (localized.length > 0) {
                                 ctx.beginPath();
                                 ctx.lineWIdth = "2";
@@ -722,8 +722,8 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                         );
                     } else {
                         try{
-                            video2.src = window.URL.createObjectURL(video);
-                            video2.play();
+//                            video2.src = window.URL.createObjectURL(video);
+//                            video2.play();
                             draw();
                             streaming = true;
                         }
