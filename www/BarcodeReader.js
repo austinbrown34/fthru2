@@ -3988,6 +3988,7 @@ var BarcodeReader = {
       cmd: "normal",
       rotation: 1
     });
+      alert("made it here");
   },
 
   // Stops the decoding of a stream.
