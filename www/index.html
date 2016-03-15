@@ -642,10 +642,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
 				
 				 canvasMain = document.getElementById("camera");
-                    video = CanvasCamera;
-                    video3 = CanvasCamera;
-                            video.initialize(canvasMain);
-
+                   video =     CanvasCamera.initialize(canvasMain);
                                           // define options
                                           var opt = {
                                               quality: 75,
@@ -656,13 +653,11 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                               width:640,
                                               height:480
                                           };
-                                       video.start(opt);
-                                        video3.start(opt);
-
-  imgstream = video3.capture = function(data) {
-   return data;
+                                       CanvasCamera.start(opt);
+  CanvasCamera.capture = function(data) {
+    console.log("capturedata: "+data);
   }
-
+  CanvasCamera.capture();
                     // device APIs are available
                     //
 
@@ -743,7 +738,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                                        canvasurl = URL.createObjectURL(blob);
 							//	var blob = new Blob(canvasMain)
 							
-                                video2.src = imgstream;
+                                video2.src = window.URL.canvasMain.src;
                                 video2.play();
                                 draw();
                                 streaming = true;
