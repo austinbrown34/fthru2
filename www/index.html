@@ -2180,8 +2180,21 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 			<script src="exif.js" type="text/javascript"></script>
 		<script type="text/javascript" src="JOB.js"></script>
 		<script type="text/javascript">
+		function convertDataURIToBinary(dataURI) {
+ var BASE64_MARKER = ';base64,';   
+  var base64Index = dataURI.indexOf(BASE64_MARKER) + BASE64_MARKER.length;
+  var base64 = dataURI.substring(base64Index);
+  var raw = window.atob(base64);
+  var rawLength = raw.length;
+  var array = new Uint8Array(new ArrayBuffer(rawLength));
+
+  for(i = 0; i < rawLength; i++) {
+    array[i] = raw.charCodeAt(i);
+  }
+  return array;
+}
 		var d = new Date();
-			var takePicture = document.querySelector("#Take-Picture"),
+			var takePicture = document.getElementById("camera");
 			showPicture = document.createElement("img");
 			Result = document.querySelector("#textbit");
 			var canvas =document.getElementById("picture");
@@ -2227,10 +2240,17 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 			});
 			if(takePicture && showPicture) {
 				starttime = d.getTime();
-				takePicture.onchange = function (event) {
-					var files = event.target.files;
-					if (files && files.length > 0) {
-						file = files[0];
+				 var canvas2 = document.getElementById("camera");
+				   var imd = canvas2.toDataURL("image/png");  
+    var ui8a = convertDataURIToBinary(imd);
+    var bb = new WebKitBlobBuilder();
+    bb.append(ui8a.buffer);
+
+ // img2.src = webkitURL.createObjectURL(bb.getBlob("image/png"));
+ file = bb.getBlob("image/png");
+				//var dataURL2 = canvas2.toDataURL();
+				 myInterval = setInterval( "doSomething()", 1000 );
+				function doSomething () {
 						try {
 							var URL = window.URL || window.webkitURL;
 							showPicture.onload = function(event) {
@@ -2250,14 +2270,14 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 									};
 									showPicture.src = event.target.result;
 								};
-								fileReader.readAsDataURL(file);
+								fileReader.readAsDataURL(imd);
 							}
 							catch (e) {
 								Result.innerHTML = "Neither createObjectURL or FileReader are supported";
 							}
-						}
+					
 					}
-				};
+				}
 			}
 		</script>
 
