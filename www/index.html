@@ -682,6 +682,9 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     video2.height = 480;
                     function draw() {
                         try {
+
+
+
                             ctx.drawImage(video2, 0, 0, c.width, c.height);
                             if (localized.length > 0) {
                                 ctx.beginPath();
@@ -726,14 +729,22 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 // Find the canvas element to capture
                             var canvasElt = canvasMain;
 
+
+                            canvasElt.toBlob(function(blob) {
+
+//                                        canvasurl = URL.createObjectURL(blob);
+
+                                video2.src = window.URL.createObjectURL(blob);
+                                video2.play();
+                                draw();
+                                streaming = true;
+
+                            });
 // Get the stream
-                            var stream = canvasElt.captureStream(25); // 25 FPS
+//                            var stream = canvasElt.captureStream(25); // 25 FPS
 //                            var canvas2 = document.getElementById("camera");
 //                            var dataURL2 = canvas2.toDataURL();
-                            video2.src = window.URL.createObjectURL(stream);
-                            video2.play();
-                            draw();
-                            streaming = true;
+
                         }
                         catch(err){
                             console.log("error"+err);
