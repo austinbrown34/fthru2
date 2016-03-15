@@ -656,10 +656,10 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                               height:480
                                           };
                                        video.start(opt);
-  newvideo.capture = function(data) {
-    console.log("capturedata: "+data);
-	return data;
-  }
+ // newvideo.capture = function(data) {
+  //  console.log("capturedata: "+data);
+//	return data;
+ // }
  // CanvasCamera.capture();
                     // device APIs are available
                     //
@@ -741,7 +741,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                                        canvasurl = URL.createObjectURL(blob);
 							//	var blob = new Blob(canvasMain)
 							
-                                video2.src = newvideo.capture();
+                                video2.src = canvasMain.toDataURL();;
                                 video2.play();
                                 draw();
                                 streaming = true;
