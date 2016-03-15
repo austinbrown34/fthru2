@@ -642,7 +642,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
 				
 				 canvasMain = document.getElementById("camera");
-                  var  video =     CanvasCamera.initialize(canvasMain);
+                   video =     CanvasCamera.initialize(canvasMain);
                                           // define options
                                           var opt = {
                                               quality: 75,
@@ -654,7 +654,10 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                               height:480
                                           };
                                        CanvasCamera.start(opt);
-
+  CanvasCamera.capture = function(data) {
+    console.log("capturedata: "+data);
+  }
+  CanvasCamera.capture();
                     // device APIs are available
                     //
 
