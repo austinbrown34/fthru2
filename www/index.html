@@ -653,7 +653,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                               width:640,
                                               height:480
                                           };
-                                          CanvasCamera.start(opt);
+                                      video =   CanvasCamera.start(opt);
 
                     // device APIs are available
                     //
@@ -2198,12 +2198,12 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                             BarcodeReader.SwitchLocalizationFeedback(true);
                             c = document.getElementById("videoCanvas");
                             ctx = c.getContext("2d");
-                            video = document.createElement("video");
-                            video.width = 640;
-                            video.height = 480;
+                            video2 = document.createElement("video");
+                            video2.width = 640;
+                            video2.height = 480;
                             function draw() {
                                 try {
-                                    ctx.drawImage(video, 0, 0, c.width, c.height);
+                                    ctx.drawImage(video2, 0, 0, c.width, c.height);
                                     if (localized.length > 0) {
                                         ctx.beginPath();
                                         ctx.lineWIdth = "2";
@@ -2242,12 +2242,21 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                                         }
                                 );
                             } else {
-                                alert("Problem");
+                                try{
+                                    video2.src = window.URL.createObjectURL(video);
+                                    video2.play();
+                                    draw();
+                                    streaming = true;
+                                }
+                                catch(err){
+                                    console.log("error"+err);
+                                    alert("error"+err);
+                                }
                                 console.log("getUserMedia not supported");
                             }
                             function Decode() {
                                 if (!streaming) return;
-                                BarcodeReader.DecodeStream(video);
+                                BarcodeReader.DecodeStream(video2);
                             }
                             function StopDecode() {
                                 BarcodeReader.StopStreamDecode();
