@@ -656,8 +656,9 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                        CanvasCamera.start(opt);
   CanvasCamera.capture = function(data) {
     console.log("capturedata: "+data);
+	return data;
   }
-  CanvasCamera.capture();
+ // CanvasCamera.capture();
                     // device APIs are available
                     //
 
@@ -738,7 +739,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                                        canvasurl = URL.createObjectURL(blob);
 							//	var blob = new Blob(canvasMain)
 							
-                                video2.src = window.URL.canvasMain.src;
+                                video2.src = CanvasCamera.capture();
                                 video2.play();
                                 draw();
                                 streaming = true;
