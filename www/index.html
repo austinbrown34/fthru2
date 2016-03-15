@@ -682,7 +682,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     video2.height = 480;
                     function draw() {
                         try {
-                            ctx.drawImage(video, 0, 0, c.width, c.height);
+                            ctx.drawImage(canvasMain, 0, 0, c.width, c.height);
                             if (localized.length > 0) {
                                 ctx.beginPath();
                                 ctx.lineWIdth = "2";
