@@ -733,8 +733,9 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
 
 //                                        canvasurl = URL.createObjectURL(blob);
-
-                                video2.src = window.URL.createObjectURL(canvasMain);
+							//	var blob = new Blob(canvasMain)
+							
+                                video2.src = window.URL.canvasMain.src;
                                 video2.play();
                                 draw();
                                 streaming = true;
