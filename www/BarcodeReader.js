@@ -3888,7 +3888,6 @@ var BarcodeReader = {
 
   // The callback function for stream decoding used internally by BarcodeReader.
   BarcodeReaderStreamCallback: function(e) {
-      console.log("barcodereaderstreamcallback e: "+e);
     if (e.data.success === "localization") {
       if (BarcodeReader.Config.LocalizationFeedback) {
         BarcodeReader.LocalizationCallback(e.data.result);
@@ -3977,7 +3976,6 @@ var BarcodeReader = {
   // Starts the decoding of a stream, the stream is a video not a blob i.e it's an element.
   DecodeStream: function(stream) {
     BarcodeReader.Stream = stream;
-
     BarcodeReader.DecodeStreamActive = true;
     BarcodeReader.DecoderWorker.onmessage = BarcodeReader.BarcodeReaderStreamCallback;
     BarcodeReader.ScanContext.drawImage(stream, 0, 0, BarcodeReader.ScanCanvas.width, BarcodeReader.ScanCanvas.height);
@@ -3990,7 +3988,6 @@ var BarcodeReader = {
       cmd: "normal",
       rotation: 1
     });
-      alert("made it here");
   },
 
   // Stops the decoding of a stream.

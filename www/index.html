@@ -664,104 +664,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     // device APIs are available
                     //
 
-                    var Result = document.getElementById("Result");
-                    BarcodeReader.Init();
-                    var localized = [];
-                     streaming = false;
-                    BarcodeReader.StreamCallback = function(result) {
-                        if (result.length > 0) {
-                            var tempArray = [];
-                            for (var i = 0; i < result.length; i++) {
-                                tempArray.push(result[i].Format + " : " + result[i].Value);
-                            }
-                            Result.innerHTML = tempArray.join("<br />");
-                        }
-                    };
-                    BarcodeReader.SetLocalizationCallback(function(result) {
-                        localized = result;
-                    });
-                    BarcodeReader.SwitchLocalizationFeedback(true);
-                    c = document.getElementById("videoCanvas");
-                    ctx = c.getContext("2d");
-                    video2 = document.createElement("video");
-                    video2.width = 640;
-                    video2.height = 480;
-                    function draw() {
-                        try {
-
-
-
-                            ctx.drawImage(video2, 0, 0, c.width, c.height);
-                            if (localized.length > 0) {
-                                ctx.beginPath();
-                                ctx.lineWIdth = "2";
-                                ctx.strokeStyle = "red";
-                                for (var i = 0; i < localized.length; i++) {
-                                    ctx.rect(localized[i].x, localized[i].y, localized[i].width, localized[i].height);
-                                }
-                                ctx.stroke();
-                            }
-                            setTimeout(draw, 20);
-                        } catch (e) {
-                            if (e.name == "NS_ERROR_NOT_AVAILABLE") {
-                                setTimeout(draw, 20);
-                            } else {
-                                throw e;
-                            }
-                        }
-                    }
-                    navigator.getUserMedia = (navigator.getUserMedia ||
-                            navigator.webkitGetUserMedia ||
-                            navigator.mozGetUserMedia ||
-                            navigator.msGetUserMedia);
-                    if (navigator.getUserMedia) {
-                        navigator.getUserMedia({
-                                    video: true,
-                                    audio: true
-                                },
-                                function(localMediaStream) {
-                                    video.src = window.URL.createObjectURL(localMediaStream);
-                                    video.play();
-                                    draw();
-                                    streaming = true;
-                                },
-                                function(err) {
-                                    console.log("The following error occured: " + err);
-                                }
-                        );
-                    } else {
-                        try{
-
-// Find the canvas element to capture
-
-
-
-
-
-//                                        canvasurl = URL.createObjectURL(blob);
-							//	var blob = new Blob(canvasMain)
-							
-                                video2.src = canvasMain.toDataURL();;
-                                video2.play();
-                                draw();
-                                streaming = true;
-
-
-// Get the stream
-//                            var stream = canvasElt.captureStream(25); // 25 FPS
-//                            var canvas2 = document.getElementById("camera");
-//                            var dataURL2 = canvas2.toDataURL();
-
-                        }
-                        catch(err){
-                            console.log("error"+err);
-                            alert("error: "+err);
-                        }
-                        console.log("getUserMedia not supported");
-                    }
-
-				
-					
+        
 					
 					
                     if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
@@ -2270,13 +2173,93 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
     <!— camera preview canvas —>
         <canvas id="camera" width="352" height="288" style="border:2px"></canvas>
-                        <canvas id="videoCanvas" width="320" height="240">
-                        </canvas>
-                        <br>
-                        <button id="decode"  onclick="Decode()">Start decoding</button>
-                        <button id="stopDecode"  onclick="StopDecode()">Stop decoding</button>
-                        <p id="Result"></p>
-
+                     			<canvas width="320" height="240" id="picture"></canvas>
+			<input id="Take-Picture" type="file" accept="image/*;capture=camera" />
+			<p id="textbit"></p>
+		</div>
+			<script src="exif.js" type="text/javascript"></script>
+		<script type="text/javascript" src="JOB.js"></script>
+		<script type="text/javascript">
+		var d = new Date();
+			var takePicture = document.querySelector("#Take-Picture"),
+			showPicture = document.createElement("img");
+			Result = document.querySelector("#textbit");
+			var canvas =document.getElementById("picture");
+			var ctx = canvas.getContext("2d");
+			JOB.Init();
+			JOB.SetImageCallback(function(result) {
+				if(result.length > 0){
+					var tempArray = [];
+					for(var i = 0; i < result.length; i++) {
+					
+						tempArray.push(result[i].Format+" : "+result[i].Value);
+					}
+					endtime = d.getTime();
+					var finaltime = endtime - starttime;
+					Result.innerHTML=tempArray.join(" <br />totaltime: "+finaltime+" <br />");
+				}else{
+					if(result.length === 0) {
+					endtime = d.getTime();
+					var finaltime = endtime - starttime;
+						Result.innerHTML="Decoding failed. totaltime: "+finaltime;
+					}
+				}
+			});
+			JOB.PostOrientation = true;
+			JOB.OrientationCallback = function(result) {
+				canvas.width = result.width;
+				canvas.height = result.height;
+				var data = ctx.getImageData(0,0,canvas.width,canvas.height);
+				for(var i = 0; i < data.data.length; i++) {
+					data.data[i] = result.data[i];
+				}
+				ctx.putImageData(data,0,0);
+			};
+			JOB.SwitchLocalizationFeedback(true);
+			JOB.SetLocalizationCallback(function(result) {
+				ctx.beginPath();
+				ctx.lineWIdth = "2";
+				ctx.strokeStyle="red";
+				for(var i = 0; i < result.length; i++) {
+					ctx.rect(result[i].x,result[i].y,result[i].width,result[i].height); 
+				}
+				ctx.stroke();
+			});
+			if(takePicture && showPicture) {
+				starttime = d.getTime();
+				takePicture.onchange = function (event) {
+					var files = event.target.files;
+					if (files && files.length > 0) {
+						file = files[0];
+						try {
+							var URL = window.URL || window.webkitURL;
+							showPicture.onload = function(event) {
+								Result.innerHTML="";
+								JOB.DecodeImage(showPicture);
+								URL.revokeObjectURL(showPicture.src);
+							};
+							showPicture.src = URL.createObjectURL(file);
+						}
+						catch (e) {
+							try {
+								var fileReader = new FileReader();
+								fileReader.onload = function (event) {
+									showPicture.onload = function(event) {
+										Result.innerHTML="";
+										JOB.DecodeImage(showPicture);
+									};
+									showPicture.src = event.target.result;
+								};
+								fileReader.readAsDataURL(file);
+							}
+							catch (e) {
+								Result.innerHTML = "Neither createObjectURL or FileReader are supported";
+							}
+						}
+					}
+				};
+			}
+		</script>
 
                         <script src="BarcodeReader.js"></script>
 
