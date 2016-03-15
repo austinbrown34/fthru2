@@ -2174,7 +2174,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
     <!— camera preview canvas —>
         <canvas id="camera" width="352" height="288" style="border:2px"></canvas>
                      			<canvas width="320" height="240" id="picture"></canvas>
-			<input id="Take-Picture" type="file" accept="image/*;capture=camera" />
+<!-- 			<input id="Take-Picture" type="file" accept="image/*;capture=camera" /> -->
 			<p id="textbit"></p>
 		</div>
 			<script src="exif.js" type="text/javascript"></script>
@@ -2210,6 +2210,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 					endtime = d.getTime();
 					var finaltime = endtime - starttime;
 					Result.innerHTML=tempArray.join(" <br />totaltime: "+finaltime+" <br />");
+					clearInterval (myInterval);
 				}else{
 					if(result.length === 0) {
 					endtime = d.getTime();
