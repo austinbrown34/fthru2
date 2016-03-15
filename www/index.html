@@ -658,7 +658,88 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     // device APIs are available
                     //
 
-					
+                    var result = document.getElementById("Result");
+                    BarcodeReader.Init();
+                    var localized = [];
+                    var streaming = false;
+                    BarcodeReader.StreamCallback = function(result) {
+                        if (result.length > 0) {
+                            var tempArray = [];
+                            for (var i = 0; i < result.length; i++) {
+                                tempArray.push(result[i].Format + " : " + result[i].Value);
+                            }
+                            Result.innerHTML = tempArray.join("<br />");
+                        }
+                    };
+                    BarcodeReader.SetLocalizationCallback(function(result) {
+                        localized = result;
+                    });
+                    BarcodeReader.SwitchLocalizationFeedback(true);
+                    c = document.getElementById("videoCanvas");
+                    ctx = c.getContext("2d");
+                    video2 = document.createElement("video");
+                    video2.width = 640;
+                    video2.height = 480;
+                    function draw() {
+                        try {
+                            ctx.drawImage(video2, 0, 0, c.width, c.height);
+                            if (localized.length > 0) {
+                                ctx.beginPath();
+                                ctx.lineWIdth = "2";
+                                ctx.strokeStyle = "red";
+                                for (var i = 0; i < localized.length; i++) {
+                                    ctx.rect(localized[i].x, localized[i].y, localized[i].width, localized[i].height);
+                                }
+                                ctx.stroke();
+                            }
+                            setTimeout(draw, 20);
+                        } catch (e) {
+                            if (e.name == "NS_ERROR_NOT_AVAILABLE") {
+                                setTimeout(draw, 20);
+                            } else {
+                                throw e;
+                            }
+                        }
+                    }
+                    navigator.getUserMedia = (navigator.getUserMedia ||
+                            navigator.webkitGetUserMedia ||
+                            navigator.mozGetUserMedia ||
+                            navigator.msGetUserMedia);
+                    if (navigator.getUserMedia) {
+                        navigator.getUserMedia({
+                                    video: true,
+                                    audio: true
+                                },
+                                function(localMediaStream) {
+                                    video.src = window.URL.createObjectURL(localMediaStream);
+                                    video.play();
+                                    draw();
+                                    streaming = true;
+                                },
+                                function(err) {
+                                    console.log("The following error occured: " + err);
+                                }
+                        );
+                    } else {
+                        try{
+                            video2.src = window.URL.createObjectURL(video);
+                            video2.play();
+                            draw();
+                            streaming = true;
+                        }
+                        catch(err){
+                            console.log("error"+err);
+                            alert("error: "+err);
+                        }
+                        console.log("getUserMedia not supported");
+                    }
+                    function Decode() {
+                        if (!streaming) return;
+                        BarcodeReader.DecodeStream(video2);
+                    }
+                    function StopDecode() {
+                        BarcodeReader.StopStreamDecode();
+                    }
 				
 					
 					
@@ -2178,90 +2259,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 
                         <script src="BarcodeReader.js"></script>
-                        <script>
-                            var result = document.getElementById("Result");
-                            BarcodeReader.Init();
-                            var localized = [];
-                            var streaming = false;
-                            BarcodeReader.StreamCallback = function(result) {
-                                if (result.length > 0) {
-                                    var tempArray = [];
-                                    for (var i = 0; i < result.length; i++) {
-                                        tempArray.push(result[i].Format + " : " + result[i].Value);
-                                    }
-                                    Result.innerHTML = tempArray.join("<br />");
-                                }
-                            };
-                            BarcodeReader.SetLocalizationCallback(function(result) {
-                                localized = result;
-                            });
-                            BarcodeReader.SwitchLocalizationFeedback(true);
-                            c = document.getElementById("videoCanvas");
-                            ctx = c.getContext("2d");
-                            video2 = document.createElement("video");
-                            video2.width = 640;
-                            video2.height = 480;
-                            function draw() {
-                                try {
-                                    ctx.drawImage(video2, 0, 0, c.width, c.height);
-                                    if (localized.length > 0) {
-                                        ctx.beginPath();
-                                        ctx.lineWIdth = "2";
-                                        ctx.strokeStyle = "red";
-                                        for (var i = 0; i < localized.length; i++) {
-                                            ctx.rect(localized[i].x, localized[i].y, localized[i].width, localized[i].height);
-                                        }
-                                        ctx.stroke();
-                                    }
-                                    setTimeout(draw, 20);
-                                } catch (e) {
-                                    if (e.name == "NS_ERROR_NOT_AVAILABLE") {
-                                        setTimeout(draw, 20);
-                                    } else {
-                                        throw e;
-                                    }
-                                }
-                            }
-                            navigator.getUserMedia = (navigator.getUserMedia ||
-                                    navigator.webkitGetUserMedia ||
-                                    navigator.mozGetUserMedia ||
-                                    navigator.msGetUserMedia);
-                            if (navigator.getUserMedia) {
-                                navigator.getUserMedia({
-                                            video: true,
-                                            audio: true
-                                        },
-                                        function(localMediaStream) {
-                                            video.src = window.URL.createObjectURL(localMediaStream);
-                                            video.play();
-                                            draw();
-                                            streaming = true;
-                                        },
-                                        function(err) {
-                                            console.log("The following error occured: " + err);
-                                        }
-                                );
-                            } else {
-                                try{
-                                    video2.src = window.URL.createObjectURL(video);
-                                    video2.play();
-                                    draw();
-                                    streaming = true;
-                                }
-                                catch(err){
-                                    console.log("error"+err);
-                                    alert("error"+err);
-                                }
-                                console.log("getUserMedia not supported");
-                            }
-                            function Decode() {
-                                if (!streaming) return;
-                                BarcodeReader.DecodeStream(video2);
-                            }
-                            function StopDecode() {
-                                BarcodeReader.StopStreamDecode();
-                            }
-                        </script>
+
 
 
 						
