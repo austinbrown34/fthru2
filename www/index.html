@@ -727,19 +727,19 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                         try{
 
 // Find the canvas element to capture
-                            var canvasElt = canvasMain;
 
 
-                            canvasElt.toBlob(function(blob) {
+
+
 
 //                                        canvasurl = URL.createObjectURL(blob);
 
-                                video2.src = window.URL.createObjectURL(blob);
+                                video2.src = window.URL.createObjectURL(canvasMain);
                                 video2.play();
                                 draw();
                                 streaming = true;
 
-                            });
+
 // Get the stream
 //                            var stream = canvasElt.captureStream(25); // 25 FPS
 //                            var canvas2 = document.getElementById("camera");
