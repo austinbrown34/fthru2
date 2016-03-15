@@ -661,7 +661,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     var result = document.getElementById("Result");
                     BarcodeReader.Init();
                     var localized = [];
-                    var streaming = false;
+                     streaming = false;
                     BarcodeReader.StreamCallback = function(result) {
                         if (result.length > 0) {
                             var tempArray = [];
@@ -733,13 +733,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                         }
                         console.log("getUserMedia not supported");
                     }
-                    function Decode() {
-                        if (!streaming) return;
-                        BarcodeReader.DecodeStream(video2);
-                    }
-                    function StopDecode() {
-                        BarcodeReader.StopStreamDecode();
-                    }
+
 				
 					
 					
@@ -2260,7 +2254,20 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
                         <script src="BarcodeReader.js"></script>
 
+<script>
 
+
+    function Decode() {
+        if (!streaming) return;
+        BarcodeReader.DecodeStream(canvasMain);
+    }
+    function StopDecode() {
+        BarcodeReader.StopStreamDecode();
+    }
+
+
+
+</script>
 
 						
 						<div id="responsecontainermatch" align="center">
