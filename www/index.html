@@ -2259,7 +2259,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
     function Decode() {
         if (!streaming) return;
-        BarcodeReader.DecodeStream(canvasMain);
+      testreader =  BarcodeReader.DecodeStream(canvasMain);
     }
     function StopDecode() {
         BarcodeReader.StopStreamDecode();
