@@ -3888,6 +3888,7 @@ var BarcodeReader = {
 
   // The callback function for stream decoding used internally by BarcodeReader.
   BarcodeReaderStreamCallback: function(e) {
+      console.log("barcodereaderstreamcallback e: "+e);
     if (e.data.success === "localization") {
       if (BarcodeReader.Config.LocalizationFeedback) {
         BarcodeReader.LocalizationCallback(e.data.result);
