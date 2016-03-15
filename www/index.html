@@ -2241,11 +2241,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 			});
 			if(takePicture && showPicture) {
 				starttime = d.getTime();
-				 var canvas2 = document.getElementById("camera");
-				   var imd = canvas2.toDataURL("image/png");  
-    var ui8a = convertDataURIToBinary(imd);
-    var bb = new WebKitBlobBuilder();
-    bb.append(ui8a.buffer);
+				
 
  // img2.src = webkitURL.createObjectURL(bb.getBlob("image/png"));
  file = bb.getBlob("image/png");
@@ -2253,6 +2249,12 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 				 myInterval = setInterval( "doSomething()", 1000 );
 				function doSomething () {
 						try {
+						 var canvas2 = document.getElementById("camera");
+				   var imd = canvas2.toDataURL("image/png");  
+				   console.log("canvas image");
+    var ui8a = convertDataURIToBinary(imd);
+    var bb = new WebKitBlobBuilder();
+    bb.append(ui8a.buffer);
 							var URL = window.URL || window.webkitURL;
 							showPicture.onload = function(event) {
 								Result.innerHTML="";
