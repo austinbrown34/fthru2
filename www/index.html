@@ -937,7 +937,7 @@ contacttable = $('#exampledt')
   
   $('#exampledt tbody').on('taphold','tr',function(){
 if ( $(this).hasClass('selected') ) {
-			$(this).find(".editdelete").hide();
+			$('#exampledt').find(".editdelete").remove();
             $(this).removeClass('selected');
         }
         else {
