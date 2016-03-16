@@ -606,6 +606,55 @@ var password = localStorage.getItem('password');
                 }
             });
         }
+		
+		
+		
+ function get_makes3(year) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#edit #makes').empty();
+                    $('#edit #makes').append("<option>Select Make</option>");
+                    $.each(data.makeHolder, function(i, val) {
+                        $('#edit #makes').append("<option value='" + data.makeHolder[i].niceName + "'>" + data.makeHolder[i].name + "</option>");
+                    });
+                    $('#edit [name="makes"]').val(make);
+                    $('#edit #makes').removeAttr('disabled');
+                    get_models3(make,year);
+                    console.log('Step 2: Makes select was populated and enabled');
+                }
+            });
+        }
+        function get_models3(make, year) {
+            url = 'http://api.edmunds.com/v1/api/vehicle/modelrepository/findmodelsbymakeandyear?make=' + make + '&year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: '',
+                dataType: 'jsonp',
+                success: function(data) {
+                    $('#edit #models').empty();
+                    $('#edit #models').append("<option>Select Model</option>");
+                    $.each(data.modelHolder, function(i, val) {
+                        $('#edit #models').append("<option value='" + data.modelHolder[i].niceName + "'>" + data.modelHolder[i].name + "</option>");
+                    });
+                    
+					$('#edit [name="models"]').val(model);
+
+                    $('#edit #models').removeAttr('disabled');
+                    console.log('Step 4: Models select was populated and enabled');
+                    
+                }
+            });
+        }
+
+
+		
+		
         $(document).ready(function() {
 //              function getBase64Image(img) {
 //                  img.crossOrigin = 'Anonymous';
@@ -954,7 +1003,7 @@ fname = name.split(" ")[0];
 tel = $(this).children('td').eq(1).text();
 pricerange = $(this).children('td').eq(2).text().split("$");
 pricelow = pricerange[1].split(" ")[0];
-pricehigh = pricerange[2];
+pricehigh = pricerange[2].split("<")[0];
 $('#edit [name="firstname"]').val(fname);
 
 $('#edit [name="lastname"]').val(lname);
@@ -965,7 +1014,41 @@ $('#edit [name="pricelow"]').val(pricelow);
 
 $('#edit [name="pricehigh"]').val(pricehigh);
 		
-		
+
+		$('#edit #years').change(function() {
+                console.log('Step 1: Year ' + $(this).val() + ' was selected');
+                get_makes3($(this).val());
+            });
+            
+            $('#edit #makes').change(function() {
+                console.log('Step 3: Make ' + $(this).val() + ' was selected');
+                get_models3($(this).val(), $('#edit #years').val());
+            });
+			
+//year = $(this).find("#year").text();
+//make = $(this).find("#make").text();
+//model = $(this).find("#model").text();
+//$('#edit [name="years"]').val(year);
+//get_makes3(year);
+
+
+
+
+
+
+
+  $("#edit #cars").removeAttr('disabled');
+   $("#edit #trucks").removeAttr('disabled');
+   $("#edit #suvs").removeAttr('disabled');
+   $("#edit #crossovers").removeAttr('disabled');
+    $("#edit #specific1").hide();
+     $("#edit #specific2").hide();
+      $("#edit #specific3").hide();
+$('#edit #cars').prop('checked', false);
+$('#edit #trucks').prop('checked', false);
+$('#edit #suvs').prop('checked', false);
+$('#edit #crossovers').prop('checked', false);
+$('#edit #specific').prop('checked', false);		
 		
 		
 		}
