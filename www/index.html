@@ -2258,7 +2258,7 @@ console.log("made it to the starting point");
                             console.log("converttobinary");
 //                            file = bb.getBlob("image/png");
 //                            var file = new Blob(ui8a.buffer, {type: "image/png"});
-                            var file = new Blob( ui8a.buffer, {type:'image/png'} );
+                            var file = new Blob( [ui8a.buffer], {type:'image/png'} );
                             console.log("file: "+file);
 							var URL = window.URL || window.webkitURL;
 							showPicture.onload = function(event) {
