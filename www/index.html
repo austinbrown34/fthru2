@@ -659,6 +659,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                        video.start(opt);
                     video.capture = function(data){
                         console.log(data);
+                        doSomething(data);
                     }
  // newvideo.capture = function(data) {
   //  console.log("capturedata: "+data);
@@ -2257,36 +2258,34 @@ console.log("made it to the starting point");
 				function doSomething (data) {
 
 						try {
-						 var canvas2 = document.getElementById("camera");
-				   var imd = canvas2.toDataURL("image/jpg");
+//						 var canvas2 = document.getElementById("camera");
+//				   var imd = canvas2.toDataURL("image/jpg");
 //				   console.log("canvas image");
-    var ui8a = convertDataURIToBinary(imd);
+//    var ui8a = convertDataURIToBinary(imd);
 //    var bb = new WebKitBlobBuilder();
 //    bb.append(ui8a.buffer);
 //                            console.log("converttobinary");
 //                            file = bb.getBlob("image/png");
 //                            var file = new Blob(ui8a.buffer, {type: "image/png"});
-                            var file = new Blob( [ui8a.buffer], {type:'image/jpg'} );
+//                            var file = new Blob( [ui8a.buffer], {type:'image/jpg'} );
 //                            console.log("file: "+file);
-							var URL = window.URL || window.webkitURL;
+//							var URL = window.URL || window.webkitURL;
 							showPicture.onload = function(event) {
 								Result.innerHTML="";
 								JOB.DecodeImage(showPicture);
 								URL.revokeObjectURL(showPicture.src);
 							};
-							showPicture.src = URL.createObjectURL(file);
+							showPicture.src = URL.createObjectURL(data);
 						}
 						catch (e) {
 							try {
-								var fileReader = new FileReader();
-								fileReader.onload = function (event) {
+
 									showPicture.onload = function(event) {
 										Result.innerHTML="";
 										JOB.DecodeImage(showPicture);
 									};
-									showPicture.src = event.target.result;
-								};
-								fileReader.readAsDataURL(imd);
+									showPicture.src = data;
+
 							}
 							catch (e) {
 								Result.innerHTML = "Neither createObjectURL or FileReader are supported";
