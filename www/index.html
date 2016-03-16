@@ -651,9 +651,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                               destinationType: CanvasCamera.DestinationType.FILE_URI,
                                               encodingType: CanvasCamera.EncodingType.JPEG,
                                               saveToPhotoAlbum:true,
-                                              correctOrientation:true,
-                                              width:640,
-                                              height:480
+                                              correctOrientation:true
                                           };
                                        video.start(opt);
  // newvideo.capture = function(data) {
@@ -2172,8 +2170,8 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
         </div>
 
     <!— camera preview canvas —><table style="width:100%;">
-       <tr><td> <canvas id="camera" width="640" height="480" style="border:2px"></canvas></td></tr>
-                     		<td>	<canvas width="640" height="480" id="picture"></canvas></td></tr>
+       <tr><td> <canvas id="camera"  style="border:2px"></canvas></td></tr>
+                     		<td>	<canvas  id="picture"></canvas></td></tr>
                     </table>
 <!-- 			<input id="Take-Picture" type="file" accept="image/*;capture=camera" /> -->
 			<p id="textbit"></p>
