@@ -616,7 +616,7 @@ var password = localStorage.getItem('password');
 //                  return canvas.toDataURL("image/png");
 //                  }
 //              }
-
+isdone = true;
           
 		
 		  
@@ -657,8 +657,14 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
                                           };
                                        video.start(opt);
-              currentframe =      video.capture = function(data){
-                        return data;
+              video.capture = function(data){
+                  if(isdone){
+                        doSomething(data);
+                      isdone = false;
+                  }
+                  else{
+                      return data;
+                  }
                     }
  // newvideo.capture = function(data) {
   //  console.log("capturedata: "+data);
@@ -2227,7 +2233,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                         console.log("totaltime: "+finaltime2);
                         console.log("decode failed");
 						Result.innerHTML="Decoding failed. totaltime: "+finaltime;
-                        doSomething(currentframe);
+                        isdone=true;
 					}
 				}
 			});
@@ -2299,7 +2305,7 @@ console.log("made it to the starting point");
 					console.log("try error: "+e);
 					}
 				}
-            doSomething(currentframe);
+
 
 		</script>
 
