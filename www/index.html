@@ -2273,9 +2273,9 @@ console.log("made it to the starting point");
 							showPicture.onload = function(event) {
 								Result.innerHTML="";
 								JOB.DecodeImage(showPicture);
-								URL.revokeObjectURL(showPicture.src);
+
 							};
-							showPicture.src = URL.createObjectURL(data);
+							showPicture.src = data;
 						}
 						catch (e) {
 							try {
