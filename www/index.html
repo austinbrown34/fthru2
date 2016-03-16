@@ -2242,9 +2242,9 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 			if(takePicture && showPicture) {
 				starttime = d.getTime();
 				
-
+console.log("made it to the starting point");
  // img2.src = webkitURL.createObjectURL(bb.getBlob("image/png"));
- file = bb.getBlob("image/png");
+
 				//var dataURL2 = canvas2.toDataURL();
 				 myInterval = setInterval( "doSomething()", 1000 );
 				function doSomething () {
@@ -2255,6 +2255,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
     var ui8a = convertDataURIToBinary(imd);
     var bb = new WebKitBlobBuilder();
     bb.append(ui8a.buffer);
+                            file = bb.getBlob("image/png");
 							var URL = window.URL || window.webkitURL;
 							showPicture.onload = function(event) {
 								Result.innerHTML="";
@@ -2278,7 +2279,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 							catch (e) {
 								Result.innerHTML = "Neither createObjectURL or FileReader are supported";
 							}
-					
+					console.log("try error: "+e);
 					}
 				}
 			}
