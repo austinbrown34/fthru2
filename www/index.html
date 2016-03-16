@@ -2218,21 +2218,21 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 					
 						tempArray.push(result[i].Format+" : "+result[i].Value);
 					}
-                    endtime = d.getTime();
+                   var endtime = d.getTime();
                     console.log("endtime: "+endtime);
                     var finaltime1 = endtime - starttime;
                     console.log("totaltime: "+finaltime1);
                     alert("decode success");
-					Result.innerHTML=tempArray.join(" <br />totaltime: "+finaltime+" <br />");
+					Result.innerHTML=tempArray.join(" <br />totaltime: "+finaltime1+" <br />");
 					alert("success");
 				}else{
 					if(result.length === 0) {
-					endtime = d.getTime();
+					var endtime = d.getTime();
                         console.log("endtime: "+endtime);
 					var finaltime2 = endtime - starttime;
                         console.log("totaltime: "+finaltime2);
                         console.log("decode failed");
-						Result.innerHTML="Decoding failed. totaltime: "+finaltime;
+						Result.innerHTML="Decoding failed. totaltime: "+finaltime2;
                         isdone=true;
 					}
 				}
