@@ -2225,7 +2225,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                         console.log("endtime: "+endtime);
 					var finaltime2 = endtime - starttime;
                         console.log("totaltime: "+finaltime2);
-                        alert("decode failed");
+                        console.log("decode failed");
 						Result.innerHTML="Decoding failed. totaltime: "+finaltime;
                         doSomething(currentframe);
 					}
@@ -2260,6 +2260,7 @@ console.log("made it to the starting point");
 				//var dataURL2 = canvas2.toDataURL();
 
 				function doSomething (data) {
+                    console.log("data: "+data);
                     starttime = d.getTime();
                     console.log("start: "+starttime);
 						try {
