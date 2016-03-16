@@ -2209,12 +2209,14 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 					}
 					endtime = d.getTime();
 					var finaltime = endtime - starttime;
+                    alert("decode success");
 					Result.innerHTML=tempArray.join(" <br />totaltime: "+finaltime+" <br />");
 					clearInterval (myInterval);
 				}else{
 					if(result.length === 0) {
 					endtime = d.getTime();
 					var finaltime = endtime - starttime;
+                        alert("decode failed");
 						Result.innerHTML="Decoding failed. totaltime: "+finaltime;
 					}
 				}
