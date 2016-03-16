@@ -657,8 +657,8 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
                                           };
                                        video.start(opt);
-                    video.capture = function(data){
-                        currentframe = data;
+              currentframe =      video.capture = function(data){
+                        return data;
                     }
  // newvideo.capture = function(data) {
   //  console.log("capturedata: "+data);
@@ -2259,8 +2259,8 @@ console.log("made it to the starting point");
 
 				//var dataURL2 = canvas2.toDataURL();
 
-				function doSomething (data) {
-                    console.log("data: "+data);
+				function doSomething (thisdata) {
+                    console.log("data: "+thisdata);
                     starttime = d.getTime();
                     console.log("start: "+starttime);
 						try {
@@ -2281,7 +2281,7 @@ console.log("made it to the starting point");
 								JOB.DecodeImage(showPicture);
 
 							};
-							showPicture.src = data;
+							showPicture.src = thisdata;
 						}
 						catch (e) {
 							try {
@@ -2290,7 +2290,7 @@ console.log("made it to the starting point");
 										Result.innerHTML="";
 										JOB.DecodeImage(showPicture);
 									};
-									showPicture.src = data;
+									showPicture.src = thisdata;
 
 							}
 							catch (e) {
