@@ -943,7 +943,7 @@ contacttable = $('#exampledt')
       {
         "render": function (data,type,row){
           if(row[2] == "Specific"){
-            return row[6]+' '+row[7] +' | <br>$'+row[4]+' - $'+row[5];
+            return '<span id="year" style="display:none;">'+row[11]+'</span><span id="make" style="display:none;">'+row[6]+'</span><span id="model" style="display:none;">'+row[7]+'</span>'+row[6]+' '+row[7] +' | <br>$'+row[4]+' - $'+row[5];
           }
           else{
             return data +' | <br>$'+row[4]+' - $'+row[5];
@@ -953,7 +953,7 @@ contacttable = $('#exampledt')
       },
       {
         "visible": false,
-        "targets": [3,4,5,6,7,8,9,10]
+        "targets": [3,4,5,6,7,8,9,10,11]
       }],
     "serverSide":true,
     // "data": '[ [ "Arenie", "(406) 861-3601", "Trucks", "Sticka", "5000", "10000", "", "", "1", "" ], [ "Austin", "(406) 598-7345", "Cars", "Brown", "5000", "15000", "Select Make", "Select Model", "1", "" ], [ "Billy", "(406) 444-4442", "Crossovers,SUVS,Trucks", "Bobby", "50000", "100000", "", "", "1", "" ], [ "Bo", "(333) 333-3333", "Trucks", "Bo", "50000", "100000", "", "", "1", "" ], [ "Carl", "(404) 444-3399", "Specific", "Marx", "50000", "100000", "cadillac", "seville", "1", "" ], [ "George", "(666) 666-6666", "Specific", "Might ", "50000", "100000", "chrysler", "townandcountry", "1", "" ], [ "Georgio", "(666) 666-6666", "Crossovers,SUVS,Trucks,Cars", "Horez", "50000", "100000", "", "", "1", "" ], [ "Howard", "(406) 598-1467", "Crossovers,SUVS,Trucks", "Skidmore", "5000", "10000", "Select Make", "Select Model", "1", "" ], [ "Jjj", "(333) 333-3333", "Crossovers", "Jjj", "50000", "100000", "", "", "1", "" ], [ "Jo", "(555) 555-5555", "Crossovers,SUVS", "Blo", "5000", "10000", "Select Make", "Select Model", "1", "" ] ]',
@@ -1025,9 +1025,9 @@ $('#edit [name="pricehigh"]').val(pricehigh);
                 get_models3($(this).val(), $('#edit #years').val());
             });
 			
-//year = $(this).find("#year").text();
-//make = $(this).find("#make").text();
-//model = $(this).find("#model").text();
+year = $(this).find("#year").text();
+make = $(this).find("#make").text();
+model = $(this).find("#model").text();
 //$('#edit [name="years"]').val(year);
 //get_makes3(year);
 
@@ -2348,6 +2348,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                                 <th style="width:0% !important;">User ID</th>
                                 <th style="width:0% !important;">Status</th>
 								<th style="width:0% !important;">ID</th>
+								<th style="width:0% !important;">Year</th>
 
                             </tr>
                             </thead>
@@ -2364,6 +2365,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                                 <th style="width:0% !important;">User ID</th>
                                 <th style="width:0% !important;">Status</th>
 								<th style="width:0% !important;">ID</th>
+								<th style="width:0% !important;">Year</th>
                             </tr>
                             </tfoot>
 
