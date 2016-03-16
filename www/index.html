@@ -937,11 +937,13 @@ contacttable = $('#exampledt')
   
   $('#exampledt tbody').on('taphold','tr',function(){
 if ( $(this).hasClass('selected') ) {
+			$(this).find(".editdelete").hide();
             $(this).removeClass('selected');
         }
         else {
             contacttable.$('tr.selected').removeClass('selected');
             $(this).addClass('selected');
+			$(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
         }
   });
 
