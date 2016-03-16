@@ -2172,8 +2172,8 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
         </div>
 
     <!— camera preview canvas —>
-        <canvas id="camera" width="352" height="288" style="border:2px"></canvas>
-                     			<canvas width="320" height="240" id="picture"></canvas>
+        <canvas id="camera" width="640" height="480" style="border:2px"></canvas>
+                     			<canvas width="640" height="480" id="picture"></canvas>
 <!-- 			<input id="Take-Picture" type="file" accept="image/*;capture=camera" /> -->
 			<p id="textbit"></p>
 		</div>
@@ -2248,7 +2248,7 @@ console.log("made it to the starting point");
  // img2.src = webkitURL.createObjectURL(bb.getBlob("image/png"));
 
 				//var dataURL2 = canvas2.toDataURL();
-				 myInterval = setInterval( "doSomething()", 1000 );
+				 myInterval = setInterval( "doSomething()", 2000 );
 				function doSomething () {
 						try {
 						 var canvas2 = document.getElementById("camera");
