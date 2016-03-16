@@ -2255,9 +2255,11 @@ console.log("made it to the starting point");
     var ui8a = convertDataURIToBinary(imd);
 //    var bb = new WebKitBlobBuilder();
 //    bb.append(ui8a.buffer);
+                            console.log("converttobinary");
 //                            file = bb.getBlob("image/png");
 //                            var file = new Blob(ui8a.buffer, {type: "image/png"});
                             var file = new Blob( ui8a.buffer, {type:'image/png'} );
+                            console.log("file: "+file);
 							var URL = window.URL || window.webkitURL;
 							showPicture.onload = function(event) {
 								Result.innerHTML="";
