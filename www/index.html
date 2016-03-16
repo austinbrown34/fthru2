@@ -881,7 +881,7 @@ contacttable = $('#exampledt')
     "columnDefs": [
       {
         "render": function (data,type,row){
-          return data +' '+row[3];
+          return data +' '+row[3] + '<span id="contactid" style="display:none;">'+row[10]+'</span>';
         },
         "targets": 0
       },
@@ -904,7 +904,7 @@ contacttable = $('#exampledt')
       },
       {
         "visible": false,
-        "targets": [3,4,5,6,7,8,9]
+        "targets": [3,4,5,6,7,8,9,10]
       }],
     "serverSide":true,
     // "data": '[ [ "Arenie", "(406) 861-3601", "Trucks", "Sticka", "5000", "10000", "", "", "1", "" ], [ "Austin", "(406) 598-7345", "Cars", "Brown", "5000", "15000", "Select Make", "Select Model", "1", "" ], [ "Billy", "(406) 444-4442", "Crossovers,SUVS,Trucks", "Bobby", "50000", "100000", "", "", "1", "" ], [ "Bo", "(333) 333-3333", "Trucks", "Bo", "50000", "100000", "", "", "1", "" ], [ "Carl", "(404) 444-3399", "Specific", "Marx", "50000", "100000", "cadillac", "seville", "1", "" ], [ "George", "(666) 666-6666", "Specific", "Might ", "50000", "100000", "chrysler", "townandcountry", "1", "" ], [ "Georgio", "(666) 666-6666", "Crossovers,SUVS,Trucks,Cars", "Horez", "50000", "100000", "", "", "1", "" ], [ "Howard", "(406) 598-1467", "Crossovers,SUVS,Trucks", "Skidmore", "5000", "10000", "Select Make", "Select Model", "1", "" ], [ "Jjj", "(333) 333-3333", "Crossovers", "Jjj", "50000", "100000", "", "", "1", "" ], [ "Jo", "(555) 555-5555", "Crossovers,SUVS", "Blo", "5000", "10000", "Select Make", "Select Model", "1", "" ] ]',
@@ -941,10 +941,33 @@ if ( $(this).hasClass('selected') ) {
             $(this).removeClass('selected');
         }
         else {
+		$('#exampledt').find(".editdelete").remove();
             contacttable.$('tr.selected').removeClass('selected');
             $(this).addClass('selected');
 			//$(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
          $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table></td></tr>").insertAfter($(this).closest('tr'));
+		contactid = $(this).find("#contactid").text();
+$('#edit [name="contactid"]').val(contactid);
+name = $('td:first', $(this)).text();
+lname = name.split(" ")[1];
+fname = name.split(" ")[0];
+tel = $(this).children('td').eq(1).text();
+pricerange = $(this).children('td').eq(2).text().split("$");
+pricelow = pricerange[1].split(" ")[0];
+pricehigh = pricerange[2];
+$('#edit [name="firstname"]').val(fname);
+
+$('#edit [name="lastname"]').val(lname);
+
+$('#edit [name="phone"]').val(tel);
+
+$('#edit [name="pricelow"]').val(pricelow);
+
+$('#edit [name="pricehigh"]').val(pricehigh);
+		
+		
+		
+		
 		}
   });
 
@@ -2241,6 +2264,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                                 <th style="width:0% !important;">Model</th>
                                 <th style="width:0% !important;">User ID</th>
                                 <th style="width:0% !important;">Status</th>
+								<th style="width:0% !important;">ID</th>
 
                             </tr>
                             </thead>
@@ -2256,6 +2280,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
                                 <th style="width:0% !important;">Model</th>
                                 <th style="width:0% !important;">User ID</th>
                                 <th style="width:0% !important;">Status</th>
+								<th style="width:0% !important;">ID</th>
                             </tr>
                             </tfoot>
 
