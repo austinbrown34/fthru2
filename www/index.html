@@ -2253,9 +2253,11 @@ console.log("made it to the starting point");
 				   var imd = canvas2.toDataURL("image/png");  
 				   console.log("canvas image");
     var ui8a = convertDataURIToBinary(imd);
-    var bb = new WebKitBlobBuilder();
-    bb.append(ui8a.buffer);
-                            file = bb.getBlob("image/png");
+//    var bb = new WebKitBlobBuilder();
+//    bb.append(ui8a.buffer);
+//                            file = bb.getBlob("image/png");
+//                            var file = new Blob(ui8a.buffer, {type: "image/png"});
+                            var file = new Blob( ui8a.buffer, {type:'image/png'} );
 							var URL = window.URL || window.webkitURL;
 							showPicture.onload = function(event) {
 								Result.innerHTML="";
