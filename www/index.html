@@ -935,40 +935,35 @@ contacttable = $('#exampledt')
   });
 
   
-//  $('#exampledt tbody').on('click','tr',function(){
-//if ( $(this).hasClass('selected') ) {
-  //          $(this).removeClass('selected');
-    //    }
-      //  else {
-        //    contacttable.$('tr.selected').removeClass('selected');
-          //  $(this).addClass('selected');
-//        }
- // });
+  $('#exampledt tbody').on('taphold','tr',function(){
+if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            contacttable.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+  });
 
-   $("#exampledt tbody tr").bind("taphold", {duration: 500}, function(event)
+  //  $("contacttable tbody").bind("taphold", {duration: 500}, function(event)
           {
-		  
-		     if ( $( this ).hasClass( "selectednow" ) ) {
-                  $(this).css("border","none");
-                   $(this).find(".editdelete").hide();
-                   $(this).removeClass("selectednow");
-                }
-                else{
-                    <!--
-                    $(".contactitem").css("border","none");
-                    $(".editdelete").hide();
-                     -->
-                    $(this).addClass("selectednow");
-                    $(this).css("border","blue dashed 1px");
-                    $(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
-
-
-                }
-		  
-		  
-		  });
 		//		alert("taphold");
-          //   
+          //      if ( $( this ).hasClass( "selectednow" ) ) {
+            //        $(this).css("border","none");
+              //      $(this).find(".editdelete").hide();
+                //    $(this).removeClass("selectednow");
+//                }
+  //              else{
+                    <!--
+    //                $(".contactitem").css("border","none");
+      //              $(".editdelete").hide();
+                     -->
+        //            $(this).addClass("selectednow");
+          //          $(this).css("border","blue dashed 1px");
+            //        $(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
+
+
+ //               }
    //         });
   
   
