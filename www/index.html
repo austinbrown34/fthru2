@@ -654,6 +654,9 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                               correctOrientation:true
                                           };
                                        video.start(opt);
+                    video.capture = function(data){
+                        doSomething(data);
+                    }
  // newvideo.capture = function(data) {
   //  console.log("capturedata: "+data);
 //	return data;
@@ -2210,7 +2213,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 					var finaltime = endtime - starttime;
                     alert("decode success");
 					Result.innerHTML=tempArray.join(" <br />totaltime: "+finaltime+" <br />");
-					clearInterval (myInterval);
+					alert("success");
 				}else{
 					if(result.length === 0) {
 					endtime = d.getTime();
@@ -2247,43 +2250,21 @@ console.log("made it to the starting point");
  // img2.src = webkitURL.createObjectURL(bb.getBlob("image/png"));
 
 				//var dataURL2 = canvas2.toDataURL();
-				 myInterval = setInterval( "doSomething()", 3000 );
-				function doSomething () {
+
+				function doSomething (data) {
+                    var file = data;
 						try {
 						 var canvas2 = document.getElementById("camera");
-				   var imd = canvas2.toDataURL("image/jpg");
-//				   console.log("canvas image");
-    var ui8a = convertDataURIToBinary(imd);
-//    var bb = new WebKitBlobBuilder();
-//    bb.append(ui8a.buffer);
-//                            console.log("converttobinary");
-//                            file = bb.getBlob("image/png");
-//                            var file = new Blob(ui8a.buffer, {type: "image/png"});
-                            var file = new Blob( [ui8a.buffer], {type:'image/jpg'} );
-//                            console.log("file: "+file);
-							var URL = window.URL || window.webkitURL;
+
 							showPicture.onload = function(event) {
 								Result.innerHTML="";
 								JOB.DecodeImage(showPicture);
-								URL.revokeObjectURL(showPicture.src);
+
 							};
-							showPicture.src = URL.createObjectURL(file);
+							showPicture.src = file;
 						}
 						catch (e) {
-							try {
-								var fileReader = new FileReader();
-								fileReader.onload = function (event) {
-									showPicture.onload = function(event) {
-										Result.innerHTML="";
-										JOB.DecodeImage(showPicture);
-									};
-									showPicture.src = event.target.result;
-								};
-								fileReader.readAsDataURL(imd);
-							}
-							catch (e) {
-								Result.innerHTML = "Neither createObjectURL or FileReader are supported";
-							}
+							
 					console.log("try error: "+e);
 					}
 				}
