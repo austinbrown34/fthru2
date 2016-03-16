@@ -648,14 +648,17 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                           // define options
                                           var opt = {
                                               quality: 75,
-                                              destinationType: CanvasCamera.DestinationType.FILE_URI,
+                                              destinationType: CanvasCamera.DestinationType.DATA_URL,
                                               encodingType: CanvasCamera.EncodingType.JPEG,
                                               saveToPhotoAlbum:true,
-                                              correctOrientation:true
+                                              correctOrientation:true,
+                                              width: targetWidth,
+                                              height: targetHeight
+
                                           };
                                        video.start(opt);
                     video.capture = function(data){
-                        doSomething(data);
+                        console.log(data);
                     }
  // newvideo.capture = function(data) {
   //  console.log("capturedata: "+data);
@@ -2252,19 +2255,42 @@ console.log("made it to the starting point");
 				//var dataURL2 = canvas2.toDataURL();
 
 				function doSomething (data) {
-                    var file = data;
+
 						try {
 						 var canvas2 = document.getElementById("camera");
-
+				   var imd = canvas2.toDataURL("image/jpg");
+//				   console.log("canvas image");
+    var ui8a = convertDataURIToBinary(imd);
+//    var bb = new WebKitBlobBuilder();
+//    bb.append(ui8a.buffer);
+//                            console.log("converttobinary");
+//                            file = bb.getBlob("image/png");
+//                            var file = new Blob(ui8a.buffer, {type: "image/png"});
+                            var file = new Blob( [ui8a.buffer], {type:'image/jpg'} );
+//                            console.log("file: "+file);
+							var URL = window.URL || window.webkitURL;
 							showPicture.onload = function(event) {
 								Result.innerHTML="";
 								JOB.DecodeImage(showPicture);
-
+								URL.revokeObjectURL(showPicture.src);
 							};
-							showPicture.src = file;
+							showPicture.src = URL.createObjectURL(file);
 						}
 						catch (e) {
-							
+							try {
+								var fileReader = new FileReader();
+								fileReader.onload = function (event) {
+									showPicture.onload = function(event) {
+										Result.innerHTML="";
+										JOB.DecodeImage(showPicture);
+									};
+									showPicture.src = event.target.result;
+								};
+								fileReader.readAsDataURL(imd);
+							}
+							catch (e) {
+								Result.innerHTML = "Neither createObjectURL or FileReader are supported";
+							}
 					console.log("try error: "+e);
 					}
 				}
