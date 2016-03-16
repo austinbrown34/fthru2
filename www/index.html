@@ -2218,18 +2218,18 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 					
 						tempArray.push(result[i].Format+" : "+result[i].Value);
 					}
-                   var endtime = d.getTime();
+                    endtime = new Date().getTime();
                     console.log("endtime: "+endtime);
-                    var finaltime1 = endtime - starttime;
+                    finaltime1 = endtime - starttime;
                     console.log("totaltime: "+finaltime1);
                     alert("decode success");
 					Result.innerHTML=tempArray.join(" <br />totaltime: "+finaltime1+" <br />");
 					alert("success");
 				}else{
 					if(result.length === 0) {
-					var endtime = d.getTime();
+					 endtime = new Date().getTime();
                         console.log("endtime: "+endtime);
-					var finaltime2 = endtime - starttime;
+					 finaltime2 = endtime - starttime;
                         console.log("totaltime: "+finaltime2);
                         console.log("decode failed");
 						Result.innerHTML="Decoding failed. totaltime: "+finaltime2;
@@ -2267,7 +2267,7 @@ console.log("made it to the starting point");
 
 				function doSomething (thisdata) {
                     console.log("data: "+thisdata);
-                    starttime = d.getTime();
+                    starttime = new Date().getTime();
                     console.log("start: "+starttime);
 						try {
 //						 var canvas2 = document.getElementById("camera");
