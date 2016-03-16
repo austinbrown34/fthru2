@@ -658,8 +658,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                           };
                                        video.start(opt);
                     video.capture = function(data){
-                        console.log(data);
-                        doSomething(data);
+                        currentframe = data;
                     }
  // newvideo.capture = function(data) {
   //  console.log("capturedata: "+data);
@@ -2213,17 +2212,22 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 					
 						tempArray.push(result[i].Format+" : "+result[i].Value);
 					}
-					endtime = d.getTime();
-					var finaltime = endtime - starttime;
+                    endtime = d.getTime();
+                    console.log("endtime: "+endtime);
+                    var finaltime1 = endtime - starttime;
+                    console.log("totaltime: "+finaltime1);
                     alert("decode success");
 					Result.innerHTML=tempArray.join(" <br />totaltime: "+finaltime+" <br />");
 					alert("success");
 				}else{
 					if(result.length === 0) {
 					endtime = d.getTime();
-					var finaltime = endtime - starttime;
+                        console.log("endtime: "+endtime);
+					var finaltime2 = endtime - starttime;
+                        console.log("totaltime: "+finaltime2);
                         alert("decode failed");
 						Result.innerHTML="Decoding failed. totaltime: "+finaltime;
+                        doSomething(currentframe);
 					}
 				}
 			});
@@ -2247,8 +2251,8 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 				}
 				ctx.stroke();
 			});
-			if(takePicture && showPicture) {
-				starttime = d.getTime();
+
+
 				
 console.log("made it to the starting point");
  // img2.src = webkitURL.createObjectURL(bb.getBlob("image/png"));
@@ -2256,7 +2260,8 @@ console.log("made it to the starting point");
 				//var dataURL2 = canvas2.toDataURL();
 
 				function doSomething (data) {
-
+                    starttime = d.getTime();
+                    console.log("start: "+starttime);
 						try {
 //						 var canvas2 = document.getElementById("camera");
 //				   var imd = canvas2.toDataURL("image/jpg");
@@ -2293,7 +2298,8 @@ console.log("made it to the starting point");
 					console.log("try error: "+e);
 					}
 				}
-			}
+            doSomething(currentframe);
+
 		</script>
 
                         <script src="BarcodeReader.js"></script>
