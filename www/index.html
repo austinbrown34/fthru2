@@ -616,7 +616,7 @@ var password = localStorage.getItem('password');
 //                  return canvas.toDataURL("image/png");
 //                  }
 //              }
-isdone = true;
+
           
 		
 		  
@@ -640,41 +640,6 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                 }
                 else{
 
-				
-				 canvasMain = document.getElementById("camera");
-                   video =     CanvasCamera;
-				   newvideo = CanvasCamera;
-				   video.initialize(canvasMain);
-                                          // define options
-                                          var opt = {
-                                              quality: 100,
-                                              destinationType: CanvasCamera.DestinationType.DATA_URL,
-                                              encodingType: CanvasCamera.EncodingType.JPEG,
-                                              saveToPhotoAlbum:true,
-                                              correctOrientation:true,
-                                              width: 1920,
-                                              height: 1080
-
-                                          };
-                                       video.start(opt);
-              video.capture = function(data){
-                  if(isdone){
-                        doSomething(data);
-                      isdone = false;
-                  }
-                  else{
-                      return data;
-                  }
-                    }
- // newvideo.capture = function(data) {
-  //  console.log("capturedata: "+data);
-//	return data;
- // }
- // CanvasCamera.capture();
-                    // device APIs are available
-                    //
-
-        
 					
 					
                     if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
@@ -1491,56 +1456,6 @@ submitHandler: function(form) {
     <script type="text/javascript" charset="utf-8">
 	
 	
-	
-		   function onChangeDevicePosition() {
-
-                var newDevicePosition = CanvasCamera.CameraPosition.BACK;
-                if (document.getElementById("deviceposition_back").checked)
-                {
-                    newDevicePosition = CanvasCamera.CameraPosition.BACK;
-                }
-                else if (document.getElementById("deviceposition_front").checked)
-                {
-                    newDevicePosition = CanvasCamera.CameraPosition.FRONT;
-                }
-                //
-                CanvasCamera.setCameraPosition(newDevicePosition);
-            }
-
-            function onChangeFlashMode() {
-
-                var newFlashMode = CanvasCamera.FlashMode.OFF;
-                if (document.getElementById("flashmode_off").checked)
-                {
-                    newFlashMode = CanvasCamera.FlashMode.OFF;
-                }
-                else if (document.getElementById("flashmode_on").checked)
-                {
-                    newFlashMode = CanvasCamera.FlashMode.ON;
-                }
-                else if (document.getElementById("flashmode_auto").checked)
-                {
-                    newFlashMode = CanvasCamera.FlashMode.AUTO;
-                }
-
-                CanvasCamera.setFlashMode(newFlashMode);
-            }
-
-            function onTakePicture() {
-               // CanvasCamera.takePicture(onTakeSuccess);
-			   
-			   var canvas2 = document.getElementById("camera");
-var dataURL2 = canvas2.toDataURL();
-                console.log("dataurl: "+dataURL2);
-alert("img data");
-alert(JSON.stringify(dataURL2));
-            }
-
-            function onTakeSuccess(data) {
-			 // image.src = data; // URI
-					alert(data);
-                //
-            }
 
     var deviceReady = false;
     /**
@@ -1655,8 +1570,7 @@ alert(JSON.stringify(dataURL2));
      * Function called when page has finished loading.
      */
     function init() {
-//        document.querySelector("#startScan").addEventListener("touchend", startScan, false);
-//        resultDiv = document.querySelector("#results");
+
     }
     </script>
 
@@ -2150,182 +2064,7 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 
 						
 						
-						<div class="app">
-            <!--<h1>Apache Cordova</h1>-->
-            <!--<div id="deviceready" class="blink">-->
-                <!--<p class="event listening">Connecting to Device</p>-->
-                <!--<p class="event received">Device is Ready</p>-->
-            <!--</div>-->
-
-            <!--<h2> Camera Position </h2>-->
-            <!--<input type="radio" name="deviceposition" id="deviceposition_back" value="Back" onclick="onChangeDevicePosition();"/>-->
-            <!--<label for="deviceposition_back">Back</label>-->
-            <!--<br/>-->
-            <!--<input type="radio" name="deviceposition" id="deviceposition_front" value="Front" onclick="onChangeDevicePosition();"/>-->
-            <!--<label for="deviceposition_front">Front</label>-->
-
-
-            <!--<h2> Flash Mode </h2>-->
-            <!--<input type="radio" name="flashmode" id="flashmode_off" value="Off" onclick="onChangeFlashMode();"/>-->
-            <!--<label for="flashmode_off">Off</label>-->
-            <!--<br/>-->
-            <!--<input type="radio" name="flashmode" id="flashmode_on" value="On" onclick="onChangeFlashMode();"/>-->
-            <!--<label for="flashmode_on">On</label>-->
-            <!--<br/>-->
-            <!--<input type="radio" name="flashmode" id="flashmode_auto" value="Auto" onclick="onChangeFlashMode();"/>-->
-            <!--<label for="flashmode_auto">Auto</label>-->
-            <!--<br/>-->
-
-            <input type="button" value="Take a picture" onclick="onTakePicture();" />
-
-
-        </div>
-
-    <!— camera preview canvas —><table style="width:100%;">
-       <tr><td> <canvas id="camera"  style="border:2px"></canvas></td></tr>
-                     		<td>	<canvas  id="picture"></canvas></td></tr>
-                    </table>
-<!-- 			<input id="Take-Picture" type="file" accept="image/*;capture=camera" /> -->
-			<p id="textbit"></p>
-		</div>
-			<script src="exif.js" type="text/javascript"></script>
-		<script type="text/javascript" src="JOB.js"></script>
-		<script type="text/javascript">
-		function convertDataURIToBinary(dataURI) {
- var BASE64_MARKER = ';base64,';   
-  var base64Index = dataURI.indexOf(BASE64_MARKER) + BASE64_MARKER.length;
-  var base64 = dataURI.substring(base64Index);
-  var raw = window.atob(base64);
-  var rawLength = raw.length;
-  var array = new Uint8Array(new ArrayBuffer(rawLength));
-
-  for(i = 0; i < rawLength; i++) {
-    array[i] = raw.charCodeAt(i);
-  }
-  return array;
-}
-		var d = new Date();
-			var takePicture = document.getElementById("camera");
-			showPicture = document.createElement("img");
-			Result = document.querySelector("#textbit");
-			var canvas =document.getElementById("picture");
-			var ctx = canvas.getContext("2d");
-			JOB.Init();
-			JOB.SetImageCallback(function(result) {
-				if(result.length > 0){
-					var tempArray = [];
-					for(var i = 0; i < result.length; i++) {
-					
-						tempArray.push(result[i].Format+" : "+result[i].Value);
-					}
-                    endtime = new Date().getTime();
-                    console.log("endtime: "+endtime);
-                    finaltime1 = endtime - starttime;
-                    console.log("totaltime: "+finaltime1);
-                    alert("decode success");
-					Result.innerHTML=tempArray.join(" <br />totaltime: "+finaltime1+" <br />");
-					alert("success");
-				}else{
-					if(result.length === 0) {
-					 endtime = new Date().getTime();
-                        console.log("endtime: "+endtime);
-					 finaltime2 = endtime - starttime;
-                        console.log("totaltime: "+finaltime2);
-                        console.log("decode failed");
-						Result.innerHTML="Decoding failed. totaltime: "+finaltime2;
-                        isdone=true;
-					}
-				}
-			});
-			JOB.PostOrientation = true;
-			JOB.OrientationCallback = function(result) {
-				canvas.width = result.width;
-				canvas.height = result.height;
-				var data = ctx.getImageData(0,0,canvas.width,canvas.height);
-				for(var i = 0; i < data.data.length; i++) {
-					data.data[i] = result.data[i];
-				}
-				ctx.putImageData(data,0,0);
-			};
-			JOB.SwitchLocalizationFeedback(true);
-			JOB.SetLocalizationCallback(function(result) {
-				ctx.beginPath();
-				ctx.lineWIdth = "2";
-				ctx.strokeStyle="red";
-				for(var i = 0; i < result.length; i++) {
-					ctx.rect(result[i].x,result[i].y,result[i].width,result[i].height); 
-				}
-				ctx.stroke();
-			});
-
-
-				
-console.log("made it to the starting point");
- // img2.src = webkitURL.createObjectURL(bb.getBlob("image/png"));
-
-				//var dataURL2 = canvas2.toDataURL();
-
-				function doSomething (thisdata) {
-                    console.log("data: "+thisdata);
-                    starttime = new Date().getTime();
-                    console.log("start: "+starttime);
-						try {
-//						 var canvas2 = document.getElementById("camera");
-//				   var imd = canvas2.toDataURL("image/jpg");
-//				   console.log("canvas image");
-//    var ui8a = convertDataURIToBinary(imd);
-//    var bb = new WebKitBlobBuilder();
-//    bb.append(ui8a.buffer);
-//                            console.log("converttobinary");
-//                            file = bb.getBlob("image/png");
-//                            var file = new Blob(ui8a.buffer, {type: "image/png"});
-//                            var file = new Blob( [ui8a.buffer], {type:'image/jpg'} );
-//                            console.log("file: "+file);
-//							var URL = window.URL || window.webkitURL;
-							showPicture.onload = function(event) {
-								Result.innerHTML="";
-								JOB.DecodeImage(showPicture);
-
-							};
-							showPicture.src = thisdata;
-						}
-						catch (e) {
-							try {
-
-									showPicture.onload = function(event) {
-										Result.innerHTML="";
-										JOB.DecodeImage(showPicture);
-									};
-									showPicture.src = thisdata;
-
-							}
-							catch (e) {
-								Result.innerHTML = "Neither createObjectURL or FileReader are supported";
-							}
-					console.log("try error: "+e);
-					}
-				}
-
-
-		</script>
-
-                        <script src="BarcodeReader.js"></script>
-
-<script>
-
-
-    function Decode() {
-        if (!streaming) return;
-      BarcodeReader.DecodeStream(canvasMain);
-    }
-    function StopDecode() {
-        BarcodeReader.StopStreamDecode();
-    }
-
-
-
-</script>
-
+			
 						
 						<div id="responsecontainermatch" align="center">
 
