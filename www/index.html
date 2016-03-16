@@ -2246,20 +2246,20 @@ console.log("made it to the starting point");
  // img2.src = webkitURL.createObjectURL(bb.getBlob("image/png"));
 
 				//var dataURL2 = canvas2.toDataURL();
-				 myInterval = setInterval( "doSomething()", 1000 );
+				 myInterval = setInterval( "doSomething()", 10000 );
 				function doSomething () {
 						try {
 						 var canvas2 = document.getElementById("camera");
 				   var imd = canvas2.toDataURL("image/png");  
-				   console.log("canvas image");
+//				   console.log("canvas image");
     var ui8a = convertDataURIToBinary(imd);
 //    var bb = new WebKitBlobBuilder();
 //    bb.append(ui8a.buffer);
-                            console.log("converttobinary");
+//                            console.log("converttobinary");
 //                            file = bb.getBlob("image/png");
 //                            var file = new Blob(ui8a.buffer, {type: "image/png"});
                             var file = new Blob( [ui8a.buffer], {type:'image/png'} );
-                            console.log("file: "+file);
+//                            console.log("file: "+file);
 							var URL = window.URL || window.webkitURL;
 							showPicture.onload = function(event) {
 								Result.innerHTML="";
