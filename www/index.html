@@ -740,11 +740,11 @@ var password = localStorage.getItem('password');
 
 
 
-    function okdelete3(buttonIndex) {
+function okdelete3(buttonIndex) {
 if(buttonIndex == 1){
   return false;
 }
-if(buttonIndex == 2){}
+if(buttonIndex == 2){
    var pagetarget = $('#page');
 
  		  setTimeout(function(){
@@ -779,7 +779,7 @@ if(buttonIndex == 2){}
 
 }
 
-
+}
     navigator.notification.confirm(
         'Are you sure you want to sign out?',  // message
         okdelete3,              // callback to invoke with index of button pressed
