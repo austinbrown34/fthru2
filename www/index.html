@@ -1136,7 +1136,13 @@ contacttable = $('#exampledt')
     "columnDefs": [
       {
         "render": function (data,type,row){
-          return '<span id="permission" style="display:none;">'+row[12]+'</span>'+data +' '+row[3] + '<span id="contactid" style="display:none;">'+row[10]+'</span>';
+            if(row[12] == 0){
+                namecolor="red;";
+            }
+            if(row[12] == 1){
+                namecolor="black;";
+            }
+          return '<span id="permission" style="display:none;">'+row[12]+'</span><span style="color:'+namecolor+'">'+data +' '+row[3] + '</span><span id="contactid" style="display:none;">'+row[10]+'</span>';
         },
         "targets": 0
       },
