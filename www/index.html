@@ -1032,7 +1032,7 @@ inventorytable = $('#exampledt2')
                         doc.content[1].table.body[i][0].image = my64Images[thisrow];
                           doc.content[1].table.body[i][0].fit =  [100, 100];
 
-                      
+
                      //  alert(my64Images[thisrow]);
                       }
                       catch(err){
@@ -1043,6 +1043,7 @@ inventorytable = $('#exampledt2')
 				  var thecontent = doc.content[1].table.body[i][0].text;
 				  var newcontent = $(thecontent).text();
 				  doc.content[1].table.body[i][0].text = newcontent;
+                      doc.content[1].table.body[i][0].alignment = 'center';
 				  }
               }
           },
