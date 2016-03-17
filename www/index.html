@@ -1023,7 +1023,7 @@ inventorytable = $('#exampledt2')
               for (var i=1;i<doc.content[1].table.body.length;i++) {
                   if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
                      thischunk = doc.content[1].table.body[i][0].text;
-                     thischunk = thischunk.split("<span style='display:none;'>");
+                     thischunk = thischunk.split("style='display:none;'>");
                      thischunk = thischunk[1].split("</span>");
                      thischunk = thischunk[0];
                       thisrow = thischunk;
