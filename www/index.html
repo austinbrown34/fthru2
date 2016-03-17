@@ -669,7 +669,13 @@ var password = localStorage.getItem('password');
 
 
 
-        function okdelete() {
+        function okdelete(buttonIndex) {
+          if(buttonIndex == 1){
+            return false;
+          }
+          if(buttonIndex == 2){
+
+
         $.ajax({    //create an ajax request to load_page.php
             type: "GET",
             url: "http://cogni.design/cpr/www/delete.php?contactid="+cid,
@@ -679,14 +685,15 @@ var password = localStorage.getItem('password');
             }
 
         });
+            }
     }
 
 
         navigator.notification.confirm(
-            'YAre you sure you want to delete this contact?',  // message
+            'Are you sure you want to delete this contact?',  // message
             okdelete,              // callback to invoke with index of button pressed
             'Delete Contact',            // title
-            'Delete,Cancel'          // buttonLabels
+            'Cancel,Delete'          // buttonLabels
         );
 
 
@@ -699,7 +706,11 @@ var password = localStorage.getItem('password');
 
 
 
-    function okdelete2() {
+    function okdelete2(buttonIndex) {
+      if(buttonIndex == 1){
+        return false;
+      }
+      if(buttonIndex == 2){
    $.ajax({    //create an ajax request to load_page.php
        type: "GET",
        url: "http://cogni.design/cpr/www/delete2.php?vehicleid="+cid,
@@ -710,15 +721,16 @@ var password = localStorage.getItem('password');
        }
 
    });
+ }
 
 }
 
 
     navigator.notification.confirm(
-        'YAre you sure you want to delete this vehicle?',  // message
+        'Are you sure you want to delete this vehicle?',  // message
         okdelete2,              // callback to invoke with index of button pressed
         'Delete Vehicle',            // title
-        'Delete,Cancel'          // buttonLabels
+        'Cancel,Delete'          // buttonLabels
     );
 
 
@@ -728,8 +740,11 @@ var password = localStorage.getItem('password');
 
 
 
-    function okdelete3() {
-
+    function okdelete3(buttonIndex) {
+if(buttonIndex == 1){
+  return false;
+}
+if(buttonIndex == 2){}
    var pagetarget = $('#page');
 
  		  setTimeout(function(){
@@ -760,6 +775,7 @@ var password = localStorage.getItem('password');
 
 
  localStorage.clear();
+ }
 
 }
 
@@ -768,7 +784,7 @@ var password = localStorage.getItem('password');
         'Are you sure you want to sign out?',  // message
         okdelete3,              // callback to invoke with index of button pressed
         'Sign Out',            // title
-        'Log Off,Cancel'          // buttonLabels
+        'Cancel,Log Off'          // buttonLabels
     );
 
 
