@@ -811,7 +811,7 @@ function enabletext(buttonIndex){
     if(buttonIndex == 2){
         $.ajax({    //create an ajax request to load_page.php
             type: "GET",
-            url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission="+permission,
+            url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission=1",
             dataType: "html",   //expect html to be returned
             success: function(response){
 
@@ -840,7 +840,7 @@ function enabletext(buttonIndex){
                if(buttonIndex == 2){
                    $.ajax({    //create an ajax request to load_page.php
                        type: "GET",
-                       url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission="+permission,
+                       url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission=0",
                        dataType: "html",   //expect html to be returned
                        success: function(response){
 
