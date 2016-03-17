@@ -1031,7 +1031,7 @@ if ( $(this).hasClass('selected') ) {
          $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table></td></tr>").insertAfter($(this).closest('tr'));
 		contactid = $(this).find("#contactid").text();
 $('#edit [name="contactid"]').val(contactid);
-name = $('td:first', $(this)).split("<")[0];
+name = $('td:first', $(this)).text().replace(/[^a-z]/g,'');
 lname = name.split(" ")[1];
 fname = name.split(" ")[0];
 tel = $(this).children('td').eq(1).text();
