@@ -1,0 +1,32 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+
+$servername = "localhost";
+$username = "austinbrown34";
+$password = "eJ32IRQb#RspD51ZQ&a#";
+$dbname = "austinbr_cpr";
+$contactid = $_GET['contactid'];
+$permission = $_GET['permission'];
+// $id = $_GET['id'];
+// mysql_query("GRANT USAGE ON *.* TO '$username'@'mysql3.000webhost.com' IDENTIFIED BY '$password';");
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "UPDATE contacts SET permission = '$permission' WHERE id = '$contactid'";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record updated successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
