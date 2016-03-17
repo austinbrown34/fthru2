@@ -688,7 +688,36 @@ var password = localStorage.getItem('password');
 
 
    }
-		
+
+   function deletevehicle(cid)
+   {
+
+       <!--    alert(cid); -->
+       if(confirm("Are you sure you want to delete this vehicle?")){
+           $.ajax({    //create an ajax request to load_page.php
+               type: "GET",
+               url: "http://cogni.design/cpr/www/delete2.php?vehicleid="+cid,
+               dataType: "html",   //expect html to be returned
+               success: function(response){
+
+              redraw();
+               }
+
+           });
+
+
+
+
+
+
+
+       }
+       else{
+           return false;
+       }
+
+
+   }
         $(document).ready(function() {
 //              function getBase64Image(img) {
 //                  img.crossOrigin = 'Anonymous';
@@ -886,7 +915,7 @@ inventorytable = $('#exampledt2')
         "render": function (data,type,row){
                 myrow = row[6];
 	my64Images[myrow] = data;
-          return "<img src=\""+data+"\" width=\"200px\" height=\"115px\">"+"<span style='display:none;'>"+myrow+"</span>";
+          return "<img src=\""+data+"\" width=\"200px\" height=\"115px\">"+"<span id='vehicleid' style='display:none;'>"+myrow+"</span>";
         },
         "targets": 0
       },
@@ -1018,173 +1047,194 @@ contacttable = $('#exampledt')
   });
 
   
-  $('#exampledt tbody').on('taphold','tr',function(){
+  $('#exampledt2 tbody').on('taphold','tr',function(){
 if ( $(this).hasClass('selected') ) {
-			$('#exampledt').find(".editdelete").remove();
+			$('#exampledt2').find(".editdelete").remove();
             $(this).removeClass('selected');
         }
         else {
-		$('#exampledt').find(".editdelete").remove();
-            contacttable.$('tr.selected').removeClass('selected');
+		$('#exampledt2').find(".editdelete").remove();
+            inventorytable.$('tr.selected').removeClass('selected');
             $(this).addClass('selected');
-			//$(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
-         $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table></td></tr>").insertAfter($(this).closest('tr'));
-		contactid = $(this).find("#contactid").text();
-$('#edit [name="contactid"]').val(contactid);
-name = $('td:first', $(this)).text().replace(/\d+/g, '');
-lname = name.split(" ")[1];
-fname = name.split(" ")[0];
-tel = $(this).children('td').eq(1).text();
-pricerange = $(this).children('td').eq(2).text().split("$");
-pricelow = pricerange[1].split(" ")[0];
-pricehigh = pricerange[2].split("<")[0];
-$('#edit [name="firstname"]').val(fname);
-
-$('#edit [name="lastname"]').val(lname);
-
-$('#edit [name="phone"]').val(tel);
-
-$('#edit [name="pricelow"]').val(pricelow);
-
-$('#edit [name="pricehigh"]').val(pricehigh);
-		
-
-		$('#edit #years').change(function() {
-                console.log('Step 1: Year ' + $(this).val() + ' was selected');
-                get_makes3($(this).val());
-            });
-            
-            $('#edit #makes').change(function() {
-                console.log('Step 3: Make ' + $(this).val() + ' was selected');
-                get_models3($(this).val(), $('#edit #years').val());
-            });
-			
-year = $(this).find("#year").text();
-make = $(this).find("#make").text();
-model = $(this).find("#model").text();
-//$('#edit [name="years"]').val(year);
-//get_makes3(year);
-console.log("year: "+year+" make: "+make+" model: "+model);
 
 
+    vehicleid = $(this).find("#vehicleid").text();
 
-
-
-
-  $("#edit #cars").removeAttr('disabled');
-   $("#edit #trucks").removeAttr('disabled');
-   $("#edit #suvs").removeAttr('disabled');
-   $("#edit #crossovers").removeAttr('disabled');
-    $("#edit #specific1").hide();
-     $("#edit #specific2").hide();
-      $("#edit #specific3").hide();
-$('#edit #cars').prop('checked', false);
-$('#edit #trucks').prop('checked', false);
-$('#edit #suvs').prop('checked', false);
-$('#edit #crossovers').prop('checked', false);
-$('#edit #specific').prop('checked', false);
-
-if(year != ""){
-    $('#edit [name="years"]').val(year);
-    get_makes3(year);
-
-
-
-
-}
-
-
-    $("#edit #cars").removeAttr('disabled');
-    $("#edit #trucks").removeAttr('disabled');
-    $("#edit #suvs").removeAttr('disabled');
-    $("#edit #crossovers").removeAttr('disabled');
-    $("#edit #specific1").hide();
-    $("#edit #specific2").hide();
-    $("#edit #specific3").hide();
-    $('#edit #cars').prop('checked', false);
-    $('#edit #trucks').prop('checked', false);
-    $('#edit #suvs').prop('checked', false);
-    $('#edit #crossovers').prop('checked', false);
-    $('#edit #specific').prop('checked', false);
-
-
-
-    $("#edit .specific").change(function() {
-        if(this.checked) {
-            $("#edit #cars").attr('disabled','disabled');
-            $("#edit #trucks").attr('disabled','disabled');
-            $("#edit #suvs").attr('disabled','disabled');
-            $("#edit #crossovers").attr('disabled','disabled');
-            $('#edit #cars').prop('checked', false);
-            $('#edit #trucks').prop('checked', false);
-            $('#edit #suvs').prop('checked', false);
-            $('#edit #crossovers').prop('checked', false);
-
-
-            $("#edit #specific1").css("display","");
-            $("#edit #specific2").css("display","");
-            $("#edit #specific3").css("display","");
-
-        }
-        else{
-            $("#edit #cars").removeAttr('disabled');
-            $("#edit #trucks").removeAttr('disabled');
-            $("#edit #suvs").removeAttr('disabled');
-            $("#edit #crossovers").removeAttr('disabled');
-            $("#edit #specific1").hide();
-            $("#edit #specific2").hide();
-            $("#edit #specific3").hide();
-        }
-
-    });
-
-    checkboxes = $(this).find("#type").text();
-    console.log("type: "+type);
-    checkboxesarray = checkboxes.split(",");
-
-    checkboxesarray.forEach(function(entry) {
-        if(entry == "Cars"){
-
-            $('#edit #cars').prop('checked', true);
-        }
-        if(entry == "Trucks"){
-
-            $('#edit #trucks').prop('checked', true);
-        }
-        if(entry == "SUVS"){
-
-            $('#edit #suvs').prop('checked', true);
-        }
-        if(entry == "Crossovers"){
-
-            $('#edit #crossovers').prop('checked', true);
-        }
-        if(entry == "Specific"){
-
-            $('#edit #specific').prop('checked', true);
-            $("#edit #cars").attr('disabled','disabled');
-            $("#edit #trucks").attr('disabled','disabled');
-            $("#edit #suvs").attr('disabled','disabled');
-            $("#edit #crossovers").attr('disabled','disabled');
-            $('#edit #cars').prop('checked', false);
-            $('#edit #trucks').prop('checked', false);
-            $('#edit #suvs').prop('checked', false);
-            $('#edit #crossovers').prop('checked', false);
-
-
-            $("#edit #specific1").css("display","");
-            $("#edit #specific2").css("display","");
-            $("#edit #specific3").css("display","");
-
-        }
-    });
-
-
+$("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' onclick='javascript:deletevehicle(vehicleid)'>Delete</button></center></td></tr>").insertAfter($(this).closest('tr'));
 
 
 
         }
   });
+
+
+                    $('#exampledt tbody').on('taphold','tr',function(){
+                        if ( $(this).hasClass('selected') ) {
+                            $('#exampledt').find(".editdelete").remove();
+                            $(this).removeClass('selected');
+                        }
+                        else {
+                            $('#exampledt').find(".editdelete").remove();
+                            contacttable.$('tr.selected').removeClass('selected');
+                            $(this).addClass('selected');
+                            //$(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
+                            $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table></td></tr>").insertAfter($(this).closest('tr'));
+                            contactid = $(this).find("#contactid").text();
+                            $('#edit [name="contactid"]').val(contactid);
+                            name = $('td:first', $(this)).text().replace(/\d+/g, '');
+                            lname = name.split(" ")[1];
+                            fname = name.split(" ")[0];
+                            tel = $(this).children('td').eq(1).text();
+                            pricerange = $(this).children('td').eq(2).text().split("$");
+                            pricelow = pricerange[1].split(" ")[0];
+                            pricehigh = pricerange[2].split("<")[0];
+                            $('#edit [name="firstname"]').val(fname);
+
+                            $('#edit [name="lastname"]').val(lname);
+
+                            $('#edit [name="phone"]').val(tel);
+
+                            $('#edit [name="pricelow"]').val(pricelow);
+
+                            $('#edit [name="pricehigh"]').val(pricehigh);
+
+
+                            $('#edit #years').change(function() {
+                                console.log('Step 1: Year ' + $(this).val() + ' was selected');
+                                get_makes3($(this).val());
+                            });
+
+                            $('#edit #makes').change(function() {
+                                console.log('Step 3: Make ' + $(this).val() + ' was selected');
+                                get_models3($(this).val(), $('#edit #years').val());
+                            });
+
+                            year = $(this).find("#year").text();
+                            make = $(this).find("#make").text();
+                            model = $(this).find("#model").text();
+//$('#edit [name="years"]').val(year);
+//get_makes3(year);
+                            console.log("year: "+year+" make: "+make+" model: "+model);
+
+
+
+
+
+
+                            $("#edit #cars").removeAttr('disabled');
+                            $("#edit #trucks").removeAttr('disabled');
+                            $("#edit #suvs").removeAttr('disabled');
+                            $("#edit #crossovers").removeAttr('disabled');
+                            $("#edit #specific1").hide();
+                            $("#edit #specific2").hide();
+                            $("#edit #specific3").hide();
+                            $('#edit #cars').prop('checked', false);
+                            $('#edit #trucks').prop('checked', false);
+                            $('#edit #suvs').prop('checked', false);
+                            $('#edit #crossovers').prop('checked', false);
+                            $('#edit #specific').prop('checked', false);
+
+                            if(year != ""){
+                                $('#edit [name="years"]').val(year);
+                                get_makes3(year);
+
+
+
+
+                            }
+
+
+                            $("#edit #cars").removeAttr('disabled');
+                            $("#edit #trucks").removeAttr('disabled');
+                            $("#edit #suvs").removeAttr('disabled');
+                            $("#edit #crossovers").removeAttr('disabled');
+                            $("#edit #specific1").hide();
+                            $("#edit #specific2").hide();
+                            $("#edit #specific3").hide();
+                            $('#edit #cars').prop('checked', false);
+                            $('#edit #trucks').prop('checked', false);
+                            $('#edit #suvs').prop('checked', false);
+                            $('#edit #crossovers').prop('checked', false);
+                            $('#edit #specific').prop('checked', false);
+
+
+
+                            $("#edit .specific").change(function() {
+                                if(this.checked) {
+                                    $("#edit #cars").attr('disabled','disabled');
+                                    $("#edit #trucks").attr('disabled','disabled');
+                                    $("#edit #suvs").attr('disabled','disabled');
+                                    $("#edit #crossovers").attr('disabled','disabled');
+                                    $('#edit #cars').prop('checked', false);
+                                    $('#edit #trucks').prop('checked', false);
+                                    $('#edit #suvs').prop('checked', false);
+                                    $('#edit #crossovers').prop('checked', false);
+
+
+                                    $("#edit #specific1").css("display","");
+                                    $("#edit #specific2").css("display","");
+                                    $("#edit #specific3").css("display","");
+
+                                }
+                                else{
+                                    $("#edit #cars").removeAttr('disabled');
+                                    $("#edit #trucks").removeAttr('disabled');
+                                    $("#edit #suvs").removeAttr('disabled');
+                                    $("#edit #crossovers").removeAttr('disabled');
+                                    $("#edit #specific1").hide();
+                                    $("#edit #specific2").hide();
+                                    $("#edit #specific3").hide();
+                                }
+
+                            });
+
+                            checkboxes = $(this).find("#type").text();
+                            console.log("type: "+type);
+                            checkboxesarray = checkboxes.split(",");
+
+                            checkboxesarray.forEach(function(entry) {
+                                if(entry == "Cars"){
+
+                                    $('#edit #cars').prop('checked', true);
+                                }
+                                if(entry == "Trucks"){
+
+                                    $('#edit #trucks').prop('checked', true);
+                                }
+                                if(entry == "SUVS"){
+
+                                    $('#edit #suvs').prop('checked', true);
+                                }
+                                if(entry == "Crossovers"){
+
+                                    $('#edit #crossovers').prop('checked', true);
+                                }
+                                if(entry == "Specific"){
+
+                                    $('#edit #specific').prop('checked', true);
+                                    $("#edit #cars").attr('disabled','disabled');
+                                    $("#edit #trucks").attr('disabled','disabled');
+                                    $("#edit #suvs").attr('disabled','disabled');
+                                    $("#edit #crossovers").attr('disabled','disabled');
+                                    $('#edit #cars').prop('checked', false);
+                                    $('#edit #trucks').prop('checked', false);
+                                    $('#edit #suvs').prop('checked', false);
+                                    $('#edit #crossovers').prop('checked', false);
+
+
+                                    $("#edit #specific1").css("display","");
+                                    $("#edit #specific2").css("display","");
+                                    $("#edit #specific3").css("display","");
+
+                                }
+                            });
+
+
+
+
+
+                        }
+                    });
 
   //  $("contacttable tbody").bind("taphold", {duration: 500}, function(event)
         //  {
