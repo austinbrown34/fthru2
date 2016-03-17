@@ -606,9 +606,9 @@ var password = localStorage.getItem('password');
                 }
             });
         }
-		
-		
-		
+
+
+
  function get_makes3(year) {
             url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
             $.ajax({
@@ -642,12 +642,12 @@ var password = localStorage.getItem('password');
                     $.each(data.modelHolder, function(i, val) {
                         $('#edit #models').append("<option value='" + data.modelHolder[i].niceName + "'>" + data.modelHolder[i].name + "</option>");
                     });
-                    
+
 					$('#edit [name="models"]').val(model);
 
                     $('#edit #models').removeAttr('disabled');
                     console.log('Step 4: Models select was populated and enabled');
-                    
+
                 }
             });
         }
@@ -667,24 +667,29 @@ var password = localStorage.getItem('password');
    function deletecontact(cid)
    {
 
-       <!--    alert(cid); -->
-       if(confirm("Are you sure you want to delete this contact?")){
-           $.ajax({    //create an ajax request to load_page.php
-               type: "GET",
-               url: "http://cogni.design/cpr/www/delete.php?contactid="+cid,
-               dataType: "html",   //expect html to be returned
-               success: function(response){
-                   redraw()
-               }
-
-           });
 
 
+        function okdelete() {
+        $.ajax({    //create an ajax request to load_page.php
+            type: "GET",
+            url: "http://cogni.design/cpr/www/delete.php?contactid="+cid,
+            dataType: "html",   //expect html to be returned
+            success: function(response){
+                redraw()
+            }
 
-       }
-       else{
-           return false;
-       }
+        });
+    }
+
+
+        navigator.notification.confirm(
+            'YAre you sure you want to delete this contact?',  // message
+            okdelete,              // callback to invoke with index of button pressed
+            'Delete Contact',            // title
+            'Delete,Cancel'          // buttonLabels
+        );
+
+
 
 
    }
@@ -692,29 +697,85 @@ var password = localStorage.getItem('password');
    function deletevehicle(cid)
    {
 
-       <!--    alert(cid); -->
-       if(confirm("Are you sure you want to delete this vehicle?")){
-           $.ajax({    //create an ajax request to load_page.php
-               type: "GET",
-               url: "http://cogni.design/cpr/www/delete2.php?vehicleid="+cid,
-               dataType: "html",   //expect html to be returned
-               success: function(response){
-
-              redraw();
-               }
-
-           });
 
 
+    function okdelete2() {
+   $.ajax({    //create an ajax request to load_page.php
+       type: "GET",
+       url: "http://cogni.design/cpr/www/delete2.php?vehicleid="+cid,
+       dataType: "html",   //expect html to be returned
+       success: function(response){
 
-
-
-
-
+      redraw();
        }
-       else{
-           return false;
-       }
+
+   });
+
+}
+
+
+    navigator.notification.confirm(
+        'YAre you sure you want to delete this vehicle?',  // message
+        okdelete2,              // callback to invoke with index of button pressed
+        'Delete Vehicle',            // title
+        'Delete,Cancel'          // buttonLabels
+    );
+
+
+   }
+
+   function logoff(){
+
+
+
+    function okdelete3() {
+
+   var pagetarget = $('#page');
+
+ 		  setTimeout(function(){
+                 $('#page').scrollTop(0);
+                 setTimeout(function(){
+                     $('.appscreen').hide();
+                     setTimeout(function(){
+                         pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                         setTimeout(function(){
+                             $('li').removeClass('active');
+                             setTimeout(function(){
+ 		document.getElementById('start').style.display = '';
+ 		                                setTimeout(function(){
+                                     pagetarget.scrollTop(0);
+                                     setTimeout(function(){
+                                         pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+
+                                     },0);
+                                 },0);
+                             },0);
+                         },0);
+                     },0);
+
+                 },0);
+             },0);
+
+
+
+
+ localStorage.clear();
+
+}
+
+
+    navigator.notification.confirm(
+        'Are you sure you want to sign out?',  // message
+        okdelete3,              // callback to invoke with index of button pressed
+        'Sign Out',            // title
+        'Log Off,Cancel'          // buttonLabels
+    );
+
+
+
+
+
+
 
 
    }
@@ -733,10 +794,10 @@ var password = localStorage.getItem('password');
 //                  }
 //              }
 
-          
-		
-		  
-		  
+
+
+
+
 if(navigator.userAgent.match(/Android/i)){
   // alert("android");
   $('#appheader').css("zoom",".74");
@@ -756,8 +817,8 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                 }
                 else{
 
-					
-					
+
+
                     if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
                         throw new Error("You are trying to run this code for a non-cordova project, " +
                                 "or did not install the cordova InAppBrowser plugin");
@@ -1046,7 +1107,7 @@ contacttable = $('#exampledt')
     }
   });
 
-  
+
   $('#exampledt2 tbody').on('taphold','tr',function(){
 if ( $(this).hasClass('selected') ) {
 			$('#exampledt2').find(".editdelete").remove();
@@ -1256,8 +1317,8 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
 
  //               }
    //         });
-  
-  
+
+
 
         $("input.phone").mask("(999) 999-9999");
                 }
@@ -1272,7 +1333,7 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
 
 
 
-        
+
         if (id !== null){
 
             var pagetarget = $("#page");
@@ -1749,8 +1810,8 @@ submitHandler: function(form) {
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 	  <!-- <script type="text/javascript" src="js/index.js"></script> -->
     <script type="text/javascript" charset="utf-8">
-	
-	
+
+
 
     var deviceReady = false;
     /**
@@ -1820,7 +1881,7 @@ submitHandler: function(form) {
             options.fileName=newimageid+imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
             options.chunkedMode = false;
-			
+
             // Transfer picture to server
             var ft = new FileTransfer();
             ft.upload(imageURI, server, function(r) {
@@ -1876,38 +1937,7 @@ submitHandler: function(form) {
 <body onload="init();">
 <div id="appheader">
 <div style="position: absolute;
-		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .6; margin-top:30px;"  class="hdr_back" onclick="javascript:
-
-  var pagetarget = $('#page');
-
-		  setTimeout(function(){
-                $('#page').scrollTop(0);
-                setTimeout(function(){
-                    $('.appscreen').hide();
-                    setTimeout(function(){
-                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
-                        setTimeout(function(){
-                            $('li').removeClass('active');
-                            setTimeout(function(){
-		document.getElementById('start').style.display = '';
-		                                setTimeout(function(){
-                                    pagetarget.scrollTop(0);
-                                    setTimeout(function(){
-                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-
-                                    },0);
-                                },0);
-                            },0);
-                        },0);
-                    },0);
-
-                },0);
-            },0);
-
-
-
-
-localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
+		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .6; margin-top:30px;"  class="hdr_back" onclick="javascript:logoff();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
 
 		<div id="tabs" class="font_PNbold" style="zoom: .8;">
 			<ul id="top_menu">
@@ -2357,10 +2387,10 @@ localStorage.clear();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack(
 							</tr>
 						</table>
 
-						
-						
-			
-						
+
+
+
+
 						<div id="responsecontainermatch" align="center">
 
 						</div>
