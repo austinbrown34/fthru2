@@ -1031,7 +1031,7 @@ if ( $(this).hasClass('selected') ) {
          $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table></td></tr>").insertAfter($(this).closest('tr'));
 		contactid = $(this).find("#contactid").text();
 $('#edit [name="contactid"]').val(contactid);
-name = $('td:first', $(this)).text();
+name = $('td:first', $(this)).text().split("<")[0];
 lname = name.split(" ")[1];
 fname = name.split(" ")[0];
 tel = $(this).children('td').eq(1).text();
@@ -1064,7 +1064,7 @@ make = $(this).find("#make").text();
 model = $(this).find("#model").text();
 //$('#edit [name="years"]').val(year);
 //get_makes3(year);
-
+console.log("year: "+year+" make: "+make+" model: "+model);
 
 
 
@@ -1084,14 +1084,14 @@ $('#edit #suvs').prop('checked', false);
 $('#edit #crossovers').prop('checked', false);
 $('#edit #specific').prop('checked', false);
 
-
+if(year != ""){
     $('#edit [name="years"]').val(year);
     get_makes3(year);
 
 
 
 
-
+}
 
 
     $("#edit #cars").removeAttr('disabled');
