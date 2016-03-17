@@ -943,7 +943,7 @@ contacttable = $('#exampledt')
       {
         "render": function (data,type,row){
           if(row[2] == "Specific"){
-            return '<span id="year" style="display:none;">'+row[11]+'</span><span id="make" style="display:none;">'+row[6]+'</span><span id="model" style="display:none;">'+row[7]+'</span>'+row[6]+' '+row[7] +' | <br>$'+row[4]+' - $'+row[5];
+            return '<span id="year" style="display:none;">'+row[11]+'</span><span id="make" style="display:none;">'+row[6]+'</span><span id="model" style="display:none;">'+row[7]+'</span><span id="type" style="display:none;">'+row[2]+'</span>'+row[6]+' '+row[7] +' | <br>$'+row[4]+' - $'+row[5];
           }
           else{
             return data +' | <br>$'+row[4]+' - $'+row[5];
@@ -1048,10 +1048,141 @@ $('#edit #cars').prop('checked', false);
 $('#edit #trucks').prop('checked', false);
 $('#edit #suvs').prop('checked', false);
 $('#edit #crossovers').prop('checked', false);
-$('#edit #specific').prop('checked', false);		
-		
-		
-		}
+$('#edit #specific').prop('checked', false);
+
+
+    $('#edit [name="years"]').val(year);
+    get_makes3(year);
+
+
+
+
+
+
+
+    $("#edit #cars").removeAttr('disabled');
+    $("#edit #trucks").removeAttr('disabled');
+    $("#edit #suvs").removeAttr('disabled');
+    $("#edit #crossovers").removeAttr('disabled');
+    $("#edit #specific1").hide();
+    $("#edit #specific2").hide();
+    $("#edit #specific3").hide();
+    $('#edit #cars').prop('checked', false);
+    $('#edit #trucks').prop('checked', false);
+    $('#edit #suvs').prop('checked', false);
+    $('#edit #crossovers').prop('checked', false);
+    $('#edit #specific').prop('checked', false);
+
+
+
+    $("#edit .specific").change(function() {
+        if(this.checked) {
+            $("#edit #cars").attr('disabled','disabled');
+            $("#edit #trucks").attr('disabled','disabled');
+            $("#edit #suvs").attr('disabled','disabled');
+            $("#edit #crossovers").attr('disabled','disabled');
+            $('#edit #cars').prop('checked', false);
+            $('#edit #trucks').prop('checked', false);
+            $('#edit #suvs').prop('checked', false);
+            $('#edit #crossovers').prop('checked', false);
+
+
+            $("#edit #specific1").css("display","");
+            $("#edit #specific2").css("display","");
+            $("#edit #specific3").css("display","");
+
+        }
+        else{
+            $("#edit #cars").removeAttr('disabled');
+            $("#edit #trucks").removeAttr('disabled');
+            $("#edit #suvs").removeAttr('disabled');
+            $("#edit #crossovers").removeAttr('disabled');
+            $("#edit #specific1").hide();
+            $("#edit #specific2").hide();
+            $("#edit #specific3").hide();
+        }
+
+    });
+
+    checkboxes = $(this).find("#type").text();
+    checkboxesarray = checkboxes.split(",");
+
+    checkboxesarray.forEach(function(entry) {
+        if(entry == "Cars"){
+
+            $('#edit #cars').prop('checked', true);
+        }
+        if(entry == "Trucks"){
+
+            $('#edit #trucks').prop('checked', true);
+        }
+        if(entry == "SUVS"){
+
+            $('#edit #suvs').prop('checked', true);
+        }
+        if(entry == "Crossovers"){
+
+            $('#edit #crossovers').prop('checked', true);
+        }
+        if(entry == "Specific"){
+
+            $('#edit #specific').prop('checked', true);
+            $("#edit #cars").attr('disabled','disabled');
+            $("#edit #trucks").attr('disabled','disabled');
+            $("#edit #suvs").attr('disabled','disabled');
+            $("#edit #crossovers").attr('disabled','disabled');
+            $('#edit #cars').prop('checked', false);
+            $('#edit #trucks').prop('checked', false);
+            $('#edit #suvs').prop('checked', false);
+            $('#edit #crossovers').prop('checked', false);
+
+
+            $("#edit #specific1").css("display","");
+            $("#edit #specific2").css("display","");
+            $("#edit #specific3").css("display","");
+
+        }
+    });
+
+    function editcontact(cid){
+
+
+
+
+        document.getElementById('viewuser').style.display = 'none';$('#page').scrollTop(0);document.getElementById('edit').style.display = '';
+
+
+
+    }
+
+    function deletecontact(cid)
+    {
+
+        <!--    alert(cid); -->
+        if(confirm("Are you sure you want to delete this contact?")){
+            $.ajax({    //create an ajax request to load_page.php
+                type: "GET",
+                url: "http://cogni.design/cpr/www/delete.php?contactid="+cid,
+                dataType: "html",   //expect html to be returned
+                success: function(response){
+                  redraw()
+                }
+
+            });
+
+        
+
+        }
+        else{
+            return false;
+        }
+
+
+    }
+
+
+
+        }
   });
 
   //  $("contacttable tbody").bind("taphold", {duration: 500}, function(event)
