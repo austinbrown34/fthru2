@@ -980,7 +980,7 @@ contacttable = $('#exampledt')
             return '<span id="year" style="display:none;">'+row[11]+'</span><span id="make" style="display:none;">'+row[6]+'</span><span id="model" style="display:none;">'+row[7]+'</span><span id="type" style="display:none;">'+row[2]+'</span>'+row[6]+' '+row[7] +' | <br>$'+row[4]+' - $'+row[5];
           }
           else{
-            return data +' | <br>$'+row[4]+' - $'+row[5];
+            return '<span id="type" style="display:none;">'+row[2]+'</span>'+data +' | <br>$'+row[4]+' - $'+row[5];
           }
         },
         "targets": 2
@@ -1031,7 +1031,7 @@ if ( $(this).hasClass('selected') ) {
          $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table></td></tr>").insertAfter($(this).closest('tr'));
 		contactid = $(this).find("#contactid").text();
 $('#edit [name="contactid"]').val(contactid);
-name = $('td:first', $(this)).text().split("<")[0];
+name = $('td:first', $(this)).split("<")[0];
 lname = name.split(" ")[1];
 fname = name.split(" ")[0];
 tel = $(this).children('td').eq(1).text();
@@ -1139,6 +1139,7 @@ if(year != ""){
     });
 
     checkboxes = $(this).find("#type").text();
+    console.log("type: "+type);
     checkboxesarray = checkboxes.split(",");
 
     checkboxesarray.forEach(function(entry) {
