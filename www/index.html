@@ -800,7 +800,7 @@ if(buttonIndex == 2){
 
    function editpermission(cid,permission){
 
-   
+
        if(permission == 0){
 
 
@@ -1221,7 +1221,7 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
                             contacttable.$('tr.selected').removeClass('selected');
                             $(this).addClass('selected');
                             //$(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
-                            $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'>Permission</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
+                            $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'>SMS</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
                             contactid = $(this).find("#contactid").text();
                             $('#edit [name="contactid"]').val(contactid);
                             name = $('td:first', $(this)).text().replace(/\d+/g, '');
