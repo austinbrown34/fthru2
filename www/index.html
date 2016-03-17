@@ -653,7 +653,41 @@ var password = localStorage.getItem('password');
         }
 
 
-		
+   function editcontact(cid){
+
+
+
+
+       document.getElementById('viewuser').style.display = 'none';$('#page').scrollTop(0);document.getElementById('edit').style.display = '';
+
+
+
+   }
+
+   function deletecontact(cid)
+   {
+
+       <!--    alert(cid); -->
+       if(confirm("Are you sure you want to delete this contact?")){
+           $.ajax({    //create an ajax request to load_page.php
+               type: "GET",
+               url: "http://cogni.design/cpr/www/delete.php?contactid="+cid,
+               dataType: "html",   //expect html to be returned
+               success: function(response){
+                   redraw()
+               }
+
+           });
+
+
+
+       }
+       else{
+           return false;
+       }
+
+
+   }
 		
         $(document).ready(function() {
 //              function getBase64Image(img) {
@@ -1144,41 +1178,7 @@ $('#edit #specific').prop('checked', false);
         }
     });
 
-    function editcontact(cid){
 
-
-
-
-        document.getElementById('viewuser').style.display = 'none';$('#page').scrollTop(0);document.getElementById('edit').style.display = '';
-
-
-
-    }
-
-    function deletecontact(cid)
-    {
-
-        <!--    alert(cid); -->
-        if(confirm("Are you sure you want to delete this contact?")){
-            $.ajax({    //create an ajax request to load_page.php
-                type: "GET",
-                url: "http://cogni.design/cpr/www/delete.php?contactid="+cid,
-                dataType: "html",   //expect html to be returned
-                success: function(response){
-                  redraw()
-                }
-
-            });
-
-        
-
-        }
-        else{
-            return false;
-        }
-
-
-    }
 
 
 
