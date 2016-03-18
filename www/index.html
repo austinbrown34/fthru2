@@ -1139,7 +1139,7 @@ contacttable = $('#exampledt')
 					 }
 					 else{
 					  if(doc.content[1].table.body[i][0].text.indexOf('$') >= 0){
-						doc.content[1].table.body[i][0].text = doc.content[1].table.body[i][0].text.split("|")[1];
+						doc.content[1].table.body[i][0].text = doc.content[1].table.body[i][0].text.split("$")[1];
 					  }
 					  else{
 						var newcontent = doc.content[1].table.body[i][0].text.replace(/\d+/g, '');
