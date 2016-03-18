@@ -1137,8 +1137,7 @@ contacttable = $('#exampledt')
                      if(doc.content[1].table.body[i][0].text.indexOf('(') >= 0){
 						
 					 }
-					 else{
-					  if(doc.content[1].table.body[i][0].text.indexOf('$') >= 0){
+					 else if(doc.content[1].table.body[i][0].text.indexOf('$') >= 0){
 						alert("made it here");
 						doc.content[1].table.body[i][0].text = doc.content[1].table.body[i][0].text.split('$')[1];
 					  }
@@ -1147,7 +1146,7 @@ contacttable = $('#exampledt')
 						doc.content[1].table.body[i][0].text = newcontent;
 						}
 						
-					 }
+					 
                      
               }
 		  
