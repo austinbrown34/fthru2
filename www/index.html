@@ -1030,7 +1030,7 @@ inventorytable = $('#exampledt2')
                       try{
                         delete doc.content[1].table.body[i][0].text;
                         doc.content[1].table.body[i][0].image = my64Images[thisrow];
-                          doc.content[1].table.body[i][0].fit =  [100, 100];
+                          doc.content[1].table.body[i][0].fit =  [150, 150];
 
 
                      //  alert(my64Images[thisrow]);
@@ -1043,7 +1043,7 @@ inventorytable = $('#exampledt2')
 				  var thecontent = doc.content[1].table.body[i][0].text;
 				  var newcontent = $(thecontent).text();
 				  doc.content[1].table.body[i][0].text = newcontent;
-                      doc.content[1].table.body[i][0].alignment = 'center';
+                      doc.content[1].table.body[i][0].alignment = 'right';
 				  }
               }
           },
@@ -1051,7 +1051,7 @@ inventorytable = $('#exampledt2')
       { extend: 'csvHtml5',
 
 
-          exportOptions: { columns: [ 0, 1, 2, 3, 4 ] } }
+          exportOptions: { columns: [ 1, 2, 3, 4 ] } }
     ],
     "bLengthChange": false,
     "processing": true,
@@ -1130,6 +1130,31 @@ contacttable = $('#exampledt')
     buttons: [
       { extend: 'pdfHtml5', customize: function(doc) {
           contactsorvehicles="mycontacts";
+		  
+		   for(var i=0;i<doc.content[1].table.body[0].length;i++){
+                  var theshiz = doc.content[1].table.body[0][i].text;
+                  doc.content[1].table.body[0][i].text = $(theshiz).text();
+                  doc.content[1].table.body[0][i].width = '*';
+              }
+              for (var i=1;i<doc.content[1].table.body.length;i++) {
+              
+                     if(doc.content[1].table.body[i][0].text.indexOf('(') >= 0){
+						
+					 }
+					 else
+					  if(doc.content[1].table.body[i][0].text.indexOf('$') >= 0){
+					  
+					  }
+					  else{
+						var newcontent = doc.content[1].table.body[i][0].text.replace(/\d+/g, '');
+						doc.content[1].table.body[i][0].text = newcontent;
+						}
+						
+					 }
+                     
+              }
+		  
+		  
       }, exportOptions: { columns: [ 0, 1, 2,3,4 ] } },
       { extend: 'csvHtml5', exportOptions: { columns: [ 0, 1, 2,3,4 ] } }
     ],
