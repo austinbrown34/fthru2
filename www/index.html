@@ -1151,7 +1151,7 @@ contacttable = $('#exampledt')
               }
 		  
 		  
-      }, exportOptions: { columns: [ 0, 1, 2,3,4 ] } },
+      }, exportOptions: {stripHtml: false,  columns: [ 0, 1, 2,3,4 ] } },
       { extend: 'csvHtml5', exportOptions: {  columns: [ 0, 1, 2,3,4,5,6,7,8,9,10,11,12 ] } }
     ],
     "bLengthChange": false,
@@ -1165,7 +1165,7 @@ contacttable = $('#exampledt')
             if(row[12] == 1){
                 namecolor="black;";
             }
-			alert(row[12]);
+			
           return '<span id="permission" style="display:none;" >'+row[12]+'</span><span style="color:'+namecolor+'">'+data +' '+row[3] + '</span><span id="contactid" style="display:none;">'+row[10]+'</span>';
         },
         "targets": 0
