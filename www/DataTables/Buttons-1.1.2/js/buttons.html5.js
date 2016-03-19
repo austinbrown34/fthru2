@@ -812,7 +812,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 				};
 			} ) );
 		}
-        alert(contactsorvehicles);
+
 
 
 		var doc = {
@@ -858,7 +858,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 			}
 		};
 
-        
+
 		if ( config.message ) {
 			doc.content.unshift( {
 				text: config.message,
