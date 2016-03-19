@@ -814,7 +814,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 		}
 
         if (contactsorvehicles == "mycontacts"){
-
+        alert("mycontacts");
 		var doc = {
 			pageSize: config.pageSize,
 			pageOrientation: config.orientation,
@@ -823,7 +823,8 @@ DataTable.ext.buttons.pdfHtml5 = {
 					table: {
 						headerRows: 1,
                         widths: [ 'auto', '*', '*','*', '*','*','*','*' ],
-						body: rows
+						body: rows,
+                        alignment: 'center'
 					},
 					layout: 'noBorders'
 				}
