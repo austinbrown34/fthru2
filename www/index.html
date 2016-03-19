@@ -1006,7 +1006,7 @@ inventorytable = $('#exampledt2')
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
-      { extend: 'pdfHtml5',
+      { extend: 'pdfHtml5',orientation: 'landscape',
           customize: function(doc) {
               doc.images = doc.images || {};
               contactsorvehicles="myinventory";
@@ -1128,7 +1128,7 @@ contacttable = $('#exampledt')
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
-      { extend: 'pdfHtml5', customize: function(doc) {
+      { extend: 'pdfHtml5', orientation: 'landscape', customize: function(doc) {
           contactsorvehicles="mycontacts";
 		  
 		   
