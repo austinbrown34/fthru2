@@ -813,7 +813,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 			} ) );
 		}
         alert(contactsorvehicles);
-        if (contactsorvehicles == "mycontacts"){
+
 
 		var doc = {
 			pageSize: config.pageSize,
@@ -857,51 +857,8 @@ DataTable.ext.buttons.pdfHtml5 = {
 				fontSize: 10
 			}
 		};
-        }
-        else{
-            var doc = {
-                pageSize: config.pageSize,
-                pageOrientation: config.orientation,
-                content: [
-                    {
-                        table: {
-                            headerRows: 1,
-                            widths: [ 'auto', '*', '*','*', '*','*' ],
-                            body: rows,
-                            alignment: 'center'
-                        },
-                        layout: 'noBorders'
-                    }
-                ],
-                styles: {
-                    tableHeader: {
-                        bold: true,
-                        fontSize: 11,
-                        color: 'white',
-                        fillColor: '#2d4154',
-                        alignment: 'center'
-                    },
-                    tableBodyEven: {},
-                    tableBodyOdd: {
-                        fillColor: '#f3f3f3'
-                    },
-                    tableFooter: {
-                        bold: true,
-                        fontSize: 11,
-                        color: 'white',
-                        fillColor: '#2d4154'
-                    },
-                    title: {
-                        alignment: 'center',
-                        fontSize: 15
-                    },
-                    message: {}
-                },
-                defaultStyle: {
-                    fontSize: 10
-                }
-            };
-        }
+
+        
 		if ( config.message ) {
 			doc.content.unshift( {
 				text: config.message,

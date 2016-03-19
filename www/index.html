@@ -1011,7 +1011,7 @@ inventorytable = $('#exampledt2')
               doc.images = doc.images || {};
               contactsorvehicles="myinventory";
               pdfdoc = doc;
-
+              doc.content[1].table.widths = [ 'auto', '*', '*','*', '*','*' ];
 //              doc.content[1].table.widths[4].width = '300';
 //			  $(doc.document.body).find( 'th' ).html() = $(doc.document.body).find( 'th' ).text();
 //			 alert(doc.content[1].table.th.text());
@@ -1131,7 +1131,7 @@ contacttable = $('#exampledt')
       { extend: 'pdfHtml5', orientation: 'landscape', customize: function(doc) {
           contactsorvehicles="mycontacts";
 		  
-		   
+		   doc.content[1].table.widths = [ 'auto', '*', '*','*', '*','*','*','*' ];
 //              for (var i=1;i<doc.content[1].table.body.length;i++) {
 //
 //                     if(doc.content[1].table.body[i][0].text.indexOf('(') >= 0){
