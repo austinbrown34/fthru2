@@ -812,9 +812,9 @@ DataTable.ext.buttons.pdfHtml5 = {
 				};
 			} ) );
 		}
-
+        alert(contactsorvehicles);
         if (contactsorvehicles == "mycontacts"){
-        alert("mycontacts");
+
 		var doc = {
 			pageSize: config.pageSize,
 			pageOrientation: config.orientation,
