@@ -1219,10 +1219,12 @@ contacttable = $('#exampledt')
     }
   });
 
-                    $('#exampledt .buttons-html5').on('click',function(){
+                    $('#exampledt .buttons-html5').on('click','a',function(){
+                        alert("made it here");
                         contactsorvehicles = "mycontacts";
                     });
-                    $('#exampledt2 .buttons-html5').on('click',function(){
+                    $('#exampledt2 .buttons-html5').on('click','a',function(){
+                        alert("made it here");
                         contactsorvehicles = "myinventory";
                     });
 
