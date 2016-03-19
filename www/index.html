@@ -1219,6 +1219,12 @@ contacttable = $('#exampledt')
     }
   });
 
+                    $('#exampledt .buttons-html5').on('click',function(){
+                        contactsorvehicles = "mycontacts";
+                    });
+                    $('#exampledt2 .buttons-html5').on('click',function(){
+                        contactsorvehicles = "myinventory";
+                    });
 
   $('#exampledt2 tbody').on('taphold','tr',function(){
 if ( $(this).hasClass('selected') ) {
