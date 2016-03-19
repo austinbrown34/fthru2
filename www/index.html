@@ -1047,11 +1047,11 @@ inventorytable = $('#exampledt2')
 				  }
               }
           },
-          exportOptions: { stripHtml: false, columns: [ 0, 1, 2, 3, 4 ] } },
+          exportOptions: { stripHtml: false, columns: [ 0, 1,7, 2, 3, 4 ] } },
       { extend: 'csvHtml5',
 
 
-          exportOptions: { columns: [ 1, 2, 3, 4 ] } }
+          exportOptions: { columns: [ 1,7, 2, 3, 4 ] } }
     ],
     "bLengthChange": false,
     "processing": true,
@@ -1090,7 +1090,7 @@ inventorytable = $('#exampledt2')
         },
       {
         "visible": false,
-        "targets": [5,6]
+        "targets": [5,6,7]
       }],
     "serverSide":true,
     // "data": '[ [ "Arenie", "(406) 861-3601", "Trucks", "Sticka", "5000", "10000", "", "", "1", "" ], [ "Austin", "(406) 598-7345", "Cars", "Brown", "5000", "15000", "Select Make", "Select Model", "1", "" ], [ "Billy", "(406) 444-4442", "Crossovers,SUVS,Trucks", "Bobby", "50000", "100000", "", "", "1", "" ], [ "Bo", "(333) 333-3333", "Trucks", "Bo", "50000", "100000", "", "", "1", "" ], [ "Carl", "(404) 444-3399", "Specific", "Marx", "50000", "100000", "cadillac", "seville", "1", "" ], [ "George", "(666) 666-6666", "Specific", "Might ", "50000", "100000", "chrysler", "townandcountry", "1", "" ], [ "Georgio", "(666) 666-6666", "Crossovers,SUVS,Trucks,Cars", "Horez", "50000", "100000", "", "", "1", "" ], [ "Howard", "(406) 598-1467", "Crossovers,SUVS,Trucks", "Skidmore", "5000", "10000", "Select Make", "Select Model", "1", "" ], [ "Jjj", "(333) 333-3333", "Crossovers", "Jjj", "50000", "100000", "", "", "1", "" ], [ "Jo", "(555) 555-5555", "Crossovers,SUVS", "Blo", "5000", "10000", "Select Make", "Select Model", "1", "" ] ]',
@@ -2728,6 +2728,7 @@ submitHandler: function(form) {
                                 <th style="width:17% !important;">Price</th>
 								  <th style="width:0% !important;">Status</th>
                                 <th style="width:0% !important;">ID</th>
+                                <th style="width:0% !important;">Type</th>
 
 
                             </tr>
@@ -2741,6 +2742,7 @@ submitHandler: function(form) {
                                 <th style="width:17% !important;">Price</th>
 																  <th style="width:0% !important;">Status</th>
                                 <th style="width:0% !important;">ID</th>
+                                <th style="width:0% !important;">Type</th>
 
 
                             </tr>
