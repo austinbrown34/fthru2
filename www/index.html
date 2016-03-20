@@ -1030,7 +1030,7 @@ inventorytable = $('#exampledt2')
                       try{
                         delete doc.content[1].table.body[i][0].text;
                         doc.content[1].table.body[i][0].image = my64Images[thisrow];
-                          doc.content[1].table.body[i][0].fit =  [150, 150];
+                          doc.content[1].table.body[i][0].fit =  [100, 100];
 
 
                      //  alert(my64Images[thisrow]);
@@ -1053,6 +1053,8 @@ inventorytable = $('#exampledt2')
 
           exportOptions: { columns: [ 1,7, 2, 3, 4 ] } }
     ],
+	"pageLength": 20,
+	lengthMenu: [[20, 50, -1], [20, 50, "All"]],
     "bLengthChange": false,
     "processing": true,
     "columnDefs": [
@@ -1154,6 +1156,8 @@ contacttable = $('#exampledt')
       }, exportOptions: {  columns: [ 13, 3, 1, 14, 6, 7,4,5 ] } },
       { extend: 'csvHtml5', exportOptions: {  columns: [ 13,3,1,14,6,7,4,5 ] } }
     ],
+	"pageLength": 20,
+	lengthMenu: [[20, 50, -1], [20, 50, "All"]],
     "bLengthChange": false,
     "processing": true,
     "columnDefs": [
