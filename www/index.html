@@ -1003,7 +1003,7 @@ $.fn.dataTable.ext.errMode = 'none';
 
 inventorytable = $('#exampledt2')
   .DataTable({
-    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>lt<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
+    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfrl>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
       { extend: 'pdfHtml5',orientation: 'landscape',
@@ -1030,7 +1030,7 @@ inventorytable = $('#exampledt2')
                       try{
                         delete doc.content[1].table.body[i][0].text;
                         doc.content[1].table.body[i][0].image = my64Images[thisrow];
-                          doc.content[1].table.body[i][0].fit =  [100, 100];
+                          doc.content[1].table.body[i][0].fit =  [50, 50];
 
 
                      //  alert(my64Images[thisrow]);
@@ -1127,7 +1127,7 @@ contacttable = $('#exampledt')
   //   console.log( 'An error has been reported by DataTables: ', message );
   // })
   .DataTable({
-    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>lt<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
+    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfrl>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
       { extend: 'pdfHtml5', orientation: 'landscape', customize: function(doc) {
