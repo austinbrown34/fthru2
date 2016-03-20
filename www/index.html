@@ -1003,7 +1003,7 @@ $.fn.dataTable.ext.errMode = 'none';
 
 inventorytable = $('#exampledt2')
   .DataTable({
-    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
+    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>tl<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
       { extend: 'pdfHtml5',orientation: 'landscape',
@@ -1053,7 +1053,9 @@ inventorytable = $('#exampledt2')
 
           exportOptions: { columns: [ 1,7, 2, 3, 4 ] } }
     ],
-	 "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+	"pageLength": 20,
+	"lengthMenu": [[20, 50, -1], [20, 50, "All"]],
+   
     "processing": true,
     "columnDefs": [
       {
@@ -1125,7 +1127,7 @@ contacttable = $('#exampledt')
   //   console.log( 'An error has been reported by DataTables: ', message );
   // })
   .DataTable({
-    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
+    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>tl<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
 	"jQueryUI": true,
     buttons: [
       { extend: 'pdfHtml5', orientation: 'landscape', customize: function(doc) {
@@ -1154,7 +1156,8 @@ contacttable = $('#exampledt')
       }, exportOptions: {  columns: [ 13, 3, 1, 14, 6, 7,4,5 ] } },
       { extend: 'csvHtml5', exportOptions: {  columns: [ 13,3,1,14,6,7,4,5 ] } }
     ],
-	 "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+	"pageLength": 20,
+	"lengthMenu": [[20, 50, -1], [20, 50, "All"]],
     
     "processing": true,
     "columnDefs": [
