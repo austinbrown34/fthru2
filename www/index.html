@@ -34,16 +34,23 @@
 
 
 <style>
-.sprite-spinner {
-  overflow: hidden;
-  position: relative;
-  display:inline-block;
-  text-align:left;
-}
+#dvLoading{
+   background:#000 url(loading2.gif) no-repeat center center;
 
-.spinner-wrap {
-  text-align:center;
-  margin:100px auto;
+   height: 100%;
+
+   width: 100%;
+
+   position: fixed;
+
+   z-index: 10000;
+
+   left: 50%;
+
+   top: 50%;
+
+   margin: -25px 0 0 -25px;
+
 }
 *{
 -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -232,39 +239,6 @@ color:#6a7894;
 
 <!-- 	<script src="mktSignup.js"></script> -->
     <script>
-
-(function() {
-    SpriteSpinner = function(el, options){
-        var self = this,
-            img = el.children[0];
-        this.interval = options.interval || 10;
-        this.diameter = options.diameter || img.width;
-        this.count = 0;
-        this.el = el;
-        img.setAttribute("style", "position:absolute");
-        el.style.width = this.diameter+"px";
-        el.style.height = this.diameter+"px";
-        return this;
-    };
-    SpriteSpinner.prototype.start = function(){
-        var self = this,
-            count = 0,
-            img = this.el.children[0];
-        this.el.display = "block";
-        self.loop = setInterval(function(){
-            if(count == 19){
-                count = 0;
-            }
-            img.style.top = (-self.diameter*count)+"px";
-            count++;
-        }, this.interval);
-    };
-    SpriteSpinner.prototype.stop = function(){
-        clearInterval(this.loop);
-        this.el.style.display = "none";
-    };
-    document.SpriteSpinner = SpriteSpinner;
-})();
 
 
 
@@ -926,12 +900,7 @@ function enabletext(buttonIndex){
 
 
 
-  $(".sprite-spinner").each(function(i){
-    var s = new SpriteSpinner(this, {
-      interval:50
-    });
-    s.start();
-  });
+
 
 if(navigator.userAgent.match(/Android/i)){
   // alert("android");
@@ -2133,12 +2102,8 @@ submitHandler: function(form) {
 
 
 <body onload="init();">
-  <div class="spinner-wrap">
-    <div class="sprite-spinner">
-      <img src="loading.png" alt=""/>
-    </div>
+  <div id="dvLoading"></div>
 
-</div>
 <div id="appheader">
 <div style="position: absolute;
 		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><img src="logout.png" style="width:60px; zoom: .6; margin-top:30px;"  class="hdr_back" onclick="javascript:logoff();"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
