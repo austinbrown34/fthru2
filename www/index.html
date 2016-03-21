@@ -1531,6 +1531,13 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
 
 
         }
+        else{
+          document.getElementById('start').style.display = '';
+          setTimeout(function(){
+            $('#dvLoading').hide();
+          },0);
+
+        }
             $('#years').change(function() {
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes($(this).val());
@@ -2129,7 +2136,7 @@ submitHandler: function(form) {
 
 
 
-			<div id="start" class="appscreen">
+			<div id="start" class="appscreen" style="display:none;">
 
 
         <div id="login" style="padding-top: 50px;">
