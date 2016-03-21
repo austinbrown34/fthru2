@@ -321,7 +321,7 @@ function initializetables(){
         }],
       "serverSide":true,
       "ajax":{
-        url: "http://cogni.design/cpr/www/server_processing2.php?id="+id//,
+        url: "http://development.fthru.cogni.design/www/server_processing2.php?id="+id//,
 
       },
               "initComplete": function () {
@@ -394,7 +394,7 @@ function initializetables(){
         }],
       "serverSide":true,
       "ajax":{
-        url: "http://cogni.design/cpr/www/server_processing.php?id="+id//,
+        url: "http://development.fthru.cogni.design/www/server_processing.php?id="+id//,
 
       },
               "initComplete": function () {
@@ -705,7 +705,7 @@ var vehiclesinitialized = false;
 		var serializedData = $("#loginForm").serialize();
 
 		var request = $.ajax({
-				url: "http://cogni.design/cpr/www/login.php",
+				url: "http://development.fthru.cogni.design/www/login.php",
 				type: "POST",
 				data: serializedData
 			});
@@ -1032,7 +1032,7 @@ var vehiclesinitialized = false;
 
         $.ajax({
             type: "GET",
-            url: "http://cogni.design/cpr/www/delete.php?contactid="+cid,
+            url: "http://development.fthru.cogni.design/www/delete.php?contactid="+cid,
             dataType: "html",
             success: function(response){
                 redraw()
@@ -1067,7 +1067,7 @@ var vehiclesinitialized = false;
       if(buttonIndex == 2){
    $.ajax({
        type: "GET",
-       url: "http://cogni.design/cpr/www/delete2.php?vehicleid="+cid,
+       url: "http://development.fthru.cogni.design/www/delete2.php?vehicleid="+cid,
        dataType: "html",
        success: function(response){
 
@@ -1165,7 +1165,7 @@ function enabletext(buttonIndex){
     if(buttonIndex == 2){
         $.ajax({
             type: "GET",
-            url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission=1",
+            url: "http://development.fthru.cogni.design/www/permission.php?contactid="+cid+"&permission=1",
             dataType: "html",
             success: function(response){
 
@@ -1194,7 +1194,7 @@ function enabletext(buttonIndex){
                if(buttonIndex == 2){
                    $.ajax({
                        type: "GET",
-                       url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission=0",
+                       url: "http://development.fthru.cogni.design/www/permission.php?contactid="+cid+"&permission=0",
                        dataType: "html",
                        success: function(response){
 
@@ -1345,7 +1345,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
       $.ajax({
         type: "GET",
-        url: "http://cogni.design/cpr/www/match.php?id="+id,
+        url: "http://development.fthru.cogni.design/www/match.php?id="+id,
         dataType: "html",
         success: function(response){
             $("#responsecontainermatch").html(response);
@@ -1864,7 +1864,7 @@ submitHandler: function(form) {
 
 
 					<div class="cnt_clr">
-						<form id="testForm" action="http://cogni.design/cpr/www/insert.php" method="post">
+						<form id="testForm" action="http://development.fthru.cogni.design/www/insert.php" method="post">
 <br><br>
 							<table class="home_top">
 								<tr>
@@ -2055,7 +2055,7 @@ submitHandler: function(form) {
 
 
 					<div class="cnt_clr">
-						<form id="editForm" action="http://cogni.design/cpr/www/updater.php" method="post">
+						<form id="editForm" action="http://development.fthru.cogni.design/www/updater.php" method="post">
 							<br>
 							<table class="home_top">
 								<tr>
@@ -2266,7 +2266,7 @@ submitHandler: function(form) {
 				<div class="cnt_clr">
                     <br><br>
 					<div style="padding: 2px 4px 3px 4px;">
-						<form id="testForm2" action="http://cogni.design/cpr/www/insert2.php" method="post" enctype="multipart/form-data">
+						<form id="testForm2" action="http://development.fthru.cogni.design/www/insert2.php" method="post" enctype="multipart/form-data">
 
 
 							<select id="years1" name="years" required>
@@ -2340,7 +2340,7 @@ submitHandler: function(form) {
 							<br><br>
 
 
-							<input id="serverUrl" type="hidden" value="http://cogni.design/cpr/area51/testground/uploader.php" />
+							<input id="serverUrl" type="hidden" value="http://development.fthru.cogni.design/area51/testground/uploader.php" />
 
 
 

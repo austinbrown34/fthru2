@@ -648,7 +648,7 @@ DataTable.ext.buttons.csvHtml5 = {
 				fd.append('data', blob);
 				$.ajax({
 					type: 'POST',
-					url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
+					url: 'http://development.fthru.cogni.design/www/uploadpdf.php?id='+id,
 					data: fd,
 					processData: false,
 					contentType: false
@@ -898,7 +898,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 						fd.append('data', blob);
 						$.ajax({
 							type: 'POST',
-							url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
+							url: 'http://development.fthru.cogni.design/www/uploadpdf.php?id='+id,
 							data: fd,
 							processData: false,
 							contentType: false
