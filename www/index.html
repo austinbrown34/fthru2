@@ -221,7 +221,381 @@ color:#6a7894;
 
     <script>
 
+function initializetables(){
 
+  $.fn.dataTable.ext.errMode = 'none';
+
+
+
+
+  inventorytable = $('#exampledt2')
+    .DataTable({
+      dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
+  	"jQueryUI": true,
+      buttons: [
+        { extend: 'pdfHtml5',orientation: 'landscape',
+            customize: function(doc) {
+                doc.images = doc.images || {};
+                contactsorvehicles="myinventory";
+                pdfdoc = doc;
+                doc.content[1].table.widths = [ 'auto', '*', '*','*', '*','*' ];
+                doc.content[1].table.alignment = 'center';
+
+                for(var i=0;i<doc.content[1].table.body[0].length;i++){
+                    var theshiz = doc.content[1].table.body[0][i].text;
+                    doc.content[1].table.body[0][i].text = $(theshiz).text();
+                    doc.content[1].table.body[0][i].width = '*';
+                }
+                for (var i=1;i<doc.content[1].table.body.length;i++) {
+                    if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
+                       thischunk = doc.content[1].table.body[i][0].text;
+                       thischunk = thischunk.split("style='display:none;'>");
+                       thischunk = thischunk[1].split("</span>");
+                       thischunk = thischunk[0];
+                        thisrow = thischunk;
+                        try{
+                          delete doc.content[1].table.body[i][0].text;
+                          doc.content[1].table.body[i][0].image = my64Images[thisrow];
+                            doc.content[1].table.body[i][0].fit =  [30, 30];
+
+
+                        }
+                        catch(err){
+                          alert("error: "+err);
+                        }
+                    }
+  				  else{
+  				  var thecontent = doc.content[1].table.body[i][0].text;
+  				  var newcontent = $(thecontent).text();
+  				  doc.content[1].table.body[i][0].text = newcontent;
+                        doc.content[1].table.body[i][0].alignment = 'right';
+  				  }
+                }
+            },
+            exportOptions: { stripHtml: false, columns: [ 0, 1,7, 2, 3, 4 ] } },
+        { extend: 'csvHtml5',
+
+
+            exportOptions: { columns: [ 1,7, 2, 3, 4 ] } }
+      ],
+  	"pageLength": 20,
+  	"lengthMenu": [[20, 50, -1], [20, 50, "All"]],
+
+      "processing": true,
+      "columnDefs": [
+        {
+          "render": function (data,type,row){
+                  myrow = row[6];
+  	my64Images[myrow] = data;
+            return "<img src=\""+data+"\" width=\"200px\" height=\"115px\">"+"<span id='vehicleid' style='display:none;'>"+myrow+"</span>";
+          },
+          "targets": 0
+        },
+        {
+          "render": function (data,type,row){
+            return data;
+          },
+          "targets": 1
+        },
+        {
+          "render": function (data,type,row){
+              return data;
+          },
+          "targets": 2
+        },
+          {
+              "render": function (data,type,row){
+                  return data;
+              },
+              "targets": 3
+          },
+          {
+              "render": function (data,type,row){
+                  return "$"+data;
+              },
+              "targets": 4
+          },
+        {
+          "visible": false,
+          "targets": [5,6,7]
+        }],
+      "serverSide":true,
+      "ajax":{
+        url: "http://cogni.design/cpr/www/server_processing2.php?id="+id//,
+
+      },
+              "initComplete": function () {
+                  $('#hide2').css( 'display', 'block' );
+
+              },
+      language: {
+
+        search: "_INPUT_",
+        searchPlaceholder: "Search..."
+      }
+    });
+
+  contacttable = $('#exampledt')
+
+    .DataTable({
+      dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
+  	"jQueryUI": true,
+      buttons: [
+        { extend: 'pdfHtml5', orientation: 'landscape', customize: function(doc) {
+            contactsorvehicles="mycontacts";
+
+  		   doc.content[1].table.widths = [ 'auto', '*', '*','*', '*','*','*','*' ];
+            doc.content[1].table.alignment = 'center';
+
+
+        }, exportOptions: {  columns: [ 13, 3, 1, 14, 6, 7,4,5 ] } },
+        { extend: 'csvHtml5', exportOptions: {  columns: [ 13,3,1,14,6,7,4,5 ] } }
+      ],
+  	"pageLength": 20,
+  	"lengthMenu": [[20, 50, -1], [20, 50, "All"]],
+
+      "processing": true,
+      "columnDefs": [
+        {
+          "render": function (data,type,row){
+              if(row[12] == 0){
+                  namecolor="red;";
+              }
+              if(row[12] == 1){
+                  namecolor="black;";
+              }
+
+            return '<span id="permission" style="display:none;" >'+row[12]+'</span><span style="color:'+namecolor+'">'+data +' '+row[3] + '</span><span id="contactid" style="display:none;">'+row[10]+'</span>';
+          },
+          "targets": 0
+        },
+        {
+          "render": function (data,type,row){
+            return '<a href="tel:'+data+'">'+data+'</a>';
+          },
+          "targets": 1
+        },
+        {
+          "render": function (data,type,row){
+            if(row[2] == "Specific"){
+              return '<span id="year" style="display:none;">'+row[11]+'</span><span id="make" style="display:none;">'+row[6]+'</span><span id="model" style="display:none;">'+row[7]+'</span><span id="type" style="display:none;">'+row[2]+'</span>'+row[6]+' '+row[7] +' | <br>$'+row[4]+' - $'+row[5];
+            }
+            else{
+              return '<span id="type" style="display:none;">'+row[2]+'</span>'+data +' | <br>$'+row[4]+' - $'+row[5];
+            }
+          },
+          "targets": 2
+        },
+        {
+          "visible": false,
+          "targets": [3,4,5,6,7,8,9,10,11,12,13,14]
+        }],
+      "serverSide":true,
+      "ajax":{
+        url: "http://cogni.design/cpr/www/server_processing.php?id="+id//,
+
+      },
+              "initComplete": function () {
+                  $('#hide').css( 'display', 'block' );
+
+              },
+      language: {
+
+        search: "_INPUT_",
+        searchPlaceholder: "Search..."
+      }
+    });
+
+
+
+    $('#exampledt2 tbody').on('taphold','tr',function(){
+  if ( $(this).hasClass('selected') ) {
+  			$('#exampledt2').find(".editdelete").remove();
+              $(this).removeClass('selected');
+          }
+          else {
+  		$('#exampledt2').find(".editdelete").remove();
+              inventorytable.$('tr.selected').removeClass('selected');
+              $(this).addClass('selected');
+
+
+      vehicleid = $(this).find("#vehicleid").text();
+
+  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' onclick='javascript:deletevehicle(vehicleid)'>Delete</button></center></td></tr>").insertAfter($(this).closest('tr'));
+
+
+
+          }
+    });
+
+
+                      $('#exampledt tbody').on('taphold','tr',function(){
+                          if ( $(this).hasClass('selected') ) {
+                              $('#exampledt').find(".editdelete").remove();
+                              $(this).removeClass('selected');
+                          }
+                          else {
+                              $('#exampledt').find(".editdelete").remove();
+                              contacttable.$('tr.selected').removeClass('selected');
+                              $(this).addClass('selected');
+                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'>SMS</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
+                              contactid = $(this).find("#contactid").text();
+                              $('#edit [name="contactid"]').val(contactid);
+                              name = $('td:first', $(this)).text().replace(/\d+/g, '');
+                              lname = name.split(" ")[1];
+                              fname = name.split(" ")[0];
+                              tel = $(this).children('td').eq(1).text();
+                              pricerange = $(this).children('td').eq(2).text().split("$");
+                              pricelow = pricerange[1].split(" ")[0];
+                              pricehigh = pricerange[2].split("<")[0];
+                              permission = $(this).find("#permission").text();
+                              $('#edit [name="firstname"]').val(fname);
+
+                              $('#edit [name="lastname"]').val(lname);
+
+                              $('#edit [name="phone"]').val(tel);
+
+                              $('#edit [name="pricelow"]').val(pricelow);
+
+                              $('#edit [name="pricehigh"]').val(pricehigh);
+
+
+                              $('#edit #years').change(function() {
+                                  console.log('Step 1: Year ' + $(this).val() + ' was selected');
+                                  get_makes3($(this).val());
+                              });
+
+                              $('#edit #makes').change(function() {
+                                  console.log('Step 3: Make ' + $(this).val() + ' was selected');
+                                  get_models3($(this).val(), $('#edit #years').val());
+                              });
+
+                              year = $(this).find("#year").text();
+                              make = $(this).find("#make").text();
+                              model = $(this).find("#model").text();
+
+                              console.log("year: "+year+" make: "+make+" model: "+model);
+
+
+
+
+
+
+                              $("#edit #cars").removeAttr('disabled');
+                              $("#edit #trucks").removeAttr('disabled');
+                              $("#edit #suvs").removeAttr('disabled');
+                              $("#edit #crossovers").removeAttr('disabled');
+                              $("#edit #specific1").hide();
+                              $("#edit #specific2").hide();
+                              $("#edit #specific3").hide();
+                              $('#edit #cars').prop('checked', false);
+                              $('#edit #trucks').prop('checked', false);
+                              $('#edit #suvs').prop('checked', false);
+                              $('#edit #crossovers').prop('checked', false);
+                              $('#edit #specific').prop('checked', false);
+
+                              if(year != ""){
+                                  $('#edit [name="years"]').val(year);
+                                  get_makes3(year);
+
+
+
+
+                              }
+
+
+                              $("#edit #cars").removeAttr('disabled');
+                              $("#edit #trucks").removeAttr('disabled');
+                              $("#edit #suvs").removeAttr('disabled');
+                              $("#edit #crossovers").removeAttr('disabled');
+                              $("#edit #specific1").hide();
+                              $("#edit #specific2").hide();
+                              $("#edit #specific3").hide();
+                              $('#edit #cars').prop('checked', false);
+                              $('#edit #trucks').prop('checked', false);
+                              $('#edit #suvs').prop('checked', false);
+                              $('#edit #crossovers').prop('checked', false);
+                              $('#edit #specific').prop('checked', false);
+
+
+
+                              $("#edit .specific").change(function() {
+                                  if(this.checked) {
+                                      $("#edit #cars").attr('disabled','disabled');
+                                      $("#edit #trucks").attr('disabled','disabled');
+                                      $("#edit #suvs").attr('disabled','disabled');
+                                      $("#edit #crossovers").attr('disabled','disabled');
+                                      $('#edit #cars').prop('checked', false);
+                                      $('#edit #trucks').prop('checked', false);
+                                      $('#edit #suvs').prop('checked', false);
+                                      $('#edit #crossovers').prop('checked', false);
+
+
+                                      $("#edit #specific1").css("display","");
+                                      $("#edit #specific2").css("display","");
+                                      $("#edit #specific3").css("display","");
+
+                                  }
+                                  else{
+                                      $("#edit #cars").removeAttr('disabled');
+                                      $("#edit #trucks").removeAttr('disabled');
+                                      $("#edit #suvs").removeAttr('disabled');
+                                      $("#edit #crossovers").removeAttr('disabled');
+                                      $("#edit #specific1").hide();
+                                      $("#edit #specific2").hide();
+                                      $("#edit #specific3").hide();
+                                  }
+
+                              });
+
+                              checkboxes = $(this).find("#type").text();
+                              console.log("type: "+type);
+                              checkboxesarray = checkboxes.split(",");
+
+                              checkboxesarray.forEach(function(entry) {
+                                  if(entry == "Cars"){
+
+                                      $('#edit #cars').prop('checked', true);
+                                  }
+                                  if(entry == "Trucks"){
+
+                                      $('#edit #trucks').prop('checked', true);
+                                  }
+                                  if(entry == "SUVS"){
+
+                                      $('#edit #suvs').prop('checked', true);
+                                  }
+                                  if(entry == "Crossovers"){
+
+                                      $('#edit #crossovers').prop('checked', true);
+                                  }
+                                  if(entry == "Specific"){
+
+                                      $('#edit #specific').prop('checked', true);
+                                      $("#edit #cars").attr('disabled','disabled');
+                                      $("#edit #trucks").attr('disabled','disabled');
+                                      $("#edit #suvs").attr('disabled','disabled');
+                                      $("#edit #crossovers").attr('disabled','disabled');
+                                      $('#edit #cars').prop('checked', false);
+                                      $('#edit #trucks').prop('checked', false);
+                                      $('#edit #suvs').prop('checked', false);
+                                      $('#edit #crossovers').prop('checked', false);
+
+
+                                      $("#edit #specific1").css("display","");
+                                      $("#edit #specific2").css("display","");
+                                      $("#edit #specific3").css("display","");
+
+                                  }
+                              });
+
+
+
+
+
+                          }
+                      });
+}
 
    function errorMsg(msg, timeout)
 {
@@ -345,7 +719,7 @@ inventorytable.draw();
         id= localStorage.getItem('id');
 
                 var pagetarget = $("#page");
-
+                initializetables();
                 setTimeout(function(){
                     $('#page').scrollTop(0);
                     setTimeout(function(){
@@ -863,378 +1237,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                     var windowOpen = window.open;
 
 
-$.fn.dataTable.ext.errMode = 'none';
 
-
-
-
-inventorytable = $('#exampledt2')
-  .DataTable({
-    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
-	"jQueryUI": true,
-    buttons: [
-      { extend: 'pdfHtml5',orientation: 'landscape',
-          customize: function(doc) {
-              doc.images = doc.images || {};
-              contactsorvehicles="myinventory";
-              pdfdoc = doc;
-              doc.content[1].table.widths = [ 'auto', '*', '*','*', '*','*' ];
-              doc.content[1].table.alignment = 'center';
-
-              for(var i=0;i<doc.content[1].table.body[0].length;i++){
-                  var theshiz = doc.content[1].table.body[0][i].text;
-                  doc.content[1].table.body[0][i].text = $(theshiz).text();
-                  doc.content[1].table.body[0][i].width = '*';
-              }
-              for (var i=1;i<doc.content[1].table.body.length;i++) {
-                  if (doc.content[1].table.body[i][0].text.indexOf('img src') >= 0) {
-                     thischunk = doc.content[1].table.body[i][0].text;
-                     thischunk = thischunk.split("style='display:none;'>");
-                     thischunk = thischunk[1].split("</span>");
-                     thischunk = thischunk[0];
-                      thisrow = thischunk;
-                      try{
-                        delete doc.content[1].table.body[i][0].text;
-                        doc.content[1].table.body[i][0].image = my64Images[thisrow];
-                          doc.content[1].table.body[i][0].fit =  [30, 30];
-
-
-                      }
-                      catch(err){
-                        alert("error: "+err);
-                      }
-                  }
-				  else{
-				  var thecontent = doc.content[1].table.body[i][0].text;
-				  var newcontent = $(thecontent).text();
-				  doc.content[1].table.body[i][0].text = newcontent;
-                      doc.content[1].table.body[i][0].alignment = 'right';
-				  }
-              }
-          },
-          exportOptions: { stripHtml: false, columns: [ 0, 1,7, 2, 3, 4 ] } },
-      { extend: 'csvHtml5',
-
-
-          exportOptions: { columns: [ 1,7, 2, 3, 4 ] } }
-    ],
-	"pageLength": 20,
-	"lengthMenu": [[20, 50, -1], [20, 50, "All"]],
-
-    "processing": true,
-    "columnDefs": [
-      {
-        "render": function (data,type,row){
-                myrow = row[6];
-	my64Images[myrow] = data;
-          return "<img src=\""+data+"\" width=\"200px\" height=\"115px\">"+"<span id='vehicleid' style='display:none;'>"+myrow+"</span>";
-        },
-        "targets": 0
-      },
-      {
-        "render": function (data,type,row){
-          return data;
-        },
-        "targets": 1
-      },
-      {
-        "render": function (data,type,row){
-            return data;
-        },
-        "targets": 2
-      },
-        {
-            "render": function (data,type,row){
-                return data;
-            },
-            "targets": 3
-        },
-        {
-            "render": function (data,type,row){
-                return "$"+data;
-            },
-            "targets": 4
-        },
-      {
-        "visible": false,
-        "targets": [5,6,7]
-      }],
-    "serverSide":true,
-    "ajax":{
-      url: "http://cogni.design/cpr/www/server_processing2.php?id="+id//,
-
-    },
-            "initComplete": function () {
-                $('#hide2').css( 'display', 'block' );
-
-            },
-    language: {
-
-      search: "_INPUT_",
-      searchPlaceholder: "Search..."
-    }
-  });
-
-contacttable = $('#exampledt')
-
-  .DataTable({
-    dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
-	"jQueryUI": true,
-    buttons: [
-      { extend: 'pdfHtml5', orientation: 'landscape', customize: function(doc) {
-          contactsorvehicles="mycontacts";
-
-		   doc.content[1].table.widths = [ 'auto', '*', '*','*', '*','*','*','*' ];
-          doc.content[1].table.alignment = 'center';
-
-
-      }, exportOptions: {  columns: [ 13, 3, 1, 14, 6, 7,4,5 ] } },
-      { extend: 'csvHtml5', exportOptions: {  columns: [ 13,3,1,14,6,7,4,5 ] } }
-    ],
-	"pageLength": 20,
-	"lengthMenu": [[20, 50, -1], [20, 50, "All"]],
-
-    "processing": true,
-    "columnDefs": [
-      {
-        "render": function (data,type,row){
-            if(row[12] == 0){
-                namecolor="red;";
-            }
-            if(row[12] == 1){
-                namecolor="black;";
-            }
-
-          return '<span id="permission" style="display:none;" >'+row[12]+'</span><span style="color:'+namecolor+'">'+data +' '+row[3] + '</span><span id="contactid" style="display:none;">'+row[10]+'</span>';
-        },
-        "targets": 0
-      },
-      {
-        "render": function (data,type,row){
-          return '<a href="tel:'+data+'">'+data+'</a>';
-        },
-        "targets": 1
-      },
-      {
-        "render": function (data,type,row){
-          if(row[2] == "Specific"){
-            return '<span id="year" style="display:none;">'+row[11]+'</span><span id="make" style="display:none;">'+row[6]+'</span><span id="model" style="display:none;">'+row[7]+'</span><span id="type" style="display:none;">'+row[2]+'</span>'+row[6]+' '+row[7] +' | <br>$'+row[4]+' - $'+row[5];
-          }
-          else{
-            return '<span id="type" style="display:none;">'+row[2]+'</span>'+data +' | <br>$'+row[4]+' - $'+row[5];
-          }
-        },
-        "targets": 2
-      },
-      {
-        "visible": false,
-        "targets": [3,4,5,6,7,8,9,10,11,12,13,14]
-      }],
-    "serverSide":true,
-    "ajax":{
-      url: "http://cogni.design/cpr/www/server_processing.php?id="+id//,
-
-    },
-            "initComplete": function () {
-                $('#hide').css( 'display', 'block' );
-
-            },
-    language: {
-
-      search: "_INPUT_",
-      searchPlaceholder: "Search..."
-    }
-  });
-
-
-
-  $('#exampledt2 tbody').on('taphold','tr',function(){
-if ( $(this).hasClass('selected') ) {
-			$('#exampledt2').find(".editdelete").remove();
-            $(this).removeClass('selected');
-        }
-        else {
-		$('#exampledt2').find(".editdelete").remove();
-            inventorytable.$('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-
-
-    vehicleid = $(this).find("#vehicleid").text();
-
-$("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' onclick='javascript:deletevehicle(vehicleid)'>Delete</button></center></td></tr>").insertAfter($(this).closest('tr'));
-
-
-
-        }
-  });
-
-
-                    $('#exampledt tbody').on('taphold','tr',function(){
-                        if ( $(this).hasClass('selected') ) {
-                            $('#exampledt').find(".editdelete").remove();
-                            $(this).removeClass('selected');
-                        }
-                        else {
-                            $('#exampledt').find(".editdelete").remove();
-                            contacttable.$('tr.selected').removeClass('selected');
-                            $(this).addClass('selected');
-                            $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'>SMS</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
-                            contactid = $(this).find("#contactid").text();
-                            $('#edit [name="contactid"]').val(contactid);
-                            name = $('td:first', $(this)).text().replace(/\d+/g, '');
-                            lname = name.split(" ")[1];
-                            fname = name.split(" ")[0];
-                            tel = $(this).children('td').eq(1).text();
-                            pricerange = $(this).children('td').eq(2).text().split("$");
-                            pricelow = pricerange[1].split(" ")[0];
-                            pricehigh = pricerange[2].split("<")[0];
-                            permission = $(this).find("#permission").text();
-                            $('#edit [name="firstname"]').val(fname);
-
-                            $('#edit [name="lastname"]').val(lname);
-
-                            $('#edit [name="phone"]').val(tel);
-
-                            $('#edit [name="pricelow"]').val(pricelow);
-
-                            $('#edit [name="pricehigh"]').val(pricehigh);
-
-
-                            $('#edit #years').change(function() {
-                                console.log('Step 1: Year ' + $(this).val() + ' was selected');
-                                get_makes3($(this).val());
-                            });
-
-                            $('#edit #makes').change(function() {
-                                console.log('Step 3: Make ' + $(this).val() + ' was selected');
-                                get_models3($(this).val(), $('#edit #years').val());
-                            });
-
-                            year = $(this).find("#year").text();
-                            make = $(this).find("#make").text();
-                            model = $(this).find("#model").text();
-
-                            console.log("year: "+year+" make: "+make+" model: "+model);
-
-
-
-
-
-
-                            $("#edit #cars").removeAttr('disabled');
-                            $("#edit #trucks").removeAttr('disabled');
-                            $("#edit #suvs").removeAttr('disabled');
-                            $("#edit #crossovers").removeAttr('disabled');
-                            $("#edit #specific1").hide();
-                            $("#edit #specific2").hide();
-                            $("#edit #specific3").hide();
-                            $('#edit #cars').prop('checked', false);
-                            $('#edit #trucks').prop('checked', false);
-                            $('#edit #suvs').prop('checked', false);
-                            $('#edit #crossovers').prop('checked', false);
-                            $('#edit #specific').prop('checked', false);
-
-                            if(year != ""){
-                                $('#edit [name="years"]').val(year);
-                                get_makes3(year);
-
-
-
-
-                            }
-
-
-                            $("#edit #cars").removeAttr('disabled');
-                            $("#edit #trucks").removeAttr('disabled');
-                            $("#edit #suvs").removeAttr('disabled');
-                            $("#edit #crossovers").removeAttr('disabled');
-                            $("#edit #specific1").hide();
-                            $("#edit #specific2").hide();
-                            $("#edit #specific3").hide();
-                            $('#edit #cars').prop('checked', false);
-                            $('#edit #trucks').prop('checked', false);
-                            $('#edit #suvs').prop('checked', false);
-                            $('#edit #crossovers').prop('checked', false);
-                            $('#edit #specific').prop('checked', false);
-
-
-
-                            $("#edit .specific").change(function() {
-                                if(this.checked) {
-                                    $("#edit #cars").attr('disabled','disabled');
-                                    $("#edit #trucks").attr('disabled','disabled');
-                                    $("#edit #suvs").attr('disabled','disabled');
-                                    $("#edit #crossovers").attr('disabled','disabled');
-                                    $('#edit #cars').prop('checked', false);
-                                    $('#edit #trucks').prop('checked', false);
-                                    $('#edit #suvs').prop('checked', false);
-                                    $('#edit #crossovers').prop('checked', false);
-
-
-                                    $("#edit #specific1").css("display","");
-                                    $("#edit #specific2").css("display","");
-                                    $("#edit #specific3").css("display","");
-
-                                }
-                                else{
-                                    $("#edit #cars").removeAttr('disabled');
-                                    $("#edit #trucks").removeAttr('disabled');
-                                    $("#edit #suvs").removeAttr('disabled');
-                                    $("#edit #crossovers").removeAttr('disabled');
-                                    $("#edit #specific1").hide();
-                                    $("#edit #specific2").hide();
-                                    $("#edit #specific3").hide();
-                                }
-
-                            });
-
-                            checkboxes = $(this).find("#type").text();
-                            console.log("type: "+type);
-                            checkboxesarray = checkboxes.split(",");
-
-                            checkboxesarray.forEach(function(entry) {
-                                if(entry == "Cars"){
-
-                                    $('#edit #cars').prop('checked', true);
-                                }
-                                if(entry == "Trucks"){
-
-                                    $('#edit #trucks').prop('checked', true);
-                                }
-                                if(entry == "SUVS"){
-
-                                    $('#edit #suvs').prop('checked', true);
-                                }
-                                if(entry == "Crossovers"){
-
-                                    $('#edit #crossovers').prop('checked', true);
-                                }
-                                if(entry == "Specific"){
-
-                                    $('#edit #specific').prop('checked', true);
-                                    $("#edit #cars").attr('disabled','disabled');
-                                    $("#edit #trucks").attr('disabled','disabled');
-                                    $("#edit #suvs").attr('disabled','disabled');
-                                    $("#edit #crossovers").attr('disabled','disabled');
-                                    $('#edit #cars').prop('checked', false);
-                                    $('#edit #trucks').prop('checked', false);
-                                    $('#edit #suvs').prop('checked', false);
-                                    $('#edit #crossovers').prop('checked', false);
-
-
-                                    $("#edit #specific1").css("display","");
-                                    $("#edit #specific2").css("display","");
-                                    $("#edit #specific3").css("display","");
-
-                                }
-                            });
-
-
-
-
-
-                        }
-                    });
 
 
         $("input.phone").mask("(999) 999-9999");
@@ -1250,7 +1253,7 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
         if (id !== null){
 
             var pagetarget = $("#page");
-
+            initializetables();
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
