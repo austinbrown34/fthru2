@@ -288,8 +288,9 @@ inventorytable.draw();
 
 
     var id= localStorage.getItem('id');
-     var userid= localStorage.getItem('id');
-var password = localStorage.getItem('password');
+    alert("id: "+id);
+    // var userid= localStorage.getItem('id');
+//var password = localStorage.getItem('password');
    var myImages=[];
    var my64Images=[];
 
@@ -1676,10 +1677,10 @@ submitHandler: function(form) {
     var postData = $(form).serializeArray();
     var formURL = $(form).attr("action");
 
-    console.log(formURL+"?id="+userid);
+    console.log(formURL+"?id="+id);
     $.ajax(
     {
-        url : formURL+"?id="+userid,
+        url : formURL+"?id="+id,
         type: "POST",
         data : postData,
         success:function(data, textStatus, jqXHR)
@@ -1756,10 +1757,10 @@ submitHandler: function(form) {
     var postData = $(form).serializeArray();
     var formURL = $(form).attr("action");
 
-    console.log(formURL+"?id="+userid);
+    console.log(formURL+"?id="+id);
     $.ajax(
     {
-        url : formURL+"?id="+userid,
+        url : formURL+"?id="+id,
         type: "POST",
         data : postData,
         success:function(data, textStatus, jqXHR)
