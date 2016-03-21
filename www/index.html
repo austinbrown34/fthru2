@@ -72,7 +72,7 @@ padding: 20px !important;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
 font-family: FontAwesome;
-    font-size: 1.3333333333333333em;
+    font-size: 1em;
 }
 
 .ui-toolbar{
@@ -425,7 +425,7 @@ function initializetables(){
 
       vehicleid = $(this).find("#vehicleid").text();
 
-  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' onclick='javascript:deletevehicle(vehicleid)'><i class='fa fa-trash-o fa-3x'></i></button></center></td></tr>").insertAfter($(this).closest('tr'));
+  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' onclick='javascript:deletevehicle(vehicleid)'><i class='fa fa-trash-o fa-2x'></i></button></center></td></tr>").insertAfter($(this).closest('tr'));
 
 
 
@@ -442,7 +442,7 @@ function initializetables(){
                               $('#exampledt').find(".editdelete").remove();
                               contacttable.$('tr.selected').removeClass('selected');
                               $(this).addClass('selected');
-                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'><i class='fa fa-pencil-square-o fa-3x'></i></button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'><i class='fa fa-trash-o fa-3x'></i></button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'><i class='fa fa-mobile fa-3x'></i></button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
+                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'><i class='fa fa-pencil-square-o fa-2x'></i></button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'><i class='fa fa-trash-o fa-2x'></i></button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'><i class='fa fa-mobile fa-2x'></i></button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
                               contactid = $(this).find("#contactid").text();
                               $('#edit [name="contactid"]').val(contactid);
                               name = $('td:first', $(this)).text().replace(/\d+/g, '');
@@ -1921,16 +1921,16 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 											<table style="width:100%;">
 												<tr>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:2.5;" /><br><span style="color:black;">Cars</span> </center>
+														<center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:3.5;" /><br><span style="color:black;">Cars</span> </center>
 													</td>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:2.5;" /><br><span style="color:black;">Trucks</span></center>
+														<center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span></center>
 													</td>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:2.5;" /><br><span style="color:black;">SUVs</span></center>
+														<center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:3.5;" /><br><span style="color:black;">SUVs</span></center>
 													</td>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:2.5;" /><br><span style="color:black;">Crossovers</span></center>
+														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center>
 													</td>
 												</tr>
 												<tr>
@@ -1939,7 +1939,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												</tr>
 												<tr>
 													<td colspan=4 style="width:100%;">
-														<center><input type="checkbox" name="type[]" value="Specific" class="specific" style="zoom:2.5;" /><br><span style="color:black;">Specific</span></center>
+														<center><input type="checkbox" name="type[]" value="Specific" class="specific" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center>
 													</td>
 												</tr>
 											</table>
@@ -2112,22 +2112,22 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												<tr>
 													<td style="width:25%;">
 														<center>
-															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:2.5;" /><br><span style="color:black;">Cars</span>
+															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:3.5;" /><br><span style="color:black;">Cars</span>
 														</center>
 													</td>
 													<td style="width:25%;">
 														<center>
-															<input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:2.5;" /><br><span style="color:black;">Trucks</span>
+															<input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span>
 														</center>
 													</td>
 													<td style="width:25%;">
 														<center>
-															<input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:2.5;" /><br><span style="color:black;">SUVS</span>
+															<input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:3.5;" /><br><span style="color:black;">SUVS</span>
 														</center>
 													</td>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:2.5;" /><br><span style="color:black;">Crossovers</span></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
-														<center><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific" style="zoom:2.5;" /><br><span style="color:black;">Specific</span></center></td>
+														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
+														<center><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center></td>
 												</tr>
 											</table>
 										</center>
@@ -2348,22 +2348,22 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									<tr>
 										<td style="width:25%;">
 											<center>
-												<input type="radio" name="type[]" value="Cars" class="others" style="zoom:2.5;" checked="checked"/><br><span style="color:black;">Car</span>
+												<input type="radio" name="type[]" value="Cars" class="others" style="zoom:3.5;" checked="checked"/><br><span style="color:black;">Car</span>
 											</center>
 										</td>
 										<td style="width:25%;">
 											<center>
-												<input type="radio" name="type[]" value="Trucks"  class="others" style="zoom:2.5;" /><br><span style="color:black;">Truck</span>
+												<input type="radio" name="type[]" value="Trucks"  class="others" style="zoom:3.5;" /><br><span style="color:black;">Truck</span>
 											</center>
 										</td>
 										<td style="width:25%;">
 											<center>
-												<input type="radio" name="type[]" value="SUVs"  class="others" style="zoom:2.5;" /><br><span style="color:black;">SUV</span>
+												<input type="radio" name="type[]" value="SUVs"  class="others" style="zoom:3.5;" /><br><span style="color:black;">SUV</span>
 											</center>
 										</td>
 										<td style="width:25%;">
 											<center>
-												<input type="radio" name="type[]" value="Crossovers"  class="others" style="zoom:2.5;" /><br><span style="color:black;">Crossover</span>
+												<input type="radio" name="type[]" value="Crossovers"  class="others" style="zoom:3.5;" /><br><span style="color:black;">Crossover</span>
 											</center>
 										</td>
 									</tr>
