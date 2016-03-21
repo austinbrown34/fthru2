@@ -223,8 +223,8 @@ color:#6a7894;
     <script>
 
 
-
-
+    $('#exampledt').wrap('<div id="hide" style="display:none"/>');
+    $('#exampledt2').wrap('<div id="hide2" style="display:none"/>');
 
    function errorMsg(msg, timeout)
 {
@@ -1006,7 +1006,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
 $.fn.dataTable.ext.errMode = 'none';
 
-                    $('#exampledt').wrap('<div id="hide" style="display:none"/>');
+
 
 //                    $('#exampledt').on('init.dt', function(e, settings, json){
 //                        $('#exampledt').show();
@@ -1131,6 +1131,10 @@ inventorytable = $('#exampledt2')
       //   alert(JSON.stringify(arguments));
       // }
     },
+            "initComplete": function () {
+                $('#hide2').css( 'display', 'block' );
+
+            },
     language: {
 
       search: "_INPUT_",
