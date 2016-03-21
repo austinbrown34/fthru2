@@ -217,11 +217,9 @@ color:#6a7894;
 	 	 <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
 	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.html5.js"></script>
     <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/dataTables.jqueryui.min.js"></script>
-    <script src="js/jquery-watch.min.js"></script>
+
 
     <script>
-
-
 
 function initializetables(){
 
@@ -658,25 +656,7 @@ var vehiclesinitialized = false;
    var my64Images=[];
 
 
-var el = $(".appscreen");
 
-// hook up the watcher
-el.watch({
-    // specify CSS styles or attribute names to monitor
-    properties: "display",
-
-    // callback function when a change is detected
-    callback: function(data, i) {
-        // var propChanged = data.props[i];
-        // var newValue = data.vals[i];
-        //
-        // var el = this;
-        // var el$ = $(this);
-        alert("hello");
-        // do what you need based on changes
-        // or do your own checks
-    }
-});
 	function checkFormInput(field)
 	{
 		if ( $("#login :input[name='" + field + "']").val().length === 0 )
@@ -1030,6 +1010,8 @@ el.watch({
 
        document.getElementById('viewuser').style.display = 'none';$('#page').scrollTop(0);document.getElementById('edit').style.display = '';
 
+
+  $.unblockUI();
 
 
    }
@@ -1519,7 +1501,19 @@ submitHandler: function(form) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
                             setTimeout(function(){
-
+                              if(contactsinitialized){
+                                $.unblockUI();
+                              }
+                              else{
+$.blockUI({ message: msg, css: {
+      border: 'none',
+      padding: '15px',
+      backgroundColor: '#880000',
+      '-webkit-border-radius': '10px',
+      '-moz-border-radius': '10px',
+      color: '#fff'
+    } });
+  }
                                 document.getElementById('viewuser').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -1571,6 +1565,19 @@ submitHandler: function(form) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
                             setTimeout(function(){
+                              if(contactsinitialized){
+                                $.unblockUI();
+                              }
+                              else{
+$.blockUI({ message: msg, css: {
+      border: 'none',
+      padding: '15px',
+      backgroundColor: '#880000',
+      '-webkit-border-radius': '10px',
+      '-moz-border-radius': '10px',
+      color: '#fff'
+    } });
+  }
                                 document.getElementById('viewuser').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -2702,6 +2709,19 @@ target.bind(startEvent, function(e) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
                             setTimeout(function(){
+                              if(contactsinitialized){
+                                $.unblockUI();
+                              }
+                              else{
+$.blockUI({ message: msg, css: {
+      border: 'none',
+      padding: '15px',
+      backgroundColor: '#880000',
+      '-webkit-border-radius': '10px',
+      '-moz-border-radius': '10px',
+      color: '#fff'
+    } });
+  }
                                 document.getElementById('viewuser').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -2780,6 +2800,9 @@ target2.bind(startEvent, function(e) {
                 $('#page').scrollTop(0);
                 setTimeout(function(){
                     $("#viewuser").hide();
+
+                      $.unblockUI();
+
                     setTimeout(function(){
                         pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
                         setTimeout(function(){
@@ -2816,6 +2839,9 @@ target2.bind(startEvent, function(e) {
                 $('#page').scrollTop(0);
                 setTimeout(function(){
                     $("#viewuser").hide();
+
+                      $.unblockUI();
+
                     setTimeout(function(){
                         pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
                         setTimeout(function(){
@@ -2874,6 +2900,19 @@ target3.bind(startEvent, function(e) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_home').addClass('active');
                             setTimeout(function(){
+                              if(vehiclesinitialized){
+                                $.unblockUI();
+                              }
+                              else{
+$.blockUI({ message: msg, css: {
+      border: 'none',
+      padding: '15px',
+      backgroundColor: '#880000',
+      '-webkit-border-radius': '10px',
+      '-moz-border-radius': '10px',
+      color: '#fff'
+    } });
+  }
                                 document.getElementById('viewcar').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -2908,6 +2947,19 @@ target3.bind(startEvent, function(e) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
                             setTimeout(function(){
+                              if(contactsinitialized){
+                                $.unblockUI();
+                              }
+                              else{
+$.blockUI({ message: msg, css: {
+      border: 'none',
+      padding: '15px',
+      backgroundColor: '#880000',
+      '-webkit-border-radius': '10px',
+      '-moz-border-radius': '10px',
+      color: '#fff'
+    } });
+  }
                                 document.getElementById('viewuser').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -2953,6 +3005,9 @@ target4.bind(startEvent, function(e) {
                 $('#page').scrollTop(0);
                 setTimeout(function(){
                     $("#viewcar").hide();
+
+                        $.unblockUI();
+
                     setTimeout(function(){
                         pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
                         setTimeout(function(){
@@ -2991,6 +3046,9 @@ target4.bind(startEvent, function(e) {
                 $('#page').scrollTop(0);
                 setTimeout(function(){
                     $("#viewcar").hide();
+
+                        $.unblockUI();
+
                     setTimeout(function(){
                         pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
                         setTimeout(function(){
@@ -3083,6 +3141,19 @@ target5.bind(startEvent, function(e) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_home').addClass('active');
                             setTimeout(function(){
+                                if(vehiclesinitialized){
+                                  $.unblockUI();
+                                }
+                                else{
+  $.blockUI({ message: msg, css: {
+        border: 'none',
+        padding: '15px',
+        backgroundColor: '#880000',
+        '-webkit-border-radius': '10px',
+        '-moz-border-radius': '10px',
+        color: '#fff'
+      } });
+    }
                                 document.getElementById('viewcar').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -3155,6 +3226,19 @@ elem2.value=data.values.max;
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
                             setTimeout(function(){
+                              if(contactsinitialized){
+                                $.unblockUI();
+                              }
+                              else{
+$.blockUI({ message: msg, css: {
+      border: 'none',
+      padding: '15px',
+      backgroundColor: '#880000',
+      '-webkit-border-radius': '10px',
+      '-moz-border-radius': '10px',
+      color: '#fff'
+    } });
+  }
                                 document.getElementById('viewuser').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
