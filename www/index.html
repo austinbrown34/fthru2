@@ -425,7 +425,7 @@ function initializetables(){
 
       vehicleid = $(this).find("#vehicleid").text();
 
-  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' onclick='javascript:deletevehicle(vehicleid)'><i class='fa fa-trash-o fa-2x'></i></button></center></td></tr>").insertAfter($(this).closest('tr'));
+  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.3333333333333333em;' onclick='javascript:deletevehicle(vehicleid)'>&#xf014;</button></center></td></tr>").insertAfter($(this).closest('tr'));
 
 
 
@@ -442,7 +442,7 @@ function initializetables(){
                               $('#exampledt').find(".editdelete").remove();
                               contacttable.$('tr.selected').removeClass('selected');
                               $(this).addClass('selected');
-                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'><i class='fa fa-pencil-square-o fa-2x'></i></button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'><i class='fa fa-trash-o fa-2x'></i></button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'><i class='fa fa-mobile fa-2x'></i></button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
+                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.3333333333333333em;' onclick='javascript:editcontact(contactid)'>&#xf044;</button></td><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.3333333333333333em;' onclick='javascript:deletecontact(contactid)'>&#xf014;</button></td><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.3333333333333333em;' onclick='javascript:editpermission(contactid,permission)'>&#xf10b;</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
                               contactid = $(this).find("#contactid").text();
                               $('#edit [name="contactid"]').val(contactid);
                               name = $('td:first', $(this)).text().replace(/\d+/g, '');
