@@ -328,6 +328,111 @@ inventorytable.draw();
 		}
 		return true;
 	}
+	function processLogin()
+	{
+		if(!checkFormInput("email")) return false;
+		if(!checkFormInput("password")) return false;
+
+		// Display Please Wait...
+		$.blockUI({ css: {
+					border: 'none',
+					padding: '15px',
+					backgroundColor: '#000',
+					'-webkit-border-radius': '10px',
+					'-moz-border-radius': '10px',
+					color: '#fff'
+				} });
+
+		var serializedData = $("#loginForm").serialize();
+
+		var request = $.ajax({
+				url: "http://cogni.design/cpr/www/login.php",
+				type: "POST",
+				data: serializedData
+			});
+
+		// callback handler that will be called on success
+		request.done(function (response, textStatus, jqXHR)
+		{
+
+		if(response == "DELETED")
+			{
+				errorMsg("This account has been deleted. Please contact Admin to see about restoring this account.", 6000);
+				return false;
+
+			}
+			// response == 0 - Successful
+			if(response != "NOTHING")
+			{
+				$.unblockUI();
+				//  to homepage
+				// response = response.split('|');
+      //  alert("response: "+response);
+				localStorage.setItem("id", response);
+        id= localStorage.getItem('id');
+				// localStorage.setItem("password", response[1]);
+
+                var pagetarget = $("#page");
+
+                setTimeout(function(){
+                    $('#page').scrollTop(0);
+                    setTimeout(function(){
+                        document.getElementById('start').style.display = 'none';
+                        setTimeout(function(){
+                            pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                            setTimeout(function(){
+                                $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
+                                setTimeout(function(){
+                                    document.getElementById('home').style.display = '';
+                                    setTimeout(function(){
+                                        pagetarget.scrollTop(0);
+                                        setTimeout(function(){
+                                            pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                            $('#slider').rangeSlider('resize');
+
+                                        },0);
+                                    },0);
+                                },0);
+                            },0);
+                        },0);
+
+                    },0);
+                },0);
+
+
+
+
+
+				return false;
+			}
+
+
+			if(response == "NOTHING")
+			{
+				errorMsg("Failed to log in. Try again.", 3000);
+				return false;
+			}
+
+			// Unknown response
+			errorMsg("Unknown Response. Try again later.", 3000);
+			return false;
+		});
+
+		// callback handler that will be called on failure
+		request.fail(function (jqXHR, textStatus, errorThrown)
+		{
+			// log the error to the console
+			console.error(
+				"The following error occured: "+
+				textStatus, errorThrown
+			);
+
+			errorMsg("Problem with logging in. Try again later.", 3000);
+			return false;
+		});
+
+		return false;
+	};
 
 
 
@@ -914,7 +1019,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                         systemOpen($(this).attr('href'));
 //                     });
 
-function initializeall(){
+
 
 $.fn.dataTable.ext.errMode = 'none';
 
@@ -1381,12 +1486,26 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
  //               }
    //         });
 
-}
+
+
+        $("input.phone").mask("(999) 999-9999");
+                }
+            },2000);
+
+//            window.open("http://www.google.com", '_system');
+
+
+//            cordova.InAppBrowser.open("http://www.google.com","_system");
+
+
+
+
+
 
         if (id !== null){
 
             var pagetarget = $("#page");
-            initializeall();
+
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -1422,21 +1541,6 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
           },0);
 
         }
-
-        $("input.phone").mask("(999) 999-9999");
-                }
-            },2000);
-
-//            window.open("http://www.google.com", '_system');
-
-
-//            cordova.InAppBrowser.open("http://www.google.com","_system");
-
-
-
-
-
-
             $('#years').change(function() {
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes($(this).val());
@@ -1493,111 +1597,6 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
     });
 });
 
-function processLogin()
-{
-  if(!checkFormInput("email")) return false;
-  if(!checkFormInput("password")) return false;
-
-  // Display Please Wait...
-  $.blockUI({ css: {
-        border: 'none',
-        padding: '15px',
-        backgroundColor: '#000',
-        '-webkit-border-radius': '10px',
-        '-moz-border-radius': '10px',
-        color: '#fff'
-      } });
-
-  var serializedData = $("#loginForm").serialize();
-
-  var request = $.ajax({
-      url: "http://cogni.design/cpr/www/login.php",
-      type: "POST",
-      data: serializedData
-    });
-
-  // callback handler that will be called on success
-  request.done(function (response, textStatus, jqXHR)
-  {
-
-  if(response == "DELETED")
-    {
-      errorMsg("This account has been deleted. Please contact Admin to see about restoring this account.", 6000);
-      return false;
-
-    }
-    // response == 0 - Successful
-    if(response != "NOTHING")
-    {
-      $.unblockUI();
-      //  to homepage
-      // response = response.split('|');
-    //  alert("response: "+response);
-      localStorage.setItem("id", response);
-      id= localStorage.getItem('id');
-      // localStorage.setItem("password", response[1]);
-
-              var pagetarget = $("#page");
-                initializeall();
-              setTimeout(function(){
-                  $('#page').scrollTop(0);
-                  setTimeout(function(){
-                      document.getElementById('start').style.display = 'none';
-                      setTimeout(function(){
-                          pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
-                          setTimeout(function(){
-                              $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
-                              setTimeout(function(){
-                                  document.getElementById('home').style.display = '';
-                                  setTimeout(function(){
-                                      pagetarget.scrollTop(0);
-                                      setTimeout(function(){
-                                          pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-                                          $('#slider').rangeSlider('resize');
-
-                                      },0);
-                                  },0);
-                              },0);
-                          },0);
-                      },0);
-
-                  },0);
-              },0);
-
-
-
-
-
-      return false;
-    }
-
-
-    if(response == "NOTHING")
-    {
-      errorMsg("Failed to log in. Try again.", 3000);
-      return false;
-    }
-
-    // Unknown response
-    errorMsg("Unknown Response. Try again later.", 3000);
-    return false;
-  });
-
-  // callback handler that will be called on failure
-  request.fail(function (jqXHR, textStatus, errorThrown)
-  {
-    // log the error to the console
-    console.error(
-      "The following error occured: "+
-      textStatus, errorThrown
-    );
-
-    errorMsg("Problem with logging in. Try again later.", 3000);
-    return false;
-  });
-
-  return false;
-};
 
 
 function resetfields(){
@@ -2830,7 +2829,7 @@ submitHandler: function(form) {
 			</div>
 
 		</div><!-- end panel -->
-
+    
 	</div><!-- end page -->
 <script type='text/javascript'>
 
