@@ -288,7 +288,7 @@ inventorytable.draw();
 
 
     var id= localStorage.getItem('id');
-    alert("id: "+id);
+  //  alert("id: "+id);
     // var userid= localStorage.getItem('id');
 //var password = localStorage.getItem('password');
    var myImages=[];
@@ -367,12 +367,13 @@ inventorytable.draw();
 				$.unblockUI();
 				//  to homepage
 				// response = response.split('|');
-        alert("response: "+response);
+      //  alert("response: "+response);
 				localStorage.setItem("id", response);
+        id= localStorage.getItem('id');
 				// localStorage.setItem("password", response[1]);
 
                 var pagetarget = $("#page");
-
+                  initializeall();
                 setTimeout(function(){
                     $('#page').scrollTop(0);
                     setTimeout(function(){
@@ -1018,7 +1019,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 //                         systemOpen($(this).attr('href'));
 //                     });
 
-
+function initializeall(){
 
 $.fn.dataTable.ext.errMode = 'none';
 
@@ -1485,26 +1486,12 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
  //               }
    //         });
 
-
-
-        $("input.phone").mask("(999) 999-9999");
-                }
-            },2000);
-
-//            window.open("http://www.google.com", '_system');
-
-
-//            cordova.InAppBrowser.open("http://www.google.com","_system");
-
-
-
-
-
+}
 
         if (id !== null){
 
             var pagetarget = $("#page");
-
+            initializeall();
             setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -1540,6 +1527,21 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
           },0);
 
         }
+
+        $("input.phone").mask("(999) 999-9999");
+                }
+            },2000);
+
+//            window.open("http://www.google.com", '_system');
+
+
+//            cordova.InAppBrowser.open("http://www.google.com","_system");
+
+
+
+
+
+
             $('#years').change(function() {
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes($(this).val());
@@ -2828,7 +2830,7 @@ submitHandler: function(form) {
 			</div>
 
 		</div><!-- end panel -->
-        Display New Matches
+
 	</div><!-- end page -->
 <script type='text/javascript'>
 
