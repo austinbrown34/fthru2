@@ -4,7 +4,7 @@ PGB_APP_ID="1625732"
 HOCKEY_APP_ID="e097d06d69104d3b866fe5cef3887a7a"
 
 # Tell phonegap build to pull code and rebuild
-curl -X PUT -d 'data={"pull":"true"}' https://build.phonegap.com/api/v1/apps/$PGB_APP_ID?auth_token=$ACCESS_TOKEN
+curl -X PUT -d 'data={"pull":"true"}' https://build.phonegap.com/api/v1/apps/$PGB_APP_ID?auth_token=$ACCESS_TOKEN | jq .
 
 function status() {
   local ios=$(curl https://build.phonegap.com/api/v1/apps/$PGB_APP_ID?auth_token=$ACCESS_TOKEN | jq .status.ios)
