@@ -217,9 +217,11 @@ color:#6a7894;
 	 	 <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
 	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.html5.js"></script>
     <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/dataTables.jqueryui.min.js"></script>
-
+    <script src="js/jquery-watch.min.js"></script>
 
     <script>
+
+
 
 function initializetables(){
 
@@ -326,6 +328,7 @@ function initializetables(){
       },
               "initComplete": function () {
                   $('#hide2').css( 'display', 'block' );
+                  vehiclesinitialized = true;
 
               },
       language: {
@@ -397,6 +400,7 @@ function initializetables(){
       },
               "initComplete": function () {
                   $('#hide').css( 'display', 'block' );
+                  contactsinitialized = true;
 
               },
       language: {
@@ -643,14 +647,36 @@ contacttable.draw();
 inventorytable.draw();
 }
 
+var contactsinitialized = false;
+var vehiclesinitialized = false;
 
     var id= localStorage.getItem('id');
+
+    var currentpage = "";
 
    var myImages=[];
    var my64Images=[];
 
 
+var el = $(".appscreen");
 
+// hook up the watcher
+el.watch({
+    // specify CSS styles or attribute names to monitor
+    properties: "display",
+
+    // callback function when a change is detected
+    callback: function(data, i) {
+        var propChanged = data.props[i];
+        var newValue = data.vals[i];
+
+        var el = this;
+        var el$ = $(this);
+        alert(el$.attr('id'));
+        // do what you need based on changes
+        // or do your own checks
+    }
+});
 	function checkFormInput(field)
 	{
 		if ( $("#login :input[name='" + field + "']").val().length === 0 )
@@ -1493,6 +1519,7 @@ submitHandler: function(form) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
                             setTimeout(function(){
+
                                 document.getElementById('viewuser').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
