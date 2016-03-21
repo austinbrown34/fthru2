@@ -1,12 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <!-- <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'  gap: data: blob: filesystem:;
-                  style-src * 'self' 'unsafe-inline' 'unsafe-eval';
-                  script-src * 'self' 'unsafe-inline' 'unsafe-eval';
-                  frame-src * 'self';"> -->
-<!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;" />-->
 
     <meta http-equiv="Content-Security-Policy"
           content="default-src * data: gap: https://ssl.gstatic.com blob:;
@@ -69,10 +63,8 @@ margin-right: auto;
 padding: 20px !important;
     border-top:1px solid #5297cd;
     box-shadow:0px 6px 0px #00002b;
-    /*padding: 10px;*/
     border-radius: 5px;
     margin-bottom: 5px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
     background: #ffffff; /* Old browsers */
     background: -moz-linear-gradient(top,  #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
@@ -204,7 +196,6 @@ color:#6a7894;
         <link rel="stylesheet" href="css2/normalize.css">
         <link rel="stylesheet" href="css2/main.css">
 
-<!--         <script src="js2/vendor/modernizr-2.7.1.min.js"></script> -->
         <link rel="stylesheet" href="css2/iThing.css" type="text/css" />
     <script src="jquery.min.js"></script>
     <link rel="stylesheet" href="jquery-ui.css">
@@ -215,14 +206,10 @@ color:#6a7894;
 
  <script src="jQRangeSlider-min.js"></script>
  <script src="js/jquery.blockUI.js"></script>
-<!--
- 	<script src="jquery.mockjax.js"></script>
 
- -->
   <script src="jquery.validate.js"></script>
  	<script src="jquery.maskedinput.js"></script>
  	 <script src="js/taphold.js" type="text/javascript"></script>
-	 <!--<script type="text/javascript" src="DataTables/datatables.min.js"></script>-->
     <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/jquery.dataTables.min.js"></script>
 	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/dataTables.buttons.min.js"></script>
 	 	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
@@ -231,16 +218,13 @@ color:#6a7894;
 	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.html5.js"></script>
     <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/dataTables.jqueryui.min.js"></script>
 
-<!--  	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> -->
 
-<!-- 	<script src="mktSignup.js"></script> -->
     <script>
 
 
 
    function errorMsg(msg, timeout)
 {
-	// Display Please Wait...
 	$.blockUI({ message: msg, css: {
 				border: 'none',
 				padding: '15px',
@@ -256,7 +240,6 @@ color:#6a7894;
 
 function okMsg(msg, timeout, callback)
 {
-	// Display Please Wait...
 	$.blockUI({ message: msg, css: {
 				border: 'none',
 				padding: '15px',
@@ -288,9 +271,7 @@ inventorytable.draw();
 
 
     var id= localStorage.getItem('id');
-  //  alert("id: "+id);
-    // var userid= localStorage.getItem('id');
-//var password = localStorage.getItem('password');
+
    var myImages=[];
    var my64Images=[];
 
@@ -298,7 +279,6 @@ inventorytable.draw();
 
 	function checkFormInput(field)
 	{
-		// Check for all fields filled
 		if ( $("#login :input[name='" + field + "']").val().length === 0 )
 		{
 			errorMsg("All fields are required.", 3000);
@@ -309,7 +289,6 @@ inventorytable.draw();
 
 	function checkContactFormInput(field)
 	{
-		// Check for all fields filled
 		if ( $("#testForm :input[name='" + field + "']").val().length === 0 )
 		{
 			errorMsg("All fields are required.", 3000);
@@ -320,7 +299,6 @@ inventorytable.draw();
 
 	function checkVehicleFormInput(field)
 	{
-		// Check for all fields filled
 		if ( $("#testForm2 :input[name='" + field + "']").val().length === 0 )
 		{
 			errorMsg("All fields are required.", 3000);
@@ -333,7 +311,6 @@ inventorytable.draw();
 		if(!checkFormInput("email")) return false;
 		if(!checkFormInput("password")) return false;
 
-		// Display Please Wait...
 		$.blockUI({ css: {
 					border: 'none',
 					padding: '15px',
@@ -351,7 +328,6 @@ inventorytable.draw();
 				data: serializedData
 			});
 
-		// callback handler that will be called on success
 		request.done(function (response, textStatus, jqXHR)
 		{
 
@@ -361,16 +337,12 @@ inventorytable.draw();
 				return false;
 
 			}
-			// response == 0 - Successful
 			if(response != "NOTHING")
 			{
 				$.unblockUI();
-				//  to homepage
-				// response = response.split('|');
-      //  alert("response: "+response);
+
 				localStorage.setItem("id", response);
         id= localStorage.getItem('id');
-				// localStorage.setItem("password", response[1]);
 
                 var pagetarget = $("#page");
 
@@ -413,15 +385,12 @@ inventorytable.draw();
 				return false;
 			}
 
-			// Unknown response
 			errorMsg("Unknown Response. Try again later.", 3000);
 			return false;
 		});
 
-		// callback handler that will be called on failure
 		request.fail(function (jqXHR, textStatus, errorThrown)
 		{
-			// log the error to the console
 			console.error(
 				"The following error occured: "+
 				textStatus, errorThrown
@@ -440,15 +409,12 @@ inventorytable.draw();
 
    function get_vin_data(vin) {
        url = 'https://api.edmunds.com/api/vehicle/v2/vins/'+vin+'?fmt=json&api_key='+EDMUNDS_API_KEY;
-//       url = 'http://api.edmunds.com/v1/api/vehicle/makerepository/findmakesbymodelyear?year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
        $.ajax({
            type: "POST",
            url: url,
            data: '',
            dataType: 'jsonp',
            success: function(data) {
-//               alert("about to stringify data");
-//               alert(JSON.stringify(data));
                 year = data.years[0].year;
                make = data.make.niceName;
                model = data.model.niceName;
@@ -457,34 +423,16 @@ inventorytable.draw();
                $(function(){
                    get_makes(year).then(function(){
                        $('#home [name="makes"]').val(make);
-                       // function1 is done, we can now call function2
-//                       console.log('function1 is done!');
+
 
                        get_models(make,year).then(function(){
                            $('#home [name="models"]').val(model);
-                           //function2 is done
-                          // console.log('function2 is done!');
+
                        });
                    });
                });
 
 
-//               setTimeout(function(){
-//                   get_makes(year);
-//                   setTimeout(function(){
-//                       $('#home [name="makes"]').val(make);
-//                       setTimeout(function(){
-//                           get_models(make,year);
-//                           setTimeout(function(){
-//                               $('#home [name="models"]').val(model);
-//                           },0);
-//                       },0);
-//                   },0);
-//               },0);
-
-
-
-//               alert(data);
            }
        });
    }
@@ -698,10 +646,10 @@ inventorytable.draw();
           if(buttonIndex == 2){
 
 
-        $.ajax({    //create an ajax request to load_page.php
+        $.ajax({
             type: "GET",
             url: "http://cogni.design/cpr/www/delete.php?contactid="+cid,
-            dataType: "html",   //expect html to be returned
+            dataType: "html",
             success: function(response){
                 redraw()
             }
@@ -733,10 +681,10 @@ inventorytable.draw();
         return false;
       }
       if(buttonIndex == 2){
-   $.ajax({    //create an ajax request to load_page.php
+   $.ajax({
        type: "GET",
        url: "http://cogni.design/cpr/www/delete2.php?vehicleid="+cid,
-       dataType: "html",   //expect html to be returned
+       dataType: "html",
        success: function(response){
 
       redraw();
@@ -749,10 +697,10 @@ inventorytable.draw();
 
 
     navigator.notification.confirm(
-        'Are you sure you want to delete this vehicle?',  // message
-        okdelete2,              // callback to invoke with index of button pressed
-        'Delete Vehicle',            // title
-        'Cancel,Delete'          // buttonLabels
+        'Are you sure you want to delete this vehicle?',
+        okdelete2,
+        'Delete Vehicle',
+        'Cancel,Delete'
     );
 
 
@@ -803,10 +751,10 @@ if(buttonIndex == 2){
 
 }
     navigator.notification.confirm(
-        'Are you sure you want to sign out?',  // message
-        okdelete3,              // callback to invoke with index of button pressed
-        'Sign Out',            // title
-        'Cancel,Log Off'          // buttonLabels
+        'Are you sure you want to sign out?',
+        okdelete3,
+        'Sign Out',
+        'Cancel,Log Off'
     );
 
 
@@ -831,10 +779,10 @@ function enabletext(buttonIndex){
         return false;
     }
     if(buttonIndex == 2){
-        $.ajax({    //create an ajax request to load_page.php
+        $.ajax({
             type: "GET",
             url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission=1",
-            dataType: "html",   //expect html to be returned
+            dataType: "html",
             success: function(response){
 
                 redraw();
@@ -845,10 +793,10 @@ function enabletext(buttonIndex){
 
 }
            navigator.notification.confirm(
-                   'Automatic text message delivery is DISABLED for this contact. Would you like to re-enable automatic text message delivery?',  // message
-                   enabletext,              // callback to invoke with index of button pressed
-                   'Permission',            // title
-                   'Cancel,Re-Enable'          // buttonLabels
+                   'Automatic text message delivery is DISABLED for this contact. Would you like to re-enable automatic text message delivery?',
+                   enabletext,
+                   'Permission',
+                   'Cancel,Re-Enable'
            );
 
        }
@@ -860,10 +808,10 @@ function enabletext(buttonIndex){
                    return false;
                }
                if(buttonIndex == 2){
-                   $.ajax({    //create an ajax request to load_page.php
+                   $.ajax({
                        type: "GET",
                        url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission=0",
-                       dataType: "html",   //expect html to be returned
+                       dataType: "html",
                        success: function(response){
 
                            redraw();
@@ -874,10 +822,10 @@ function enabletext(buttonIndex){
 
            }
            navigator.notification.confirm(
-                   'Automatic text message delivery is ENABLED for this contact. Would you like to disable automatic text message delivery?',  // message
-                   disabletext,              // callback to invoke with index of button pressed
-                   'Permission',            // title
-                   'Cancel,Disable'          // buttonLabels
+                   'Automatic text message delivery is ENABLED for this contact. Would you like to disable automatic text message delivery?',
+                   disabletext,
+                   'Permission',
+                   'Cancel,Disable'
            );
 
        }
@@ -885,30 +833,11 @@ function enabletext(buttonIndex){
    }
         $(document).ready(function() {
 
-//              function getBase64Image(img) {
-//                  img.crossOrigin = 'Anonymous';
-//                  img.onload = function(){
-//                  var canvas = document.createElement("canvas");
-//                      var ctx = canvas.getContext('2d');
-//                      var dataURL;
-//                  canvas.width = img.width;
-//                  canvas.height = img.height;
-//                  var ctx = canvas.getContext("2d");
-//                  ctx.drawImage(img, 0, 0);
-//                  return canvas.toDataURL("image/png");
-//                  }
-//              }
-
-
-
-
 
 if(navigator.userAgent.match(/Android/i)){
-  // alert("android");
   $('#appheader').css("zoom",".74");
 }
 if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
-  // alert("iphone");
   $('#appheader').css("zoom",".88");
 }
 		$(document).ajaxError(function(e, jqxhr, settings, exception) {
@@ -929,107 +858,14 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                                 "or did not install the cordova InAppBrowser plugin");
                     }
 
-                    // Currently (for retrocompatibility reasons) the plugin automagically wrap window.open
-                    // We don't want the plugin to always be run: we want to call it explicitly when needed
-                    // See https://issues.apache.org/jira/browse/CB-9573
-                    delete window.open; // scary, but it just sets back to the default window.open behavior
-                    var windowOpen = window.open; // Yes it is not deleted !
 
-                    // 1. expecting this to open inapp browser
-
-                    // Note it does not take a target!
-//                     var systemOpen = function(url, options) {
-//                        alert("made it here3 url:"+url+" options:"+options);
-//                         // Do not use window.open becaus the InAppBrowser open will not proxy window.open
-//                         // in the future versions of the plugin (see doc) so it is safer to call InAppBrowser.open directly
-// //                        var ref = cordova.InAppBrowser.open(url,'_system','location=no');
-// //                        newurl = url.toURL();
-// //                        alert("newurl: "+newurl);
-//                         var xhr = new XMLHttpRequest();
-// 						xhr.addEventListener("error", xhrFailed);
-//                         try{
-//                         xhr.open('GET', url, true);
-//                         }
-//                         catch(err){
-//                             alert("error: "+err)
-//                         }
-//                         xhr.responseType = 'blob';
-// //                        xhr.responseType = "arraybuffer";
-//
-// 						xhr.onreadystatechange = function() {
-// 						alert("made it to xhr onreadystatechange");
-// 						alert(xhr.status);
-//                           if (xhr.status == 200) {
-//                             var myBlob = xhr.response;
-//                             // myBlob is now the blob that the object URL pointed to.
-//                             // var blobreader = new FileReader();
-//                             // blobreader.onload = function() {
-//                             //     alert(blobreader.result);
-//                             // }
-//                             // blobreader.readAsText(myBlob);
-//                             alert("made it here");
-//                             var fd = new FormData();
-//
-//                             fd.append('fname','mycontacts');
-//                             fd.append('data',myBlob)
-// //                            alert("fd: "+JSON.stringify(fd));
-//                             var request = $.ajax({
-//                                 type: 'POST',
-//                                 url: 'http://cogni.design/cpr/www/uploadpdf.php?id='+id,
-//                                 data: fd,
-//                                 processData: false,
-//                                 contentType: false
-//                             });
-//                             request.success(function( msg ) {
-// //                               alert("done: "+JSON.stringify(msg));
-//
-//                                var ref = cordova.InAppBrowser.open(msg,'_system','location=yes');
-//                                ref.addEventListener('loadstart', function(event) { alert(event.url); });
-//                                ref.addEventListener('loaderror', function(event) { alert(event.message+" "+event.code); });
-//
-//                             });
-//
-//                             request.fail(function( jqXHR, textStatus ) {
-//                                 alert( "Request failed: " + JSON.stringify(jqXHR));
-//                             });
-//
-//                           }
-//                         };
-//                         xhr.send();
-//
-//
-//
-//                     };
-
-
-            //         // Handle direct calls like window.open("url","_blank")
-            //         window.open = function(url,target,options) {
-            //             alert("made it here 1st url:"+url+" target:"+target+" options:"+options);
-            //            // alert("made it here 1st");
-            //             //if ( target == "_blank" )
-						// systemOpen(url,options);
-            //             //else windowOpen(url,target,options);
-            //         };
-
-//                     // Handle html links like <a href="url" target="_blank">
-//                     // See https://issues.apache.org/jira/browse/CB-6747
-//                     $(document).on('click', 'a[target=_blank]', function(event) {
-// //                      alert("made it here2");
-//                         event.preventDefault();
-//                         systemOpen($(this).attr('href'));
-//                     });
-
+                    delete window.open;
+                    var windowOpen = window.open;
 
 
 $.fn.dataTable.ext.errMode = 'none';
 
 
-
-//                    $('#exampledt').on('init.dt', function(e, settings, json){
-//                        $('#exampledt').show();
-//
-//                        $(this).DataTable().columns.adjust();
-//                    });
 
 
 inventorytable = $('#exampledt2')
@@ -1044,9 +880,7 @@ inventorytable = $('#exampledt2')
               pdfdoc = doc;
               doc.content[1].table.widths = [ 'auto', '*', '*','*', '*','*' ];
               doc.content[1].table.alignment = 'center';
-//              doc.content[1].table.widths[4].width = '300';
-//			  $(doc.document.body).find( 'th' ).html() = $(doc.document.body).find( 'th' ).text();
-//			 alert(doc.content[1].table.th.text());
+
               for(var i=0;i<doc.content[1].table.body[0].length;i++){
                   var theshiz = doc.content[1].table.body[0][i].text;
                   doc.content[1].table.body[0][i].text = $(theshiz).text();
@@ -1065,7 +899,6 @@ inventorytable = $('#exampledt2')
                           doc.content[1].table.body[i][0].fit =  [30, 30];
 
 
-                     //  alert(my64Images[thisrow]);
                       }
                       catch(err){
                         alert("error: "+err);
@@ -1127,26 +960,9 @@ inventorytable = $('#exampledt2')
         "targets": [5,6,7]
       }],
     "serverSide":true,
-    // "data": '[ [ "Arenie", "(406) 861-3601", "Trucks", "Sticka", "5000", "10000", "", "", "1", "" ], [ "Austin", "(406) 598-7345", "Cars", "Brown", "5000", "15000", "Select Make", "Select Model", "1", "" ], [ "Billy", "(406) 444-4442", "Crossovers,SUVS,Trucks", "Bobby", "50000", "100000", "", "", "1", "" ], [ "Bo", "(333) 333-3333", "Trucks", "Bo", "50000", "100000", "", "", "1", "" ], [ "Carl", "(404) 444-3399", "Specific", "Marx", "50000", "100000", "cadillac", "seville", "1", "" ], [ "George", "(666) 666-6666", "Specific", "Might ", "50000", "100000", "chrysler", "townandcountry", "1", "" ], [ "Georgio", "(666) 666-6666", "Crossovers,SUVS,Trucks,Cars", "Horez", "50000", "100000", "", "", "1", "" ], [ "Howard", "(406) 598-1467", "Crossovers,SUVS,Trucks", "Skidmore", "5000", "10000", "Select Make", "Select Model", "1", "" ], [ "Jjj", "(333) 333-3333", "Crossovers", "Jjj", "50000", "100000", "", "", "1", "" ], [ "Jo", "(555) 555-5555", "Crossovers,SUVS", "Blo", "5000", "10000", "Select Make", "Select Model", "1", "" ] ]',
     "ajax":{
       url: "http://cogni.design/cpr/www/server_processing2.php?id="+id//,
-      // beforeSend: function(){
-      //   alert('beforeSend');
-      //   alert(JSON.stringify(arguments));
-      // },
-      // // "dataType":"jsonp",
-      // error: function (xhr, error, thrown) {
-      //   alert('error');
-      //   alert(JSON.stringify(arguments));
-      // },
-      // // success: function(){
-      // //   alert('success');
-      // //   alert(JSON.stringify(arguments));
-      // // },
-      // complete: function (data) {
-      //   alert("complete");
-      //   alert(JSON.stringify(arguments));
-      // }
+
     },
             "initComplete": function () {
                 $('#hide2').css( 'display', 'block' );
@@ -1160,9 +976,7 @@ inventorytable = $('#exampledt2')
   });
 
 contacttable = $('#exampledt')
-  // .on('error.dt', function ( e, settings, techNote, message) {
-  //   console.log( 'An error has been reported by DataTables: ', message );
-  // })
+
   .DataTable({
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
 	"jQueryUI": true,
@@ -1172,23 +986,6 @@ contacttable = $('#exampledt')
 
 		   doc.content[1].table.widths = [ 'auto', '*', '*','*', '*','*','*','*' ];
           doc.content[1].table.alignment = 'center';
-//              for (var i=1;i<doc.content[1].table.body.length;i++) {
-//
-//                     if(doc.content[1].table.body[i][0].text.indexOf('(') >= 0){
-//
-//					 }
-//					 else if(doc.content[1].table.body[i][0].text.indexOf('$') >= 0){
-//
-//						doc.content[1].table.body[i][0].text = doc.content[1].table.body[i][0].text.split('$')[1];
-//					  }
-//					  else{
-//						var newcontent = doc.content[1].table.body[i][0].text.replace(/\d+/g, '');
-//						doc.content[1].table.body[i][0].text = newcontent;
-//						}
-
-
-
-//              }
 
 
       }, exportOptions: {  columns: [ 13, 3, 1, 14, 6, 7,4,5 ] } },
@@ -1234,26 +1031,9 @@ contacttable = $('#exampledt')
         "targets": [3,4,5,6,7,8,9,10,11,12,13,14]
       }],
     "serverSide":true,
-    // "data": '[ [ "Arenie", "(406) 861-3601", "Trucks", "Sticka", "5000", "10000", "", "", "1", "" ], [ "Austin", "(406) 598-7345", "Cars", "Brown", "5000", "15000", "Select Make", "Select Model", "1", "" ], [ "Billy", "(406) 444-4442", "Crossovers,SUVS,Trucks", "Bobby", "50000", "100000", "", "", "1", "" ], [ "Bo", "(333) 333-3333", "Trucks", "Bo", "50000", "100000", "", "", "1", "" ], [ "Carl", "(404) 444-3399", "Specific", "Marx", "50000", "100000", "cadillac", "seville", "1", "" ], [ "George", "(666) 666-6666", "Specific", "Might ", "50000", "100000", "chrysler", "townandcountry", "1", "" ], [ "Georgio", "(666) 666-6666", "Crossovers,SUVS,Trucks,Cars", "Horez", "50000", "100000", "", "", "1", "" ], [ "Howard", "(406) 598-1467", "Crossovers,SUVS,Trucks", "Skidmore", "5000", "10000", "Select Make", "Select Model", "1", "" ], [ "Jjj", "(333) 333-3333", "Crossovers", "Jjj", "50000", "100000", "", "", "1", "" ], [ "Jo", "(555) 555-5555", "Crossovers,SUVS", "Blo", "5000", "10000", "Select Make", "Select Model", "1", "" ] ]',
     "ajax":{
       url: "http://cogni.design/cpr/www/server_processing.php?id="+id//,
-      // beforeSend: function(){
-      //   alert('beforeSend');
-      //   alert(JSON.stringify(arguments));
-      // },
-      // // "dataType":"jsonp",
-      // error: function (xhr, error, thrown) {
-      //   alert('error');
-      //   alert(JSON.stringify(arguments));
-      // },
-      // // success: function(){
-      // //   alert('success');
-      // //   alert(JSON.stringify(arguments));
-      // // },
-      // complete: function (data) {
-      //   alert("complete");
-      //   alert(JSON.stringify(arguments));
-      // }
+
     },
             "initComplete": function () {
                 $('#hide').css( 'display', 'block' );
@@ -1266,14 +1046,7 @@ contacttable = $('#exampledt')
     }
   });
 
-//                    $('#exampledt .buttons-html5').on('click','a',function(){
-//                        alert("made it here");
-//                        contactsorvehicles = "mycontacts";
-//                    });
-//                    $('#exampledt2 .buttons-html5').on('click','a',function(){
-//                        alert("made it here");
-//                        contactsorvehicles = "myinventory";
-//                    });
+
 
   $('#exampledt2 tbody').on('taphold','tr',function(){
 if ( $(this).hasClass('selected') ) {
@@ -1305,7 +1078,6 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
                             $('#exampledt').find(".editdelete").remove();
                             contacttable.$('tr.selected').removeClass('selected');
                             $(this).addClass('selected');
-                            //$(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
                             $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'>SMS</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
                             contactid = $(this).find("#contactid").text();
                             $('#edit [name="contactid"]').val(contactid);
@@ -1341,8 +1113,7 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
                             year = $(this).find("#year").text();
                             make = $(this).find("#make").text();
                             model = $(this).find("#model").text();
-//$('#edit [name="years"]').val(year);
-//get_makes3(year);
+
                             console.log("year: "+year+" make: "+make+" model: "+model);
 
 
@@ -1465,37 +1236,11 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
                         }
                     });
 
-  //  $("contacttable tbody").bind("taphold", {duration: 500}, function(event)
-        //  {
-		//		alert("taphold");
-          //      if ( $( this ).hasClass( "selectednow" ) ) {
-            //        $(this).css("border","none");
-              //      $(this).find(".editdelete").hide();
-                //    $(this).removeClass("selectednow");
-//                }
-  //              else{
-                    <!--
-    //                $(".contactitem").css("border","none");
-      //              $(".editdelete").hide();
-                     -->
-        //            $(this).addClass("selectednow");
-          //          $(this).css("border","blue dashed 1px");
-            //        $(this).append( "<table class='editdelete' style='width:100%; border: black 1px;'><tr><td colspan=2><br></td></tr><tr><td style='width:50%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:50%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><tr></table>" );
-
-
- //               }
-   //         });
-
-
 
         $("input.phone").mask("(999) 999-9999");
                 }
             },2000);
 
-//            window.open("http://www.google.com", '_system');
-
-
-//            cordova.InAppBrowser.open("http://www.google.com","_system");
 
 
 
@@ -1585,13 +1330,13 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
 });
   $("#displaymatch").click(function() {
 
-      $.ajax({    //create an ajax request to load_page.php
+      $.ajax({
         type: "GET",
         url: "http://cogni.design/cpr/www/match.php?id="+id,
-        dataType: "html",   //expect html to be returned
+        dataType: "html",
         success: function(response){
             $("#responsecontainermatch").html(response);
-            //alert(response);
+
         }
 
     });
@@ -1607,34 +1352,15 @@ function resetfields(){
     }
 
     navigator.notification.alert(
-            'Fields have been reset!',  // message
-            alertDismissed,         // callback
-            'fTHRU',            // title
-            'OK'                  // buttonName
+            'Fields have been reset!',
+            alertDismissed,
+            'fTHRU',
+            'OK'
     );
 }
 
 
-// $.ajax({    //create an ajax request to load_page.php
-//        type: "GET",
-//        url: "http://cogni.design/cpr/www/display2.php?id="+id,
-//        dataType: "html",   //expect html to be returned
-//        success: function(response){
-//            $("#responsecontainercar").html(response);
-//            //alert(response);
-//        }
-//
-//    });
-//          $.ajax({    //create an ajax request to load_page.php
-//        type: "GET",
-//        url: "http://cogni.design/cpr/www/display.php?id="+id,
-//        dataType: "html",   //expect html to be returned
-//        success: function(response){
-//            $("#responsecontaineruser").html(response);
-//            //alert(response);
-//        }
-//
-//    });
+
         });
     </script>
 
@@ -1645,7 +1371,6 @@ function resetfields(){
 
 
 	$().ready(function() {
-		// validate the comment form when it is submitted
 		$("#testForm").validate({
 		rules: {
     phone: {
@@ -1663,17 +1388,6 @@ submitHandler: function(form) {
 
 
 
-//
-// elem.value = basicvalues.min;
-// elem2.value = basicvalues.max;
-// console.log(basicValues.min + " " + basicValues.max);
-
-// if(!checkContactFormInput("firstname")) return false;
-// if(!checkContactFormInput("lastname")) return false;
-// if(!checkContactFormInput("phone")) return false;
-// if(!checkContactFormInput("makes")) return false;
-// if(!checkContactFormInput("models")) return false;
-// if(!checkContactFormInput("years")) return false;
 
     var postData = $(form).serializeArray();
     var formURL = $(form).attr("action");
@@ -1686,7 +1400,6 @@ submitHandler: function(form) {
         data : postData,
         success:function(data, textStatus, jqXHR)
         {
-            //data: return data from server
             function alertDismissed() {
                 redraw();
                 $("#testForm")[0].reset();
@@ -1694,34 +1407,30 @@ submitHandler: function(form) {
             }
 
             navigator.notification.alert(
-                    'Your new contact has been added!',  // message
-                    alertDismissed,         // callback
-                    'fTHRU',            // title
-                    'OK'                  // buttonName
+                    'Your new contact has been added!',
+                    alertDismissed,
+                    'fTHRU',
+                    'OK'
             );
 
 
-//            alert('Contact Added');
 
         },
         error: function(jqXHR, textStatus, errorThrown)
         {
-            //if fails
             function alertDismissed() {
                 $("#testForm")[0].reset();
 				 $('#page').scrollTop(0);
             }
 
             navigator.notification.alert(
-                    'There was a problem adding your contact.',  // message
-                    alertDismissed,         // callback
-                    'fTHRU',            // title
-                    'OK'                  // buttonName
+                    'There was a problem adding your contact.',
+                    alertDismissed,
+                    'fTHRU',
+                    'OK'
             );
         }
     });
-//     e.preventDefault(); //STOP default action
-//     e.unbind(); //unbind. to stop multiple form submit.
 
 		}
 });
@@ -1743,17 +1452,7 @@ submitHandler: function(form) {
 
 
 
-//
-// elem.value = basicvalues.min;
-// elem2.value = basicvalues.max;
-// console.log(basicValues.min + " " + basicValues.max);
 
-// if(!checkContactFormInput("firstname")) return false;
-// if(!checkContactFormInput("lastname")) return false;
-// if(!checkContactFormInput("phone")) return false;
-// if(!checkContactFormInput("makes")) return false;
-// if(!checkContactFormInput("models")) return false;
-// if(!checkContactFormInput("years")) return false;
 
     var postData = $(form).serializeArray();
     var formURL = $(form).attr("action");
@@ -1766,7 +1465,6 @@ submitHandler: function(form) {
         data : postData,
         success:function(data, textStatus, jqXHR)
         {
-            //data: return data from server
             function alertDismissed() {
                redraw();
                 $("#editForm")[0].reset();
@@ -1774,10 +1472,10 @@ submitHandler: function(form) {
             }
 
             navigator.notification.alert(
-                    'Your contact\'s information has been successfully updated!',  // message
-                    alertDismissed,         // callback
-                    'fTHRU',            // title
-                    'OK'                  // buttonName
+                    'Your contact\'s information has been successfully updated!',
+                    alertDismissed,
+                    'fTHRU',
+                    'OK'
             );
 
 
@@ -1812,24 +1510,22 @@ submitHandler: function(form) {
 
 
 
-            //alert(response);
 
         },
         error: function(jqXHR, textStatus, errorThrown)
         {
-            //if fails
 
 
             function alertDismissed() {
-                <!-- $("#editForm")[0].reset(); -->
+              $("#editForm")[0].reset();
 				 $('#page').scrollTop(0);
             }
 
             navigator.notification.alert(
-                    'There was a problem updating your contact\'s information.',  // message
-                    alertDismissed,         // callback
-                    'fTHRU',            // title
-                    'OK'                  // buttonName
+                    'There was a problem updating your contact\'s information.',
+                    alertDismissed,
+                    'fTHRU',
+                    'OK'
             );
 
 
@@ -1863,17 +1559,13 @@ submitHandler: function(form) {
 
 
 
-            //alert(response);
 
         }
     });
-//     e.preventDefault(); //STOP default action
-//     e.unbind(); //unbind. to stop multiple form submit.
 
 		}
 });
 
-		// validate signup form on keyup and submit
 		$("#testForm2").validate({
 		rules: {
 		 price: {
@@ -1883,12 +1575,8 @@ submitHandler: function(form) {
 		{
 
 
-// if(!checkVehicleFormInput("price")) return false;
-// if(!checkVehicleFormInput("makes")) return false;
-// if(!checkVehicleFormInput("models")) return false;
-// if(!checkVehicleFormInput("years")) return false;
 
-   // var postData = $(this).serializeArray();
+
    var postData = new FormData($(form)[0]);
     var formURL = $(form).attr("action");
     $.ajax(
@@ -1899,7 +1587,6 @@ submitHandler: function(form) {
         async: false,
         success:function(data, textStatus, jqXHR)
         {
-            //data: return data from server
 
 
             function alertDismissed() {
@@ -1913,10 +1600,10 @@ submitHandler: function(form) {
             }
 
             navigator.notification.alert(
-                    'Your new vehicle has been added successfully!',  // message
-                    alertDismissed,         // callback
-                    'fTHRU',            // title
-                    'OK'                  // buttonName
+                    'Your new vehicle has been added successfully!',
+                    alertDismissed,
+                    'fTHRU',
+                    'OK'
             );
 
 
@@ -1927,7 +1614,6 @@ submitHandler: function(form) {
         processData: false,
         error: function(jqXHR, textStatus, errorThrown)
         {
-            //if fails
 
             function alertDismissed() {
                 $("#testForm2")[0].reset();
@@ -1939,22 +1625,20 @@ submitHandler: function(form) {
             }
 
             navigator.notification.alert(
-                    'There was a problem adding your vehicle.',  // message
-                    alertDismissed,         // callback
-                    'fTHRU',            // title
-                    'OK'                  // buttonName
+                    'There was a problem adding your vehicle.',
+                    alertDismissed,
+                    'fTHRU',
+                    'OK'
             );
 
 
         }
     });
 
-//     e.preventDefault(); //STOP default action
-//     e.unbind(); //unbind. to stop multiple form submit.
+
 
 		}
 
-		// propose username by combining first- and lastname
 
 	});
 	});
@@ -1984,15 +1668,12 @@ submitHandler: function(form) {
 	</style>
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-	  <!-- <script type="text/javascript" src="js/index.js"></script> -->
     <script type="text/javascript" charset="utf-8">
 
 
 
     var deviceReady = false;
-    /**
-     * Take picture with camera
-     */
+
     function takePicture() {
         navigator.camera.getPicture(
             function(uri) {
@@ -2011,9 +1692,7 @@ submitHandler: function(form) {
             },
             { quality: 70, targetWidth:800,targetHeight:600, correctOrientation: true, encodingType: Camera.EncodingType.JPEG, destinationType: navigator.camera.DestinationType.FILE_URI});
     };
-    /**
-     * Select picture from library
-     */
+
     function selectPicture() {
         navigator.camera.getPicture(
             function(uri) {
@@ -2032,12 +1711,9 @@ submitHandler: function(form) {
             { quality: 70, targetWidth:800,targetHeight:600, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY});
     };
 
-    /**
-     * Upload current picture
-     */
+
     function uploadPicture() {
 
-    	// Get URI of picture to upload
         var img = document.getElementById('camera_image');
         var imageURI = img.src;
         if (!imageURI || (img.style.display == "none")) {
@@ -2045,12 +1721,10 @@ submitHandler: function(form) {
             return;
         }
 
-        // Verify server has been entered
         server = document.getElementById('serverUrl').value;
         if (server) {
 
             var newimageid = new Date().getTime() + Math.random();
-            // Specify transfer options
             var options = new FileUploadOptions();
             var newimagename = newimageid+imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.fileKey="file";
@@ -2058,7 +1732,6 @@ submitHandler: function(form) {
             options.mimeType="image/jpeg";
             options.chunkedMode = false;
 
-            // Transfer picture to server
             var ft = new FileTransfer();
             ft.upload(imageURI, server, function(r) {
                 document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
@@ -2068,26 +1741,19 @@ submitHandler: function(form) {
             }, options);
         }
     }
-    /**
-     * View pictures uploaded to the server
-     */
+
     function viewUploadedPictures() {
 
-    	// Get server URL
         server = document.getElementById('serverUrl').value;
         server = server+"?id="+id;
         if (server) {
 
-            // Get HTML that lists all pictures on server using XHR
             var xmlhttp = new XMLHttpRequest();
-            // Callback function when XMLHttpRequest is ready
             xmlhttp.onreadystatechange=function(){
                 if(xmlhttp.readyState === 4){
-                    // HTML is returned, which has pictures to display
                     if (xmlhttp.status === 200) {
                     	document.getElementById('server_images').innerHTML = xmlhttp.responseText;
                     }
-                    // If error
                     else {
                     	document.getElementById('server_images').innerHTML = "Error retrieving pictures from server.";
                     }
@@ -2098,9 +1764,7 @@ submitHandler: function(form) {
         }
     }
 
-    /**
-     * Function called when page has finished loading.
-     */
+
     function init() {
 
     }
@@ -2150,17 +1814,7 @@ submitHandler: function(form) {
 			<div class="fldstyle"><input type="password" name="password" placeholder="Password"/></div>
 			<button class="bluebtn" type="submit">Log In »</button>
 		</form><br><hr>
-       <!--
- <br>
-        <div class="button"><a href="#" onclick="changePage('forgot');">Forgot Password?</a></div>
-<!~~ 		<div class="midline_box txtalnL"><div class="pad50pcntleft"><a class="menu_pill"><div class="menu_pill_text">NEW HERE?</div></a></div><hr class="hr_line"></div> ~~>
-<hr class="hr_line">
 
-		<!~~<a href="#" onclick="changePage('register');"><div class="clicksignup">Sign up for a free account »</div></a>~~>
-       <center> <a href="#" onclick="changePage('register');"><div class="bluebtn">get a free account »</div></a></center>
-
-        <br />
- -->
 	</div>
 </div>
 
@@ -2168,15 +1822,7 @@ submitHandler: function(form) {
 
 
 				<div class="slidehome" style="z-index:3;">
-				<!-- <div id="tabs" class="font_PNbold" style="zoom: .8;">
-					<ul id="top_menu">
-						<li id="tm_map" class="active" ><img src="add_user.png" style="width:50px;"></li>
-						<li id="tm_pro" class="" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"><img src="viewuser.png" style="width:50px;" onclick="$('li').removeClass('active');$('#viewuser #tm_pro').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewuser').style.display = '';"></li>
-						<li id="tm_fri" class="" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';" class="friends_list"><img src="addcar.png" style="height:80px;" onclick="$('li').removeClass('active');$('#addcar #tm_fri').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('addcar').style.display = '';"></li>
-						<li id="tm_home"  class="" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"><img src="viewcar.png" style="height: 70px !important; padding-top: 9px;" onclick="$('li').removeClass('active');$('#viewcar #tm_home').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('viewcar').style.display = '';"></li>
-						<li id="tm_mtch" class="" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"><img src="match.png" style="width:50px !important;padding-top: 5px;" onclick="$('li').removeClass('active');$('#match #tm_mtch').addClass('active');document.getElementById('home').style.display = 'none';document.getElementById('match').style.display = '';"></li>
-					</ul>
-				</div> -->
+
 
 					<div class="cnt_clr">
 						<form id="testForm" action="http://cogni.design/cpr/www/insert.php" method="post">
@@ -2658,10 +2304,7 @@ submitHandler: function(form) {
 							<input id="serverUrl" type="hidden" value="http://cogni.design/cpr/area51/testground/uploader.php" />
 
 
-	<!-- Camera -->
 
-
-    <!-- Actions -->
 							<center>
 								<div>
 									<table style="width:100%;">
@@ -2681,7 +2324,6 @@ submitHandler: function(form) {
 									<br>
 									<div>
 										<br>
-						<!-- 		<h3>Camera:</h3> -->
 
 										<img style="width:300px;visibility:hidden;display:none;" id="camera_image" src="" />
 									</div>
@@ -2691,9 +2333,7 @@ submitHandler: function(form) {
 								</div>
 							</center>
 							<input type="hidden" name="fileToUpload" id="fileToUpload" value="">
-						<!--   <p style="color:black;">Select image to upload:</p> -->
-						<!--     <input type="file" name="fileToUpload" id="fileToUpload" style="zoom:1.3;" accept="image/*" capture="camera" required /> -->
-							<!-- <input type="submit" value="Upload Image" name="submit"> --><br>
+					<br>
 							<center>
 								<input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;">
 							</center>
@@ -2701,21 +2341,7 @@ submitHandler: function(form) {
 					</div>
 
 
-								<!-- Add your site or application content here -->
 
-
-
-								<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-							   <!--
-						 <script>
-									(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-									function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-									e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-									e.src='//www.google-analytics.com/analytics.js';
-									r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-									ga('create','UA-XXXXX-X');ga('send','pageview');
-								</script>
-						 -->
 
 				</div>
 
@@ -2828,9 +2454,9 @@ submitHandler: function(form) {
 
 			</div>
 
-		</div><!-- end panel -->
-    
-	</div><!-- end page -->
+		</div>
+
+	</div>
 <script type='text/javascript'>
 
 
@@ -2866,8 +2492,7 @@ $(document).ready(function(){
 var page;
     var thepage;
 function onTouchStart(e) {
- //page = this.Target.className;
-//e.currentTarget.title=page;
+
 page=this.id;
   var item = e.currentTarget;
 thepage = item.id;
@@ -2876,22 +2501,13 @@ thepage = item.id;
   console.log("Start: " + e.currentTarget.innerHTML);
   isTouching = true;
 
-  //iOS and Android do not redraw the view while they are scrolling.
-  //This introduces a problem if the user very quickly swiped his/her finger to scroll.
-  //The element would have been given the "active" class (being highlighted) and it would have
-  //stayed highlighted even while scrolling (despite not having the active class anymore).
-  //To get around that, we create our own very slight delay. Not perfect, nor ideal, but it generally does the job.
   setTimeout(function(){
-    if(item.moved===false) { //Make sure the property exists and is false
+    if(item.moved===false) {
       item.className = "active";
 
     }
   },50);
 }
-/**
- * Fired when the user moves his/her finger.
- * If we detect a move, we're not interested in the "tap" anymore
- */
 
 function onTouchMove(e) {
 
@@ -2899,18 +2515,13 @@ function onTouchMove(e) {
   e.currentTarget.moved = true;
   e.currentTarget.className = "";
 }
-/**
- * Fired when the touch has ended.
- * If e.currentTarget.moved is true, then the user moved his/her finger while
- * touching this item so we "cancel" the tap.
- */
+
 function onTouchEnd(e) {
   var item = e.currentTarget;
 
   console.log("Stop: " + item.innerHTML);
   isTouching = false;
 
-//alert(sample);
   if(!item.moved) { //Show the
     item.className = "selected";
 
@@ -2982,25 +2593,22 @@ function onTouchEnd(e) {
 
 
 
-//  setTimeout(changePage(page),2000);
 	page="";
-  delete item.moved; //Don't need our flag anymore
+  delete item.moved;
 }
 
 
-var links = document.querySelectorAll("#tabs li"), //All the links on this page
+var links = document.querySelectorAll("#tabs li"),
 
-// links = links + document.querySelectorAll(".home_btn"),
-i, //iterator
-isTouching = false; //Flag for whether or not the user is currently touching the screen
+i,
+isTouching = false;
 
-//Iterate through the links
 for(i=0; i<links.length; ++i) {
 
-  links[i].addEventListener("touchstart", onTouchStart); //Listen for the user to start touching
+  links[i].addEventListener("touchstart", onTouchStart);
 
-  links[i].addEventListener("touchmove", onTouchMove); //Listen for movement
-  links[i].addEventListener("touchend", onTouchEnd); //Listen for the user to stop touching
+  links[i].addEventListener("touchmove", onTouchMove);
+  links[i].addEventListener("touchend", onTouchEnd);
 }
 
 
@@ -3021,31 +2629,13 @@ window.open(page+".html",'_self');
 }
 </script>
 
-  <!--   <script src="js/zepto.min.js"></script> -->
-<!--     <script src="js/index.js"></script> -->
-   <!--
- <script>
-        app.initialize();
 
-    </script>
- -->
-
-
-<!-- </body> -->
 
 </div>
-<!--
-  <script type="text/javascript" src="phonegap.js"></script>
- <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
- -->
+
    <script>
    var maxTime = 1000,
-    // allow movement if < 1000 ms (1 sec)
     maxDistance = 50,
-    // swipe movement of 50 pixels triggers the swipe
     target = $('#home'),
     target2 = $('#viewuser'),
     target3 = $('#addcar'),
@@ -3059,24 +2649,18 @@ window.open(page+".html",'_self');
     endEvent = (touch) ? 'touchend' : 'mouseup';
 
 target.bind(startEvent, function(e) {
-    // prevent image drag (Firefox)
 
-//     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 }).bind(endEvent, function(e) {
     startTime = 0;
     startX = 0;
 }).bind(moveEvent, function(e) {
-//     e.preventDefault();
     var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
         currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
-        // allow if movement < 1 sec
         currentTime = e.timeStamp;
     if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
         if (currentX < startX) {
-            // swipe left code here
-//             target.find('h1').html('Swipe Left').fadeIn();
 
             var pagetarget = $("#page");
             setTimeout(function(){
@@ -3106,17 +2690,12 @@ target.bind(startEvent, function(e) {
 
 
 
-            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
+
         }
         if (currentX > startX) {
-            // swipe right code here
-//             target.find('h1').html('Swipe Right').fadeIn();
-//            $('#page').scrollTop(0);
 
 
-//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"before home hides");
+
 
             var pagetarget = $("#page");
 
@@ -3143,27 +2722,8 @@ target.bind(startEvent, function(e) {
                  },0);
              },0);
 
-//            $('#page').scrollTop(0);
-
-//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+" after home hides and nothing else happens");
 
 
-//                alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"made it here first and changed webkit overflow scrolling to auto and changed overflow to hidden");
-//            pagetarget.animate({scrollTop : 0},300,"swing",function(){
-
-//            });
-
-
-//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"just loaded page");
-//            pagetarget.scrollTop(0);
-//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"just scrolltopped the loaded page");
-//            pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow' : 'auto'});
-//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"made it here second and changed webkit overflow scrolling to touch and changed overflow to auto");
-//            pagetarget.scrollTop(0);
-//            alert(pagetarget.scrollTop()+" "+matchtarget.scrollTop()+" "+hometarget.scrollTop()+" "+containertarget.scrollTop()+" "+bodytarget.scrollTop()+" "+htmltarget.scrollTop()+" "+"and finally made it here after updating scroll once more");
-//            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
         }
         startTime = 0;
         startX = 0;
@@ -3171,24 +2731,18 @@ target.bind(startEvent, function(e) {
 });
 
 target2.bind(startEvent, function(e) {
-    // prevent image drag (Firefox)
 
-//     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 }).bind(endEvent, function(e) {
     startTime = 0;
     startX = 0;
 }).bind(moveEvent, function(e) {
-//     e.preventDefault();
     var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
         currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
-        // allow if movement < 1 sec
         currentTime = e.timeStamp;
     if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
         if (currentX < startX) {
-            // swipe left code here
-//             target.find('h1').html('Swipe Left').fadeIn();
 
 
             var pagetarget = $("#page");
@@ -3222,13 +2776,10 @@ target2.bind(startEvent, function(e) {
 
 
 
-            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
+
         }
         if (currentX > startX) {
-            // swipe right code here
-//             target.find('h1').html('Swipe Right').fadeIn();
+
 
             var pagetarget = $("#page");
             setTimeout(function(){
@@ -3262,9 +2813,7 @@ target2.bind(startEvent, function(e) {
 
 
 
-            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
+
         }
         startTime = 0;
         startX = 0;
@@ -3272,24 +2821,18 @@ target2.bind(startEvent, function(e) {
 });
 
 target3.bind(startEvent, function(e) {
-    // prevent image drag (Firefox)
 
-//     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 }).bind(endEvent, function(e) {
     startTime = 0;
     startX = 0;
 }).bind(moveEvent, function(e) {
-//     e.preventDefault();
     var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
         currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
-        // allow if movement < 1 sec
         currentTime = e.timeStamp;
     if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
         if (currentX < startX) {
-            // swipe left code here
-//             target.find('h1').html('Swipe Left').fadeIn();
             var pagetarget = $("#page");
 
             setTimeout(function(){
@@ -3320,13 +2863,10 @@ target3.bind(startEvent, function(e) {
 
 
 
-            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
+
         }
         if (currentX > startX) {
-            // swipe right code here
-//             target.find('h1').html('Swipe Right').fadeIn();
+
 
             var pagetarget = $("#page");
             setTimeout(function(){
@@ -3357,9 +2897,7 @@ target3.bind(startEvent, function(e) {
 
 
 
-            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
+
         }
         startTime = 0;
         startX = 0;
@@ -3367,24 +2905,19 @@ target3.bind(startEvent, function(e) {
 });
 
 target4.bind(startEvent, function(e) {
-    // prevent image drag (Firefox)
 
-//     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 }).bind(endEvent, function(e) {
     startTime = 0;
     startX = 0;
 }).bind(moveEvent, function(e) {
-//     e.preventDefault();
     var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
         currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
-        // allow if movement < 1 sec
         currentTime = e.timeStamp;
     if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
         if (currentX < startX) {
-            // swipe left code here
-//             target.find('h1').html('Swipe Left').fadeIn();
+
             var pagetarget = $("#page");
             setTimeout(function(){
                 $('#page').scrollTop(0);
@@ -3418,13 +2951,10 @@ target4.bind(startEvent, function(e) {
 
 
 
-            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
+
         }
         if (currentX > startX) {
-            // swipe right code here
-//             target.find('h1').html('Swipe Right').fadeIn();
+
 
             var pagetarget = $("#page");
             setTimeout(function(){
@@ -3455,9 +2985,7 @@ target4.bind(startEvent, function(e) {
 
 
 
-            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
+
         }
         startTime = 0;
         startX = 0;
@@ -3465,24 +2993,18 @@ target4.bind(startEvent, function(e) {
 });
 
 target5.bind(startEvent, function(e) {
-    // prevent image drag (Firefox)
 
-//     e.preventDefault();
     startTime = e.timeStamp;
     startX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 }).bind(endEvent, function(e) {
     startTime = 0;
     startX = 0;
 }).bind(moveEvent, function(e) {
-//     e.preventDefault();
     var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
         currentDistance = (startX === 0) ? 0 : Math.abs(currentX - startX),
-        // allow if movement < 1 sec
         currentTime = e.timeStamp;
     if (startTime !== 0 && currentTime - startTime < maxTime && currentDistance > maxDistance) {
         if (currentX < startX) {
-            // swipe left code here
-//             target.find('h1').html('Swipe Left').fadeIn();
 
             var pagetarget = $("#page");
 
@@ -3516,13 +3038,10 @@ target5.bind(startEvent, function(e) {
 
 
 
-            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
+
         }
         if (currentX > startX) {
-            // swipe right code here
-//             target.find('h1').html('Swipe Right').fadeIn();
+
 
             var pagetarget = $("#page");
             setTimeout(function(){
@@ -3554,9 +3073,7 @@ target5.bind(startEvent, function(e) {
 
 
 
-            // setTimeout(function() {
-//                 target.find('h1').fadeOut();
-//             }, 1000);
+
         }
         startTime = 0;
         startX = 0;
@@ -3566,44 +3083,17 @@ target5.bind(startEvent, function(e) {
 </body>
 
 
-<!--
-<script src="lib/fastclick.js"></script>
-<script src="lib/pageslider.js"></script>
- -->
-<!--
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
- -->
-<!--
-<script src="lib/underscore-min.js"></script>
-<script src="lib/backbone-min.js"></script>
-<script src="lib/handlebars.js"></script>
-<script src="js/utils.js"></script>
- -->
-<!-- <script src="js/app.js"></script> -->
-<!-- <script src="js/views.js"></script> -->
-<!--
-<script src="js/facebook.js"></script>
-<script src="swipe/src/swipeview.js"></script>
- -->
 
-<!-- <script src="js/jquery.blockUI.js"></script> -->
-<!-- <script src="js/jquery.touchwipe.1.1.1.js" charset="utf-8"></script> -->
-
-<!-- <script src="js/jquery.form.js"></script> -->
-<!-- <script src="js/sm-sample.js"></script> -->
-<!-- <script src="js/sm.js"></script> -->
 
   <script>
 
    $("#slider").rangeSlider({bounds:{min: 0, max: 50000},defaultValues:{min: 5000, max: 10000},  formatter:function(val){
         var value = Math.round(val * 5) / 5,
           decimal = value - Math.round(val);
-          // elem.value = basicvalues.min;
-// 			elem2.value = basicvalues.max;
+
 
         return "$" + value.toString();
-// 		return value;
+
       }, step: 500});
 
              var elem = document.getElementById("pricelow");
@@ -3655,7 +3145,6 @@ elem2.value=data.values.max;
 
 
 
-            //alert(response);
 
 
  }
@@ -3667,7 +3156,6 @@ elem2.value=data.values.max;
 
 
 
-//             app.initialize();
         </script>
          <script>
 function formcheck() {
@@ -3683,10 +3171,10 @@ function formcheck() {
         }
 
       navigator.notification.alert(
-              field.name + ' is required',  // message
-              alertDismissed,         // callback
-              'fTHRU',            // title
-              'OK'                  // buttonName
+              field.name + ' is required',
+              alertDismissed,
+              'fTHRU',
+              'OK'
       );
 
    });
@@ -3695,12 +3183,10 @@ function formcheck() {
 
 
 
-// $("#testForm").submit(); //Submit  the FORM
         </script>
  <script>
 
 
-// $("#testForm").submit(); //Submit  the FORM
         </script>
 		</body>
 </html>
