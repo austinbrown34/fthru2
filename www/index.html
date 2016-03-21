@@ -1008,13 +1008,13 @@ $.fn.dataTable.ext.errMode = 'none';
 
                     $('#exampledt').hide();
 
-                    $('#exampledt').on('init.dt', function(e, settings, json){
-                        $('#exampledt').show();
+//                    $('#exampledt').on('init.dt', function(e, settings, json){
+//                        $('#exampledt').show();
+//
+//                        $(this).DataTable().columns.adjust();
+//                    });
 
-                        $(this).DataTable().columns.adjust();
-                    });
 
-                  
 inventorytable = $('#exampledt2')
   .DataTable({
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
@@ -1234,6 +1234,10 @@ contacttable = $('#exampledt')
       //   alert(JSON.stringify(arguments));
       // }
     },
+            "initComplete": function () {
+                $('#exampledt').show();
+
+            },
     language: {
 
       search: "_INPUT_",
