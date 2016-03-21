@@ -327,6 +327,7 @@ function initializetables(){
               "initComplete": function () {
                   $('#hide2').css( 'display', 'block' );
                   vehiclesinitialized = true;
+                  $.unblockUI();
 
               },
       language: {
@@ -399,6 +400,7 @@ function initializetables(){
               "initComplete": function () {
                   $('#hide').css( 'display', 'block' );
                   contactsinitialized = true;
+                  $.unblockUI();
 
               },
       language: {
