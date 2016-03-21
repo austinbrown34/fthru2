@@ -1134,6 +1134,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#086fb6', end
 }
 
 .bluebtn2 {
+	zoom: .6;
 	width: 50vw;
 	height: 50vw;
 		border-top:1px solid #5297cd;
