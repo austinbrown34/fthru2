@@ -71,7 +71,8 @@ padding: 20px !important;
     background: linear-gradient(to bottom,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
-
+font-family: FontAwesome;
+    font-size: 1.3333333333333333em;
 }
 
 .ui-toolbar{
@@ -232,7 +233,7 @@ function initializetables(){
       dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
   	"jQueryUI": true,
       buttons: [
-        { extend: 'pdfHtml5',orientation: 'landscape',
+        { extend: 'pdfHtml5',text: '&#xf1c1;',orientation: 'landscape',
             customize: function(doc) {
                 doc.images = doc.images || {};
                 contactsorvehicles="myinventory";
@@ -272,7 +273,7 @@ function initializetables(){
                 }
             },
             exportOptions: { stripHtml: false, columns: [ 0, 1,7, 2, 3, 4 ] } },
-        { extend: 'csvHtml5',
+        { extend: 'csvHtml5', text: '&#xf0ce;',
 
 
             exportOptions: { columns: [ 1,7, 2, 3, 4 ] } }
@@ -342,7 +343,7 @@ function initializetables(){
       dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
   	"jQueryUI": true,
       buttons: [
-        { extend: 'pdfHtml5', orientation: 'landscape', customize: function(doc) {
+        { extend: 'pdfHtml5', text: '&#xf1c1;', orientation: 'landscape', customize: function(doc) {
             contactsorvehicles="mycontacts";
 
   		   doc.content[1].table.widths = [ 'auto', '*', '*','*', '*','*','*','*' ];
@@ -350,7 +351,7 @@ function initializetables(){
 
 
         }, exportOptions: {  columns: [ 13, 3, 1, 14, 6, 7,4,5 ] } },
-        { extend: 'csvHtml5', exportOptions: {  columns: [ 13,3,1,14,6,7,4,5 ] } }
+        { extend: 'csvHtml5', text: '&#xf0ce;', exportOptions: {  columns: [ 13,3,1,14,6,7,4,5 ] } }
       ],
   	"pageLength": 20,
   	"lengthMenu": [[20, 50, -1], [20, 50, "All"]],
@@ -424,7 +425,7 @@ function initializetables(){
 
       vehicleid = $(this).find("#vehicleid").text();
 
-  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' onclick='javascript:deletevehicle(vehicleid)'>Delete</button></center></td></tr>").insertAfter($(this).closest('tr'));
+  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' onclick='javascript:deletevehicle(vehicleid)'><i class='fa fa-trash-o fa-3x'></i></button></center></td></tr>").insertAfter($(this).closest('tr'));
 
 
 
@@ -441,7 +442,7 @@ function initializetables(){
                               $('#exampledt').find(".editdelete").remove();
                               contacttable.$('tr.selected').removeClass('selected');
                               $(this).addClass('selected');
-                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'>Edit</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'>Delete</button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'>SMS</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
+                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editcontact(contactid)'><i class='fa fa-pencil-square-o fa-3x'></i></button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:deletecontact(contactid)'><i class='fa fa-trash-o fa-3x'></i></button></td><td style='width:33%;'><button class='bluebtn2' onclick='javascript:editpermission(contactid,permission)'><i class='fa fa-mobile fa-3x'></i></button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
                               contactid = $(this).find("#contactid").text();
                               $('#edit [name="contactid"]').val(contactid);
                               name = $('td:first', $(this)).text().replace(/\d+/g, '');
@@ -2384,12 +2385,12 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										<tr>
 											<td style="width:50%;">
 												<center>
-													<input class="bluebtn2" type="button"  onclick="takePicture();" value="Camera" />
+													<input class="bluebtn2" type="button" style="font-family: FontAwesome;font-size: 1.3333333333333333em;" onclick="takePicture();" value="&#xf030;" />
 												</center>
 											</td>
 											<td style="width:50%;">
 												<center>
-													<input class="bluebtn2" type="button" onclick="selectPicture();" value="Gallery" />
+													<input class="bluebtn2" type="button" style="font-family: FontAwesome;font-size: 1.3333333333333333em;" onclick="selectPicture();" value="&#xf07c;" />
 												</center>
 											</td>
 										</tr>
@@ -2401,7 +2402,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										<img style="width:300px;visibility:hidden;display:none;" id="camera_image" src="" />
 									</div>
 									<br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span><br>
-									<input class="bluebtn2" type="button" onclick="uploadPicture();" value="Upload Picture" />
+									<input class="bluebtn2" type="button" style="font-family: FontAwesome;font-size: 1.3333333333333333em;" onclick="uploadPicture();" value="&#xf0ee;" />
 
 								</div>
 							</center>
