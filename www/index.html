@@ -1006,7 +1006,8 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
 $.fn.dataTable.ext.errMode = 'none';
 
-
+                    $('#exampledt').hide();
+                    $('#exampledt2').hide();
 inventorytable = $('#exampledt2')
   .DataTable({
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
@@ -1241,7 +1242,8 @@ contacttable = $('#exampledt')
 //                        alert("made it here");
 //                        contactsorvehicles = "myinventory";
 //                    });
-
+                    $('#exampledt').show();
+                    $('#exampledt2').show();
   $('#exampledt2 tbody').on('taphold','tr',function(){
 if ( $(this).hasClass('selected') ) {
 			$('#exampledt2').find(".editdelete").remove();
