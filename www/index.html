@@ -1006,7 +1006,15 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
 $.fn.dataTable.ext.errMode = 'none';
 
+                    $('#exampledt').hide();
 
+                    $('#exampledt').on('init.dt', function(e, settings, json){
+                        $('#exampledt').show();
+
+                        $(this).DataTable().columns.adjust();
+                    });
+
+                  
 inventorytable = $('#exampledt2')
   .DataTable({
     dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
@@ -2684,41 +2692,41 @@ submitHandler: function(form) {
                         <table id="exampledt" class="display dt-center" style="color:black;" cellspacing="0" width="100%">
                             <thead>
                             <tr>
-                                <th style="width:26% !important; display: none;">Name</th>
-                                <th style="width:36% !important; display: none;">Phone</th>
-                                <th style="width:38% !important;display: none;">Wants</th>
-                                <th style="width:0% !important;display: none;">Last</th>
-                                <th style="width:0% !important;display: none;">Price Low</th>
-                                <th style="width:0% !important;display: none;">Price High</th>
-                                <th style="width:0% !important;display: none;">Make</th>
-                                <th style="width:0% !important;display: none;">Model</th>
-                                <th style="width:0% !important;display: none;">User ID</th>
-                                <th style="width:0% !important;display: none;">Status</th>
-								<th style="width:0% !important;display: none;">ID</th>
-								<th style="width:0% !important;display: none;">Year</th>
-                                <th style="width:0% !important;display: none;">Permission</th>
-                                <th style="width:0% !important;display: none;">First</th>
-                                <th style="width:0% !important;display: none;">Category</th>
+                                <th style="width:26% !important;">Name</th>
+                                <th style="width:36% !important;">Phone</th>
+                                <th style="width:38% !important;">Wants</th>
+                                <th style="width:0% !important;">Last</th>
+                                <th style="width:0% !important;">Price Low</th>
+                                <th style="width:0% !important;">Price High</th>
+                                <th style="width:0% !important;">Make</th>
+                                <th style="width:0% !important;">Model</th>
+                                <th style="width:0% !important;">User ID</th>
+                                <th style="width:0% !important;">Status</th>
+								<th style="width:0% !important;">ID</th>
+								<th style="width:0% !important;">Year</th>
+                                <th style="width:0% !important;">Permission</th>
+                                <th style="width:0% !important;">First</th>
+                                <th style="width:0% !important;">Category</th>
 
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
-                                <th style="width:26% !important;display: none;">Name</th>
-                                <th style="width:36% !important;display: none;">Phone</th>
-                                <th style="width:38% !important;display: none;">Wants</th>
-                                <th style="width:38% !important;display: none;">Last</th>
-                                <th style="width:0% !important;display: none;">Price Low</th>
-                                <th style="width:0% !important;display: none;">Price High</th>
-                                <th style="width:0% !important;display: none;">Make</th>
-                                <th style="width:0% !important;display: none;">Model</th>
-                                <th style="width:0% !important;display: none;">User ID</th>
-                                <th style="width:0% !important;display: none;">Status</th>
-								<th style="width:0% !important;display: none;">ID</th>
-								<th style="width:0% !important;display: none;">Year</th>
-                                <th style="width:0% !important;display: none;">Permission</th>
-                                <th style="width:0% !important;display: none;">First</th>
-                                <th style="width:0% !important;display: none;">Category</th>
+                                <th style="width:26% !important;">Name</th>
+                                <th style="width:36% !important;">Phone</th>
+                                <th style="width:38% !important;">Wants</th>
+                                <th style="width:38% !important;">Last</th>
+                                <th style="width:0% !important;">Price Low</th>
+                                <th style="width:0% !important;">Price High</th>
+                                <th style="width:0% !important;">Make</th>
+                                <th style="width:0% !important;">Model</th>
+                                <th style="width:0% !important;">User ID</th>
+                                <th style="width:0% !important;">Status</th>
+								<th style="width:0% !important;">ID</th>
+								<th style="width:0% !important;">Year</th>
+                                <th style="width:0% !important;">Permission</th>
+                                <th style="width:0% !important;">First</th>
+                                <th style="width:0% !important;">Category</th>
                             </tr>
                             </tfoot>
 
@@ -2743,28 +2751,28 @@ submitHandler: function(form) {
  <table id="exampledt2" class="display dt-center" style="color:black;" cellspacing="0" width="100%">
                             <thead>
                             <tr>
-                                <th style="width:26% !important;display: none;">Image</th>
-                                <th style="width:10% !important;display: none;">Year</th>
-                                <th style="width:20% !important;display: none;">Make</th>
-                                <th style="width:27% !important;display: none;">Model</th>
-                                <th style="width:17% !important;display: none;">Price</th>
-								  <th style="width:0% !important;display: none;">Status</th>
-                                <th style="width:0% !important;display: none;">ID</th>
-                                <th style="width:0% !important;display: none;">Type</th>
+                                <th style="width:26% !important;">Image</th>
+                                <th style="width:10% !important;">Year</th>
+                                <th style="width:20% !important;">Make</th>
+                                <th style="width:27% !important;">Model</th>
+                                <th style="width:17% !important;">Price</th>
+								  <th style="width:0% !important;">Status</th>
+                                <th style="width:0% !important;">ID</th>
+                                <th style="width:0% !important;">Type</th>
 
 
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
-                                 <th style="width:26% !important;display: none;">Image</th>
-                                <th style="width:10% !important;display: none;">Year</th>
-                                <th style="width:20% !important;display: none;">Make</th>
-                                <th style="width:27% !important;display: none;">Model</th>
-                                <th style="width:17% !important;display: none;">Price</th>
-																  <th style="width:0% !important;display: none;">Status</th>
-                                <th style="width:0% !important;display: none;">ID</th>
-                                <th style="width:0% !important;display: none;">Type</th>
+                                 <th style="width:26% !important;">Image</th>
+                                <th style="width:10% !important;">Year</th>
+                                <th style="width:20% !important;">Make</th>
+                                <th style="width:27% !important;">Model</th>
+                                <th style="width:17% !important;">Price</th>
+																  <th style="width:0% !important;">Status</th>
+                                <th style="width:0% !important;">ID</th>
+                                <th style="width:0% !important;">Type</th>
 
 
                             </tr>
