@@ -386,6 +386,7 @@ var password = localStorage.getItem('password');
                                         setTimeout(function(){
                                             pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
                                             $('#slider').rangeSlider('resize');
+
                                         },0);
                                     },0);
                                 },0);
@@ -880,7 +881,7 @@ function enabletext(buttonIndex){
 
    }
         $(document).ready(function() {
-          $('#dvLoading').hide();
+
 //              function getBase64Image(img) {
 //                  img.crossOrigin = 'Anonymous';
 //                  img.onload = function(){
@@ -1517,6 +1518,7 @@ $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' oncli
                                     setTimeout(function(){
                                         pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
                                         $('#slider').rangeSlider('resize');
+                                        $('#dvLoading').hide();
                                     },0);
                                 },0);
                             },0);
