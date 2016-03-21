@@ -345,8 +345,8 @@ var password = localStorage.getItem('password');
 		var serializedData = $("#loginForm").serialize();
 
 		var request = $.ajax({
-				url: "http://cogni.design/cpr/www/login.php?id="+id,
-				type: "get",
+				url: "http://cogni.design/cpr/www/login.php",
+				type: "POST",
 				data: serializedData
 			});
 
@@ -365,9 +365,9 @@ var password = localStorage.getItem('password');
 			{
 				$.unblockUI();
 				//  to homepage
-				response = response.split('|');
-				localStorage.setItem("id", response[0]);
-				localStorage.setItem("password", response[1]);
+				// response = response.split('|');
+				localStorage.setItem("id", response);
+				// localStorage.setItem("password", response[1]);
 
                 var pagetarget = $("#page");
 
