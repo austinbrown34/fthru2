@@ -1006,7 +1006,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
 $.fn.dataTable.ext.errMode = 'none';
 
-                    $('#exampledt').hide();
+                    $('#exampledt').wrap('<div id="hide" style="display:none"/>');
 
 //                    $('#exampledt').on('init.dt', function(e, settings, json){
 //                        $('#exampledt').show();
@@ -1235,8 +1235,7 @@ contacttable = $('#exampledt')
       // }
     },
             "initComplete": function () {
-                alert("complete");
-                $('#exampledt').show();
+                $('#hide').css( 'display', 'block' );
 
             },
     language: {
