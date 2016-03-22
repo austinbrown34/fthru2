@@ -1152,6 +1152,9 @@ font-family: FontAwesome;
     font-size: 1em;
 margin: 0 auto;
 text-align:center;
+   display: inline-block;
+   padding-right: 3px;
+   vertical-align: middle;
 
 }
 
