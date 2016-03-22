@@ -1155,7 +1155,11 @@ margin: 0 auto;
 
 }
 
-
+.bluebtn2 span{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
 .prplbtn {
 	border-top:1px solid #5297cd;
 	box-shadow:0px 6px 0px #00002b;
