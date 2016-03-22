@@ -1135,8 +1135,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#086fb6', end
 
 .bluebtn2 {
 	
-	width: 100px;
-	
+	width: 70px;
+	height: 70px;
 		border-top:1px solid #5297cd;
 	box-shadow:0px 6px 0px #00002b;
 	/* padding: 10px; */
@@ -1150,10 +1150,10 @@ background: linear-gradient(to bottom,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffff
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 font-family: FontAwesome;
     font-size: 1em;
-margin: 0 auto;
+margin: auto;
 text-align:center;
    display: inline-block;
-   padding-right: -3px;
+   
    vertical-align: middle;
 
 }
