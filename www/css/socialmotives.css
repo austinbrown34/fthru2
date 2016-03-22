@@ -1153,7 +1153,7 @@ font-family: FontAwesome;
 margin: 0 auto;
 text-align:center;
    display: inline-block;
-   padding-right: 3px;
+   padding-right: -3px;
    vertical-align: middle;
 
 }
