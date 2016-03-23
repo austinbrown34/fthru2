@@ -1760,7 +1760,8 @@ submitHandler: function(form) {
 
         server = document.getElementById('serverUrl').value;
         if (server) {
-            var randomnum = Math.random().split(".")[1];
+            var randomnumdec = Math.random();
+            var randomnum = randomnumdec.toString().split(".")[1];
             var newimageid = new Date().getTime() + randomnum;
             var options = new FileUploadOptions();
             var newimagename = newimageid+imageURI.substr(imageURI.lastIndexOf('/')+1);
