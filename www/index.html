@@ -1763,7 +1763,7 @@ submitHandler: function(form) {
 
             var newimageid = new Date().getTime() + Math.random();
             var options = new FileUploadOptions();
-            var newimagename = newimageid;
+            var newimagename = newimageid+imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.fileKey="data";
             options.fileName=newimageid;
             options.mimeType="image/jpeg";
