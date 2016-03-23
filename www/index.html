@@ -1763,9 +1763,9 @@ submitHandler: function(form) {
 
             var newimageid = new Date().getTime() + Math.random();
             var options = new FileUploadOptions();
-            var newimagename = newimageid+imageURI.substr(imageURI.lastIndexOf('/')+1);
+            var newimagename = newimageid;
             options.fileKey="data";
-            options.fileName=newimageid+imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.fileName=newimageid;
             options.mimeType="image/jpeg";
             options.chunkedMode = false;
 
