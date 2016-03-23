@@ -435,7 +435,7 @@ function initializetables(){
                               $('#exampledt').find(".editdelete").remove();
                               contacttable.$('tr.selected').removeClass('selected');
                               $(this).addClass('selected');
-                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:editcontact(contactid)'>&#xf044;</button></td><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletecontact(contactid)'>&#xf014;</button></td><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:editpermission(contactid,permission)'>&#xf10b;</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
+                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:editcontact(contactid)'>&#xf044;</button></td><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletecontact(contactid)'>&#xf014;</button></td><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 23px;zoom: 1.5;' onclick='javascript:editpermission(contactid,permission)'>&#xf10b;</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
                               contactid = $(this).find("#contactid").text();
                               $('#edit [name="contactid"]').val(contactid);
                               name = $('td:first', $(this)).text().replace(/\d+/g, '');
@@ -2386,7 +2386,7 @@ zoom: 1.5;" onclick="takePicture();" value="&#xf030;" />
 											<td style="width:50%;">
 												<center>
 													<input class="bluebtn2" type="button" style="font-family: FontAwesome;font-size: 1.5em;
-padding-left: 16px;
+padding-left: 17px;
 zoom: 1.5;" onclick="selectPicture();" value="&#xf07c;" />
 												</center>
 											</td>
