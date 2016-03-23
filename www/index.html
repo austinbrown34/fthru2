@@ -1772,7 +1772,7 @@ submitHandler: function(form) {
             var ft = new FileTransfer();
             ft.upload(imageURI, server, function(r) {
                 document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
-                document.getElementById("fileToUpload").value = newimagename;
+                document.getElementById("fileToUpload").value = newimageid+".jpg";
             }, function(error) {
                 document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
             }, options);
