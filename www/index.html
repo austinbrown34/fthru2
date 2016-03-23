@@ -213,8 +213,9 @@ color:#6a7894;
         <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
         <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.html5.js"></script>
         <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/dataTables.jqueryui.min.js"></script>
+<script type="text/javascript" src="js/touche.js"></script>
     <script>
-
+$('.myinputs').on('click', handleClicks);
 function initializetables(){
 
   $.fn.dataTable.ext.errMode = 'none';
@@ -418,7 +419,7 @@ function initializetables(){
 
       vehicleid = $(this).find("#vehicleid").text();
 
-  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletevehicle(vehicleid)'>&#xf014;</button></center></td></tr>").insertAfter($(this).closest('tr'));
+  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletevehicle(vehicleid)'>&#xf014;</button></center></td></tr>").insertAfter($(this).closest('tr'));
 
 
 
@@ -435,7 +436,7 @@ function initializetables(){
                               $('#exampledt').find(".editdelete").remove();
                               contacttable.$('tr.selected').removeClass('selected');
                               $(this).addClass('selected');
-                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:editcontact(contactid)'>&#xf044;</button></td><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletecontact(contactid)'>&#xf014;</button></td><td style='width:33%;'><button class='bluebtn2' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 25px;zoom: 1.5;' onclick='javascript:editpermission(contactid,permission)'>&#xf10b;</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
+                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td colspan=3><br></td></tr><tr><td style='width:33%;'><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:editcontact(contactid)'>&#xf044;</button></td><td style='width:33%;'><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletecontact(contactid)'>&#xf014;</button></td><td style='width:33%;'><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 25px;zoom: 1.5;' onclick='javascript:editpermission(contactid,permission)'>&#xf10b;</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
                               contactid = $(this).find("#contactid").text();
                               $('#edit [name="contactid"]').val(contactid);
                               name = $('td:first', $(this)).text().replace(/\d+/g, '');
@@ -1817,7 +1818,7 @@ submitHandler: function(form) {
 
 <div id="appheader">
 <div style="position: absolute;
-		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><i class="fa fa-sign-out fa-3x" style="position: absolute;
+		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><i class="fa fa-sign-out fa-3x myinputs" style="position: absolute;
 right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
 
 		<div id="tabs" class="font_PNbold" style="zoom: .8;">
@@ -1849,9 +1850,9 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 <br><br><br>
 
 		<form id="loginForm" onsubmit="return processLogin();">
-			<div class="fldstyle"><input id="email" type="text" name="email" placeholder="Email Address" autocapitalize="off"/></div><br />
-			<div class="fldstyle"><input type="password" name="password" placeholder="Password"/></div>
-			<button class="bluebtn" type="submit">Log In �</button>
+			<div class="fldstyle"><input id="email" type="text" name="email" placeholder="Email Address" class="myinputs" autocapitalize="off"/></div><br />
+			<div class="fldstyle"><input type="password" name="password" class="myinputs" placeholder="Password"/></div>
+			<button class="bluebtn myinputs" type="submit">Log In �</button>
 		</form><br><hr>
 
 	</div>
@@ -1878,14 +1879,14 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 
 											<p style="color:black;">First name:</p>
-											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required>
+											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required myinputs" required>
 									</td>
 								</tr>
 								<tr>
 									<td>
 
 										<p style="color:black;">Last name:</p>
-										<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required" required>
+										<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required myinputs" required>
 									</td>
 								</tr>
 								<tr>
@@ -1895,7 +1896,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 
 
-										<input id="phone"  name="phone" type="tel" class="required phone ss-item-required" tabindex="10" value="" style="zoom:1.5; width: 100%;
+										<input id="phone"  name="phone" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style="zoom:1.5; width: 100%;
 										height: 40px;
 										padding: 10px;
 										margin-bottom: 10px;
@@ -1915,16 +1916,16 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 											<table style="width:100%;">
 												<tr>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:3.5;" /><br><span style="color:black;">Cars</span> </center>
+														<center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Cars</span> </center>
 													</td>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span></center>
+														<center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span></center>
 													</td>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:3.5;" /><br><span style="color:black;">SUVs</span></center>
+														<center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUVs</span></center>
 													</td>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center>
+														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center>
 													</td>
 												</tr>
 												<tr>
@@ -1933,7 +1934,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												</tr>
 												<tr>
 													<td colspan=4 style="width:100%;">
-														<center><input type="checkbox" name="type[]" value="Specific" class="specific" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center>
+														<center><input type="checkbox" name="type[]" value="Specific" class="specific myinputs" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center>
 													</td>
 												</tr>
 											</table>
@@ -1943,7 +1944,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 
 										<div id="specific1" style="display:none;">
-											 <select id="years" name="years" class="ss-item-required" required>
+											 <select id="years" name="years" class="ss-item-required myinputs" required>
 
 												<option value="">Select Year</option>
 												<option>1990</option>
@@ -1979,7 +1980,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									<td>
 										<div id="specific2" style="display:none;">
 											<br>
-											<select id="makes" name="makes" required  class="ss-item-required">
+											<select id="makes" name="makes" required  class="ss-item-required myinputs">
 												<option value="">Select Make</option>
 											</select>
 										</div>
@@ -1989,7 +1990,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									<td>
 										<div id="specific3" style="display:none;">
 											<br>
-											<select id="models" name="models" required  class="ss-item-required">
+											<select id="models" name="models" required  class="ss-item-required myinputs">
 												<option value="">Select Model</option>
 											</select>
 
@@ -2004,11 +2005,11 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												<tr>
 													<td style="width:50%;">
 														<p style="color:black;">  Low Price:</p>
-														<input id="pricelow" class="" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+														<input id="pricelow" class="myinputs" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
 													</td>
 													<td style="width:50%;">
 														<p style="color:black;">  High Price:</p>
-														<input id="pricehigh" class="" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+														<input id="pricehigh" class="myinputs" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
 													</td>
 												</tr>
 											</table>
@@ -2021,7 +2022,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									<td>
 										<br>
 										<center>
-											<input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;">
+											<input type="submit" value="<< Submit >>" class="bluebtn myinputs" style="width:100%;">
 										</center>
 
 
@@ -2069,14 +2070,14 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										<div style="padding: 2px 4px 3px 4px;">
 
 											<p style="color:black;">First name:</p>
-											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required" required>
+											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required myinputs" required>
 									</td>
 								</tr>
 								<tr>
 									<td>
 
 										<p style="color:black;">Last name:</p>
-										<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required" required>
+										<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required myinputs" required>
 									</td>
 								</tr>
 								<tr>
@@ -2085,7 +2086,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										<p style="color:black;">Phone:</p>
 
 										<input id="contactid" name="contactid" type="hidden">
-										<input id="phone"  name="phone" type="tel" class="required phone ss-item-required" tabindex="10" value="" style="zoom:1.5; width: 100%;
+										<input id="phone"  name="phone" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style="zoom:1.5; width: 100%;
 										height: 40px;
 										padding: 10px;
 										margin-bottom: 10px;
@@ -2106,22 +2107,22 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												<tr>
 													<td style="width:25%;">
 														<center>
-															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others" style="zoom:3.5;" /><br><span style="color:black;">Cars</span>
+															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Cars</span>
 														</center>
 													</td>
 													<td style="width:25%;">
 														<center>
-															<input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span>
+															<input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span>
 														</center>
 													</td>
 													<td style="width:25%;">
 														<center>
-															<input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others" style="zoom:3.5;" /><br><span style="color:black;">SUVS</span>
+															<input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUVS</span>
 														</center>
 													</td>
 													<td style="width:25%;">
-														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
-														<center><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center></td>
+														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
+														<center><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific myinputs" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center></td>
 												</tr>
 											</table>
 										</center>
@@ -2130,7 +2131,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 
 										<div id="specific1" style="display:none;">
-											<select id="years" name="years" class="ss-item-required" required>
+											<select id="years" name="years" class="ss-item-required myinputs" required>
 
 												<option value="">Select Year</option>
 												<option>1990</option>
@@ -2166,7 +2167,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									<td>
 										<div id="specific2" style="display:none;">
 											<br>
-											<select id="makes" name="makes" required  class="ss-item-required">
+											<select id="makes" name="makes" required  class="ss-item-required myinputs">
 												<option value="">Select Make</option>
 											</select>
 										</div>
@@ -2176,7 +2177,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									<td>
 										<div id="specific3" style="display:none;">
 											<br>
-											<select id="models" name="models" required  class="ss-item-required">
+											<select id="models" name="models" required  class="ss-item-required myinputs">
 												<option value="">Select Model</option>
 											</select>
 
@@ -2191,11 +2192,11 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												<tr>
 													<td style="width:50%;">
 														<p style="color:black;">  Low Price:</p>
-														<input id="pricelow" class="" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+														<input id="pricelow" class="myinputs" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
 													</td>
 													<td style="width:50%;">
 														<p style="color:black;">  High Price:</p>
-														<input id="pricehigh" class="" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
+														<input id="pricehigh" class="myinputs" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
 													</td>
 												</tr>
 											</table>
@@ -2210,10 +2211,10 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 											<table style="width:100%;">
 												<tr>
 													<td style="width:50%;">
-														<input type="submit" value="Update" class="bluebtn" style="width:100%;">
+														<input type="submit" value="Update" class="bluebtn myinputs" style="width:100%;">
 													</td>
 													<td style="width:50%;">
-														<input type="button" value="Cancel" class="redbtn" onclick="javascript:reloadcontacts();" style="width:100%;">
+														<input type="button" value="Cancel" class="redbtn myinputs" onclick="javascript:reloadcontacts();" style="width:100%;">
 													</td>
 												</tr>
 											</table>
@@ -2245,7 +2246,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 						<table border="1" align="center">
 							<tr>
 								<td>
-									<input class="bluebtn" type="button" id="displaymatch" value="Display New Matches" />
+									<input class="bluebtn myinputs" type="button" id="displaymatch" value="Display New Matches" />
 								</td>
 							</tr>
 						</table>
@@ -2298,7 +2299,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 						<form id="testForm2" action="http://development.fthru.cogni.design/www/insert2.php" method="post" enctype="multipart/form-data">
 
 
-							<select id="years1" name="years" required>
+							<select id="years1" name="years" class="myinputs" required>
 								<option value="">Select Year</option>
 							    <option>1990</option>
 								<option>1991</option>
@@ -2327,11 +2328,11 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 								<option>2015</option>
 							</select>
 							<br><br>
-							<select id="makes1" name="makes" required>
+							<select id="makes1" name="makes" class="myinputs" required>
 								<option value="">Select Make</option>
 							</select>
 							<br><br>
-							<select id="models1" name="models" required>
+							<select id="models1" name="models" class="myinputs" required>
 								<option value="">Select Model</option>
 							</select>
 							<br><br>
@@ -2342,22 +2343,22 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									<tr>
 										<td style="width:25%;">
 											<center>
-												<input type="radio" name="type[]" value="Cars" class="others" style="zoom:3.5;" checked="checked"/><br><span style="color:black;">Car</span>
+												<input type="radio" name="type[]" value="Cars" class="others myinputs" style="zoom:3.5;" checked="checked"/><br><span style="color:black;">Car</span>
 											</center>
 										</td>
 										<td style="width:25%;">
 											<center>
-												<input type="radio" name="type[]" value="Trucks"  class="others" style="zoom:3.5;" /><br><span style="color:black;">Truck</span>
+												<input type="radio" name="type[]" value="Trucks"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Truck</span>
 											</center>
 										</td>
 										<td style="width:25%;">
 											<center>
-												<input type="radio" name="type[]" value="SUVs"  class="others" style="zoom:3.5;" /><br><span style="color:black;">SUV</span>
+												<input type="radio" name="type[]" value="SUVs"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUV</span>
 											</center>
 										</td>
 										<td style="width:25%;">
 											<center>
-												<input type="radio" name="type[]" value="Crossovers"  class="others" style="zoom:3.5;" /><br><span style="color:black;">Crossover</span>
+												<input type="radio" name="type[]" value="Crossovers"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossover</span>
 											</center>
 										</td>
 									</tr>
@@ -2365,7 +2366,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 							</center>
 							<br>
 							<p style="color:black;">Price:</p>
-							<input type="text" name="price" style="zoom:1.5;" required>
+							<input type="text" name="price" class="myinputs" style="zoom:1.5;" required>
 							<br><br>
 
 
@@ -2379,14 +2380,14 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										<tr>
 											<td style="width:50%;">
 												<center>
-													<input class="bluebtn2" type="button" style="font-family: FontAwesome;font-size: 1.5em;
+													<input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.5em;
 padding-left: 15px;
 zoom: 1.5;" onclick="takePicture();" value="&#xf030;" />
 												</center>
 											</td>
 											<td style="width:50%;">
 												<center>
-													<input class="bluebtn2" type="button" style="font-family: FontAwesome;font-size: 1.5em;
+													<input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.5em;
 padding-left: 17px;
 zoom: 1.5;" onclick="selectPicture();" value="&#xf07c;" />
 												</center>
@@ -2400,7 +2401,7 @@ zoom: 1.5;" onclick="selectPicture();" value="&#xf07c;" />
 										<img style="width:300px;visibility:hidden;display:none;" id="camera_image" src="" />
 									</div>
 									<br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span><br>
-									<input class="bluebtn2" type="button" style="font-family: FontAwesome;font-size: 1.5em;
+									<input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.5em;
 padding-left: 15px;
 zoom: 1.5;" onclick="uploadPicture();" value="&#xf0ee;" />
 
