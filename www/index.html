@@ -193,38 +193,26 @@ color:#6a7894;
     }
 
 </style>
-
-
-
-
-
-
         <link rel="stylesheet" href="css2/normalize.css">
         <link rel="stylesheet" href="css2/main.css">
-
         <link rel="stylesheet" href="css2/iThing.css" type="text/css" />
-    <script src="jquery.min.js"></script>
-    <link rel="stylesheet" href="jquery-ui.css">
-<script src="jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="jquery-ui.css">
 
-
-
-
- <script src="jQRangeSlider-min.js"></script>
- <script src="js/jquery.blockUI.js"></script>
-
-  <script src="jquery.validate.js"></script>
- 	<script src="jquery.maskedinput.js"></script>
- 	 <script src="js/taphold.js" type="text/javascript"></script>
-    <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/jquery.dataTables.min.js"></script>
-	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/dataTables.buttons.min.js"></script>
-	 	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-	 	 <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/pdfmake.js"></script>
-	 	 <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
-	 	 <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.html5.js"></script>
-    <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/dataTables.jqueryui.min.js"></script>
-
-
+        <script src="config.js"></script>
+        <script src="jquery.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
+        <script src="jQRangeSlider-min.js"></script>
+        <script src="js/jquery.blockUI.js"></script>
+        <script src="jquery.validate.js"></script>
+        <script src="jquery.maskedinput.js"></script>
+        <script src="js/taphold.js" type="text/javascript"></script>
+        <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/pdfmake.js"></script>
+        <script type="text/javascript" src="DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
+        <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.html5.js"></script>
+        <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/dataTables.jqueryui.min.js"></script>
     <script>
 
 function initializetables(){
@@ -326,7 +314,7 @@ function initializetables(){
         }],
       "serverSide":true,
       "ajax":{
-        url: "http://cogni.design/cpr/www/server_processing2.php?id="+id//,
+        url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/server_processing2.php?id="+id//,
 
       },
               "initComplete": function () {
@@ -399,7 +387,7 @@ function initializetables(){
         }],
       "serverSide":true,
       "ajax":{
-        url: "http://cogni.design/cpr/www/server_processing.php?id="+id//,
+        url: "http://"+ FTHRU_SETTINGS.API_HOSTNAME +"/www/server_processing.php?id="+id//,
 
       },
               "initComplete": function () {
@@ -718,7 +706,7 @@ var vehiclesinitialized = false;
 		var serializedData = $("#loginForm").serialize();
 
 		var request = $.ajax({
-				url: "http://cogni.design/cpr/www/login.php",
+				url: "http://" + FTHRU_SETTINGS.API_HOSTNAME + "/www/login.php",
 				type: "POST",
 				data: serializedData
 			});
@@ -1045,7 +1033,7 @@ var vehiclesinitialized = false;
 
         $.ajax({
             type: "GET",
-            url: "http://cogni.design/cpr/www/delete.php?contactid="+cid,
+            url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/delete.php?contactid="+cid,
             dataType: "html",
             success: function(response){
                 redraw()
@@ -1080,7 +1068,7 @@ var vehiclesinitialized = false;
       if(buttonIndex == 2){
    $.ajax({
        type: "GET",
-       url: "http://cogni.design/cpr/www/delete2.php?vehicleid="+cid,
+       url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/delete2.php?vehicleid="+cid,
        dataType: "html",
        success: function(response){
 
@@ -1183,7 +1171,7 @@ function enabletext(buttonIndex){
     if(buttonIndex == 2){
         $.ajax({
             type: "GET",
-            url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission=1",
+            url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/permission.php?contactid="+cid+"&permission=1",
             dataType: "html",
             success: function(response){
 
@@ -1212,7 +1200,7 @@ function enabletext(buttonIndex){
                if(buttonIndex == 2){
                    $.ajax({
                        type: "GET",
-                       url: "http://cogni.design/cpr/www/permission.php?contactid="+cid+"&permission=0",
+                       url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/permission.php?contactid="+cid+"&permission=0",
                        dataType: "html",
                        success: function(response){
 
@@ -1363,7 +1351,7 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
       $.ajax({
         type: "GET",
-        url: "http://cogni.design/cpr/www/match.php?id="+id,
+        url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/match.php?id="+id,
         dataType: "html",
         success: function(response){
             $("#responsecontainermatch").html(response);
@@ -1883,7 +1871,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 
 					<div class="cnt_clr">
-						<form id="testForm" action="http://cogni.design/cpr/www/insert.php" method="post">
+						<form id="testForm" action="http://development.fthru.cogni.design/www/insert.php" method="post">
 <br><br>
 							<table class="home_top">
 								<tr>
@@ -2074,7 +2062,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 
 					<div class="cnt_clr">
-						<form id="editForm" action="http://cogni.design/cpr/www/updater.php" method="post">
+						<form id="editForm" action="http://development.fthru.cogni.design/www/updater.php" method="post">
 							<br>
 							<table class="home_top">
 								<tr>
@@ -2314,7 +2302,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 				<div class="cnt_clr">
                     <br><br>
 					<div style="padding: 2px 4px 3px 4px;">
-						<form id="testForm2" action="http://cogni.design/cpr/www/insert2.php" method="post" enctype="multipart/form-data">
+						<form id="testForm2" action="http://development.fthru.cogni.design/www/insert2.php" method="post" enctype="multipart/form-data">
 
 
 							<select id="years1" name="years" required>
@@ -2388,7 +2376,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 							<br><br>
 
 
-							<input id="serverUrl" type="hidden" value="http://cogni.design/cpr/area51/testground/uploader.php" />
+							<input id="serverUrl" type="hidden" value="http://development.fthru.cogni.design/area51/testground/uploader.php" />
 
 
 
