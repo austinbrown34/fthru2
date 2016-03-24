@@ -33,12 +33,10 @@ label {
   padding: 5px 10px;
   margin: 5px 0;
   font: 14px/20px Arial, sans-serif;
-  background-color: #ccc;
-  opacity: .3;
   border-radius: 7px;
 padding-top:20px;
 padding-bottom:20px;
-max-width: 25%;
+max-width: 25vw;
 
 }
 #dvLoading{
@@ -2098,23 +2096,23 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									<td colspan="3">
 
 										<div style="padding: 2px 4px 3px 4px;">
-<label>
+
 											<p style="color:black;">First name:</p>
 											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required myinputs" required>
-</label>
+
                 	</td>
 								</tr>
 								<tr>
 									<td>
-<label>
+
 										<p style="color:black;">Last name:</p>
 										<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required myinputs" required>
-</label>
+
                 	</td>
 								</tr>
 								<tr>
 									<td>
-<label>
+
 										<p style="color:black;">Phone:</p>
 
 										<input id="contactid" name="contactid" type="hidden">
@@ -2128,7 +2126,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
 										-webkit-appearance: none;
 										box-sizing: border-box;" required><br>
-</label>
+
                 	</td>
 								</tr>
 								<tr>
@@ -2139,29 +2137,31 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 											<table style="width:100%;">
 												<tr>
 													<td style="width:25%;">
-                            <label for="cars">
-														<center>
-															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Cars</span>
+
+														<center><label for="cars">
+															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" /><br>Cars</label>
 														</center>
-</label>
+
                           </td>
 													<td style="width:25%;">
-                            <label for="trucks">
+
 														<center>
-															<input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span>
-														</center>
-</label>
+                                <label for="trucks">
+															<input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" /><br>Trucks</label>	</center>
+
+
                         	</td>
 													<td style="width:25%;">
-                            <label for="suvs">
+
 														<center>
-															<input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUVS</span>
+                                <label for="suvs">
+															<input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" /><br>SUVS</label>
 														</center>
-</label>
+
                         	</td>
-													<td style="width:25%;"><label for="crossovers">
-														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center></label></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
-													<label for="specific">	<center><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific myinputs" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center></label></td>
+													<td style="width:25%;">
+														<center><label for="crossovers"><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" /><br>Crossovers</label></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
+														<center><label for="specific"><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific myinputs" style="zoom:3.5;" /><br>Specific</label></center></td>
 												</tr>
 											</table>
 										</center>
@@ -2169,7 +2169,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 
 
-										<div id="specific1" style="display:none;"><label>
+										<div id="specific1" style="display:none;">
 											<select id="years" name="years" class="ss-item-required myinputs" required>
 
 												<option value="">Select Year</option>
@@ -2198,27 +2198,27 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												<option>2013</option>
 												<option>2014</option>
 												<option>2015</option>
-											</select></label>
+											</select>
 										</div>
 									</td>
 								</tr>
 								<tr>
 									<td>
 										<div id="specific2" style="display:none;">
-											<br><label>
+											<br>
 											<select id="makes" name="makes" required  class="ss-item-required myinputs">
 												<option value="">Select Make</option>
-											</select></label>
+											</select>
 										</div>
 									</td>
 								</tr>
 								<tr>
 									<td>
 										<div id="specific3" style="display:none;">
-											<br><label>
+											<br>
 											<select id="models" name="models" required  class="ss-item-required myinputs">
 												<option value="">Select Model</option>
-											</select></label>
+											</select>
 
 										</div>
 									</td>
@@ -2229,14 +2229,14 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										<center>
 											<table>
 												<tr>
-													<td style="width:50%;"><label>
+													<td style="width:50%;">
 														<p style="color:black;">  Low Price:</p>
 														<input id="pricelow" class="myinputs" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
-												</label>	</td>
-													<td style="width:50%;"><label>
+													</td>
+													<td style="width:50%;">
 														<p style="color:black;">  High Price:</p>
 														<input id="pricehigh" class="myinputs" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
-</label>
+
                         	</td>
 												</tr>
 											</table>
@@ -2338,7 +2338,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 					<div style="padding: 2px 4px 3px 4px;">
 						<form id="testForm2" action="http://development.fthru.cogni.design/www/insert2.php" method="post" enctype="multipart/form-data">
 
-<label>
+
 							<select id="years1" name="years" class="myinputs" required>
 								<option value="">Select Year</option>
 							    <option>1990</option>
@@ -2366,47 +2366,48 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 								<option>2013</option>
 								<option>2014</option>
 								<option>2015</option>
-							</select></label>
-							<br><br><label>
+							</select>
+							<br><br>
 							<select id="makes1" name="makes" class="myinputs" required>
 								<option value="">Select Make</option>
-							</select></label>
-							<br><br><label>
+							</select>
+							<br><br>
 							<select id="models1" name="models" class="myinputs" required>
 								<option value="">Select Model</option>
-							</select></label>
+							</select>
 							<br><br>
 							<center>
 
 								<p style="color:black;">Type of Vehicle:</p><br>
 								<table style="width:100%;">
 									<tr>
-										<td style="width:25%;"><label for="cars">
-											<center>
-												<input type="radio" name="type[]" id="cars" value="Cars" class="others myinputs" style="zoom:3.5;" checked="checked"/><br><span style="color:black;">Car</span>
-											</center></label>
+										<td style="width:25%;">
+											<center><label for="cars">
+												<input type="radio" name="type[]" id="cars" value="Cars" class="others myinputs" style="zoom:3.5;" checked="checked"/><br>Car</label>
+											</center>
 										</td>
-										<td style="width:25%;"><label for="trucks">
+										<td style="width:25%;">
 											<center>
-												<input type="radio" name="type[]" id="trucks" value="Trucks"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Truck</span>
-											</center></label>
+                        <label for="trucks">
+												<input type="radio" name="type[]" id="trucks" value="Trucks"  class="others myinputs" style="zoom:3.5;" /><br>Truck</label>
+											</center>
 										</td>
-										<td style="width:25%;"><label for="suvs">
-											<center>
-												<input type="radio" id="suvs" name="type[]" value="SUVs"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUV</span>
-											</center></label>
+										<td style="width:25%;">
+											<center><label for="suvs">
+												<input type="radio" id="suvs" name="type[]" value="SUVs"  class="others myinputs" style="zoom:3.5;" /><br>SUV</label>
+											</center>
 										</td>
-										<td style="width:25%;"><label for="crossovers">
-											<center>
-												<input type="radio" id="crossovers" name="type[]" value="Crossovers"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossover</span>
-											</center></label>
+										<td style="width:25%;">
+											<center><label for="crossovers">
+												<input type="radio" id="crossovers" name="type[]" value="Crossovers"  class="others myinputs" style="zoom:3.5;" /><br>Crossover</label>
+											</center>
 										</td>
 									</tr>
 								</table>
 							</center>
-							<br><label>
+							<br>
 							<p style="color:black;">Price:</p>
-							<input type="text" name="price" class="myinputs" style="zoom:1.5;" required></label>
+							<input type="text" name="price" class="myinputs" style="zoom:1.5;" required>
 							<br><br>
 
 
