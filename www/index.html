@@ -1920,21 +1920,21 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 											<table style="width:100%;">
 												<tr>
 													<td style="width:25%;">
-                            <label>
+                            <label for="cars">
 														<center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Cars</span> </center>
 </label>
                           </td>
 													<td style="width:25%;">
-                            <label>
+                            <label for="trucks">
 														<center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span></center>
 </label>
                         	</td>
-													<td style="width:25%;"><label>
+													<td style="width:25%;"><label for="suvs">
 														<center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUVs</span></center>
 </label>
                         	</td>
 													<td style="width:25%;">
-                            <label>
+                            <label for="crossovers">
 														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center>
 </label>
                         	</td>
@@ -1945,8 +1945,8 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												</tr>
 												<tr>
 													<td colspan=4 style="width:100%;">
-                            <label>
-														<center><input type="checkbox" name="type[]" value="Specific" class="specific myinputs" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center>
+                            <label for="specific">
+														<center><input type="checkbox" name="type[]" id="specific" value="Specific" class="specific myinputs" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center>
 </label>
                         	</td>
 												</tr>
@@ -2124,29 +2124,29 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 											<table style="width:100%;">
 												<tr>
 													<td style="width:25%;">
-                            <label>
+                            <label for="cars">
 														<center>
 															<input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Cars</span>
 														</center>
 </label>
                           </td>
 													<td style="width:25%;">
-                            <label>
+                            <label for="trucks">
 														<center>
 															<input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span>
 														</center>
 </label>
                         	</td>
 													<td style="width:25%;">
-                            <label>
+                            <label for="suvs">
 														<center>
 															<input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUVS</span>
 														</center>
 </label>
                         	</td>
-													<td style="width:25%;"><label>
+													<td style="width:25%;"><label for="crossovers">
 														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center></label></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
-													<label>	<center><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific myinputs" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center></label></td>
+													<label for="specific">	<center><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific myinputs" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center></label></td>
 												</tr>
 											</table>
 										</center>
@@ -2366,24 +2366,24 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 								<p style="color:black;">Type of Vehicle:</p><br>
 								<table style="width:100%;">
 									<tr>
-										<td style="width:25%;"><label>
+										<td style="width:25%;"><label for="cars">
 											<center>
-												<input type="radio" name="type[]" value="Cars" class="others myinputs" style="zoom:3.5;" checked="checked"/><br><span style="color:black;">Car</span>
+												<input type="radio" name="type[]" id="cars" value="Cars" class="others myinputs" style="zoom:3.5;" checked="checked"/><br><span style="color:black;">Car</span>
 											</center></label>
 										</td>
-										<td style="width:25%;"><label>
+										<td style="width:25%;"><label for="trucks">
 											<center>
-												<input type="radio" name="type[]" value="Trucks"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Truck</span>
+												<input type="radio" name="type[]" id="trucks" value="Trucks"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Truck</span>
 											</center></label>
 										</td>
-										<td style="width:25%;"><label>
+										<td style="width:25%;"><label for="suvs">
 											<center>
-												<input type="radio" name="type[]" value="SUVs"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUV</span>
+												<input type="radio" id="suvs" name="type[]" value="SUVs"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUV</span>
 											</center></label>
 										</td>
-										<td style="width:25%;"><label>
+										<td style="width:25%;"><label for="crossovers">
 											<center>
-												<input type="radio" name="type[]" value="Crossovers"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossover</span>
+												<input type="radio" id="crossovers" name="type[]" value="Crossovers"  class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossover</span>
 											</center></label>
 										</td>
 									</tr>
