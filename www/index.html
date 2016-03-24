@@ -1865,8 +1865,8 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 <br><br><br>
 
 		<form id="loginForm" onsubmit="return processLogin();">
-			<div class="fldstyle"><label><input id="email" type="text" name="email" placeholder="Email Address" class="myinputs" autocapitalize="off"/></label></div><br />
-			<div class="fldstyle"><label><input type="password" name="password" class="myinputs" placeholder="Password"/></label></div>
+			<div class="fldstyle"><input id="email" type="text" name="email" placeholder="Email Address" class="myinputs" autocapitalize="off"/></div><br />
+			<div class="fldstyle"><input type="password" name="password" class="myinputs" placeholder="Password"/></div>
 			<button class="bluebtn myinputs" type="submit">Log In �</button>
 		</form><br><hr>
 
@@ -1892,23 +1892,23 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 										<div style="padding: 2px 4px 3px 4px;">
 
-<label>
+
 											<p style="color:black;">First name:</p>
 											<input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required myinputs" required>
-</label>
+
                   </td>
 								</tr>
 								<tr>
 									<td>
-<label>
+
 										<p style="color:black;">Last name:</p>
 										<input type="text" name="lastname"  style="zoom:1.5;" class="ss-item-required myinputs" required>
-</label>
+
                 	</td>
 								</tr>
 								<tr>
 									<td>
-<label>
+
 										<p style="color:black;">Phone:</p>
 
 
@@ -1922,7 +1922,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										border-radius: 3px;
 										box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1);
 										-webkit-appearance: none;
-										box-sizing: border-box;" required><br></label>
+										box-sizing: border-box;" required><br>
 									</td>
 								</tr>
 								<tr>
@@ -1933,23 +1933,25 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 											<table style="width:100%;">
 												<tr>
 													<td style="width:25%;">
+                            <center>
                             <label for="cars">
-														<center><input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Cars</span> </center>
-</label>
+														<input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" /><br>Cars</label> </center>
+
                           </td>
 													<td style="width:25%;">
+                            	<center>
                             <label for="trucks">
-														<center><input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Trucks</span></center>
-</label>
-                        	</td>
-													<td style="width:25%;"><label for="suvs">
-														<center><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">SUVs</span></center>
-</label>
+													<input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" /><br>Trucks</label></center>
+
                         	</td>
 													<td style="width:25%;">
-                            <label for="crossovers">
-														<center><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" /><br><span style="color:black;">Crossovers</span></center>
-</label>
+														<center><label for="suvs"><input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" /><br>SUVs</label></center>
+
+                        	</td>
+													<td style="width:25%;">
+
+														<center>  <label for="crossovers"><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" /><br>Crossovers</label></center>
+
                         	</td>
 												</tr>
 												<tr>
@@ -1958,9 +1960,9 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												</tr>
 												<tr>
 													<td colspan=4 style="width:100%;">
-                            <label for="specific">
-														<center><input type="checkbox" name="type[]" id="specific" value="Specific" class="specific myinputs" style="zoom:3.5;" /><br><span style="color:black;">Specific</span></center>
-</label>
+
+														<center><label for="specific"><input type="checkbox" name="type[]" id="specific" value="Specific" class="specific myinputs" style="zoom:3.5;" /><br>Specific</label></center>
+
                         	</td>
 												</tr>
 											</table>
