@@ -34,12 +34,12 @@ label {
   margin: 5px 0;
   font: 14px/20px Arial, sans-serif;
   background-color: #ccc;
+  opacity: .3;
   border-radius: 7px;
+padding-top:20px;
+padding-bottom:20px;
+max-width: 25%;
 
-  &:hover {
-    background-color: gold;
-    cursor: pointer;
-  }
 }
 #dvLoading{
    background:#000 url(loading2.gif) no-repeat center center;
@@ -1971,7 +1971,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 
 
-										<div id="specific1" style="display:none;"><label>
+										<div id="specific1" style="display:none;">
 											 <select id="years" name="years" class="ss-item-required myinputs" required>
 
 												<option value="">Select Year</option>
@@ -2000,28 +2000,28 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												<option>2013</option>
 												<option>2014</option>
 												<option>2015</option>
-											</select></label>
+											</select>
 										</div>
 									</td>
 								</tr>
 								<tr>
 									<td>
 										<div id="specific2" style="display:none;">
-											<br><label>
+											<br>
 											<select id="makes" name="makes" required  class="ss-item-required myinputs">
 												<option value="">Select Make</option>
-											</select></label>
+											</select>
 										</div>
 									</td>
 								</tr>
 								<tr>
 									<td>
 										<div id="specific3" style="display:none;">
-											<br><label>
+											<br>
 											<select id="models" name="models" required  class="ss-item-required myinputs">
 												<option value="">Select Model</option>
 											</select>
-</label>
+
 										</div>
 									</td>
 								</tr>
@@ -2031,15 +2031,15 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										<center>
 											<table>
 												<tr>
-													<td style="width:50%;"><label>
+													<td style="width:50%;">
 														<p style="color:black;">  Low Price:</p>
 														<input id="pricelow" class="myinputs" name="pricelow" type="text"  value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
-</label>
+
                         	</td>
-													<td style="width:50%;"><label>
+													<td style="width:50%;">
 														<p style="color:black;">  High Price:</p>
 														<input id="pricehigh" class="myinputs" name="pricehigh" type="text"  value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1.5;" class="ss-item-required" required />
-</label>
+
                           </td>
 												</tr>
 											</table>
