@@ -40,14 +40,14 @@ max-width: 25vw;
 
 }
 
-#exampledt tr{
+#exampledt td{
   background-image: url(wave.png);
   background-repeat: no-repeat;
   background-size: 100% 5%;
   background-position-y: 100%;
 }
 
-#exampledt2 tr{
+#exampledt2 td{
 
   background-image: url(wave.png);
   background-repeat: no-repeat;
@@ -449,7 +449,7 @@ function initializetables(){
 
       vehicleid = $(this).find("#vehicleid").text();
 
-  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletevehicle(vehicleid)'>&#xf014; Delete</button></center></td></tr>").insertAfter($(this).closest('tr'));
+  $("<tr class='editdelete'><td colspan=100><center><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletevehicle(vehicleid)'>&#xf014;</button></center></td></tr>").insertAfter($(this).closest('tr'));
 
 
 
@@ -466,7 +466,7 @@ function initializetables(){
                               $('#exampledt').find(".editdelete").remove();
                               contacttable.$('tr.selected').removeClass('selected');
                               $(this).addClass('selected');
-                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td style='width:33%;'><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:editcontact(contactid)'>&#xf044; Edit</button></td><td style='width:33%;'><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletecontact(contactid)'>&#xf014; Delete</button></td><td style='width:33%;'><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 25px;zoom: 1.5;' onclick='javascript:editpermission(contactid,permission)'>&#xf10b; SMS</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
+                              $("<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td style='width:33%;'><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:editcontact(contactid)'>&#xf044;</button></td><td style='width:33%;'><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletecontact(contactid)'>&#xf014;</button></td><td style='width:33%;'><button class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: 1.5em;padding-left: 25px;zoom: 1.5;' onclick='javascript:editpermission(contactid,permission)'>&#xf10b;</button></td></tr></table></td></tr>").insertAfter($(this).closest('tr'));
                               contactid = $(this).find("#contactid").text();
                               $('#edit [name="contactid"]').val(contactid);
                               name = $('td:first', $(this)).text().replace(/\d+/g, '');
@@ -2440,14 +2440,14 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 												<center>
 													<input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.5em;
 padding-left: 15px;
-zoom: 1.5;" onclick="takePicture();" value="&#xf030; Camera" />
+zoom: 1.5; width: 50vw !important;" onclick="takePicture();" value="&#xf030; Camera" />
 												</center>
 											</td>
 											<td style="width:50%;">
 												<center>
 													<input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.5em;
 padding-left: 17px;
-zoom: 1.5;" onclick="selectPicture();" value="&#xf07c; Gallery" />
+zoom: 1.5; width: 50vw !important;" onclick="selectPicture();" value="&#xf07c; Gallery" />
 												</center>
 											</td>
 										</tr>
@@ -2461,7 +2461,7 @@ zoom: 1.5;" onclick="selectPicture();" value="&#xf07c; Gallery" />
 									<br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span><br>
 									<input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.5em;
 padding-left: 15px;
-zoom: 1.5;" onclick="uploadPicture();" value="&#xf0ee; Upload" />
+zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Upload" />
 
 								</div>
 							</center>
