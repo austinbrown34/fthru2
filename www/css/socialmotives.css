@@ -1134,8 +1134,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#086fb6', end
 }
 
 .bluebtn2 {
-	
-	width: 70px;
+
+	width: 30vw;
 	height: 70px;
 		border-top:1px solid #5297cd;
 	box-shadow:0px 6px 0px #00002b;
@@ -1153,7 +1153,7 @@ font-family: FontAwesome;
 margin: auto;
 text-align:center;
    display: inline-block;
-   
+
    vertical-align: middle;
 
 }
