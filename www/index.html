@@ -2601,7 +2601,7 @@ $(".specific").change(function() {
     }
     else{
 
-
+var pagetarget = $("#page");
 
     setTimeout(function(){
       document.getElementById("cars").disabled = false;
@@ -2621,7 +2621,7 @@ $(".specific").change(function() {
                                   pagetarget.scrollTop(0);
                                   setTimeout(function(){
                                       pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-              
+
 
                               },0);
                           },0);
