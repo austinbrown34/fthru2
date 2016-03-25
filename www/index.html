@@ -234,9 +234,7 @@ color:#6a7894;
         FastClick.attach(document.body);
     });
 
-    $('#specific').change(function() {
-alert("changed");
-    });
+
 function initializetables(){
 
   $.fn.dataTable.ext.errMode = 'none';
@@ -1237,7 +1235,9 @@ function enabletext(buttonIndex){
    }
         $(document).ready(function() {
 
-
+          $('#specific').change(function() {
+          alert("changed");
+          });
 if(navigator.userAgent.match(/Android/i)){
   $('#appheader').css("zoom",".74");
 }
