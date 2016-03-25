@@ -1235,9 +1235,7 @@ function enabletext(buttonIndex){
    }
         $(document).ready(function() {
 
-          $('#specific').change(function() {
-          alert("changed");
-          });
+
 if(navigator.userAgent.match(/Android/i)){
   $('#appheader').css("zoom",".74");
 }
@@ -2602,6 +2600,7 @@ $(".specific").change(function() {
          document.getElementById('specific3').style.display = '';
     }
     else{
+      $('#page').scrollTop(0);
     document.getElementById("cars").disabled = false;
         document.getElementById("trucks").disabled = false;
     document.getElementById("suvs").disabled = false;
