@@ -233,6 +233,10 @@ color:#6a7894;
     $(function() {
         FastClick.attach(document.body);
     });
+
+    $(':checkbox').change(function() {
+alert("changed");
+    });
 function initializetables(){
 
   $.fn.dataTable.ext.errMode = 'none';
