@@ -229,6 +229,7 @@ color:#6a7894;
         <script type="text/javascript" src="DataTables/Buttons-1.1.2/js/buttons.html5.js"></script>
         <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/dataTables.jqueryui.min.js"></script>
 <script type='application/javascript' src='js/fastclick.js'></script>
+<script type='application/javascript' src='js/jquery.doubletap.js'></script>
     <script>
     $(function() {
         FastClick.attach(document.body);
@@ -425,7 +426,7 @@ function initializetables(){
 
 
 
-    $('#exampledt2 tbody').on('taphold','tr',function(){
+    $('#exampledt2 tbody').on('doubletap','tr',function(){
   if ( $(this).hasClass('selected') ) {
   			$('#exampledt2').find(".editdelete").remove();
               $(this).removeClass('selected');
@@ -446,7 +447,7 @@ function initializetables(){
     });
 
 
-                      $('#exampledt tbody').on('taphold','tr',function(){
+                      $('#exampledt tbody').on('doubletap','tr',function(){
                           if ( $(this).hasClass('selected') ) {
                               $('#exampledt').find(".editdelete").remove();
                               $(this).removeClass('selected');
