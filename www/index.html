@@ -40,8 +40,17 @@ max-width: 25vw;
 
 }
 
-
-
+.pricewrapper{
+  position:relative;
+  display:inline;
+}
+.pricewrapper:before{
+  content:'&#xf155;';
+  position: absolute;
+  top: 0
+  left:40px;
+  z-index: 1;
+}
 
 #dvLoading{
    background:#000 url(loading2.gif) no-repeat center center;
@@ -2039,7 +2048,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 													<td style="width:50%;">
                             <center>
 														<p style="color:black;">  Low Price:</p>
-														<i class="fa fa-usd" style="border:1px inset #fff;"><input id="pricelow" class="myinputs" name="pricelow" type="number" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></i>
+													<div class="pricewrapper">	<input id="pricelow" class="myinputs" name="pricelow" type="number" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
 </center>
                         	</td>
 													<td style="width:50%;">
