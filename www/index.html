@@ -996,8 +996,8 @@ var vehiclesinitialized = false;
                         $('#makes1').append("<option value='" + data.makeHolder[i].niceName + "'>" + data.makeHolder[i].name + "</option>");
                     });
                     $('#makes1').removeAttr('disabled');
-                    $('#specific2 select').removeAttr('disabled');
-                    $('#specific2 select').css("opacity","1");
+
+                    $('#makes1').css("opacity","1");
                     console.log('Step 2: Makes select was populated and enabled');
                 }
             });
@@ -1016,8 +1016,8 @@ var vehiclesinitialized = false;
                         $('#models1').append("<option value='" + data.modelHolder[i].niceName + "'>" + data.modelHolder[i].name + "</option>");
                     });
                     $('#models1').removeAttr('disabled');
-                    $('#edit #specific3 select').removeAttr('disabled');
-                    $('#edit #specific3 select').css("opacity","1");
+                    // $('#models1').removeAttr('disabled');
+                    $('#models1').css("opacity","1");
                     console.log('Step 4: Models select was populated and enabled');
                 }
             });
