@@ -790,6 +790,7 @@ var vehiclesinitialized = false;
         id= localStorage.getItem('id');
 
                 var pagetarget = $("#page");
+                $("#container").css('background-image', 'none');
                 initializetables();
                 setTimeout(function(){
                     $('#page').scrollTop(0);
@@ -800,13 +801,14 @@ var vehiclesinitialized = false;
                             setTimeout(function(){
                                 $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
                                 setTimeout(function(){
-                                  document.getElementById('appheader').style.display = '';
+
                                     document.getElementById('home').style.display = '';
                                     setTimeout(function(){
                                         pagetarget.scrollTop(0);
                                         setTimeout(function(){
                                             pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
                                             $('#slider').rangeSlider('resize');
+                                            document.getElementById('appheader').style.display = '';
 
                                         },0);
                                     },0);

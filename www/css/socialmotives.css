@@ -402,7 +402,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', end
 #login {
 	text-align:center;
 	padding:0 10.937%;
-	padding-top: 100vh !important;
+	padding-top: 95vh !important;
 }
 #register {
 	text-align:center;
