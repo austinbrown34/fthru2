@@ -1285,18 +1285,35 @@ function enabletext(buttonIndex){
    }
         $(document).ready(function() {
           $('#home #pricelow').on('click', function(){
-            setTimeout(function(){
-                $('#home #keyboard').show();
-                setTimeout(function(){
-                    $('#page').scrollTop($('#pricelow').offset().top);
-                    setTimeout(function(){
-                        ("#home #pricelow").focus();
-                    },0);
-                },0);
-            },0);
+            // setTimeout(function(){
+            //     $('#home #keyboard').show();
+            //     setTimeout(function(){
+            //         $('#page').scrollTop($('#pricelow').offset().top);
+            //         setTimeout(function(){
+            //             ("#home #pricelow").focus();
+            //         },0);
+            //     },0);
+            // },0);
+            //
+$('#home #keyboard').show();
+
+            function doThis(callback) {
+                // This takes a while, but we only want to do doThat() once doThis() is finished
+$('#page').scrollTop($('#pricelow').offset().top);
+                // now fire off the callback
+                if (typeof callback === 'function') {
+                    callback();
+                }
+            }
+
+            function doThat() {
+              ("#home #pricelow").focus();
+                // This takes much less time, but we only want it to fire off when doThis() is done.
+            }
+
+            doThis(doThat);
 
 
-            $
                   // $('html,body').animate({scrollTop: $(this).offset().top}, 800);
               });
 
