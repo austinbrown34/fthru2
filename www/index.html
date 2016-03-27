@@ -810,6 +810,7 @@ var vehiclesinitialized = false;
                                             $('#slider').rangeSlider('resize');
                                             document.getElementById('appheader').style.display = '';
 
+
                                         },0);
                                     },0);
                                 },0);
@@ -1356,7 +1357,8 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
 
         if (id !== null){
-
+          document.getElementById('appheader').style.display = '';
+          $("#container").css('background-image', 'none');
             var pagetarget = $("#page");
             initializetables();
             setTimeout(function(){
