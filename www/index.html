@@ -1016,8 +1016,8 @@ var vehiclesinitialized = false;
                         $('#models1').append("<option value='" + data.modelHolder[i].niceName + "'>" + data.modelHolder[i].name + "</option>");
                     });
                     $('#models1').removeAttr('disabled');
-                    $('#specific3 select').removeAttr('disabled');
-                    $('#specific3 select').css("opacity","1");
+                    $('#edit #specific3 select').removeAttr('disabled');
+                    $('#edit #specific3 select').css("opacity","1");
                     console.log('Step 4: Models select was populated and enabled');
                 }
             });
