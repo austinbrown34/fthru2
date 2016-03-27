@@ -1315,7 +1315,10 @@ $('#home #keyboard').show();
             }
 
             function doThat() {
-              $('#home #pricelow').focus();
+              setTimeout(function(){
+                $('#home #pricelow').focus();
+              },500);
+              
             }
 
             doThis(doThat);
@@ -2154,7 +2157,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 								</tr>
 							</table>
 						</form>
-            <div id="keyboard" style="width:100%; height:300px;display:none;"></div>
+            <div id="keyboard" style="width:100%; height:500px;display:none;"></div>
 					</div>
 
 
