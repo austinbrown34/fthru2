@@ -79,7 +79,8 @@ max-width: 25vw;
   font-family: FontAwesome;
   content:"\f155";
   position: absolute;
-  top: 0
+  top: 0;
+  color: black;
   left:40px;
   z-index: 1;
   font-size: 1em;
@@ -2390,7 +2391,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 					</center>
 				</div>
 			</div>
-			<div id="addcar" class ="appscreen" style="display:none; overflow-x: hidden;">
+			<div id="addcar" class ="appscreen" style="display:none;">
 
 
 				<div class="cnt_clr">
@@ -2469,44 +2470,24 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 							</center>
 							<br>
               <center>
-              <!-- <table style="width:100%;">
+              <table style="width:100%;">
                 <tr><td style="width:100%;">
                   <center>
 							<p style="color:black;">Price:</p>
-							<div class="pricewrapper2"><input type="number" step="1" name="price" class="myinputs" style="zoom:1;width:100vw;" required ></input></div>
-
-
-
-            	<br><br>
+							<div class="pricewrapper2"><input type="number" step="1" name="price" class="myinputs" style="zoom:1;width:100vw;" required /></div>
+							<br><br>
 
 
 
 </center>
 </td>
 </tr>
-</table> -->
+</table>
 
 	<input id="serverUrl" type="hidden" value="http://development.fthru.cogni.design/www/uploadpdf.php" />
 
 </center>
-<center>
-  <table style="width:100%;">
-    <tr>
-      <td style="width:50%;">
-        <center>
-        <p style="color:black;">  Low Price:</p>
-      <div class="pricewrapper">	<input id="pricelow" class="myinputs" name="pricelow" type="number" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
-</center>
-      </td>
-      <td style="width:50%;">
-        <center>
-        <p style="color:black;">  High Price:</p>
-        <div class="pricewrapper"><input id="pricehigh" class="myinputs" name="pricehigh" type="number" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
-</center>
-      </td>
-    </tr>
-  </table>
-</center>
+
 							<center>
 
 								<div>
