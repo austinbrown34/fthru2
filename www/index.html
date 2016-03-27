@@ -1171,7 +1171,10 @@ if(buttonIndex == 2){
  		  setTimeout(function(){
                  $('#page').scrollTop(0);
                  setTimeout(function(){
-                   $("#container").css('background', 'url("../splash.png") no-repeat 100% 100%;');
+                   backimgURL="../splash.png";
+                  //  $("#container").css('background', 'url("../splash.png") no-repeat 100% 100%;');
+                  $("#container").css("background", "url('"+backimgURL+"') no-repeat 100% 100%");
+
                      $('.appscreen').hide();
                      $('#appheader').hide();
 
@@ -1322,7 +1325,7 @@ $('.bluebtn').on('click touchstart', function () {
 
   setTimeout(function () {
       $('.bluebtn').removeClass('activenow');
-  }, 1000);
+  }, 500);
 
 });
 
@@ -1332,7 +1335,7 @@ $('.bluebtn2').on('click touchstart', function () {
 
   setTimeout(function () {
       $('.bluebtn2').removeClass('activenow');
-  }, 1000);
+  }, 500);
 
 });
 
@@ -1342,7 +1345,7 @@ $('.redbtn').on('click touchstart', function () {
 
   setTimeout(function () {
       $('.redbtn').removeClass('activenow');
-  }, 1000);
+  }, 500);
 
 });
 $('#logoff').on('click touchstart', function () {
@@ -1351,7 +1354,7 @@ $('#logoff').on('click touchstart', function () {
 
   setTimeout(function () {
       $('#logoff').removeClass('activenow');
-  }, 1000);
+  }, 500);
 
 });
 
