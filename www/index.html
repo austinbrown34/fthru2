@@ -64,6 +64,33 @@ max-width: 25vw;
 
 }
 
+
+.pricewrapper2{
+  position:relative;
+  display:inline;
+
+
+}
+.pricewrapper2 input{
+    padding-top: 15px !important;
+    padding-left: 25px;
+}
+.pricewrapper2:before{
+  font-family: FontAwesome;
+  content:"\f155";
+  position: absolute;
+  top: 0
+  left:40px;
+  z-index: 1;
+  font-size: 1em;
+  padding-top: 7px;
+  padding-left:2px;
+
+
+}
+
+
+
 #dvLoading{
    background:#000 url(loading2.gif) no-repeat center center;
 
@@ -2446,7 +2473,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
                 <tr><td style="width:100%;">
                   <center>
 							<p style="color:black;">Price:</p>
-							<div class="pricewrapper"><input type="number" step="1" name="price" class="myinputs" style="zoom:1;width:100vw;" required></div>
+							<div class="pricewrapper2"><input type="number" step="1" name="price" class="myinputs" style="zoom:1;width:100vw;" required></div>
 							<br><br>
 
 
