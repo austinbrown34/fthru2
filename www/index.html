@@ -529,6 +529,10 @@ function initializetables(){
 
                               $('#edit #years').change(function() {
                                   console.log('Step 1: Year ' + $(this).val() + ' was selected');
+                                  $('#specific2 select').attr('disabled', 'disabled');
+                                  $('#specific3 select').attr('disabled', 'disabled');
+                                  $('#specific2 select').css("opacity",".4");
+                                  $('#specific3 select').css("opacity",".4");
                                   get_makes3($(this).val());
                               });
 
@@ -601,9 +605,22 @@ function initializetables(){
                                       $("#edit #specific1").css("display","");
                                       $("#edit #specific2").css("display","");
                                       $("#edit #specific3").css("display","");
+                                      $('#edit#specific2 select').attr('disabled', 'disabled');
+                                      $('#edit#specific3 select').attr('disabled', 'disabled');
+                                      $('#edit#specific2 select').css("opacity",".4");
+                                      $('#edit#specific3 select').css("opacity",".4");
 
                                   }
                                   else{
+                                    $('#edit #years').val(function() {
+                                            return $('#edit #years').defaultValue;
+                                        });
+                                        $('#edit #makes').val(function() {
+                                                return $('#edit #makes').defaultValue;
+                                            });
+                                            $('#edit #models').val(function() {
+                                                    return $('#edit #models').defaultValue;
+                                                });
                                       $("#edit #cars").removeAttr('disabled');
                                       $("#edit #trucks").removeAttr('disabled');
                                       $("#edit #suvs").removeAttr('disabled');
@@ -1489,6 +1506,10 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
         }
             $('#years').change(function() {
+              $('#specific2 select').attr('disabled', 'disabled');
+              $('#specific3 select').attr('disabled', 'disabled');
+              $('#specific2 select').css("opacity",".4");
+              $('#specific3 select').css("opacity",".4");
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes($(this).val());
             });
@@ -1506,6 +1527,10 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                 get_style_details($(this).val());
             });
                $('#years1').change(function() {
+                 $('#specific2 select').attr('disabled', 'disabled');
+                 $('#specific3 select').attr('disabled', 'disabled');
+                 $('#specific2 select').css("opacity",".4");
+                 $('#specific3 select').css("opacity",".4");
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes1($(this).val());
             });
@@ -2800,7 +2825,15 @@ $(".specific").change(function() {
     else{
 
 var pagetarget = $("#page");
-
+$('#years').val(function() {
+        return $('#years').defaultValue;
+    });
+    $('#makes').val(function() {
+            return $('#makes').defaultValue;
+        });
+        $('#models').val(function() {
+                return $('#models').defaultValue;
+            });
     setTimeout(function(){
       document.getElementById("cars").disabled = false;
           document.getElementById("trucks").disabled = false;
