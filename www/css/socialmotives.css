@@ -5,6 +5,11 @@ SOCIAL MOTIVES CSS
 FONTS
 */
 
+.activenow {
+	-webkit-filter: grayscale(100%) !important; /* Chrome, Safari, Opera */
+     filter: grayscale(100%) !important;
+}
+
 #radar2 {
 
 background: url(../arrow.png) no-repeat top;
@@ -477,6 +482,8 @@ background-color: ghostwhite;
 .bluebtn,
 .dontchangethisline
 {
+		-webkit-filter: none;
+	filter: none;
 	padding:20px;
 	color:white;
 	text-shadow: 0px -1px 1px #111;

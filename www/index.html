@@ -1316,6 +1316,44 @@ function enabletext(buttonIndex){
 //
 //                   // $('html,body').animate({scrollTop: $(this).offset().top}, 800);
 //               });
+$('.bluebtn').on('click touchstart', function () {
+
+  $(this).addClass("activenow");
+
+  setTimeout(function () {
+      $('.bluebtn').removeClass('activenow');
+  }, 1000);
+
+});
+
+$('.bluebtn2').on('click touchstart', function () {
+
+  $(this).addClass("activenow");
+
+  setTimeout(function () {
+      $('.bluebtn2').removeClass('activenow');
+  }, 1000);
+
+});
+
+$('.redbtn').on('click touchstart', function () {
+
+  $(this).addClass("activenow");
+
+  setTimeout(function () {
+      $('.redbtn').removeClass('activenow');
+  }, 1000);
+
+});
+$('#logoff').on('click touchstart', function () {
+
+  $(this).addClass("activenow");
+
+  setTimeout(function () {
+      $('#logoff').removeClass('activenow');
+  }, 1000);
+
+});
 
 if(navigator.userAgent.match(/Android/i)){
   $('#appheader').css("zoom",".74");
@@ -1920,7 +1958,7 @@ submitHandler: function(form) {
 
 <div id="appheader">
 <div style="position: absolute;
-		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><i class="fa fa-sign-out fa-3x myinputs" style="position: absolute;
+		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><i id="logoff" class="fa fa-sign-out fa-3x myinputs" style="position: absolute;
 right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
 
 		<div id="tabs" class="font_PNbold" style="zoom: .8;">
