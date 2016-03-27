@@ -1284,18 +1284,24 @@ function enabletext(buttonIndex){
 
    }
         $(document).ready(function() {
-          var _originalSize = $(window).width() + $(window).height()
-  $(window).resize(function(){
-    if($(window).width() + $(window).height() != _originalSize){
-      console.log("keyboard show up");
-      // $(".copyright_link").css("position","relative");
-    }else{
-      console.log("keyboard closed");
-      $('#page').scrollTop(0);
-      $('#home #keyboard').hide();
+  //         var _originalSize = $(window).width() + $(window).height()
+  // $(window).resize(function(){
+  //   if($(window).width() + $(window).height() != _originalSize){
+  //     console.log("keyboard show up");
+  //     // $(".copyright_link").css("position","relative");
+  //   }else{
+  //     console.log("keyboard closed");
+  //     $('#page').scrollTop(0);
+  //     $('#home #keyboard').hide();
+  //
+  //     // $(".copyright_link").css("position","fixed");
+  //   }
+  $("#home #pricelow").blur(function(){
+        $('#page').scrollTop(0);
+        $('#home #keyboard').hide();
+  });
 
-      // $(".copyright_link").css("position","fixed");
-    }
+
   });
           $('#home #pricelow').on('click', function(){
             // setTimeout(function(){
@@ -1312,7 +1318,7 @@ $('#home #keyboard').show();
 
             function doThis(callback) {
                 // This takes a while, but we only want to do doThat() once doThis() is finished
-$('#page').scrollTop($("#home").attr("scrollHeight"));
+$('#page').scrollTop($('#pricelow').offset().top);
                 // now fire off the callback
                 if (typeof callback === 'function') {
                     callback();
