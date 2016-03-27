@@ -1097,6 +1097,7 @@ var vehiclesinitialized = false;
 					$('#edit [name="models"]').val(model);
 
                     $('#edit #models').removeAttr('disabled');
+                    $('#edit #models').css("opacity","1");
                     console.log('Step 4: Models select was populated and enabled');
 
                 }
@@ -2946,6 +2947,9 @@ function onTouchEnd(e) {
 
 	     var pagetarget = $("#page");
 if(divId != "start"){
+  if(divId != "viewuser" && divId != "viewcar"){
+      $.unblockUI();
+  }
 	    setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
@@ -3116,6 +3120,7 @@ target.bind(startEvent, function(e) {
                          setTimeout(function(){
                              $('li').removeClass('active');$('#tabs #tm_mtch').addClass('active');
                              setTimeout(function(){
+                                 $.unblockUI();
                                  document.getElementById('match').style.display = '';
                                  setTimeout(function(){
                                      pagetarget.scrollTop(0);
@@ -3166,6 +3171,7 @@ target2.bind(startEvent, function(e) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_fri').addClass('active');
                             setTimeout(function(){
+                                $.unblockUI();
                                 document.getElementById('addcar').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -3205,6 +3211,7 @@ target2.bind(startEvent, function(e) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
                             setTimeout(function(){
+                                $.unblockUI();
                                 document.getElementById('home').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -3371,6 +3378,7 @@ target4.bind(startEvent, function(e) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_mtch').addClass('active');
                             setTimeout(function(){
+                                $.unblockUI();
                                 document.getElementById('match').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -3412,6 +3420,7 @@ target4.bind(startEvent, function(e) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_fri').addClass('active');
                             setTimeout(function(){
+                                $.unblockUI();
                                 document.getElementById('addcar').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
@@ -3463,6 +3472,7 @@ target5.bind(startEvent, function(e) {
                         setTimeout(function(){
                             $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
                             setTimeout(function(){
+                                $.unblockUI();
                                 document.getElementById('home').style.display = '';
                                 setTimeout(function(){
                                     pagetarget.scrollTop(0);
