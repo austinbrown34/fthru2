@@ -324,7 +324,7 @@ function initializetables(){
 
                         }
                         catch(err){
-                          alert("error: "+err);
+                          console.log("error: "+err);
                         }
                     }
   				  else{
@@ -1079,9 +1079,10 @@ var vehiclesinitialized = false;
 
      setTimeout(function () {
          $('#editbutton').removeClass('activenow2');
+         document.getElementById('viewuser').style.display = 'none';$('#page').scrollTop(0);document.getElementById('edit').style.display = '';
+
      }, 500);
 
-       document.getElementById('viewuser').style.display = 'none';$('#page').scrollTop(0);document.getElementById('edit').style.display = '';
 
 
   $.unblockUI();
@@ -1383,13 +1384,26 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
   $('#appheader').css("zoom",".88");
 }
 		$(document).ajaxError(function(e, jqxhr, settings, exception) {
-            alert(exception);});
+            console.log(exception);});
 		window.onerror = function(error){console.log(error);};
 
             document.addEventListener("deviceready", function() {deviceReady = true;}, false);
             window.setTimeout(function() {
                 if (!deviceReady) {
-                    alert("Error: PhoneGap did not initialize.  Please restart the app.");
+                    // alert("Error: fThru Core Engine did not initialize.  Please restart the app.");
+
+
+                    function engineerrorDismissed() {
+                        fieldsmessage = "reset";
+                    }
+
+                    navigator.notification.alert(
+                            'Error: fThru Core Engine did not initialize.  Please restart the app.',
+                            engineerrorDismissed,
+                            'fTHRU',
+                            'OK'
+                    );
+
                 }
                 else{
 
