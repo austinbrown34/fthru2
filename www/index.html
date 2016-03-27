@@ -43,7 +43,7 @@ max-width: 25vw;
 .pricewrapper{
   position:relative;
   display:inline;
-  margin-top: 5px;
+
 }
 .pricewrapper:before{
   font-family: FontAwesome;
@@ -53,6 +53,7 @@ max-width: 25vw;
   left:40px;
   z-index: 1;
   font-size: 1em;
+  padding-top: 15px;
 
 
 }
@@ -2059,7 +2060,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 													<td style="width:50%;">
                             <center>
 														<p style="color:black;">  High Price:</p>
-														<i class="fa fa-usd" style="border:1px inset #fff;"><input id="pricehigh" class="myinputs" name="pricehigh" type="number" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></i>
+														<div class="pricewrapper"><input id="pricehigh" class="myinputs" name="pricehigh" type="number" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
 </center>
                           </td>
 												</tr>
@@ -2255,13 +2256,13 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 													<td style="width:50%;">
                             <center>
 														<p style="color:black;">  Low Price:</p>
-														<i style="border:1px inset #fff;" class="fa fa-usd"><input id="pricelow" class="myinputs" name="pricelow" type="number" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></i>
+														<div class="pricewrapper"><input id="pricelow" class="myinputs" name="pricelow" type="number" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
 </center>
                           </td>
 													<td style="width:50%;">
                             <center>
 														<p style="color:black;">  High Price:</p>
-														<i style="border:1px inset #fff;" class="fa fa-usd"><input id="pricehigh" class="myinputs" name="pricehigh" type="number" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></i>
+														<div class="pricewrapper"><input id="pricehigh" class="myinputs" name="pricehigh" type="number" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
 </center>
                         	</td>
 												</tr>
@@ -2439,7 +2440,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
                 <tr><td style="width:100%;">
                   <center>
 							<p style="color:black;">Price:</p>
-							<i style="color:black;border:1px inset #fff;" class="fa fa-usd"><input type="number" step="1" name="price" class="myinputs" style="zoom:1;width:100vw;" required></i>
+							<div class="pricewrapper"><input type="number" step="1" name="price" class="myinputs" style="zoom:1;width:100vw;" required></div>
 							<br><br>
 
 
