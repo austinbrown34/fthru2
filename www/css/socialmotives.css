@@ -12,10 +12,11 @@ FONTS
 }
 .activenow2 {
 
-	   -moz-box-shadow:    inset 0px 0px 20px 10px rgba(0,0,0,0.5) !important;
+	   /*-moz-box-shadow:    inset 0px 0px 20px 10px rgba(0,0,0,0.5) !important;
 	   -webkit-box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.5) !important;
-	   box-shadow:         inset 0px 0px 20px 10px rgba(0,0,0,0.5) !important;
-
+	   box-shadow:         inset 0px 0px 20px 10px rgba(0,0,0,0.5) !important;*/
+		 -webkit-filter: invert(100%);
+		     filter: invert(100%);
 
 }
 
