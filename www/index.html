@@ -1285,10 +1285,18 @@ function enabletext(buttonIndex){
    }
         $(document).ready(function() {
           $('#home #pricelow').on('click', function(){
-            alert("ho");
-            $('#home #keyboard').show();
-            $('#page').scrollTop($(this).offset().top);
-            $("#home #pricelow").focus();
+            setTimeout(function(){
+                $('#home #keyboard').show();
+                setTimeout(function(){
+                    $('#page').scrollTop($(this).offset().top);
+                    setTimeout(function(){
+                        ("#home #pricelow").focus();
+                    },0);
+                },0);
+            },0);
+
+
+            $
                   // $('html,body').animate({scrollTop: $(this).offset().top}, 800);
               });
 
@@ -2122,7 +2130,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 								</tr>
 							</table>
 						</form>
-            <div id="keyboard" style="width:100%; height:30vh;display:none;"></div>
+            <div id="keyboard" style="width:100%; height:100vh;display:none;"></div>
 					</div>
 
 
