@@ -1297,32 +1297,15 @@ function enabletext(buttonIndex){
   //     // $(".copyright_link").css("position","fixed");
   //   }
   $('#home #pricelow').blur(function(){
-        $('#page').scrollTop(0);
-        $('#home #keyboard').hide();
+    $('#appheader').css("position","fixed");
   });
 
 
 
-          $('#home #pricelow').on('click', function(){
+          $('#home #pricelow').focus(function(){
 
-$('#home #keyboard').show();
 
-            function doThis(callback) {
-              $('#page').scrollTop($('#pricelow').offset().top);
-                if (typeof callback === 'function') {
-                    callback();
-                }
-            }
-
-            function doThat() {
-              setTimeout(function(){
-                $('#home #pricelow').focus();
-              },500);
-              
-            }
-
-            doThis(doThat);
-
+$('#appheader').css("position","static");
 
                   // $('html,body').animate({scrollTop: $(this).offset().top}, 800);
               });
