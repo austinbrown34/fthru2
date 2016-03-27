@@ -1171,7 +1171,7 @@ if(buttonIndex == 2){
  		  setTimeout(function(){
                  $('#page').scrollTop(0);
                  setTimeout(function(){
-                   backimgURL="../splash.png";
+                  var backimgURL="splash.png";
                   //  $("#container").css('background', 'url("../splash.png") no-repeat 100% 100%;');
                   $("#container").css("background", "url('"+backimgURL+"') no-repeat 100% 100%");
 
@@ -1331,10 +1331,10 @@ $('.bluebtn').on('click touchstart', function () {
 
 $('.bluebtn2').on('click touchstart', function () {
 
-  $(this).addClass("activenow");
+  $(this).addClass("activenow2");
 
   setTimeout(function () {
-      $('.bluebtn2').removeClass('activenow');
+      $('.bluebtn2').removeClass('activenow2');
   }, 500);
 
 });
@@ -1350,10 +1350,10 @@ $('.redbtn').on('click touchstart', function () {
 });
 $('#logoff').on('click touchstart', function () {
 
-  $(this).addClass("activenow");
+  $(this).addClass("activenow2");
 
   setTimeout(function () {
-      $('#logoff').removeClass('activenow');
+      $('#logoff').removeClass('activenow2');
   }, 500);
 
 });
