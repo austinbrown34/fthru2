@@ -424,13 +424,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', end
 }
 
 #login .fldstyle {
-	display:inline-block;
+	display: initial;
 	width:100%;
 	border:3px solid #999;
 	border-color:rgb(0,112,166);
 	margin-bottom:20px;
 	border-radius:8px;
 	background-color:white;
+	zoom:1.5;
 
 background: rgb(255,255,255); /* Old browsers */
 

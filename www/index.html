@@ -1171,7 +1171,10 @@ if(buttonIndex == 2){
  		  setTimeout(function(){
                  $('#page').scrollTop(0);
                  setTimeout(function(){
+                   $("#container").css('background', 'url("../splash.png") no-repeat 100% 100%;');
                      $('.appscreen').hide();
+                     $('#appheader').hide();
+
                      setTimeout(function(){
                          pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
                          setTimeout(function(){
