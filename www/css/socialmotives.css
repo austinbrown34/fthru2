@@ -426,7 +426,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', end
 #login .fldstyle {
 	display: initial;
 	width:100%;
-	border:3px solid #999;
+	/*border:3px solid #999;*/
 	border-color:rgb(0,112,166);
 	margin-bottom:20px;
 	border-radius:8px;
@@ -449,13 +449,13 @@ background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,
 #login input {
 	width:100%;
 	border-radius:5px;
-	border:1px solid #00759b;
+	border: 1px solid #ECBDE7;
 	box-shadow:inset 0px 3px 5px #bfbfbf;
 	height:50px;
-	font-size:24px;
+	font-size: 20px;
 	text-align:center;
 	vertical-align:central;
-	background-color:transparent;
+background-color: ghostwhite;
 /* 	background-image:url(../images/info_circle.png); */
 	background-position:95% 50%;
 	background-repeat:no-repeat;
