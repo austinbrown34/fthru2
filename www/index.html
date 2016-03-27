@@ -1371,10 +1371,21 @@ function enabletext(buttonIndex){
 //                   // $('html,body').animate({scrollTop: $(this).offset().top}, 800);
 //               });
 
-$('#specific2 select').attr('disabled', 'disabled');
-$('#specific3 select').attr('disabled', 'disabled');
-$('#specific2 select').css("opacity",".4");
-$('#specific3 select').css("opacity",".4");
+$('#home #specific2 select').attr('disabled', 'disabled');
+$('#home #specific3 select').attr('disabled', 'disabled');
+$('#home #specific2 select').css("opacity",".4");
+$('#home #specific3 select').css("opacity",".4");
+
+$('#edit #specific2 select').attr('disabled', 'disabled');
+$('#edit #specific3 select').attr('disabled', 'disabled');
+$('#edit #specific2 select').css("opacity",".4");
+$('#edit #specific3 select').css("opacity",".4");
+
+$('#makes1').attr('disabled', 'disabled');
+$('#models1').attr('disabled', 'disabled');
+$('#makes1').css("opacity",".4");
+$('#models1').css("opacity",".4");
+
 $('.bluebtn').on('click touchstart', function () {
 
   $(this).addClass("activenow");
@@ -1532,10 +1543,10 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
                 get_style_details($(this).val());
             });
                $('#years1').change(function() {
-                 $('#specific2 select').attr('disabled', 'disabled');
-                 $('#specific3 select').attr('disabled', 'disabled');
-                 $('#specific2 select').css("opacity",".4");
-                 $('#specific3 select').css("opacity",".4");
+                 $('#makes1').attr('disabled', 'disabled');
+                 $('#models1').attr('disabled', 'disabled');
+                 $('#makes1').css("opacity",".4");
+                 $('#models1').css("opacity",".4");
                 console.log('Step 1: Year ' + $(this).val() + ' was selected');
                 get_makes1($(this).val());
             });
