@@ -1291,7 +1291,9 @@ function enabletext(buttonIndex){
       // $(".copyright_link").css("position","relative");
     }else{
       console.log("keyboard closed");
+      $('#page').scrollTop(0);
       $('#home #keyboard').hide();
+
       // $(".copyright_link").css("position","fixed");
     }
   });
@@ -1318,7 +1320,7 @@ $('#page').scrollTop($('#pricelow').offset().top);
             }
 
             function doThat() {
-              ("#home #pricelow").focus();
+              $('#home #pricelow').focus();
                 // This takes much less time, but we only want it to fire off when doThis() is done.
             }
 
@@ -2158,7 +2160,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 								</tr>
 							</table>
 						</form>
-            <div id="keyboard" style="width:100%; height:85vh;display:none;"></div>
+            <div id="keyboard" style="width:100%; height:90vh;display:none;"></div>
 					</div>
 
 
