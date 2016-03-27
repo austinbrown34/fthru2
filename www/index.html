@@ -800,6 +800,7 @@ var vehiclesinitialized = false;
                             setTimeout(function(){
                                 $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
                                 setTimeout(function(){
+                                  document.getElementById('appheader').style.display = '';
                                     document.getElementById('home').style.display = '';
                                     setTimeout(function(){
                                         pagetarget.scrollTop(0);
@@ -1296,19 +1297,19 @@ function enabletext(buttonIndex){
   //
   //     // $(".copyright_link").css("position","fixed");
   //   }
-  $('#home #pricelow').blur(function(){
-    $('#appheader').css("position","fixed");
-  });
-
-
-
-          $('#home #pricelow').focus(function(){
-
-
-$('#appheader').css("position","absolute");
-
-                  // $('html,body').animate({scrollTop: $(this).offset().top}, 800);
-              });
+//   $('#home #pricelow').blur(function(){
+//     $('#appheader').css("position","fixed");
+//   });
+//
+//
+//
+//           $('#home #pricelow').focus(function(){
+//
+//
+// $('#appheader').css("position","absolute");
+//
+//                   // $('html,body').animate({scrollTop: $(this).offset().top}, 800);
+//               });
 
 if(navigator.userAgent.match(/Android/i)){
   $('#appheader').css("zoom",".74");
@@ -1937,15 +1938,19 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 
 			<div id="start" class="appscreen" style="display:none;">
+        <div id="register">
+    <button class="bluebtn myinputs" type="submit">Free Registration <i class="fa fa-user-plus"></i></button>
 
 
-        <div id="login" style="padding-top: 50px;">
+      </div>
+
+        <div id="login">
 <br><br><br>
 
 		<form id="loginForm" onsubmit="return processLogin();">
 			<div class="fldstyle"><input id="email" type="text" name="email" placeholder="Email Address" class="myinputs" autocapitalize="off"/></div><br />
 			<div class="fldstyle"><input type="password" name="password" class="myinputs" placeholder="Password"/></div>
-			<button class="bluebtn myinputs" type="submit">Log In <i class="fa fa-cog fa-spin"></i></button>
+			<button class="bluebtn myinputs"  type="submit">Log In <i class="fa fa-cog fa-spin"></i></button>
 		</form><br><hr>
 
 	</div>
