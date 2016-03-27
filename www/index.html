@@ -1284,6 +1284,17 @@ function enabletext(buttonIndex){
 
    }
         $(document).ready(function() {
+          var _originalSize = $(window).width() + $(window).height()
+  $(window).resize(function(){
+    if($(window).width() + $(window).height() != _originalSize){
+      console.log("keyboard show up");
+      // $(".copyright_link").css("position","relative");
+    }else{
+      console.log("keyboard closed");
+      $('#home #keyboard').hide();
+      // $(".copyright_link").css("position","fixed");
+    }
+  });
           $('#home #pricelow').on('click', function(){
             // setTimeout(function(){
             //     $('#home #keyboard').show();
@@ -2147,7 +2158,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 								</tr>
 							</table>
 						</form>
-            <div id="keyboard" style="width:100%; height:70vh;display:none;"></div>
+            <div id="keyboard" style="width:100%; height:85vh;display:none;"></div>
 					</div>
 
 
