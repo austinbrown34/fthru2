@@ -401,7 +401,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', end
 /* CONTENT CLEAR CONTAINER */
 
 .cnt_clr {
-	margin: 0px 3% 30px;
+	margin: 0 2.5% 30px;
 	text-align: left;
 	color: white;
 	background: rgba(196, 217, 255, 0.24);
@@ -409,7 +409,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', end
 	border-style: dotted;
 	border-width: 1px 1px 1px 1px;
 	padding: 20px;
+	/* padding-top: 0px; */
 	box-shadow: inset 0px 0px 15px 4px rgba(103, 98, 98, 0.15);
+	margin-top: 10px;
 }
 
 
