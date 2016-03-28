@@ -47,8 +47,8 @@ max-width: 25vw;
 
 }
 .pricewrapper input{
-    padding-top: 15px !important;
-    padding-left: 25px;
+    padding-top: 17px !important;
+    padding-left: 26px;
 }
 .pricewrapper:before{
   font-family: FontAwesome;
@@ -58,6 +58,7 @@ max-width: 25vw;
   font-size: 1em;
   padding-top: 7px;
   padding-left:2px;
+  padding-right:3px;
 
 
 }
@@ -70,8 +71,8 @@ max-width: 25vw;
 
 }
 .pricewrapper2 input{
-    padding-top: 15px !important;
-    padding-left: 25px;
+    padding-top: 17px !important;
+    padding-left: 26px;
 }
 .pricewrapper2:before{
 
@@ -86,6 +87,7 @@ max-width: 25vw;
   font-size: 1em;
   padding-top: 7px;
   padding-left:2px;
+    padding-right:3px;
 
 
 }
@@ -1856,63 +1858,81 @@ submitHandler: function(form) {
 	});
 	});
   function submitcar(){
-    var postData = new FormData($(form)[0]);
-     var formURL = $(form).attr("action");
-     $.ajax(
-     {
-         url : formURL+"?id="+id,
-         type: "POST",
-         data : postData,
-         async: false,
-         success:function(data, textStatus, jqXHR)
-         {
+    $("#testForm2").validate({
+		rules: {
+		 price: {
+      number: true
+    }},
+		submitHandler: function(form)
+		{
 
 
-             function alertDismissed() {
-                 redraw();
-                 $("#testForm2")[0].reset();
-                 $("#camera_status").text('');
-                 $("#camera_image").attr("src","");
-         var img = document.getElementById('camera_image');
-                 img.style.visibility = "hidden";
-          $('#page').scrollTop(0);
-             }
-
-             navigator.notification.alert(
-                     'Your new vehicle has been added successfully!',
-                     alertDismissed,
-                     'fTHRU',
-                     'OK'
-             );
+      var postData = new FormData($(form)[0]);
+       var formURL = $(form).attr("action");
+       $.ajax(
+       {
+           url : formURL+"?id="+id,
+           type: "POST",
+           data : postData,
+           async: false,
+           success:function(data, textStatus, jqXHR)
+           {
 
 
+               function alertDismissed() {
+                   redraw();
+                   $("#testForm2")[0].reset();
+                   $("#camera_status").text('');
+                   $("#camera_image").attr("src","");
+           var img = document.getElementById('camera_image');
+                   img.style.visibility = "hidden";
+            $('#page').scrollTop(0);
+               }
 
-         },
-         cache: false,
-         contentType: false,
-         processData: false,
-         error: function(jqXHR, textStatus, errorThrown)
-         {
-
-             function alertDismissed() {
-                 $("#testForm2")[0].reset();
-                 $("#camera_status").text('');
-         $("#camera_image").attr("src","");
-                 var img = document.getElementById('camera_image');
-                 img.style.visibility = "hidden";
-          $('#page').scrollTop(0);
-             }
-
-             navigator.notification.alert(
-                     'There was a problem adding your vehicle.',
-                     alertDismissed,
-                     'fTHRU',
-                     'OK'
-             );
+               navigator.notification.alert(
+                       'Your new vehicle has been added successfully!',
+                       alertDismissed,
+                       'fTHRU',
+                       'OK'
+               );
 
 
-         }
-     });
+
+           },
+           cache: false,
+           contentType: false,
+           processData: false,
+           error: function(jqXHR, textStatus, errorThrown)
+           {
+
+               function alertDismissed() {
+                   $("#testForm2")[0].reset();
+                   $("#camera_status").text('');
+           $("#camera_image").attr("src","");
+                   var img = document.getElementById('camera_image');
+                   img.style.visibility = "hidden";
+            $('#page').scrollTop(0);
+               }
+
+               navigator.notification.alert(
+                       'There was a problem adding your vehicle.',
+                       alertDismissed,
+                       'fTHRU',
+                       'OK'
+               );
+
+
+           }
+       });
+
+
+
+
+		}
+
+
+	});
+
 
   }
 	</script>
@@ -2662,7 +2682,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
                 <tr><td style="width:100%;">
                   <center>
 							<!-- <p style="color:black;">Price:</p> -->
-							<div class="pricewrapper2"><input type="number" step="1" name="price" class="myinputs" style="zoom:1;width:50vw;" placeholder= "Asking Price" required /></div>
+							<div class="pricewrapper2"><input type="number" step="1" name="price" class="myinputs" style="zoom:1;width:55vw;" placeholder= "Asking Price" required /></div>
 							<br><br>
 
 
