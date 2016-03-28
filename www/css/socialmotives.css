@@ -4,20 +4,8 @@ SOCIAL MOTIVES CSS
 
 FONTS
 */
-input{
-	/*width: 100%;*/
-	    border-radius: 5px;
-	    border: 1px solid #ECBDE7;
-	    box-shadow: inset 0px 3px 5px #bfbfbf;
-	    height: 50px;
-	    font-size: 20px;
-	    /*text-align: center;*/
-	    vertical-align: central;
-	    background-color: ghostwhite;
-	    /* background-image: url(../images/info_circle.png); */
-	    background-position: 95% 50%;
-	    background-repeat: no-repeat;
-
+::-webkit-input-placeholder {
+   text-align: center;
 }
 
 
