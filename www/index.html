@@ -146,7 +146,7 @@ font-family: FontAwesome;
 
 .ui-toolbar{
 
-background: #cccccc url("ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x !important;
+background: rgba(196, 217, 255, 0.44) url("ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x !important;
 }
 
     .dataTables_processing {
@@ -1844,66 +1844,9 @@ submitHandler: function(form) {
 		submitHandler: function(form)
 		{
 
+    uploadPicture();
 
 
-
-   var postData = new FormData($(form)[0]);
-    var formURL = $(form).attr("action");
-    $.ajax(
-    {
-        url : formURL+"?id="+id,
-        type: "POST",
-        data : postData,
-        async: false,
-        success:function(data, textStatus, jqXHR)
-        {
-
-
-            function alertDismissed() {
-                redraw();
-                $("#testForm2")[0].reset();
-                $("#camera_status").text('');
-                $("#camera_image").attr("src","");
-				var img = document.getElementById('camera_image');
-                img.style.visibility = "hidden";
-				 $('#page').scrollTop(0);
-            }
-
-            navigator.notification.alert(
-                    'Your new vehicle has been added successfully!',
-                    alertDismissed,
-                    'fTHRU',
-                    'OK'
-            );
-
-
-
-        },
-        cache: false,
-        contentType: false,
-        processData: false,
-        error: function(jqXHR, textStatus, errorThrown)
-        {
-
-            function alertDismissed() {
-                $("#testForm2")[0].reset();
-                $("#camera_status").text('');
-				$("#camera_image").attr("src","");
-                var img = document.getElementById('camera_image');
-                img.style.visibility = "hidden";
-				 $('#page').scrollTop(0);
-            }
-
-            navigator.notification.alert(
-                    'There was a problem adding your vehicle.',
-                    alertDismissed,
-                    'fTHRU',
-                    'OK'
-            );
-
-
-        }
-    });
 
 
 
@@ -1912,6 +1855,66 @@ submitHandler: function(form) {
 
 	});
 	});
+  function submitcar(){
+    var postData = new FormData($(form)[0]);
+     var formURL = $(form).attr("action");
+     $.ajax(
+     {
+         url : formURL+"?id="+id,
+         type: "POST",
+         data : postData,
+         async: false,
+         success:function(data, textStatus, jqXHR)
+         {
+
+
+             function alertDismissed() {
+                 redraw();
+                 $("#testForm2")[0].reset();
+                 $("#camera_status").text('');
+                 $("#camera_image").attr("src","");
+         var img = document.getElementById('camera_image');
+                 img.style.visibility = "hidden";
+          $('#page').scrollTop(0);
+             }
+
+             navigator.notification.alert(
+                     'Your new vehicle has been added successfully!',
+                     alertDismissed,
+                     'fTHRU',
+                     'OK'
+             );
+
+
+
+         },
+         cache: false,
+         contentType: false,
+         processData: false,
+         error: function(jqXHR, textStatus, errorThrown)
+         {
+
+             function alertDismissed() {
+                 $("#testForm2")[0].reset();
+                 $("#camera_status").text('');
+         $("#camera_image").attr("src","");
+                 var img = document.getElementById('camera_image');
+                 img.style.visibility = "hidden";
+          $('#page').scrollTop(0);
+             }
+
+             navigator.notification.alert(
+                     'There was a problem adding your vehicle.',
+                     alertDismissed,
+                     'fTHRU',
+                     'OK'
+             );
+
+
+         }
+     });
+
+  }
 	</script>
 	<style>
 	#commentForm {
@@ -2007,6 +2010,7 @@ submitHandler: function(form) {
             ft.upload(imageURI, server, function(r) {
                 document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
                 document.getElementById("fileToUpload").value = newimageid+".jpg";
+                submitcar();
             }, function(error) {
                 document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
             }, options);
@@ -2704,9 +2708,9 @@ zoom: 1.5; width: 50vw !important;" onclick="selectPicture();" value="&#xf07c; G
 										<img style="width:300px;visibility:hidden;display:none;" id="camera_image" src="" />
 									</div>
 									<br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span><br>
-									<input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.1em;
+									<!-- <input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.1em;
 padding-left: 15px;
-zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Upload" />
+zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Upload" /> -->
 
 								</div>
 							</center>
