@@ -401,9 +401,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', end
 /* CONTENT CLEAR CONTAINER */
 
 .cnt_clr {
-	margin:0px 3.125% 30px;
-	text-align:left;
-	color:white;
+	margin: 0px 3% 30px;
+	text-align: left;
+	color: white;
+	background: rgba(196, 217, 255, 0.24);
+	border: rgb(125, 125, 226);
+	border-style: dotted;
+	border-width: 1px 1px 1px 1px;
+	padding: 20px;
+	box-shadow: inset 0px 0px 15px 4px rgba(103, 98, 98, 0.15);
 }
 
 
@@ -565,7 +571,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ab154', end
 .home_top tr td{ vertical-align:top; }
 .home_top tr td:last-of-type {
 	width:39.1666%;
-	padding-left:10px;
+	/*padding-left:10px;*/
 	color:#6a7894;
 }
 .home_top tr td.full { width:100%; }
