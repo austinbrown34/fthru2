@@ -48,7 +48,7 @@ max-width: 25vw;
 }
 .pricewrapper input{
     padding-top: 17px !important;
-    padding-left: 26px;
+    padding-left: 30px;
 }
 .pricewrapper:before{
   font-family: FontAwesome;
@@ -72,7 +72,7 @@ max-width: 25vw;
 }
 .pricewrapper2 input{
     padding-top: 17px !important;
-    padding-left: 26px;
+    padding-left: 30px;
 }
 .pricewrapper2:before{
 
@@ -153,6 +153,8 @@ background: rgba(196, 217, 255, 0.44) !important;
 
 /* padding-top: 0px; */
 box-shadow: inset 0px 0px 15px 4px rgba(103, 98, 98, 0.15);
+border: 1px solid #ECBDE7 !important;
+border-radius: 5px !important;
 
 }
 
@@ -1863,6 +1865,7 @@ submitHandler: function(form) {
 	});
 	});
   function submitcar(){
+    alert("made it here");
     $("#testForm2").validate({
 		rules: {
 		 price: {
@@ -2181,7 +2184,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
     border: rgb(125, 125, 226);
     border-style: solid;
     border-width: 5px 0 5px 0;
-    padding: 5px;">
+    padding: 10px;">
 											<p style="color:black;">Type of Vehicle:</p><br>
 
 											<table style="width:100%;">
@@ -2219,12 +2222,12 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
                         	</td>
 												</tr>
-											</table>
-										</center>
 
 
 
 
+
+<tr><td colspan=4 style="width:100%;">
 										<div id="specific1" style="display:none;">
 											 <select id="years" name="years" class="ss-item-required myinputs" required>
 
@@ -2259,7 +2262,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									</td>
 								</tr>
 								<tr>
-									<td>
+									<td colspan=4 style="width:100%;">
 										<div id="specific2" style="display:none;">
 											<br>
 											<select id="makes" name="makes" required  class="ss-item-required myinputs">
@@ -2269,7 +2272,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									</td>
 								</tr>
 								<tr>
-									<td>
+									<td colspan=4 style="width:100%;">
 										<div id="specific3" style="display:none;">
 											<br>
 											<select id="models" name="models" required  class="ss-item-required myinputs">
@@ -2279,6 +2282,9 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										</div>
 									</td>
 								</tr>
+              </table>
+                </center>
+              </td>
 								<tr>
 									<td colspan=100 style="width:100%;">
 										<br>
@@ -2394,7 +2400,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
     border: rgb(125, 125, 226);
     border-style: solid;
     border-width: 5px 0 5px 0;
-    padding: 5px;">
+    padding: 10px;">
 											<p style="color:black;">Type of Vehicle:</p><br>
 
 											<table style="width:100%;">
@@ -2426,8 +2432,8 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 														<center><label class="bigtouch"  for="crossovers"><input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" /><br>Crossovers</label></center></td></tr><tr><td colspan=4 style="width:100%;"><center><hr>OR<hr></center><td></tr><tr><td colspan=4 style="width:100%;">
 														<center><label class="bigtouch"  for="specific"><input type="checkbox" name="type[]" value="Specific" id="specific" class="specific myinputs" style="zoom:3.5;" /><br>Specific</label></center></td>
 												</tr>
-											</table>
-										</center>
+											<tr><td colspan=4 style="width:100%;">
+
 
 
 
@@ -2466,7 +2472,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									</td>
 								</tr>
 								<tr>
-									<td>
+									<td colspan=4 style="width:100%;">
 										<div id="specific2" style="display:none;">
 											<br>
 											<select id="makes" name="makes" required  class="ss-item-required myinputs">
@@ -2476,7 +2482,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 									</td>
 								</tr>
 								<tr>
-									<td>
+									<td colspan=4 style="width:100%;">
 										<div id="specific3" style="display:none;">
 											<br>
 											<select id="models" name="models" required  class="ss-item-required myinputs">
@@ -2486,6 +2492,9 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 										</div>
 									</td>
 								</tr>
+                </table>
+                	</center>
+                </td>
 								<tr>
 									<td colspan=100 style="width:100%;">
 										<br>
@@ -2556,7 +2565,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 								</td>
 							</tr>
 						</table>
-<br>
+
         <div id="hide3" style="display:none"/>
 <table id="exampledt3" class="display dt-center" style="color:black;" cellspacing="0" width="100%">
             <thead>
@@ -2650,7 +2659,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
     border: rgb(125, 125, 226);
     border-style: solid;
     border-width: 5px 0 5px 0;
-    padding: 5px;">
+    padding: 10px;">
 
 								<p style="color:black;">Type of Vehicle:</p><br>
 								<table style="width:100%;">
@@ -2726,9 +2735,9 @@ zoom: 1.5; width: 50vw !important;" onclick="selectPicture();" value="&#xf07c; G
 											</td>
 										</tr>
 									</table>
-									<br>
+
 									<div>
-										<br>
+
 
 										<img style="width:300px;visibility:hidden;display:none;" id="camera_image" src="" />
 									</div>
