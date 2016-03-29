@@ -1735,6 +1735,12 @@ $().ready(function() {
               function alertDismissed() {
                   $("#regForm")[0].reset();
                   $('#page').scrollTop(0);
+
+
+                  okMsg("Please login.", 2000, back());
+
+
+
               }
 
               navigator.notification.alert(
