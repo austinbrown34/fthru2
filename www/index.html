@@ -1753,8 +1753,17 @@ $().ready(function() {
                   // $("#regForm")[0].reset();
                   $('#page').scrollTop(0);
               }
+
               alert(JSON.stringify(arguments));
-              if(errorThrown == '409'){
+              if (jqXHR.status === 0) {
+                navigator.notification.alert(
+                        'Network Issues. Please try again.',
+                        alertDismissed,
+                        'fTHRU',
+                        'OK'
+                );
+              }
+              if(jqXHR.status == 409){
                 navigator.notification.alert(
                         'This email is already registered with fTHRU.',
                         alertDismissed,
@@ -1762,7 +1771,7 @@ $().ready(function() {
                         'OK'
                 );
               }
-              if(errorThrown == '400'){
+              if(jqXHR.status == 400){
                 navigator.notification.alert(
                         'There was an issue with processing/validating your input. Try again.',
                         alertDismissed,
@@ -2339,7 +2348,7 @@ Please register below to gain access to fTHRU!
                 border-style: solid;
                 border-width: 5px 0 5px 0;
                 padding: 10px;    margin-bottom: 10px;">
-                <i class="fa fa-sign-in fa-lg"></i>
+                <i style="padding-top:10px;" class="fa fa-sign-in fa-lg"></i>
                 <table style="width:100%;">
                   <tr>
                     <td style="width:100%;">
@@ -2379,7 +2388,7 @@ Please register below to gain access to fTHRU!
           </tr>
           <tr>
             <td style="width:100%;">
-<center><i class="fa fa-car fa-lg"></i></center>
+<center><i style="padding-top:10px;" class="fa fa-car fa-lg"></i></center>
               <p style="color:black;">Dealership Name:</p>
               <input type="text" name="dealer" style="zoom:1.5;" class="ss-item-required myinputs" required>
 
