@@ -2195,6 +2195,7 @@ $().ready(function() {
             options.chunkedMode = false;
 
             var ft = new FileTransfer();
+            alert(server);
             ft.upload(imageURI, server, function(r) {
                 document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
                 document.getElementById("fileToUpload").value = newimageid+".jpg";
