@@ -837,7 +837,7 @@ var vehiclesinitialized = false;
 				data: serializedData
 			});
 
-		request.done(function (response, textStatus, jqXHR)
+		request.done(function (response, status, jqXHR)
 		{
 
 		if(response == "DELETED")
@@ -849,6 +849,8 @@ var vehiclesinitialized = false;
 			if(response != "NOTHING")
 			{
 				$.unblockUI();
+
+        alert(JSON.stringify(arguments));
 
 				localStorage.setItem("id", response["user"]);
         id= localStorage.getItem('id');
