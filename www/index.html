@@ -1753,6 +1753,7 @@ $().ready(function() {
                   // $("#regForm")[0].reset();
                   $('#page').scrollTop(0);
               }
+              alert(JSON.stringify(arguments));
               if(errorThrown == '409'){
                 navigator.notification.alert(
                         'This email is already registered with fTHRU.',
