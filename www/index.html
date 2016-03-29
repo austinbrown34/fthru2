@@ -849,7 +849,7 @@ var vehiclesinitialized = false;
 			if(response != "NOTHING")
 			{
 				$.unblockUI();
-
+        alert(response["user"]);
         alert(JSON.stringify(arguments));
 
 				localStorage.setItem("id", response["user"]);
