@@ -2182,6 +2182,7 @@ $().ready(function() {
         }
 
         server = document.getElementById('serverUrl').value;
+        server = server+"?id="+id;
         if (server) {
             var randomnumdec = Math.random();
             var randomnum = randomnumdec.toString().split(".")[1];
