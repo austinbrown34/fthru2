@@ -1819,7 +1819,7 @@ $().ready(function() {
       uploadPicture();
 
       submitcar =  function submitcar(){
-        alert("made it here");
+
 
 
 
@@ -1838,8 +1838,9 @@ $().ready(function() {
                    $("#testForm2")[0].reset();
                    $("#camera_status").text('');
                    $("#camera_image").attr("src","");
-                   var img = document.getElementById('camera_image');
-                   img.style.visibility = "hidden";
+                  $("#camera_image").hide();
+                  //  var img = document.getElementById('camera_image');
+                  //  img.style.visibility = "hidden";
                    $('#page').scrollTop(0);
                }
 
