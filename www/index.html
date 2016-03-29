@@ -1761,6 +1761,14 @@ $().ready(function() {
                         'OK'
                 );
               }
+              if(errorThrown == '400'){
+                navigator.notification.alert(
+                        'There was an issue with processing/validating your input. Try again.',
+                        alertDismissed,
+                        'fTHRU',
+                        'OK'
+                );
+              }
               else{
               navigator.notification.alert(
                       'There was a problem with your registration. Please try again.',
