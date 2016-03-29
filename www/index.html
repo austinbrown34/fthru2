@@ -1302,7 +1302,7 @@ if(buttonIndex == 2){
                   //  $("#container").css('background', 'url("../splash.png") no-repeat 100% 100%;');
 
                   $("#container").css("background", "url('"+backimgURL+"') no-repeat 100% 100%");
-
+                  $("#responsecontainermatch").html('');
                   $('#container').css({"-webkit-background-size":"cover"});
         $('#container').css({"-moz-background-size":"cover"});
         $('#container').css({"-o-background-size":"cover"});
@@ -2181,7 +2181,7 @@ $().ready(function() {
             return;
         }
 
-        server = document.getElementById('serverUrl').value;
+        var server = document.getElementById('serverUrl').value;
         server = server+"?id="+id;
         if (server) {
             var randomnumdec = Math.random();
@@ -2195,8 +2195,9 @@ $().ready(function() {
             options.chunkedMode = false;
 
             var ft = new FileTransfer();
-            alert(server);
+            // alert(server);
             ft.upload(imageURI, server, function(r) {
+
                 document.getElementById('camera_status').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
                 document.getElementById("fileToUpload").value = newimageid+".jpg";
                 submitcar();
