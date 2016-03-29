@@ -1354,135 +1354,109 @@ function enabletext(buttonIndex){
        }
 
    }
-        $(document).ready(function() {
-  //         var _originalSize = $(window).width() + $(window).height()
-  // $(window).resize(function(){
-  //   if($(window).width() + $(window).height() != _originalSize){
-  //     console.log("keyboard show up");
-  //     // $(".copyright_link").css("position","relative");
-  //   }else{
-  //     console.log("keyboard closed");
-  //     $('#page').scrollTop(0);
-  //     $('#home #keyboard').hide();
-  //
-  //     // $(".copyright_link").css("position","fixed");
-  //   }
-//   $('#home #pricelow').blur(function(){
-//     $('#appheader').css("position","fixed");
-//   });
-//
-//
-//
-//           $('#home #pricelow').focus(function(){
-//
-//
-// $('#appheader').css("position","absolute");
-//
-//                   // $('html,body').animate({scrollTop: $(this).offset().top}, 800);
-//               });
+$(document).ready(function() {
 
-$('#home #specific2 select').attr('disabled', 'disabled');
-$('#home #specific3 select').attr('disabled', 'disabled');
-$('#home #specific2 select').css("opacity",".4");
-$('#home #specific3 select').css("opacity",".4");
+  $('#home #specific2 select').attr('disabled', 'disabled');
+  $('#home #specific3 select').attr('disabled', 'disabled');
+  $('#home #specific2 select').css("opacity",".4");
+  $('#home #specific3 select').css("opacity",".4");
 
-$('#edit #specific2 select').attr('disabled', 'disabled');
-$('#edit #specific3 select').attr('disabled', 'disabled');
-$('#edit #specific2 select').css("opacity",".4");
-$('#edit #specific3 select').css("opacity",".4");
+  $('#edit #specific2 select').attr('disabled', 'disabled');
+  $('#edit #specific3 select').attr('disabled', 'disabled');
+  $('#edit #specific2 select').css("opacity",".4");
+  $('#edit #specific3 select').css("opacity",".4");
 
-$('#makes1').attr('disabled', 'disabled');
-$('#models1').attr('disabled', 'disabled');
-$('#makes1').css("opacity",".4");
-$('#models1').css("opacity",".4");
+  $('#makes1').attr('disabled', 'disabled');
+  $('#models1').attr('disabled', 'disabled');
+  $('#makes1').css("opacity",".4");
+  $('#models1').css("opacity",".4");
 
-$('.bluebtn').on('click touchstart', function () {
+  $('.bluebtn').on('click touchstart', function () {
 
-  $(this).addClass("activenow");
+    $(this).addClass("activenow");
 
-  setTimeout(function () {
-      $('.bluebtn').removeClass('activenow');
-  }, 500);
+    setTimeout(function () {
+        $('.bluebtn').removeClass('activenow');
+    }, 500);
 
-});
+  });
 
-$('.bluebtn2').on('click touchstart', function () {
+  $('.bluebtn2').on('click touchstart', function () {
 
-  $(this).addClass("activenow2");
+    $(this).addClass("activenow2");
 
-  setTimeout(function () {
-      $('.bluebtn2').removeClass('activenow2');
-  }, 500);
+    setTimeout(function () {
+        $('.bluebtn2').removeClass('activenow2');
+    }, 500);
 
-});
+  });
 
-$('.redbtn').on('click touchstart', function () {
+  $('.redbtn').on('click touchstart', function () {
 
-  $(this).addClass("activenow");
+    $(this).addClass("activenow");
 
-  setTimeout(function () {
-      $('.redbtn').removeClass('activenow');
-  }, 500);
+    setTimeout(function () {
+        $('.redbtn').removeClass('activenow');
+    }, 500);
 
-});
-$('#logoff').on('click touchstart', function () {
+  });
+  $('#logoff').on('click touchstart', function () {
 
-  $(this).addClass("activenow2");
+    $(this).addClass("activenow2");
 
-  setTimeout(function () {
-      $('#logoff').removeClass('activenow2');
-  }, 500);
+    setTimeout(function () {
+        $('#logoff').removeClass('activenow2');
+    }, 500);
 
-});
+  });
 
-if(navigator.userAgent.match(/Android/i)){
-  $('#appheader').css("zoom",".74");
-}
-if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
-  $('#appheader').css("zoom",".88");
-}
-		$(document).ajaxError(function(e, jqxhr, settings, exception) {
-            console.log(exception);});
-		window.onerror = function(error){console.log(error);};
+  if(navigator.userAgent.match(/Android/i)){
+    $('#appheader').css("zoom",".74");
+  }
+  if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
+    $('#appheader').css("zoom",".88");
+  }
+	$(document).ajaxError(function(e, jqxhr, settings, exception) {console.log(exception);});
+  window.onerror = function(error){console.log(error);};
 
-            document.addEventListener("deviceready", function() {deviceReady = true;}, false);
-            window.setTimeout(function() {
-                if (!deviceReady) {
-                    // alert("Error: fThru Core Engine did not initialize.  Please restart the app.");
+  document.addEventListener("deviceready", function() {deviceReady = true;}, false);
+  window.setTimeout(function() {
+      if (!deviceReady) {
+          // alert("Error: fThru Core Engine did not initialize.  Please restart the app.");
 
 
-                    function engineerrorDismissed() {
-                        fieldsmessage = "reset";
-                    }
+          function engineerrorDismissed() {
+              fieldsmessage = "reset";
+          }
 
-                    navigator.notification.alert(
-                            'Error: fThru Core Engine did not initialize.  Please restart the app.',
-                            engineerrorDismissed,
-                            'fTHRU',
-                            'OK'
-                    );
+          navigator.notification.alert(
+                  'Error: fThru Core Engine did not initialize.  Please restart the app.',
+                  engineerrorDismissed,
+                  'fTHRU',
+                  'OK'
+          );
 
-                }
-                else{
+      }
+      else{
 
 
 
-                    if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
-                        throw new Error("You are trying to run this code for a non-cordova project, " +
-                                "or did not install the cordova InAppBrowser plugin");
-                    }
+          if ( typeof cordova === "undefined" || !cordova.InAppBrowser ) {
+              throw new Error("You are trying to run this code for a non-cordova project, " +
+                      "or did not install the cordova InAppBrowser plugin");
+          }
 
 
-                    delete window.open;
-                    var windowOpen = window.open;
+          delete window.open;
+          var windowOpen = window.open;
 
 
 
 
 
-        $("input.phone").mask("(999) 999-9999");
-                }
-            },2000);
+          $("input.phone").mask("(999) 999-9999");
+      }
+  },2000);
 
 
 
@@ -1490,97 +1464,93 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
 
 
-        if (id !== null){
-          // document.getElementById('appheader').style.display = '';
-          $('#appheader').show();
-          $("#container").css('background-image', 'none');
-            var pagetarget = $("#page");
-            initializetables();
-            setTimeout(function(){
-                $('#page').scrollTop(0);
-                setTimeout(function(){
-                    document.getElementById('start').style.display = 'none';
-                    setTimeout(function(){
-                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
-                        setTimeout(function(){
-                            $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
-                            setTimeout(function(){
-                                document.getElementById('home').style.display = '';
-                                setTimeout(function(){
-                                    pagetarget.scrollTop(0);
-                                    setTimeout(function(){
-                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-                                        $('#slider').rangeSlider('resize');
-                                        $('#dvLoading').hide();
-                                    },0);
-                                },0);
-                            },0);
-                        },0);
-                    },0);
-
-                },0);
-            },0);
-
-
-
-        }
-        else{
-          document.getElementById('start').style.display = '';
+  if (id !== null){
+    // document.getElementById('appheader').style.display = '';
+    $('#appheader').show();
+    $("#container").css('background-image', 'none');
+      var pagetarget = $("#page");
+      initializetables();
+      setTimeout(function(){
+          $('#page').scrollTop(0);
           setTimeout(function(){
-            $('#dvLoading').hide();
+              document.getElementById('start').style.display = 'none';
+              setTimeout(function(){
+                  pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                  setTimeout(function(){
+                      $('li').removeClass('active');$('#tabs #tm_map').addClass('active');
+                      setTimeout(function(){
+                          document.getElementById('home').style.display = '';
+                          setTimeout(function(){
+                              pagetarget.scrollTop(0);
+                              setTimeout(function(){
+                                  pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+                                  $('#slider').rangeSlider('resize');
+                                  $('#dvLoading').hide();
+                              },0);
+                          },0);
+                      },0);
+                  },0);
+              },0);
+
           },0);
+      },0);
 
-        }
-            $('#years').change(function() {
-              $('#specific2 select').attr('disabled', 'disabled');
-              $('#specific3 select').attr('disabled', 'disabled');
-              $('#specific2 select').css("opacity",".4");
-              $('#specific3 select').css("opacity",".4");
-                console.log('Step 1: Year ' + $(this).val() + ' was selected');
-                get_makes($(this).val());
-            });
 
-            $('#makes').change(function() {
-                console.log('Step 3: Make ' + $(this).val() + ' was selected');
-                get_models($(this).val(), $('#years').val());
-            });
-            $('#models').change(function() {
-                console.log('Step 5: Model ' + $(this).val() + ' was selected');
-                get_styles($('#makes').val(), $(this).val(), $('#years').val());
-            });
-            $('#styles').change(function() {
-                console.log('Step 7: Style ' + $(this).val() + ' was selected');
-                get_style_details($(this).val());
-            });
-               $('#years1').change(function() {
-                 $('#makes1').attr('disabled', 'disabled');
-                 $('#models1').attr('disabled', 'disabled');
-                 $('#makes1').css("opacity",".4");
-                 $('#models1').css("opacity",".4");
-                console.log('Step 1: Year ' + $(this).val() + ' was selected');
-                get_makes1($(this).val());
-            });
 
-            $('#makes1').change(function() {
-                console.log('Step 3: Make ' + $(this).val() + ' was selected');
-                get_models1($(this).val(), $('#years1').val());
-            });
-            $('#models1').change(function() {
-                console.log('Step 5: Model ' + $(this).val() + ' was selected');
-                get_styles1($('#makes1').val(), $(this).val(), $('#years1').val());
-            });
-            $('#styles1').change(function() {
-                console.log('Step 7: Style ' + $(this).val() + ' was selected');
-                get_style_details1($(this).val());
-            });
-             $("#tm_pro").click(function() {
+  }
+  else{
+    document.getElementById('start').style.display = '';
+    setTimeout(function(){
+      $('#dvLoading').hide();
+    },0);
 
-                 redraw();
-});
+  }
+  $('#years').change(function() {
+    $('#specific2 select').attr('disabled', 'disabled');
+    $('#specific3 select').attr('disabled', 'disabled');
+    $('#specific2 select').css("opacity",".4");
+    $('#specific3 select').css("opacity",".4");
+      console.log('Step 1: Year ' + $(this).val() + ' was selected');
+      get_makes($(this).val());
+  });
+
+  $('#makes').change(function() {
+      console.log('Step 3: Make ' + $(this).val() + ' was selected');
+      get_models($(this).val(), $('#years').val());
+  });
+  $('#models').change(function() {
+      console.log('Step 5: Model ' + $(this).val() + ' was selected');
+      get_styles($('#makes').val(), $(this).val(), $('#years').val());
+  });
+  $('#styles').change(function() {
+      console.log('Step 7: Style ' + $(this).val() + ' was selected');
+      get_style_details($(this).val());
+  });
+  $('#years1').change(function() {
+       $('#makes1').attr('disabled', 'disabled');
+       $('#models1').attr('disabled', 'disabled');
+       $('#makes1').css("opacity",".4");
+       $('#models1').css("opacity",".4");
+      console.log('Step 1: Year ' + $(this).val() + ' was selected');
+      get_makes1($(this).val());
+  });
+
+  $('#makes1').change(function() {
+      console.log('Step 3: Make ' + $(this).val() + ' was selected');
+      get_models1($(this).val(), $('#years1').val());
+  });
+  $('#models1').change(function() {
+      console.log('Step 5: Model ' + $(this).val() + ' was selected');
+      get_styles1($('#makes1').val(), $(this).val(), $('#years1').val());
+  });
+  $('#styles1').change(function() {
+      console.log('Step 7: Style ' + $(this).val() + ' was selected');
+      get_style_details1($(this).val());
+  });
   $("#tm_home").click(function() {
 
       redraw();
-});
+    });
   $("#displaymatch").click(function() {
 
       $.ajax({
@@ -1592,29 +1562,29 @@ if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
 
         }
 
+      });
     });
+
+
+
+  function resetfields(){
+
+
+      function alertDismissed() {
+          fieldsmessage = "reset";
+      }
+
+      navigator.notification.alert(
+              'Fields have been reset!',
+              alertDismissed,
+              'fTHRU',
+              'OK'
+      );
+  }
+
+
+
 });
-
-
-
-function resetfields(){
-
-
-    function alertDismissed() {
-        fieldsmessage = "reset";
-    }
-
-    navigator.notification.alert(
-            'Fields have been reset!',
-            alertDismissed,
-            'fTHRU',
-            'OK'
-    );
-}
-
-
-
-        });
     </script>
 
 
@@ -1622,71 +1592,66 @@ function resetfields(){
 
    	<script>
 
+$().ready(function() {
+  $("#testForm").validate({
+	   rules: {
+       phone: {
+         minlength:10
+       },
+       pricelow: {
+         number: true
+       },
+       pricehigh: {
+         number: true
+       }
+     },
+     submitHandler: function(form) {
 
-	$().ready(function() {
-		$("#testForm").validate({
-		rules: {
-    phone: {
-        minlength:10
+       var postData = $(form).serializeArray();
+       var formURL = $(form).attr("action");
 
-    },
-    pricelow: {
-    number: true
-    },
-    pricehigh: {
-    number: true
-    }
-},
-submitHandler: function(form) {
-
-
-
-
-    var postData = $(form).serializeArray();
-    var formURL = $(form).attr("action");
-
-    console.log(formURL+"?id="+id);
-    $.ajax(
-    {
-        url : formURL+"?id="+id,
-        type: "POST",
-        data : postData,
-        success:function(data, textStatus, jqXHR)
+       console.log(formURL+"?id="+id);
+       $.ajax(
         {
-            function alertDismissed() {
-                redraw();
-                $("#testForm")[0].reset();
-				 $('#page').scrollTop(0);
+            url : formURL+"?id="+id,
+            type: "POST",
+            data : postData,
+            success:function(data, textStatus, jqXHR)
+            {
+                function alertDismissed() {
+                    redraw();
+                    $("#testForm")[0].reset();
+    				 $('#page').scrollTop(0);
+                }
+
+                navigator.notification.alert(
+                        'Your new contact has been added!',
+                        alertDismissed,
+                        'fTHRU',
+                        'OK'
+                );
+
+
+
+            },
+            error: function(jqXHR, textStatus, errorThrown)
+            {
+                function alertDismissed() {
+                    $("#testForm")[0].reset();
+    				 $('#page').scrollTop(0);
+                }
+
+                navigator.notification.alert(
+                        'There was a problem adding your contact.',
+                        alertDismissed,
+                        'fTHRU',
+                        'OK'
+                );
             }
+        });
 
-            navigator.notification.alert(
-                    'Your new contact has been added!',
-                    alertDismissed,
-                    'fTHRU',
-                    'OK'
-            );
-
-
-
-        },
-        error: function(jqXHR, textStatus, errorThrown)
-        {
-            function alertDismissed() {
-                $("#testForm")[0].reset();
-				 $('#page').scrollTop(0);
-            }
-
-            navigator.notification.alert(
-                    'There was a problem adding your contact.',
-                    alertDismissed,
-                    'fTHRU',
-                    'OK'
-            );
-        }
+		  }
     });
-
-		}
-});
 
 	$("#editForm").validate({
 		rules: {
@@ -1695,196 +1660,177 @@ submitHandler: function(form) {
 
     },
     pricelow: {
-    number: true
+      number: true
     },
     pricehigh: {
-    number: true
+      number: true
     }
-},
-submitHandler: function(form) {
+    },
+    submitHandler: function(form) {
 
 
 
 
 
-    var postData = $(form).serializeArray();
-    var formURL = $(form).attr("action");
+      var postData = $(form).serializeArray();
+      var formURL = $(form).attr("action");
 
-    console.log(formURL+"?id="+id);
-    $.ajax(
-    {
-        url : formURL+"?id="+id,
-        type: "POST",
-        data : postData,
-        success:function(data, textStatus, jqXHR)
-        {
-            function alertDismissed() {
-               redraw();
+      console.log(formURL+"?id="+id);
+      $.ajax({
+          url : formURL+"?id="+id,
+          type: "POST",
+          data : postData,
+          success:function(data, textStatus, jqXHR)
+          {
+              function alertDismissed() {
+                 redraw();
+                 $("#editForm")[0].reset();
+                 $('#page').scrollTop(0);
+              }
+
+              navigator.notification.alert(
+                      'Your contact\'s information has been successfully updated!',
+                      alertDismissed,
+                      'fTHRU',
+                      'OK'
+              );
+
+
+              var pagetarget = $("#page");
+
+              setTimeout(function(){
+                  $('#page').scrollTop(0);
+                  setTimeout(function(){
+                      document.getElementById('edit').style.display = 'none';
+                      setTimeout(function(){
+                          pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                          setTimeout(function(){
+                              $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
+                              setTimeout(function(){
+                                if(contactsinitialized){
+                                  $.unblockUI();
+                                }
+                                else{
+  	                               $.blockUI({ css: {
+                                    border: 'none',
+                                    padding: '15px',
+                                    backgroundColor: '#000',
+                                    '-webkit-border-radius': '10px',
+                                    '-moz-border-radius': '10px',
+                                    color: '#fff'
+                                  } });
+                                }
+                                  document.getElementById('viewuser').style.display = '';
+                                  setTimeout(function(){
+                                      pagetarget.scrollTop(0);
+                                      setTimeout(function(){
+                                          pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+
+                                      },0);
+                                  },0);
+                              },0);
+                          },0);
+                      },0);
+
+                  },0);
+              },0);
+
+
+
+
+
+
+
+          },
+          error: function(jqXHR, textStatus, errorThrown)
+          {
+
+
+              function alertDismissed() {
                 $("#editForm")[0].reset();
-				 $('#page').scrollTop(0);
-            }
+  				          $('#page').scrollTop(0);
+              }
 
-            navigator.notification.alert(
-                    'Your contact\'s information has been successfully updated!',
-                    alertDismissed,
-                    'fTHRU',
-                    'OK'
-            );
-
-
-            var pagetarget = $("#page");
-
-            setTimeout(function(){
-                $('#page').scrollTop(0);
-                setTimeout(function(){
-                    document.getElementById('edit').style.display = 'none';
-                    setTimeout(function(){
-                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
-                        setTimeout(function(){
-                            $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
-                            setTimeout(function(){
-                              if(contactsinitialized){
-                                $.unblockUI();
-                              }
-                              else{
-	$.blockUI({ css: {
-        border: 'none',
-        padding: '15px',
-        backgroundColor: '#000',
-        '-webkit-border-radius': '10px',
-        '-moz-border-radius': '10px',
-        color: '#fff'
-      } });
-  }
-                                document.getElementById('viewuser').style.display = '';
-                                setTimeout(function(){
-                                    pagetarget.scrollTop(0);
-                                    setTimeout(function(){
-                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-
-                                    },0);
-                                },0);
-                            },0);
-                        },0);
-                    },0);
-
-                },0);
-            },0);
+              navigator.notification.alert(
+                      'There was a problem updating your contact\'s information.',
+                      alertDismissed,
+                      'fTHRU',
+                      'OK'
+              );
 
 
 
+              var pagetarget = $("#page");
 
+              setTimeout(function(){
+                  $('#page').scrollTop(0);
+                  setTimeout(function(){
+                      document.getElementById('edit').style.display = 'none';
+                      setTimeout(function(){
+                          pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                          setTimeout(function(){
+                              $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
+                              setTimeout(function(){
+                                if(contactsinitialized){
+                                  $.unblockUI();
+                                }
+                                else{
+                                	$.blockUI({ css: {
+                                        border: 'none',
+                                        padding: '15px',
+                                        backgroundColor: '#000',
+                                        '-webkit-border-radius': '10px',
+                                        '-moz-border-radius': '10px',
+                                        color: '#fff'
+                                      } });
+                                }
+                                  document.getElementById('viewuser').style.display = '';
+                                  setTimeout(function(){
+                                      pagetarget.scrollTop(0);
+                                      setTimeout(function(){
+                                          pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
 
+                                      },0);
+                                  },0);
+                              },0);
+                          },0);
+                      },0);
 
-
-        },
-        error: function(jqXHR, textStatus, errorThrown)
-        {
-
-
-            function alertDismissed() {
-              $("#editForm")[0].reset();
-				 $('#page').scrollTop(0);
-            }
-
-            navigator.notification.alert(
-                    'There was a problem updating your contact\'s information.',
-                    alertDismissed,
-                    'fTHRU',
-                    'OK'
-            );
-
-
-
-            var pagetarget = $("#page");
-
-            setTimeout(function(){
-                $('#page').scrollTop(0);
-                setTimeout(function(){
-                    document.getElementById('edit').style.display = 'none';
-                    setTimeout(function(){
-                        pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
-                        setTimeout(function(){
-                            $('li').removeClass('active');$('#tabs #tm_pro').addClass('active');
-                            setTimeout(function(){
-                              if(contactsinitialized){
-                                $.unblockUI();
-                              }
-                              else{
-	$.blockUI({ css: {
-        border: 'none',
-        padding: '15px',
-        backgroundColor: '#000',
-        '-webkit-border-radius': '10px',
-        '-moz-border-radius': '10px',
-        color: '#fff'
-      } });
-  }
-                                document.getElementById('viewuser').style.display = '';
-                                setTimeout(function(){
-                                    pagetarget.scrollTop(0);
-                                    setTimeout(function(){
-                                        pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-
-                                    },0);
-                                },0);
-                            },0);
-                        },0);
-                    },0);
-
-                },0);
-            },0);
+                  },0);
+              },0);
 
 
 
 
 
-        }
-    });
+          }
+      });
 
-		}
-});
+	  }
+  });
 
-		$("#testForm2").validate({
+	$("#testForm2").validate({
 		rules: {
 		 price: {
       number: true
     }},
-		submitHandler: function(form)
-		{
+		submitHandler: function(form){
 
-    uploadPicture();
+      uploadPicture();
 
-
-
-
-
-		}
+      function submitcar(){
+        alert("made it here");
 
 
-	});
-	});
-  function submitcar(){
-    alert("made it here");
-    $("#testForm2").validate({
-		rules: {
-		 price: {
-      number: true
-    }},
-		submitHandler: function(form)
-		{
 
-
-      var postData = new FormData($(form)[0]);
-       var formURL = $(form).attr("action");
-       $.ajax(
-       {
+        var postData = new FormData($(form)[0]);
+        var formURL = $(form).attr("action");
+         $.ajax({
            url : formURL+"?id="+id,
            type: "POST",
            data : postData,
            async: false,
-           success:function(data, textStatus, jqXHR)
-           {
+           success:function(data, textStatus, jqXHR){
 
 
                function alertDismissed() {
@@ -1892,9 +1838,9 @@ submitHandler: function(form) {
                    $("#testForm2")[0].reset();
                    $("#camera_status").text('');
                    $("#camera_image").attr("src","");
-           var img = document.getElementById('camera_image');
+                   var img = document.getElementById('camera_image');
                    img.style.visibility = "hidden";
-            $('#page').scrollTop(0);
+                   $('#page').scrollTop(0);
                }
 
                navigator.notification.alert(
@@ -1916,10 +1862,10 @@ submitHandler: function(form) {
                function alertDismissed() {
                    $("#testForm2")[0].reset();
                    $("#camera_status").text('');
-           $("#camera_image").attr("src","");
+                   $("#camera_image").attr("src","");
                    var img = document.getElementById('camera_image');
                    img.style.visibility = "hidden";
-            $('#page').scrollTop(0);
+                   $('#page').scrollTop(0);
                }
 
                navigator.notification.alert(
@@ -1931,18 +1877,24 @@ submitHandler: function(form) {
 
 
            }
-       });
+         });
 
 
 
 
-		}
+      }
+
+
+
+		  }
 
 
 	});
+});
 
 
-  }
+
+
 	</script>
 	<style>
 	#commentForm {
@@ -2597,7 +2549,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
         </table>
         </div>
 
-
+<br>
 
 						<div id="responsecontainermatch" align="center" style="    background: rgba(255, 255, 255, 0.48);
     border: rgb(125, 125, 226);
@@ -2739,7 +2691,7 @@ zoom: 1.5; width: 50vw !important;" onclick="selectPicture();" value="&#xf07c; G
 									<div>
 
 
-										<img style="width:300px;visibility:hidden;display:none;" id="camera_image" src="" />
+										<img style="width:300px;margin-top:20px;visibility:hidden;display:none;" id="camera_image" src="" />
 									</div>
 									<br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span><br>
 									<!-- <input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.1em;
