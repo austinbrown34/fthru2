@@ -1750,16 +1750,25 @@ $().ready(function() {
           error: function(jqXHR, textStatus, errorThrown)
           {
               function alertDismissed() {
-                  $("#regForm")[0].reset();
+                  // $("#regForm")[0].reset();
                   $('#page').scrollTop(0);
               }
-
+              if(errorThrown == '409'){
+                navigator.notification.alert(
+                        'This email is already registered with fTHRU.',
+                        alertDismissed,
+                        'fTHRU',
+                        'OK'
+                );
+              }
+              else{
               navigator.notification.alert(
                       'There was a problem with your registration. Please try again.',
                       alertDismissed,
                       'fTHRU',
                       'OK'
               );
+            }
           }
       });
    }
@@ -2281,7 +2290,7 @@ Please register below to gain access to fTHRU!
 
           <tr>
             <td>
-            <center>  <i class="fa fa-user fa-2x"></i></center>
+            <center>  <i class="fa fa-user fa-lg"></i></center>
                 <p style="color:black;">First name:</p>
                 <input type="text" name="firstname"  style="zoom:1.5;" class="ss-item-required myinputs" required>
 
@@ -2321,7 +2330,7 @@ Please register below to gain access to fTHRU!
                 border-style: solid;
                 border-width: 5px 0 5px 0;
                 padding: 10px;    margin-bottom: 10px;">
-                <i class="fa fa-sign-in fa-2x"></i>
+                <i class="fa fa-sign-in fa-lg"></i>
                 <table style="width:100%;">
                   <tr>
                     <td style="width:100%;">
@@ -2361,9 +2370,9 @@ Please register below to gain access to fTHRU!
           </tr>
           <tr>
             <td style="width:100%;">
-<center><i class="fa fa-car fa-2x"></i></center>
+<center><i class="fa fa-car fa-lg"></i></center>
               <p style="color:black;">Dealership Name:</p>
-              <input type="text" name="dealer"  style="zoom:1.5;" class="ss-item-required myinputs" required>
+              <input type="text" name="dealer" style="zoom:1.5;" class="ss-item-required myinputs" required>
 
             </td>
           </tr>
