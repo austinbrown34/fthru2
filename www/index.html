@@ -1448,9 +1448,11 @@ $(document).ready(function() {
 
   if(navigator.userAgent.match(/Android/i)){
     $('#appheader').css("zoom",".74");
+    $('#regheader').css("zoom",".74");
   }
   if(navigator.userAgent.match(/iPhone|iPad|iPod/i)){
     $('#appheader').css("zoom",".88");
+      $('#regheader').css("zoom",".88");
   }
 	$(document).ajaxError(function(e, jqxhr, settings, exception) {console.log(exception);});
   window.onerror = function(error){console.log(error);};
@@ -2087,10 +2089,13 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 
 <div id="regheader">
 <div style="position: absolute;
-		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"></div><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
+		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"></div><i id="back" class="fa fa-arrow-left fa-3x myinputs" style="position: absolute;
+left: 15px; zoom: .6; margin-top:30px;" onclick="javascript:back();"></i><div id="nav_hdr"><!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> --><center><div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div></center></div>
 
 		<div id="tabs" class="font_PNbold" style="zoom: .8;">
-
+      <div style="padding:20px;color:black;text-align:center;">
+Please register below to gain access to fTHRU!
+</div>
 		</div>
 </div>
 
@@ -2844,7 +2849,7 @@ right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </d
 </tr>
 </table>
 
-	<input id="serverUrl" type="hidden" value="http://development.fthru.cogni.design/www/uploadpdf.php" />
+	<input id="serverUrl" type="hidden" value="http://development.fthru.cogni.design/www/upload.php" />
 
 </center>
 
