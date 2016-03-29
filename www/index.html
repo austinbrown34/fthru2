@@ -1731,6 +1731,7 @@ $().ready(function() {
           data : postData,
           success:function(data, textStatus, jqXHR)
           {
+            alert(JSON.stringify(arguments));
               function alertDismissed() {
                   $("#regForm")[0].reset();
                   $('#page').scrollTop(0);
