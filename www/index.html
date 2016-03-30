@@ -853,8 +853,16 @@ var vehiclesinitialized = false;
         alert(JSON.stringify(response));
 
 				localStorage.setItem("id", response["user"]);
-        id= localStorage.getItem('id');
+        id= localStorage.getItem("id");
+
         alert(id);
+
+        if(id == null){
+          errorMsg("Failed to initialize account. Please try again.", 3000);
+        }
+        else{
+
+
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
                 initializetables();
@@ -887,7 +895,7 @@ var vehiclesinitialized = false;
                 },0);
 
   $('#appheader').show();
-
+  }
 
 
 				return false;
@@ -1341,7 +1349,7 @@ function okdelete3(buttonIndex) {
    inventorytable.destroy();
    contactsinitialized = false;
    vehiclesinitialized = false;
-   id = null;
+  //  id = null;
  }
 
 
@@ -1551,11 +1559,17 @@ $(document).ready(function() {
 
 
 
+if (id == null){
+  document.getElementById('start').style.display = '';
+  setTimeout(function(){
+    $('#dvLoading').hide();
+  },0);
+
+}
 
 
 
-
-  if (id){
+  else{
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
@@ -1589,13 +1603,7 @@ $(document).ready(function() {
 
 
   }
-  else{
-    document.getElementById('start').style.display = '';
-    setTimeout(function(){
-      $('#dvLoading').hide();
-    },0);
 
-  }
   $('#years').change(function() {
     $('#specific2 select').attr('disabled', 'disabled');
     $('#specific3 select').attr('disabled', 'disabled');
