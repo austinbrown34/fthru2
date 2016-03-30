@@ -850,7 +850,7 @@ var vehiclesinitialized = false;
 			{
 				$.unblockUI();
         alert(response["user"]);
-        alert(JSON.stringify(arguments));
+        alert(JSON.stringify(response));
 
 				localStorage.setItem("id", response["user"]);
         id= localStorage.getItem('id');
@@ -1555,7 +1555,7 @@ $(document).ready(function() {
 
 
 
-  if (id !== null){
+  if (id){
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
