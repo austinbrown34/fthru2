@@ -752,7 +752,14 @@ var vehiclesinitialized = false;
 
       if( !contactsinitialized || !vehiclesinitialized ){
         $('#connecting').show();
-        initializetables();
+        try{
+          initializetables();
+        }
+        catch(err){
+          console.log("issue");
+          console.log(err);
+        }
+
       }
       else{
         $('#connecting').hide();
