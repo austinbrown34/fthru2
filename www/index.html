@@ -857,10 +857,8 @@ var vehiclesinitialized = false;
 
         alert(id);
 
-        if(id == null){
-          errorMsg("Failed to initialize account. Please try again.", 3000);
-        }
-        else{
+        if (typeof id !== 'undefined' && id !== null){
+
 
 
                 var pagetarget = $("#page");
@@ -895,6 +893,9 @@ var vehiclesinitialized = false;
                 },0);
 
   $('#appheader').show();
+  }
+  else{
+  errorMsg("Failed to initialize account. Please try again.", 3000);
   }
 
 
@@ -1559,17 +1560,8 @@ $(document).ready(function() {
 
 
 
-if (id == null){
-  document.getElementById('start').style.display = '';
-  setTimeout(function(){
-    $('#dvLoading').hide();
-  },0);
 
-}
-
-
-
-  else{
+    if (typeof id !== 'undefined' && id !== null){
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
@@ -1603,6 +1595,17 @@ if (id == null){
 
 
   }
+  else{
+    document.getElementById('start').style.display = '';
+    setTimeout(function(){
+      $('#dvLoading').hide();
+    },0);
+
+  }
+
+
+
+
 
   $('#years').change(function() {
     $('#specific2 select').attr('disabled', 'disabled');
