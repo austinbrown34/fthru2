@@ -291,7 +291,7 @@ color:#6a7894;
 <script type='application/javascript' src='js/fastclick.js'></script>
 <script type='application/javascript' src='js/jquery.doubletap.js'></script>
     <script>
-    var networkcheck = true;
+    var networkcheck = false;
     $(function() {
         FastClick.attach(document.body);
     });
@@ -778,7 +778,7 @@ function checktables() {
           redrawinventory();
         }
 
-      }
+
 
 
     }
@@ -1603,7 +1603,7 @@ $(document).ready(function() {
 
 
   if (id !== null){
-
+    networkcheck = true;
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
