@@ -753,11 +753,18 @@ var vehiclesinitialized = false;
       if( !contactsinitialized || !vehiclesinitialized ){
         $('#connecting').show();
         try{
-          initializetables();
+          redraw();
         }
         catch(err){
-          alert("issue");
-          alert(err);
+          console.log("issue trying to redraw");
+          console.log(err);
+          try{
+            initializetables();
+          }
+          catch(err2){
+            console.log("issue trying to initialize");
+            console.log(err2);
+          }
         }
 
       }
@@ -766,7 +773,7 @@ var vehiclesinitialized = false;
       }
 
 
-       setTimeout(checktables, 5000);
+       setTimeout(checktables, 3000);
    }
 
 
@@ -1664,6 +1671,10 @@ $(document).ready(function() {
 
       redraw();
     });
+    $("#tm_pro").click(function() {
+
+        redraw();
+      });
   $("#displaymatch").click(function() {
 
       $.ajax({
