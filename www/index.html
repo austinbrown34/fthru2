@@ -1635,9 +1635,12 @@ $(document).ready(function() {
       },0);
 
 
-
+checktables();
   }
   else{
+    networkcheck = false;
+    contactsinitialized = false;
+    vehiclesinitialized = false;
     document.getElementById('start').style.display = '';
     setTimeout(function(){
       $('#dvLoading').hide();
