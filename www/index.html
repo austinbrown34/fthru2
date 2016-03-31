@@ -857,7 +857,7 @@ var vehiclesinitialized = false;
 
         // alert(id);
 
-        if (typeof id !== 'undefined' && id !== null && !isNaN(id)){
+        if (typeof(id) !== 'undefined' && id !== null && !isNaN(id)){
 
             alert("passed this test");
             alert(typeof(id));
@@ -1562,7 +1562,7 @@ $(document).ready(function() {
 
 
 
-    if (typeof id !== 'undefined' && id !== null && !isNaN(id)){
+    if (typeof(id) !== 'undefined' && id !== null && !isNaN(id)){
       alert("passed this test too");
       alert(id);
       alert(typeof(id));
@@ -1600,10 +1600,11 @@ $(document).ready(function() {
 
   }
   else{
-    logoff();
+
     setTimeout(function(){
       $('#dvLoading').hide();
     },0);
+    logoff();
 
   }
 
@@ -3307,7 +3308,7 @@ function onTouchMove(e) {
   e.currentTarget.moved = true;
   e.currentTarget.className = "";
 }
-
+function onTouchEnd(e) {
   var item = e.currentTarget;
 
   console.log("Stop: " + item.innerHTML);
@@ -3341,11 +3342,11 @@ function onTouchMove(e) {
       }
 
 	     var pagetarget = $("#page");
-if(divId != "start"){
-  if(divId != "viewuser" && divId != "viewcar"){
-      $.unblockUI();
-  }
-	    setTimeout(function(){
+      if(divId != "start"){
+        if(divId != "viewuser" && divId != "viewcar"){
+            $.unblockUI();
+        }
+	       setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
                     $("#"+divId).hide();
@@ -3359,8 +3360,8 @@ if(divId != "start"){
                                     pagetarget.scrollTop(0);
                                     setTimeout(function(){
                                         pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-										page="";
-										delete item.moved;
+                    										page="";
+                    										delete item.moved;
                                     },0);
                                 },0);
                             },0);
@@ -3372,7 +3373,7 @@ if(divId != "start"){
 
 
 
-}
+      }
 
 
 
