@@ -299,8 +299,10 @@ color:#6a7894;
 function initializetables(){
 
   // $.fn.dataTable.ext.errMode = 'none';
-$.fn.dataTable.ext.errMode = 'throw';
-
+  $.fn.dataTable.ext.errMode = function ( settings, helpPage, message ) {
+      console.log(message);
+      alert(message);
+  };
 
   inventorytable = $('#exampledt2')
     .DataTable({
@@ -395,10 +397,7 @@ $.fn.dataTable.ext.errMode = 'throw';
         }],
       "serverSide":true,
       "ajax":{
-        url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/server_processing2.php?id="+id,
-        error: function (xhr, error, thrown) {
-          alert( 'You are not logged in' );
-        }
+        url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/server_processing2.php?id="+id//,
 
       },
               "initComplete": function () {
