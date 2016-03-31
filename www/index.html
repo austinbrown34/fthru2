@@ -849,12 +849,12 @@ var vehiclesinitialized = false;
 			if(response != "NOTHING")
 			{
 				$.unblockUI();
-        alert(response["user"]);
-        alert(JSON.stringify(arguments));
+        //alert(response["user"]);
+        //alert(JSON.stringify(arguments));
 
 				localStorage.setItem("id", response["user"]);
         id= localStorage.getItem('id');
-        alert(id);
+
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
                 initializetables();
@@ -1128,7 +1128,7 @@ var vehiclesinitialized = false;
                     console.log('Step 2: Makes select was populated and enabled');
                 }
             });
- }
+        }
         function get_models3(make, year) {
             url = 'http://api.edmunds.com/v1/api/vehicle/modelrepository/findmodelsbymakeandyear?make=' + make + '&year=' + year + '&api_key=' + EDMUNDS_API_KEY + '&fmt=json';
             $.ajax({
@@ -1167,10 +1167,10 @@ var vehiclesinitialized = false;
 
 
 
-     $.unblockUI();
+  $.unblockUI();
 
 
-    }
+   }
 
    function deletecontact(cid)
    {
@@ -1223,19 +1223,19 @@ var vehiclesinitialized = false;
         return false;
       }
       if(buttonIndex == 2){
-         $.ajax({
-         type: "GET",
-         url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/delete2.php?vehicleid="+cid,
-         dataType: "html",
-         success: function(response){
+   $.ajax({
+       type: "GET",
+       url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/delete2.php?vehicleid="+cid,
+       dataType: "html",
+       success: function(response){
 
-         redraw();
-          }
+      redraw();
+       }
 
-        });
-        }
+   });
+ }
 
-      }
+}
 
 
     navigator.notification.confirm(
@@ -1246,7 +1246,7 @@ var vehiclesinitialized = false;
     );
 
 
-    }
+   }
 function back(){
   $("#regForm")[0].reset();
   var backimgURL="splash.png";
@@ -1255,12 +1255,12 @@ function back(){
   $("#container").css("background", "url('"+backimgURL+"') no-repeat 100% 100%");
 
   $('#container').css({"-webkit-background-size":"cover"});
-  $('#container').css({"-moz-background-size":"cover"});
-  $('#container').css({"-o-background-size":"cover"});
-  $('#container').css({"background-size":"cover"});
+$('#container').css({"-moz-background-size":"cover"});
+$('#container').css({"-o-background-size":"cover"});
+$('#container').css({"background-size":"cover"});
      $('#reg').hide();
      $('#regheader').hide();
-     var pagetarget = $('#page');
+ var pagetarget = $('#page');
      setTimeout(function(){
          pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
          setTimeout(function(){
@@ -1289,10 +1289,10 @@ function back(){
 
 
 function okdelete3(buttonIndex) {
-  if(buttonIndex == 1){
-    return false;
-  }
-  if(buttonIndex == 2){
+if(buttonIndex == 1){
+  return false;
+}
+if(buttonIndex == 2){
    var pagetarget = $('#page');
 
  		  setTimeout(function(){
@@ -1304,9 +1304,9 @@ function okdelete3(buttonIndex) {
                   $("#container").css("background", "url('"+backimgURL+"') no-repeat 100% 100%");
                   $("#responsecontainermatch").html('');
                   $('#container').css({"-webkit-background-size":"cover"});
-              $('#container').css({"-moz-background-size":"cover"});
-              $('#container').css({"-o-background-size":"cover"});
-              $('#container').css({"background-size":"cover"});
+        $('#container').css({"-moz-background-size":"cover"});
+        $('#container').css({"-o-background-size":"cover"});
+        $('#container').css({"background-size":"cover"});
                      $('.appscreen').hide();
                      $('#appheader').hide();
 
@@ -1330,13 +1330,13 @@ function okdelete3(buttonIndex) {
                  },0);
              },0);
 
-    $("#regForm")[0].reset();
-    $("#loginForm")[0].reset();
-    $("#testForm")[0].reset();
-      $("#testForm2")[0].reset();
-        $("#editForm")[0].reset();
+  $("#regForm")[0].reset();
+$("#loginForm")[0].reset();
+  $("#testForm")[0].reset();
+    $("#testForm2")[0].reset();
+      $("#editForm")[0].reset();
 
-    localStorage.clear();
+ localStorage.clear();
    contacttable.destroy();
    inventorytable.destroy();
    contactsinitialized = false;
@@ -1346,7 +1346,7 @@ function okdelete3(buttonIndex) {
 
 
 
-  }
+}
     navigator.notification.confirm(
         'Are you sure you want to sign out?',
         okdelete3,
@@ -1361,7 +1361,7 @@ function okdelete3(buttonIndex) {
 
 
 
-}
+   }
 
 
 
@@ -1376,24 +1376,24 @@ function okdelete3(buttonIndex) {
        if(permission == 0){
 
 
-         function enabletext(buttonIndex){
-          if(buttonIndex == 1){
-              return false;
-          }
-            if(buttonIndex == 2){
-                $.ajax({
-                    type: "GET",
-                    url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/permission.php?contactid="+cid+"&permission=1",
-                    dataType: "html",
-                    success: function(response){
+function enabletext(buttonIndex){
+    if(buttonIndex == 1){
+        return false;
+    }
+    if(buttonIndex == 2){
+        $.ajax({
+            type: "GET",
+            url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/permission.php?contactid="+cid+"&permission=1",
+            dataType: "html",
+            success: function(response){
 
-                        redraw();
-                    }
+                redraw();
+            }
 
-            });
-        }
+    });
+}
 
-        }
+}
            navigator.notification.confirm(
                    'Automatic text message delivery is DISABLED for this contact. Would you like to re-enable automatic text message delivery?',
                    enabletext,
@@ -3293,6 +3293,7 @@ function onTouchMove(e) {
   e.currentTarget.className = "";
 }
 
+function onTouchEnd(e) {
   var item = e.currentTarget;
 
   console.log("Stop: " + item.innerHTML);
