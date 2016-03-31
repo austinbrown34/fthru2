@@ -298,7 +298,6 @@ color:#6a7894;
 
 function initializetables(){
 
-  alert("made it to initializetables with id set to:" + id);
   $.fn.dataTable.ext.errMode = 'none';
 
 
@@ -396,7 +395,7 @@ function initializetables(){
         }],
       "serverSide":true,
       "ajax":{
-        url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/server_processing2.php?id="+id
+        url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/server_processing2.php?id="+id//,
 
       },
               "initComplete": function () {
@@ -469,7 +468,7 @@ function initializetables(){
         }],
       "serverSide":true,
       "ajax":{
-        url: "http://"+ FTHRU_SETTINGS.API_HOSTNAME +"/www/server_processing.php?id="+id
+        url: "http://"+ FTHRU_SETTINGS.API_HOSTNAME +"/www/server_processing.php?id="+id//,
 
       },
               "initComplete": function () {
@@ -850,12 +849,12 @@ var vehiclesinitialized = false;
 			if(response != "NOTHING")
 			{
 				$.unblockUI();
-        alert(response["user"]);
-        alert(JSON.stringify(arguments));
+        //alert(response["user"]);
+        //alert(JSON.stringify(arguments));
 
 				localStorage.setItem("id", response["user"]);
         id= localStorage.getItem('id');
-alert(id);
+
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
                 initializetables();
@@ -1343,7 +1342,6 @@ $("#loginForm")[0].reset();
    contactsinitialized = false;
    vehiclesinitialized = false;
    id = null;
-
  }
 
 
@@ -1558,7 +1556,6 @@ $(document).ready(function() {
 
 
   if (id !== null){
-    alert(id);
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
