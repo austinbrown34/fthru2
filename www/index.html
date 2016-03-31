@@ -983,7 +983,7 @@ function checktables() {
 
 
 
-        const EDMUNDS_API_KEY = '6gkv78s45kfx5cbgcf4mq5ae';
+        const EDMUNDS_API_KEY = FTHRU_SETTINGS.EDMUNDS_API_KEY;
 
    function get_vin_data(vin) {
        url = 'https://api.edmunds.com/api/vehicle/v2/vins/'+vin+'?fmt=json&api_key='+EDMUNDS_API_KEY;
