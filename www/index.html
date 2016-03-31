@@ -733,6 +733,13 @@ function okMsg(msg, timeout, callback)
    var contactsorvehicles;
    var pdfdoc;
 
+   function redrawcontacts(){
+     contacttable.draw();
+   }
+   function redrawinventory(){
+     inventorytable.draw();
+   }
+
    function redraw(){
 contacttable.draw();
 inventorytable.draw();
@@ -752,20 +759,39 @@ var vehiclesinitialized = false;
 
       if( !contactsinitialized || !vehiclesinitialized ){
         $('#connecting').show();
-        try{
-          redraw();
-        }
-        catch(err){
-          console.log("issue trying to redraw");
-          console.log(err);
+        if (!contactsinitialized){
           try{
-            initializetables();
+            redrawcontacts();
           }
-          catch(err2){
-            console.log("issue trying to initialize");
-            console.log(err2);
+          catch(err){
+            console.log("issue trying to redraw");
+            console.log(err);
+            try{
+              initializetables();
+            }
+            catch(err2){
+              console.log("issue trying to initialize");
+              console.log(err2);
+            }
           }
         }
+        if (!vehiclesinitialized){
+          try{
+            redrawinventory();
+          }
+          catch(err){
+            console.log("issue trying to redraw");
+            console.log(err);
+            try{
+              initializetables();
+            }
+            catch(err2){
+              console.log("issue trying to initialize");
+              console.log(err2);
+            }
+          }
+        }
+
 
       }
       else{
