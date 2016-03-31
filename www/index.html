@@ -849,12 +849,12 @@ var vehiclesinitialized = false;
 			if(response != "NOTHING")
 			{
 				$.unblockUI();
-        //alert(response["user"]);
-        //alert(JSON.stringify(arguments));
+        alert(response["user"]);
+        alert(JSON.stringify(arguments));
 
+				localStorage.setItem("id", response["user"]);
         id= localStorage.getItem('id');
-
-function gotohome(){
+        alert(id);
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
                 initializetables();
@@ -888,13 +888,7 @@ function gotohome(){
 
   $('#appheader').show();
 
-}
- if (typeof response["user"] != 'undefined'){
-   localStorage.setItem("id", response["user"]);
 
-   gotohome();
- }
- 
 
 				return false;
 			}
@@ -3299,7 +3293,6 @@ function onTouchMove(e) {
   e.currentTarget.className = "";
 }
 
-function onTouchEnd(e) {
   var item = e.currentTarget;
 
   console.log("Stop: " + item.innerHTML);
