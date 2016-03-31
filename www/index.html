@@ -849,17 +849,13 @@ var vehiclesinitialized = false;
 			if(response != "NOTHING")
 			{
 				$.unblockUI();
-        // alert(response["user"]);
-        // alert(JSON.stringify(response));
+        //alert(response["user"]);
+        //alert(JSON.stringify(arguments));
 
 				localStorage.setItem("id", response["user"]);
-        id= localStorage.getItem("id");
+        id= localStorage.getItem('id');
 
-        // alert(id);
-
-        if (typeof(id) !== 'undefined' && id !== null && !isNaN(id)){
-
-
+function gotohome(){
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
                 initializetables();
@@ -892,11 +888,11 @@ var vehiclesinitialized = false;
                 },0);
 
   $('#appheader').show();
-  }
-  else{
-  errorMsg("Internal error. Please try again.", 3000);
-  }
 
+}
+ if(typeof id == 'number'){
+   gotohome();
+ }
 
 				return false;
 			}
@@ -1349,7 +1345,7 @@ function okdelete3(buttonIndex) {
    inventorytable.destroy();
    contactsinitialized = false;
    vehiclesinitialized = false;
-  //  id = null;
+   id = null;
  }
 
 
@@ -1560,8 +1556,10 @@ $(document).ready(function() {
 
 
 
-    if (typeof(id) !== 'undefined' && id !== null && !isNaN(id)){
 
+
+
+  if (id !== null){
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
@@ -1596,20 +1594,12 @@ $(document).ready(function() {
 
   }
   else{
-
+    document.getElementById('start').style.display = '';
     setTimeout(function(){
       $('#dvLoading').hide();
     },0);
-  
-
-  localStorage.clear();
 
   }
-
-
-
-
-
   $('#years').change(function() {
     $('#specific2 select').attr('disabled', 'disabled');
     $('#specific3 select').attr('disabled', 'disabled');
@@ -3306,6 +3296,7 @@ function onTouchMove(e) {
   e.currentTarget.moved = true;
   e.currentTarget.className = "";
 }
+
 function onTouchEnd(e) {
   var item = e.currentTarget;
 
@@ -3340,11 +3331,11 @@ function onTouchEnd(e) {
       }
 
 	     var pagetarget = $("#page");
-      if(divId != "start"){
-        if(divId != "viewuser" && divId != "viewcar"){
-            $.unblockUI();
-        }
-	       setTimeout(function(){
+if(divId != "start"){
+  if(divId != "viewuser" && divId != "viewcar"){
+      $.unblockUI();
+  }
+	    setTimeout(function(){
                 $('#page').scrollTop(0);
                 setTimeout(function(){
                     $("#"+divId).hide();
@@ -3358,8 +3349,8 @@ function onTouchEnd(e) {
                                     pagetarget.scrollTop(0);
                                     setTimeout(function(){
                                         pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-                    										page="";
-                    										delete item.moved;
+										page="";
+										delete item.moved;
                                     },0);
                                 },0);
                             },0);
@@ -3371,7 +3362,7 @@ function onTouchEnd(e) {
 
 
 
-      }
+}
 
 
 
