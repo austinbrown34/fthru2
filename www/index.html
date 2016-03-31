@@ -857,9 +857,10 @@ var vehiclesinitialized = false;
 
         // alert(id);
 
-        if (typeof id !== 'undefined' && id !== null){
+        if (typeof id !== 'undefined' && id !== null && !isNaN(id)){
 
             alert("passed this test");
+            alert(typeof(id));
               alert(id);
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
@@ -1561,9 +1562,10 @@ $(document).ready(function() {
 
 
 
-    if (typeof id !== 'undefined' && id !== null){
+    if (typeof id !== 'undefined' && id !== null && !isNaN(id)){
       alert("passed this test too");
       alert(id);
+      alert(typeof(id));
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
