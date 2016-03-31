@@ -767,36 +767,17 @@ function checktables() {
     if( !contactsinitialized || !vehiclesinitialized ){
       $('#connecting').show();
       if (!contactsinitialized){
-        try{
+
           redrawcontacts();
         }
-        catch(err){
-          console.log("issue trying to redraw");
-          console.log(err);
-          try{
-            initializetables();
-          }
-          catch(err2){
-            console.log("issue trying to initialize");
-            console.log(err2);
-          }
-        }
-      }
+
+
+
       if (!vehiclesinitialized){
-        try{
+
           redrawinventory();
         }
-        catch(err){
-          console.log("issue trying to redraw");
-          console.log(err);
-          try{
-            initializetables();
-          }
-          catch(err2){
-            console.log("issue trying to initialize");
-            console.log(err2);
-          }
-        }
+
       }
 
 
@@ -812,12 +793,7 @@ function checktables() {
 
 }
 
-function runchecktable(){
-  if(networkcheck){
-  checktables();
-  }
-  setTimeout(runchecktable, 10000);
-}
+
 
 	function checkFormInput(field)
 	{
@@ -924,7 +900,7 @@ function runchecktable(){
 				localStorage.setItem("id", response["user"]);
         id= localStorage.getItem('id');
           networkcheck = true;
-            runchecktable();
+
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
                 initializetables();
@@ -1627,7 +1603,7 @@ $(document).ready(function() {
 
 
   if (id !== null){
-    runchecktables();
+
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
