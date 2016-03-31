@@ -291,6 +291,7 @@ color:#6a7894;
 <script type='application/javascript' src='js/fastclick.js'></script>
 <script type='application/javascript' src='js/jquery.doubletap.js'></script>
     <script>
+    var networkcheck = true;
     $(function() {
         FastClick.attach(document.body);
     });
@@ -406,6 +407,7 @@ function initializetables(){
               "initComplete": function () {
                   $('#hide2').css( 'display', 'block' );
                   vehiclesinitialized = true;
+                  checktables();
 
 
               },
@@ -479,7 +481,7 @@ function initializetables(){
               "initComplete": function () {
                   $('#hide').css( 'display', 'block' );
                   contactsinitialized = true;
-
+                  checktables();
 
               },
       language: {
@@ -761,7 +763,7 @@ var vehiclesinitialized = false;
    var my64Images=[];
 
    function checktables() {
-
+     if(networkcheck){
       if( !contactsinitialized || !vehiclesinitialized ){
         $('#connecting').show();
         if (!contactsinitialized){
@@ -805,9 +807,15 @@ var vehiclesinitialized = false;
 
 
       //  setTimeout(checktables, 3000);
+    }
    }
 
-
+function runchecktable(){
+  if(networkcheck){
+  checktables();
+}
+  setTimeout(runchecktables, 10000);
+}
 
 	function checkFormInput(field)
 	{
@@ -913,7 +921,8 @@ var vehiclesinitialized = false;
 
 				localStorage.setItem("id", response["user"]);
         id= localStorage.getItem('id');
-
+          networkcheck = true;
+            runchecktable();
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
                 initializetables();
@@ -1352,6 +1361,7 @@ if(buttonIndex == 1){
   return false;
 }
 if(buttonIndex == 2){
+  networkcheck = false;
    var pagetarget = $('#page');
 
  		  setTimeout(function(){
@@ -1615,7 +1625,7 @@ $(document).ready(function() {
 
 
   if (id !== null){
-    checktables();
+    runchecktables();
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
