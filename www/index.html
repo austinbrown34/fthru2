@@ -849,17 +849,17 @@ var vehiclesinitialized = false;
 			if(response != "NOTHING")
 			{
 				$.unblockUI();
-        alert(response["user"]);
-        alert(JSON.stringify(response));
+        // alert(response["user"]);
+        // alert(JSON.stringify(response));
 
 				localStorage.setItem("id", response["user"]);
         id= localStorage.getItem("id");
 
-        alert(id);
+        // alert(id);
 
         if (typeof id !== 'undefined' && id !== null){
 
-
+            alert("passed this test");
 
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
@@ -1562,6 +1562,7 @@ $(document).ready(function() {
 
 
     if (typeof id !== 'undefined' && id !== null){
+      alert("passed this test too");
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
@@ -1596,7 +1597,7 @@ $(document).ready(function() {
 
   }
   else{
-    document.getElementById('start').style.display = '';
+    logoff();
     setTimeout(function(){
       $('#dvLoading').hide();
     },0);
