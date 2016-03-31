@@ -859,9 +859,7 @@ var vehiclesinitialized = false;
 
         if (typeof(id) !== 'undefined' && id !== null && !isNaN(id)){
 
-            alert("passed this test");
-            alert(typeof(id));
-              alert(id);
+          
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
                 initializetables();
@@ -896,7 +894,7 @@ var vehiclesinitialized = false;
   $('#appheader').show();
   }
   else{
-  errorMsg("Failed to initialize account. Please try again.", 3000);
+  errorMsg("Internal error. Please try again.", 3000);
   }
 
 
@@ -1604,7 +1602,52 @@ $(document).ready(function() {
     setTimeout(function(){
       $('#dvLoading').hide();
     },0);
-    logoff();
+    setTimeout(function(){
+               $('#page').scrollTop(0);
+               setTimeout(function(){
+                var backimgURL="splash.png";
+                //  $("#container").css('background', 'url("../splash.png") no-repeat 100% 100%;');
+
+                $("#container").css("background", "url('"+backimgURL+"') no-repeat 100% 100%");
+                $("#responsecontainermatch").html('');
+                $('#container').css({"-webkit-background-size":"cover"});
+            $('#container').css({"-moz-background-size":"cover"});
+            $('#container').css({"-o-background-size":"cover"});
+            $('#container').css({"background-size":"cover"});
+                   $('.appscreen').hide();
+                   $('#appheader').hide();
+
+                   setTimeout(function(){
+                       pagetarget.css({'-webkit-overflow-scrolling' : 'auto','overflow-y' : 'hidden'});
+                       setTimeout(function(){
+                           $('li').removeClass('active');
+                           setTimeout(function(){
+                               document.getElementById('start').style.display = '';
+                                  setTimeout(function(){
+                                   pagetarget.scrollTop(0);
+                                   setTimeout(function(){
+                                       pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
+
+                                   },0);
+                               },0);
+                           },0);
+                       },0);
+                   },0);
+
+               },0);
+           },0);
+
+  $("#regForm")[0].reset();
+  $("#loginForm")[0].reset();
+  $("#testForm")[0].reset();
+    $("#testForm2")[0].reset();
+      $("#editForm")[0].reset();
+
+  localStorage.clear();
+  contacttable.destroy();
+  inventorytable.destroy();
+  contactsinitialized = false;
+  vehiclesinitialized = false;
 
   }
 
