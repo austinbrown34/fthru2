@@ -762,59 +762,61 @@ var vehiclesinitialized = false;
    var myImages=[];
    var my64Images=[];
 
-   function checktables() {
-     if(networkcheck){
-      if( !contactsinitialized || !vehiclesinitialized ){
-        $('#connecting').show();
-        if (!contactsinitialized){
+function checktables() {
+  if(networkcheck){
+    if( !contactsinitialized || !vehiclesinitialized ){
+      $('#connecting').show();
+      if (!contactsinitialized){
+        try{
+          redrawcontacts();
+        }
+        catch(err){
+          console.log("issue trying to redraw");
+          console.log(err);
           try{
-            redrawcontacts();
+            initializetables();
           }
-          catch(err){
-            console.log("issue trying to redraw");
-            console.log(err);
-            try{
-              initializetables();
-            }
-            catch(err2){
-              console.log("issue trying to initialize");
-              console.log(err2);
-            }
+          catch(err2){
+            console.log("issue trying to initialize");
+            console.log(err2);
           }
         }
-        if (!vehiclesinitialized){
-          try{
-            redrawinventory();
-          }
-          catch(err){
-            console.log("issue trying to redraw");
-            console.log(err);
-            try{
-              initializetables();
-            }
-            catch(err2){
-              console.log("issue trying to initialize");
-              console.log(err2);
-            }
-          }
-        }
-
-
       }
-      else{
-        $('#connecting').hide();
+      if (!vehiclesinitialized){
+        try{
+          redrawinventory();
+        }
+        catch(err){
+          console.log("issue trying to redraw");
+          console.log(err);
+          try{
+            initializetables();
+          }
+          catch(err2){
+            console.log("issue trying to initialize");
+            console.log(err2);
+          }
+        }
       }
 
 
-      //  setTimeout(checktables, 3000);
     }
-   }
+    else{
+      $('#connecting').hide();
+    }
+  }
+  else{
+    ('#connecting').hide();
+  }
+
+
+}
 
 function runchecktable(){
   if(networkcheck){
   checktables();
-}
-  setTimeout(runchecktables, 10000);
+  }
+  setTimeout(runchecktable, 10000);
 }
 
 	function checkFormInput(field)
