@@ -638,6 +638,7 @@ DataTable.ext.buttons.csvHtml5 = {
 		// 	new Blob( [output], {type: 'text/csv'+charset} ),
 		// 	_filename( config )
 		// );
+		working("on");
 		var blob = new Blob( [output], {type:'text/csv'+charset} );
 		console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
 		// //alert("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
@@ -656,7 +657,9 @@ DataTable.ext.buttons.csvHtml5 = {
 					// //alert('IN REQUEST DONE');
 					// //alert(JSON.stringify(arguments));
 					// window.location = url;
+
 					cordova.InAppBrowser.open(url,'_system','location=yes');
+					working("off");
 				});
 		}
 		fuckIt(blob);
@@ -887,6 +890,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 //            //alert("ooh yeah after open");
 		}
 		else {
+			working("on");
 			pdf.getBuffer( function (buffer) {
 				var blob = new Blob( [buffer], {type:'application/pdf'} );
 				console.log("ABOUT TO READ ABOUT BLOBIES NOT BOOOBIES");
@@ -907,6 +911,7 @@ DataTable.ext.buttons.pdfHtml5 = {
 							// //alert(JSON.stringify(arguments));
 							// window.location = url;
 							cordova.InAppBrowser.open(url,'_system','location=yes');
+							working("off");
 						});
 				}
 
