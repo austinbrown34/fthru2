@@ -300,8 +300,11 @@ function initializetables(){
 
   // $.fn.dataTable.ext.errMode = 'none';
   $.fn.dataTable.ext.errMode = function ( settings, helpPage, message ) {
-      console.log(message);
-      alert(message);
+    contactsinitialized = false;
+    vehiclesinitialized = false;
+    checktables();
+
+
   };
 
   inventorytable = $('#exampledt2')
@@ -801,7 +804,7 @@ var vehiclesinitialized = false;
       }
 
 
-       setTimeout(checktables, 3000);
+      //  setTimeout(checktables, 3000);
    }
 
 
