@@ -748,6 +748,20 @@ var vehiclesinitialized = false;
    var myImages=[];
    var my64Images=[];
 
+   function checktables() {
+
+      if( !contactsinitialized || !vehiclesinitialized ){
+        $('#connecting').show();
+        initializetables();
+      }
+      else{
+        $('#connecting').hide();
+      }
+
+
+       setTimeout(checktables, 5000);
+   }
+
 
 
 	function checkFormInput(field)
@@ -1556,6 +1570,7 @@ $(document).ready(function() {
 
 
   if (id !== null){
+    checktables();
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
     $("#container").css('background-image', 'none');
@@ -2252,7 +2267,16 @@ Please register below to gain access to fTHRU!
 
 	<div id="container">
 
-
+    <div id="connecting" style="
+        display:none;
+        position: relative;
+        z-index: 101;
+        top: 13%;
+        background: rgba(0, 0, 0, 0.53);
+        padding: 15px;
+        text-align: center;
+        margin-bottom: -15px;
+    ">Connecting to Server...</div>
 
 
 
