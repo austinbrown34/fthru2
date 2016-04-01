@@ -854,6 +854,7 @@ function checktables() {
 
   function reg(){
     var pagetarget = $("#page");
+    $('#forgot').hide();
     $("#container").css('background-image', 'none');
     $("#regheader").show();
     setTimeout(function(){
@@ -900,27 +901,28 @@ function checktables() {
     var serializedData = $("#forgotForm").serialize();
 
     var request = $.ajax({
-				url: "http://" + FTHRU_SETTINGS.API_HOSTNAME + "/www/forgotpass.php?id="+id,
+				url: "http://" + FTHRU_SETTINGS.API_HOSTNAME + "/www/forgotpass.php",
 				type: "POST",
 				data: serializedData
 			});
 
     request.done(function (response, status, jqXHR){
 
-
-			if(response != "NOTHING"){
+      alert(status.code);
+			if(status.code == '200'){
 				$.unblockUI();
+        okMsg("Your Password Reset Link has Sent!", 2000, function(){
+            $("#forgotForm")[0].reset();
+        });
 				return false;
 			}
 
+      else{
+        errorMsg("Unknown Response. Try again later.", 3000);
+          $("#forgotForm")[0].reset();
+      	return false;
+      }
 
-			if(response == "NOTHING"){
-				errorMsg("Failed to log in. Try again.", 3000);
-				return false;
-			}
-
-    	errorMsg("Unknown Response. Try again later.", 3000);
-    	return false;
     });
 
     request.fail(function (jqXHR, textStatus, errorThrown){
@@ -930,6 +932,7 @@ function checktables() {
 			);
 
 			errorMsg("Problem with logging in. Try again later.", 3000);
+        $("#forgotForm")[0].reset();
 			return false;
 		});
 
@@ -1428,7 +1431,7 @@ $('#container').css({"background-size":"cover"});
                      pagetarget.scrollTop(0);
                      setTimeout(function(){
                          pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-
+                         $('#forgot').show();
                      },0);
                  },0);
              },0);
@@ -2049,96 +2052,96 @@ $().ready(function() {
    }
  });
 
-
- $("#forgotForm").validate({
-   rules:{
-
-     email: {
-       required: true,
-       email: true
-     }
-
-   },
-
-   submitHandler: function(form){
-     var postData = $(form).serializeArray();
-     var formURL = $(form).attr("action");
-
-     $.ajax(
-      {
-          url : formURL,
-          type: "POST",
-          data : postData,
-          success:function(data, textStatus, jqXHR)
-          {
-            //alert(JSON.stringify(arguments));
-              function alertDismissed() {
-                  $("#regForm")[0].reset();
-                  $('#page').scrollTop(0);
-
-
-                  okMsg("Please login.", 2000, back());
-
-
-
-              }
-
-              navigator.notification.alert(
-                      'Registration Successful!',
-                      alertDismissed,
-                      'fTHRU',
-                      'OK'
-              );
-
-
-
-          },
-          error: function(jqXHR, textStatus, errorThrown)
-          {
-              function alertDismissed() {
-                  // $("#regForm")[0].reset();
-                  $('#page').scrollTop(0);
-              }
-
-              //alert(JSON.stringify(arguments));
-              if (jqXHR.status === 0) {
-                navigator.notification.alert(
-                        'Network Issues. Please try again.',
-                        alertDismissed,
-                        'fTHRU',
-                        'OK'
-                );
-              }
-              if(jqXHR.status == 409){
-                navigator.notification.alert(
-                        'This email is already registered with fTHRU.',
-                        alertDismissed,
-                        'fTHRU',
-                        'OK'
-                );
-              }
-              if(jqXHR.status == 400){
-                navigator.notification.alert(
-                        'There was an issue with processing/validating your input. Try again.',
-                        alertDismissed,
-                        'fTHRU',
-                        'OK'
-                );
-              }
-              else{
-              navigator.notification.alert(
-                      'There was a problem with your registration. Please try again.',
-                      alertDismissed,
-                      'fTHRU',
-                      'OK'
-              );
-            }
-          }
-      });
-   }
- });
-
-
+ //
+ // $("#forgotForm").validate({
+ //   rules:{
+ //
+ //     email: {
+ //       required: true,
+ //       email: true
+ //     }
+ //
+ //   },
+ //
+ //   submitHandler: function(form){
+ //     var postData = $(form).serializeArray();
+ //     var formURL = $(form).attr("action");
+ //
+ //     $.ajax(
+ //      {
+ //          url : formURL,
+ //          type: "POST",
+ //          data : postData,
+ //          success:function(data, textStatus, jqXHR)
+ //          {
+ //            //alert(JSON.stringify(arguments));
+ //              function alertDismissed() {
+ //                  $("#regForm")[0].reset();
+ //                  $('#page').scrollTop(0);
+ //
+ //
+ //                  okMsg("Please login.", 2000, back());
+ //
+ //
+ //
+ //              }
+ //
+ //              navigator.notification.alert(
+ //                      'Registration Successful!',
+ //                      alertDismissed,
+ //                      'fTHRU',
+ //                      'OK'
+ //              );
+ //
+ //
+ //
+ //          },
+ //          error: function(jqXHR, textStatus, errorThrown)
+ //          {
+ //              function alertDismissed() {
+ //                  // $("#regForm")[0].reset();
+ //                  $('#page').scrollTop(0);
+ //              }
+ //
+ //              //alert(JSON.stringify(arguments));
+ //              if (jqXHR.status === 0) {
+ //                navigator.notification.alert(
+ //                        'Network Issues. Please try again.',
+ //                        alertDismissed,
+ //                        'fTHRU',
+ //                        'OK'
+ //                );
+ //              }
+ //              if(jqXHR.status == 409){
+ //                navigator.notification.alert(
+ //                        'This email is already registered with fTHRU.',
+ //                        alertDismissed,
+ //                        'fTHRU',
+ //                        'OK'
+ //                );
+ //              }
+ //              if(jqXHR.status == 400){
+ //                navigator.notification.alert(
+ //                        'There was an issue with processing/validating your input. Try again.',
+ //                        alertDismissed,
+ //                        'fTHRU',
+ //                        'OK'
+ //                );
+ //              }
+ //              else{
+ //              navigator.notification.alert(
+ //                      'There was a problem with your registration. Please try again.',
+ //                      alertDismissed,
+ //                      'fTHRU',
+ //                      'OK'
+ //              );
+ //            }
+ //          }
+ //      });
+ //   }
+ // });
+ //
+ //
 
 
   $("#testForm").validate({
@@ -2571,7 +2574,7 @@ $().ready(function() {
 <body onload="init();">
   <div id="dvLoading"></div>
 
-  <div id="forgot" style="opacity: .4; position: absolute; z-index: 400; color: black; top: 22%; box-shadow: rgb(0, 0, 43) -4px 3px 2px; border-radius: 5px; border: 1px solid rgb(236, 189, 231); width: 100%; text-align: right; left: -91%; padding-top: 50px; background: rgba(255, 222, 245, 0.580392);">
+  <div id="forgot" style="opacity: .4; position: absolute; z-index: 400; color: black; top: 22%; box-shadow: rgb(0, 0, 43) -4px 3px 2px; border-radius: 0px 15px 15px 0px; border: 1px solid rgb(236, 189, 231); width: 100%; text-align: right; left: -91%; padding-top: 50px; background: rgba(255, 222, 245, 0.580392);">
     <form id="forgotForm" onsubmit="return forgotpass();">
       <div class="fldstyle" style=" width: 80%; position: absolute; right: 11%; bottom: 10%; "><input id="email" type="text" name="email" style="text-transform: lowercase !important;width: 90%;margin-right: 20px;/* padding-right: 75px; */box-shadow: -2px 0px 6px 1px;" placeholder="Email Address" class="myinputs" autocapitalize="off"></div><br>
       <!-- <button class="bluebtn myinputs" type="submit" style="
@@ -2579,7 +2582,7 @@ $().ready(function() {
 ">&lt;&lt; Submit &gt;&gt;</button> -->
     <div id="forgotmessage" style=" position: absolute; bottom: -36%; color: white; font-size: 16px; left: 8%; ">Enter account email and tap the question mark!</div>
     <div id="forgotmessage" style=" position: absolute; color: white; font-size: 16px; left: 8%; padding: 0px; position: absolute; top: -35%;"> Forgot Password? No Worries, you can reset it!</div>
-    <div type = "submit" id="forgottab" style=" position: absolute; right: -1px; top: -1%; width: 10%; background: rgba(121, 124, 233, 0.54); height: 101%; border-radius: 0px 5px 2px 0px; border: rgba(0, 0, 0, 0.21) 2px solid; "> <i class="fa fa-question-circle" style=" font-size: 32px; top: 25%; right: 6px; position: absolute; border: 4px aliceblue solid; border-radius: 35px; "></i></div>
+    <div type = "submit" id="forgottab" style=" position: absolute; right: -1px; top: -1%; width: 11%; background: rgba(121, 124, 233, 0.54); height: 101%; border-radius: 0px 15px 15px 0px; border: rgba(0, 0, 0, 0.21) 2px solid; "> <i class="fa fa-question-circle" style=" font-size: 32px; top: 23%; right: 6px; position: absolute; border: 4px aliceblue solid; border-radius: 35px; "></i></div>
 </form>
   </div>
 <div id="appheader">
