@@ -822,6 +822,16 @@ function checktables() {
 		return true;
 	}
 
+  function checkFormEmail(field)
+  {
+    if ( $("#forgotForm :input[name='" + field + "']").val().length === 0 )
+    {
+      errorMsg("All fields are required.", 3000);
+      return false;
+    }
+    return true;
+  }
+
 	function checkContactFormInput(field)
 	{
 		if ( $("#testForm :input[name='" + field + "']").val().length === 0 )
@@ -877,6 +887,59 @@ function checktables() {
 
   }
 
+  function forgotpass(){
+    if(!checkFormEmail("email")) return false;
+    $.blockUI({ css: {
+					border: 'none',
+					padding: '15px',
+					backgroundColor: '#000',
+					'-webkit-border-radius': '10px',
+					'-moz-border-radius': '10px',
+					color: '#fff'
+		} });
+    var serializedData = $("#forgotForm").serialize();
+
+    var request = $.ajax({
+				url: "http://" + FTHRU_SETTINGS.API_HOSTNAME + "/www/forgotpass.php?id="+id,
+				type: "POST",
+				data: serializedData
+			});
+
+    request.done(function (response, status, jqXHR){
+
+
+			if(response != "NOTHING"){
+				$.unblockUI();
+				return false;
+			}
+
+
+			if(response == "NOTHING"){
+				errorMsg("Failed to log in. Try again.", 3000);
+				return false;
+			}
+
+    	errorMsg("Unknown Response. Try again later.", 3000);
+    	return false;
+    });
+
+    request.fail(function (jqXHR, textStatus, errorThrown){
+			console.error(
+				"The following error occured: "+
+				textStatus, errorThrown
+			);
+
+			errorMsg("Problem with logging in. Try again later.", 3000);
+			return false;
+		});
+
+    return false;
+
+
+
+  }
+
+
 	function processLogin()
 	{
 		if(!checkFormInput("email")) return false;
@@ -917,7 +980,7 @@ function checktables() {
 				localStorage.setItem("id", response["user"]);
         id= localStorage.getItem('id');
           networkcheck = true;
-
+                $("#forgot").hide();
                 var pagetarget = $("#page");
                 $("#container").css('background-image', 'none');
                 initializetables();
@@ -1415,7 +1478,7 @@ if(buttonIndex == 2){
                                      pagetarget.scrollTop(0);
                                      setTimeout(function(){
                                          pagetarget.css({'-webkit-overflow-scrolling' : 'touch', 'overflow-y' : 'auto'});
-
+                                        $("#forgot").show();
                                      },0);
                                  },0);
                              },0);
@@ -1579,17 +1642,20 @@ $(document).ready(function() {
   $('#models1').attr('disabled', 'disabled');
   $('#makes1').css("opacity",".4");
   $('#models1').css("opacity",".4");
-  $('#forgot').toggle(function () {
+  $('#forgottab').toggle(function () {
     $("#forgot").animate({
-      left: "0%",
+      left: "-5%",
       opacity: 1
-  },1500);
+  },1000);
   }, function () {
+      if($("#forgot input").val() != ""){
+        forgotpass();
+      }
       $("#forgot").animate({
-        left: "-45%",
+        left: "-93%",
         opacity: .4
 
-      },1500);
+      },1000);
     });
 
   // $("#forgot").on('click touchstart', function () {
@@ -1702,6 +1768,7 @@ $(document).ready(function() {
 
 
   if (id !== null){
+    $("#forgot").hide();
     networkcheck = true;
     // document.getElementById('appheader').style.display = '';
     $('#appheader').show();
@@ -1740,6 +1807,7 @@ checktables();
     networkcheck = false;
     contactsinitialized = false;
     vehiclesinitialized = false;
+    $("#forgot").show();
     document.getElementById('start').style.display = '';
     setTimeout(function(){
       $('#dvLoading').hide();
@@ -2411,8 +2479,16 @@ $().ready(function() {
 <body onload="init();">
   <div id="dvLoading"></div>
 
-  <div id="forgot" style="opacity:.4; position: absolute; z-index: 400; background: rgba(255, 222, 245, 0.58); color: black; padding: 10px; top: 20%; box-shadow:  -4px 3px 2px #00002b; border-radius: 5px; border: 1px solid #ECBDE7; width: 50%; text-align: right;left: -45%;">Forgot Password &nbsp; <i class="fa fa-question-circle"></i></div>
-
+  <div id="forgot" style="opacity: .4; position: absolute; z-index: 400; color: black; top: 20%; box-shadow: rgb(0, 0, 43) -4px 3px 2px; border-radius: 5px; border: 1px solid rgb(236, 189, 231); width: 100%; text-align: right; left: -93%; padding-top: 60px; background: rgba(255, 222, 245, 0.580392);">
+    <form id="forgotForm" onsubmit="return forgotpass();">
+      <div class="fldstyle" style=" width: 80%; position: absolute; right: 8%; bottom: 10%; "><input id="email" type="text" name="email" style="text-transform: lowercase !important;width: 90%;margin-right: 20px;/* padding-right: 75px; */box-shadow: -2px 0px 6px 1px;" placeholder="Email Address" class="myinputs" autocapitalize="off"></div><br>
+      <!-- <button class="bluebtn myinputs" type="submit" style="
+    display: none;
+">&lt;&lt; Submit &gt;&gt;</button> -->
+    <div id="forgotmessage" style=" position: absolute; left: 17%; bottom: -31%; font-size: 18px; color: rgb(255, 255, 255); /* text-align: initial; */ background: rgba(0, 0, 0, 0.35); padding: 0px 5px 0px 5px; border: rgba(0, 0, 0, 0.46) 2px solid; border-radius: 5px; ">Enter account email and tap the question mark!</div><div id="forgotmessage" style=" position: absolute; left: 17%; top: -30%; font-size: 18px; color: rgb(255, 255, 255); /* text-align: initial; */ background: rgba(0, 0, 0, 0.35); padding: 0px 5px 0px 5px; border: rgba(0, 0, 0, 0.46) 2px solid; border-radius: 5px; "> Forgot Password? No Worries, you can reset it!</div>
+    <div type = "submit" id="forgottab" style=" position: absolute; right: -1px; top: -1%; width: 9%; background: rgba(121, 124, 233, 0.54); height: 101%; border-radius: 0px 5px 2px 0px; border: rgba(0, 0, 0, 0.21) 2px solid; "> <i class="fa fa-question-circle" style=" font-size: 32px; top: 32%; right: 6px; position: absolute; border: 4px aliceblue solid; border-radius: 35px; "></i></div>
+</form>
+  </div>
 <div id="appheader">
 <div style="position: absolute;
 		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><i id="logoff" class="fa fa-sign-out fa-3x myinputs" style="position: absolute;
