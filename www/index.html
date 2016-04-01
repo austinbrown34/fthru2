@@ -1579,6 +1579,22 @@ $(document).ready(function() {
   $('#models1').attr('disabled', 'disabled');
   $('#makes1').css("opacity",".4");
   $('#models1').css("opacity",".4");
+  $('#forgot').toggle(function () {
+    $("#forgot").animate({
+      left: "0%",
+      opacity: 1
+  },1500);
+  }, function () {
+      $("#forgot").animate({
+        left: "-45%",
+        opacity: .4
+
+      },1500);
+    });
+
+  // $("#forgot").on('click touchstart', function () {
+  //
+  //   });
 
   $('.bluebtn').on('click touchstart', function () {
 
@@ -2394,6 +2410,8 @@ $().ready(function() {
 
 <body onload="init();">
   <div id="dvLoading"></div>
+
+  <div id="forgot" style="opacity:.4; position: absolute; z-index: 400; background: rgba(255, 222, 245, 0.58); color: black; padding: 10px; top: 20%; box-shadow:  -4px 3px 2px #00002b; border-radius: 5px; border: 1px solid #ECBDE7; width: 50%; text-align: right;left: -45%;">Forgot Password &nbsp; <i class="fa fa-question-circle"></i></div>
 
 <div id="appheader">
 <div style="position: absolute;
