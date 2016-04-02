@@ -2235,7 +2235,7 @@ $("#settingsForm").validate({
      },
      confirm: {
        required: true,
-       equalTo: "#password1"
+       equalTo: "#regForm #password1"
      },
      dealer: {
        required: true,
@@ -2822,7 +2822,7 @@ else {
 },
 		submitHandler: function(form){
       working("on");
-      
+
         if($("#addcar #years1").is(':disabled') || $("#addcar #makes1").is(':disabled') || $("#addcar #models1").is(':disabled')){
           working("off");
           return false;
