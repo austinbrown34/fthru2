@@ -2016,6 +2016,31 @@ checktables();
         // $('#page').scrollTop(0);
         window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
     });
+    $('#makes1').on('focus', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        // $('#page').scrollTop(0);
+        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+    });
+    $('#years1').on('focus', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        // $('#page').scrollTop(0);
+        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+    });
+    $('#models').on('focus', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        // $('#page').scrollTop(0);
+        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+    });
+    $('#makes').on('focus', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        // $('#page').scrollTop(0);
+        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+    });
+    $('#years').on('focus', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        // $('#page').scrollTop(0);
+        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+    });
 
   function resetfields(){
 
@@ -2407,7 +2432,14 @@ selectcheck: true
      errorPlacement: function(error, element) {
   if(element.attr("name") == "type[]") {
     error.appendTo( $("#home #error") );
-  } else {
+  }
+  if(element.attr("name") == "pricelow"){
+    error.appendTo( $("#home #pricelowerror") );
+  }
+  if(element.attr("name") == "pricehigh"){
+    error.appendTo( $("#home #pricehigherror") );
+  }
+  else {
     error.insertAfter(element);
   }
 },
@@ -2568,7 +2600,14 @@ selectcheck: true
     errorPlacement: function(error, element) {
  if(element.attr("name") == "type[]") {
    error.appendTo( $("#edit #error") );
- } else {
+ }
+ if(element.attr("name") == "pricelow"){
+   error.appendTo( $("#edit #pricelowerror") );
+ }
+ if(element.attr("name") == "pricehigh"){
+   error.appendTo( $("#edit #pricehigherror") );
+ }
+ else {
    error.insertAfter(element);
  }
 },
@@ -2756,7 +2795,11 @@ selectcheck: true
   errorPlacement: function(error, element) {
 if(element.attr("name") == "type[]") {
  error.appendTo( $("#addcar #error") );
-} else {
+}
+if(element.attr("name") == "price"){
+  error.appendTo( $("#addcar #priceerror") );
+}
+else {
  error.insertAfter(element);
 }
 },
@@ -3581,13 +3624,13 @@ Please register below to gain access to fTHRU!
                             <center>
 														<p style="color:black;">  Low Price:</p>
 													<div class="pricewrapper">	<input id="pricelow" class="myinputs" name="pricelow" tabindex="5" type="tel" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
-</center>
+              <br><div id="pricelowerror"></div></center>
                         	</td>
 													<td style="width:50%;">
                             <center>
 														<p style="color:black;">  High Price:</p>
 														<div class="pricewrapper"><input id="pricehigh" class="myinputs" name="pricehigh" tabindex="6" type="tel" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
-</center>
+               <br><div id="pricehigherror"></div></center>
                           </td>
 												</tr>
 											</table>
@@ -3793,12 +3836,14 @@ Please register below to gain access to fTHRU!
                             <center>
 														<p style="color:black;">  Low Price:</p>
 														<div class="pricewrapper"><input id="pricelow" class="myinputs" name="pricelow" tabindex="5" type="tel" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
+<br><div id="pricelowerror"></div>
 </center>
                           </td>
 													<td style="width:50%;">
                             <center>
 														<p style="color:black;">  High Price:</p>
 														<div class="pricewrapper"><input id="pricehigh" class="myinputs" name="pricehigh" tabindex="6" type="tel" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;" class="ss-item-required" required /></div>
+<br><div id="pricehigherror"></div>
 </center>
                         	</td>
 												</tr>
@@ -3987,8 +4032,8 @@ Please register below to gain access to fTHRU!
                 <tr><td style="width:100%;">
                   <center>
 							<!-- <p style="color:black;">Price:</p> -->
-							<div class="pricewrapper2"><input type="tel" step="1" name="price" tabindex="5" class="myinputs" style="zoom:1;width:55vw;" placeholder= "Asking Price" required /></div>
-							<br><br>
+							<div class="pricewrapper2"><input type="tel" step="1" id="askingprice" name="price" tabindex="5" class="myinputs" style="zoom:1;width:55vw;" placeholder= "Asking Price" required /></div>
+							<br>  <div id="priceerror"></div><br>
 
 
 
