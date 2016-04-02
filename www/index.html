@@ -1461,10 +1461,19 @@ $('#container').css({"background-size":"cover"});
 function loadsettings(){
   $.ajax({
       type: "GET",
-      url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/settings.php?id="+id,
+      url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/settings.php?action=get&id="+id,
       dataType: "html",
       success: function(response){
 
+        alert(response;)
+        $('#settings [name="firstname"]').val(response['first']);
+        $('#settings [name="lastname"]').val(response['last']);
+
+        $('#settings [name="phone"]').val(response['phone']);
+
+        $('#settings [name="email"]').val(response['email']);
+
+        $('#settings [name="dealer"]').val(response['dealership']);
 
 
       },
