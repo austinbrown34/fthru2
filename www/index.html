@@ -1464,7 +1464,7 @@ function loadsettings(){
       url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/settings.php?id="+id,
       dataType: "html",
       success: function(response){
-      
+
 
 
       },
@@ -1761,6 +1761,16 @@ $(document).ready(function() {
 
     setTimeout(function () {
         $('#logoff').removeClass('activenow2');
+    }, 500);
+
+  });
+
+  $('#settingsicon').on('click touchstart', function () {
+
+    $(this).addClass("activenow2");
+
+    setTimeout(function () {
+        $('#settingsicon').removeClass('activenow2');
     }, 500);
 
   });
@@ -2766,7 +2776,7 @@ $("#settingsForm").validate({
 <div id="appheader">
   <div style=" position: absolute; top: -8px; margin: 18px 29px 12px 4% !important; " class="hdr_back">
 
-<i class="fa fa-bars fa-3x myinputs" style=" position: absolute; left: 15px; zoom: .6; margin-top: 30px;" onclick="javascript:settings();"></i>
+<i id="settingsicon" class="fa fa-bars fa-3x myinputs" style=" position: absolute; left: 15px; zoom: .6; margin-top: 30px;" onclick="javascript:settings();"></i>
 
 </div>
 <div style="position: absolute;
