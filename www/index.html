@@ -936,13 +936,20 @@ function checktables() {
 			);
       if(jqXHR.status == '401'){
 				$.unblockUI();
-        okMsg("This email is not registed with an fTHRU account.", 2000, function(){
-            $("#forgotForm")[0].reset();
-        });
-				return false;
+
+        errorMsg("This email is not registed with an fTHRU account.", 3000);
+        $("#forgotForm")[0].reset();
+        return false;
+			}
+      if(jqXHR.status == '406'){
+				$.unblockUI();
+        errorMsg("Invalid email address. Please type a valid email.", 3000);
+        $("#forgotForm")[0].reset();
+        return false;
 			}
       else{
-        errorMsg("Problem with logging in. Try again later.", 3000);
+        $.unblockUI();
+        errorMsg("Unknown error. Try again later.", 3000);
         $("#forgotForm")[0].reset();
         return false;
       }
