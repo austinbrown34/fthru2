@@ -942,17 +942,12 @@ function checktables() {
 				return false;
 			}
       else{
-
-			errorMsg("Problem with logging in. Try again later.", 3000);
+        errorMsg("Problem with logging in. Try again later.", 3000);
         $("#forgotForm")[0].reset();
-			return false;
-		});
-    }
-    return false;
+        return false;
+      }
+    });
 
-
-
-  }
 
 
 	function processLogin()
