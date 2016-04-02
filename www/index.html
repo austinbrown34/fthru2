@@ -1467,8 +1467,10 @@ function loadsettings(){
       success: function(response){
 
         alert(response);
-                                            
-        $('#settings [name="firstname"]').val(response["first"]);
+        var firstname = response["first"];
+        alert(firstname);
+
+        $('#settings [name="firstname"]').val(firstname);
         $('#settings [name="lastname"]').val(response["last"]);
 
         $('#settings [name="phone"]').val(response["phone"]);
