@@ -2813,7 +2813,7 @@ selectcheck: true
 if(element.attr("name") == "type[]") {
  error.appendTo( $("#addcar #error") );
 }
-if(element.attr("name") == "price"){
+else if(element.attr("name") == "price"){
   error.appendTo( $("#addcar #priceerror") );
 }
 else {
@@ -2822,7 +2822,7 @@ else {
 },
 		submitHandler: function(form){
       working("on");
-      i
+      
         if($("#addcar #years1").is(':disabled') || $("#addcar #makes1").is(':disabled') || $("#addcar #models1").is(':disabled')){
           working("off");
           return false;
