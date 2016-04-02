@@ -908,10 +908,10 @@ function checktables() {
 
     request.done(function (response, status, jqXHR){
 
-      alert(jqXHR.status);
-      alert(JSON.stringify(response));
-      alert(JSON.stringify(status));
-      alert(JSON.stringify(jqXHR));
+      // alert(jqXHR.status);
+      // alert(JSON.stringify(response));
+      // alert(JSON.stringify(status));
+      // alert(JSON.stringify(jqXHR));
 			if(jqXHR.status == '200'){
 				$.unblockUI();
         okMsg("Your Password Reset Link has Sent!", 2000, function(){
@@ -920,6 +920,13 @@ function checktables() {
 				return false;
 			}
 
+      if(jqXHR.status == '401'){
+				$.unblockUI();
+        okMsg(response, 2000, function(){
+            $("#forgotForm")[0].reset();
+        });
+				return false;
+			}
       else{
         errorMsg("Unknown Response. Try again later.", 3000);
           $("#forgotForm")[0].reset();
@@ -2585,7 +2592,7 @@ $().ready(function() {
 ">&lt;&lt; Submit &gt;&gt;</button> -->
     <div id="forgotmessage" style=" position: absolute; bottom: -36%; color: white; font-size: 16px; left: 8%; ">Enter account email and tap the question mark!</div>
     <div id="forgotmessage" style=" position: absolute; color: white; font-size: 16px; left: 8%; padding: 0px; position: absolute; top: -35%;"> Forgot Password? No Worries, you can reset it!</div>
-    <div type = "submit" id="forgottab" style=" position: absolute; right: -1px; top: -1%; width: 11%; background: rgba(121, 124, 233, 0.54); height: 101%; border-radius: 0px 15px 15px 0px; border: rgba(0, 0, 0, 0.21) 2px solid; "> <i class="fa fa-question-circle" style=" font-size: 32px; top: 23%; right: 6px; position: absolute; border: 4px aliceblue solid; border-radius: 35px; "></i></div>
+    <div type = "submit" id="forgottab" style=" position: absolute; right: -1px; top: -1%; width: 11%; background: rgba(121, 124, 233, 0.54); height: 101%; border-radius: 0px 15px 15px 0px; border: rgba(0, 0, 0, 0.21) 2px solid; "> <i class="fa fa-question-circle" style=" font-size: 32px; top: 22%; right: 6px; position: absolute; border: 4px aliceblue solid; border-radius: 35px; "></i></div>
 </form>
   </div>
 <div id="appheader">
