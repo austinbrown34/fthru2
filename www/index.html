@@ -1480,9 +1480,9 @@ function loadsettings(first){
 
         if(first == "first"){
           $("#welcome span").text("Welcome "+firstname);
-          $("#welcome").fadeIn(2000);
+          $("#welcome").fadeIn(3000);
           setTimeout(function(){
-            $("#welcome").fadeOut(2000);
+            $("#welcome").fadeOut(3000);
           },3000);
         }
 
@@ -2389,18 +2389,28 @@ $("#settingsForm").validate({
          number: true
        },
        years: {
-      required: "#home #specific:checked"
+      required: "#home #specific:checked",
+      selectcheck: true
     },
     makes: {
-   required: "#home #specific:checked"
+   required: "#home #specific:checked",
+   selectcheck: true
  },
  models: {
-required: "#home #specific:checked"
+required: "#home #specific:checked",
+selectcheck: true
 },
        'type[]': {
          required: true
        }
      },
+     errorPlacement: function(error, element) {
+  if(element.attr("name") == "type[]") {
+    error.appendTo( $("#home #error") );
+  } else {
+    error.insertAfter(element);
+  }
+},
      submitHandler: function(form) {
 
        working("on");
@@ -2466,18 +2476,28 @@ required: "#home #specific:checked"
       number: true
     },
     years: {
-   required: "#edit #specific:checked"
+   required: "#edit #specific:checked",
+   selectcheck: true
  },
  makes: {
-required: "#edit #specific:checked"
+required: "#edit #specific:checked",
+selectcheck: true
 },
 models: {
-required: "#edit #specific:checked"
+required: "#edit #specific:checked",
+selectcheck: true
 },
     'type[]': {
       required: true
     }
     },
+    errorPlacement: function(error, element) {
+ if(element.attr("name") == "type[]") {
+   error.appendTo( $("#edit #error") );
+ } else {
+   error.insertAfter(element);
+ }
+},
     submitHandler: function(form) {
 
 
@@ -2605,18 +2625,29 @@ required: "#edit #specific:checked"
       number: true
     },
     years: {
-   required: "#addcar #specific:checked"
+   required: "#addcar #specific:checked",
+   selectcheck: true
+
  },
  makes: {
-required: "#addcar #specific:checked"
+required: "#addcar #specific:checked",
+selectcheck: true
 },
 models: {
-required: "#addcar #specific:checked"
+required: "#addcar #specific:checked",
+selectcheck: true
 },
     'type[]': {
       required: true
     }
   },
+  errorPlacement: function(error, element) {
+if(element.attr("name") == "type[]") {
+ error.appendTo( $("#addcar #error") );
+} else {
+ error.insertAfter(element);
+}
+},
 		submitHandler: function(form){
       working("on");
 
@@ -2699,6 +2730,10 @@ required: "#addcar #specific:checked"
 	});
 });
 
+
+jQuery.validator.addMethod('selectcheck', function (value) {
+       return (value != '');
+   }, "This is required");
 
 
 
@@ -3284,7 +3319,7 @@ Please register below to gain access to fTHRU!
     border-width: 5px 0 5px 0;
     padding: 10px;">
 											<p style="color:black;">Type of Vehicle:</p><br>
-
+                      <div id="error"></div>
 											<table tabindex="4" style="width:100%;">
 												<tr>
 													<td style="width:25%;">
@@ -3502,7 +3537,7 @@ Please register below to gain access to fTHRU!
     border-width: 5px 0 5px 0;
     padding: 10px;">
 											<p style="color:black;">Type of Vehicle:</p><br>
-
+                      <div id="error"></div>
 											<table  tabindex="4" style="width:100%;">
 												<tr>
 													<td style="width:25%;">
@@ -3766,6 +3801,7 @@ Please register below to gain access to fTHRU!
     padding: 10px;">
 
 								<p style="color:black;">Type of Vehicle:</p><br>
+                <div id="error"></div>
 								<table tabindex="4" style="width:100%;">
 									<tr>
 										<td style="width:25%;">
