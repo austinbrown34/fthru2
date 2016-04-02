@@ -908,7 +908,7 @@ function checktables() {
 
     request.done(function (response, status, jqXHR){
 
-      // alert(jqXHR.status);
+      alert(jqXHR.status);
       // alert(JSON.stringify(response));
       // alert(JSON.stringify(status));
       // alert(JSON.stringify(jqXHR));
@@ -920,13 +920,7 @@ function checktables() {
 				return false;
 			}
 
-      if(jqXHR.status == '401'){
-				$.unblockUI();
-        okMsg(response, 2000, function(){
-            $("#forgotForm")[0].reset();
-        });
-				return false;
-			}
+
       else{
         errorMsg("Unknown Response. Try again later.", 3000);
           $("#forgotForm")[0].reset();
@@ -940,12 +934,20 @@ function checktables() {
 				"The following error occured: "+
 				textStatus, errorThrown
 			);
+      if(jqXHR.status == '401'){
+				$.unblockUI();
+        okMsg(response, 2000, function(){
+            $("#forgotForm")[0].reset();
+        });
+				return false;
+			}
+      else{
 
 			errorMsg("Problem with logging in. Try again later.", 3000);
         $("#forgotForm")[0].reset();
 			return false;
 		});
-
+    }
     return false;
 
 
