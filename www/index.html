@@ -1467,26 +1467,26 @@ function loadsettings(){
       success: function(response){
 
         // alert(response);
-        settingsobj = response;
-        var firstname = response[0].first;
+        settingsobj = JSON.parse(response);
+        var firstname = settingsobj.first;
         var lastname = settingsobj.last;
-        var phone = settingsobj[0].phone;
+        var phone = settingsobj.phone;
+        var email = settingsobj.email;
+        var dealership = settingsobj.dealership;
 
         alert(settingsobj);
         alert(typeof settingsobj);
         alert(firstname);
-        alert(lastname);
-        alert(phone);
-        alert(response["first"]);
+
 
         $('#settings [name="firstname"]').val(firstname);
-        $('#settings [name="lastname"]').val(response["last"]);
+        $('#settings [name="lastname"]').val(lastname);
 
-        $('#settings [name="phone"]').val(response["phone"]);
+        $('#settings [name="phone"]').val(phone);
 
-        $('#settings [name="email"]').val(response["email"]);
+        $('#settings [name="email"]').val(email);
 
-        $('#settings [name="dealer"]').val(response["dealership"]);
+        $('#settings [name="dealer"]').val(dealership);
 
         working("off");
       },
