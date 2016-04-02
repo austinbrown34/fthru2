@@ -1467,7 +1467,7 @@ function loadsettings(){
       success: function(response){
 
         alert(response);
-        var firstname = response["first"];
+        var firstname = response.first;
         alert(firstname);
 
         $('#settings [name="firstname"]').val(firstname);
