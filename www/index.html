@@ -2093,6 +2093,8 @@ $("#settingsForm").validate({
           //alert(JSON.stringify(arguments));
             function alertDismissed() {
                 $('#page').scrollTop(0);
+                $('#settings #password1').val("");
+                $('#settings #confirm').val("");
                 $("#changepass").show();
                 $(".showpass").hide();
                 loadsettings();
@@ -2117,6 +2119,8 @@ $("#settingsForm").validate({
         {
             function alertDismissed() {
                 // $("#regForm")[0].reset();
+                $('#settings #password1').val("");
+                $('#settings #confirm').val("");
                 $("#changepass").show();
                 $(".showpass").hide();
                 $('#page').scrollTop(0);
