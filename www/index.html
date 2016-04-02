@@ -936,7 +936,7 @@ function checktables() {
 			);
       if(jqXHR.status == '401'){
 				$.unblockUI();
-        okMsg(response, 2000, function(){
+        okMsg("This email is not registed with an fTHRU account.", 2000, function(){
             $("#forgotForm")[0].reset();
         });
 				return false;
