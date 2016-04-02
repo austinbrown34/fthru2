@@ -2014,32 +2014,49 @@ checktables();
     $('#models1').on('focus', function(e) {
         e.preventDefault(); e.stopPropagation();
         // $('#page').scrollTop(0);
-        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+        setTimeout(function(){
+
+        },500); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
     });
     $('#makes1').on('focus', function(e) {
         e.preventDefault(); e.stopPropagation();
         // $('#page').scrollTop(0);
-        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+        // window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+        setTimeout(function(){
+
+        },500);
     });
     $('#years1').on('focus', function(e) {
         e.preventDefault(); e.stopPropagation();
         // $('#page').scrollTop(0);
-        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+      //  window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+      setTimeout(function(){
+
+      },500);
     });
     $('#models').on('focus', function(e) {
         e.preventDefault(); e.stopPropagation();
         // $('#page').scrollTop(0);
-        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+      //  window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+      setTimeout(function(){
+
+      },500);
     });
     $('#makes').on('focus', function(e) {
         e.preventDefault(); e.stopPropagation();
         // $('#page').scrollTop(0);
-        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+    //    window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+    setTimeout(function(){
+
+    },500);
     });
     $('#years').on('focus', function(e) {
         e.preventDefault(); e.stopPropagation();
         // $('#page').scrollTop(0);
-        window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+      //  window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px.
+      setTimeout(function(){
+
+      },500);
     });
 
   function resetfields(){
@@ -2408,12 +2425,10 @@ $("#settingsForm").validate({
          minlength:10
        },
        pricelow: {
-         number: true,
-         homelessthan: true
+         number: true
        },
        pricehigh: {
-         number: true,
-         homelessthan: true
+         number: true
        },
        years: {
       required: "#home #specific:checked",
@@ -2435,10 +2450,10 @@ selectcheck: true
   if(element.attr("name") == "type[]") {
     error.appendTo( $("#home #error") );
   }
-  if(element.attr("name") == "pricelow"){
+  else if(element.attr("name") == "pricelow"){
     error.appendTo( $("#home #pricelowerror") );
   }
-  if(element.attr("name") == "pricehigh"){
+  else if(element.attr("name") == "pricehigh"){
     error.appendTo( $("#home #pricehigherror") );
   }
   else {
@@ -2578,12 +2593,10 @@ selectcheck: true
 
     },
     pricelow: {
-      number: true,
-      editlessthan: true
+      number: true
     },
     pricehigh: {
-      number: true,
-      editlessthan: true
+      number: true
     },
     years: {
    required: "#edit #specific:checked",
@@ -2605,10 +2618,10 @@ selectcheck: true
  if(element.attr("name") == "type[]") {
    error.appendTo( $("#edit #error") );
  }
- if(element.attr("name") == "pricelow"){
+ else if(element.attr("name") == "pricelow"){
    error.appendTo( $("#edit #pricelowerror") );
  }
- if(element.attr("name") == "pricehigh"){
+ else if(element.attr("name") == "pricehigh"){
    error.appendTo( $("#edit #pricehigherror") );
  }
  else {
@@ -2933,12 +2946,6 @@ jQuery.validator.addMethod('selectcheck', function (value) {
        return (value != '');
    }, "This is required");
 
-   jQuery.validator.addMethod("homelessthan", function(value, element) {
-      return $('#home #pricelow').val() < $('#home #pricehigh').val()
-   }, "Low price must be less than high price.");
-   jQuery.validator.addMethod("editlessthan", function(value, element) {
-      return $('#edit #pricelow').val() < $('#edit #pricehigh').val()
-   }, "Low price must be less than high price.");
 
 	</script>
 	<style>
