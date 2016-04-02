@@ -1467,6 +1467,7 @@ function loadsettings(){
       success: function(response){
 
         alert(response);
+                                            
         $('#settings [name="firstname"]').val(response["first"]);
         $('#settings [name="lastname"]').val(response["last"]);
 
@@ -1502,6 +1503,8 @@ function settings(){
 
   }
   else{
+    loadsettings();
+    working("on");
     lastpage = $("div.appscreen").not(":hidden").prop("id");
   document.getElementById(lastpage).style.display = 'none';$('#page').scrollTop(0);document.getElementById('settings').style.display = '';
 
@@ -1776,8 +1779,7 @@ $(document).ready(function() {
   });
 
   $('#settingsicon').on('click touchstart', function () {
-    working("on");
-    loadsettings();
+
     $(this).addClass("activenow2");
 
     setTimeout(function () {
