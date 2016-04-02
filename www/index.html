@@ -1030,7 +1030,7 @@ function checktables() {
                 },0);
 
   $('#appheader').show();
-loadsettings();
+loadsettings("first");
 
 
 				return false;
@@ -1462,7 +1462,7 @@ function changepass(){
   $("#changepass").hide();
   $(".showpass").show();
 }
-function loadsettings(){
+function loadsettings(first){
 
   $.ajax({
       type: "GET",
@@ -1478,7 +1478,13 @@ function loadsettings(){
         var email = settingsobj.email;
         var dealership = settingsobj.dealership;
 
-
+        if(first == "first"){
+          $("#welcome span").text("Welcome "+firstname);
+          $("#welcome").show();
+          setTimeout(function(){
+            $("#welcome").hide();
+          },3000);
+        }
 
 
         $('#settings [name="firstname"]').val(firstname);
@@ -1905,7 +1911,7 @@ $(document).ready(function() {
 
           },0);
       },0);
-loadsettings();
+loadsettings("first");
 
 checktables();
   }
@@ -2844,7 +2850,7 @@ Please register below to gain access to fTHRU!
 </div>
 		</div>
 </div>
-
+<div id="welcome" style="display:none;position: absolute;z-index: 102;bottom: 13%;padding: 15px;text-align: center;margin-bottom: -15px;width: 100%;background: rgba(0, 0, 0, 0.529412);"> <span></span></div>
 
 	<div id="container">
 
@@ -2978,7 +2984,7 @@ Please register below to gain access to fTHRU!
                     <td style="width:100%;">
 
                       <p style="color:black;">Confirm Password:</p>
-                      <input type="password" name="confirm" tabindex="6" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                      <input type="password" id="confirm" name="confirm" tabindex="6" style="zoom:1.5;" class="ss-item-required myinputs" required>
 
                     </td>
                   </tr>
