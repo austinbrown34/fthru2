@@ -1466,9 +1466,16 @@ function loadsettings(){
       dataType: "html",
       success: function(response){
 
-        alert(response);
-        var firstname = response.first;
+        // alert(response);
+        settingsobj = response;
+        var firstname = response[0].first;
+        var lastname = settingsobj.last;
+        var phone = settingsobj[0].phone;
+        alert(settingsobj);
         alert(firstname);
+        alert(lastname);
+        alert(phone);
+
 
         $('#settings [name="firstname"]').val(firstname);
         $('#settings [name="lastname"]').val(response["last"]);
