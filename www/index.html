@@ -2408,10 +2408,12 @@ $("#settingsForm").validate({
          minlength:10
        },
        pricelow: {
-         number: true
+         number: true,
+         homelessthan: true
        },
        pricehigh: {
-         number: true
+         number: true,
+         homelessthan: true
        },
        years: {
       required: "#home #specific:checked",
@@ -2576,10 +2578,12 @@ selectcheck: true
 
     },
     pricelow: {
-      number: true
+      number: true,
+      editlessthan: true
     },
     pricehigh: {
-      number: true
+      number: true,
+      editlessthan: true
     },
     years: {
    required: "#edit #specific:checked",
@@ -2929,7 +2933,12 @@ jQuery.validator.addMethod('selectcheck', function (value) {
        return (value != '');
    }, "This is required");
 
-
+   jQuery.validator.addMethod("homelessthan", function(value, element) {
+      return $('#home #pricelow').val() < $('#home #pricehigh').val()
+   }, "Low price must be less than high price.");
+   jQuery.validator.addMethod("editlessthan", function(value, element) {
+      return $('#edit #pricelow').val() < $('#edit #pricehigh').val()
+   }, "Low price must be less than high price.");
 
 	</script>
 	<style>
