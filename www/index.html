@@ -1458,6 +1458,10 @@ $('#container').css({"background-size":"cover"});
 
 
 }
+function changepass(){
+  $("#changepass").hide();
+  $(".showpass").show();
+}
 function loadsettings(){
 
   $.ajax({
@@ -1474,9 +1478,7 @@ function loadsettings(){
         var email = settingsobj.email;
         var dealership = settingsobj.dealership;
 
-        alert(settingsobj);
-        alert(typeof settingsobj);
-        alert(firstname);
+
 
 
         $('#settings [name="firstname"]').val(firstname);
@@ -1510,6 +1512,8 @@ function loadsettings(){
 
 function settings(){
   if($("div.appscreen").not(":hidden").prop("id") == "settings"){
+    $("#changepass").show();
+    $(".showpass").hide();
     document.getElementById("settings").style.display = 'none';$('#page').scrollTop(0);document.getElementById(lastpage).style.display = '';
 
   }
@@ -1581,6 +1585,8 @@ $("#loginForm")[0].reset();
     $("#testForm2")[0].reset();
       $("#editForm")[0].reset();
       $("#settingsForm")[0].reset();
+      $("#changepass").show();
+      $(".showpass").hide();
 
  localStorage.clear();
    contacttable.destroy();
@@ -2052,11 +2058,10 @@ $("#settingsForm").validate({
      minlength: 1
    },
    password1: {
-     required: true,
-     minlength: 5
+
    },
    confirm: {
-     required: true,
+
      equalTo: "#password1"
    },
    dealer: {
@@ -2078,7 +2083,7 @@ $("#settingsForm").validate({
 
    $.ajax(
     {
-        url : formURL,
+        url : formURL+id,
         type: "POST",
         data : postData,
         success:function(data, textStatus, jqXHR)
@@ -2086,7 +2091,9 @@ $("#settingsForm").validate({
           //alert(JSON.stringify(arguments));
             function alertDismissed() {
                 $('#page').scrollTop(0);
-
+                $("#changepass").show();
+                $(".showpass").hide();
+                loadsettings();
                 working("off");
                 // okMsg("Changes applied.", 2000, back());
 
@@ -2108,6 +2115,8 @@ $("#settingsForm").validate({
         {
             function alertDismissed() {
                 // $("#regForm")[0].reset();
+                $("#changepass").show();
+                $(".showpass").hide();
                 $('#page').scrollTop(0);
                 working("off");
             }
@@ -2878,7 +2887,7 @@ Please register below to gain access to fTHRU!
 
 
     <div class="cnt_clr">
-      <form id="settingsForm" action="http://development.fthru.cogni.design/www/settings.php" method="post">
+      <form id="settingsForm" action="http://development.fthru.cogni.design/www/settings.php?action=put&id=" method="post">
 
         <table class="home_top">
           <tr>
@@ -2940,7 +2949,17 @@ Please register below to gain access to fTHRU!
                     <td style="width:100%;"><center><hr></center>
                     <td>
                   </tr>
-                  <tr>
+                  <tr id="changepass">
+                    <td style="width:100%;">
+                      <center>
+                        <div id='changepassword' class='bluebtn2 myinputs' style='zoom: 1.5; height: 100%; margin-bottom: 10px; width: 50%;' onclick='javascript:changepass();'>Change Password</div>
+
+                      </center>
+                    </td>
+                  </tr>
+
+
+                  <tr class="showpass" style="display:none;">
                     <td style="width:100%;">
 
                       <p style="color:black;">Password:</p>
@@ -2949,7 +2968,7 @@ Please register below to gain access to fTHRU!
                     </td>
                   </tr>
 
-                  <tr>
+                  <tr class="showpass" style="display:none;">
                     <td style="width:100%;">
 
                       <p style="color:black;">Confirm Password:</p>
