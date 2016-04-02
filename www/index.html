@@ -1110,7 +1110,7 @@ loadsettings("first");
                 dataType: 'jsonp',
                 success: function(data) {
                     $('#makes').empty();
-                    $('#makes').append("<option value="">Select Make</option>");
+                    $('#makes').append("<option value=''>Select Make</option>");
                     $.each(data.makeHolder, function(i, val) {
                         $('#makes').append("<option value='" + data.makeHolder[i].niceName + "'>" + data.makeHolder[i].name + "</option>");
                     });
@@ -1130,7 +1130,7 @@ loadsettings("first");
                 dataType: 'jsonp',
                 success: function(data) {
                     $('#models').empty();
-                    $('#models').append("<option value="">Select Model</option>");
+                    $('#models').append("<option value=''>Select Model</option>");
                     $.each(data.modelHolder, function(i, val) {
                         $('#models').append("<option value='" + data.modelHolder[i].niceName + "'>" + data.modelHolder[i].name + "</option>");
                     });
@@ -1183,7 +1183,7 @@ loadsettings("first");
                 dataType: 'jsonp',
                 success: function(data) {
                     $('#makes1').empty();
-                    $('#makes1').append("<option value="">Select Make</option>");
+                    $('#makes1').append("<option value=''>Select Make</option>");
                     $.each(data.makeHolder, function(i, val) {
                         $('#makes1').append("<option value='" + data.makeHolder[i].niceName + "'>" + data.makeHolder[i].name + "</option>");
                     });
@@ -1203,7 +1203,7 @@ loadsettings("first");
                 dataType: 'jsonp',
                 success: function(data) {
                     $('#models1').empty();
-                    $('#models1').append("<option value="">Select Model</option>");
+                    $('#models1').append("<option value=''>Select Model</option>");
                     $.each(data.modelHolder, function(i, val) {
                         $('#models1').append("<option value='" + data.modelHolder[i].niceName + "'>" + data.modelHolder[i].name + "</option>");
                     });
@@ -1259,7 +1259,7 @@ loadsettings("first");
                 dataType: 'jsonp',
                 success: function(data) {
                     $('#edit #makes').empty();
-                    $('#edit #makes').append("<option value="">Select Make</option>");
+                    $('#edit #makes').append("<option value=''>Select Make</option>");
                     $.each(data.makeHolder, function(i, val) {
                         $('#edit #makes').append("<option value='" + data.makeHolder[i].niceName + "'>" + data.makeHolder[i].name + "</option>");
                     });
@@ -1281,7 +1281,7 @@ loadsettings("first");
                 dataType: 'jsonp',
                 success: function(data) {
                     $('#edit #models').empty();
-                    $('#edit #models').append("<option value="">Select Model</option>");
+                    $('#edit #models').append("<option value=''>Select Model</option>");
                     $.each(data.modelHolder, function(i, val) {
                         $('#edit #models').append("<option value='" + data.modelHolder[i].niceName + "'>" + data.modelHolder[i].name + "</option>");
                     });
