@@ -1459,6 +1459,7 @@ $('#container').css({"background-size":"cover"});
 
 }
 function loadsettings(){
+
   $.ajax({
       type: "GET",
       url: "http://"+FTHRU_SETTINGS.API_HOSTNAME+"/www/settings.php?action=get&id="+id,
@@ -1466,21 +1467,21 @@ function loadsettings(){
       success: function(response){
 
         alert(response);
-        $('#settings [name="firstname"]').val(response['first']);
-        $('#settings [name="lastname"]').val(response['last']);
+        $('#settings [name="firstname"]').val(response["first"]);
+        $('#settings [name="lastname"]').val(response["last"]);
 
-        $('#settings [name="phone"]').val(response['phone']);
+        $('#settings [name="phone"]').val(response["phone"]);
 
-        $('#settings [name="email"]').val(response['email']);
+        $('#settings [name="email"]').val(response["email"]);
 
-        $('#settings [name="dealer"]').val(response['dealership']);
+        $('#settings [name="dealer"]').val(response["dealership"]);
 
-
+        working("off");
       },
       error: function(jqXHR, textStatus, errorThrown)
       {
           function alertDismissed() {
-
+            working("off");
 
           }
 
@@ -1775,7 +1776,8 @@ $(document).ready(function() {
   });
 
   $('#settingsicon').on('click touchstart', function () {
-
+    working("on");
+    loadsettings();
     $(this).addClass("activenow2");
 
     setTimeout(function () {
