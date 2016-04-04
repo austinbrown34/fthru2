@@ -768,26 +768,7 @@ function okMsg(msg, timeout, callback)
 contacttable.draw();
 inventorytable.draw();
 }
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return "";
-}
-function checkCookie() {
-    var usercookie=getCookie("x-fthru-session");
-    if (usercookie!="") {
-        alert("cookie: "+usercookie);
-    }else{
-        alert("no cookie");
-    }
-}
 
-checkCookie();
 var contactsinitialized = false;
 var vehiclesinitialized = false;
 
