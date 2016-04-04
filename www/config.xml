@@ -45,15 +45,25 @@
 <preference name="loadUrlTimeoutValue" value="700000" />
 
 
- <icon src="icon.png" />
+ <icon src="icon.png" gap:platform="ios" / >
  <splash src="splash.png" />
 
  <!-- iPhone 6 / 6+ -->
-<icon src="icon_splash/res/icons/ios/icon-60-3x.png" platform="ios" width="180" height="180" />
+
+<icon src="icon_splash/res/icons/ios/icon.png" platform="ios" width="180" height="180" />
+<icon src="icon_splash/res/icons/ios/icon-2x.png" platform="ios" width="120" height="120" />
 
 <!-- iPhone / iPod Touch  -->
 <icon src="icon_splash/res/icons/ios/icon-60.png" platform="ios" width="60" height="60" />
 <icon src="icon_splash/res/icons/ios/icon-60-2x.png" platform="ios" width="120" height="120" />
+
+
+
+<icon src="icon_splash/res/icons/ios/icon-60.png" platform="ios" width="60" height="60" />
+<icon src="icon_splash/res/icons/ios/icon-60-2x.png" platform="ios" width="120" height="120" />
+
+<icon src="icon_splash/res/icons/ios/icon-72.png" platform="ios" width="72" height="72" />
+<icon src="icon_splash/res/icons/ios/icon-72@2x.png" platform="ios" width="144" height="144" />
 
 <!-- iPad -->
 <icon src="icon_splash/res/icons/ios/icon-76.png" platform="ios" width="76" height="76" />
