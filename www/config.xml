@@ -25,10 +25,14 @@
 <!--<access origin="*://*.cogni.design/*" />-->
      <!-- Required for iOS9 -->
 <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <allow-navigation href="*" />
+    <allow-navigation href="*://*.cogni.design/*" />
+    <allow-navigation href="*://*.api.edmunds.com/*" />
     <allow-navigation href="blob:*" />
-    <allow-intent href="*" />
-    <access origin="*" />
+    <allow-intent href="*://*.cogni.design/*" />
+    <allow-intent href="*://*.api.edmunds.com/*" />
+
+    <access origin="*://*.cogni.design/*" />
+    <access origin="*://*.api.edmunds.com/*" />
 
 
  <preference name="orientation" value="portrait" />
