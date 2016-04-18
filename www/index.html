@@ -3120,11 +3120,11 @@
 
             <form id="loginForm" onsubmit="return processLogin();">
               <div class="fldstyle">
-                <input id="email" type="text" name="email" style="text-transform: lowercase !important;" placeholder="Email Address" class="myinputs" autocapitalize="off" />
+                <input id="loginemail" type="text" name="email" style="text-transform: lowercase !important;" placeholder="Email Address" class="myinputs" autocapitalize="off" />
               </div>
               <br />
               <div class="fldstyle">
-                <input type="password" name="password" class="myinputs" placeholder="password" />
+                <input type="password" id="pw" name="password" class="myinputs" placeholder="password" />
               </div>
               <button class="bluebtn myinputs" type="submit">Log In <i class="fa fa-cog fa-spin"></i></button>
             </form>
@@ -4370,17 +4370,20 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
          loaded();
         });
         // alert(window.currentHeight);
-        $("input").focus(function(e){
+        $("input[type=text],input[type=password],input[type=number],input[type=tel]").focus(function(e){
           // e.preventDefault();
           // e.stopPropagation();
           // $('#page').scrollTop(0);
           var el = $(e.currentTarget);
+          var elid = el.attr('id');
           var elh = el.height();
           var closestdiv = $("div.appscreen").not(":hidden");
           var closestdivid = closestdiv.attr('id');
 
-          if (closestdivid == "start"){
+          if (closestdivid == "start" && (elid == "loginemail" || elid == "pw")){
+            $("#login").css('margin-top','20%');
             $("#login").css('position','relative');
+
           }
           // alert(closestdivid);
           closestdiv.height(window.currentHeight + window.scrollHeight);
