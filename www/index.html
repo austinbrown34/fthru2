@@ -8,11 +8,14 @@
                   script-src 'self' http://development.fthru.cogni.design http://api.edmunds.com/ 'unsafe-inline';">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  <head>
+  <!-- <head> -->
     <meta charset="utf-8">
     <title>followTHRU</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0, user-scalable=0" /> -->
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, user-scalable=0" />
+
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
     <link rel="stylesheet" type="text/css" href="DataTables/Buttons-1.1.2/css/buttons.dataTables.min.css" />
@@ -28,237 +31,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
 
-    <style>
-      label.bigtouch {
-        display: block;
-        /*padding: 5px 10px;
-  margin: 5px 0;*/
-        border-radius: 7px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        max-width: 25vw;
-      }
 
-      .pricewrapper {
-        position: relative;
-        display: inline;
-      }
-
-      .pricewrapper input {
-        padding-top: 17px !important;
-        padding-left: 30px;
-      }
-
-      .pricewrapper:before {
-        font-family: FontAwesome;
-        content: "\f155";
-        position: absolute;
-        z-index: 1;
-        font-size: 1em;
-        padding-top: 7px;
-        padding-left: 2px;
-        padding-right: 3px;
-      }
-
-      .pricewrapper2 {
-        position: relative;
-        display: inline;
-      }
-
-      .pricewrapper2 input {
-        padding-top: 17px !important;
-        padding-left: 30px;
-      }
-
-      .pricewrapper2:before {
-        color: black;
-        font-family: FontAwesome;
-        content: "\f155";
-        position: absolute;
-        top: 0 left: 40px;
-        z-index: 1;
-        font-size: 1em;
-        padding-top: 7px;
-        padding-left: 2px;
-        padding-right: 3px;
-      }
-
-      #dvLoading {
-        background: #000 url(loading2.gif) no-repeat center center;
-        height: 100%;
-        width: 100%;
-        position: fixed;
-        z-index: 10000;
-        opacity: .7;
-      }
-
-      * {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      .dataTables_wrapper {
-        clear: both;
-        left: 0px;
-        position: absolute;
-        right: 0px;
-        zoom: 1;
-        height: 100%;
-        overflow-y: auto;
-      }
-
-      button.dt-button,
-      div.dt-button,
-      a.dt-button {
-        float: left;
-        margin-left: auto;
-        margin-right: auto;
-        <!-- padding: 20px !important;
-        --> border-top: 1px solid #5297cd;
-        box-shadow: 0px 6px 0px #00002b;
-        border-radius: 5px;
-        margin-bottom: 5px;
-        background: #ffffff;
-        /* Old browsers */
-        background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%);
-        /* FF3.6-15 */
-        background: -webkit-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
-        /* IE6-9 */
-        font-family: FontAwesome;
-        font-size: .7em;
-      }
-
-      .fg-toolbar,
-      .ui-toolbar {
-        /*background: rgba(196, 217, 255, 0.44) url("ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x !important;*/
-        background: rgba(196, 217, 255, 0.44) !important;
-        /* padding-top: 0px; */
-        box-shadow: inset 0px 0px 15px 4px rgba(103, 98, 98, 0.15) !important;
-        border: 1px solid #ECBDE7 !important;
-        border-radius: 5px !important;
-      }
-
-      .dataTables_processing {
-        font-size: 1em !important;
-        font-family: 'ProximaNova', 'Ubuntu', sans-serif !important;
-        font-weight: 400 !important;
-      }
-
-      select[name="exampledt_length"] {
-        width: 10%;
-      }
-
-      select[name="exampledt2_length"] {
-        width: 10%;
-      }
-
-      input[type="search"] {
-        float: right;
-        zoom: 1.5 !important;
-        margin-left: -3px !important;
-        width: 60% !important;
-        height: 40px !important;
-        padding: 10px !important;
-        margin-bottom: 10px !important;
-        background: #fff !important;
-        border: 1px solid rgba(0, 0, 0, .2) !important;
-        border-radius: 3px !important;
-        box-shadow: 0 1px 1px rgba(255, 255, 255, .2), inset 0 1px 1px rgba(0, 0, 0, .1) !important;
-        -webkit-appearance: none !important;
-        box-sizing: border-box !important;
-      }
-
-      th {
-        font-size: 1em !important;
-        color: #6a7894;
-        font-family: 'ProximaNova', 'Ubuntu', sans-serif !important;
-        font-weight: 400 !important;
-      }
-
-      table.dataTable td {
-        word-break: break-word;
-        text-align: center;
-        vertical-align: middle;
-      }
-
-      td {
-        padding: 20px;
-      }
-
-      .error {
-        color: #6a7894;
-      }
-
-      #box {
-        width: 300px;
-        height: 200px;
-        background: #eef;
-        margin: 30px auto;
-      }
-
-      #box h1 {
-        padding-top: 80px;
-      }
-
-      .events div {
-        width: 100px;
-        height: 100px;
-        margin: 20px;
-        float: left;
-        padding: 10px;
-        font-weight: bold;
-      }
-
-      .events #one {
-        background: #f00;
-      }
-
-      .events #two {
-        background: #0f0;
-      }
-
-      .events #three {
-        background: #000;
-        color: #fff;
-      }
-
-      .events #four {
-        background: #fff;
-        color: #000;
-        border: 1px solid #000;
-      }
-
-      .events #five {
-        background: #dcda07;
-        color: #000;
-      }
-
-      .events #six {
-        background: #f10fff;
-        color: #000;
-      }
-
-      .events #seven {
-        background: #3cc9f4;
-        color: #000;
-      }
-
-      .events #debug {
-        clear: both;
-        background: #000;
-        color: #fff;
-        width: 100%;
-        display: block;
-        margin-top: 2em;
-        min-height: 100px;
-        padding-bottom: 1em;
-        font-family: monospace;
-      }
-    </style>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/iThing.css" type="text/css" />
@@ -369,7 +142,7 @@
               "render": function(data, type, row) {
                 myrow = row[6];
                 my64Images[myrow] = data;
-                return "<img src=\"" + data + "\" id='inventorypic' width=\"200px\" height=\"115px\">" + "<span id='vehicleid' style='display:none;'>" + myrow + "</span>";
+                return "<img src=\"" + data + "\" id='inventorypic' width=\"70vw\" height=\"50vw\">" + "<span id='vehicleid' style='display:none;'>" + myrow + "</span>";
               },
               "targets": 0
             }, {
@@ -513,7 +286,7 @@
             vehicleid = $(this).find("#vehicleid").text();
 
             $(
-              "<tr class='editdelete'><td colspan=100><center><button id='deletebutton' class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: .8em !important; 	width: 36vw !important;height: 60px !important;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletevehicle(vehicleid)'>&#xf014; Delete</button></center></td></tr>"
+              "<tr class='editdelete'><td colspan=100><center><button id='deletebutton' class='bluebtn2 myinputs' style='font-family: FontAwesome;' onclick='javascript:deletevehicle(vehicleid)'>&#xf014; Delete</button></center></td></tr>"
             ).insertAfter($(this).closest('tr'));
 
 
@@ -531,7 +304,7 @@
             contacttable.$('tr.selected').removeClass('selected');
             $(this).addClass('selected');
             $(
-              "<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td style='width:33%;'><button id='editbutton' class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: .8em !important;width: 36vw !important;height: 60px !important;padding-left: 19px;zoom: 1.5;' onclick='javascript:editcontact(contactid)'>&#xf044; Edit</button></td><td style='width:33%;'><button id ='deletebutton' class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: .8em !important;width: 36vw !important;height: 60px !important;padding-left: 19px;zoom: 1.5;' onclick='javascript:deletecontact(contactid)'>&#xf014; Delete</button></td><td style='width:33%;'><button id='smsbutton' class='bluebtn2 myinputs' style='font-family: FontAwesome;font-size: .8em !important;width: 36vw !important;height: 60px !important;padding-left: 25px;zoom: 1.5;' onclick='javascript:editpermission(contactid,permission)'>&#xf10b; SMS</button></td></tr></table></td></tr>"
+              "<tr class='editdelete'><td colspan=100><table style='width:100%; border: black 1px;'><tr><td style='width:33%;'><button id='editbutton' class='bluebtn2 myinputs' style='font-family: FontAwesome;' onclick='javascript:editcontact(contactid)'>&#xf044; Edit</button></td><td style='width:33%;'><button id ='deletebutton' class='bluebtn2 myinputs' style='font-family: FontAwesome;' onclick='javascript:deletecontact(contactid)'>&#xf014; Delete</button></td><td style='width:33%;'><button id='smsbutton' class='bluebtn2 myinputs' style='font-family: FontAwesome;' onclick='javascript:editpermission(contactid,permission)'>&#xf10b; SMS</button></td></tr></table></td></tr>"
             ).insertAfter($(this).closest('tr'));
             contactid = $(this).find("#contactid").text();
             $('#edit [name="contactid"]').val(contactid);
@@ -1442,7 +1215,7 @@
         var backimgURL = "splash.png";
         //  $("#container").css('background', 'url("../splash.png") no-repeat 100% 100%;');
 
-        $("#container").css("background", "url('" + backimgURL + "') no-repeat 100% 100%");
+        $("#container").css("background", "url('" + backimgURL + "') no-repeat 50% 25%");
 
         $('#container').css({
           "-webkit-background-size": "cover"
@@ -1601,7 +1374,7 @@
                   setTimeout(function() {
                     var backimgURL = "splash.png";
 
-                    $("#container").css("background", "url('" + backimgURL + "') no-repeat 100% 100%");
+                    $("#container").css("background", "url('" + backimgURL + "') no-repeat 50% 25%");
                     $("#responsecontainermatch").html('');
                     $('#container').css({
                       "-webkit-background-size": "cover"
@@ -1676,7 +1449,7 @@
                   setTimeout(function() {
                     var backimgURL = "splash.png";
 
-                    $("#container").css("background", "url('" + backimgURL + "') no-repeat 100% 100%");
+                    $("#container").css("background", "url('" + backimgURL + "') no-repeat 50% 25%");
                     $("#responsecontainermatch").html('');
                     $('#container').css({
                       "-webkit-background-size": "cover"
@@ -1951,14 +1724,14 @@
 
         });
 
-        if (navigator.userAgent.match(/Android/i)) {
-          $('#appheader').css("zoom", ".74");
-          $('#regheader').css("zoom", ".74");
-        }
-        if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-          $('#appheader').css("zoom", ".88");
-          $('#regheader').css("zoom", ".88");
-        }
+        // if (navigator.userAgent.match(/Android/i)) {
+        //   $('#appheader').css("zoom", ".74");
+        //   $('#regheader').css("zoom", ".74");
+        // }
+        // if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+        //   $('#appheader').css("zoom", ".88");
+        //   $('#regheader').css("zoom", ".88");
+        // }
         $(document).ajaxError(function(e, jqxhr, settings, exception) {
           console.log(exception);
         });
@@ -3259,80 +3032,72 @@
   <body onload="init();">
     <div id="dvLoading"></div>
 
-    <div id="forgot" style="opacity: .4; position: absolute; z-index: 400; color: black; top: 22%; box-shadow: rgb(0, 0, 43) -4px 3px 2px; border-radius: 0px 15px 15px 0px; border: 1px solid rgb(236, 189, 231); width: 100%; text-align: right; left: -91%; padding-top: 50px; background: rgba(255, 222, 245, 0.580392);">
+    <div id="forgot" >
       <form id="forgotForm" onsubmit="return forgotpass();">
-        <div class="fldstyle" style=" width: 80%; position: absolute; right: 11%; bottom: 10%; ">
-          <input id="email" type="text" name="email" style="text-transform: lowercase !important;width: 90%;margin-right: 20px;/* padding-right: 75px; */box-shadow: -2px 0px 6px 1px;" placeholder="Email Address" class="myinputs" autocapitalize="off">
+        <div id="forgotmessage" > Forgot Password? No Worries, you can reset it!</div>
+
+        <div class="fldstyle" >
+          <input id="email" type="text" name="email" style="text-transform: lowercase !important;width: 90%;/* padding-right: 75px; */box-shadow: -2px 0px 6px 1px;" placeholder="Email Address" class="myinputs" autocapitalize="off">
         </div>
-        <br>
+
         <!-- <button class="bluebtn myinputs" type="submit" style="
     display: none;
 ">&lt;&lt; Submit &gt;&gt;</button> -->
-        <div id="forgotmessage" style=" position: absolute; bottom: -36%; color: white; font-size: 16px; left: 8%; ">Enter account email and tap the question mark!</div>
-        <div id="forgotmessage" style=" position: absolute; color: white; font-size: 16px; left: 8%; padding: 0px; position: absolute; top: -35%;"> Forgot Password? No Worries, you can reset it!</div>
-        <div type="submit" id="forgottab" style=" position: absolute; right: -1px; top: -1%; width: 11%; background: rgba(121, 124, 233, 0.54); height: 101%; border-radius: 0px 15px 15px 0px; border: rgba(0, 0, 0, 0.21) 2px solid; "> <i class="fa fa-question-circle" style=" font-size: 32px; top: 22%; right: 6px; position: absolute; border: 4px aliceblue solid; border-radius: 35px; "></i></div>
+        <div id="forgotmessage2" >Enter account email and tap the question mark!</div>
+        <div type="submit" id="forgottab"> <i class="fa fa-question-circle"></i></div>
       </form>
     </div>
     <div id="appheader">
-      <div style=" position: absolute; top: -8px; margin: 18px 29px 12px 4% !important; " class="hdr_back">
+      <!-- <div style=" position: absolute; top: -8px; margin: 18px 29px 12px 4% !important; " class="hdr_back"> -->
 
-        <i id="settingsicon" class="fa fa-bars fa-3x myinputs" style=" position: absolute; left: 15px; zoom: .6; margin-top: 30px;" onclick="javascript:settings();"></i>
+        <i id="settingsicon" class="fa fa-bars fa-3x myinputs"  onclick="javascript:settings();"></i>
 
-      </div>
-      <div style="position: absolute;
-		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"><i id="logoff" class="fa fa-sign-out fa-3x myinputs" style="position: absolute;
-right: 15px; zoom: .6; margin-top:30px;" onclick="javascript:logoff();"></i> </div>
+      <!-- </div> -->
+      <!-- <div style="position: absolute;
+		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"> -->
+    <i id="logoff" class="fa fa-sign-out fa-3x myinputs" onclick="javascript:logoff();"></i>
+<!-- </div> -->
       <div id="nav_hdr">
         <!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> -->
         <center>
-          <div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div>
+          <div id="hdr_title" ><img src="logo.png" height="110px"></div>
         </center>
       </div>
 
-      <div id="tabs" class="font_PNbold" style="zoom: .8;">
+      <div id="tabs" class="font_PNbold" style="">
         <ul id="top_menu">
-          <li id="tm_map" class=""><img src="add_user.png" style="width:50px;"></li>
-          <li id="tm_pro" class=""><img src="viewuser.png" style="width:50px;"></li>
-          <li id="tm_fri" class=""><img src="addcar.png" style="height:80px;"></li>
-          <li id="tm_home" class=""> <img src="viewcar.png" style="height: 70px !important; padding-top: 9px;"></li>
-          <li id="tm_mtch" class=""><img src="match.png" style="width:50px !important;padding-top: 5px;"></li>
+          <li id="tm_map" class=""><img src="add_user.png" ></li>
+          <li id="tm_pro" class=""><img src="viewuser.png" ></li>
+          <li id="tm_fri" class=""><img src="addcar.png" ></li>
+          <li id="tm_home" class=""> <img src="viewcar.png" ></li>
+          <li id="tm_mtch" class=""><img src="match.png" ></li>
         </ul>
       </div>
     </div>
 
     <div id="regheader">
-      <div style="position: absolute;
-		top: -2px; margin: 13px 30px 13px 80% !important; " class="hdr_back"></div><i id="back" class="fa fa-arrow-left fa-3x myinputs" style="position: absolute;
-left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
+
       <div id="nav_hdr">
+        <i id="back" class="fa fa-arrow-left fa-3x myinputs"  onclick="javascript:back();"></i>
         <!-- <a href="#" onclick="goBack();" ><img src="images/header_back.png" class="hdr_back" /></a> -->
         <center>
-          <div id="hdr_title" style="background-image: url(wave.png); width:100%; background-size: 100% 55px; margin-top: 10px; zoom: .8; z-index:100 !important;"><img src="logo.png" height="110px"></div>
+          <div id="hdr_title" ><img src="logo.png"></div>
         </center>
       </div>
 
-      <div id="tabs" class="font_PNbold" style="zoom: .8;">
-        <div style="padding:20px;color:black;text-align:center;">
+      <div id="tabs" class="font_PNbold" style="">
+        <div id="tabtext">
           Please register below to gain access to fTHRU!
         </div>
       </div>
     </div>
-    <div id="welcome" style="display:none;position: absolute;z-index: 102;bottom: 50%;padding: 15px;text-align: center;margin-bottom: -15px;width: 100%;background: rgba(67, 8, 182, 0.58);"> <span></span></div>
+    <div id="welcome"> <span></span></div>
 
     <div id="container">
 
-      <div id="connecting" style="
-        display:none;
-        position: relative;
-        z-index: 101;
-        top: 13%;
-        background: rgba(0, 0, 0, 0.53);
-        padding: 15px;
-        text-align: center;
-        margin-bottom: -15px;
-    ">Connecting to Server...</div>
+      <div id="connecting" >Connecting to Server...</div>
 
-      <div id="working" style="position: absolute;z-index: 102;top: 13%;padding: 15px;text-align: center;margin-bottom: -15px;background: rgba(0, 0, 0, 0.529412);width: 100%;display:none;"> Processing Request... &nbsp;&nbsp;<i class="fa fa-refresh fa-spin"></i></div>
+      <div id="working" > Processing Request... &nbsp;&nbsp;<i class="fa fa-refresh fa-spin"></i></div>
 
       <div id="page">
 
@@ -3388,7 +3153,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                     <td>
                       <center> <i class="fa fa-user fa-lg"></i></center>
                       <p style="color:black;">First name:</p>
-                      <input type="text" name="firstname" tabindex="1" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                      <input type="text" name="firstname" tabindex="1" style="" class="ss-item-required myinputs" required>
 
                     </td>
                   </tr>
@@ -3396,7 +3161,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                     <td>
 
                       <p style="color:black;">Last name:</p>
-                      <input type="text" name="lastname" tabindex="2" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                      <input type="text" name="lastname" tabindex="2" style="" class="ss-item-required myinputs" required>
 
                     </td>
                   </tr>
@@ -3407,10 +3172,8 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
 
 
 
-                      <input id="phone" name="phone" tabindex="3" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style="zoom:1.5; width: 100%;
-              height: 40px;
-              padding: 10px;
-              margin-bottom: 10px;
+                      <input id="phone" name="phone" tabindex="3" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style=" width: 100%;
+
               background: #fff;
               border: 1px solid rgba(0, 0, 0, .2);
               border-radius: 3px;
@@ -3432,7 +3195,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                           <tr>
                             <td style="width:100%;">
                               <p style="color:black;">Email:</p>
-                              <input type="text" name="email" tabindex="4" style="zoom:1.5;text-transform: lowercase !important;" class="ss-item-required myinputs" required>
+                              <input type="text" name="email" tabindex="4" style="text-transform: lowercase !important;" class="ss-item-required myinputs" required>
 
                             </td>
                           </tr>
@@ -3446,7 +3209,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                           <tr id="changepass">
                             <td style="width:100%;">
                               <center>
-                                <div id='changepassword' class='bluebtn2 myinputs' style='zoom: 1.5; height: 100%; margin-bottom: 10px; width: 50%;' onclick='javascript:changepass();'>Change Password</div>
+                                <div id='changepassword' class='bluebtn2 myinputs'  onclick='javascript:changepass();'>Change Password</div>
 
                               </center>
                             </td>
@@ -3457,7 +3220,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                             <td style="width:100%;">
 
                               <p style="color:black;">Password:</p>
-                              <input type="password" id="password1" name="password1" tabindex="5" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                              <input type="password" id="password1" name="password1" tabindex="5" style="" class="ss-item-required myinputs" required>
 
                             </td>
                           </tr>
@@ -3466,7 +3229,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                             <td style="width:100%;">
 
                               <p style="color:black;">Confirm Password:</p>
-                              <input type="password" id="confirm" name="confirm" tabindex="6" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                              <input type="password" id="confirm" name="confirm" tabindex="6" style="" class="ss-item-required myinputs" required>
 
                             </td>
                           </tr>
@@ -3482,7 +3245,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                     <td style="width:100%;">
                       <center><i style="padding-top:10px;" class="fa fa-car fa-lg"></i></center>
                       <p style="color:black;">Dealership Name:</p>
-                      <input type="text" name="dealer" tabindex="7" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                      <input type="text" name="dealer" tabindex="7" style="" class="ss-item-required myinputs" required>
 
                     </td>
                   </tr>
@@ -3551,7 +3314,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                     <td>
                       <center> <i class="fa fa-user fa-lg"></i></center>
                       <p style="color:black;">First name:</p>
-                      <input type="text" name="firstname" tabindex="1" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                      <input type="text" name="firstname" tabindex="1" style="" class="ss-item-required myinputs" required>
 
                     </td>
                   </tr>
@@ -3559,7 +3322,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                     <td>
 
                       <p style="color:black;">Last name:</p>
-                      <input type="text" name="lastname" tabindex="2" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                      <input type="text" name="lastname" tabindex="2" style="" class="ss-item-required myinputs" required>
 
                     </td>
                   </tr>
@@ -3570,7 +3333,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
 
 
 
-                      <input id="phone" name="phone" tabindex="3" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style="zoom:1.5; width: 100%;
+                      <input id="phone" name="phone" tabindex="3" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style=" width: 100%;
               height: 40px;
               padding: 10px;
               margin-bottom: 10px;
@@ -3595,7 +3358,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                           <tr>
                             <td style="width:100%;">
                               <p style="color:black;">Email:</p>
-                              <input type="text" name="email" tabindex="4" style="zoom:1.5;text-transform: lowercase !important;" class="ss-item-required myinputs" required>
+                              <input type="text" name="email" tabindex="4" style="text-transform: lowercase !important;" class="ss-item-required myinputs" required>
 
                             </td>
                           </tr>
@@ -3610,7 +3373,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                             <td style="width:100%;">
 
                               <p style="color:black;">Create Password:</p>
-                              <input type="password" id="password1" name="password1" tabindex="5" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                              <input type="password" id="password1" name="password1" tabindex="5" style="" class="ss-item-required myinputs" required>
 
                             </td>
                           </tr>
@@ -3619,7 +3382,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                             <td style="width:100%;">
 
                               <p style="color:black;">Confirm Password:</p>
-                              <input type="password" name="confirm" tabindex="6" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                              <input type="password" name="confirm" tabindex="6" style="" class="ss-item-required myinputs" required>
 
                             </td>
                           </tr>
@@ -3635,7 +3398,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                     <td style="width:100%;">
                       <center><i style="padding-top:10px;" class="fa fa-car fa-lg"></i></center>
                       <p style="color:black;">Dealership Name:</p>
-                      <input type="text" name="dealer" tabindex="7" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                      <input type="text" name="dealer" tabindex="7" style="" class="ss-item-required myinputs" required>
 
                     </td>
                   </tr>
@@ -3693,11 +3456,11 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                   <tr>
                     <td>
 
-                      <div style="padding: 2px 4px 3px 4px;">
+                      <div>
 
 
                         <p style="color:black;">First name:</p>
-                        <input type="text" name="firstname" tabindex="1" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                        <input type="text" name="firstname" tabindex="1" style="" class="ss-item-required myinputs" required>
 
                     </td>
                   </tr>
@@ -3705,7 +3468,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                     <td>
 
                       <p style="color:black;">Last name:</p>
-                      <input type="text" name="lastname" tabindex="2" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                      <input type="text" name="lastname" tabindex="2" style="" class="ss-item-required myinputs" required>
 
                     </td>
                   </tr>
@@ -3716,9 +3479,8 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
 
 
 
-                      <input id="phone" name="phone" tabindex="3" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style="zoom:1.5; width: 100%;
-										height: 40px;
-										padding: 10px;
+                      <input id="phone" name="phone" tabindex="3" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style=" width: 100%;
+
 										margin-bottom: 10px;
 										background: #fff;
 										border: 1px solid rgba(0, 0, 0, .2);
@@ -3735,16 +3497,17 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
     border: rgb(125, 125, 226);
     border-style: solid;
     border-width: 5px 0 5px 0;
-    padding: 10px;">
+    padding: 2%;
+    color:black !important;">
                         <p style="color:black;">Type of Vehicle:</p>
-                        <br>
+
                         <div id="error"></div>
                         <table tabindex="4" style="width:100%;">
                           <tr>
                             <td style="width:25%;">
                               <center>
                                 <label class="bigtouch" for="cars">
-                                  <input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" />
+                                  <input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="" />
                                   <br>Cars</label>
                               </center>
 
@@ -3752,7 +3515,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                             <td style="width:25%;">
                               <center>
                                 <label class="bigtouch" for="trucks">
-                                  <input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" />
+                                  <input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="" />
                                   <br>Trucks</label>
                               </center>
 
@@ -3760,7 +3523,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                             <td style="width:25%;">
                               <center>
                                 <label class="bigtouch" for="suvs">
-                                  <input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" />
+                                  <input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="" />
                                   <br>SUVs</label>
                               </center>
 
@@ -3769,7 +3532,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
 
                               <center>
                                 <label class="bigtouch" for="crossovers">
-                                  <input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" />
+                                  <input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="" />
                                   <br>Crossovers</label>
                               </center>
 
@@ -3788,7 +3551,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
 
                               <center>
                                 <label class="bigtouch" for="specific">
-                                  <input type="checkbox" name="type[]" id="specific" value="Specific" class="specific myinputs" style="zoom:3.5;" />
+                                  <input type="checkbox" name="type[]" id="specific" value="Specific" class="specific myinputs" style="" />
                                   <br>Specific</label>
                               </center>
 
@@ -3839,7 +3602,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                           <tr>
                             <td colspan=4 style="width:100%;">
                               <div id="specific2" style="display:none;">
-                                <br>
+
                                 <select id="makes" name="makes" required class="ss-item-required myinputs">
                                   <option value="">Select Make</option>
                                 </select>
@@ -3849,7 +3612,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                           <tr>
                             <td colspan=4 style="width:100%;">
                               <div id="specific3" style="display:none;">
-                                <br>
+
                                 <select id="models" name="models" required class="ss-item-required myinputs">
                                   <option value="">Select Model</option>
                                 </select>
@@ -3862,7 +3625,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                       </td>
                       <tr>
                         <td colspan=100 style="width:100%;">
-                          <br>
+
                           <center>
                             <table style="width:100%;">
                               <tr>
@@ -3870,7 +3633,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                                   <center>
                                     <p style="color:black;"> Low Price:</p>
                                     <div class="pricewrapper">
-                                      <input id="pricelow" class="myinputs" name="pricelow" tabindex="5" type="tel" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;"
+                                      <input id="pricelow" class="myinputs" name="pricelow" tabindex="5" type="tel" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') "
                                         class="ss-item-required" required />
                                     </div>
                                     <br>
@@ -3881,7 +3644,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                                   <center>
                                     <p style="color:black;"> High Price:</p>
                                     <div class="pricewrapper">
-                                      <input id="pricehigh" class="myinputs" name="pricehigh" tabindex="6" type="tel" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;"
+                                      <input id="pricehigh" class="myinputs" name="pricehigh" tabindex="6" type="tel" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') "
                                         class="ss-item-required" required />
                                     </div>
                                     <br>
@@ -3897,7 +3660,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                       </tr>
                       <tr>
                         <td>
-                          <br>
+
                           <center>
                             <input type="submit" value="<< Submit >>" class="bluebtn myinputs" style="width:100%;">
                           </center>
@@ -3949,7 +3712,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                         <div style="padding: 2px 4px 3px 4px;">
 
                           <p style="color:black;">First name:</p>
-                          <input type="text" name="firstname" tabindex="1" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                          <input type="text" name="firstname" tabindex="1" style="" class="ss-item-required myinputs" required>
 
                       </td>
                     </tr>
@@ -3957,7 +3720,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                       <td>
 
                         <p style="color:black;">Last name:</p>
-                        <input type="text" name="lastname" tabindex="2" style="zoom:1.5;" class="ss-item-required myinputs" required>
+                        <input type="text" name="lastname" tabindex="2" style="" class="ss-item-required myinputs" required>
 
                       </td>
                     </tr>
@@ -3967,7 +3730,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                         <p style="color:black;">Phone:</p>
 
                         <input id="contactid" name="contactid" type="hidden">
-                        <input id="phone" name="phone" tabindex="3" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style="zoom:1.5; width: 100%;
+                        <input id="phone" name="phone" tabindex="3" type="tel" class="required phone ss-item-required myinputs" tabindex="10" value="" style=" width: 100%;
 										height: 40px;
 										padding: 10px;
 										margin-bottom: 10px;
@@ -3987,9 +3750,10 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
     border: rgb(125, 125, 226);
     border-style: solid;
     border-width: 5px 0 5px 0;
-    padding: 10px;">
+    padding: 2%;
+    color:black !important;">
                           <p style="color:black;">Type of Vehicle:</p>
-                          <br>
+
                           <div id="error"></div>
                           <table tabindex="4" style="width:100%;">
                             <tr>
@@ -3997,7 +3761,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
 
                                 <center>
                                   <label class="bigtouch" for="cars">
-                                    <input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="zoom:3.5;" />
+                                    <input type="checkbox" name="type[]" value="Cars" id="cars" class="others myinputs" style="" />
                                     <br>Cars</label>
                                 </center>
 
@@ -4006,7 +3770,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
 
                                 <center>
                                   <label class="bigtouch" for="trucks">
-                                    <input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="zoom:3.5;" />
+                                    <input type="checkbox" name="type[]" value="Trucks" id="trucks" class="others myinputs" style="" />
                                     <br>Trucks</label>
                                 </center>
 
@@ -4016,7 +3780,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
 
                                 <center>
                                   <label class="bigtouch" for="suvs">
-                                    <input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="zoom:3.5;" />
+                                    <input type="checkbox" name="type[]" value="SUVS" id="suvs" class="others myinputs" style="" />
                                     <br>SUVS</label>
                                 </center>
 
@@ -4024,7 +3788,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                               <td style="width:25%;">
                                 <center>
                                   <label class="bigtouch" for="crossovers">
-                                    <input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="zoom:3.5;" />
+                                    <input type="checkbox" name="type[]" value="Crossovers" id="crossovers" class="others myinputs" style="" />
                                     <br>Crossovers</label>
                                 </center>
                               </td>
@@ -4041,7 +3805,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                               <td colspan=4 style="width:100%;">
                                 <center>
                                   <label class="bigtouch" for="specific">
-                                    <input type="checkbox" name="type[]" tabindex="5" value="Specific" id="specific" class="specific myinputs" style="zoom:3.5;" />
+                                    <input type="checkbox" name="type[]" tabindex="5" value="Specific" id="specific" class="specific myinputs" style="" />
                                     <br>Specific</label>
                                 </center>
                               </td>
@@ -4091,7 +3855,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                             <tr>
                               <td colspan=4 style="width:100%;">
                                 <div id="specific2" style="display:none;">
-                                  <br>
+
                                   <select id="makes" name="makes" required class="ss-item-required myinputs">
                                     <option value="">Select Make</option>
                                   </select>
@@ -4101,7 +3865,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                             <tr>
                               <td colspan=4 style="width:100%;">
                                 <div id="specific3" style="display:none;">
-                                  <br>
+
                                   <select id="models" name="models" required class="ss-item-required myinputs">
                                     <option value="">Select Model</option>
                                   </select>
@@ -4114,7 +3878,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                         </td>
                         <tr>
                           <td colspan=100 style="width:100%;">
-                            <br>
+
                             <center>
                               <table style="width:100%;">
                                 <tr>
@@ -4122,7 +3886,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                                     <center>
                                       <p style="color:black;"> Low Price:</p>
                                       <div class="pricewrapper">
-                                        <input id="pricelow" class="myinputs" name="pricelow" tabindex="5" type="tel" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;"
+                                        <input id="pricelow" class="myinputs" name="pricelow" tabindex="5" type="tel" step="1" value="Low Price" onfocus="if (this.value == 'Low Price') {this.value = '';}" onblur="if (this.value == '') "
                                           class="ss-item-required" required />
                                       </div>
                                       <br>
@@ -4133,7 +3897,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                                     <center>
                                       <p style="color:black;"> High Price:</p>
                                       <div class="pricewrapper">
-                                        <input id="pricehigh" class="myinputs" name="pricehigh" tabindex="6" type="tel" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') " style="zoom:1;width:50vw;"
+                                        <input id="pricehigh" class="myinputs" name="pricehigh" tabindex="6" type="tel" step="1" value="High Price" onfocus="if (this.value == 'High Price') {this.value = '';}" onblur="if (this.value == '') "
                                           class="ss-item-required" required />
                                       </div>
                                       <br>
@@ -4148,7 +3912,7 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                         </tr>
                         <tr>
                           <td>
-                            <br>
+
                             <center>
                               <table style="width:100%;">
                                 <tr>
@@ -4276,53 +4040,49 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                     <option>2016</option>
                   </select>
                   <br>
-                  <br>
                   <select id="makes1" name="makes" tabindex="2" class="myinputs" required>
                     <option value="">Select Make</option>
                   </select>
                   <br>
-                  <br>
                   <select id="models1" name="models" tabindex="3" class="myinputs" required>
                     <option value="">Select Model</option>
                   </select>
-                  <br>
-                  <br>
+                  <br><br>
                   <center style="    background: rgba(255, 255, 255, 0.48);
     border: rgb(125, 125, 226);
     border-style: solid;
     border-width: 5px 0 5px 0;
-    padding: 10px;">
+    padding: 2%;">
 
                     <p style="color:black;">Type of Vehicle:</p>
-                    <br>
                     <div id="error"></div>
                     <table tabindex="4" style="width:100%;">
                       <tr>
                         <td style="width:25%;">
                           <center>
                             <label class="bigtouch" for="cars" style="color:black;">
-                              <input type="radio" name="type[]" id="cars" value="Cars" class="others myinputs" style="zoom:3.5;" checked="checked" />
+                              <input type="radio" name="type[]" id="cars" value="Cars" class="others myinputs" style="" checked="checked" />
                               <br>Car</label>
                           </center>
                         </td>
                         <td style="width:25%;">
                           <center>
                             <label class="bigtouch" for="trucks" style="color:black;">
-                              <input type="radio" name="type[]" id="trucks" value="Trucks" class="others myinputs" style="zoom:3.5;" />
+                              <input type="radio" name="type[]" id="trucks" value="Trucks" class="others myinputs" style="" />
                               <br>Truck</label>
                           </center>
                         </td>
                         <td style="width:25%;">
                           <center>
                             <label class="bigtouch" for="suvs" style="color:black;">
-                              <input type="radio" id="suvs" name="type[]" value="SUVs" class="others myinputs" style="zoom:3.5;" />
+                              <input type="radio" id="suvs" name="type[]" value="SUVs" class="others myinputs" style="" />
                               <br>SUV</label>
                           </center>
                         </td>
                         <td style="width:25%;">
                           <center>
                             <label class="bigtouch" for="crossovers" style="color:black;">
-                              <input type="radio" id="crossovers" name="type[]" value="Crossovers" class="others myinputs" style="zoom:3.5;" />
+                              <input type="radio" id="crossovers" name="type[]" value="Crossovers" class="others myinputs" style="" />
                               <br>Crossover</label>
                           </center>
                         </td>
@@ -4331,7 +4091,6 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
 
                     </table>
                   </center>
-                  <br>
                   <center>
                     <table style="width:100%;">
                       <tr>
@@ -4339,11 +4098,11 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                           <center>
                             <!-- <p style="color:black;">Price:</p> -->
                             <div class="pricewrapper2">
-                              <input type="tel" step="1" id="askingprice" name="price" tabindex="5" class="myinputs" style="zoom:1;width:55vw;" placeholder="Asking Price" required />
+                              <input type="tel" step="1" id="askingprice" name="price" tabindex="5" class="myinputs" style="width:55vw;" placeholder="Asking Price" required />
                             </div>
-                            <br>
+
                             <div id="priceerror"></div>
-                            <br>
+
 
 
 
@@ -4367,16 +4126,12 @@ left: 18px; zoom: .6; margin-top:34px;" onclick="javascript:back();"></i>
                         <tr>
                           <td style="width:50%;">
                             <center>
-                              <input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.1em;
-padding-left: 15px;
-zoom: 1.5; width: 50vw !important;" onclick="takePicture();" value="&#xf030; Camera" />
+                              <input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;" onclick="takePicture();" value="&#xf030; Camera" />
                             </center>
                           </td>
                           <td style="width:50%;">
                             <center>
-                              <input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;font-size: 1.1em;
-padding-left: 17px;
-zoom: 1.5; width: 50vw !important;" onclick="selectPicture();" value="&#xf07c; Gallery" />
+                              <input class="bluebtn2 myinputs" type="button" style="font-family: FontAwesome;" onclick="selectPicture();" value="&#xf07c; Gallery" />
                             </center>
                           </td>
                         </tr>
@@ -4385,7 +4140,7 @@ zoom: 1.5; width: 50vw !important;" onclick="selectPicture();" value="&#xf07c; G
                       <div>
 
 
-                        <img style="width:300px;margin-top:40px;visibility:hidden;display:none;" id="camera_image" src="" />
+                        <img style="width:80vw;margin-top:5%;visibility:hidden;display:none;" id="camera_image" src="" />
                       </div>
                       <br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span>
                       <br>
@@ -4396,7 +4151,7 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
                     </div>
                   </center>
                   <input type="hidden" name="fileToUpload" id="fileToUpload" value="">
-                  <br>
+
                   <center>
                     <input type="submit" value="<< Submit >>" class="bluebtn" style="width:100%;">
                   </center>
@@ -5298,10 +5053,10 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
       step: 500
     });
 
-    var elem = document.getElementById("pricelow");
-    var elem2 = document.getElementById("pricehigh");
-    elem.value = 5000;
-    elem2.value = 10000;
+    // var elem = document.getElementById("pricelow");
+    // var elem2 = document.getElementById("pricehigh");
+    // elem.value = 5000;
+    // elem2.value = 10000;
     var basicvalues = $("#slider").rangeSlider("values");
     $("#slider").bind("valuesChanged", function(e, data) {
       console.log("Values just changed. min: " + data.values.min + " max: " + data.values.max);
