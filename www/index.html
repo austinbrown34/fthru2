@@ -56,6 +56,8 @@
     <script type="text/javascript" src="DataTables/DataTables-1.10.11/js/dataTables.jqueryui.min.js"></script>
     <script type='application/javascript' src='js/fastclick.js'></script>
     <script type='application/javascript' src='js/jquery.doubletap.js'></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+
     <script>
       var networkcheck = false;
       $(function() {
@@ -4345,7 +4347,69 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
         }
       });
       $(document).ready(function() {
+        window.currentHeight = $(this).height();
+        window.scrollHeight = window.currentHeight/2
+        // function keyboardHideHandler(){
+        //   alert("closed");
+        //   var closestdiv = $("div.appscreen").not(":hidden")
+        //   closestdiv.height(window.currentHeight);
+        // }
+        //
+        // window.addEventListener('native.hidekeyboard', keyboardHideHandler);
 
+        $("input[type=text], textarea").
+        bind("blur", function(e) {
+
+            var closestdiv = $("div.appscreen").not(":hidden")
+            var closestdivid = closestdiv.attr('id');
+            if (closestdivid == "start"){
+              $("#login").css('position','absolute');
+            }
+            closestdiv.height(window.currentHeight);
+         $("#page").scrollTo(0.0);
+         loaded();
+        });
+        // alert(window.currentHeight);
+        $("input").focus(function(e){
+          // e.preventDefault();
+          // e.stopPropagation();
+          // $('#page').scrollTop(0);
+          var el = $(e.currentTarget);
+          var elh = el.height();
+          var closestdiv = $("div.appscreen").not(":hidden");
+          var closestdivid = closestdiv.attr('id');
+
+          if (closestdivid == "start"){
+            $("#login").css('position','relative');
+          }
+          // alert(closestdivid);
+          closestdiv.height(window.currentHeight + window.scrollHeight);
+          // alert(closestdiv.id);
+      // $('<div id="keyboarddiv" style="height:'+window.scrollHeight+'px; position:absolute; bottom:0;"> new div </div>').appendTo(closestdiv);
+      // $('<div id="keyboarddiv" style="height:'+window.scrollHeight+'px; position:relative; bottom:0;"> new div </div>').insertAfter(el);
+          offset = window.currentHeight * .2
+          // var offset = el.offset().top
+          // alert(offset);
+          // alert(window.currentHeight);
+           $("#page").scrollTo(el,{offset:-offset});
+          //  closestdiv.height(window.currentHeight)
+
+          //  el.onblur = function(){
+          //    alert("something");
+          //   //  $("#keyboarddiv").hide();
+          //  }
+              // var offset = -$("#page").height() + $(el).height();
+              // $("#page").scrollTo(el,{offset: offset});
+        });
+
+        // $("input").onblur(function(e){
+        //   $("#keyboarddiv").hide();
+        // });
+//         $(input.onfocus) function(e){
+//     var el = $(e.currentTarget);
+//     var offset = -$(".scrollerWrap").height() + $(el).height();
+//     $(".scrollerWrap").scrollTo(el,{offset: offset});
+// }
         var page;
         var thepage;
 
