@@ -83,7 +83,7 @@ select{height:auto;font-size:2vh;background-color:#f8f8f8;background-image:-webk
     /*padding-bottom: 2%;*/
   }
 .fa-question-circle{
-  font-size: 2vh !important;
+  font-size: 4vh !important;
     border: 4px aliceblue solid;
     border-radius: 35px;
     position: relative;
@@ -559,12 +559,16 @@ a.dt-button {
 }
 
 select[name="exampledt_length"] {
-  width: 10%;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
   text-align: center;
 }
 
 select[name="exampledt2_length"] {
-  width: 10%;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
   text-align: center;
 }
 

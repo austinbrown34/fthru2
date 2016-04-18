@@ -144,7 +144,7 @@
               "render": function(data, type, row) {
                 myrow = row[6];
                 my64Images[myrow] = data;
-                return "<img src=\"" + data + "\" id='inventorypic' width=\"70vw\" height=\"50vw\">" + "<span id='vehicleid' style='display:none;'>" + myrow + "</span>";
+                return "<img src=\"" + data + "\" id='inventorypic' style = \"width:20vw !important;\">" + "<span id='vehicleid' style='display:none;'>" + myrow + "</span>";
               },
               "targets": 0
             }, {
@@ -2846,6 +2846,10 @@
                     $("#camera_image").attr("src", "");
                     var img = document.getElementById('camera_image');
                     img.style.visibility = "hidden";
+                    var imght = $('#camera_image').height();
+                    var addcarht = $("#addcar").height();
+                    var increase = imght + addcarht;
+                    $("addcar").height(increase);
                     $('#page').scrollTop(0);
                     working("off");
                   }
@@ -4142,7 +4146,7 @@
                       <div>
 
 
-                        <img style="width:80vw;margin-top:5%;visibility:hidden;display:none;" id="camera_image" src="" />
+                        <img style="width:80vw;height:80vw;margin-top:5%;visibility:hidden;display:none;" id="camera_image" src="" />
                       </div>
                       <br><span style="color:black;">Status:</span> <span id="camera_status" style="color:black;"></span>
                       <br>
