@@ -476,8 +476,8 @@ margin: 5px 0;*/
 }
 
 .sr_title img{
-  width: 35vw !important;
-  height: 20vw !important;
+  width: 33vw !important;
+  height: 15vw !important;
   margin-left: 2% !important;
 }
 /*.pricewrapper2 input {
@@ -566,15 +566,14 @@ a.dt-button {
 }
 
 select[name="exampledt_length"] {
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
+  width: 20%;
+  margin-left: 40vw !important;
   text-align: center;
 }
 
 select[name="exampledt2_length"] {
-  width: 60%;
-  margin-left: 50vw !important;
+  width: 20%;
+  margin-left: 40vw !important;
   /*margin-right: 20%;*/
   text-align: center;
 }
