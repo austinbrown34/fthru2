@@ -144,7 +144,7 @@
               "render": function(data, type, row) {
                 myrow = row[6];
                 my64Images[myrow] = data;
-                return "<img src=\"" + data + "\" id='inventorypic' style = \"width:20vw !important;\">" + "<span id='vehicleid' style='display:none;'>" + myrow + "</span>";
+                return "<img src=\"" + data + "\" id='inventorypic' style = \"width:25vw !important;\">" + "<span id='vehicleid' style='display:none;'>" + myrow + "</span>";
               },
               "targets": 0
             }, {
@@ -2780,6 +2780,10 @@
                     $("#camera_status").text('');
                     $("#camera_image").attr("src", "");
                     $("#camera_image").hide();
+                    var imght = $('#camera_image').height();
+                    var addcarht = $("#addcar").height();
+                    var increase =  addcarht - imght;
+                    $("addcar").height(increase);
                     //  var img = document.getElementById('camera_image');
                     //  img.style.visibility = "hidden";
                     var pagetarget = $("#page");
@@ -2848,7 +2852,7 @@
                     img.style.visibility = "hidden";
                     var imght = $('#camera_image').height();
                     var addcarht = $("#addcar").height();
-                    var increase = imght + addcarht;
+                    var increase = addcarht - imght;
                     $("addcar").height(increase);
                     $('#page').scrollTop(0);
                     working("off");
@@ -2926,6 +2930,10 @@
             img.style.visibility = "visible";
             img.style.display = "block";
             img.src = uri;
+            var imght = $('#camera_image').height();
+            var addcarht = $("#addcar").height();
+            var increase = imght + addcarht;
+            $("addcar").height(increase);
             var filename = uri.substr(uri.lastIndexOf("/") + 1);
             document.getElementById("fileToUpload").value = filename;
             document.getElementById('camera_status').innerHTML = "Success";
@@ -2950,6 +2958,10 @@
             img.style.visibility = "visible";
             img.style.display = "block";
             img.src = uri;
+            var imght = $('#camera_image').height();
+            var addcarht = $("#addcar").height();
+            var increase = imght + addcarht;
+            $("addcar").height(increase);
             var filename = uri.substr(uri.lastIndexOf("/") + 1);
             document.getElementById("fileToUpload").value = filename;
             document.getElementById('camera_status').innerHTML = "Success";
