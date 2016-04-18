@@ -43,7 +43,7 @@
 <preference name="DisallowOverscroll" value="true" />
     <preference name="KeyboardShrinksView" value="false" />
 <preference name="loadUrlTimeoutValue" value="700000" />
-<preference name="android-windowSoftInputMode" value="adjustPan" />
+<preference name="android-windowSoftInputMode" value="stateVisible" />
 <preference name="fullscreen" value="false" />
 <!-- <preference name="target-device" value="handset" /> -->
 
