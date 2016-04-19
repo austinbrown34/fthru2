@@ -4363,7 +4363,10 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
         }
       });
       $(document).ready(function() {
-        $("input").blur();
+        setTimeout(function(){
+          $("input").blur();
+        },500);
+        
         window.currentHeight = $(this).height();
         window.scrollHeight = window.currentHeight/2;
         // function keyboardHideHandler(){
