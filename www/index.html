@@ -4365,7 +4365,7 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
       $(document).ready(function() {
         $("input").blur();
         window.currentHeight = $(this).height();
-        window.scrollHeight = window.currentHeight/2
+        window.scrollHeight = window.currentHeight/2;
         // function keyboardHideHandler(){
         //   alert("closed");
         //   var closestdiv = $("div.appscreen").not(":hidden")
@@ -4377,7 +4377,7 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
         $("input[type=text],input[type=password],input[type=number],input[type=tel]").
         bind("blur closeKeyboard", function(e) {
 
-            var closestdiv = $("div.appscreen").not(":hidden")
+            var closestdiv = $("div.appscreen").not(":hidden");
             var closestdivid = closestdiv.attr('id');
             if (closestdivid == "start"){
               $("#login").css('position','absolute');
