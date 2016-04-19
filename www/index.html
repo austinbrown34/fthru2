@@ -4374,7 +4374,7 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
         //
         // window.addEventListener('native.hidekeyboard', keyboardHideHandler);
 
-        $("input").
+        $("input[type=text],input[type=password],input[type=number],input[type=tel]").
         bind("blur closeKeyboard", function(e) {
 
             var closestdiv = $("div.appscreen").not(":hidden")
@@ -4385,7 +4385,7 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
             closestdiv.height(window.currentHeight);
          $("#page").scrollTo(0.0);
         //  loaded();
-        
+
         });
         // alert(window.currentHeight);
         $("input[type=text],input[type=password],input[type=number],input[type=tel]").focus(function(e){

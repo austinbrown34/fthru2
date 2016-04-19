@@ -488,7 +488,7 @@ margin: 5px 0;*/
   width: 33vw !important;
   height: 15vw !important;
   margin-left: 2% !important;
-  margin-top: 1% !important;
+  margin-top: 2% !important;
   margin-bottom: 1% !important;
   padding-top: 2%;
   padding-left: 1%;
@@ -584,13 +584,15 @@ a.dt-button {
 
 select[name="exampledt_length"] {
   /*width: 10vw;*/
-  margin-left: 40vw !important;
+  width: 100%;
+  /*margin-left: 40vw !important;*/
   text-align: center;
 }
 
 select[name="exampledt2_length"] {
   /*width: 10vw;*/
-  margin-left: 40vw !important;
+  width: 100%;
+  /*margin-left: 40vw !important;*/
   /*margin-right: 20%;*/
   text-align: center;
 }
