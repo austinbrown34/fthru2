@@ -495,7 +495,7 @@ margin: 5px 0;*/
 }
 
 .msg_preview_line .sr_title{
-  padding-bottom: 2% !important;
+  padding-bottom: 3% !important;
 }
 /*.pricewrapper2 input {
   padding-top: 17px !important;
@@ -584,14 +584,14 @@ a.dt-button {
 
 select[name="exampledt_length"] {
   /*width: 10vw;*/
-  width: 100%;
+  width: 100vw;
   /*margin-left: 40vw !important;*/
   text-align: center;
 }
 
 select[name="exampledt2_length"] {
   /*width: 10vw;*/
-  width: 100%;
+  width: 100vw;
   /*margin-left: 40vw !important;*/
   /*margin-right: 20%;*/
   text-align: center;
