@@ -4369,6 +4369,7 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
 
         window.currentHeight = $(this).height();
         window.scrollHeight = window.currentHeight/2;
+        var buttonpressed = false;
         // function keyboardHideHandler(){
         //   alert("closed");
         //   var closestdiv = $("div.appscreen").not(":hidden")
@@ -4376,10 +4377,13 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
         // }
         //
         // window.addEventListener('native.hidekeyboard', keyboardHideHandler);
+        $("button, input").bind("touchstart",function(){
+          buttonpressed = true;
+        });
 
         $("input[type=text],input[type=password],input[type=number],input[type=tel]").
-        bind("closeKeyboard", function(e) {
-
+        bind("blur closeKeyboard", function(e) {
+          if (!buttonpressed){
             var closestdiv = $("div.appscreen").not(":hidden");
             var closestdivid = closestdiv.attr('id');
             if (closestdivid == "start"){
@@ -4389,7 +4393,10 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
          $("#page").scrollTo(0.0);
         //  loaded();
         // return true;
-        e.stopPropagation();
+      }
+      else{
+        buttonpressed = false;
+      }
         });
         // alert(window.currentHeight);
         $("input[type=text],input[type=password],input[type=number],input[type=tel]").focus(function(e){
