@@ -522,7 +522,9 @@ margin: 5px 0;*/
   padding-left: 30px;
 }*/
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-    padding : 2% !important;
+    padding: 2% !important;
+    padding-bottom: 3% !important;
+    margin-bottom: 2% !important;
 
 }
 .pricewrapper2:before {
