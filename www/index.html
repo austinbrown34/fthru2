@@ -80,7 +80,9 @@
           .DataTable({
             dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
             "jQueryUI": true,
-            buttons: [{
+            buttons: [
+              'pageLength',
+              {
               extend: 'pdfHtml5',
               text: '&#xf1c1;',
               orientation: 'landscape',
@@ -131,9 +133,9 @@
 
               exportOptions: {
                 columns: [1, 7, 2, 3, 4]
-              },{
-              'pageLength'
-            }
+              }
+
+
             }],
 
             "lengthMenu": [
@@ -197,7 +199,9 @@
         .DataTable({
           dom: '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"Bfr>t<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"lip>',
           "jQueryUI": true,
-          buttons: [{
+          buttons: [
+            'pageLength',
+            {
             extend: 'pdfHtml5',
             text: '&#xf1c1;',
             orientation: 'landscape',
@@ -217,10 +221,8 @@
             text: '&#xf0ce;',
             exportOptions: {
               columns: [13, 3, 1, 14, 6, 7, 4, 5]
-            },
-            {
-              'pageLength'
             }
+
 
           }],
           "lengthMenu": [
@@ -1742,9 +1744,9 @@
         $(document).ajaxError(function(e, jqxhr, settings, exception) {
           console.log(exception);
         });
-        window.onerror = function(error) {
-          console.log(error);
-        };
+        // window.onerror = function(error) {
+        //   console.log(error);
+        // };
 
         document.addEventListener("deviceready", function() {
           deviceReady = true;
@@ -4368,9 +4370,9 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
         }
       });
       $(document).ready(function() {
-        setTimeout(function(){
-          $("input").blur();
-        },500);
+        // setTimeout(function(){
+        //   $("input").blur();
+        // },500);
 
         window.currentHeight = $(this).height();
         window.scrollHeight = window.currentHeight/2;
@@ -4395,46 +4397,45 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
               $("#login").css('position','absolute');
             }
             closestdiv.height(window.currentHeight);
-         $("#page").scrollTo(0.0);
-        //  loaded();
-        // return true;
-      }
-      else{
-        buttonpressed = false;
-      }
+            $("#page").scrollTo(0.0);
+
+          }
+          else{
+            buttonpressed = false;
+          }
         });
         // alert(window.currentHeight);
         $("input[type=text],input[type=password],input[type=number],input[type=tel]").focus(function(e){
           // e.preventDefault();
           // e.stopPropagation();
           // $('#page').scrollTop(0);
-          var el = $(e.currentTarget);
-          var elid = el.attr('id');
-          var elh = el.height();
-          var closestdiv = $("div.appscreen").not(":hidden");
-          var closestdivid = closestdiv.attr('id');
+            var el = $(e.currentTarget);
+            var elid = el.attr('id');
+            var elh = el.height();
+            var closestdiv = $("div.appscreen").not(":hidden");
+            var closestdivid = closestdiv.attr('id');
 
-          if (closestdivid == "start" && (elid == "loginemail" || elid == "pw")){
-            $("#login").css('margin-top','20%');
-            $("#login").css('position','relative');
+            if (closestdivid == "start" && (elid == "loginemail" || elid == "pw")){
+              $("#login").css('margin-top','20%');
+              $("#login").css('position','relative');
 
-          }
-          // alert(closestdivid);
-          closestdiv.height(window.currentHeight + window.scrollHeight);
-          // alert(closestdiv.id);
-      // $('<div id="keyboarddiv" style="height:'+window.scrollHeight+'px; position:absolute; bottom:0;"> new div </div>').appendTo(closestdiv);
-      // $('<div id="keyboarddiv" style="height:'+window.scrollHeight+'px; position:relative; bottom:0;"> new div </div>').insertAfter(el);
-          offset = window.currentHeight * .2
-          // var offset = el.offset().top
-          // alert(offset);
-          // alert(window.currentHeight);
-           $("#page").scrollTo(el,{offset:-offset});
-          //  closestdiv.height(window.currentHeight)
+            }
+            // alert(closestdivid);
+              closestdiv.height(window.currentHeight + window.scrollHeight);
+            // alert(closestdiv.id);
+            // $('<div id="keyboarddiv" style="height:'+window.scrollHeight+'px; position:absolute; bottom:0;"> new div </div>').appendTo(closestdiv);
+            // $('<div id="keyboarddiv" style="height:'+window.scrollHeight+'px; position:relative; bottom:0;"> new div </div>').insertAfter(el);
+              offset = window.currentHeight * .2;
+            // var offset = el.offset().top
+            // alert(offset);
+            // alert(window.currentHeight);
+              $("#page").scrollTo(el,{offset:-offset});
+              //  closestdiv.height(window.currentHeight)
 
-          //  el.onblur = function(){
-          //    alert("something");
-          //   //  $("#keyboarddiv").hide();
-          //  }
+              //  el.onblur = function(){
+              //    alert("something");
+              //   //  $("#keyboarddiv").hide();
+              //  }
               // var offset = -$("#page").height() + $(el).height();
               // $("#page").scrollTo(el,{offset: offset});
         });
@@ -4442,11 +4443,11 @@ zoom: 1.5;width: 50vw !important;" onclick="uploadPicture();" value="&#xf0ee; Up
         // $("input").onblur(function(e){
         //   $("#keyboarddiv").hide();
         // });
-//         $(input.onfocus) function(e){
-//     var el = $(e.currentTarget);
-//     var offset = -$(".scrollerWrap").height() + $(el).height();
-//     $(".scrollerWrap").scrollTo(el,{offset: offset});
-// }
+        //         $(input.onfocus) function(e){
+        //     var el = $(e.currentTarget);
+        //     var offset = -$(".scrollerWrap").height() + $(el).height();
+        //     $(".scrollerWrap").scrollTo(el,{offset: offset});
+        // }
         var page;
         var thepage;
 
