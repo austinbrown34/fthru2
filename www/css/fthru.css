@@ -502,9 +502,9 @@ margin: 5px 0;*/
 
 .sr_title img{
   width: 32vw !important;
-  height: 14vw !important;
-  margin-left: 3% !important;
-  margin-top: 3% !important;
+  height: 15vw !important;
+  margin-left: 4% !important;
+  margin-top: 4% !important;
   margin-bottom: 1% !important;
   padding-top: 2.5% !important;
   padding-left: 2.5% !important;
@@ -521,7 +521,10 @@ margin: 5px 0;*/
   padding-top: 17px !important;
   padding-left: 30px;
 }*/
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding : 2% !important;
 
+}
 .pricewrapper2:before {
   font-family: FontAwesome;
     content: "\f155";
