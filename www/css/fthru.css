@@ -393,7 +393,23 @@ textarea::-webkit-input-placeholder{color:#6a7894;}
   color: black !important;
 }
 #viewuser .bluebtn2{
-  zoom: 1;
+  zoom: 1.5;
+  box-shadow: 0px .25vh .5vh #00002b !important;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+  padding-top: 0% !important;
+  padding-bottom: 0% !important;
+}
+#viewcar .bluebtn2{
+  zoom: 1.5;
+  box-shadow: 0px .25vh .5vh #00002b !important;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+  padding-top: 0% !important;
+  padding-bottom: 0% !important;
+}
+#addcar .bluebtn2{
+  zoom: 1.5;
   box-shadow: 0px .25vh .5vh #00002b !important;
   padding-left: 5% !important;
   padding-right: 5% !important;
@@ -487,11 +503,11 @@ margin: 5px 0;*/
 .sr_title img{
   width: 33vw !important;
   height: 15vw !important;
-  margin-left: 2% !important;
+  margin-left: 3% !important;
   margin-top: 3% !important;
   margin-bottom: 1% !important;
   padding-top: 2.5% !important;
-  padding-left: 1%;
+  padding-left: 2%;
 }
 
 .msg_preview_line .sr_title{
@@ -561,7 +577,7 @@ a.dt-button {
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
   /* IE6-9 */
   font-family: FontAwesome;
-  font-size: 2vh;
+  font-size: 2.5vh;
 }
 
 .fg-toolbar,
