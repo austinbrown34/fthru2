@@ -501,17 +501,21 @@ margin: 5px 0;*/
 }
 
 .sr_title img{
-  width: 33vw !important;
-  height: 15vw !important;
+  width: 32vw !important;
+  height: 14vw !important;
   margin-left: 3% !important;
   margin-top: 3% !important;
   margin-bottom: 1% !important;
   padding-top: 2.5% !important;
-  padding-left: 2%;
+  padding-left: 2.5% !important;
 }
 
 .msg_preview_line .sr_title{
   padding-bottom: 4% !important;
+}
+.msg_preview_line{
+  padding-bottom: 1% !important;
+  margin-bottom: 1% !important;
 }
 /*.pricewrapper2 input {
   padding-top: 17px !important;
@@ -612,7 +616,7 @@ select[name="exampledt2_length"] {
   /*margin-right: 20%;*/
   text-align: center !important;
 }
-.dataTables_length { vertical-align:middle !important; text-align: center !important;}
+.dataTables_length { vertical-align:middle !important; text-align: center !important; font-size: 2vh;}
 input[type="search"] {
   float: right;
   /*zoom: 1.5 !important;*/
@@ -648,6 +652,11 @@ table.dataTable td {
   padding: 4%;
 }*/
 
+#issuemsg{
+  top: .5% !important;
+  padding-bottom: .5% !important;
+  margin-bottom: .5% !important;
+}
 .error {
   color: #6a7894;
 }
