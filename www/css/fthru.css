@@ -495,7 +495,7 @@ margin: 5px 0;*/
 }
 
 .msg_preview_line .sr_title{
-  padding-bottom: 3.5% !important;
+  padding-bottom: 4% !important;
 }
 /*.pricewrapper2 input {
   padding-top: 17px !important;
@@ -596,7 +596,7 @@ select[name="exampledt2_length"] {
   /*margin-right: 20%;*/
   text-align: center !important;
 }
-
+.dataTables_length { vertical-align:middle !important; text-align: center !important;}
 input[type="search"] {
   float: right;
   /*zoom: 1.5 !important;*/
